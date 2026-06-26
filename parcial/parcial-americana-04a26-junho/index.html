@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Relatório Parcial: Rock Day 2026 · Prefeitura de Americana | Jun 2026</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    /* ══════════════════════════════════════════
+       ESQUINA — TRADING DESK THEME
+       Cores: azul #1A3CFF · teal #17A697 · roxo #7B2FBE
+    ══════════════════════════════════════════ */
+    :root {
+      --primary:   #1A3CFF;
+      --navy:      #0A0A5C;
+      --teal:      #17A697;
+      --purple:    #7B2FBE;
+      --yt:        #CC0000;
+      --spotify:   #1DB954;
+      --bg:        #F4F6FF;
+      --surface:   #FFFFFF;
+      --border:    rgba(0,0,0,0.08);
+      --text-1:    #111111;
+      --text-2:    #555555;
+      --text-m:    #888888;
+      --font:      'Inter', -apple-system, sans-serif;
+      --r-sm: 6px; --r-md: 12px; --r-lg: 16px;
+      --sh:   0 1px 4px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.06);
+      --sh-h: 0 8px 24px rgba(26,60,255,0.12), 0 4px 12px rgba(0,0,0,0.08);
+    }
+    *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+    html { scroll-behavior:smooth; font-size:16px; }
+    body { font-family:var(--font); background:var(--bg); color:var(--text-1); line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+    ::-webkit-scrollbar { width:6px; } ::-webkit-scrollbar-track { background:var(--bg); } ::-webkit-scrollbar-thumb { background:#CCC; border-radius:3px; }
+
+    /* ── SETUP OVERLAY ── */
+    .setup-overlay { position:fixed; inset:0; z-index:999; background:rgba(10,10,92,.72); backdrop-filter:blur(12px); display:flex; align-items:center; justify-content:center; padding:24px; }
+    .setup-modal { background:#fff; border-radius:20px; padding:40px; max-width:480px; width:100%; box-shadow:0 32px 80px rgba(0,0,0,.30); }
+    .setup-header { margin-bottom:28px; }
+    .setup-tag { display:inline-flex; align-items:center; gap:6px; padding:3px 10px; background:rgba(26,60,255,.08); color:var(--primary); border-radius:100px; font-size:.65rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; margin-bottom:12px; }
+    .setup-title { font-size:1.5rem; font-weight:800; color:var(--text-1); margin-bottom:6px; letter-spacing:-.03em; }
+    .setup-sub { font-size:.88rem; color:var(--text-m); line-height:1.6; }
+    .setup-channels { display:flex; flex-direction:column; gap:10px; margin-bottom:28px; }
+    .setup-ch { display:flex; align-items:center; gap:14px; padding:14px 18px; border:1.5px solid var(--border); border-radius:12px; cursor:pointer; transition:all .2s; user-select:none; }
+    .setup-ch.active { border-color:rgba(26,60,255,.28); background:rgba(26,60,255,.04); }
+    .setup-ch.locked { opacity:.65; cursor:default; }
+    .setup-ch input[type=checkbox] { width:18px; height:18px; accent-color:var(--primary); cursor:pointer; flex-shrink:0; }
+    .setup-ch input[disabled] { cursor:default; }
+    .setup-ch-icon { font-size:1.3rem; width:28px; text-align:center; flex-shrink:0; }
+    .setup-ch-info { flex:1; }
+    .setup-ch-name { display:block; font-size:.9rem; font-weight:700; color:var(--text-1); }
+    .setup-ch-desc { display:block; font-size:.76rem; color:var(--text-m); margin-top:1px; }
+    .setup-ch-pill { margin-left:auto; font-size:.62rem; font-weight:700; padding:2px 8px; border-radius:100px; text-transform:uppercase; letter-spacing:.08em; background:rgba(26,60,255,.08); color:var(--primary); flex-shrink:0; }
+    .setup-confirm { width:100%; padding:14px; background:var(--primary); color:#fff; border:none; border-radius:100px; font-family:var(--font); font-size:.9rem; font-weight:700; cursor:pointer; transition:all .2s; letter-spacing:.02em; margin-top:4px; }
+    .setup-confirm:hover { background:#1430CC; transform:translateY(-1px); box-shadow:0 6px 20px rgba(26,60,255,.30); }
+
+    /* ── NAV ── */
+    .nav { position:fixed; top:0; left:0; right:0; z-index:100; background:rgba(255,255,255,0.97); backdrop-filter:blur(20px); border-bottom:1px solid var(--border); padding:12px 24px; display:flex; align-items:center; justify-content:space-between; gap:16px; }
+    .nav-logo { display:flex; align-items:center; gap:10px; flex-shrink:0; }
+    .nav-logo-img { height:32px; width:auto; }
+    .nav-logo-divider { width:1px; height:18px; background:var(--border); }
+    .nav-logo-client-block { display:flex; flex-direction:column; gap:1px; }
+    .nav-logo-client { font-size:0.78rem; font-weight:600; color:var(--text-m); }
+    .nav-logo-campaign { font-size:0.62rem; font-weight:500; color:var(--text-m); opacity:.75; }
+    .nav-chips { display:flex; gap:7px; align-items:center; flex-wrap:wrap; flex:1; justify-content:center; }
+    .chip { display:inline-flex; align-items:center; gap:5px; padding:4px 12px; border-radius:100px; font-size:.64rem; font-weight:700; letter-spacing:.07em; text-transform:uppercase; border:1px solid; text-decoration:none; transition:all .2s; cursor:pointer; }
+    .chip:hover { transform:translateY(-1px); box-shadow:0 2px 8px rgba(0,0,0,.10); }
+    .chip-meta    { background:rgba(26,60,255,.07);  border-color:rgba(26,60,255,.18);  color:var(--primary); }
+    .chip-display { background:rgba(23,166,151,.07); border-color:rgba(23,166,151,.18); color:var(--teal); }
+    .chip-yt      { background:rgba(204,0,0,.07);    border-color:rgba(204,0,0,.18);    color:var(--yt); }
+    .chip-spotify { background:rgba(29,185,84,.07);  border-color:rgba(29,185,84,.18);  color:var(--spotify); }
+    .nav-actions { display:flex; align-items:center; gap:8px; flex-shrink:0; }
+    .btn-canais { display:inline-flex; align-items:center; gap:6px; padding:7px 14px; background:transparent; color:var(--text-2); border:1.5px solid var(--border); border-radius:100px; font-family:var(--font); font-size:.70rem; font-weight:600; cursor:pointer; transition:all .2s; }
+    .btn-canais:hover { border-color:var(--primary); color:var(--primary); }
+    .btn-export { display:inline-flex; align-items:center; gap:6px; padding:8px 18px; background:var(--primary); color:#fff; border:none; border-radius:100px; font-family:var(--font); font-size:0.73rem; font-weight:600; letter-spacing:0.05em; cursor:pointer; transition:all .2s; text-transform:uppercase; }
+    .btn-export:hover { background:#1430CC; transform:translateY(-1px); box-shadow:0 4px 16px rgba(26,60,255,.3); }
+
+    /* ── SECTIONS ── */
+    .section { padding:80px 24px; max-width:1200px; margin:0 auto; }
+    .sl { display:inline-flex; align-items:center; gap:8px; font-size:0.68rem; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:var(--primary); margin-bottom:14px; }
+    .sl::before { content:''; display:block; width:20px; height:2px; background:var(--primary); }
+    .sl.teal   { color:var(--teal);   } .sl.teal::before   { background:var(--teal); }
+    .sl.purple { color:var(--purple); } .sl.purple::before { background:var(--purple); }
+    .sl.yt     { color:var(--yt);     } .sl.yt::before     { background:var(--yt); }
+    .sl.green  { color:var(--spotify);} .sl.green::before  { background:var(--spotify); }
+    .st { font-size:clamp(1.8rem,4vw,3rem); font-weight:700; line-height:1.1; margin-bottom:14px; letter-spacing:-0.02em; }
+    .ss { font-size:1.05rem; color:var(--text-2); max-width:600px; line-height:1.7; }
+
+    /* ── CANAL SEPARATOR ── */
+    .ch-sep { padding:56px 24px 0; }
+    .ch-sep-inner { max-width:1200px; margin:0 auto; }
+    .ch-sep-row { display:flex; align-items:center; gap:14px; padding-bottom:20px; border-bottom:2px solid var(--border); }
+    .ch-sep-accent { width:3px; height:38px; border-radius:2px; flex-shrink:0; }
+    .ch-sep-info { flex:1; }
+    .ch-sep-eyebrow { font-size:.62rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; margin-bottom:2px; }
+    .ch-sep-name { font-size:1.3rem; font-weight:800; color:var(--text-1); letter-spacing:-.02em; }
+    .ch-sep-num { font-size:3.5rem; font-weight:800; line-height:1; opacity:.05; color:var(--text-1); }
+    .ch-meta    .ch-sep-accent { background:var(--primary); }
+    .ch-meta    .ch-sep-eyebrow { color:var(--primary); }
+    .ch-meta    .ch-sep-row { border-bottom-color:rgba(26,60,255,.15); }
+    .ch-display .ch-sep-accent { background:var(--teal); }
+    .ch-display .ch-sep-eyebrow { color:var(--teal); }
+    .ch-display .ch-sep-row { border-bottom-color:rgba(23,166,151,.18); }
+    .ch-youtube .ch-sep-accent { background:var(--yt); }
+    .ch-youtube .ch-sep-eyebrow { color:var(--yt); }
+    .ch-youtube .ch-sep-row { border-bottom-color:rgba(204,0,0,.15); }
+    .ch-spotify .ch-sep-accent { background:var(--spotify); }
+    .ch-spotify .ch-sep-eyebrow { color:var(--spotify); }
+    .ch-spotify .ch-sep-row { border-bottom-color:rgba(29,185,84,.15); }
+
+    /* ── HERO ── */
+    .hero { min-height:100vh; position:relative; overflow:hidden; background:linear-gradient(135deg, #060630 0%, #0A0A5C 35%, #0D1B6E 60%, #1A3CFF 100%); display:flex; align-items:center; }
+    .hero::after { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 75% 25%, rgba(23,166,151,.18) 0%, transparent 55%), radial-gradient(ellipse at 15% 85%, rgba(26,60,255,.25) 0%, transparent 50%); z-index:0; }
+    .hero-content { position:relative; z-index:1; padding:calc(70px + 60px) 24px 80px; max-width:1200px; margin:0 auto; width:100%; }
+    .logo-circle { width:80px; height:80px; border-radius:50%; overflow:hidden; border:3px solid rgba(255,255,255,.25); box-shadow:0 4px 20px rgba(0,0,0,.3); background:#fff; display:flex; align-items:center; justify-content:center; font-size:1rem; font-weight:800; color:var(--primary); margin-bottom:24px; }
+    .hero-badge { display:inline-flex; align-items:center; gap:8px; padding:6px 16px; background:rgba(255,255,255,.10); border:1px solid rgba(255,255,255,.20); border-radius:100px; font-size:0.73rem; font-weight:700; color:rgba(255,255,255,.9); letter-spacing:.06em; text-transform:uppercase; margin-bottom:32px; }
+    .hero-title { font-size:clamp(2.6rem,7vw,5.5rem); font-weight:800; line-height:1.0; letter-spacing:-.03em; margin-bottom:20px; color:#fff; }
+    .hero-title .acc { color:rgba(255,255,255,.70); }
+    .hero-sub { font-size:clamp(.95rem,2vw,1.15rem); color:rgba(255,255,255,.62); max-width:520px; line-height:1.8; margin-bottom:48px; }
+    .hero-meta { display:flex; gap:14px; flex-wrap:wrap; }
+    .hmi { display:flex; flex-direction:column; gap:4px; background:rgba(255,255,255,.08); backdrop-filter:blur(16px); border:1px solid rgba(255,255,255,.14); border-radius:14px; padding:16px 22px; min-width:118px; }
+    .hmi-val { font-size:2rem; font-weight:800; color:#fff; white-space:nowrap; }
+    .hmi-lbl { font-size:0.68rem; color:rgba(255,255,255,.52); text-transform:uppercase; letter-spacing:.1em; }
+
+    /* ── META DA CAMPANHA ── */
+    .meta-wrap { background:var(--surface); border-top:1px solid var(--border); border-bottom:1px solid var(--border); padding:64px 24px; }
+    .meta-inner { max-width:1200px; margin:0 auto; }
+    .prog-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(320px,1fr)); gap:20px; margin-top:40px; }
+    .prog-card { background:var(--bg); border:1px solid var(--border); border-radius:var(--r-lg); padding:24px; }
+    .prog-card-top { display:flex; align-items:flex-start; justify-content:space-between; margin-bottom:12px; }
+    .prog-card-label { font-size:.72rem; font-weight:700; text-transform:uppercase; letter-spacing:.1em; color:var(--text-m); }
+    .prog-card-channel { display:inline-flex; padding:2px 8px; border-radius:100px; font-size:.6rem; font-weight:700; text-transform:uppercase; letter-spacing:.08em; margin-top:4px; }
+    .prog-ch-meta    { background:rgba(26,60,255,.08); color:var(--primary); }
+    .prog-ch-google  { background:rgba(23,166,151,.08); color:var(--teal); }
+    .prog-ch-yt      { background:rgba(204,0,0,.08);    color:var(--yt); }
+    .prog-ch-spotify { background:rgba(29,185,84,.08);  color:var(--spotify); }
+    .prog-numbers { display:flex; align-items:baseline; gap:8px; margin-bottom:10px; }
+    .prog-delivered { font-size:1.6rem; font-weight:800; color:var(--text-1); letter-spacing:-.02em; }
+    .prog-meta-val { font-size:.78rem; color:var(--text-m); }
+    .prog-pct { font-size:.9rem; font-weight:700; }
+    .pct-ok   { color:var(--teal); }
+    .pct-warn { color:#CC8800; }
+    .pct-hot  { color:#CC3300; }
+    .prog-track { height:7px; background:rgba(0,0,0,.07); border-radius:100px; overflow:hidden; }
+    .prog-fill { height:100%; border-radius:100px; transition:width 1.6s cubic-bezier(.22,1,.36,1); width:0%; }
+    .fill-blue   { background:linear-gradient(90deg,var(--primary),#4060FF); }
+    .fill-teal   { background:linear-gradient(90deg,var(--teal),#1EC4B2); }
+    .fill-orange { background:linear-gradient(90deg,#CC8800,#FFAA00); }
+    .fill-red    { background:linear-gradient(90deg,#CC3300,#FF4400); }
+    .fill-yt     { background:linear-gradient(90deg,var(--yt),#FF4444); }
+    .fill-green  { background:linear-gradient(90deg,var(--spotify),#1EC55A); }
+    .prog-note { font-size:.72rem; color:var(--text-m); margin-top:8px; }
+    .meta-insight { margin-top:32px; display:flex; align-items:center; gap:14px; padding:16px 24px; background:rgba(23,166,151,.06); border-left:3px solid var(--teal); border-radius:0 6px 6px 0; font-size:.88rem; color:var(--text-2); line-height:1.6; }
+    .meta-insight strong { color:var(--teal); }
+
+    /* ── KPI GRID ── */
+    .kpi-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:16px; margin-top:32px; }
+    .kc { background:var(--surface); border:1px solid var(--border); border-radius:var(--r-md); padding:24px; box-shadow:var(--sh); transition:all .3s; position:relative; overflow:hidden; }
+    .kc::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:var(--primary); transform:scaleX(0); transition:transform .4s; }
+    .kc:hover { box-shadow:var(--sh-h); transform:translateY(-2px); }
+    .kc:hover::before { transform:scaleX(1); }
+    .kc.teal::before   { background:var(--teal); }
+    .kc.purple::before { background:var(--purple); }
+    .kc.yt::before     { background:var(--yt); }
+    .kc.green::before  { background:var(--spotify); }
+    .kc-lbl { font-size:0.68rem; font-weight:700; text-transform:uppercase; letter-spacing:.1em; color:var(--text-m); margin-bottom:8px; }
+    .kc-val { font-size:1.9rem; font-weight:800; color:var(--text-1); margin-bottom:4px; letter-spacing:-.02em; }
+    .kc-sub { font-size:0.78rem; color:var(--text-m); line-height:1.4; }
+    .kc-sub strong { color:var(--text-2); font-weight:600; }
+    .kc.featured { border-color:rgba(26,60,255,.25); }
+    .kc.featured::before { transform:scaleX(1); }
+    .kc.featured.teal { border-color:rgba(23,166,151,.25); }
+    .kc.featured.teal::before { transform:scaleX(1); }
+    .kc-badge { display:inline-flex; align-items:center; gap:5px; padding:3px 10px; border-radius:100px; font-size:.65rem; font-weight:700; text-transform:uppercase; letter-spacing:.08em; margin-bottom:10px; background:rgba(26,60,255,.08); color:var(--primary); }
+    .kc-badge.teal   { background:rgba(23,166,151,.10); color:var(--teal); }
+    .kc-badge.purple { background:rgba(123,47,190,.10); color:var(--purple); }
+
+    /* ── CONJUNTOS / PÚBLICOS ── */
+    .cj-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:24px; margin-top:32px; }
+    .cj { background:var(--surface); border:1px solid var(--border); border-radius:var(--r-lg); padding:32px; box-shadow:var(--sh); position:relative; overflow:hidden; }
+    .cj::after { content:''; position:absolute; top:0; left:0; right:0; height:4px; }
+    .cj.p1::after { background:linear-gradient(90deg,#1A3CFF,#4060FF); }
+    .cj.p2::after { background:linear-gradient(90deg,#7B2FBE,#8B3FD9); }
+    .cj.p3::after { background:linear-gradient(90deg,#17A697,#1EC4B2); }
+    .cj.p4::after { background:linear-gradient(90deg,#CC8800,#FFAA00); }
+    .cj-tag { display:inline-flex; padding:4px 10px; border-radius:100px; font-size:.68rem; font-weight:700; text-transform:uppercase; letter-spacing:.08em; margin-bottom:14px; }
+    .cj.p1 .cj-tag { background:rgba(26,60,255,.08); color:var(--primary); }
+    .cj.p2 .cj-tag { background:rgba(123,47,190,.08); color:var(--purple); }
+    .cj.p3 .cj-tag { background:rgba(23,166,151,.08); color:var(--teal); }
+    .cj.p4 .cj-tag { background:rgba(204,136,0,.08); color:#CC8800; }
+    .cj-title { font-size:1.1rem; font-weight:700; color:var(--text-1); margin-bottom:4px; }
+    .cj-desc { font-size:.8rem; color:var(--text-m); margin-bottom:22px; line-height:1.5; }
+    .cj-metrics { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+    .cmi { display:flex; flex-direction:column; gap:2px; }
+    .cmi-v { font-size:1.2rem; font-weight:700; color:var(--text-1); }
+    .cmi-k { font-size:.68rem; font-weight:600; text-transform:uppercase; letter-spacing:.08em; color:var(--text-m); }
+    .cj-bar { margin-top:22px; padding-top:22px; border-top:1px solid var(--border); }
+    .cb-lbl { font-size:.72rem; color:var(--text-m); margin-bottom:6px; }
+    .cb-track { height:8px; background:var(--bg); border-radius:100px; overflow:hidden; }
+    .cb-fill { height:100%; border-radius:100px; transition:width 1.5s cubic-bezier(.22,1,.36,1); width:0%; }
+    .cj.p1 .cb-fill { background:var(--primary); }
+    .cj.p2 .cb-fill { background:var(--purple); }
+    .cj.p3 .cb-fill { background:var(--teal); }
+    .cj.p4 .cb-fill { background:#CC8800; }
+    .cb-pct { font-size:.78rem; font-weight:700; margin-top:4px; color:var(--text-2); }
+
+    /* ── CHART ── */
+    .ch-box { background:var(--surface); border:1px solid var(--border); border-radius:var(--r-lg); padding:32px; box-shadow:var(--sh); margin-top:24px; }
+    .ch-hdr { display:flex; align-items:flex-start; justify-content:space-between; margin-bottom:20px; flex-wrap:wrap; gap:12px; }
+    .ch-title { font-size:1.1rem; font-weight:700; color:var(--text-1); }
+    .ch-desc { font-size:.82rem; color:var(--text-m); margin-top:4px; }
+    .ch-wrap { position:relative; width:100%; }
+
+    /* ── CRIATIVOS ── */
+    .ad-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:32px; }
+    .ad { background:var(--surface); border:1px solid var(--border); border-radius:var(--r-lg); overflow:hidden; box-shadow:var(--sh); transition:all .3s; }
+    .ad:hover { box-shadow:var(--sh-h); transform:translateY(-2px); }
+    .ad-img { height:180px; background:linear-gradient(135deg,#dde5ff,#e8ecff,#d5e8f5); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; color:var(--text-m); border-bottom:1px solid var(--border); font-size:2rem; opacity:1; }
+    .ad-carousel { position:relative; border-radius:12px; overflow:hidden; background:#111; }
+    .ac-track { display:flex; transition:transform .35s ease; }
+    .ac-slide { min-width:100%; height:260px; }
+    .ac-slide img { width:100%; height:100%; object-fit:cover; display:block; }
+    .ac-btn { position:absolute; top:50%; transform:translateY(-50%); background:rgba(0,0,0,.55); color:#fff; border:none; width:38px; height:38px; border-radius:50%; font-size:1.5rem; line-height:1; cursor:pointer; z-index:2; display:flex; align-items:center; justify-content:center; transition:background .2s; }
+    .ac-btn:hover { background:rgba(0,0,0,.80); }
+    .ac-prev { left:10px; }
+    .ac-next { right:10px; }
+    .ac-dots { position:absolute; bottom:12px; left:50%; transform:translateX(-50%); display:flex; gap:7px; }
+    .ac-dot { width:8px; height:8px; border-radius:50%; background:rgba(255,255,255,.4); cursor:pointer; transition:background .2s; }
+    .ac-dot.active { background:#fff; }
+    .ad-body { padding:20px; }
+    .ad-hdr { display:flex; align-items:center; justify-content:space-between; gap:8px; margin-bottom:8px; }
+    .ad-badge { display:inline-flex; align-items:center; gap:5px; padding:3px 10px; border-radius:100px; font-size:.65rem; font-weight:700; text-transform:uppercase; letter-spacing:.08em; }
+    .b1 { background:rgba(13,27,110,.08); color:#0D1B6E; }
+    .b2 { background:rgba(23,166,151,.10); color:var(--teal); }
+    .b3 { background:rgba(26,60,255,.07); color:var(--primary); }
+    .bp { background:rgba(123,47,190,.10); color:var(--purple); }
+    .ad-fmt { font-size:.65rem; font-weight:600; color:var(--text-m); letter-spacing:.06em; text-transform:uppercase; }
+    .ad-name { font-size:.88rem; font-weight:700; color:var(--text-1); margin-bottom:14px; line-height:1.35; padding-bottom:12px; border-bottom:1px solid var(--border); }
+    .ad-metrics { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+    .ami { display:flex; flex-direction:column; gap:2px; padding:8px; border-radius:6px; }
+    .ami.hi { background:var(--bg); }
+    .ami-v { font-size:1.05rem; font-weight:700; color:var(--text-1); }
+    .ami-k { font-size:.63rem; font-weight:600; text-transform:uppercase; letter-spacing:.08em; color:var(--text-m); }
+
+    /* ── INSIGHT BOX ── */
+    .ib { background:rgba(26,60,255,.04); border-left:3px solid var(--primary); border-radius:0 6px 6px 0; padding:16px 24px; margin-top:16px; }
+    .ib.teal   { background:rgba(23,166,151,.05); border-left-color:var(--teal); }
+    .ib.purple { background:rgba(123,47,190,.05); border-left-color:var(--purple); }
+    .ib.yt     { background:rgba(204,0,0,.04);    border-left-color:var(--yt); }
+    .ib.green  { background:rgba(29,185,84,.04);  border-left-color:var(--spotify); }
+    .ib-lbl { font-size:.65rem; font-weight:700; text-transform:uppercase; letter-spacing:.15em; color:var(--primary); margin-bottom:4px; }
+    .ib.teal   .ib-lbl { color:var(--teal); }
+    .ib.purple .ib-lbl { color:var(--purple); }
+    .ib.yt     .ib-lbl { color:var(--yt); }
+    .ib.green  .ib-lbl { color:var(--spotify); }
+    .ib-txt { font-size:.88rem; color:var(--text-2); line-height:1.6; }
+
+    /* ── TABELAS ── */
+    table { width:100%; border-collapse:collapse; font-size:.88rem; }
+    thead th { text-align:left; padding:10px 12px; font-size:.68rem; font-weight:700; text-transform:uppercase; letter-spacing:.1em; color:#888; border-bottom:1px solid #E0E0E0; }
+    thead th:not(:first-child) { text-align:right; }
+    tbody td { padding:10px 12px; color:#444; border-bottom:1px solid #F0F0F0; }
+    tbody td:first-child { font-weight:600; color:#333; }
+    tbody td:not(:first-child) { text-align:right; }
+    tbody tr:last-child td { border-bottom:none; }
+    tbody tr.hl td { background:rgba(23,166,151,.06); }
+    tbody tr.hl td:first-child { color:var(--teal); }
+
+    /* ── DIAGNÓSTICO ── */
+    .diag { position:relative; overflow:hidden; background:linear-gradient(135deg,#060630 0%,#0A0A5C 40%,#1530A8 100%); padding:80px 24px; }
+    .diag::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 80% 20%,rgba(23,166,151,.14) 0%,transparent 60%); z-index:0; }
+    .diag-inner { position:relative; z-index:1; max-width:1200px; margin:0 auto; }
+    .diag-lbl { color:rgba(255,255,255,.50) !important; }
+    .diag-lbl::before { background:rgba(255,255,255,.30) !important; }
+    .diag-st { color:#fff !important; }
+    .diag-ss { color:rgba(255,255,255,.58) !important; }
+    .dc-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; margin-top:48px; }
+    .dc { background:rgba(255,255,255,.95); border-radius:var(--r-lg); padding:30px; box-shadow:0 4px 28px rgba(0,0,0,.24); position:relative; overflow:hidden; transition:transform .3s,box-shadow .3s; }
+    .dc:hover { transform:translateY(-5px); box-shadow:0 10px 40px rgba(0,0,0,.30); }
+    .dc-acc { position:absolute; top:0; left:0; right:0; height:3px; }
+    .dc-acc.t { background:linear-gradient(90deg,var(--teal),#1EC4B2); }
+    .dc-acc.b { background:linear-gradient(90deg,var(--primary),#4060FF); }
+    .dc-acc.p { background:linear-gradient(90deg,var(--purple),#8B3FD9); }
+    .dc-acc.r { background:linear-gradient(90deg,var(--yt),#FF4444); }
+    .dc-acc.g { background:linear-gradient(90deg,var(--spotify),#1EC55A); }
+    .dc-num { font-size:.65rem; font-weight:700; color:var(--text-m); letter-spacing:.15em; text-transform:uppercase; margin-bottom:14px; margin-top:4px; }
+    .dc-metric { font-size:2rem; font-weight:800; color:var(--teal); letter-spacing:-.03em; line-height:1.1; margin-bottom:4px; }
+    .dc-metric.blue   { color:var(--primary); }
+    .dc-metric.purple { color:var(--purple); }
+    .dc-metric.yt     { color:var(--yt); }
+    .dc-metric.green  { color:var(--spotify); }
+    .dc-title { font-size:.9rem; font-weight:700; color:var(--text-1); margin-bottom:8px; line-height:1.3; }
+    .dc-text { font-size:.79rem; color:var(--text-2); line-height:1.65; }
+
+    /* ── PRÓXIMOS PASSOS ── */
+    .steps-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:20px; margin-top:40px; }
+    .step-card { background:var(--surface); border:1px solid var(--border); border-radius:var(--r-lg); padding:28px; box-shadow:var(--sh); display:flex; gap:20px; }
+    .step-num { font-size:2.5rem; font-weight:800; color:var(--border); letter-spacing:-.05em; line-height:1; flex-shrink:0; width:48px; }
+    .step-body { flex:1; }
+    .step-date { font-size:.65rem; font-weight:700; text-transform:uppercase; letter-spacing:.12em; color:var(--primary); margin-bottom:6px; }
+    .step-title { font-size:.95rem; font-weight:700; color:var(--text-1); margin-bottom:8px; line-height:1.3; }
+    .step-txt { font-size:.82rem; color:var(--text-m); line-height:1.55; }
+
+    /* ── FOOTER ── */
+    .footer { text-align:center; padding:48px 24px; border-top:1px solid var(--border); background:var(--surface); }
+    .footer-logo { height:32px; width:auto; margin-bottom:12px; }
+    .footer-txt { font-size:.78rem; color:var(--text-m); line-height:1.8; }
+
+    /* ── UTILS ── */
+    .fade-in { opacity:0; transform:translateY(22px); transition:opacity .7s,transform .7s; }
+    .fade-in.visible { opacity:1; transform:translateY(0); }
+    .g2 { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+
+    /* ── RESPONSIVE ── */
+    @media(max-width:960px) { .cj-grid{grid-template-columns:1fr 1fr} .ad-grid{grid-template-columns:1fr 1fr} .dc-grid{grid-template-columns:1fr 1fr} }
+    @media(max-width:768px) { .nav-chips{display:none} .section{padding:48px 16px} .kpi-grid{grid-template-columns:1fr 1fr} .g2{grid-template-columns:1fr} .cj-grid{grid-template-columns:1fr} .ad-grid{grid-template-columns:1fr} }
+    @media(max-width:600px) { .dc-grid{grid-template-columns:1fr} .steps-grid{grid-template-columns:1fr} }
+
+    /* ── PRINT ── */
+    @media print {
+      *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
+      .nav,.btn-export,.btn-canais,.setup-overlay{display:none!important}
+      .fade-in{opacity:1!important;transform:none!important}
+      @page{size:A4 landscape;margin:15mm}
+      .section,.meta-wrap,.diag{break-inside:avoid;page-break-inside:avoid}
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ SETUP OVERLAY ══ -->
+<div class="setup-overlay" id="setupOverlay" style="display:none">
+  <div class="setup-modal">
+    <div class="setup-header">
+      <div class="setup-tag">
+        <svg width="8" height="8" viewBox="0 0 8 8" fill="currentColor"><circle cx="4" cy="4" r="4"/></svg>
+        Esquina · Trading Desk
+      </div>
+      <div class="setup-title">Configurar canais</div>
+      <div class="setup-sub">Selecione os canais de mídia ativos nesta campanha. Apenas os canais marcados aparecerão no relatório.</div>
+    </div>
+    <div class="setup-channels">
+      <label class="setup-ch locked active">
+        <input type="checkbox" value="meta" checked disabled />
+        <span class="setup-ch-icon">📱</span>
+        <div class="setup-ch-info">
+          <span class="setup-ch-name">Meta Ads</span>
+          <span class="setup-ch-desc">Feed, Stories, Reels · Facebook e Instagram</span>
+        </div>
+        <span class="setup-ch-pill">Obrigatório</span>
+      </label>
+      <label class="setup-ch active" id="chLabelDisplay">
+        <input type="checkbox" value="display" id="chDisplay" checked />
+        <span class="setup-ch-icon">🖥️</span>
+        <div class="setup-ch-info">
+          <span class="setup-ch-name">Google Display</span>
+          <span class="setup-ch-desc">Banners em sites e apps da rede Google</span>
+        </div>
+      </label>
+      <label class="setup-ch active" id="chLabelYt">
+        <input type="checkbox" value="youtube" id="chYt" checked />
+        <span class="setup-ch-icon">▶️</span>
+        <div class="setup-ch-info">
+          <span class="setup-ch-name">YouTube</span>
+          <span class="setup-ch-desc">TrueView (in-stream) + Bumper Ads (6s)</span>
+        </div>
+      </label>
+      <label class="setup-ch active" id="chLabelSpotify">
+        <input type="checkbox" value="spotify" id="chSpotify" checked />
+        <span class="setup-ch-icon">🎵</span>
+        <div class="setup-ch-info">
+          <span class="setup-ch-name">Spotify</span>
+          <span class="setup-ch-desc">Áudio 30s + companion banner</span>
+        </div>
+      </label>
+    </div>
+    <button class="setup-confirm" onclick="applySetup()">Confirmar e abrir relatório →</button>
+  </div>
+</div>
+
+<!-- ══ NAV ══ -->
+<nav class="nav">
+  <div class="nav-logo">
+    <img src="assets/logo-esquina.png" alt="Esquina" class="nav-logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+    <span style="display:none;font-size:1.1rem;font-weight:800;color:var(--primary)">Esquina</span>
+    <div class="nav-logo-divider"></div>
+    <div class="nav-logo-client-block">
+      <span class="nav-logo-client">Prefeitura de Americana</span>
+      <span class="nav-logo-campaign">Rock Day 2026 · Temas Diversos</span>
+    </div>
+  </div>
+  <div class="nav-chips" id="navChips"></div>
+  <div class="nav-actions">
+    <button class="btn-canais" onclick="openSetup()">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+      Canais
+    </button>
+    <button class="btn-export" onclick="window.print()">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      Exportar PDF
+    </button>
+  </div>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section class="hero" id="hero">
+  <div class="hero-content">
+    <div class="logo-circle" style="padding:0;overflow:hidden;background:#000"><img src="assets/logo-rockday.jpeg" alt="Rock Day 2026" style="width:100%;height:100%;object-fit:cover" /></div>
+    <div class="hero-badge">
+      <svg width="8" height="8" viewBox="0 0 8 8" fill="currentColor"><circle cx="4" cy="4" r="4"/></svg>
+      Relatório Parcial &middot; Rock Day 2026 &middot; 04/06–26/06/2026
+    </div>
+    <h1 class="hero-title">
+      Rock Day<br/>
+      <span class="acc">Americana</span><br/>
+      2026
+    </h1>
+    <p class="hero-sub">
+      Campanha multicanal de reconhecimento de marca.<br/>
+      Período: 04 a 26 de junho de 2026.
+    </p>
+    <div class="hero-meta">
+      <div class="hmi"><span class="hmi-val">775K</span><span class="hmi-lbl">Impressões totais</span></div>
+      <div class="hmi"><span class="hmi-val">285K</span><span class="hmi-lbl">Contas alcançadas</span></div>
+      <div class="hmi"><span class="hmi-val" id="heroChannels">4</span><span class="hmi-lbl">Canais ativos</span></div>
+      <div class="hmi"><span class="hmi-val">8 dias</span><span class="hmi-lbl">Até o evento</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ META DA CAMPANHA ══ -->
+<div class="meta-wrap" id="meta">
+  <div class="meta-inner">
+    <span class="sl teal">Meta da Campanha</span>
+    <h2 class="st fade-in">Progresso por Canal</h2>
+    <p class="ss fade-in">Acompanhamento das metas contratadas. Campanha em veiculação até 04/07.</p>
+
+    <div class="prog-grid fade-in">
+
+      <div class="prog-card">
+        <div class="prog-card-top">
+          <div>
+            <div class="prog-card-label">Meta Ads</div>
+            <div class="prog-card-channel prog-ch-meta">Rock Day + Temas Diversos</div>
+          </div>
+          <span class="prog-pct pct-warn">68,1%</span>
+        </div>
+        <div class="prog-numbers">
+          <span class="prog-delivered">681.134</span>
+          <span class="prog-meta-val">de 1.000.000 impressões</span>
+        </div>
+        <div class="prog-track"><div class="prog-fill fill-blue" data-w="68.1"></div></div>
+        <div class="prog-note">Rock Day 527.206 (65,9%) · Temas Diversos 153.928 (77,0%)</div>
+      </div>
+
+      <div class="prog-card">
+        <div class="prog-card-top">
+          <div>
+            <div class="prog-card-label">Rock Day: Display</div>
+            <div class="prog-card-channel prog-ch-google">Google Display</div>
+          </div>
+          <span class="prog-pct pct-ok">80,5%</span>
+        </div>
+        <div class="prog-numbers">
+          <span class="prog-delivered">40.244</span>
+          <span class="prog-meta-val">de 50.000 impressões</span>
+        </div>
+        <div class="prog-track"><div class="prog-fill fill-teal" data-w="80.5"></div></div>
+        <div class="prog-note">9.756 impressões restantes · interior paulista</div>
+      </div>
+
+      <div class="prog-card">
+        <div class="prog-card-top">
+          <div>
+            <div class="prog-card-label">YouTube Rock Day</div>
+            <div class="prog-card-channel prog-ch-yt">YouTube</div>
+          </div>
+          <span class="prog-pct pct-warn">57,4%</span>
+        </div>
+        <div class="prog-numbers">
+          <span class="prog-delivered">4.594</span>
+          <span class="prog-meta-val">de 8.000 visualizações</span>
+        </div>
+        <div class="prog-track"><div class="prog-fill fill-yt" data-w="57.4"></div></div>
+        <div class="prog-note">TrueView + Bumper · 3.406 views restantes</div>
+      </div>
+
+      <div class="prog-card">
+        <div class="prog-card-top">
+          <div>
+            <div class="prog-card-label">Spotify: Áudio 30s</div>
+            <div class="prog-card-channel prog-ch-spotify">Spotify</div>
+          </div>
+          <span class="prog-pct pct-hot">14,7%</span>
+        </div>
+        <div class="prog-numbers">
+          <span class="prog-delivered">1.759</span>
+          <span class="prog-meta-val">de 12.000 escutas completas</span>
+        </div>
+        <div class="prog-track"><div class="prog-fill fill-green" data-w="14.7"></div></div>
+        <div class="prog-note">Iniciou em 23/06 · 10.241 escutas restantes</div>
+      </div>
+
+    </div>
+
+    <div class="meta-insight fade-in">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#17A697" stroke-width="2" style="flex-shrink:0"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      <span>O Meta Ads atingiu <strong>68,1% da meta consolidada de 1 milhão de impressões</strong> até 26/06. Display (80,5%) está mais próximo da meta. YouTube (57,4%) e Spotify (14,7%) seguem em entrega até 04/07.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══ KPIs GERAIS ══ -->
+<section class="section" id="kpis">
+  <span class="sl">Métricas Consolidadas</span>
+  <h2 class="st fade-in">KPIs Principais</h2>
+  <p class="ss fade-in">Visão geral da campanha Rock Day 2026 + Temas Diversos · 04/06 a 26/06/2026 · todos os canais.</p>
+
+  <div class="kpi-grid">
+    <div class="kc featured fade-in">
+      <div class="kc-badge">&#9733; 775K totais</div>
+      <div class="kc-lbl">Impressões Totais</div>
+      <div class="kc-val">775K</div>
+      <div class="kc-sub">Meta · Google · YouTube · Spotify combinados</div>
+    </div>
+    <div class="kc purple fade-in">
+      <div class="kc-lbl">Contas Alcançadas</div>
+      <div class="kc-val">285K</div>
+      <div class="kc-sub">Pessoas únicas impactadas no Meta Ads</div>
+    </div>
+    <div class="kc teal featured fade-in">
+      <div class="kc-badge teal">&#9733; Zona ideal</div>
+      <div class="kc-lbl">Frequência Rock Day</div>
+      <div class="kc-val">2,2×</div>
+      <div class="kc-sub">Frequência média Rock Day (camp. Meta Ads)</div>
+    </div>
+    <div class="kc fade-in" data-channel-kpi="meta">
+      <div class="kc-lbl">Impressões Meta Ads</div>
+      <div class="kc-val">681K</div>
+      <div class="kc-sub">Rock Day + Temas Diversos</div>
+    </div>
+    <div class="kc fade-in" data-channel-kpi="display">
+      <div class="kc-lbl">Impressões Google Display</div>
+      <div class="kc-val">40.244</div>
+      <div class="kc-sub">Banners em portais regionais</div>
+    </div>
+    <div class="kc yt fade-in" data-channel-kpi="youtube">
+      <div class="kc-lbl">Impactos YouTube</div>
+      <div class="kc-val">52.070</div>
+      <div class="kc-sub">TrueView 8.950 imp · Bumper 43.120 imp</div>
+    </div>
+    <div class="kc teal fade-in" data-channel-kpi="meta">
+      <div class="kc-lbl">Cliques Meta Ads</div>
+      <div class="kc-val">619</div>
+      <div class="kc-sub">Rock Day 501 · Temas Diversos 118</div>
+    </div>
+    <div class="kc green fade-in" data-channel-kpi="spotify">
+      <div class="kc-lbl">Spotify: Finalização</div>
+      <div class="kc-val">96%</div>
+      <div class="kc-sub">Taxa de escuta completa do áudio 30s</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════ -->
+<!-- CANAL 01 — META ADS       -->
+<!-- ══════════════════════════ -->
+<div data-channel="meta">
+  <div class="ch-sep ch-meta">
+    <div class="ch-sep-inner">
+      <div class="ch-sep-row">
+        <div class="ch-sep-accent"></div>
+        <div class="ch-sep-info">
+          <div class="ch-sep-eyebrow">Canal 01 · Meta Ads</div>
+          <div class="ch-sep-name">Rock Day + Temas Diversos: Público Direcionado e Criativos</div>
+        </div>
+        <span class="ch-sep-num">01</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Rock Day Públicos -->
+  <section class="section" id="conjuntos" style="padding-top:40px">
+    <span class="sl purple">Rock Day 2026</span>
+    <h2 class="st fade-in">Público Direcionado: Rock Day</h2>
+    <p class="ss fade-in">Dois públicos simultâneos: Americana (geo primária) e Outras Cidades (expansão regional: Sta. Bárbara, Piracicaba, Limeira, Campinas).</p>
+
+    <div class="cj-grid">
+      <div class="cj p1 fade-in">
+        <div class="cj-tag">Geo Primária</div>
+        <div class="cj-title">Americana</div>
+        <div class="cj-desc">25–45 anos · Fãs de rock, shows e eventos. Segmentação na cidade-sede do Rock Day com alta frequência de contato.</div>
+        <div class="cj-metrics">
+          <div class="cmi"><span class="cmi-v">278.020</span><span class="cmi-k">Impressões</span></div>
+          <div class="cmi"><span class="cmi-v">92.136</span><span class="cmi-k">Contas alcançadas</span></div>
+          <div class="cmi"><span class="cmi-v">354</span><span class="cmi-k">Cliques</span></div>
+          <div class="cmi"><span class="cmi-v">3,02×</span><span class="cmi-k">Frequência</span></div>
+        </div>
+        <div class="cj-bar">
+          <div class="cb-lbl">Participação no Rock Day (impressões)</div>
+          <div class="cb-track"><div class="cb-fill" data-width="60.7%"></div></div>
+          <div class="cb-pct">60,7%</div>
+        </div>
+      </div>
+
+      <div class="cj p2 fade-in">
+        <div class="cj-tag">Expansão Regional</div>
+        <div class="cj-title">Outras Cidades</div>
+        <div class="cj-desc">25–45 anos · Sta. Bárbara d'Oeste, Piracicaba, Limeira e Campinas (com filtro de interesse em rock/eventos).</div>
+        <div class="cj-metrics">
+          <div class="cmi"><span class="cmi-v">180.628</span><span class="cmi-k">Impressões</span></div>
+          <div class="cmi"><span class="cmi-v">110.112</span><span class="cmi-k">Contas alcançadas</span></div>
+          <div class="cmi"><span class="cmi-v">147</span><span class="cmi-k">Cliques</span></div>
+          <div class="cmi"><span class="cmi-v">1,64×</span><span class="cmi-k">Frequência</span></div>
+        </div>
+        <div class="cj-bar">
+          <div class="cb-lbl">Participação no Rock Day (impressões)</div>
+          <div class="cb-track"><div class="cb-fill" data-width="39.3%"></div></div>
+          <div class="cb-pct">39,3%</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ch-box fade-in" style="margin-top:32px">
+      <div class="ch-hdr">
+        <div>
+          <div class="ch-title">Distribuição de Impressões: Rock Day</div>
+          <div class="ch-desc">Americana e Outras Cidades em perspectiva. Total Rock Day: 527.206 impressões.</div>
+        </div>
+      </div>
+      <div class="ch-wrap" style="height:220px"><canvas id="chartRockDay"></canvas></div>
+    </div>
+
+    <div class="ib fade-in">
+      <div class="ib-lbl">Desequilíbrio estratégico na reta final</div>
+      <div class="ib-txt">Americana recebeu <strong>60,7%</strong> das impressões do Rock Day com frequência 3,02×, na zona ideal para a cidade-sede. Outras Cidades registra 1,64×, com espaço para intensificação. A meta de expansão regional depende desta frente para ser cumprida até 04/07.</div>
+    </div>
+  </section>
+
+  <!-- Temas Diversos Públicos -->
+  <section class="section" id="temas" style="padding-top:0">
+    <span class="sl purple">Temas Diversos</span>
+    <h2 class="st fade-in">Público Direcionado: Temas Diversos</h2>
+    <p class="ss fade-in">Campanha institucional paralela com pautas de serviços e comunicação municipal.</p>
+
+    <div class="cj-grid">
+      <div class="cj p3 fade-in">
+        <div class="cj-tag">Público Amplo</div>
+        <div class="cj-title">Geo Americana, 18+</div>
+        <div class="cj-desc">Segmentação aberta por localização em Americana. Pautas: Vacina Gripe, Mais Segurança, Progresso Social.</div>
+        <div class="cj-metrics">
+          <div class="cmi"><span class="cmi-v">109.013</span><span class="cmi-k">Impressões</span></div>
+          <div class="cmi"><span class="cmi-v">65.478</span><span class="cmi-k">Contas alcançadas</span></div>
+          <div class="cmi"><span class="cmi-v">93</span><span class="cmi-k">Cliques</span></div>
+          <div class="cmi"><span class="cmi-v">1,66×</span><span class="cmi-k">Frequência</span></div>
+        </div>
+        <div class="cj-bar">
+          <div class="cb-lbl">Participação no Temas Diversos</div>
+          <div class="cb-track"><div class="cb-fill" data-width="79.5%"></div></div>
+          <div class="cb-pct">79,5%</div>
+        </div>
+      </div>
+
+      <div class="cj p4 fade-in">
+        <div class="cj-tag">Público EJA</div>
+        <div class="cj-title">Educação de Jovens e Adultos</div>
+        <div class="cj-desc">18–55+ anos. Segmentação por interesse em educação e programas municipais.</div>
+        <div class="cj-metrics">
+          <div class="cmi"><span class="cmi-v">28.055</span><span class="cmi-k">Impressões</span></div>
+          <div class="cmi"><span class="cmi-v">15.345</span><span class="cmi-k">Contas alcançadas</span></div>
+          <div class="cmi"><span class="cmi-v">25</span><span class="cmi-k">Cliques</span></div>
+          <div class="cmi"><span class="cmi-v">1,83×</span><span class="cmi-k">Frequência</span></div>
+        </div>
+        <div class="cj-bar">
+          <div class="cb-lbl">Participação no Temas Diversos</div>
+          <div class="cb-track"><div class="cb-fill" data-width="20.5%"></div></div>
+          <div class="cb-pct">20,5%</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Criativos Meta -->
+  <section class="section" id="anuncios" style="padding-top:0">
+    <span class="sl teal">Criativos</span>
+    <h2 class="st fade-in">Anúncios da Campanha</h2>
+    <p class="ss fade-in">Top 3 criativos por impressões. "Novo Endereço" lidera: o anúncio do novo local do Rock Day concentrou cerca de 30% de todos os impactos.</p>
+
+    <div class="ad-grid fade-in">
+      <div class="ad">
+        <div class="ad-img" style="height:220px;padding:0;overflow:hidden;background:#111">
+          <img src="assets/novo-endereco-rock-day.jpg" alt="Novo Endereço Rock Day" style="width:100%;height:100%;object-fit:cover;opacity:1" onerror="this.parentElement.innerHTML='🎸'" />
+        </div>
+        <div class="ad-body">
+          <div class="ad-hdr">
+            <div class="ad-badge b1">&#9733; Mais impressões</div>
+            <div class="ad-fmt">Feed · Card</div>
+          </div>
+          <div class="ad-name">Novo Endereço Rock Day (Americana)</div>
+          <div class="ad-metrics">
+            <div class="ami hi"><span class="ami-v">207.971</span><span class="ami-k">Impressões</span></div>
+            <div class="ami"><span class="ami-v">268</span><span class="ami-k">Cliques</span></div>
+            <div class="ami"><span class="ami-v">30,5%</span><span class="ami-k">Do total Meta</span></div>
+            <div class="ami"><span class="ami-v">0,13%</span><span class="ami-k">CTR</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ad">
+        <div class="ad-img" style="height:220px;padding:0;overflow:hidden;background:#111">
+          <img src="assets/novo-endereco-rock-day.jpg" alt="Novo Endereço Rock Day Outras Cidades" style="width:100%;height:100%;object-fit:cover;opacity:1" onerror="this.parentElement.innerHTML='🌆'" />
+        </div>
+        <div class="ad-body">
+          <div class="ad-hdr">
+            <div class="ad-badge b2">2º lugar</div>
+            <div class="ad-fmt">Feed · Card</div>
+          </div>
+          <div class="ad-name">Novo Endereço Rock Day (Outras Cidades)</div>
+          <div class="ad-metrics">
+            <div class="ami hi"><span class="ami-v">129.572</span><span class="ami-k">Impressões</span></div>
+            <div class="ami"><span class="ami-v">111</span><span class="ami-k">Cliques</span></div>
+            <div class="ami"><span class="ami-v">19,0%</span><span class="ami-k">Do total Meta</span></div>
+            <div class="ami"><span class="ami-v">0,09%</span><span class="ami-k">CTR</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ad">
+        <div class="ad-carousel" style="border-radius:12px 12px 0 0">
+          <button class="ac-btn ac-prev" onclick="acMove(-1)">&#8249;</button>
+          <div class="ac-track" id="acTrack">
+            <div class="ac-slide"><img src="assets/carrossel-1.jpeg" alt="Card 1" /></div>
+            <div class="ac-slide"><img src="assets/carrossel-2b.jpeg" alt="Card 2" /></div>
+            <div class="ac-slide"><img src="assets/carrossel-3b.jpeg" alt="Card 3" /></div>
+            <div class="ac-slide"><img src="assets/carrossel-4.jpeg" alt="Card 4" /></div>
+          </div>
+          <button class="ac-btn ac-next" onclick="acMove(1)">&#8250;</button>
+          <div class="ac-dots" id="acDots">
+            <span class="ac-dot active" onclick="acGoTo(0)"></span>
+            <span class="ac-dot" onclick="acGoTo(1)"></span>
+            <span class="ac-dot" onclick="acGoTo(2)"></span>
+            <span class="ac-dot" onclick="acGoTo(3)"></span>
+          </div>
+        </div>
+        <div class="ad-body">
+          <div class="ad-hdr">
+            <div class="ad-badge b3">3º lugar</div>
+            <div class="ad-fmt">Feed · Carrossel</div>
+          </div>
+          <div class="ad-name">Dark Post: Carrossel Rock Day (Americana)</div>
+          <div class="ad-metrics">
+            <div class="ami hi"><span class="ami-v">70.049</span><span class="ami-k">Impressões</span></div>
+            <div class="ami"><span class="ami-v">86</span><span class="ami-k">Cliques</span></div>
+            <div class="ami"><span class="ami-v">10,3%</span><span class="ami-k">Do total Meta</span></div>
+            <div class="ami"><span class="ami-v">0,12%</span><span class="ami-k">CTR</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ch-box fade-in" style="margin-top:32px">
+      <div class="ch-hdr">
+        <div>
+          <div class="ch-title">Impressões por Criativo: todos os 8 anúncios</div>
+          <div class="ch-desc">"Novo Endereço" (Americana + Outras Cidades) concentrou 49,6% das impressões totais do Meta.</div>
+        </div>
+      </div>
+      <div class="ch-wrap" style="height:260px"><canvas id="chartAnuncios"></canvas></div>
+    </div>
+
+    <div class="ib teal fade-in">
+      <div class="ib-lbl">Criativo dominante</div>
+      <div class="ib-txt">A campanha foi estruturada em dois direcionamentos geográficos simultâneos: <strong>Americana</strong> (cidade-sede, público 25–45 fãs de rock) e <strong>Outras Cidades</strong> (Sta. Bárbara d'Oeste, Piracicaba, Limeira e Campinas, com filtro de interesse em rock e eventos). Cada direcionamento rodou com criativos próprios adaptados ao contexto local. Consolidando os dois conjuntos, o anúncio <strong>"Novo Endereço"</strong> foi o criativo de maior desempenho por larga margem — 337.543 impressões (207.971 + 129.572), representando <strong>49,6% de todas as impressões Meta</strong>. A comunicação direta e prática sobre o novo local do evento demonstrou ser o elemento de maior tração em ambos os públicos, superando todos os outros criativos da campanha.</div>
+    </div>
+  </section>
+</div><!-- /meta -->
+
+
+<!-- ══════════════════════════ -->
+<!-- CANAL 02 — GOOGLE DISPLAY -->
+<!-- ══════════════════════════ -->
+<div data-channel="display">
+  <div class="ch-sep ch-display">
+    <div class="ch-sep-inner">
+      <div class="ch-sep-row">
+        <div class="ch-sep-accent"></div>
+        <div class="ch-sep-info">
+          <div class="ch-sep-eyebrow">Canal 02 · Google Display</div>
+          <div class="ch-sep-name">Banners em Portais Regionais</div>
+        </div>
+        <span class="ch-sep-num">02</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="section" id="display-canal" style="padding-top:40px">
+    <span class="sl teal">Google Display Network</span>
+    <h2 class="st fade-in">Cobertura Regional</h2>
+    <p class="ss fade-in">Banners responsivos em sites e portais do interior paulista, alcançando o público regional nos dias que antecedem o Rock Day.</p>
+
+    <div class="kpi-grid">
+      <div class="kc teal featured fade-in">
+        <div class="kc-badge teal">&#9733; Destaque</div>
+        <div class="kc-lbl">Impressões Display</div>
+        <div class="kc-val">40.244</div>
+        <div class="kc-sub">Banners entregues na região</div>
+      </div>
+      <div class="kc fade-in">
+        <div class="kc-lbl">Cliques Display</div>
+        <div class="kc-val">18</div>
+        <div class="kc-sub">CTR médio 0,04%, campanha de reconhecimento</div>
+      </div>
+    </div>
+
+    <div class="ib teal fade-in" style="margin-top:32px">
+      <div class="ib-lbl">Análise Google Display</div>
+      <div class="ib-txt">A estratégia de banners em portais regionais garante presença durante toda a jornada online do público, além das redes sociais. A campanha está em ritmo de entrega com 80,5% da meta concluída.</div>
+    </div>
+  </section>
+</div><!-- /display -->
+
+
+<!-- ══════════════════════════ -->
+<!-- CANAL 03 — YOUTUBE        -->
+<!-- ══════════════════════════ -->
+<div data-channel="youtube">
+  <div class="ch-sep ch-youtube">
+    <div class="ch-sep-inner">
+      <div class="ch-sep-row">
+        <div class="ch-sep-accent"></div>
+        <div class="ch-sep-info">
+          <div class="ch-sep-eyebrow">Canal 03 · YouTube</div>
+          <div class="ch-sep-name">TrueView In-Stream + Bumper Ads 6s</div>
+        </div>
+        <span class="ch-sep-num">03</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="section" id="youtube-canal" style="padding-top:40px">
+    <span class="sl yt">YouTube Ads</span>
+    <h2 class="st fade-in">Performance em Vídeo</h2>
+    <p class="ss fade-in">Dois formatos simultâneos: TrueView (in-stream pulável, 20–30s) para alcance e consideração; Bumper (6s não-pulável) para reforço de marca e contagem regressiva.</p>
+
+    <div style="margin-bottom:8px;font-size:.65rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--yt);opacity:.7">TrueView In-Stream (pulável)</div>
+    <div class="kpi-grid" style="margin-bottom:32px">
+      <div class="kc yt featured fade-in">
+        <div class="kc-badge" style="background:rgba(204,0,0,.08);color:var(--yt)">&#9733; Meta: 8.000 views</div>
+        <div class="kc-lbl">Views TrueView</div>
+        <div class="kc-val">4.594</div>
+        <div class="kc-sub">57,4% da meta · 3.406 restantes</div>
+      </div>
+      <div class="kc fade-in">
+        <div class="kc-lbl">Impressões TrueView</div>
+        <div class="kc-val">8.950</div>
+        <div class="kc-sub">Americana 5.542 · Outras Cidades 3.408</div>
+      </div>
+      <div class="kc teal featured fade-in">
+        <div class="kc-badge teal">&#9733; Alta retenção</div>
+        <div class="kc-lbl">VTR Americana</div>
+        <div class="kc-val">57%</div>
+        <div class="kc-sub">3.159 views de 5.542 impressões</div>
+      </div>
+      <div class="kc fade-in">
+        <div class="kc-lbl">VTR Outras Cidades</div>
+        <div class="kc-val">42%</div>
+        <div class="kc-sub">1.435 views de 3.408 impressões</div>
+      </div>
+    </div>
+
+    <div style="margin-bottom:8px;font-size:.65rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--yt);opacity:.7">Bumper Ads (6s não-pulável)</div>
+    <div class="kpi-grid" style="margin-bottom:32px">
+      <div class="kc yt featured fade-in">
+        <div class="kc-lbl">Impressões Bumper</div>
+        <div class="kc-val">43.120</div>
+        <div class="kc-sub">Reforço de marca não-pulável · 6s</div>
+      </div>
+      <div class="kc fade-in">
+        <div class="kc-lbl">Total Impactos YouTube</div>
+        <div class="kc-val">52.070</div>
+        <div class="kc-sub">TrueView 8.950 + Bumper 43.120</div>
+      </div>
+    </div>
+
+    <div class="ch-box fade-in" style="margin-top:32px">
+      <div class="ch-title" style="margin-bottom:16px">Performance por Vídeo: Americana</div>
+      <div style="overflow-x:auto">
+        <table>
+          <thead><tr><th>Vídeo</th><th>Duração</th><th>Formato</th><th>Impressões</th><th>Views</th><th>VTR</th></tr></thead>
+          <tbody>
+            <tr class="hl"><td>RockDay Americana 2026</td><td>0:20</td><td>TrueView</td><td>5.095</td><td>2.495</td><td>49,0%</td></tr>
+            <tr class="hl"><td>Americana, terra de grandes eventos</td><td>0:29</td><td>TrueView</td><td>2.912</td><td>1.619</td><td>55,6%</td></tr>
+            <tr><td>RockDay Outras Cidades</td><td>0:20</td><td>TrueView</td><td>3.408</td><td>1.435</td><td>42,1%</td></tr>
+            <tr><td>RockDay Americana 2026</td><td>0:06</td><td>Bumper</td><td>43.120</td><td>n/a</td><td>n/a</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="ib yt fade-in">
+      <div class="ib-lbl">Análise YouTube</div>
+      <div class="ib-txt">O VTR de <strong>57%</strong> na campanha TrueView Americana indica que mais da metade do público assistiu ao anúncio sem pular. O Bumper de 6s garante impacto repetido com 43.120 impressões sem possibilidade de pulo, ideal para contagem regressiva nos dias anteriores ao evento.</div>
+    </div>
+  </section>
+</div><!-- /youtube -->
+
+
+<!-- ══════════════════════════ -->
+<!-- CANAL 04 — SPOTIFY        -->
+<!-- ══════════════════════════ -->
+<div data-channel="spotify">
+  <div class="ch-sep ch-spotify">
+    <div class="ch-sep-inner">
+      <div class="ch-sep-row">
+        <div class="ch-sep-accent"></div>
+        <div class="ch-sep-info">
+          <div class="ch-sep-eyebrow">Canal 04 · Spotify</div>
+          <div class="ch-sep-name">Áudio 30s + Companion Banner</div>
+        </div>
+        <span class="ch-sep-num">04</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="section" id="spotify-canal" style="padding-top:40px">
+    <span class="sl green">Spotify Ads</span>
+    <h2 class="st fade-in">Audiência de Música</h2>
+    <p class="ss fade-in">Ativação iniciada em 23/06. Segmentação por fãs de rock nacional, Os Paralamas, CPM 22 e Raimundos. Veiculação até 02/07/2026.</p>
+
+    <div class="kpi-grid">
+      <div class="kc green featured fade-in">
+        <div class="kc-badge" style="background:rgba(29,185,84,.10);color:var(--spotify)">&#9733; 96% finalização</div>
+        <div class="kc-lbl">Taxa de Escuta Completa</div>
+        <div class="kc-val">96%</div>
+        <div class="kc-sub">Audio Ad 30s com altíssima retenção</div>
+      </div>
+      <div class="kc fade-in">
+        <div class="kc-lbl">Impressões</div>
+        <div class="kc-val">1.831</div>
+        <div class="kc-sub">Campanha ativa · iniciou 23/06</div>
+      </div>
+      <div class="kc fade-in">
+        <div class="kc-lbl">Alcance</div>
+        <div class="kc-val">1.035</div>
+        <div class="kc-sub">Ouvintes únicos impactados</div>
+      </div>
+      <div class="kc fade-in">
+        <div class="kc-lbl">Frequência</div>
+        <div class="kc-val">1,77×</div>
+        <div class="kc-sub">Exposições por ouvinte até agora</div>
+      </div>
+    </div>
+
+    <div class="ib green fade-in">
+      <div class="ib-lbl">Spotify em fase inicial</div>
+      <div class="ib-txt">Com apenas 3 dias de veiculação, o Spotify entregou 1.831 impressões e já demonstra <strong>96% de taxa de finalização</strong>: a audiência está escutando o áudio completo. Os 10 dias restantes (até 02/07) devem entregar o volume principal. O áudio é veiculado diretamente para fãs dos artistas do evento no momento em que estão ouvindo música, o contexto mais receptivo possível.</div>
+    </div>
+  </section>
+</div><!-- /spotify -->
+
+
+<!-- ══ DIAGNÓSTICO ══ -->
+<div class="diag" id="diagnostico">
+  <div class="diag-inner">
+    <span class="sl diag-lbl">Diagnóstico</span>
+    <h2 class="st diag-st fade-in">Análise da Campanha</h2>
+    <p class="ss diag-ss fade-in">Leitura do período 04/06 a 26/06. A campanha está em veiculação até 04/07, data do Rock Day.</p>
+
+    <div class="dc-grid fade-in">
+      <div class="dc">
+        <div class="dc-acc t"></div>
+        <div class="dc-num">01</div>
+        <div class="dc-metric">65,9%</div>
+        <div class="dc-title">Rock Day no Meta Ads em entrega</div>
+        <div class="dc-text">A campanha de Rock Day atingiu 65,9% da meta de impressões no Meta Ads até 26/06, com Americana recebendo frequência 3,02× e Outras Cidades em 1,64×. O foco da reta final é intensificar Outras Cidades para equilibrar a cobertura regional.</div>
+      </div>
+      <div class="dc">
+        <div class="dc-acc r"></div>
+        <div class="dc-num">02</div>
+        <div class="dc-metric">57,4%</div>
+        <div class="dc-title">YouTube avança para a reta final</div>
+        <div class="dc-text">O YouTube TrueView entregou 57,4% das visualizações contratadas (4.594 de 8.000). O Bumper de 6s complementa com reforço diário não-pulável. Os dois formatos seguem em veiculação e tendem a acelerar na fase de urgência pré-evento.</div>
+      </div>
+      <div class="dc">
+        <div class="dc-acc b"></div>
+        <div class="dc-num">03</div>
+        <div class="dc-metric">49,6%</div>
+        <div class="dc-title">"Novo Endereço" domina o Meta</div>
+        <div class="dc-text">O anúncio comunicando o novo local do evento respondeu por 49,6% de todas as impressões no Meta. Informação prática e concreta (onde, quando, como chegar) supera conteúdo genérico, padrão consistente em campanhas de eventos.</div>
+      </div>
+      <div class="dc">
+        <div class="dc-acc t"></div>
+        <div class="dc-num">04</div>
+        <div class="dc-metric">5 cidades</div>
+        <div class="dc-title">Cobertura regional consolidada</div>
+        <div class="dc-text">Americana, Campinas, Piracicaba, Limeira e Sta. Bárbara estão sendo impactadas simultaneamente por Meta Ads, Google Display e YouTube. A expansão regional está presente em todos os canais digitais, com a mensagem chegando por múltiplos pontos de contato.</div>
+      </div>
+      <div class="dc">
+        <div class="dc-acc p"></div>
+        <div class="dc-num">05</div>
+        <div class="dc-metric">57%</div>
+        <div class="dc-title">Vídeo com alta retenção em Americana</div>
+        <div class="dc-text">A campanha TrueView Americana registrou VTR de 57%, com mais da metade do público assistindo ao anúncio sem pular. Alta retenção em pré-evento indica interesse real do público. O Bumper de 6s (43.120 impressões) reforça a mensagem diariamente sem possibilidade de pulo.</div>
+      </div>
+      <div class="dc">
+        <div class="dc-acc g"></div>
+        <div class="dc-num">06</div>
+        <div class="dc-metric">96%</div>
+        <div class="dc-title">Spotify com altíssima finalização</div>
+        <div class="dc-text">Nos primeiros 3 dias, 96% das reproduções do áudio foram completadas. A plataforma entrega o público no momento de maior receptividade musical. Os 10 dias restantes (até 02/07) são o período principal de veiculação para fãs de Os Paralamas, CPM 22 e Raimundos.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- ══ FOOTER ══ -->
+<footer class="footer">
+  <img src="assets/logo-americana.jpeg" alt="Prefeitura de Americana" class="footer-logo" onerror="this.style.display='none'" />
+  <p class="footer-txt">
+    Relatório gerado por Esquina &middot; Agência de Performance &middot; Período 04/06–26/06/2026<br/>
+    Dados: Meta Ads Manager &middot; Google Ads &middot; YouTube Studio &middot; Spotify Ad Analytics<br/>
+    Campanha Rock Day 2026 + Temas Diversos &middot; Prefeitura Municipal de Americana
+  </p>
+</footer>
+
+
+<!-- ══ SCRIPTS ══ -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<script>
+/* ════ SETUP DE CANAIS ════ */
+const CHANNELS = {
+  meta:    { label:'Meta Ads',       chip:'chip-meta',    href:'#conjuntos' },
+  display: { label:'Google Display', chip:'chip-display', href:'#display-canal' },
+  youtube: { label:'YouTube',        chip:'chip-yt',      href:'#youtube-canal' },
+  spotify: { label:'Spotify',        chip:'chip-spotify', href:'#spotify-canal' },
+};
+
+document.querySelectorAll('.setup-ch input[type=checkbox]').forEach(inp => {
+  inp.addEventListener('change', () => {
+    inp.closest('.setup-ch').classList.toggle('active', inp.checked);
+  });
+});
+
+function applySetup() {
+  const inputs = document.querySelectorAll('.setup-ch input[type=checkbox]');
+  const active = [...inputs].filter(i => i.checked).map(i => i.value);
+
+  document.querySelectorAll('[data-channel]').forEach(el => {
+    el.style.display = active.includes(el.dataset.channel) ? '' : 'none';
+  });
+  document.querySelectorAll('[data-channel-kpi]').forEach(el => {
+    el.style.display = active.includes(el.dataset.channelKpi) ? '' : 'none';
+  });
+
+  const wrap = document.getElementById('navChips');
+  wrap.innerHTML = '';
+  active.forEach(ch => {
+    const cfg = CHANNELS[ch]; if(!cfg) return;
+    const a = document.createElement('a');
+    a.href = cfg.href; a.className = 'chip ' + cfg.chip; a.textContent = cfg.label;
+    wrap.appendChild(a);
+  });
+
+  document.getElementById('heroChannels').textContent = active.length;
+  document.getElementById('setupOverlay').style.display = 'none';
+  try { localStorage.setItem('parcialChannels_americana', JSON.stringify(active)); } catch(e){}
+}
+
+function openSetup() { document.getElementById('setupOverlay').style.display = 'flex'; }
+
+window.addEventListener('DOMContentLoaded', () => {
+  let saved = null;
+  try { saved = JSON.parse(localStorage.getItem('parcialChannels_americana')); } catch(e){}
+  if(!saved || !Array.isArray(saved) || !saved.length) {
+    saved = ['meta','display','youtube','spotify'];
+  }
+  document.querySelectorAll('.setup-ch input[type=checkbox]').forEach(inp => {
+    if(!inp.disabled) inp.checked = saved.includes(inp.value);
+    inp.closest('.setup-ch').classList.toggle('active', inp.checked);
+  });
+  applySetup();
+});
+
+/* ════ ANIMAÇÕES ════ */
+const obs = new IntersectionObserver(e => e.forEach(x => {
+  if(x.isIntersecting){ x.target.classList.add('visible'); obs.unobserve(x.target); }
+}), {threshold:.15});
+document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+
+const bObs = new IntersectionObserver(e => {
+  e.forEach(x => {
+    if(!x.isIntersecting) return;
+    const el = x.target;
+    if(el.classList.contains('prog-fill')) {
+      setTimeout(() => { el.style.width = (el.dataset.w || '0') + '%'; }, 250);
+    }
+    if(el.classList.contains('cb-fill')) {
+      setTimeout(() => { el.style.width = el.dataset.width || '0%'; }, 200);
+    }
+    bObs.unobserve(el);
+  });
+}, {threshold:.3});
+document.querySelectorAll('.prog-fill, .cb-fill').forEach(el => bObs.observe(el));
+
+/* ════ CHARTS ════ */
+Chart.defaults.font.family = "'Inter', sans-serif";
+const C = { navy:'#0D1B6E', blue:'#1A3CFF', teal:'#17A697', purple:'#7B2FBE', warn:'#CC8800', yt:'#CC0000', green:'#1DB954' };
+const TIP = { backgroundColor:'#fff', titleColor:'#111', bodyColor:'#555', borderColor:'rgba(0,0,0,0.09)', borderWidth:1, cornerRadius:10, padding:14, displayColors:false };
+
+/* Rock Day Doughnut */
+new Chart(document.getElementById('chartRockDay'), {
+  type:'doughnut',
+  data: {
+    labels:['Americana','Outras Cidades'],
+    datasets:[{data:[278020,180628], backgroundColor:[C.blue,C.purple], borderColor:'#fff', borderWidth:4, hoverOffset:8}]
+  },
+  options: { responsive:true, maintainAspectRatio:false, cutout:'68%',
+    plugins:{ legend:{position:'right',labels:{font:{size:12,weight:'500'},color:'#444',padding:16}},
+      tooltip:{...TIP, callbacks:{label:ctx=>{ const t=ctx.dataset.data.reduce((a,b)=>a+b,0); return '  '+ctx.parsed.toLocaleString('pt-BR')+' imp ('+(ctx.parsed/t*100).toFixed(1)+'%)'; }}} }
+  }
+});
+
+/* Criativos Barras */
+new Chart(document.getElementById('chartAnuncios'), {
+  type:'bar',
+  data: {
+    labels:['Novo Endereço (Americana)','Novo Endereço (Outras Cidades)','Carrossel RD (Americana)','Vacina Gripe','Carrossel RD (Outras Cid.)','Mais Segurança','Dark Post EJA','Progresso Social'],
+    datasets:[{
+      data:[207971,129572,70049,68766,51056,33115,28055,7127],
+      backgroundColor:[C.blue,C.purple,C.teal,C.warn,'rgba(123,47,190,.55)','rgba(23,166,151,.5)','rgba(204,136,0,.5)','rgba(26,60,255,.35)'],
+      borderRadius:6, borderSkipped:false
+    }]
+  },
+  options: { indexAxis:'y', responsive:true, maintainAspectRatio:false,
+    plugins:{ legend:{display:false}, tooltip:{...TIP, callbacks:{label:ctx=>' '+ctx.parsed.x.toLocaleString('pt-BR')+' imp'}} },
+    scales:{
+      x:{grid:{color:'rgba(0,0,0,.04)'},border:{display:false},ticks:{callback:v=>v>=1000?Math.round(v/1000)+'K':v}},
+      y:{grid:{display:false},border:{display:false},ticks:{font:{size:11,weight:'500'},color:'#333'}}
+    }
+  }
+});
+
+
+/* Carrossel */
+let acIdx = 0;
+function acMove(dir) { acGoTo((acIdx + dir + 4) % 4); }
+function acGoTo(i) {
+  acIdx = i;
+  document.getElementById('acTrack').style.transform = 'translateX(-' + (i * 100) + '%)';
+  document.querySelectorAll('.ac-dot').forEach(function(d, j) { d.classList.toggle('active', j === i); });
+}
+</script>
+</body>
+</html>
