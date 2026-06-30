@@ -244,7 +244,62 @@
     @media(max-width:900px){.dc-grid{grid-template-columns:1fr 1fr}.mm-stats{grid-template-columns:1fr;text-align:center}.mm-side{align-items:center}.fases-grid{grid-template-columns:1fr}}
     @media(max-width:768px){.nav-chips{display:none}.enc-cards{grid-template-columns:1fr 1fr}.kpi-grid{grid-template-columns:1fr 1fr}.g2{grid-template-columns:1fr}.aud-grid{grid-template-columns:1fr}.sd-inner{flex-direction:column}.sd-body{border-left:none;border-top:1px solid rgba(255,255,255,.15);padding-top:24px}}
     @media(max-width:600px){.dc-grid{grid-template-columns:1fr}.enc-cards{grid-template-columns:1fr}}
-    @media print{*{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}.nav,.btn-pdf{display:none!important}.fade-in{opacity:1!important;transform:none!important}@page{size:A4;margin:12mm}}
+    @media print{
+      @page{size:A4 portrait;margin:12mm}
+      *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
+      html,body{overflow:visible!important}
+      .nav,.btn-pdf{display:none!important}
+      body{padding-top:0!important}
+      .fade-in{opacity:1!important;transform:none!important}
+
+      /* ── Quebras de página entre seções principais ── */
+      .hero{min-height:0;break-after:page;page-break-after:always}
+      .enc{break-before:page;page-break-before:always}
+      .meta-wrap{break-before:page;page-break-before:always}
+      #display{break-before:page;page-break-before:always}
+      .diag{break-before:page;page-break-before:always}
+
+      /* ── Elementos que nunca devem ser cortados ── */
+      .ec,.kc,.fase-card,.dc,.chart-wrap,.ib,.insight,.mm-stats{
+        break-inside:avoid;page-break-inside:avoid
+      }
+
+      /* ── Grids → flex wrap para quebrar entre linhas, não dentro de cards ── */
+      .enc-cards{display:flex!important;flex-wrap:wrap!important;gap:16px!important}
+      .enc-cards>.ec{flex:1 1 calc(50% - 8px)!important;min-width:200px}
+
+      .kpi-grid{display:flex!important;flex-wrap:wrap!important;gap:14px!important}
+      .kpi-grid>.kc{flex:1 1 calc(33% - 10px)!important;min-width:160px}
+
+      .fases-grid{display:flex!important;flex-wrap:wrap!important;gap:16px!important}
+      .fases-grid>.fase-card{flex:1 1 calc(50% - 8px)!important;min-width:220px}
+
+      .dc-grid{display:flex!important;flex-wrap:wrap!important;gap:18px!important}
+      .dc-grid>.dc{flex:1 1 calc(33% - 12px)!important;min-width:180px}
+
+      .aud-grid{display:block!important}
+      .aud-grid>.chart-wrap{margin-bottom:20px!important}
+
+      .g2{display:block!important}
+      .g2>.chart-wrap{margin-bottom:20px!important}
+      .g3{display:block!important}
+      .g3>*{margin-bottom:16px!important}
+
+      /* ── dt-wrap: tabela + insight como unidade ── */
+      .dt-wrap{break-inside:auto;page-break-inside:auto}
+      .dt-wrap .chart-wrap{break-inside:avoid;page-break-inside:avoid}
+      .dt-wrap .ib{break-inside:avoid;page-break-inside:avoid}
+
+      /* ── Tabelas: cabeçalho repete, linhas não cortam ── */
+      .dt thead{display:table-header-group}
+      .dt tbody tr{break-inside:avoid;page-break-inside:avoid}
+
+      /* ── Seção de canal não deve ter position fixed/sticky ── */
+      .sd{break-inside:avoid;page-break-inside:avoid}
+
+      /* ── Footer: sem quebra forçada ── */
+      .footer{break-before:auto;page-break-before:auto;break-inside:avoid}
+    }
   </style>
 </head>
 <body>
