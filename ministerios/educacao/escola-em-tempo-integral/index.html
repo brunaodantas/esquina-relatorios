@@ -245,7 +245,7 @@
     @media(max-width:768px){.nav-chips{display:none}.enc-cards{grid-template-columns:1fr 1fr}.kpi-grid{grid-template-columns:1fr 1fr}.g2{grid-template-columns:1fr}.aud-grid{grid-template-columns:1fr}.sd-inner{flex-direction:column}.sd-body{border-left:none;border-top:1px solid rgba(255,255,255,.15);padding-top:24px}}
     @media(max-width:600px){.dc-grid{grid-template-columns:1fr}.enc-cards{grid-template-columns:1fr}}
     @media print{
-      @page{size:A4 portrait;margin:12mm}
+      @page{size:297mm 167.0625mm;margin:10mm}
       *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
       html,body{overflow:visible!important}
       .nav,.btn-pdf{display:none!important}
@@ -516,59 +516,113 @@
 
   <!-- CRIATIVOS -->
   <div class="dt-wrap fade-in" style="margin-top:48px">
-    <div class="dt-title">Top 5 Formatos de Criativo por Impressões</div>
-    <div class="g2">
-      <div class="chart-wrap">
-        <div class="chart-title">Distribuição de impressões por formato</div>
-        <canvas id="chartCreativos"></canvas>
-      </div>
-      <div style="overflow-x:auto">
-        <table class="dt" style="margin-top:0">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Formato</th>
-              <th>Impressões</th>
-              <th>Cliques</th>
-              <th>Viewability</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><span class="rank rank-1">1</span></td>
-              <td class="n">160×600 — Arranha-céu Largo</td>
-              <td>1.555.257</td>
-              <td>318</td>
-              <td>80,8%</td>
-            </tr>
-            <tr>
-              <td><span class="rank rank-2">2</span></td>
-              <td class="n">300×50 — Banner Mobile</td>
-              <td>1.331.123</td>
-              <td>642</td>
-              <td>91,1%</td>
-            </tr>
-            <tr>
-              <td><span class="rank rank-3">3</span></td>
-              <td class="n">300×100 — Banner Mobile Grande</td>
-              <td>793.502</td>
-              <td>1.035</td>
-              <td>89,6%</td>
-            </tr>
-            <tr>
-              <td style="color:var(--tm);font-size:.8rem">4</td>
-              <td class="n">120×600 — Arranha-céu</td>
-              <td>154.646</td>
-              <td>49</td>
-              <td>84,8%</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+    <div class="dt-title">Formatos de Criativo por Volume de Impressões — Fonte: Comprovante de Veículo Teratech</div>
+    <div class="chart-wrap">
+      <div class="chart-title">Distribuição de impressões por formato</div>
+      <canvas id="chartCreativos" style="max-height:420px"></canvas>
+    </div>
+    <div style="overflow-x:auto;margin-top:20px">
+      <table class="dt" style="margin-top:0">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Formato</th>
+            <th>Impressões</th>
+            <th>Cliques</th>
+            <th>Viewability</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="rank rank-1">1</span></td>
+            <td class="n">320×50 — Banner Mobile</td>
+            <td>2.127.831</td>
+            <td>1.474</td>
+            <td>84,7%</td>
+          </tr>
+          <tr>
+            <td><span class="rank rank-2">2</span></td>
+            <td class="n">728×90 — Leaderboard</td>
+            <td>1.779.039</td>
+            <td>934</td>
+            <td>88,5%</td>
+          </tr>
+          <tr>
+            <td><span class="rank rank-3">3</span></td>
+            <td class="n">300×250 — Retângulo Médio</td>
+            <td>1.449.701</td>
+            <td>313</td>
+            <td>79,7%</td>
+          </tr>
+          <tr>
+            <td style="color:var(--tm);font-size:.8rem">4</td>
+            <td class="n">300×50 — Banner Mobile</td>
+            <td>1.285.579</td>
+            <td>671</td>
+            <td>89,8%</td>
+          </tr>
+          <tr>
+            <td style="color:var(--tm);font-size:.8rem">5</td>
+            <td class="n">160×600 — Arranha-céu Largo</td>
+            <td>1.267.457</td>
+            <td>234</td>
+            <td>80,1%</td>
+          </tr>
+          <tr>
+            <td style="color:var(--tm);font-size:.8rem">6</td>
+            <td class="n">320×100 — Banner Mobile Grande</td>
+            <td>1.032.099</td>
+            <td>1.198</td>
+            <td>86,9%</td>
+          </tr>
+          <tr>
+            <td style="color:var(--tm);font-size:.8rem">7</td>
+            <td class="n">300×100 — Banner Mobile Grande</td>
+            <td>778.788</td>
+            <td>1.131</td>
+            <td>90,1%</td>
+          </tr>
+          <tr>
+            <td style="color:var(--tm);font-size:.8rem">8</td>
+            <td class="n">970×90 — Super Leaderboard</td>
+            <td>775.021</td>
+            <td>371</td>
+            <td>90,6%</td>
+          </tr>
+          <tr>
+            <td style="color:var(--tm);font-size:.8rem">9</td>
+            <td class="n">970×250 — Billboard</td>
+            <td>665.971</td>
+            <td>860</td>
+            <td>61,7%</td>
+          </tr>
+          <tr>
+            <td style="color:var(--tm);font-size:.8rem">10</td>
+            <td class="n">120×600 — Arranha-céu</td>
+            <td>154.303</td>
+            <td>42</td>
+            <td>85,9%</td>
+          </tr>
+          <tr>
+            <td style="color:var(--tm);font-size:.8rem">11</td>
+            <td class="n">320×480 — Intersticial Mobile</td>
+            <td>56.259</td>
+            <td>156</td>
+            <td>76,6%</td>
+          </tr>
+          <tr>
+            <td style="color:var(--tm);font-size:.8rem">12</td>
+            <td class="n">300×600 — Meia Página</td>
+            <td>1</td>
+            <td>0</td>
+            <td>100,0%</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
     <div class="ib tl fade-in">
       <div class="ib-lbl">Análise de criativos</div>
-      <div class="ib-txt">Os formatos mobile (300×50 e 300×100) concentraram 82% dos cliques registrados nos formatos analisados, com 55,5% das impressões, resultado que reflete o perfil de acesso à internet no Brasil, onde o celular é o principal ponto de contato, especialmente em municípios do interior. Para uma comunicação pública como o Escola em Tempo Integral, isso indica que a mensagem chegou a famílias de todos os perfis socioeconômicos, já que o acesso via smartphone independe de renda. O 300×100 Mobile Grande registrou CTR de 0,13%, mais que o dobro da média geral, confirmando que formatos de maior área visível geram maior adesão. O 160×600, apesar da viewability mais baixa (80,8%), garantiu o maior volume de cobertura, funcionando como presença constante de marca nos ambientes editoriais.</div>
+      <div class="ib-txt">Os 12 formatos veiculados confirmam presença simultânea em ambientes mobile e desktop em escala nacional. O 320×50 liderou em volume (2.127.831 impressões) e também em cliques (1.474), seguido pelo 728×90, que garantiu cobertura nos principais ambientes editoriais desktop. Em cliques, os formatos mobile — 320×50, 320×100 e 300×100 — concentraram 50,7% dos 7.500 registrados, evidenciando que o smartphone foi o principal ponto de contato da população com a mensagem do programa Escola em Tempo Integral. O 970×250, formato de grande dimensão, registrou viewability de 61,7%, padrão esperado para peças que dependem de rolagem da página para serem vistas integralmente, e ainda assim entregaram 860 cliques. A amplitude de formatos garantiu presença da mensagem em praticamente todos os contextos de navegação, do usuário mobile em trânsito ao leitor de portal desktop.</div>
     </div>
   </div>
 
@@ -747,34 +801,40 @@ document.querySelectorAll('#mmFill,.bar-fill').forEach(el => bObs.observe(el));
 new Chart(document.getElementById('chartCreativos'), {
   type: 'bar',
   data: {
-    labels: ['160×600\nArranha-céu Largo', '300×50\nBanner Mobile', '300×100\nMobile Grande', '120×600\nArranha-céu'],
+    labels: ['320×50','728×90','300×250','300×50','160×600','320×100','300×100','970×90','970×250','120×600','320×480','300×600'],
     datasets: [{
       label: 'Impressões',
-      data: [1555257, 1331123, 793502, 154646],
-      backgroundColor: ['rgba(26,60,255,.85)', 'rgba(23,166,151,.85)', 'rgba(123,47,190,.80)', 'rgba(26,60,255,.40)'],
-      borderRadius: 6,
+      data: [2127831,1779039,1449701,1285579,1267457,1032099,778788,775021,665971,154303,56259,1],
+      backgroundColor: [
+        'rgba(26,60,255,.92)','rgba(26,60,255,.82)','rgba(26,60,255,.72)',
+        'rgba(23,166,151,.88)','rgba(23,166,151,.78)','rgba(26,60,255,.62)',
+        'rgba(23,166,151,.68)','rgba(26,60,255,.52)','rgba(123,47,190,.70)',
+        'rgba(26,60,255,.38)','rgba(26,60,255,.28)','rgba(26,60,255,.15)'
+      ],
+      borderRadius: 4,
       borderSkipped: false
     }]
   },
   options: {
+    indexAxis: 'y',
     responsive: true,
     plugins: {
       legend: { display: false },
       tooltip: {
         callbacks: {
-          label: ctx => ' ' + ctx.parsed.y.toLocaleString('pt-BR') + ' impressões'
+          label: ctx => ' ' + ctx.parsed.x.toLocaleString('pt-BR') + ' impressões'
         }
       }
     },
     scales: {
-      y: {
+      x: {
         grid: { color: 'rgba(0,0,0,.06)' },
         ticks: {
           callback: v => v >= 1000000 ? (v/1000000).toFixed(1)+'M' : v >= 1000 ? (v/1000).toFixed(0)+'K' : v,
-          font: { size: 11 }
+          font: { size: 10 }
         }
       },
-      x: { grid: { display: false }, ticks: { font: { size: 10 } } }
+      y: { grid: { display: false }, ticks: { font: { size: 10 } } }
     }
   }
 });
