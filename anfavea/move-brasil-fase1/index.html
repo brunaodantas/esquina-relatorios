@@ -55,6 +55,9 @@
     .logo-c{display:inline-flex;align-items:center;background:#fff;border-radius:14px;padding:15px 24px;margin-bottom:30px;box-shadow:0 10px 30px rgba(0,0,0,.28)}
     .logo-c img{height:46px;width:auto;object-fit:contain;display:block}
     .footer-move-logo{height:34px;width:auto}
+    .hero-move{height:62px;width:auto;display:block;margin-bottom:30px;filter:drop-shadow(0 6px 18px rgba(0,0,0,.35))}
+    .footer-parceiros{height:30px;width:auto}
+    .footer-realiza{font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--tm);margin-bottom:10px}
     .wm{display:inline-flex;align-items:center;gap:10px;margin-bottom:30px;font-weight:900;letter-spacing:-.01em;color:#fff;font-size:1.6rem;line-height:1}
     .wm .arw{color:var(--teal);font-weight:900;letter-spacing:-2px}
     .wm.sm{font-size:1.05rem;color:var(--navy)}
@@ -322,7 +325,7 @@
 <!-- HERO -->
 <section class="hero slide">
   <div class="hero-in">
-    <div class="logo-c"><img src="assets/logo-move-esquina.png" alt="MOVE BRASIL" onerror="this.style.display='none'"/></div>
+    <img class="hero-move" src="assets/logo-move-brasil.png" alt="MOVE BRASIL" onerror="this.style.display='none'"/>
     <div class="hero-badge">
       <div class="hero-badge-dot"></div>
       ANFAVEA &middot; Prestação Parcial &middot; Fase 1
@@ -803,10 +806,11 @@
 
 <!-- FOOTER -->
 <footer class="footer slide">
+  <div class="footer-realiza">Realização</div>
   <div class="footer-logos">
-    <img class="esq" src="assets/logo-esquina.png" alt="Esquina" onerror="this.outerHTML='<div style=&quot;font-size:1.1rem;font-weight:800;color:var(--p)&quot;>Esquina</div>'"/>
+    <img class="footer-parceiros" src="assets/logos-parceiros.png" alt="ANFAVEA 70 anos · FENABRAVE · FABUS · ANFIR" onerror="this.style.display='none'"/>
     <div class="fdiv"></div>
-    <img class="footer-move-logo" src="assets/logo-move-esquina.png" alt="MOVE BRASIL" onerror="this.style.display='none'"/>
+    <img class="esq" src="assets/logo-esquina.png" alt="Esquina" onerror="this.outerHTML='<div style=&quot;font-size:1.1rem;font-weight:800;color:var(--p)&quot;>Esquina</div>'"/>
   </div>
   <p class="footer-txt">
     Prestação Parcial · Trading Desk · Gerado por Esquina · Agência de Performance<br/>
