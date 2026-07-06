@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<title>Prestação de Contas · PNAE 2026 · Ministério da Integração e do Desenvolvimento Regional</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<style>
+:root{
+  --p:#1A3CFF;--navy:#0A0A5C;--teal:#17A697;--purple:#7B2FBE;
+  --bg:#F4F6FF;--surface:#fff;--border:rgba(0,0,0,.08);
+  --t1:#111;--t2:#555;--tm:#888;
+  --font:'Inter',-apple-system,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font);background:#ddd;color:var(--t1);line-height:1.4;-webkit-font-smoothing:antialiased}
+
+/* ══ SLIDE BASE ══ */
+.slide{width:1280px;height:720px;overflow:hidden;position:relative;background:var(--bg);margin:0 auto 24px}
+.slide-in{position:absolute;inset:0;padding:48px 64px;display:flex;flex-direction:column}
+.slide.dark{background:linear-gradient(135deg,#060630,#0A0A5C,#0D1B6E,#1A3CFF)}
+.slide.diagbg{background:linear-gradient(135deg,#060630,#0A0A5C,#1530A8)}
+.slide.dividerbg{background:linear-gradient(135deg,#060830,#0A0A5C,#1A3CFF)}
+.slide.light2{background:linear-gradient(160deg,#EEF1FF 0%,#F4F6FF 45%,#EBF7F5 100%)}
+.slide.surface{background:var(--surface)}
+
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;margin-bottom:14px;color:var(--p)}
+.eyebrow::before{content:'';display:block;width:20px;height:2px;background:currentColor}
+.eyebrow.tl{color:var(--teal)}.eyebrow.pu{color:var(--purple)}
+.eyebrow.wh{color:rgba(255,255,255,.55)}.eyebrow.wh::before{background:rgba(255,255,255,.35)}
+.s-h1{font-size:38px;font-weight:800;line-height:1.1;letter-spacing:-.02em;margin-bottom:12px;color:var(--t1)}
+.s-h1.wh{color:#fff}
+.s-sub{font-size:16px;color:var(--t2);max-width:920px;line-height:1.55}
+.s-sub.wh{color:rgba(255,255,255,.62)}
+
+/* ══ SLIDE 1 · COVER ══ */
+.cover-in{justify-content:center}
+.mid{justify-content:center}
+.logo-c{display:inline-flex;align-items:center;background:#fff;border-radius:14px;padding:12px 22px;margin-bottom:26px;box-shadow:0 10px 30px rgba(0,0,0,.28);width:fit-content}
+.logo-c img{height:38px;width:auto;display:block}
+.cover-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.20);border-radius:100px;font-size:13px;font-weight:700;color:rgba(255,255,255,.9);letter-spacing:.05em;text-transform:uppercase;margin-bottom:22px;width:fit-content}
+.cover-dot{width:7px;height:7px;border-radius:50%;background:var(--teal)}
+.cover-title{font-size:58px;font-weight:800;line-height:1.05;letter-spacing:-.03em;margin-bottom:14px;color:#fff}
+.cover-title .acc{color:rgba(255,255,255,.55);font-size:30px;display:block;margin-top:6px}
+.cover-desc{font-size:16px;color:rgba(255,255,255,.62);max-width:640px;line-height:1.6;margin-bottom:32px}
+.cover-pills{display:flex;gap:14px}
+.cpill{display:flex;flex-direction:column;gap:4px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:14px 20px;min-width:118px}
+.cpill .v{font-size:26px;font-weight:800;color:#fff}
+.cpill .l{font-size:11px;color:rgba(255,255,255,.52);text-transform:uppercase;letter-spacing:.08em}
+.cover-ch{display:inline-flex;align-items:center;gap:7px;padding:6px 14px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:100px;font-size:12px;font-weight:700;color:rgba(255,255,255,.82);margin-top:22px;width:fit-content}
+.dot-dp{width:7px;height:7px;border-radius:50%;background:#4A8AFF}
+
+/* ══ ENCANTAMENTO ══ */
+.enc-hl{font-size:34px;font-weight:800;line-height:1.28;letter-spacing:-.02em;color:var(--t1);margin-bottom:18px;max-width:1100px}
+.enc-hl .hb{color:var(--p)}.enc-hl .ht{color:var(--teal)}
+.enc-story{font-size:17px;color:var(--t2);line-height:1.65;max-width:1080px}
+
+.enc-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:20px}
+.ec{background:#fff;border:1px solid rgba(26,60,255,.10);border-radius:18px;padding:26px 22px;box-shadow:0 4px 20px rgba(0,0,0,.06);text-align:center;position:relative;overflow:hidden}
+.ec::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.ec:nth-child(1)::before{background:linear-gradient(90deg,var(--p),#4A6AFF)}
+.ec:nth-child(2)::before{background:linear-gradient(90deg,var(--teal),#1EC4B2)}
+.ec:nth-child(3)::before{background:linear-gradient(90deg,var(--purple),#8B3FD9)}
+.ec:nth-child(4)::before{background:linear-gradient(90deg,var(--p),var(--teal))}
+.ec-icon{font-size:30px;display:block;margin-bottom:12px}
+.ec-num{font-size:26px;font-weight:900;letter-spacing:-.03em;margin-bottom:6px}
+.ec:nth-child(1) .ec-num{color:var(--p)}.ec:nth-child(2) .ec-num{color:var(--teal)}
+.ec:nth-child(3) .ec-num{color:var(--purple)}.ec:nth-child(4) .ec-num{color:var(--p)}
+.ec-lbl{font-size:14px;font-weight:700;color:var(--t1);margin-bottom:5px}
+.ec-ctx{font-size:12px;color:var(--tm);line-height:1.4}
+
+/* ══ META DA CAMPANHA ══ */
+.mm-stats{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:32px;margin:22px 0 14px}
+.mm-side{display:flex;flex-direction:column;gap:4px}
+.mm-side.end{text-align:right;align-items:flex-end}
+.mm-sv{font-size:30px;font-weight:800;color:var(--teal);letter-spacing:-.02em}
+.mm-sv.muted{color:var(--t2)}
+.mm-sk{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--tm)}
+.mm-center{display:flex;flex-direction:column;align-items:center;gap:2px;text-align:center}
+.mm-pct{font-size:64px;font-weight:800;color:var(--teal);letter-spacing:-.03em;line-height:1}
+.mm-pct sup{font-size:30px;font-weight:700;opacity:.65}
+.mm-pl{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--tm);margin-top:2px}
+.mm-over{font-size:12px;font-weight:700;color:var(--p);padding:3px 10px;border-radius:100px;background:rgba(26,60,255,.08);display:inline-flex;margin-top:6px}
+.mm-track{position:relative;height:8px;background:rgba(0,0,0,.07);border-radius:100px;margin-bottom:8px;overflow:hidden}
+.mm-fill{position:absolute;top:0;left:0;bottom:0;width:100%;background:linear-gradient(90deg,var(--p),var(--teal));border-radius:100px}
+.mm-labels{display:flex;justify-content:space-between;font-size:13px;color:var(--tm);margin-bottom:14px}
+.mm-exc{color:var(--teal);font-weight:700}
+
+.callout{display:flex;align-items:flex-start;gap:12px;padding:14px 20px;border-radius:0 8px 8px 0;font-size:14px;line-height:1.5}
+.callout.teal{background:rgba(23,166,151,.07);border-left:3px solid var(--teal);color:var(--t2)}
+.callout.teal strong{color:var(--teal)}
+.callout.bonus{background:rgba(26,60,255,.06);border-left:3px solid var(--p);color:var(--t2);margin-top:12px}
+.callout.bonus strong{color:var(--p)}
+.callout-ic{font-size:20px;flex-shrink:0;line-height:1}
+
+/* ══ DIVISOR ══ */
+.div-in{flex-direction:row!important;align-items:stretch;gap:0}
+.div-num{font-size:110px;font-weight:900;letter-spacing:-.05em;line-height:1;color:rgba(74,106,255,.35);display:flex;align-items:center;padding-right:36px;flex-shrink:0}
+.div-body{flex:1;border-left:1px solid rgba(255,255,255,.15);padding-left:36px;display:flex;flex-direction:column;justify-content:center}
+.div-counter{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:8px}
+.div-name{font-size:36px;font-weight:800;color:#fff;letter-spacing:-.02em;margin-bottom:10px}
+.div-desc{font-size:15px;color:rgba(255,255,255,.6);line-height:1.55;max-width:640px;margin-bottom:16px}
+.div-pills{display:flex;gap:8px;flex-wrap:wrap}
+.div-pill{padding:4px 14px;border-radius:100px;font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.20);color:rgba(255,255,255,.82)}
+
+/* ══ KPI GRID ══ */
+.kgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:22px}
+.kc{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:22px;position:relative;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+.kc::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--p)}
+.kc.tl::before{background:var(--teal)}
+.kc-badge{display:inline-flex;padding:2px 8px;border-radius:100px;font-size:11px;font-weight:700;text-transform:uppercase;margin-bottom:8px;background:rgba(26,60,255,.08);color:var(--p)}
+.kc-badge.tl{background:rgba(23,166,151,.10);color:var(--teal)}
+.kc-lbl{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--tm);margin-bottom:6px}
+.kc-val{font-size:28px;font-weight:800;color:var(--t1);letter-spacing:-.02em;margin-bottom:3px}
+.kc-sub{font-size:13px;color:var(--tm)}
+
+/* ══ TABELAS ══ */
+.dt-title{font-size:18px;font-weight:700;color:var(--t1);margin-bottom:14px}
+.dt{width:100%;border-collapse:collapse}
+.dt thead th{padding:6px 12px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--tm);border-bottom:2px solid var(--border);text-align:left}
+.dt thead th:not(:first-child){text-align:right}
+.dt tbody tr{border-bottom:1px solid rgba(0,0,0,.05)}
+.dt td{padding:6px 12px;font-size:13px}
+.dt td:first-child{font-weight:600;color:var(--t1)}
+.dt td:not(:first-child){text-align:right;color:var(--t2)}
+.dt td.n{font-weight:600;color:var(--t1)}
+.dt-sites th:first-child,.dt-sites td:first-child{width:26px}
+.dt-sites th:nth-child(2),.dt-sites td:nth-child(2){text-align:left!important}
+.rank{display:inline-flex;width:20px;height:20px;border-radius:50%;align-items:center;justify-content:center;font-size:11px;font-weight:800}
+.rank-1{background:#FFD700;color:#6B4F00}.rank-2{background:#C0C0C0;color:#444}.rank-3{background:#CD7F32;color:#5C3200}
+
+.chart-box{position:relative;height:230px;margin-top:14px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px}
+.chart-box canvas{display:block}
+.chart-lbl{font-size:13px;font-weight:700;color:var(--t1);margin-bottom:8px}
+
+.ib{background:rgba(26,60,255,.04);border-left:3px solid var(--p);border-radius:0 6px 6px 0;padding:12px 18px;margin-top:14px}
+.ib.tl{background:rgba(23,166,151,.05);border-left-color:var(--teal)}
+.ib.pu{background:rgba(123,47,190,.05);border-left-color:var(--purple)}
+.ib-lbl{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--p);margin-bottom:4px}
+.ib.tl .ib-lbl{color:var(--teal)}.ib.pu .ib-lbl{color:var(--purple)}
+.ib-txt{font-size:13px;color:var(--t2);line-height:1.48}
+
+/* ══ LINHA CRIATIVA ══ */
+.lc-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:20px}
+.lc-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:22px;position:relative;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+.lc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px}
+.lc-card.a::before{background:linear-gradient(90deg,var(--purple),#8B3FD9)}
+.lc-card.b::before{background:linear-gradient(90deg,var(--p),#4A6AFF)}
+.lc-name{font-size:18px;font-weight:800;color:var(--t1);margin-bottom:2px}
+.lc-tag{font-size:12px;font-weight:600;color:var(--tm);text-transform:uppercase;letter-spacing:.06em;margin-bottom:16px}
+.lc-metrics{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.lc-m-v{font-size:22px;font-weight:800;color:var(--t1)}
+.lc-m-v.pu{color:var(--purple)}.lc-m-v.bl{color:var(--p)}
+.lc-m-l{font-size:11px;font-weight:700;text-transform:uppercase;color:var(--tm);margin-top:2px}
+
+/* ══ DIAGNÓSTICO ══ */
+.dc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px}
+.dc{background:rgba(255,255,255,.95);border-radius:12px;padding:16px 18px;position:relative;overflow:hidden}
+.dc-acc{position:absolute;top:0;left:0;right:0;height:3px}
+.dc-acc.t{background:linear-gradient(90deg,var(--teal),#1EC4B2)}
+.dc-acc.b{background:linear-gradient(90deg,var(--p),#4060FF)}
+.dc-acc.p{background:linear-gradient(90deg,var(--purple),#8B3FD9)}
+.dc-n{font-size:11px;font-weight:700;color:var(--tm);letter-spacing:.1em;margin-bottom:6px;margin-top:4px}
+.dc-m{font-size:20px;font-weight:800;color:var(--teal);margin-bottom:5px}
+.dc-ttl{font-size:14px;font-weight:700;color:var(--t1);margin-bottom:5px;line-height:1.25}
+.dc-txt{font-size:11.5px;color:var(--t2);line-height:1.4}
+
+/* ══ FOOTER ══ */
+.foot-in{align-items:center;justify-content:center;text-align:center}
+.footer-logos{display:flex;align-items:center;justify-content:center;gap:22px;margin-bottom:16px}
+.footer-logos img{height:46px;width:auto}
+.footer-logos .fdiv{width:1px;height:32px;background:var(--border)}
+.footer-txt{font-size:14px;color:var(--tm);line-height:1.7}
+.footer-chips{display:flex;justify-content:center;gap:8px;margin-top:16px;flex-wrap:wrap}
+.footer-chip{padding:4px 14px;border-radius:100px;font-size:12px;font-weight:600;background:var(--bg);border:1px solid var(--border);color:var(--tm)}
+</style>
+</head>
+<body>
+
+<!-- 1 · CAPA -->
+<section class="slide dark">
+  <div class="slide-in cover-in">
+    <div class="logo-c"><img src="assets/logo-governo.png" alt="Governo Federal do Brasil"/></div>
+    <div class="cover-badge"><div class="cover-dot"></div>Ministério da Integração e do Desenvolvimento Regional · Prestação de Contas · Campanha Encerrada</div>
+    <h1 class="cover-title">PNAE<span class="acc">Programa Nacional de Alimentação Escolar</span></h1>
+    <p class="cover-desc">Campanha de mídia programática · Display Programática. Veiculação: 15 a 30 de junho de 2026 · Compra CPM · Praça Nacional</p>
+    <div class="cover-pills">
+      <div class="cpill"><span class="v">5,10M</span><span class="l">Impressões</span></div>
+      <div class="cpill"><span class="v">72,2%</span><span class="l">Viewability</span></div>
+      <div class="cpill"><span class="v">2,25M</span><span class="l">Alcance único</span></div>
+      <div class="cpill"><span class="v">108,3%</span><span class="l">da Meta</span></div>
+    </div>
+    <div class="cover-ch"><div class="dot-dp"></div>Display Programática · Banners IAB · 6 formatos</div>
+  </div>
+</section>
+
+<!-- 2 · ENCANTAMENTO -->
+<section class="slide surface">
+  <div class="slide-in mid">
+    <div class="eyebrow tl">Campanha encerrada</div>
+    <h2 class="enc-hl">A campanha do PNAE entregou <span class="hb">5,1 milhões de impressões</span>, alcançou <span class="ht">2,25 milhões de pessoas</span> em todo o Brasil e superou a meta contratada.</h2>
+    <p class="enc-story">Ao longo da veiculação, os banners do Programa Nacional de Alimentação Escolar estiveram presentes em portais de notícias, plataformas de vídeo, sites de entretenimento e serviços de e-mail, dirigidos ao público adulto (18+) em cobertura nacional. A entrega fechou em 5.096.414 impressões para uma meta de 4.705.882 (108,3%), com viewability de 72,16%, acima do benchmark de mercado para display programático. Para uma política pública que depende da adesão de gestores escolares, famílias e conselhos municipais, esse resultado significa que a comunicação sobre o PNAE teve condições reais de ser vista e não apenas distribuída.</p>
+  </div>
+</section>
+
+<!-- 3 · NÚMEROS DA CAMPANHA -->
+<section class="slide surface">
+  <div class="slide-in mid">
+    <div class="eyebrow tl">Os números da campanha</div>
+    <h2 class="s-h1">Visão consolidada da entrega</h2>
+    <div class="enc-cards">
+      <div class="ec"><span class="ec-icon">📡</span><div class="ec-num">5.096.414</div><div class="ec-lbl">impressões entregues</div><div class="ec-ctx">108,3% da meta de 4.705.882</div></div>
+      <div class="ec"><span class="ec-icon">🎯</span><div class="ec-num">2.248.322</div><div class="ec-lbl">pessoas alcançadas</div><div class="ec-ctx">Usuários únicos · frequência média de 2,27</div></div>
+      <div class="ec"><span class="ec-icon">👁️</span><div class="ec-num">72,2%</div><div class="ec-lbl">viewability (IAB)</div><div class="ec-ctx">3.677.521 impressões efetivamente visíveis</div></div>
+      <div class="ec"><span class="ec-icon">✅</span><div class="ec-num">108,3%</div><div class="ec-lbl">da meta entregue</div><div class="ec-ctx">+390.532 impressões acima do contratado</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4 · META DA CAMPANHA -->
+<section class="slide surface">
+  <div class="slide-in">
+    <div class="eyebrow tl">Meta da Campanha</div>
+    <h2 class="s-h1">Meta Cumprida e Superada</h2>
+    <p class="s-sub">A campanha encerrou com a meta de impressões totalmente cumprida: 5.096.414 entregas para uma meta contratada de 4.705.882 impressões.</p>
+    <div class="mm-stats">
+      <div class="mm-side"><span class="mm-sv">5.096.414</span><span class="mm-sk">Impressões entregues</span></div>
+      <div class="mm-center">
+        <span class="mm-pct">108<sup>,3%</sup></span>
+        <span class="mm-pl">da meta cumprida</span>
+        <span class="mm-over">+390.532 acima da meta</span>
+      </div>
+      <div class="mm-side end"><span class="mm-sv muted">4.705.882</span><span class="mm-sk">Meta total contratada</span></div>
+    </div>
+    <div class="mm-track"><div class="mm-fill"></div></div>
+    <div class="mm-labels"><span>15 Jun · Início da veiculação</span><span class="mm-exc">★ Meta superada · Encerrado 30 Jun</span></div>
+    <div class="callout teal"><span class="callout-ic">ⓘ</span><span>Com <strong>108,3% da meta entregue</strong>, a verba destinada a informar a população sobre o PNAE foi convertida em alcance de forma eficiente, dentro do período contratado e sem custo extra ao Ministério.</span></div>
+    <div class="callout bonus"><span class="callout-ic">🎁</span><span><strong>Bonificação:</strong> as 390.532 impressões entregues acima da meta contratada (108,3%) são consideradas bonificação, sem custo adicional ao Ministério da Integração e do Desenvolvimento Regional.</span></div>
+  </div>
+</section>
+
+<!-- 5 · DIVISOR -->
+<section class="slide dividerbg">
+  <div class="slide-in div-in">
+    <div class="div-num">01</div>
+    <div class="div-body">
+      <div class="div-counter">Canal único · Display Programática</div>
+      <div class="div-name">Display Programática</div>
+      <div class="div-desc">Veiculação em mídia programática: banners IAB em 6 formatos distribuídos por 5,3 mil domínios e mais de 6,4 mil cidades em todo o Brasil, com segmentação de Sociedade 18+ e compra por CPM.</div>
+      <div class="div-pills">
+        <span class="div-pill">Display Programática</span>
+        <span class="div-pill">Banners IAB</span>
+        <span class="div-pill">6 Formatos</span>
+        <span class="div-pill">Sociedade 18+</span>
+        <span class="div-pill">Brasil Nacional</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6 · KPI GRID -->
+<section class="slide surface">
+  <div class="slide-in mid">
+    <div class="eyebrow">Indicadores gerais</div>
+    <h2 class="s-h1">KPIs da Campanha</h2>
+    <div class="kgrid">
+      <div class="kc"><div class="kc-badge">★ Meta superada</div><div class="kc-lbl">Impressões entregues</div><div class="kc-val" style="font-size:22px">5.096.414</div><div class="kc-sub">108,3% da meta de 4.705.882</div></div>
+      <div class="kc tl"><div class="kc-badge tl">★ Benchmark</div><div class="kc-lbl">Viewability (IAB)</div><div class="kc-val">72,16%</div><div class="kc-sub">3.677.521 impressões visualizadas</div></div>
+      <div class="kc"><div class="kc-lbl">Alcance (usuários únicos)</div><div class="kc-val" style="font-size:22px">2.248.322</div><div class="kc-sub">Frequência média: 2,27</div></div>
+      <div class="kc"><div class="kc-lbl">Cliques totais</div><div class="kc-val">3.949</div><div class="kc-sub">CTR: 0,0775%</div></div>
+      <div class="kc"><div class="kc-lbl">Domínios alcançados</div><div class="kc-val">5.374</div><div class="kc-sub">Sites únicos com veiculação</div></div>
+      <div class="kc"><div class="kc-lbl">Cidades alcançadas</div><div class="kc-val">6.478</div><div class="kc-sub">Cobertura nacional</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 7 · FORMATOS DE CRIATIVO -->
+<section class="slide surface">
+  <div class="slide-in">
+    <div class="dt-title">Formatos de Criativo por Volume de Impressões</div>
+    <div class="chart-box"><canvas id="chartCreativos" width="1120" height="198"></canvas></div>
+    <table class="dt" style="margin-top:12px">
+      <thead><tr><th>#</th><th>Formato</th><th>Impressões</th><th>Share</th><th>Cliques</th><th>CTR</th><th>Viewability</th></tr></thead>
+      <tbody>
+        <tr><td><span class="rank rank-1">1</span></td><td class="n">728×90 (Leaderboard)</td><td>1.727.325</td><td>33,9%</td><td>1.922</td><td>0,111%</td><td>81,8%</td></tr>
+        <tr><td><span class="rank rank-2">2</span></td><td class="n">300×250 (Retângulo Médio)</td><td>1.429.645</td><td>28,1%</td><td>397</td><td>0,028%</td><td>64,2%</td></tr>
+        <tr><td><span class="rank rank-3">3</span></td><td class="n">320×100 (Banner Móvel)</td><td>1.079.411</td><td>21,2%</td><td>1.095</td><td>0,101%</td><td>78,9%</td></tr>
+        <tr><td style="color:var(--tm);font-size:11px">4</td><td class="n">300×600 (Meia Página)</td><td>626.011</td><td>12,3%</td><td>200</td><td>0,032%</td><td>51,1%</td></tr>
+        <tr><td style="color:var(--tm);font-size:11px">5</td><td class="n">250×250 (Quadrado)</td><td>137.562</td><td>2,7%</td><td>147</td><td>0,107%</td><td>77,4%</td></tr>
+        <tr><td style="color:var(--tm);font-size:11px">6</td><td class="n">336×280 (Retângulo Grande)</td><td>96.460</td><td>1,9%</td><td>188</td><td>0,195%</td><td>71,6%</td></tr>
+      </tbody>
+    </table>
+    <div class="ib tl">
+      <div class="ib-lbl">Análise de criativos</div>
+      <div class="ib-txt">O Leaderboard 728×90 concentrou um terço da entrega e a maior parte dos cliques, enquanto o banner móvel 320×100 registrou CTR acima da média geral, confirmando o celular como ponto de contato relevante com a informação pública. A viewability acima de 70% na maioria dos formatos reforça que o investimento em mídia programática resultou em exposição real da mensagem sobre o PNAE.</div>
+    </div>
+  </div>
+</section>
+
+<!-- 8 · LINHA CRIATIVA -->
+<section class="slide surface">
+  <div class="slide-in mid">
+    <div class="dt-title">Desempenho por Linha Criativa</div>
+    <p style="font-size:14px;color:var(--tm)">Duas linhas criativas foram veiculadas em paralelo, com distribuição de investimento equilibrada entre elas.</p>
+    <div class="lc-grid">
+      <div class="lc-card a">
+        <div class="lc-name">Linha "Menina 1"</div>
+        <div class="lc-tag">Criativo A · 4 formatos</div>
+        <div class="lc-metrics">
+          <div><div class="lc-m-v pu">2.646.618</div><div class="lc-m-l">Impressões (51,9%)</div></div>
+          <div><div class="lc-m-v pu">1.639</div><div class="lc-m-l">Cliques</div></div>
+          <div><div class="lc-m-v pu">0,062%</div><div class="lc-m-l">CTR</div></div>
+          <div><div class="lc-m-v pu">51,9%</div><div class="lc-m-l">Share de impressões</div></div>
+        </div>
+      </div>
+      <div class="lc-card b">
+        <div class="lc-name">Linha "Menino"</div>
+        <div class="lc-tag">Criativo B · 4 formatos</div>
+        <div class="lc-metrics">
+          <div><div class="lc-m-v bl">2.449.796</div><div class="lc-m-l">Impressões (48,1%)</div></div>
+          <div><div class="lc-m-v bl">2.310</div><div class="lc-m-l">Cliques</div></div>
+          <div><div class="lc-m-v bl">0,094%</div><div class="lc-m-l">CTR</div></div>
+          <div><div class="lc-m-v bl">48,1%</div><div class="lc-m-l">Share de impressões</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="ib pu">
+      <div class="ib-lbl">Análise de linha criativa</div>
+      <div class="ib-txt">As duas linhas dividiram a entrega de forma equilibrada, 51,9% para "Menina 1" e 48,1% para "Menino". A linha "Menino" registrou o maior engajamento relativo, com CTR de 0,094% contra 0,062% da "Menina 1". Alternar entre duas representações de estudantes evita a fadiga de um único criativo e sustenta a frequência média de 2,27 exibições por pessoa sem repetição excessiva.</div>
+    </div>
+  </div>
+</section>
+
+<!-- 9 · TOP SITES -->
+<section class="slide surface">
+  <div class="slide-in">
+    <div class="dt-title">Sites: Destaque por Qualidade de Entrega</div>
+    <table class="dt dt-sites">
+      <thead><tr><th>#</th><th>Domínio</th><th>Impressões</th><th>Cliques</th><th>Viewability</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td class="n">dailymotion.com</td><td>342.897</td><td>40</td><td>93,9%</td></tr>
+        <tr><td>2</td><td class="n">metropoles.com</td><td>282.249</td><td>3</td><td>83,1%</td></tr>
+        <tr><td>3</td><td class="n">msn.com/pt-br</td><td>161.284</td><td>13</td><td>85,8%</td></tr>
+        <tr><td>4</td><td class="n">g1.globo.com</td><td>115.975</td><td>95</td><td>87,9%</td></tr>
+        <tr><td>5</td><td class="n">outlook.live.com</td><td>56.855</td><td>3</td><td>93,0%</td></tr>
+        <tr><td>6</td><td class="n">conjur.com.br</td><td>51.530</td><td>20</td><td>77,2%</td></tr>
+        <tr><td>7</td><td class="n">cartacapital.com.br</td><td>37.785</td><td>42</td><td>80,9%</td></tr>
+        <tr><td>8</td><td class="n">infojobs.com.br</td><td>34.317</td><td>0</td><td>86,0%</td></tr>
+        <tr><td>9</td><td class="n">oglobo.globo.com</td><td>27.238</td><td>7</td><td>85,2%</td></tr>
+        <tr><td>10</td><td class="n">cnnbrasil.com.br</td><td>14.496</td><td>9</td><td>91,2%</td></tr>
+      </tbody>
+    </table>
+    <div class="ib">
+      <div class="ib-lbl">Análise de sites</div>
+      <div class="ib-txt">A presença consistente em portais jornalísticos de peso nacional, Metrópoles, G1, O Globo, CNN Brasil e CartaCapital, reforça a credibilidade da mensagem sobre o PNAE e a associa a fontes de informação em que a população já confia. O Conjur e o InfoJobs complementam essa presença alcançando públicos profissionais e formadores de opinião no serviço público. Todos os domínios selecionados têm viewability acima de 70%.</div>
+    </div>
+  </div>
+</section>
+
+<!-- 10 · TOP CIDADES -->
+<section class="slide surface">
+  <div class="slide-in">
+    <div class="dt-title">Top 10 Cidades por Impressões</div>
+    <div class="chart-box" style="height:280px"><canvas id="chartCidades" width="1120" height="248"></canvas></div>
+    <div class="ib">
+      <div class="ib-lbl">Análise geográfica</div>
+      <div class="ib-txt">São Paulo e Rio de Janeiro concentraram as maiores audiências, comportamento esperado dado o peso populacional dessas praças. O PNAE é executado em praticamente todos os municípios brasileiros, e a presença da campanha em 6.478 cidades mostra que a comunicação alcançou também municípios do interior, onde está a maior parte das escolas públicas atendidas pelo programa.</div>
+    </div>
+  </div>
+</section>
+
+<!-- 11 · EVOLUÇÃO DIÁRIA -->
+<section class="slide surface">
+  <div class="slide-in">
+    <div class="dt-title">Evolução Diária da Entrega (15 a 30 de junho de 2026)</div>
+    <div class="chart-box" style="height:280px"><canvas id="chartTempo" width="1120" height="248"></canvas></div>
+    <div class="ib tl">
+      <div class="ib-lbl">Análise da curva de entrega</div>
+      <div class="ib-txt">Após a ativação em 15 de junho, a campanha atingiu o pico de entrega entre os dias 19 e 21, com mais de 500 mil impressões diárias, e manteve distribuição estável e bem espalhada até o encerramento em 30 de junho, garantindo presença contínua ao longo de todo o período de veiculação.</div>
+    </div>
+  </div>
+</section>
+
+<!-- 12 · DIAGNÓSTICO -->
+<section class="slide diagbg">
+  <div class="slide-in">
+    <div class="eyebrow wh">Diagnóstico Final</div>
+    <h2 class="s-h1 wh">O que a campanha revelou</h2>
+    <p class="s-sub wh">Leitura dos resultados da veiculação: o que os dados indicam sobre a entrega e o impacto da campanha do PNAE.</p>
+    <div class="dc-grid">
+      <div class="dc"><div class="dc-acc t"></div><div class="dc-n">01</div><div class="dc-m">108,3%</div><div class="dc-ttl">Recurso público aplicado com eficiência</div><div class="dc-txt">A entrega superou a meta contratada e fechou o período sem custo adicional ao Ministério, demonstrando que a verba de comunicação sobre o PNAE foi aplicada de forma completa e previsível.</div></div>
+      <div class="dc"><div class="dc-acc b"></div><div class="dc-n">02</div><div class="dc-m">2,25M</div><div class="dc-ttl">Alcance suficiente sem saturar o público</div><div class="dc-txt">A campanha chegou a 2,25 milhões de pessoas, com frequência média de 2,27, equilíbrio ideal entre ampliar conhecimento do programa e evitar repetição excessiva da peça.</div></div>
+      <div class="dc"><div class="dc-acc p"></div><div class="dc-n">03</div><div class="dc-m">72,2%</div><div class="dc-ttl">Visibilidade real da mensagem</div><div class="dc-txt">Quase três em cada quatro impressões estiveram efetivamente visíveis na tela, acima do padrão de mercado, garantindo chance real de a mensagem sobre a alimentação escolar ser vista.</div></div>
+      <div class="dc"><div class="dc-acc t"></div><div class="dc-n">04</div><div class="dc-m">728×90</div><div class="dc-ttl">Presença em desktop e celular</div><div class="dc-txt">O Leaderboard liderou o volume, enquanto o banner móvel sustentou o engajamento, ampliando o contato com a mensagem em diferentes rotinas de navegação.</div></div>
+      <div class="dc"><div class="dc-acc b"></div><div class="dc-n">05</div><div class="dc-m">6.478 cidades</div><div class="dc-ttl">Alcance coerente com a missão do Ministério</div><div class="dc-txt">A presença no interior, e não só nas capitais, é coerente com o papel do Ministério de reduzir desigualdades regionais no acesso à informação pública.</div></div>
+      <div class="dc"><div class="dc-acc p"></div><div class="dc-n">06</div><div class="dc-m">Síntese</div><div class="dc-ttl">Comunicação pública que cumpre seu papel</div><div class="dc-txt">Meta superada, alcance nacional e visibilidade acima do mercado: a mensagem do PNAE teve condições reais de ser vista e compreendida em todo o país.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 13 · CONTRACAPA -->
+<section class="slide light2">
+  <div class="slide-in foot-in">
+    <div class="footer-logos">
+      <img src="assets/logo-governo.png" alt="Governo Federal do Brasil"/>
+      <div class="fdiv"></div>
+      <img src="assets/logo-esquina.png" alt="Esquina"/>
+    </div>
+    <p class="footer-txt">
+      Prestação de Contas · Trading Desk · Gerado por Esquina · Agência de Performance<br/>
+      PNAE · Programa Nacional de Alimentação Escolar · Ministério da Integração e do Desenvolvimento Regional · 15 a 30 Jun 2026<br/>
+      Dados: Display Programática · Relatório de Entrega (adserver) · PI 23871
+    </p>
+    <div class="footer-chips">
+      <span class="footer-chip">Display Programática</span>
+      <span class="footer-chip">Banners IAB</span>
+      <span class="footer-chip">Sociedade 18+</span>
+      <span class="footer-chip">Brasil Nacional</span>
+      <span class="footer-chip">Compra CPM</span>
+    </div>
+  </div>
+</section>
+
+<script>
+Chart.defaults.animation = false;
+
+new Chart(document.getElementById('chartCreativos'), {
+  type: 'bar',
+  data: {
+    labels: ['728×90','300×250','320×100','300×600','250×250','336×280'],
+    datasets: [{
+      label: 'Impressões',
+      data: [1727325,1429645,1079411,626011,137562,96460],
+      backgroundColor: ['rgba(26,60,255,.92)','rgba(26,60,255,.80)','rgba(23,166,151,.85)','rgba(26,60,255,.62)','rgba(123,47,190,.65)','rgba(26,60,255,.40)'],
+      borderRadius: 4, borderSkipped: false
+    }]
+  },
+  options: {
+    indexAxis: 'y', responsive: false,
+    plugins: { legend: { display: false } },
+    scales: {
+      x: { grid: { color: 'rgba(0,0,0,.06)' }, ticks: { callback: v => v >= 1000000 ? (v/1000000).toFixed(1)+'M' : (v/1000).toFixed(0)+'K', font: { size: 10 } } },
+      y: { grid: { display: false }, ticks: { font: { size: 11 } } }
+    }
+  }
+});
+
+new Chart(document.getElementById('chartCidades'), {
+  type: 'bar',
+  data: {
+    labels: ['São Paulo', 'Rio de Janeiro', 'Belo Horizonte', 'Salvador', 'Porto Alegre', 'Curitiba', 'Brasília', 'Fortaleza', 'Campinas', 'Recife'],
+    datasets: [{
+      label: 'Impressões',
+      data: [540752, 394761, 155961, 93493, 92847, 87923, 83134, 73501, 69780, 57315],
+      backgroundColor: ['rgba(26,60,255,.90)','rgba(26,60,255,.80)','rgba(26,60,255,.70)','rgba(26,60,255,.65)','rgba(26,60,255,.60)','rgba(23,166,151,.70)','rgba(23,166,151,.65)','rgba(23,166,151,.60)','rgba(23,166,151,.55)','rgba(23,166,151,.50)'],
+      borderRadius: 5, borderSkipped: false
+    }]
+  },
+  options: {
+    indexAxis: 'y', responsive: false,
+    plugins: { legend: { display: false } },
+    scales: {
+      x: { grid: { color: 'rgba(0,0,0,.06)' }, ticks: { callback: v => v >= 1000000 ? (v/1000000).toFixed(1)+'M' : (v/1000).toFixed(0)+'K', font: { size: 10 } } },
+      y: { grid: { display: false }, ticks: { font: { size: 11 } } }
+    }
+  }
+});
+
+new Chart(document.getElementById('chartTempo'), {
+  type: 'bar',
+  data: {
+    labels: ['15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30'],
+    datasets: [
+      { type: 'bar', label: 'Impressões', yAxisID: 'y', data: [16478,122609,511642,371178,523844,532832,519823,394452,248622,285665,230482,374533,339724,371755,248281,4494], backgroundColor: 'rgba(26,60,255,.75)', borderRadius: 3, borderSkipped: false, order: 2 },
+      { type: 'line', label: 'Cliques', yAxisID: 'y1', data: [115,350,522,311,226,388,400,302,191,234,170,147,217,206,170,0], borderColor: 'rgba(23,166,151,1)', backgroundColor: 'rgba(23,166,151,.15)', borderWidth: 2, tension: .35, pointRadius: 2, pointBackgroundColor: 'rgba(23,166,151,1)', fill: false, order: 1 }
+    ]
+  },
+  options: {
+    responsive: false,
+    plugins: { legend: { display: true, position: 'top', labels: { font: { size: 10 }, usePointStyle: true, boxWidth: 8 } } },
+    scales: {
+      x: { grid: { display: false }, ticks: { font: { size: 9 } } },
+      y: { position: 'left', grid: { color: 'rgba(0,0,0,.06)' }, ticks: { callback: v => (v/1000).toFixed(0)+'K', font: { size: 9 } } },
+      y1: { position: 'right', grid: { display: false }, ticks: { font: { size: 9 } } }
+    }
+  }
+});
+</script>
+</body>
+</html>
