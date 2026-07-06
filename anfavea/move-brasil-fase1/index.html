@@ -52,8 +52,9 @@
     .hero{min-height:100vh;position:relative;overflow:hidden;background:linear-gradient(135deg,#060630,#0A0A5C,#0D1B6E,#1A3CFF);display:flex;align-items:flex-start}
     .hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 75% 25%,rgba(23,166,151,.18) 0%,transparent 55%),radial-gradient(ellipse at 15% 85%,rgba(26,60,255,.25) 0%,transparent 50%);z-index:0}
     .hero-in{position:relative;z-index:1;padding:calc(56px + 52px) 24px 72px;max-width:1200px;margin:0 auto;width:100%}
-    .logo-c{display:inline-flex;align-items:center;padding:0;margin-bottom:30px}
-    .logo-c img{height:58px;width:auto;object-fit:contain;filter:drop-shadow(0 6px 18px rgba(0,0,0,.35))}
+    .logo-c{display:inline-flex;align-items:center;background:#fff;border-radius:14px;padding:15px 24px;margin-bottom:30px;box-shadow:0 10px 30px rgba(0,0,0,.28)}
+    .logo-c img{height:46px;width:auto;object-fit:contain;display:block}
+    .footer-move-logo{height:34px;width:auto}
     .wm{display:inline-flex;align-items:center;gap:10px;margin-bottom:30px;font-weight:900;letter-spacing:-.01em;color:#fff;font-size:1.6rem;line-height:1}
     .wm .arw{color:var(--teal);font-weight:900;letter-spacing:-2px}
     .wm.sm{font-size:1.05rem;color:var(--navy)}
@@ -189,7 +190,6 @@
     .dt-full .cc{font-weight:800}
     .dt-full .cc.yt{color:var(--red)}.dt-full .cc.mt{color:var(--purple)}.dt-full .cc.gg{color:var(--teal)}
     .dt-full td.pct{font-weight:800;color:var(--t1)}
-    .dt-full td.pct.hi{color:var(--teal)}
 
     /* Insight box */
     .ib{background:rgba(26,60,255,.04);border-left:3px solid var(--p);border-radius:0 6px 6px 0;padding:16px 24px;margin-top:22px}
@@ -322,7 +322,7 @@
 <!-- HERO -->
 <section class="hero slide">
   <div class="hero-in">
-    <div class="wm">MOVE<span class="arw">&#187;</span>BRASIL</div>
+    <div class="logo-c"><img src="assets/logo-move-esquina.png" alt="MOVE BRASIL" onerror="this.style.display='none'"/></div>
     <div class="hero-badge">
       <div class="hero-badge-dot"></div>
       ANFAVEA &middot; Prestação Parcial &middot; Fase 1
@@ -546,7 +546,7 @@
     <div class="dt-title">Entrega da Fase 1 · YouTube</div>
     <table class="dt">
       <thead>
-        <tr><th>Produto</th><th>Métrica</th><th>Meta</th><th>Entregue</th><th class="c">Progresso</th><th>Saldo Fase 2</th><th class="c">Status</th></tr>
+        <tr><th>Produto</th><th>Métrica</th><th>Meta</th><th>Entregue</th><th class="c">Progresso</th><th>Saldo Fase 2</th></tr>
       </thead>
       <tbody>
         <tr>
@@ -554,28 +554,24 @@
           <td class="num">1.000.000</td><td class="num"><strong>628.326</strong></td>
           <td><div class="pcell"><div class="pbar"><i style="width:62.83%"></i></div><span class="pval">62,83%</span></div></td>
           <td class="num">371.674 <span style="color:var(--tm)">(37,2%)</span></td>
-          <td class="stcell"><span class="st sd"><span class="st-dot"></span>Saldo Fase 2</span></td>
         </tr>
         <tr>
           <td>Não-Pulável</td><td class="metric">Impressões</td>
           <td class="num">3.000.000</td><td class="num"><strong>2.538.380</strong></td>
           <td><div class="pcell"><div class="pbar"><i style="width:84.61%"></i></div><span class="pval">84,61%</span></div></td>
           <td class="num">461.620 <span style="color:var(--tm)">(15,4%)</span></td>
-          <td class="stcell"><span class="st ok"><span class="st-dot"></span>No ritmo</span></td>
         </tr>
         <tr>
           <td>Bumper</td><td class="metric">Impressões</td>
           <td class="num">3.000.000</td><td class="num"><strong>2.200.443</strong></td>
           <td><div class="pcell"><div class="pbar"><i style="width:73.35%"></i></div><span class="pval">73,35%</span></div></td>
           <td class="num">799.557 <span style="color:var(--tm)">(26,7%)</span></td>
-          <td class="stcell"><span class="st ok"><span class="st-dot"></span>No ritmo</span></td>
         </tr>
         <tr>
           <td>Discovery/Shorts</td><td class="metric">Views</td>
           <td class="num">90.000</td><td class="num"><strong>63.883</strong></td>
           <td><div class="pcell"><div class="pbar"><i style="width:70.98%"></i></div><span class="pval">70,98%</span></div></td>
           <td class="num">26.117 <span style="color:var(--tm)">(29,0%)</span></td>
-          <td class="stcell"><span class="st ok"><span class="st-dot"></span>No ritmo</span></td>
         </tr>
       </tbody>
     </table>
@@ -609,7 +605,7 @@
     <div class="dt-title">Entrega da Fase 1 · Meta</div>
     <table class="dt">
       <thead>
-        <tr><th>Produto</th><th>Métrica</th><th>Meta</th><th>Entregue</th><th class="c">Progresso</th><th>Saldo Fase 2</th><th class="c">Status</th></tr>
+        <tr><th>Produto</th><th>Métrica</th><th>Meta</th><th>Entregue</th><th class="c">Progresso</th><th>Saldo Fase 2</th></tr>
       </thead>
       <tbody>
         <tr>
@@ -617,28 +613,24 @@
           <td class="num">400.000</td><td class="num"><strong>263.784</strong></td>
           <td><div class="pcell"><div class="pbar"><i style="width:65.95%"></i></div><span class="pval">65,95%</span></div></td>
           <td class="num">136.216 <span style="color:var(--tm)">(34,1%)</span></td>
-          <td class="stcell"><span class="st sd"><span class="st-dot"></span>Saldo Fase 2</span></td>
         </tr>
         <tr>
           <td>Engajamento</td><td class="metric">Engajamentos</td>
           <td class="num">400.000</td><td class="num"><strong>256.277</strong></td>
           <td><div class="pcell"><div class="pbar"><i style="width:64.07%"></i></div><span class="pval">64,07%</span></div></td>
           <td class="num">143.723 <span style="color:var(--tm)">(35,9%)</span></td>
-          <td class="stcell"><span class="st sd"><span class="st-dot"></span>Saldo Fase 2</span></td>
         </tr>
         <tr>
           <td>Cliques</td><td class="metric">Cliques</td>
           <td class="num">10.000</td><td class="num"><strong>7.483</strong></td>
           <td><div class="pcell"><div class="pbar"><i style="width:74.83%"></i></div><span class="pval">74,83%</span></div></td>
           <td class="num">2.517 <span style="color:var(--tm)">(25,2%)</span></td>
-          <td class="stcell"><span class="st ok"><span class="st-dot"></span>No ritmo</span></td>
         </tr>
         <tr>
           <td>Impressões</td><td class="metric">Impressões</td>
           <td class="num">4.000.000</td><td class="num"><strong>2.374.216</strong></td>
           <td><div class="pcell"><div class="pbar"><i style="width:59.36%"></i></div><span class="pval">59,36%</span></div></td>
           <td class="num">1.625.784 <span style="color:var(--tm)">(40,6%)</span></td>
-          <td class="stcell"><span class="st sd"><span class="st-dot"></span>Saldo Fase 2</span></td>
         </tr>
       </tbody>
     </table>
@@ -671,7 +663,7 @@
     <div class="dt-title">Entrega da Fase 1 · Google</div>
     <table class="dt">
       <thead>
-        <tr><th>Produto</th><th>Métrica</th><th>Meta</th><th>Entregue</th><th class="c">Progresso</th><th>Saldo Fase 2</th><th class="c">Status</th></tr>
+        <tr><th>Produto</th><th>Métrica</th><th>Meta</th><th>Entregue</th><th class="c">Progresso</th><th>Saldo Fase 2</th></tr>
       </thead>
       <tbody>
         <tr>
@@ -679,21 +671,18 @@
           <td class="num">16.500</td><td class="num"><strong>11.366</strong></td>
           <td><div class="pcell"><div class="pbar"><i style="width:68.89%"></i></div><span class="pval">68,89%</span></div></td>
           <td class="num">5.134 <span style="color:var(--tm)">(31,1%)</span></td>
-          <td class="stcell"><span class="st sd"><span class="st-dot"></span>Saldo Fase 2</span></td>
         </tr>
         <tr>
           <td>Display Programática</td><td class="metric">Impressões</td>
           <td class="num">10.000.000</td><td class="num"><strong>6.186.746</strong></td>
           <td><div class="pcell"><div class="pbar"><i style="width:61.87%"></i></div><span class="pval">61,87%</span></div></td>
           <td class="num">3.813.254 <span style="color:var(--tm)">(38,1%)</span></td>
-          <td class="stcell"><span class="st sd"><span class="st-dot"></span>Saldo Fase 2</span></td>
         </tr>
         <tr>
           <td>Display Geofencing</td><td class="metric">Impressões</td>
           <td class="num">3.000.000</td><td class="num"><strong>2.263.725</strong></td>
           <td><div class="pcell"><div class="pbar"><i style="width:75.46%"></i></div><span class="pval">75,46%</span></div></td>
           <td class="num">736.275 <span style="color:var(--tm)">(24,5%)</span></td>
-          <td class="stcell"><span class="st ok"><span class="st-dot"></span>No ritmo</span></td>
         </tr>
       </tbody>
     </table>
@@ -817,7 +806,7 @@
   <div class="footer-logos">
     <img class="esq" src="assets/logo-esquina.png" alt="Esquina" onerror="this.outerHTML='<div style=&quot;font-size:1.1rem;font-weight:800;color:var(--p)&quot;>Esquina</div>'"/>
     <div class="fdiv"></div>
-    <div class="wm sm">MOVE<span class="arw">&#187;</span>BRASIL</div>
+    <img class="footer-move-logo" src="assets/logo-move-esquina.png" alt="MOVE BRASIL" onerror="this.style.display='none'"/>
   </div>
   <p class="footer-txt">
     Prestação Parcial · Trading Desk · Gerado por Esquina · Agência de Performance<br/>
