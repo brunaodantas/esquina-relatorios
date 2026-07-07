@@ -1,0 +1,760 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Slides · Temas Diversos · Prefeitura de Campinas</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<style>
+:root{
+  --p:#1A3CFF;--pd:#1430CC;--navy:#0A0A5C;--teal:#17A697;--purple:#9C27B0;
+  --display:#00994D;--yt:#CC0000;--tiktok:#111111;
+  --bg:#F4F6FF;--surface:#fff;--border:rgba(0,0,0,.08);
+  --t1:#111;--t2:#555;--tm:#888;--r:14px;
+  --sh:0 1px 4px rgba(0,0,0,.05),0 6px 20px rgba(0,0,0,.06);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:#333;color:var(--t1)}
+.slide{width:1280px;height:720px;overflow:hidden;position:relative;background:var(--bg);margin:0 auto 22px}
+.slide-in{position:absolute;inset:0;padding:56px 72px;display:flex;flex-direction:column}
+.eyebrow{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.16em;color:var(--p)}
+.eyebrow.dp{color:var(--display)}.eyebrow.yt{color:var(--yt)}.eyebrow.pu{color:var(--purple)}.eyebrow.tk{color:var(--tiktok)}.eyebrow.tl{color:var(--teal)}
+h1,h2{letter-spacing:-.02em;line-height:1.05}
+.s-title{font-size:2.6rem;font-weight:800;margin:10px 0 6px}
+.s-sub{font-size:1.05rem;color:var(--t2);max-width:900px}
+.chan-head{display:flex;align-items:center;gap:14px}
+.chan-dot{width:16px;height:16px;border-radius:5px}
+
+/* CAPA */
+.cover{background:linear-gradient(135deg,#060630,#0A0A5C,#0D1B6E,#1A3CFF);color:#fff}
+.cover .slide-in{justify-content:center}
+.cover:after{content:"";position:absolute;right:-140px;top:-140px;width:520px;height:520px;background:radial-gradient(circle,rgba(23,166,151,.28),transparent 70%);border-radius:50%}
+.logo-box{width:92px;height:92px;border-radius:18px;background:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 30px rgba(0,0,0,.3);margin-bottom:26px;overflow:hidden}
+.logo-box img{width:78px;height:78px;object-fit:contain}
+.cover .badge{display:inline-block;background:rgba(23,166,151,.18);border:1px solid rgba(23,166,151,.4);color:#7FEAD9;padding:7px 16px;border-radius:100px;font-size:.8rem;font-weight:600;width:fit-content}
+.cover h1{font-size:3.9rem;font-weight:800;letter-spacing:-.03em;margin:22px 0 12px;max-width:960px}
+.cover .meta{color:#B9C2FF;font-size:1.15rem;margin-bottom:40px}
+.pills{display:flex;gap:20px}
+.pill{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:20px 26px;min-width:180px}
+.pill .v{font-size:2.3rem;font-weight:800;letter-spacing:-.02em;line-height:1}
+.pill .l{font-size:.78rem;color:#B9C2FF;margin-top:9px;text-transform:uppercase;letter-spacing:.07em}
+.pill.tl .v{color:#7FEAD9}.pill.pu .v{color:#E0A6F5}
+
+/* RESUMO */
+.enc{background:linear-gradient(160deg,#EEF1FF,#F4F6FF 45%,#EBF7F5)}
+.enc .slide-in{justify-content:center}
+.enc-hl{font-size:2.5rem;font-weight:800;letter-spacing:-.02em;max-width:1050px;line-height:1.16;margin:14px 0 22px}
+.enc-hl .hi{color:var(--p)}.enc-hl .hi2{color:var(--teal)}
+.enc-story{font-size:1.2rem;color:var(--t2);max-width:1000px;line-height:1.6}
+
+/* KPI */
+.kgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:auto;margin-bottom:auto}
+.kc{background:#fff;border-radius:var(--r);padding:28px 26px;box-shadow:var(--sh);border-left:4px solid var(--p)}
+.kc.tl{border-left-color:var(--teal)}.kc.pu{border-left-color:var(--purple)}.kc.yt{border-left-color:var(--yt)}.kc.dp{border-left-color:var(--display)}.kc.tk{border-left-color:var(--tiktok)}
+.kc-lbl{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--tm)}
+.kc-val{font-size:2.3rem;font-weight:800;letter-spacing:-.02em;margin:10px 0 4px}
+.kc-sub{font-size:.86rem;color:var(--t2)}
+.kc.sm .kc-val{font-size:1.9rem}
+
+/* META WRAP */
+.meta-flex{display:flex;gap:44px;align-items:center;margin-top:24px}
+.extra-callout{margin-top:26px;background:linear-gradient(135deg,#0A0A5C,#1A3CFF);color:#fff;border-radius:var(--r);padding:24px 34px;display:flex;align-items:center;gap:24px}
+.extra-num{font-size:2.6rem;font-weight:900;letter-spacing:-.03em;color:#7FEAD9;line-height:1}
+.extra-txt{font-size:1.15rem;font-weight:600}
+.meta-left{text-align:center;flex:0 0 340px}
+.mm-pct{font-size:6rem;font-weight:900;letter-spacing:-.04em;color:var(--teal);line-height:.9}
+.mm-pct sup{font-size:2.2rem;vertical-align:super}
+.mm-pl{font-size:1rem;color:var(--t2);font-weight:600;margin-top:6px}
+.mm-side{margin-top:18px;font-size:.95rem;color:var(--tm)}
+.mm-side b{display:block;font-size:1.5rem;color:var(--t1);font-weight:800}
+table{width:100%;border-collapse:collapse;background:#fff;border-radius:var(--r);overflow:hidden;box-shadow:var(--sh)}
+th,td{padding:14px 18px;text-align:left;font-size:1rem}
+thead th{background:var(--navy);color:#fff;font-weight:600;font-size:.8rem;text-transform:uppercase;letter-spacing:.05em}
+tbody tr{border-bottom:1px solid var(--border)}
+td.num{text-align:right;font-variant-numeric:tabular-nums;font-weight:600}
+.pct-badge{display:inline-block;padding:4px 12px;border-radius:100px;font-size:.85rem;font-weight:700;background:rgba(23,166,151,.14);color:#0E7A6E}
+tr.total{background:rgba(26,60,255,.05);font-weight:800}
+tr.total-geral{background:rgba(23,166,151,.10)}tr.total-geral td{color:#0E7A6E}
+tr.bonus{background:rgba(156,39,176,.06)}tr.bonus td{color:#7A1E8C}
+.bonus-tag{display:inline-block;background:var(--purple);color:#fff;font-size:.66rem;font-weight:700;padding:2px 9px;border-radius:100px;letter-spacing:.05em;margin-left:8px}
+
+/* CHART */
+.chart-box{background:#fff;border-radius:var(--r);padding:22px 24px 16px;box-shadow:var(--sh)}
+.chart-title{font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--t2);margin-bottom:12px}
+.chart-cvs{position:relative}
+.chart-cvs canvas{width:100%!important;height:100%!important}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.ib{background:#fff;border-left:4px solid var(--p);border-radius:var(--r);padding:20px 24px;box-shadow:var(--sh)}
+.ib.dp{border-left-color:var(--display)}.ib.yt{border-left-color:var(--yt)}.ib.pu{border-left-color:var(--purple)}.ib.tk{border-left-color:var(--tiktok)}
+.ib-lbl{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:var(--tm);margin-bottom:7px}
+.ib-txt{font-size:1.02rem;color:var(--t2);line-height:1.55}
+
+/* CRIATIVOS */
+.cri-grid{display:grid;gap:22px;margin-top:24px}
+.cri{background:#fff;border-radius:var(--r);box-shadow:var(--sh);overflow:hidden}
+.cri-img{position:relative;background:linear-gradient(135deg,#EEF1FF,#E4ECFF)}
+.cri-img img{width:100%;height:100%;object-fit:cover;display:block}
+.cri-rank{position:absolute;top:12px;left:12px;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+.cri-rank.g{background:linear-gradient(135deg,#F5C518,#E0A800)}.cri-rank.s{background:linear-gradient(135deg,#B8C0CC,#8E99A8)}.cri-rank.b{background:linear-gradient(135deg,#CD8248,#A9662F)}
+.cri-body{padding:16px 18px}
+.cri-name{font-weight:700;font-size:1rem;margin-bottom:10px}
+.cri-metrics{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.cm-v{font-size:1.15rem;font-weight:800}.cm-l{font-size:.68rem;color:var(--tm);text-transform:uppercase;letter-spacing:.04em}
+
+/* DIAG */
+.diag{background:linear-gradient(135deg,#060630,#0A0A5C,#1530A8);color:#fff}
+.dc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:auto;margin-bottom:auto}
+.dc{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.10);border-radius:var(--r);padding:24px 22px;position:relative;overflow:hidden}
+.dc-acc{position:absolute;top:0;left:0;width:100%;height:3px;background:var(--teal)}.dc-acc.b{background:var(--p)}.dc-acc.p{background:var(--purple)}
+.dc-n{font-size:.74rem;color:#8A93C8;font-weight:700}
+.dc-m{font-size:1.5rem;font-weight:800;color:#7FEAD9;margin:6px 0 6px}
+.dc-ttl{font-weight:700;font-size:1.02rem;margin-bottom:7px}
+.dc-txt{font-size:.86rem;color:#C6CCEB;line-height:1.5}
+
+/* CONTRACAPA */
+.back{background:linear-gradient(160deg,#EEF1FF,#F4F6FF 50%,#EBF7F5)}
+.back .slide-in{justify-content:center;align-items:center;text-align:center}
+.back p{color:var(--t2);font-size:1.05rem}
+.cover-esquina{position:absolute;top:52px;right:64px;height:26px;width:auto;z-index:3;opacity:.92}
+.back-logos{display:flex;align-items:center;justify-content:center;gap:28px}
+.back-campinas{height:70px;width:auto;border-radius:12px}
+.back-esquina{height:34px;width:auto}
+.back-div{width:1px;height:48px;background:rgba(0,0,0,.12)}
+
+@media print{@page{size:1280px 720px;margin:0}body{background:#fff}.slide{margin:0}*{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}}
+</style>
+</head>
+<body>
+
+<!-- 01 CAPA -->
+<div class="slide cover"><img class="cover-esquina" src="assets/logo-esquina-branco.png" alt="Esquina"><div class="slide-in">
+  <div class="logo-box"><img src="assets/Logo Campinas.jpg" alt=""></div>
+  <span class="badge">Relatório Mensal · Campanha Temas Diversos</span>
+  <h1>Um mês conectando Campinas às suas conquistas</h1>
+  <p class="meta">Prefeitura Municipal de Campinas · 08 de junho a 06 de julho de 2026</p>
+  <div class="pills">
+    <div class="pill"><div class="v" id="p-impr"></div><div class="l">Impressões entregues</div></div>
+    <div class="pill tl"><div class="v">113%</div><div class="l">da meta contratada</div></div>
+    <div class="pill"><div class="v">4</div><div class="l">Canais ativos</div></div>
+    <div class="pill pu"><div class="v" id="p-vis"></div><div class="l">Visitas ao perfil (bônus)</div></div>
+  </div>
+</div></div>
+
+<!-- 02 RESUMO -->
+<div class="slide enc"><div class="slide-in">
+  <span class="eyebrow">Junho em números</span>
+  <h2 class="enc-hl">Em junho, a comunicação da Prefeitura de Campinas chegou à tela de milhões de pessoas, e a campanha entregou <span class="hi">113% da meta</span> contratada em <span class="hi2">quatro canais</span>.</h2>
+  <p class="enc-story">Ao longo do mês, a campanha Temas Diversos levou ao cidadão campineiro informações de serviço sobre saúde, cuidado animal, festas populares, obras e atendimento público. Foram 5,67 milhões de impressões distribuídas entre YouTube, Display, Meta e TikTok, superando a meta em todos os canais e reforçando a presença institucional da Prefeitura no dia a dia digital da cidade.</p>
+</div></div>
+
+<!-- 03 KPIs -->
+<div class="slide"><div class="slide-in">
+  <span class="eyebrow">Visão consolidada</span>
+  <h2 class="s-title">Os números do mês</h2>
+  <div class="kgrid">
+    <div class="kc yt"><div class="kc-lbl">YouTube · Impressões</div><div class="kc-val">1.385.844</div><div class="kc-sub">126% da meta</div></div>
+    <div class="kc dp"><div class="kc-lbl">Display · Impressões</div><div class="kc-val">791.755</div><div class="kc-sub">110% da meta</div></div>
+    <div class="kc"><div class="kc-lbl">Meta Temas Diversos</div><div class="kc-val">2.464.663</div><div class="kc-sub">112% da meta</div></div>
+    <div class="kc tk"><div class="kc-lbl">TikTok · Impressões</div><div class="kc-val">1.025.279</div><div class="kc-sub">103% da meta</div></div>
+    <div class="kc tl sm"><div class="kc-lbl">Cliques no link (Meta TD)</div><div class="kc-val">13.926</div><div class="kc-sub">Engajamento com o conteúdo</div></div>
+    <div class="kc pu sm"><div class="kc-lbl">Novos seguidores (bônus)</div><div class="kc-val">5.322</div><div class="kc-sub">Crescimento de 19,8% no Instagram</div></div>
+  </div>
+</div></div>
+
+<!-- 04 META + TABELA -->
+<div class="slide"><div class="slide-in">
+  <span class="eyebrow tl">Meta da campanha</span>
+  <h2 class="s-title">Meta cumprida, e superada</h2>
+  <div class="meta-flex">
+    <div class="meta-left">
+      <div class="mm-pct">113<sup>%</sup></div>
+      <div class="mm-pl">da meta cumprida</div>
+      <div class="mm-side"><b>5.667.541</b>impressões entregues<br>sobre 5.020.000 contratadas</div>
+    </div>
+    <div style="flex:1">
+      <table>
+        <thead><tr><th>Canal</th><th style="text-align:right">Meta</th><th style="text-align:right">Entregue</th><th style="text-align:right">% da meta</th></tr></thead>
+        <tbody id="tbl-c"></tbody>
+      </table>
+    </div>
+  </div>
+  <div class="extra-callout" id="extra-callout-s"></div>
+</div></div>
+
+<!-- 05 DISPLAY -->
+<div class="slide"><div class="slide-in">
+  <div class="chan-head"><span class="chan-dot" style="background:var(--display)"></span><span class="eyebrow dp">Google · Display Programática</span></div>
+  <h2 class="s-title">Display Programática</h2>
+  <div class="kgrid" style="margin:22px 0 0;flex:0">
+    <div class="kc dp"><div class="kc-lbl">Impressões</div><div class="kc-val">791.755</div><div class="kc-sub">110% da meta</div></div>
+    <div class="kc dp"><div class="kc-lbl">Meta contratada</div><div class="kc-val">720.000</div><div class="kc-sub">Superada em 71,8 mil</div></div>
+    <div class="kc dp"><div class="kc-lbl">Temas veiculados</div><div class="kc-val">4</div><div class="kc-sub">Vacina, ISS, Mário Gatti, institucional</div></div>
+  </div>
+  <div class="chart-box" style="margin-top:22px"><div class="chart-title">Impressões por Tema</div><div class="chart-cvs" style="height:250px"><canvas id="chDisplay"></canvas></div></div>
+  <div class="ib dp" style="margin-top:18px"><div class="ib-txt">A distribuição por tema revela decisão de mídia orientada às prioridades reais da gestão. Vacinação contra a gripe no auge do inverno, Hospital Mário Gatti e regularização do ISS levaram informação de saúde e arrecadação ao morador na hora certa, transformando espaço de mídia em serviço público.</div></div>
+</div></div>
+
+<!-- 06 YOUTUBE -->
+<div class="slide"><div class="slide-in">
+  <div class="chan-head"><span class="chan-dot" style="background:var(--yt)"></span><span class="eyebrow yt">YouTube Ads</span></div>
+  <h2 class="s-title">YouTube</h2>
+  <div class="kgrid" style="margin:22px 0 0;flex:0">
+    <div class="kc yt"><div class="kc-lbl">Impressões</div><div class="kc-val">1.385.844</div><div class="kc-sub">126% da meta</div></div>
+    <div class="kc yt"><div class="kc-lbl">Meta contratada</div><div class="kc-val">1.100.000</div><div class="kc-sub">Superada em 285,8 mil</div></div>
+    <div class="kc yt"><div class="kc-lbl">Novos inscritos</div><div class="kc-val">3.259</div><div class="kc-sub">Novos inscritos no canal do YouTube</div></div>
+  </div>
+  <div class="chart-box" style="margin-top:22px"><div class="chart-title">Impressões por Tema</div><div class="chart-cvs" style="height:250px"><canvas id="chYoutube"></canvas></div></div>
+  <div class="ib yt" style="margin-top:18px"><div class="ib-txt">Concentrar esforço em vídeo foi decisão estratégica: é o formato mais eficaz para a Prefeitura explicar suas entregas. A Campanha do Agasalho dialogou com a agenda social do inverno, e a estratégia ainda trouxe 3.259 novos inscritos ao canal oficial da Prefeitura, uma audiência própria e permanente.</div></div>
+</div></div>
+
+<!-- 07 META TD CHARTS -->
+<div class="slide"><div class="slide-in">
+  <div class="chan-head"><span class="chan-dot" style="background:var(--p)"></span><span class="eyebrow">Meta Ads · Temas Diversos</span></div>
+  <h2 class="s-title">Meta Temas Diversos</h2>
+  <div class="kgrid" style="margin:22px 0 0;flex:0">
+    <div class="kc"><div class="kc-lbl">Impressões totais</div><div class="kc-val">2.464.665</div><div class="kc-sub">112% da meta</div></div>
+    <div class="kc"><div class="kc-lbl">Pessoas alcançadas · Engajamento</div><div class="kc-val">410.245</div><div class="kc-sub">Frequência 1,63</div></div>
+    <div class="kc"><div class="kc-lbl">Visualizações</div><div class="kc-val">103.459</div><div class="kc-sub">Reproduções de vídeo (ThruPlay)</div></div>
+  </div>
+  <div class="two-col" style="margin-top:22px">
+    <div class="chart-box"><div class="chart-title">Impressões por Campanha</div><div class="chart-cvs" style="height:290px"><canvas id="chMetaCamp"></canvas></div></div>
+    <div class="chart-box"><div class="chart-title">Impressões por Criativo</div><div class="chart-cvs" style="height:290px"><canvas id="chMetaCri"></canvas></div></div>
+  </div>
+</div></div>
+
+<!-- 08 META TD CRIATIVOS -->
+<div class="slide"><div class="slide-in">
+  <span class="eyebrow">Meta Temas Diversos · Criativos em destaque</span>
+  <h2 class="s-title">O que mais performou</h2>
+  <div class="cri-grid" id="cri-metatd" style="grid-template-columns:repeat(3,1fr)"></div>
+  <div class="ib" style="margin-top:24px"><div class="ib-txt">A curadoria de criativos revela leitura precisa do calendário da cidade. A Festa Junina, campeã de engajamento, capturou o momento cultural de junho, enquanto obras de drenagem, vacinação e cuidado animal ampliaram pautas centrais da gestão, como o combate a enchentes e a saúde pública.</div></div>
+</div></div>
+
+<!-- 09 META VP -->
+<div class="slide"><div class="slide-in">
+  <div class="chan-head"><span class="chan-dot" style="background:var(--purple)"></span><span class="eyebrow pu">Meta Ads · Visitas ao Perfil <span class="bonus-tag">BÔNUS</span></span></div>
+  <h2 class="s-title">Meta Visitas ao Perfil</h2>
+  <div class="kgrid" style="margin:22px 0 0;flex:0;grid-template-columns:repeat(4,1fr)">
+    <div class="kc pu"><div class="kc-lbl">Impressões entregues</div><div class="kc-val">529.065</div><div class="kc-sub">Volume adicional, fora da meta</div></div>
+    <div class="kc pu"><div class="kc-lbl">Visitas ao perfil</div><div class="kc-val">15.407</div><div class="kc-sub">Direcionamento ao Instagram</div></div>
+    <div class="kc pu"><div class="kc-lbl">Novos seguidores</div><div class="kc-val">5.322</div><div class="kc-sub">16% acima do mês anterior (4.589)</div></div>
+    <div class="kc pu"><div class="kc-lbl">Conversão em seguidores</div><div class="kc-val">34,5%</div><div class="kc-sub">Das visitas viraram seguidores</div></div>
+  </div>
+  <div class="chart-box" style="margin-top:22px"><div class="chart-title">Impressões por Criativo</div><div class="chart-cvs" style="height:230px"><canvas id="chVp"></canvas></div></div>
+  <div class="ib pu" style="margin-top:18px"><div class="ib-txt">Mais que um bônus, construiu um ativo de longo prazo: uma base própria de seguidores que cresceu 19,8%, com 15.407 visitas e 5.322 novos seguidores. Cada seguidor amplia o canal direto com o cidadão e reduz a dependência de mídia paga nas próximas comunicações.</div></div>
+</div></div>
+
+<!-- 10 TIKTOK -->
+<div class="slide"><div class="slide-in">
+  <div class="chan-head"><span class="chan-dot" style="background:var(--tiktok)"></span><span class="eyebrow tk">TikTok Ads</span></div>
+  <h2 class="s-title">TikTok</h2>
+  <div class="kgrid" style="margin:22px 0 0;flex:0">
+    <div class="kc tk"><div class="kc-lbl">Impressões</div><div class="kc-val">1.025.279</div><div class="kc-sub">103% da meta</div></div>
+    <div class="kc tk"><div class="kc-lbl">Alcance</div><div class="kc-val">217.391</div><div class="kc-sub">Pessoas únicas</div></div>
+    <div class="kc tk"><div class="kc-lbl">Cliques</div><div class="kc-val">1.432</div><div class="kc-sub">CTR de 0,14%</div></div>
+  </div>
+  <div class="chart-box" style="margin-top:22px"><div class="chart-title">Impressões por Criativo</div><div class="chart-cvs" style="height:230px"><canvas id="chTiktok"></canvas></div></div>
+  <div class="ib tk" style="margin-top:18px"><div class="ib-txt">Papel estratégico de rejuvenescer a audiência institucional, levando a Prefeitura ao público de 18 a 24 anos com linguagem nativa. Inovação urbana, cuidado animal e o canal 156 provaram que serviço público ganha tração entre os jovens quando traduzido no formato certo.</div></div>
+</div></div>
+
+<!-- 11 TIKTOK CRIATIVOS -->
+<div class="slide"><div class="slide-in">
+  <span class="eyebrow tk">TikTok · Criativos em destaque</span>
+  <h2 class="s-title">O que mais performou</h2>
+  <div class="cri-grid" id="cri-tiktok" style="grid-template-columns:repeat(4,1fr)"></div>
+</div></div>
+
+<!-- DIAGNOSTICO -->
+<div class="slide diag"><div class="slide-in">
+  <span class="eyebrow tl" style="color:#7FEAD9">O que a campanha revelou</span>
+  <h2 class="s-title" style="color:#fff">Diagnóstico do mês</h2>
+  <div class="dc-grid">
+    <div class="dc"><div class="dc-acc"></div><div class="dc-n">01</div><div class="dc-m">Agenda pública</div><div class="dc-ttl">Mídia a serviço das prioridades da gestão</div><div class="dc-txt">Cada tema espelhou uma prioridade real da Prefeitura: saúde, combate a enchentes, atendimento e cultura. O plano de mídia virou extensão da política pública da cidade.</div></div>
+    <div class="dc"><div class="dc-acc b"></div><div class="dc-n">02</div><div class="dc-m">Leitura de contexto</div><div class="dc-ttl">A curadoria certa para o momento da cidade</div><div class="dc-txt">Vacinação de inverno, Campanha do Agasalho e Festa Junina mostram leitura precisa do calendário campineiro. A mensagem certa no momento certo, por análise, não por acaso.</div></div>
+    <div class="dc"><div class="dc-acc"></div><div class="dc-n">03</div><div class="dc-m">Vídeo primeiro</div><div class="dc-ttl">O formato que dá rosto às entregas</div><div class="dc-txt">Concentrar esforço em vídeo deu à gestão o meio mais eficaz para explicar obras e serviços com linguagem acessível, humanizando a comunicação institucional.</div></div>
+    <div class="dc"><div class="dc-acc p"></div><div class="dc-n">04</div><div class="dc-m">Ativo próprio</div><div class="dc-ttl">Uma base de audiência que fica</div><div class="dc-txt">O crescimento de 19,8% no Instagram construiu um canal direto e permanente com o cidadão. É patrimônio de comunicação da Prefeitura, além da mídia paga.</div></div>
+    <div class="dc"><div class="dc-acc b"></div><div class="dc-n">05</div><div class="dc-m">Público certo</div><div class="dc-ttl">Segmentação que amplia o alcance</div><div class="dc-txt">A distribuição entre plataformas e faixas etárias fez serviços públicos alcançarem o público amplo e os mais jovens. Cada canal escolhido pelo público que melhor atende.</div></div>
+    <div class="dc"><div class="dc-acc"></div><div class="dc-n">06</div><div class="dc-m">Presença que sustenta reputação</div><div class="dc-ttl">Visibilidade em um mês decisivo</div><div class="dc-txt">Dos 252 anos da cidade às obras estruturais, a campanha manteve a Prefeitura visível no digital, sustentando a percepção de uma gestão que entrega e sabe comunicar.</div></div>
+  </div>
+</div></div>
+
+<!-- 14 CONTRACAPA -->
+<div class="slide back"><div class="slide-in">
+  <div class="back-logos">
+    <img class="back-campinas" src="assets/Logo Campinas.jpg" alt="Prefeitura de Campinas">
+    <span class="back-div"></span>
+    <img class="back-esquina" src="assets/logo-esquina.png" alt="Esquina">
+  </div>
+  <p style="margin-top:24px">Relatório de Performance · Campanha Temas Diversos</p>
+  <p>08 de junho a 06 de julho de 2026</p>
+  <p style="margin-top:10px;color:var(--tm)">Prefeitura Municipal de Campinas · Comunicação institucional</p>
+</div></div>
+
+<script>
+const DATA = {
+  "periodo": "08 de junho a 06 de julho de 2026",
+  "totais": {
+    "impressoes": 5667541,
+    "pctMeta": 113,
+    "canais": 4,
+    "visitasBonus": 15407,
+    "seguidoresBonus": 5322,
+    "crescimentoBonus": 19.8
+  },
+  "contratado": [
+    {
+      "canal": "YouTube",
+      "meta": 1100000,
+      "entregue": 1385844,
+      "pct": 126
+    },
+    {
+      "canal": "Google Display",
+      "meta": 720000,
+      "entregue": 791755,
+      "pct": 110
+    },
+    {
+      "canal": "Meta Temas Diversos",
+      "meta": 2200000,
+      "entregue": 2464663,
+      "pct": 112
+    },
+    {
+      "canal": "TikTok",
+      "meta": 1000000,
+      "entregue": 1025279,
+      "pct": 103
+    }
+  ],
+  "contratadoTotal": {
+    "meta": 5020000,
+    "entregue": 5667541,
+    "pct": 113
+  },
+  "metaTd": {
+    "total": 2464665,
+    "campanhas": [
+      {
+        "nome": "Engajamento",
+        "impr": 668324,
+        "reach": 410245,
+        "clk": 9292,
+        "ctr": 1.39,
+        "freq": 1.63
+      },
+      {
+        "nome": "Alcance",
+        "impr": 1796341,
+        "reach": 498261,
+        "clk": 4634,
+        "ctr": 0.26,
+        "freq": 3.61
+      }
+    ],
+    "criativos": [
+      {
+        "nome": "Carrinhos elétricos",
+        "impr": 788144,
+        "clk": 2974
+      },
+      {
+        "nome": "Festa Junina",
+        "impr": 306955,
+        "clk": 1929
+      },
+      {
+        "nome": "Portal Animal",
+        "impr": 200311,
+        "clk": 498
+      },
+      {
+        "nome": "Castração · Cópia",
+        "impr": 161476,
+        "clk": 454
+      },
+      {
+        "nome": "ARENA TORCEDOR",
+        "impr": 122028,
+        "clk": 124
+      },
+      {
+        "nome": "Carrossel Festa Junina · 23 de junho",
+        "impr": 111646,
+        "clk": 130
+      },
+      {
+        "nome": "Arena Brasil",
+        "impr": 107144,
+        "clk": 166
+      },
+      {
+        "nome": "Obras - 26 de junho",
+        "impr": 105826,
+        "clk": 250
+      }
+    ],
+    "genero": [
+      {
+        "label": "Feminino",
+        "pct": 50.7
+      },
+      {
+        "label": "Masculino",
+        "pct": 48.9
+      }
+    ],
+    "idade": [
+      {
+        "label": "18-24",
+        "impr": 1279933,
+        "pct": 36.4
+      },
+      {
+        "label": "25-34",
+        "impr": 1103915,
+        "pct": 31.4
+      },
+      {
+        "label": "35-44",
+        "impr": 503681,
+        "pct": 14.3
+      },
+      {
+        "label": "45-54",
+        "impr": 286576,
+        "pct": 8.2
+      },
+      {
+        "label": "55-64",
+        "impr": 210123,
+        "pct": 6
+      },
+      {
+        "label": "65+",
+        "impr": 129302,
+        "pct": 3.7
+      }
+    ],
+    "serie": [
+      {
+        "date": "06-08",
+        "impr": 103541
+      },
+      {
+        "date": "06-09",
+        "impr": 116043
+      },
+      {
+        "date": "06-10",
+        "impr": 111621
+      },
+      {
+        "date": "06-11",
+        "impr": 102366
+      },
+      {
+        "date": "06-12",
+        "impr": 101905
+      },
+      {
+        "date": "06-13",
+        "impr": 87537
+      },
+      {
+        "date": "06-14",
+        "impr": 123846
+      },
+      {
+        "date": "06-15",
+        "impr": 110951
+      },
+      {
+        "date": "06-16",
+        "impr": 94167
+      },
+      {
+        "date": "06-17",
+        "impr": 89421
+      },
+      {
+        "date": "06-18",
+        "impr": 76105
+      },
+      {
+        "date": "06-19",
+        "impr": 78338
+      },
+      {
+        "date": "06-20",
+        "impr": 85479
+      },
+      {
+        "date": "06-21",
+        "impr": 100257
+      },
+      {
+        "date": "06-22",
+        "impr": 85720
+      },
+      {
+        "date": "06-23",
+        "impr": 79695
+      },
+      {
+        "date": "06-24",
+        "impr": 84980
+      },
+      {
+        "date": "06-25",
+        "impr": 77004
+      },
+      {
+        "date": "06-26",
+        "impr": 78282
+      },
+      {
+        "date": "06-27",
+        "impr": 75188
+      },
+      {
+        "date": "06-28",
+        "impr": 89838
+      },
+      {
+        "date": "06-29",
+        "impr": 82380
+      },
+      {
+        "date": "06-30",
+        "impr": 176105
+      },
+      {
+        "date": "07-01",
+        "impr": 249542
+      },
+      {
+        "date": "07-02",
+        "impr": 241767
+      }
+    ],
+    "reachEng": 410245
+  },
+  "metaVp": {
+    "impr": 529065,
+    "reach": 308186,
+    "clicks": 15516,
+    "ctr": 2.93,
+    "visitas": 15407,
+    "seguidores": 5322,
+    "crescimento": 19.8,
+    "criativos": [
+      {
+        "nome": "Carrossel de Posts",
+        "impr": 305635,
+        "clk": 5708
+      },
+      {
+        "nome": "Carrossel Festa Junina",
+        "impr": 126689,
+        "clk": 6726
+      },
+      {
+        "nome": "Gripe vacinação - Junho 2026 - Dark Post",
+        "impr": 7907,
+        "clk": 108
+      },
+      {
+        "nome": "156",
+        "impr": 1560,
+        "clk": 36
+      },
+      {
+        "nome": "Cachorro Robô",
+        "impr": 733,
+        "clk": 10
+      },
+      {
+        "nome": "Carrinhos elétricos",
+        "impr": 194,
+        "clk": 10
+      }
+    ]
+  },
+  "display": {
+    "total": 791755,
+    "temas": [
+      {
+        "nome": "Vacina contra a Gripe",
+        "impr": 277050
+      },
+      {
+        "nome": "Institucional / Temas Diversos",
+        "impr": 227124
+      },
+      {
+        "nome": "ISS",
+        "impr": 171009
+      },
+      {
+        "nome": "Hospital Mário Gatti",
+        "impr": 116572
+      }
+    ]
+  },
+  "youtube": {
+    "total": 1385844,
+    "instream": 583202,
+    "sequencial": 802642,
+    "views": 32862,
+    "vtr": 5.6,
+    "temas": [
+      {
+        "nome": "Campanha do Agasalho",
+        "impr": 349901
+      },
+      {
+        "nome": "Vídeos Temas Diversos",
+        "impr": 276994
+      },
+      {
+        "nome": "Veterinário 24 hrs p/ cães e gatos",
+        "impr": 233301
+      },
+      {
+        "nome": "Temas diversos 27 de março",
+        "impr": 132541
+      }
+    ]
+  },
+  "tiktok": {
+    "total": 1025279,
+    "reach": 217391,
+    "clicks": 1432,
+    "ctr": 0.14,
+    "criativos": [
+      {
+        "nome": "carrinhos elétricos flutuantes",
+        "impr": 352546,
+        "clk": 488
+      },
+      {
+        "nome": "Portal Animal",
+        "impr": 266367,
+        "clk": 353
+      },
+      {
+        "nome": "156",
+        "impr": 245062,
+        "clk": 396
+      },
+      {
+        "nome": "vacinação",
+        "impr": 139109,
+        "clk": 158
+      },
+      {
+        "nome": "Obras do piscinão",
+        "impr": 8731,
+        "clk": 15
+      },
+      {
+        "nome": "mutirão de limpeza",
+        "impr": 7517,
+        "clk": 12
+      },
+      {
+        "nome": "Violência contra a mulher",
+        "impr": 5947,
+        "clk": 10
+      }
+    ],
+    "genero": [
+      {
+        "label": "Masculino",
+        "impr": 677513
+      },
+      {
+        "label": "Feminino",
+        "impr": 614156
+      }
+    ],
+    "idade": [
+      {
+        "label": "18-24",
+        "impr": 493606
+      },
+      {
+        "label": "25-34",
+        "impr": 269695
+      },
+      {
+        "label": "45-54",
+        "impr": 199231
+      },
+      {
+        "label": "35-44",
+        "impr": 187881
+      },
+      {
+        "label": "55+",
+        "impr": 145819
+      }
+    ]
+  }
+};
+const fmt = n => n.toLocaleString('pt-BR');
+const fmtK = n => n>=1000 ? (n/1000).toLocaleString('pt-BR',{maximumFractionDigits:0})+'k' : n;
+
+document.getElementById('p-impr').textContent = fmt(DATA.totais.impressoes);
+document.getElementById('p-vis').textContent = fmt(DATA.totais.visitasBonus);
+
+/* tabela contratado */
+const tc = document.getElementById('tbl-c');
+DATA.contratado.forEach(r=>tc.insertAdjacentHTML('beforeend',
+  `<tr><td>${r.canal}</td><td class="num">${fmt(r.meta)}</td><td class="num">${fmt(r.entregue)}</td><td class="num"><span class="pct-badge">${r.pct}%</span></td></tr>`));
+tc.insertAdjacentHTML('beforeend',
+  `<tr class="total"><td>TOTAL CONTRATADO</td><td class="num">${fmt(DATA.contratadoTotal.meta)}</td><td class="num">${fmt(DATA.contratadoTotal.entregue)}</td><td class="num"><span class="pct-badge">${DATA.contratadoTotal.pct}%</span></td></tr>`);
+tc.insertAdjacentHTML('beforeend',
+  `<tr class="bonus"><td>Visitas ao Perfil <span class="bonus-tag">BÔNUS</span></td><td class="num">—</td><td class="num">${fmt(DATA.metaVp.impr)}</td><td class="num"><span class="bonus-tag">Bônus</span></td></tr>`);
+const totalGeral = DATA.contratadoTotal.entregue + DATA.metaVp.impr;
+const pctGeral = Math.round(totalGeral / DATA.contratadoTotal.meta * 100);
+tc.insertAdjacentHTML('beforeend',
+  `<tr class="total total-geral"><td>TOTAL GERAL, com bônus</td><td class="num">${fmt(DATA.contratadoTotal.meta)}</td><td class="num">${fmt(totalGeral)}</td><td class="num"><span class="pct-badge">${pctGeral}%</span></td></tr>`);
+document.getElementById('extra-callout-s').innerHTML =
+  `<span class="extra-num">+${fmt(totalGeral - DATA.contratadoTotal.meta)}</span><span class="extra-txt">impressões entregues além do contratado no mês, somando a entrega bônus</span>`;
+
+/* criativos */
+const medals=['g','s','b','g'];
+function renderCri(id,list,total,imgMap,n,imgH){
+  const box=document.getElementById(id);
+  list.slice(0,n).forEach((c,i)=>{
+    const ctr=c.impr?(c.clk/c.impr*100).toLocaleString('pt-BR',{maximumFractionDigits:2})+'%':'—';
+    const part=(c.impr/total*100).toLocaleString('pt-BR',{maximumFractionDigits:1})+'%';
+    box.insertAdjacentHTML('beforeend',
+      `<div class="cri"><div class="cri-img" style="height:${imgH}px"><img src="assets/${imgMap[c.nome]||''}" alt=""><div class="cri-rank ${medals[i]}">${i+1}</div></div>
+       <div class="cri-body"><div class="cri-name">${c.nome}</div><div class="cri-metrics">
+        <div><div class="cm-v">${fmt(c.impr)}</div><div class="cm-l">Impressões</div></div>
+        <div><div class="cm-v">${fmt(c.clk)}</div><div class="cm-l">Cliques</div></div>
+        <div><div class="cm-v">${ctr}</div><div class="cm-l">CTR</div></div>
+        <div><div class="cm-v">${part}</div><div class="cm-l">Do canal</div></div>
+       </div></div></div>`);
+  });
+}
+renderCri('cri-metatd',DATA.metaTd.criativos,DATA.metaTd.total,{'Carrinhos elétricos':'metatd-carrinhos-eletricos.jpg','Festa Junina':'metatd-festa-junina.jpg','Portal Animal':'metatd-portal-animal.jpg'},3,230);
+renderCri('cri-tiktok',DATA.tiktok.criativos,DATA.tiktok.total,{'carrinhos elétricos flutuantes':'tiktok-carrinhos.jpg','Portal Animal':'tiktok-portal-animal.jpg','156':'tiktok-156.jpg','vacinação':'tiktok-vacinacao.jpg'},4,300);
+
+/* charts */
+Chart.defaults.font.family="'Inter',sans-serif";Chart.defaults.color='#888';Chart.defaults.animation=false;
+const gridC='rgba(0,0,0,.06)';
+const baseBar=()=>({responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{grid:{display:false},ticks:{font:{size:12}}},y:{beginAtZero:true,grid:{color:gridC},ticks:{callback:v=>fmtK(v)}}}});
+const hbar=()=>({indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{beginAtZero:true,grid:{color:gridC},ticks:{callback:v=>fmtK(v)}},y:{grid:{display:false},ticks:{font:{size:12}}}}});
+new Chart(chDisplay,{type:'bar',data:{labels:DATA.display.temas.map(t=>t.nome),datasets:[{data:DATA.display.temas.map(t=>t.impr),backgroundColor:'#00994D',borderRadius:6,maxBarThickness:70}]},options:baseBar()});
+new Chart(chYoutube,{type:'bar',data:{labels:DATA.youtube.temas.map(t=>t.nome),datasets:[{data:DATA.youtube.temas.map(t=>t.impr),backgroundColor:'#CC0000',borderRadius:6,maxBarThickness:70}]},options:baseBar()});
+new Chart(chMetaCamp,{type:'bar',data:{labels:DATA.metaTd.campanhas.map(c=>c.nome),datasets:[{data:DATA.metaTd.campanhas.map(c=>c.impr),backgroundColor:['#1A3CFF','#5B74FF'],borderRadius:6,maxBarThickness:100}]},options:baseBar()});
+new Chart(chMetaCri,{type:'bar',data:{labels:DATA.metaTd.criativos.map(c=>c.nome),datasets:[{data:DATA.metaTd.criativos.map(c=>c.impr),backgroundColor:'#1A3CFF',borderRadius:5}]},options:hbar()});
+new Chart(chVp,{type:'bar',data:{labels:DATA.metaVp.criativos.map(c=>c.nome),datasets:[{data:DATA.metaVp.criativos.map(c=>c.impr),backgroundColor:'#9C27B0',borderRadius:5}]},options:hbar()});
+new Chart(chTiktok,{type:'bar',data:{labels:DATA.tiktok.criativos.map(c=>c.nome),datasets:[{data:DATA.tiktok.criativos.map(c=>c.impr),backgroundColor:'#111111',borderRadius:5}]},options:hbar()});
+</script>
+</body>
+</html>
