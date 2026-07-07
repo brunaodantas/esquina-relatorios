@@ -374,7 +374,6 @@
     <div class="hero-meta">
       <div class="hmi"><span class="hmi-val">1,03M</span><span class="hmi-lbl">Impressões totais</span></div>
       <div class="hmi"><span class="hmi-val">458K</span><span class="hmi-lbl">Contas alcançadas</span></div>
-      <div class="hmi"><span class="hmi-val" id="heroChannels">2</span><span class="hmi-lbl">Campanhas ativas</span></div>
       <div class="hmi"><span class="hmi-val">+100%</span><span class="hmi-lbl">Metas atingidas</span></div>
     </div>
   </div>
@@ -787,8 +786,6 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
 <script>
 document.getElementById('navChips').innerHTML = '<a href="#conjuntos" class="chip chip-meta">Meta Ads</a>';
-document.getElementById('heroChannels').textContent = '2';
-
 /* ════ ANIMAÇÕES ════ */
 const obs = new IntersectionObserver(e => e.forEach(x => {
   if(x.isIntersecting){ x.target.classList.add('visible'); obs.unobserve(x.target); }

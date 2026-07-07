@@ -414,7 +414,7 @@
     <div class="hero-meta">
       <div class="hmi"><span class="hmi-val">175K</span><span class="hmi-lbl">Impressões totais</span></div>
       <div class="hmi"><span class="hmi-val">27,5K</span><span class="hmi-lbl">Ouvintes únicos (Spotify)</span></div>
-      <div class="hmi"><span class="hmi-val" id="heroChannels">3</span><span class="hmi-lbl">Canais ativos</span></div>
+      <div class="hmi"><span class="hmi-val">8.198</span><span class="hmi-lbl">Visualizações</span></div>
       <div class="hmi"><span class="hmi-val">+100%</span><span class="hmi-lbl">Metas atingidas</span></div>
     </div>
   </div>
@@ -887,7 +887,6 @@ function applySetup() {
     wrap.appendChild(a);
   });
 
-  document.getElementById('heroChannels').textContent = active.length;
   document.getElementById('setupOverlay').style.display = 'none';
   try { localStorage.setItem('rockdayOnlyChannels_americana', JSON.stringify(active)); } catch(e){}
 }
