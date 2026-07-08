@@ -279,6 +279,51 @@
     .dc-ttl{font-size:.9rem;font-weight:700;color:var(--t1);margin-bottom:8px;line-height:1.3}
     .dc-txt{font-size:.79rem;color:var(--t2);line-height:1.65}
 
+    /* ══ CAMADA ESTRATÉGICA (Percepção × Mídia) ══ */
+    .strat{background:linear-gradient(160deg,#F1EEFF,#F4F6FF 55%,#ECF7F4);border-top:1px solid rgba(123,47,190,.12);border-bottom:1px solid rgba(23,166,151,.12);padding:72px 24px}
+    .strat-in{max-width:1200px;margin:0 auto}
+    .method{font-size:.8rem;font-style:italic;color:var(--tm);line-height:1.6;max-width:920px;margin-top:10px}
+    .sent-wrap{display:grid;grid-template-columns:320px 1fr;gap:36px;align-items:center;margin-top:28px;background:var(--surface);border:1px solid var(--border);border-radius:16px;box-shadow:var(--sh);padding:32px;break-inside:avoid}
+    .sent-cvs{position:relative;width:100%;height:240px}
+    .sent-cvs canvas{width:100%!important;height:100%!important}
+    .sent-legend{display:flex;flex-direction:column;gap:18px}
+    .sl-row{display:flex;gap:16px;align-items:flex-start}
+    .sl-pct{font-size:1.9rem;font-weight:800;letter-spacing:-.02em;min-width:96px;line-height:1}
+    .sl-pct.pos{color:#00A85A}.sl-pct.neg{color:#E23B3B}.sl-pct.neu{color:#D98A1E}
+    .sl-txt{font-size:.9rem;color:var(--t2);line-height:1.5}.sl-txt strong{color:var(--t1)}
+    .reach-note{margin-top:18px;font-size:.8rem;color:var(--tm)}
+    .tcards{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:28px}
+    .tcard{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px;box-shadow:var(--sh);position:relative;overflow:hidden;break-inside:avoid}
+    .tcard::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--purple)}
+    .tcard.at::before{background:#D98A1E}
+    .tcard-top{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:14px}
+    .tcard-name{font-size:1.05rem;font-weight:800;color:var(--t1)}
+    .ttag{font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:4px 10px;border-radius:100px;white-space:nowrap}
+    .ttag.alc{background:rgba(23,166,151,.12);color:var(--teal)}
+    .ttag.at{background:rgba(217,138,30,.16);color:#B4690E}
+    .tcard-metric{display:flex;gap:28px;padding-bottom:14px;border-bottom:1px solid var(--border);margin-bottom:14px}
+    .tcard-metric .v{font-size:1.25rem;font-weight:800;color:var(--purple);line-height:1.1}
+    .tcard.at .tcard-metric .v{color:#B4690E}
+    .tcard-metric .l{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--tm);margin-top:3px}
+    .tcard-txt{font-size:.86rem;color:var(--t2);line-height:1.6}
+    .mcards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:28px}
+    .mcard{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px;box-shadow:var(--sh);border-top:3px solid var(--teal);break-inside:avoid;display:flex;flex-direction:column}
+    .mcard-tag{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--teal);margin-bottom:8px}
+    .mcard-ttl{font-size:1rem;font-weight:700;color:var(--t1);line-height:1.35;margin-bottom:8px}
+    .mcard-txt{font-size:.84rem;color:var(--t2);line-height:1.6;margin-bottom:12px;flex:1}
+    .mcard-src{font-size:.72rem;color:var(--tm)}.mcard-src a{color:var(--teal);text-decoration:none}
+    @media(max-width:900px){.sent-wrap{grid-template-columns:1fr}.tcards,.mcards{grid-template-columns:1fr}}
+
+    /* ══ FONTES E VERIFICAÇÃO ══ */
+    .sources{max-width:1200px;margin:0 auto;padding:56px 24px 12px}
+    .src-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.68rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--teal);margin-bottom:24px}
+    .src-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px}
+    .src-col h4{font-size:.85rem;font-weight:700;color:var(--t1);margin-bottom:7px}
+    .src-col p{font-size:.78rem;color:var(--tm);line-height:1.55}
+    .src-disc{margin-top:26px;padding-top:18px;border-top:1px dashed var(--border);font-size:.78rem;font-style:italic;color:var(--tm);line-height:1.6}
+    @media(max-width:900px){.src-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:600px){.src-grid{grid-template-columns:1fr}}
+
     /* ══ FOOTER ══ */
     .footer{text-align:center;padding:56px 24px;border-top:1px solid var(--border);background:var(--surface)}
     .footer-logos{display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:16px}
@@ -792,6 +837,86 @@
   </div>
 </div>
 
+<!-- ══════════════ LEITURA ESTRATÉGICA · PERCEPÇÃO × MÍDIA ══════════════ -->
+<section class="strat" id="percepcao">
+  <div class="strat-in">
+    <span class="eyebrow eyebrow-pu">Leitura Estratégica</span>
+    <h2 class="h1 fade-in">Percepção Pública e Mídia</h2>
+    <p class="sub fade-in">O que o impulsionamento de cada tema provocou na percepção, cruzando o desempenho por assunto com o monitoramento das redes e a repercussão na imprensa.</p>
+    <p class="method fade-in">Base: monitoramento E3 Comunicação Integrada, cerca de 756 menções e comentários classificados em junho de 2026 (72% positivas, 12% negativas, 16% neutras). Classificação por ferramenta de monitoramento; os alcances referem-se ao alcance potencial dos comentários na rede.</p>
+
+    <div class="sent-wrap fade-in">
+      <div class="sent-cvs"><canvas id="chSent"></canvas></div>
+      <div class="sent-legend">
+        <div class="sl-row"><span class="sl-pct pos">72%</span><span class="sl-txt"><strong>Positivo.</strong> Predomina o sentimento favorável. Os picos de conversa acompanharam os temas Copa (Fun Fest) e Cultura (Festival Pé de Serra), justamente os que a Prefeitura impulsionou.</span></div>
+        <div class="sl-row"><span class="sl-pct neg">12%</span><span class="sl-txt"><strong>Negativo.</strong> Concentrado nos temas Cultura, Trend e Educação.</span></div>
+        <div class="sl-row"><span class="sl-pct neu">16%</span><span class="sl-txt"><strong>Neutro.</strong> Dúvidas e pedidos pontuais, principalmente sobre Cultura.</span></div>
+        <div class="reach-note">Alcance potencial dos comentários: 35,1 mi positivo · 5,7 mi negativo · 7,9 mi neutro.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PERCEPÇÃO POR TEMA -->
+<section class="sec" id="percepcao-temas">
+  <span class="eyebrow eyebrow-pu">Percepção por tema</span>
+  <h2 class="h1 fade-in">Como cada pauta repercutiu</h2>
+  <p class="sub fade-in">Os dois temas que a mídia paga reforçou foram os de maior repercussão espontânea. Os pontos de atenção estão em pautas que não receberam impulsionamento no período.</p>
+  <div class="tcards">
+    <div class="tcard fade-in">
+      <div class="tcard-top"><span class="tcard-name">Copa do Mundo · Fun Fest</span><span class="ttag alc">Alto alcance</span></div>
+      <div class="tcard-metric"><div><div class="v">1º tema</div><div class="l">em repercussão</div></div><div><div class="v">Positivo</div><div class="l">reação dominante</div></div></div>
+      <div class="tcard-txt">Foi o assunto de maior volume e alcance da conversa em junho. É exatamente o tema que impulsionamos com o Fun Fest, e que se materializou nas Fan Fests dos jogos do Brasil. A comunicação paga reforçou uma pauta que já mobilizava o morador, com sentimento majoritariamente positivo.</div>
+    </div>
+    <div class="tcard at fade-in">
+      <div class="tcard-top"><span class="tcard-name">Cultura · Festival Pé de Serra</span><span class="ttag at">Alto alcance · Atenção</span></div>
+      <div class="tcard-metric"><div><div class="v">2º tema</div><div class="l">em repercussão</div></div><div><div class="v">Positivo com ressalvas</div><div class="l">reação dominante</div></div></div>
+      <div class="tcard-txt">Segundo maior alcance do mês e o outro tema que impulsionamos, com o Festival Pé de Serra. Tem saldo positivo, mas concentra parte das menções negativas e neutras do período. É a pauta a acompanhar de perto: responder e ouvir os comentários é o caminho para sustentar a percepção favorável.</div>
+    </div>
+    <div class="tcard at fade-in">
+      <div class="tcard-top"><span class="tcard-name">Trend</span><span class="ttag at">Ponto de atenção</span></div>
+      <div class="tcard-metric"><div><div class="v">Crítico</div><div class="l">reação dominante</div></div><div><div class="v">Sem mídia paga</div><div class="l">no período</div></div></div>
+      <div class="tcard-txt">Aparece entre os temas com mais menções negativas do mês. Não recebeu impulsionamento, o que ajuda a explicar por que a conversa correu sem o direcionamento da comunicação institucional.</div>
+    </div>
+    <div class="tcard at fade-in">
+      <div class="tcard-top"><span class="tcard-name">Educação</span><span class="ttag at">Ponto de atenção</span></div>
+      <div class="tcard-metric"><div><div class="v">Crítico</div><div class="l">reação dominante</div></div><div><div class="v">Sem mídia paga</div><div class="l">no período</div></div></div>
+      <div class="tcard-txt">Pauta sensível, com menções negativas relevantes e sem impulsionamento no período. Sinaliza uma oportunidade de pautar o tema de forma ativa nos próximos ciclos, como foi feito com Cultura e Copa.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CRUZAMENTO COM A MÍDIA -->
+<section class="sec" id="cruzamento-midia">
+  <span class="eyebrow eyebrow-t">Cruzamento com a mídia</span>
+  <h2 class="h1 fade-in">Do impulsionamento para a agenda real da cidade</h2>
+  <p class="sub fade-in">Os temas reforçados nas redes não foram peças isoladas: acompanharam eventos concretos e tiveram eco na imprensa local e regional.</p>
+  <div class="mcards">
+    <div class="mcard fade-in">
+      <div class="mcard-tag">Junho 2026 · Cultura</div>
+      <div class="mcard-ttl">Festival Junino Pé de Serra estreia em Hortolândia</div>
+      <div class="mcard-txt">1ª edição no dia 14, com shows de Bicho de Pé e Caju &amp; Castanha. A Prefeitura pretende torná-lo permanente no calendário cultural. É exatamente o conteúdo que impulsionamos no mês.</div>
+      <div class="mcard-src">Fontes: <a href="https://www.hortolandia.sp.gov.br/2026/06/12/festival-junino-pe-de-serra-de-hortolandia-oferece-diversao-para-criancas-e-familias-neste-domingo-14-06/" target="_blank" rel="noopener">Prefeitura</a> · <a href="https://tododia.com.br/cidades/hortolandia/hortolandia-tera-fan-fest-para-jogo-do-brasil-e-festival-junino-pe-de-serra-no-fim-de-semana/" target="_blank" rel="noopener">Todo Dia</a></div>
+    </div>
+    <div class="mcard fade-in">
+      <div class="mcard-tag">Junho 2026 · Copa</div>
+      <div class="mcard-ttl">Fan Fests reúnem a torcida nos jogos do Brasil</div>
+      <div class="mcard-txt">Telões nos jogos do Brasil na Copa, e a 1ª Fan Fest reuniu cerca de 1.500 pessoas no Parque Lago da Fé. O Fun Fest impulsionado divulgou justamente esses eventos, ligando a mídia paga à presença física na cidade.</div>
+      <div class="mcard-src">Fonte: <a href="https://www.hortolandia.sp.gov.br/2026/06/01/hortolandia-realiza-fan-fests-nos-dias-dos-jogos-do-brasil-na-copa-do-mundo/" target="_blank" rel="noopener">Prefeitura de Hortolândia</a></div>
+    </div>
+    <div class="mcard fade-in">
+      <div class="mcard-tag">Próximo ciclo · Julho</div>
+      <div class="mcard-ttl">Agenda cultural de julho já anunciada</div>
+      <div class="mcard-txt">2º Festival Vozes da MPB (Jota.pê e Chico Chico) e MV Bill na Semana Cultural. É a próxima oportunidade de repetir a sincronia entre mídia, evento e percepção positiva.</div>
+      <div class="mcard-src">Fonte: <a href="https://www.hortolandia.sp.gov.br/2026/06/29/2o-festival-vozes-da-mpb-e-mv-bill-sao-destaques-da-semana-cultural-de-julho-de-hortolandia/" target="_blank" rel="noopener">Prefeitura de Hortolândia</a></div>
+    </div>
+  </div>
+  <div class="ib pu fade-in" style="margin-top:28px">
+    <div class="ib-lbl">Síntese estratégica</div>
+    <div class="ib-txt">A mídia paga reforçou os dois temas de maior repercussão espontânea do mês, Copa e Cultura, que também foram os eventos reais da cidade e ecoaram na imprensa, com percepção majoritariamente positiva (72%). O investimento digital conversou com o sentimento do morador, não correu por fora dele. O ponto a administrar é Cultura, que concentra as menções negativas: acompanhar e responder os comentários é a maior oportunidade de conversão do próximo ciclo.</div>
+  </div>
+</section>
+
 <!-- DIAGNÓSTICO -->
 <div class="diag" id="diagnostico">
   <div class="diag-in">
@@ -844,6 +969,18 @@
     </div>
   </div>
 </div>
+
+<!-- FONTES E VERIFICAÇÃO -->
+<section class="sources fade-in">
+  <div class="src-eyebrow">&#10003; Fontes e Verificação</div>
+  <div class="src-grid">
+    <div class="src-col"><h4>Performance</h4><p>Export do Meta Ads Manager (CSV) e do TikTok Ads Manager (xlsx), granularidade por campanha e anúncio, período de 01 a 30 de junho de 2026. Trading desk, sem custos.</p></div>
+    <div class="src-col"><h4>Metas de entrega</h4><p>Metas contratadas por plataforma informadas pelo cliente (planilha de controle), comparadas lado a lado com o entregue.</p></div>
+    <div class="src-col"><h4>Percepção pública</h4><p>Monitoramento E3 Comunicação Integrada: cerca de 756 menções classificadas em junho (72% positivo, 12% negativo, 16% neutro). Classificação agregada da ferramenta.</p></div>
+    <div class="src-col"><h4>Contexto de imprensa</h4><p>Clipagem de veículos oficiais e regionais (Prefeitura de Hortolândia, Todo Dia, Campinas.com.br), matérias identificadas por veículo e data no bloco de Cruzamento com a Mídia.</p></div>
+  </div>
+  <p class="src-disc">Nenhum dado deste relatório foi inventado ou estimado. Os números de mídia vêm dos exports das plataformas; as metas, da planilha do cliente; a percepção, da classificação do monitoramento E3; a imprensa, de veículos identificados por data. A análise de percepção é agregada, sem transcrição de comentários individuais.</p>
+</section>
 
 <!-- FOOTER -->
 <footer class="footer">
@@ -917,6 +1054,14 @@ new Chart(document.getElementById('chTikTokDia'),{
   data:{labels:['09 jun','10 jun','11 jun','12 jun','13 jun','14 jun'],
     datasets:[{data:[21273,25892,8843,12197,12787,4364],borderColor:'#111',backgroundColor:'rgba(17,17,17,.08)',fill:true,tension:.35,pointRadius:4,pointBackgroundColor:'#111',borderWidth:2}]},
   options:baseOpts('impressões')
+});
+
+// Donut de sentimento (monitoramento E3)
+new Chart(document.getElementById('chSent'),{
+  type:'doughnut',
+  data:{labels:['Positivo','Negativo','Neutro'],
+    datasets:[{data:[72,12,16],backgroundColor:['#00A85A','#E23B3B','#D98A1E'],borderColor:'#fff',borderWidth:3}]},
+  options:{responsive:true,maintainAspectRatio:false,cutout:'62%',plugins:{legend:{display:false},tooltip:{backgroundColor:'#fff',titleColor:'#111',bodyColor:'#111',borderColor:'rgba(0,0,0,.1)',borderWidth:1,callbacks:{label:c=>' '+c.label+': '+c.parsed+'%'}}}}
 });
 </script>
 </body>
