@@ -47,6 +47,8 @@ h1,h2{letter-spacing:-.02em;line-height:1.1}
 /* HERO */
 .hero{background:linear-gradient(135deg,#060630,#0A0A5C,#0D1B6E,#1A3CFF);color:#fff;padding:96px 0 88px;position:relative;overflow:hidden}
 .hero:after{content:"";position:absolute;right:-120px;top:-120px;width:460px;height:460px;background:radial-gradient(circle,rgba(23,166,151,.28),transparent 70%);border-radius:50%}
+.hero-art{position:absolute;top:0;right:0;width:min(58%,760px);height:100%;background-image:url(assets/hero-252anos.svg);background-repeat:no-repeat;background-position:right center;background-size:contain;opacity:.9;pointer-events:none}
+.hero .wrap{position:relative;z-index:1}
 .hero-logo{display:block;height:38px;width:auto;margin-bottom:22px}
 .hbadge{display:inline-block;background:rgba(23,166,151,.18);border:1px solid rgba(23,166,151,.4);color:#7FEAD9;padding:6px 14px;border-radius:100px;font-size:.74rem;font-weight:600;letter-spacing:.04em}
 .htitle{font-size:clamp(2.3rem,6vw,4rem);font-weight:800;letter-spacing:-.03em;margin:22px 0 10px;max-width:900px}
@@ -203,6 +205,7 @@ tr.total td{font-size:.96rem}
 
 <!-- HERO -->
 <header class="hero">
+  <div class="hero-art"></div>
   <div class="wrap">
     <img class="hero-logo" src="assets/logo-esquina.png" alt="Esquina">
     <span class="hbadge">Relatório de Performance · Campanha 252 Anos de Campinas</span>
@@ -306,7 +309,7 @@ tr.total td{font-size:.96rem}
     <h3 style="font-size:1.3rem;font-weight:700;margin:8px 0 4px">O que mais performou</h3>
     <div class="cri-grid two" id="cri-meta"></div>
 
-    <div class="ib fade-in"><div class="ib-lbl">Análise · Meta Ads</div><div class="ib-txt">O criativo "Como chegar aos 252 anos" liderou o canal com 71% das impressões, funcionando como o fio condutor da campanha ao longo do mês. A "Postagem 8 de julho" reforçou a presença na reta final, na semana que antecedeu a data de aniversário. A concentração do alcance entre 18 e 34 anos posiciona a Prefeitura junto ao público que mais consome serviços digitais na cidade, um ativo relevante para a comunicação institucional dos próximos meses.</div></div>
+    <div class="ib fade-in"><div class="ib-lbl">Análise · Meta Ads</div><div class="ib-txt">O criativo "Como chegar aos 252 anos" liderou o canal com 71% das impressões, funcionando como o fio condutor da campanha ao longo do mês. O "Card 252 anos" reforçou a presença na reta final, na semana que antecedeu a data de aniversário. A concentração do alcance entre 18 e 34 anos posiciona a Prefeitura junto ao público que mais consome serviços digitais na cidade, um ativo relevante para a comunicação institucional dos próximos meses.</div></div>
   </div>
 </section>
 
@@ -423,8 +426,8 @@ const DATA = {
   "pctLabels": { "Meta Ads": "100,9%", "YouTube": "100,4%", "TikTok": "120,4%", "total": "105,6%" },
   "meta": {
     "criativos": [
-      { "nome": "Como chegar aos 252 anos", "impr": 719200, "parte": "71%" },
-      { "nome": "Postagem 8 de julho", "impr": 289459, "parte": "29%" }
+      { "nome": "Como chegar aos 252 anos", "impr": 719200, "parte": "71%", "img": "meta ads - Como chegar aos 252 anos .jpeg" },
+      { "nome": "Card 252 anos", "impr": 289459, "parte": "29%", "img": "meta ads - Postagem 8 de julho .jpeg" }
     ]
   },
   "youtube": {
@@ -436,13 +439,13 @@ const DATA = {
       { "nome": "Dicas: Varie a alimentação", "impr": 123012 }
     ],
     "criativos": [
-      { "nome": "Dicas para chegar aos 252 anos: Fique próximo da natureza", "impr": 142966, "views": 24349, "extra": "Engajamento 36,10%" },
-      { "nome": "Campinas 252 anos: uma cidade que acolhe, cresce e constrói o futuro", "impr": 150544, "views": 14143, "extra": "Maior alcance do canal" },
-      { "nome": "Dicas para chegar aos 252 anos: Varie a alimentação", "impr": 123012, "views": 11249, "extra": "Engajamento 28,42%" }
+      { "nome": "Dicas para chegar aos 252 anos: Fique próximo da natureza", "impr": 142966, "views": 24349, "extra": "Engajamento 36,10%", "img": "youtube - fique proxima da natureza.png" },
+      { "nome": "Campinas 252 anos: uma cidade que acolhe, cresce e constrói o futuro", "impr": 150544, "views": 14143, "extra": "Maior alcance do canal", "img": "youtube - Campinas 252uma cidade que acolhe.png" },
+      { "nome": "Dicas para chegar aos 252 anos: Varie a alimentação", "impr": 123012, "views": 11249, "extra": "Engajamento 28,42%", "img": "youtube - varie a alimentacao.png" }
     ]
   },
   "tiktok": {
-    "criativo": { "nome": "Em forma aos 252 Anos", "impr": 708291 }
+    "criativo": { "nome": "Em forma aos 252 Anos", "impr": 708291, "parte": "100%" }
   }
 };
 
@@ -497,11 +500,13 @@ function renderCriativosSimple(containerId, list, medals){
     const secondLine = c.parte
       ? `<div class="cri-m"><div class="cm-v">${c.parte}</div><div class="cm-l">Do canal</div></div>`
       : `<div class="cri-m"><div class="cm-v">${fmt(c.views)}</div><div class="cm-l">Visualizações</div></div>`;
+    const imgTag = c.img ? `<img src="assets/${c.img}" alt="${c.nome}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';this.nextElementSibling.nextElementSibling.style.display='block'">` : '';
     box.insertAdjacentHTML('beforeend',
       `<div class="cri fade-in">
         <div class="cri-img">
-          <div class="cri-ph-ic">🎬</div>
-          <div class="cri-ph-tx">${c.extra || 'Inserir imagem do criativo'}</div>
+          ${imgTag}
+          <div class="cri-ph-ic" style="${c.img?'display:none':''}">🎬</div>
+          <div class="cri-ph-tx" style="${c.img?'display:none':''}">${c.extra || 'Inserir imagem do criativo'}</div>
           <div class="cri-rank ${medals[i]}">${i+1}</div>
         </div>
         <div class="cri-body">

@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 620" width="1200" height="620">
+  <defs>
+    <linearGradient id="numGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3355FF"/>
+      <stop offset="55%" stop-color="#17A697"/>
+      <stop offset="100%" stop-color="#7FEAD9"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#17A697" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#17A697" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <circle cx="880" cy="230" r="360" fill="url(#glow)"/>
+
+  <text x="1150" y="330" text-anchor="end" font-family="Inter, sans-serif" font-weight="900"
+        font-size="360" letter-spacing="-14" fill="url(#numGrad)" opacity="0.9">252</text>
+  <text x="1150" y="330" text-anchor="end" font-family="Inter, sans-serif" font-weight="900"
+        font-size="360" letter-spacing="-14" fill="none" stroke="#ffffff" stroke-opacity="0.12" stroke-width="2">252</text>
+
+  <g opacity="0.95">
+    <rect x="700" y="360" width="430" height="66" rx="33" fill="#7FEAD9"/>
+    <text x="915" y="403" text-anchor="middle" font-family="Inter, sans-serif" font-weight="800"
+          font-size="27" letter-spacing="1" fill="#0A0A5C">PARABÉNS, CAMPINAS!</text>
+  </g>
+
+  <g fill="#7FEAD9">
+    <circle cx="690" cy="120" r="6"/>
+    <circle cx="740" cy="90" r="4"/>
+    <circle cx="1170" cy="120" r="5"/>
+    <circle cx="1120" cy="70" r="4"/>
+    <circle cx="1180" cy="440" r="5"/>
+    <circle cx="660" cy="460" r="4"/>
+  </g>
+  <g fill="#E0A6F5">
+    <circle cx="720" cy="480" r="5"/>
+    <circle cx="1140" cy="180" r="4"/>
+    <circle cx="770" cy="150" r="3.5"/>
+  </g>
+  <g fill="#ffffff" opacity="0.7">
+    <circle cx="650" cy="200" r="3"/>
+    <circle cx="1190" cy="300" r="3.5"/>
+    <circle cx="960" cy="80" r="3"/>
+  </g>
+
+  <g stroke="#7FEAD9" stroke-opacity="0.55" stroke-width="3" fill="none">
+    <path d="M700 470 q20 -30 45 -10" />
+    <path d="M1160 460 q-20 -25 -42 -8" />
+    <path d="M1180 130 q-25 15 -18 40" />
+  </g>
+</svg>

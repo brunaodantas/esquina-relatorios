@@ -35,6 +35,8 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: #E8E9ED; col
 
 /* ---------- HERO ---------- */
 .hero { background: linear-gradient(135deg, #060630, #0A0A5C, #0D1B6E, #1A3CFF); color: #fff; justify-content: center; }
+.hero-art { position: absolute; top: 0; right: 0; width: 62%; height: 100%; background-image: url(assets/hero-252anos.svg); background-repeat: no-repeat; background-position: right center; background-size: contain; opacity: .9; pointer-events: none; }
+.hero .pad { position: relative; z-index: 1; }
 .hero .logo-row img { height: 30px; margin-bottom: 40px; }
 .hero-badge { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: #B9C4FF; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15); padding: 7px 16px; border-radius: 20px; width: fit-content; margin-bottom: 26px; }
 .hero-badge .dot { width: 7px; height: 7px; border-radius: 50%; background: #4D8CFF; }
@@ -150,6 +152,7 @@ table.dt td.n { font-weight: 700; }
 
 <!-- SLIDE 1 — HERO -->
 <div class="slide hero">
+  <div class="hero-art"></div>
   <span class="page-tag">1/8</span>
   <div class="pad" style="justify-content:center;">
     <div class="logo-row"><img src="assets/logo-esquina.png" alt="Esquina" /></div>
@@ -339,7 +342,7 @@ table.dt td.n { font-weight: 700; }
       </div>
       <div class="creative-card">
         <div class="creative-medal">🥈 Segundo Criativo</div>
-        <div class="creative-name">Postagem 8 de julho</div>
+        <div class="creative-name">Card 252 anos</div>
         <div class="creative-text">+289,4 mil impressões, 29% do volume do canal. Reforçou a presença da campanha na reta final antes da data de aniversário, em 14 de julho.</div>
       </div>
     </div>
