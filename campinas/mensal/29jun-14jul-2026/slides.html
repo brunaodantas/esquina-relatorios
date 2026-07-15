@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Relatório Mensal · 252 Anos de Campinas · Jul 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --p: #1A3CFF;
+  --pd: #1430CC;
+  --navy: #0A0A5C;
+  --teal: #17A697;
+  --purple: #7B2FBE;
+  --bg: #F4F6FF;
+  --surface: #fff;
+  --border: rgba(0,0,0,.08);
+  --t1: #111;
+  --t2: #555;
+  --tm: #888;
+  --meta: #1A3CFF;
+  --yt: #CC0000;
+  --tiktok: #111111;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Inter', -apple-system, sans-serif; background: #E8E9ED; color: var(--t1); }
+.slide { width: 1280px; height: 720px; background: var(--surface); margin: 0 auto 24px auto; position: relative; overflow: hidden; display: flex; flex-direction: column; }
+.slide:last-child { margin-bottom: 0; }
+.pad { padding: 48px 64px; display: flex; flex-direction: column; height: 100%; }
+
+.page-tag { position: absolute; top: 28px; right: 32px; font-size: 11px; color: rgba(255,255,255,.5); font-weight: 600; z-index: 5; }
+.page-tag.dk { color: var(--tm); }
+
+/* ---------- HERO ---------- */
+.hero { background: linear-gradient(135deg, #060630, #0A0A5C, #0D1B6E, #1A3CFF); color: #fff; justify-content: center; }
+.hero .logo-row img { height: 30px; margin-bottom: 40px; }
+.hero-badge { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: #B9C4FF; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15); padding: 7px 16px; border-radius: 20px; width: fit-content; margin-bottom: 26px; }
+.hero-badge .dot { width: 7px; height: 7px; border-radius: 50%; background: #4D8CFF; }
+.htitle { font-size: 54px; font-weight: 800; line-height: 1.08; letter-spacing: -.02em; margin-bottom: 16px; }
+.htitle .acc { color: #93A6FF; }
+.hsub { font-size: 16.5px; color: rgba(255,255,255,.72); max-width: 620px; margin-bottom: 34px; line-height: 1.55; }
+.hero-pills { display: flex; gap: 14px; margin-bottom: 30px; }
+.hpill { background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.14); border-radius: 12px; padding: 16px 22px; min-width: 150px; }
+.hpill-v { display: block; font-size: 26px; font-weight: 800; }
+.hpill-l { display: block; font-size: 11.5px; color: rgba(255,255,255,.6); margin-top: 4px; }
+.hero-channels { display: flex; gap: 22px; }
+.hero-ch { display: flex; align-items: center; gap: 8px; font-size: 13.5px; color: rgba(255,255,255,.75); font-weight: 600; }
+.hero-ch .dot { width: 9px; height: 9px; border-radius: 50%; }
+
+/* ---------- ENCANTAMENTO ---------- */
+.enc { background: linear-gradient(160deg, #EEF1FF, #F4F6FF, #EBF7F5); justify-content: center; }
+.eyebrow { font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--p); margin-bottom: 14px; }
+.enc-hl { font-size: 30px; font-weight: 800; line-height: 1.28; letter-spacing: -.01em; max-width: 980px; margin-bottom: 18px; }
+.enc-hl .hb { color: var(--p); }
+.enc-story { font-size: 15.5px; color: var(--t2); line-height: 1.65; max-width: 900px; margin-bottom: 28px; }
+.enc-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.ec { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 20px 18px; box-shadow: 0 1px 4px rgba(0,0,0,.06), 0 4px 16px rgba(0,0,0,.06); position: relative; overflow: hidden; }
+.ec::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; }
+.ec:nth-child(1)::before, .ec:nth-child(4)::before { background: var(--p); }
+.ec:nth-child(2)::before { background: var(--teal); }
+.ec:nth-child(3)::before { background: var(--purple); }
+.ec-icon { font-size: 20px; display: block; margin-bottom: 10px; }
+.ec-num { font-size: 27px; font-weight: 900; letter-spacing: -.03em; margin-bottom: 4px; }
+.ec-lbl { font-size: 12.5px; font-weight: 700; color: var(--t1); margin-bottom: 4px; }
+.ec-ctx { font-size: 12px; color: var(--tm); line-height: 1.4; }
+
+/* ---------- KPI GRID ---------- */
+.section-title { font-size: 24px; font-weight: 800; margin-bottom: 6px; }
+.section-sub { font-size: 13.5px; color: var(--tm); margin-bottom: 26px; }
+.kpi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.kpi-grid.g2 { grid-template-columns: repeat(2, 1fr); }
+.kc { background: var(--bg); border-radius: 14px; padding: 22px 22px; position: relative; overflow: hidden; }
+.kc::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--p); }
+.kc.tl::before { background: var(--teal); }
+.kc.pu::before { background: var(--purple); }
+.kc-lbl { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--tm); margin-bottom: 10px; }
+.kc-val { font-size: 30px; font-weight: 800; letter-spacing: -.02em; }
+.kc-sub { font-size: 12.5px; color: var(--tm); margin-top: 6px; }
+
+/* ---------- ENTREGA VS META TABLE ---------- */
+.dt-wrap { margin-top: 6px; }
+table.dt { width: 100%; border-collapse: collapse; }
+table.dt th { text-align: left; font-size: 11.5px; text-transform: uppercase; letter-spacing: .06em; color: var(--tm); font-weight: 700; padding: 10px 14px; border-bottom: 2px solid var(--t1); }
+table.dt td { padding: 20px 14px; border-bottom: 1px solid var(--border); font-size: 14.5px; vertical-align: middle; }
+table.dt td.n { font-weight: 700; }
+.dt-chan { display: flex; align-items: center; gap: 10px; font-weight: 700; }
+.dt-chan .dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+.bar-track { background: #E4E7F5; border-radius: 8px; height: 10px; width: 220px; overflow: hidden; }
+.bar-fill { height: 100%; border-radius: 8px; }
+.bar-cell { display: flex; align-items: center; gap: 12px; }
+.bar-pct { font-weight: 800; font-size: 14px; }
+.bar-pct.ov { color: var(--teal); }
+.bar-pct.ok { color: var(--p); }
+.status { font-size: 12px; font-weight: 700; padding: 5px 12px; border-radius: 20px; }
+.status.ov { background: rgba(23,166,151,.12); color: var(--teal); }
+.status.ok { background: rgba(26,60,255,.10); color: var(--p); }
+.dt-foot { margin-top: 24px; background: var(--navy); color: #fff; border-radius: 14px; padding: 20px 26px; font-size: 15px; }
+.dt-foot strong { color: #93E8DC; }
+
+/* ---------- CANAL SECTIONS ---------- */
+.channel-badge { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; padding: 6px 14px; border-radius: 20px; width: fit-content; margin-bottom: 14px; }
+.channel-badge .dot { width: 8px; height: 8px; border-radius: 50%; }
+.badge-meta { background: rgba(26,60,255,.10); color: var(--meta); }
+.badge-yt { background: rgba(204,0,0,.08); color: var(--yt); }
+.badge-tiktok { background: rgba(0,0,0,.06); color: var(--tiktok); }
+
+.creative-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 20px; }
+.creative-card { background: var(--bg); border-radius: 14px; padding: 18px 20px; }
+.creative-medal { font-size: 13px; font-weight: 800; color: var(--tm); margin-bottom: 6px; text-transform: uppercase; letter-spacing: .05em; }
+.creative-name { font-size: 15.5px; font-weight: 700; margin-bottom: 6px; }
+.creative-text { font-size: 13px; color: var(--t2); line-height: 1.5; }
+
+.audience-row { display: flex; gap: 28px; margin-top: 18px; }
+.audience-blk { flex: 1; background: var(--bg); border-radius: 12px; padding: 16px 18px; }
+.audience-lbl { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--tm); margin-bottom: 8px; }
+.audience-line { font-size: 13.5px; color: var(--t1); margin-bottom: 4px; display: flex; justify-content: space-between; }
+.audience-line span:last-child { font-weight: 700; }
+
+.ib { background: var(--navy); color: #fff; border-radius: 14px; padding: 22px 26px; margin-top: auto; }
+.ib-lbl { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: #93A6FF; margin-bottom: 10px; }
+.ib-txt { font-size: 14.5px; line-height: 1.65; color: rgba(255,255,255,.9); }
+
+/* ---------- DIAGNÓSTICO ---------- */
+.diag { background: linear-gradient(135deg, #060630, #0A0A5C, #1530A8); color: #fff; justify-content: center; }
+.diag .eyebrow { color: #93A6FF; }
+.diag h2 { font-size: 28px; font-weight: 800; margin-bottom: 6px; }
+.diag .sub { font-size: 14px; color: rgba(255,255,255,.6); margin-bottom: 22px; }
+.dc-grid { display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(2, 1fr); gap: 14px; }
+.dc { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); border-radius: 14px; padding: 16px 18px; position: relative; }
+.dc-acc { position: absolute; top: 0; left: 0; right: 0; height: 3px; border-radius: 14px 14px 0 0; }
+.dc-acc.t { background: var(--teal); }
+.dc-acc.b { background: #4D8CFF; }
+.dc-acc.p { background: var(--purple); }
+.dc-n { font-size: 11px; color: rgba(255,255,255,.4); font-weight: 700; margin-bottom: 6px; }
+.dc-m { font-size: 19px; font-weight: 800; margin-bottom: 4px; }
+.dc-ttl { font-size: 12.5px; font-weight: 700; margin-bottom: 6px; color: #DCE3FF; }
+.dc-txt { font-size: 11.5px; color: rgba(255,255,255,.62); line-height: 1.5; }
+
+.footer-bar { margin-top: 18px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,.15); font-size: 11px; color: rgba(255,255,255,.45); text-align: center; }
+
+@media screen and (max-width: 1300px) {
+  body { background: var(--surface); }
+  .slide { margin-bottom: 0; box-shadow: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- SLIDE 1 — HERO -->
+<div class="slide hero">
+  <span class="page-tag">1/8</span>
+  <div class="pad" style="justify-content:center;">
+    <div class="logo-row"><img src="assets/logo-esquina.png" alt="Esquina" /></div>
+    <div class="hero-badge"><span class="dot"></span>Relatório Mensal · Trading Desk · Encerrado</div>
+    <h1 class="htitle">252 Anos de Campinas<br/><span class="acc">Reconhecimento de Marca</span></h1>
+    <p class="hsub">Prefeitura Municipal de Campinas: campanha institucional em comemoração aos 252 anos da cidade, veiculada em Meta Ads, YouTube e TikTok. Período: 29 de junho a 14 de julho de 2026.</p>
+    <div class="hero-pills">
+      <div class="hpill"><span class="hpill-v">+2,5Mi</span><span class="hpill-l">Impressões totais</span></div>
+      <div class="hpill"><span class="hpill-v">105,6%</span><span class="hpill-l">da meta combinada</span></div>
+      <div class="hpill"><span class="hpill-v">3 / 3</span><span class="hpill-l">canais com meta batida</span></div>
+    </div>
+    <div class="hero-channels">
+      <div class="hero-ch"><span class="dot" style="background:var(--meta);"></span>Meta Ads</div>
+      <div class="hero-ch"><span class="dot" style="background:var(--yt);"></span>YouTube</div>
+      <div class="hero-ch"><span class="dot" style="background:#fff;"></span>TikTok</div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 2 — ENCANTAMENTO -->
+<div class="slide enc">
+  <span class="page-tag dk">2/8</span>
+  <div class="pad" style="justify-content:center;">
+    <div class="eyebrow">Encerramento · Julho de 2026</div>
+    <h2 class="enc-hl">Em julho, Campinas celebrou seus <span class="hb">252 anos</span> com uma campanha que ultrapassou <span class="hb">2,5 milhões de impressões</span> em três plataformas, superando a meta contratada nos três canais, sem exceção.</h2>
+    <p class="enc-story">A campanha acompanhou o mês inteiro de comemorações da cidade, do início da programação especial em 1º de julho até a data-marco de 14 de julho. Em Meta Ads, YouTube e TikTok, a entrega superou o combinado nas três frentes, com destaque para o TikTok, que fechou o mês entregando 20% a mais do que o contratado. Mais do que volume, a campanha esteve presente no mesmo momento em que a cidade entregava obras, abria vagas de curso e celebrava sua história, reforçando a mensagem institucional de uma gestão em movimento.</p>
+    <div class="enc-cards">
+      <div class="ec">
+        <span class="ec-icon">📍</span>
+        <div class="ec-num">+2,5Mi</div>
+        <div class="ec-lbl">Impressões Totais</div>
+        <div class="ec-ctx">Meta Ads + YouTube + TikTok</div>
+      </div>
+      <div class="ec">
+        <span class="ec-icon">👥</span>
+        <div class="ec-num">+403,9 mil</div>
+        <div class="ec-lbl">Alcance no Meta Ads</div>
+        <div class="ec-ctx">Pessoas únicas alcançadas</div>
+      </div>
+      <div class="ec">
+        <span class="ec-icon">🔁</span>
+        <div class="ec-num">2,50x</div>
+        <div class="ec-lbl">Frequência Média</div>
+        <div class="ec-ctx">Exposições por pessoa · Meta Ads</div>
+      </div>
+      <div class="ec">
+        <span class="ec-icon">📊</span>
+        <div class="ec-num">3</div>
+        <div class="ec-lbl">Canais Ativos</div>
+        <div class="ec-ctx">Meta Ads, YouTube e TikTok</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 3 — KPIs GERAIS -->
+<div class="slide">
+  <span class="page-tag dk">3/8</span>
+  <div class="pad">
+    <div class="section-title">Resultados Gerais</div>
+    <div class="section-sub">Consolidado dos três canais · 29 de junho a 14 de julho de 2026</div>
+    <div class="kpi-grid" style="margin-bottom:18px;">
+      <div class="kc">
+        <div class="kc-lbl">Impressões Totais</div>
+        <div class="kc-val">+2,5Mi</div>
+        <div class="kc-sub">Meta Ads + YouTube + TikTok</div>
+      </div>
+      <div class="kc tl">
+        <div class="kc-lbl">Alcance Meta Ads</div>
+        <div class="kc-val">+403,9 mil</div>
+        <div class="kc-sub">Pessoas únicas</div>
+      </div>
+      <div class="kc tl">
+        <div class="kc-lbl">Alcance TikTok</div>
+        <div class="kc-val">+266,8 mil</div>
+        <div class="kc-sub">Pessoas únicas</div>
+      </div>
+    </div>
+    <div class="kpi-grid">
+      <div class="kc pu">
+        <div class="kc-lbl">Visualizações YouTube</div>
+        <div class="kc-val">+61,4 mil</div>
+        <div class="kc-sub">Taxa de visualização 9,58%</div>
+      </div>
+      <div class="kc">
+        <div class="kc-lbl">Cliques Totais</div>
+        <div class="kc-val">+3 mil</div>
+        <div class="kc-sub">Todos os canais</div>
+      </div>
+      <div class="kc pu">
+        <div class="kc-lbl">Frequência Média</div>
+        <div class="kc-val">2,50x</div>
+        <div class="kc-sub">Meta Ads</div>
+      </div>
+    </div>
+    <div class="ib" style="margin-top:26px;">
+      <div class="ib-lbl">Leitura do Mês</div>
+      <div class="ib-txt">Os três canais trabalharam juntos para cobrir toda a jornada da campanha: Meta Ads concentrou o maior volume de alcance qualificado, YouTube reforçou a mensagem em vídeo, e TikTok ampliou a presença junto ao público mais jovem da cidade.</div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 4 — ENTREGA VS META -->
+<div class="slide">
+  <span class="page-tag dk">4/8</span>
+  <div class="pad">
+    <div class="section-title">Meta da Campanha</div>
+    <div class="section-sub">Entrega vs. meta contratada, por canal · Impressões</div>
+    <div class="dt-wrap">
+      <table class="dt">
+        <thead>
+          <tr><th>Canal</th><th>Meta Contratada</th><th>Entregue</th><th>Progresso</th><th>Status</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><div class="dt-chan"><span class="dot" style="background:var(--meta);"></span>Meta Ads</div></td>
+            <td class="n">1.000.000</td>
+            <td class="n">1.008.659</td>
+            <td>
+              <div class="bar-cell">
+                <div class="bar-track"><div class="bar-fill" style="width:100%; background:var(--meta);"></div></div>
+                <span class="bar-pct ok">100,9%</span>
+              </div>
+            </td>
+            <td><span class="status ok">✓ Cumprida</span></td>
+          </tr>
+          <tr>
+            <td><div class="dt-chan"><span class="dot" style="background:var(--yt);"></span>YouTube</div></td>
+            <td class="n">750.000</td>
+            <td class="n">753.319</td>
+            <td>
+              <div class="bar-cell">
+                <div class="bar-track"><div class="bar-fill" style="width:100%; background:var(--yt);"></div></div>
+                <span class="bar-pct ok">100,4%</span>
+              </div>
+            </td>
+            <td><span class="status ok">✓ Cumprida</span></td>
+          </tr>
+          <tr>
+            <td><div class="dt-chan"><span class="dot" style="background:var(--tiktok);"></span>TikTok</div></td>
+            <td class="n">588.235</td>
+            <td class="n">708.291</td>
+            <td>
+              <div class="bar-cell">
+                <div class="bar-track"><div class="bar-fill" style="width:100%; background:var(--tiktok);"></div></div>
+                <span class="bar-pct ov">120,4%</span>
+              </div>
+            </td>
+            <td><span class="status ov">↑ Superada</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="dt-foot">Consolidado: <strong>2.470.269</strong> impressões entregues sobre <strong>2.338.235</strong> contratadas, <strong>105,6%</strong> da meta combinada, com os três canais encerrando o mês acima do contratado.</div>
+  </div>
+</div>
+
+<!-- SLIDE 5 — META ADS -->
+<div class="slide">
+  <span class="page-tag dk">5/8</span>
+  <div class="pad">
+    <div class="channel-badge badge-meta"><span class="dot" style="background:var(--meta);"></span>Meta Ads</div>
+    <div class="section-title">252 Anos de Campinas · Meta Ads</div>
+    <div class="section-sub">Campanha de Reconhecimento/Alcance · 29 de junho a 14 de julho de 2026</div>
+    <div class="kpi-grid">
+      <div class="kc">
+        <div class="kc-lbl">Impressões</div>
+        <div class="kc-val">+1,0Mi</div>
+        <div class="kc-sub">100,9% da meta</div>
+      </div>
+      <div class="kc tl">
+        <div class="kc-lbl">Alcance</div>
+        <div class="kc-val">+403,9 mil</div>
+        <div class="kc-sub">Pessoas únicas</div>
+      </div>
+      <div class="kc pu">
+        <div class="kc-lbl">Frequência</div>
+        <div class="kc-val">2,50x</div>
+        <div class="kc-sub">Exposições por pessoa</div>
+      </div>
+    </div>
+    <div class="creative-grid">
+      <div class="creative-card">
+        <div class="creative-medal">🥇 Criativo Principal</div>
+        <div class="creative-name">Como chegar aos 252 anos</div>
+        <div class="creative-text">+719,2 mil impressões, 71% de todo o volume do canal. Veiculado em Instagram e Facebook, foi o formato que mais reforçou a contagem regressiva para o aniversário da cidade.</div>
+      </div>
+      <div class="creative-card">
+        <div class="creative-medal">🥈 Segundo Criativo</div>
+        <div class="creative-name">Postagem 8 de julho</div>
+        <div class="creative-text">+289,4 mil impressões, 29% do volume do canal. Reforçou a presença da campanha na reta final antes da data de aniversário, em 14 de julho.</div>
+      </div>
+    </div>
+    <div class="audience-row">
+      <div class="audience-blk">
+        <div class="audience-lbl">Faixa Etária (impressões)</div>
+        <div class="audience-line"><span>18–34 anos</span><span>76,3%</span></div>
+        <div class="audience-line"><span>35–54 anos</span><span>18,8%</span></div>
+        <div class="audience-line"><span>55+ anos</span><span>4,8%</span></div>
+      </div>
+      <div class="audience-blk">
+        <div class="audience-lbl">Gênero (impressões)</div>
+        <div class="audience-line"><span>Mulheres</span><span>50,8%</span></div>
+        <div class="audience-line"><span>Homens</span><span>48,7%</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 6 — YOUTUBE -->
+<div class="slide">
+  <span class="page-tag dk">6/8</span>
+  <div class="pad">
+    <div class="channel-badge badge-yt"><span class="dot" style="background:var(--yt);"></span>YouTube</div>
+    <div class="section-title">252 Anos de Campinas · YouTube</div>
+    <div class="section-sub">Campanha em vídeo · 29 de junho a 14 de julho de 2026</div>
+    <div class="kpi-grid">
+      <div class="kc" style="--p:var(--yt);">
+        <div class="kc-lbl">Impressões</div>
+        <div class="kc-val">+753,3 mil</div>
+        <div class="kc-sub">100,4% da meta</div>
+      </div>
+      <div class="kc tl">
+        <div class="kc-lbl">Visualizações</div>
+        <div class="kc-val">+61,4 mil</div>
+        <div class="kc-sub">Vídeo completo ou 30s</div>
+      </div>
+      <div class="kc pu">
+        <div class="kc-lbl">Taxa de Visualização</div>
+        <div class="kc-val">9,58%</div>
+        <div class="kc-sub">Views / impressões</div>
+      </div>
+    </div>
+    <div class="creative-grid" style="grid-template-columns:repeat(3,1fr);">
+      <div class="creative-card">
+        <div class="creative-medal">🥇 Dicas para chegar aos 252 anos: Fique próximo da natureza</div>
+        <div class="creative-name">Vídeo da série "Dicas" (19s)</div>
+        <div class="creative-text">+142,9 mil impressões e 24,3 mil visualizações, melhor engajamento do canal (36,1%).</div>
+      </div>
+      <div class="creative-card">
+        <div class="creative-medal">🥈 Campinas 252 anos: uma cidade que acolhe, cresce e constrói o futuro</div>
+        <div class="creative-name">Vídeo institucional (30s)</div>
+        <div class="creative-text">+150,5 mil impressões, o vídeo de maior alcance do canal, com 14,1 mil visualizações.</div>
+      </div>
+      <div class="creative-card">
+        <div class="creative-medal">🥉 Dicas para chegar aos 252 anos: Varie a alimentação</div>
+        <div class="creative-name">Vídeo da série "Dicas" (30s)</div>
+        <div class="creative-text">+123,0 mil impressões e 11,2 mil visualizações.</div>
+      </div>
+    </div>
+    <div class="ib">
+      <div class="ib-lbl">Análise: YouTube</div>
+      <div class="ib-txt">O canal rodou nove vídeos no total, reunidos em duas frentes: a série "Dicas para chegar aos 252 anos" (com variações como "Fique próximo da natureza", "Varie a alimentação" e "Cuide da saúde") e o institucional "Campinas 252 anos: uma cidade que acolhe, cresce e constrói o futuro", veiculado também em cortes curtos de 6 segundos. A mesma ideia de contagem regressiva usada no Meta Ads, na peça "Como chegar aos 252 anos", e no TikTok, no criativo "Em forma aos 252 Anos", se repetiu aqui em vídeo, reforçando a coerência da campanha entre as três plataformas na semana que antecedeu o aniversário de 14 de julho.</div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 7 — TIKTOK -->
+<div class="slide">
+  <span class="page-tag dk">7/8</span>
+  <div class="pad">
+    <div class="channel-badge badge-tiktok"><span class="dot" style="background:var(--tiktok);"></span>TikTok</div>
+    <div class="section-title">252 Anos de Campinas · TikTok</div>
+    <div class="section-sub">Campanha 29.06 a 14.07 · Vídeo curto</div>
+    <div class="kpi-grid">
+      <div class="kc" style="--p:var(--tiktok);">
+        <div class="kc-lbl">Impressões</div>
+        <div class="kc-val">+708,3 mil</div>
+        <div class="kc-sub">120,4% da meta</div>
+      </div>
+      <div class="kc tl">
+        <div class="kc-lbl">Alcance</div>
+        <div class="kc-val">+266,8 mil</div>
+        <div class="kc-sub">Pessoas únicas</div>
+      </div>
+      <div class="kc pu">
+        <div class="kc-lbl">Visualizações</div>
+        <div class="kc-val">+683,9 mil</div>
+        <div class="kc-sub">CTR 0,15%</div>
+      </div>
+    </div>
+    <div class="audience-row" style="margin-top:26px;">
+      <div class="audience-blk">
+        <div class="audience-lbl">Faixa Etária</div>
+        <div class="audience-line"><span>18–24 anos</span><span>38,6%</span></div>
+        <div class="audience-line"><span>25–34 anos</span><span>21,8%</span></div>
+        <div class="audience-line"><span>35+ anos</span><span>39,6%</span></div>
+      </div>
+      <div class="audience-blk">
+        <div class="audience-lbl">Plataforma</div>
+        <div class="audience-line"><span>Android</span><span>65,8%</span></div>
+        <div class="audience-line"><span>iPhone</span><span>34,0%</span></div>
+      </div>
+    </div>
+    <div class="creative-grid" style="grid-template-columns:1fr;">
+      <div class="creative-card">
+        <div class="creative-medal">🥇 Criativo Único</div>
+        <div class="creative-name">Em forma aos 252 Anos</div>
+        <div class="creative-text">+708,3 mil impressões, campanha única no período, direcionada ao público amplo de alta frequência, com CTR de 0,15%.</div>
+      </div>
+    </div>
+    <div class="ib">
+      <div class="ib-lbl">Análise: TikTok</div>
+      <div class="ib-txt">Foi o canal de melhor resultado percentual do mês, com 120,4% da meta contratada, impulsionado por um público jovem e mobile-first, o mesmo perfil que acompanhou de perto a agenda de eventos dos 252 anos, como o Chefs Campinas na praça Carlos Gomes e a Volta do Chapadão. O criativo "Em forma aos 252 Anos" reforça o mesmo tom de preparação e cuidado presente na série "Dicas" do YouTube, mantendo a coerência de mensagem entre as duas frentes de vídeo curto da campanha.</div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 8 — DIAGNÓSTICO + FOOTER -->
+<div class="slide diag">
+  <span class="page-tag">8/8</span>
+  <div class="pad" style="justify-content:center;">
+    <div class="eyebrow">Diagnóstico Final</div>
+    <h2>O que a campanha dos 252 anos entregou</h2>
+    <p class="sub">Leitura consolidada de Meta Ads, YouTube e TikTok, 29 de junho a 14 de julho de 2026.</p>
+    <div class="dc-grid">
+      <div class="dc">
+        <div class="dc-acc t"></div>
+        <div class="dc-n">01</div>
+        <div class="dc-m">105,6%</div>
+        <div class="dc-ttl">Meta combinada superada</div>
+        <div class="dc-txt">Os três canais encerraram o mês acima do contratado: Meta Ads (100,9%), YouTube (100,4%) e TikTok (120,4%).</div>
+      </div>
+      <div class="dc">
+        <div class="dc-acc b"></div>
+        <div class="dc-n">02</div>
+        <div class="dc-m">2,50x</div>
+        <div class="dc-ttl">Frequência saudável</div>
+        <div class="dc-txt">No Meta Ads, cada pessoa impactada viu a campanha em média 2,5 vezes, o suficiente para fixar a mensagem sem cansar a audiência.</div>
+      </div>
+      <div class="dc">
+        <div class="dc-acc p"></div>
+        <div class="dc-n">03</div>
+        <div class="dc-m">TikTok</div>
+        <div class="dc-ttl">Canal mais eficiente do mês</div>
+        <div class="dc-txt">Melhor resultado percentual sobre a meta contratada, puxado por um público jovem e mobile-first.</div>
+      </div>
+      <div class="dc">
+        <div class="dc-acc t"></div>
+        <div class="dc-n">04</div>
+        <div class="dc-m">3 canais</div>
+        <div class="dc-ttl">Mensagem consistente</div>
+        <div class="dc-txt">A ideia de contagem regressiva e preparação para os 252 anos se repetiu nas três plataformas: "Como chegar aos 252 anos" no Meta Ads (71% das impressões do canal), a série "Dicas" no YouTube e "Em forma aos 252 Anos" no TikTok, mesma linha criativa reforçada em todos os canais.</div>
+      </div>
+      <div class="dc">
+        <div class="dc-acc b"></div>
+        <div class="dc-n">05</div>
+        <div class="dc-m">18–34 anos</div>
+        <div class="dc-ttl">Público que mais se conectou</div>
+        <div class="dc-txt">Maioria das impressões em Meta Ads (76%) e TikTok (38,6% só entre 18–24) concentrada no público mais jovem da cidade.</div>
+      </div>
+      <div class="dc">
+        <div class="dc-acc p"></div>
+        <div class="dc-n">06</div>
+        <div class="dc-m">Próximo Ciclo</div>
+        <div class="dc-ttl">Recomendação</div>
+        <div class="dc-txt">Com os dados deste mês, já podemos usar o desempenho do TikTok junto ao público jovem como referência para o próximo ciclo de campanhas institucionais, testando novos formatos de vídeo curto no mesmo tom celebrativo.</div>
+      </div>
+    </div>
+    <div class="footer-bar">Esquina · Relatório Mensal PMC · 252 Anos de Campinas · 29 jun a 14 jul 2026</div>
+  </div>
+</div>
+
+</body>
+</html>
