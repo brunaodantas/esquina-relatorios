@@ -203,6 +203,20 @@
     .cg-imps strong{color:var(--p);font-weight:700}
     .cg-tag{font-size:.58rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--teal);background:rgba(23,166,151,.10);padding:2px 8px;border-radius:100px}
 
+    /* Prints comprobatórios */
+    .proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:20px}
+    .proof-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;box-shadow:var(--sh);transition:all .3s}
+    .proof-card:hover{box-shadow:var(--shh);transform:translateY(-2px)}
+    .proof-shot-wrap{position:relative;width:100%;aspect-ratio:16/9;background:#111;overflow:hidden}
+    .proof-shot{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top}
+    .proof-frame{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;pointer-events:none;z-index:2}
+    .proof-overlay{position:absolute;z-index:3;border-radius:2px;box-shadow:0 0 0 2px rgba(255,59,59,.85),0 2px 8px rgba(0,0,0,.4)}
+    .proof-card.mobile .proof-shot-wrap{aspect-ratio:1/1;background:#e8eaf2}
+    .proof-card.mobile .proof-shot{inset:auto;object-fit:fill;border-radius:0}
+    .proof-foot{padding:10px 16px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--border)}
+    .proof-fmt{font-size:.85rem;font-weight:700;color:var(--t1)}
+    .proof-tag{font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--tm);background:var(--bg);padding:2px 9px;border-radius:100px}
+
     .ib{background:rgba(26,60,255,.04);border-left:3px solid var(--p);border-radius:0 6px 6px 0;padding:16px 24px;margin-top:20px}
     .ib.tl{background:rgba(23,166,151,.05);border-left-color:var(--teal)}
     .ib-lbl{font-size:.63rem;font-weight:700;text-transform:uppercase;letter-spacing:.15em;color:var(--p);margin-bottom:4px}
@@ -574,6 +588,78 @@
     <div class="ib tl fade-in">
       <div class="ib-lbl">Sobre as peças</div>
       <div class="ib-txt">A linha Nova Gestão cobriu do mobile compacto (320x50) aos grandes formatos de desktop (970x90 e 728x90), o que deu à mensagem "Trabalho e cuidado, todos os dias" a chance de aparecer em qualquer tela e em qualquer posição de anúncio. Essa consistência visual é o que fixa uma comunicação de governo na memória do cidadão: a mesma identidade, repetida em contextos diferentes, constrói reconhecimento. O mobile 320x50 concentrou o maior volume, confirmando o peso do celular no público do DF, enquanto o retângulo 336x280 obteve a melhor taxa de interação, indicando os formatos com maior potencial de resposta.</div>
+    </div>
+  </div>
+
+  <!-- PRINTS COMPROBATÓRIOS -->
+  <div class="prints-sec fade-in" style="margin-top:56px">
+    <div class="prints-title">Prints Comprobatórios · 1 por Formato</div>
+    <div class="proof-grid">
+      <div class="proof-card mobile">
+        <div class="proof-shot-wrap">
+          <img class="proof-shot" style="left:32.18%;top:10.08%;width:36.99%;height:80.12%" src="assets/prints/print_320x50.jpg" alt="Print 320x50 mobile"/>
+          <img class="proof-frame" src="assets/prints/phone-frame.png" alt=""/>
+          <img class="proof-overlay" style="left:33.89%;top:26.47%;width:32.22%;height:5.03%" src="assets/prints/ov_320x50.gif" alt="Criativo 320x50"/>
+        </div>
+        <div class="proof-foot"><span class="proof-fmt">320x50</span><span class="proof-tag">Mobile</span></div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-shot-wrap">
+          <img class="proof-shot" src="assets/prints/print_300x250.png" alt="Print 300x250"/>
+          <img class="proof-overlay" style="left:49.43%;top:39.85%;width:17.12%;height:25.36%" src="assets/prints/ov_300x250.gif" alt="Criativo 300x250"/>
+        </div>
+        <div class="proof-foot"><span class="proof-fmt">300x250</span><span class="proof-tag">Desktop</span></div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-shot-wrap">
+          <img class="proof-shot" src="assets/prints/print_728x90.png" alt="Print 728x90"/>
+          <img class="proof-overlay" style="left:30.25%;top:55.75%;width:39.50%;height:8.68%" src="assets/prints/ov_728x90.gif" alt="Criativo 728x90"/>
+        </div>
+        <div class="proof-foot"><span class="proof-fmt">728x90</span><span class="proof-tag">Desktop</span></div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-shot-wrap">
+          <img class="proof-shot" src="assets/prints/print_300x600.png" alt="Print 300x600"/>
+          <img class="proof-overlay" style="left:67.70%;top:23.19%;width:18.54%;height:65.93%" src="assets/prints/ov_300x600.gif" alt="Criativo 300x600"/>
+        </div>
+        <div class="proof-foot"><span class="proof-fmt">300x600</span><span class="proof-tag">Desktop</span></div>
+      </div>
+      <div class="proof-card mobile">
+        <div class="proof-shot-wrap">
+          <img class="proof-shot" style="left:31.63%;top:10.83%;width:36.61%;height:79.30%" src="assets/prints/print_320x100.png" alt="Print 320x100 mobile"/>
+          <img class="proof-frame" src="assets/prints/phone-frame.png" alt=""/>
+          <img class="proof-overlay" style="left:32.25%;top:36.48%;width:35.28%;height:11.22%" src="assets/prints/ov_320x100.gif" alt="Criativo 320x100"/>
+        </div>
+        <div class="proof-foot"><span class="proof-fmt">320x100</span><span class="proof-tag">Mobile</span></div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-shot-wrap">
+          <img class="proof-shot" src="assets/prints/print_970x90.png" alt="Print 970x90"/>
+          <img class="proof-overlay" style="left:18.84%;top:51.52%;width:59.65%;height:9.84%" src="assets/prints/ov_970x90.gif" alt="Criativo 970x90"/>
+        </div>
+        <div class="proof-foot"><span class="proof-fmt">970x90</span><span class="proof-tag">Desktop</span></div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-shot-wrap">
+          <img class="proof-shot" src="assets/prints/print_468x60.png" alt="Print 468x60"/>
+          <img class="proof-overlay" style="left:28.12%;top:48.17%;width:43.76%;height:9.97%" src="assets/prints/ov_468x60.gif" alt="Criativo 468x60"/>
+        </div>
+        <div class="proof-foot"><span class="proof-fmt">468x60</span><span class="proof-tag">Desktop</span></div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-shot-wrap">
+          <img class="proof-shot" src="assets/prints/print_250x250.png" alt="Print 250x250"/>
+          <img class="proof-overlay" style="left:49.62%;top:18.77%;width:15.80%;height:28.08%" src="assets/prints/ov_250x250.gif" alt="Criativo 250x250"/>
+        </div>
+        <div class="proof-foot"><span class="proof-fmt">250x250</span><span class="proof-tag">Desktop</span></div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-shot-wrap">
+          <img class="proof-shot" src="assets/prints/print_336x280.png" alt="Print 336x280"/>
+          <img class="proof-overlay" style="left:62.49%;top:49.37%;width:16.01%;height:23.72%" src="assets/prints/ov_336x280.gif" alt="Criativo 336x280"/>
+        </div>
+        <div class="proof-foot"><span class="proof-fmt">336x280</span><span class="proof-tag">Desktop</span></div>
+      </div>
     </div>
   </div>
 </div>
