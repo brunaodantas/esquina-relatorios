@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prints Comprobatórios · Balanço Institucional 2026 · GDF</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --p:#1A3CFF;--navy:#0A0A5C;--teal:#17A697;
+  --bg:#F4F6FF;--surface:#fff;--border:rgba(0,0,0,.14);
+  --t1:#111;--t2:#555;--tm:#888;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:#333;color:var(--t1)}
+.slide{width:1280px;height:720px;overflow:hidden;position:relative;background:var(--bg);margin:0 auto 22px}
+.slide.proof{background:#fff}
+.slide-in{position:absolute;inset:0;padding:48px 60px;display:flex;flex-direction:column}
+
+/* CAPA */
+.cover{background:linear-gradient(135deg,#060630,#0A0A5C,#0D1B6E,#1A3CFF);color:#fff}
+.cover .slide-in{justify-content:center;align-items:flex-start}
+.cover:after{content:"";position:absolute;right:-140px;top:-140px;width:520px;height:520px;background:radial-gradient(circle,rgba(23,166,151,.28),transparent 70%);border-radius:50%}
+.cover-esquina{position:absolute;top:48px;right:60px;height:26px;width:auto;z-index:3;opacity:.95}
+.cover-gdf{height:70px;width:auto;margin-bottom:22px;filter:drop-shadow(0 2px 8px rgba(0,0,0,.3))}
+.cover .badge{display:inline-flex;align-items:center;gap:8px;background:rgba(23,166,151,.18);border:1px solid rgba(23,166,151,.4);color:#7FEAD9;padding:7px 16px;border-radius:100px;font-size:.78rem;font-weight:700;width:fit-content;text-transform:uppercase;letter-spacing:.05em}
+.cover h1{font-size:3.6rem;font-weight:800;letter-spacing:-.03em;margin:22px 0 14px}
+.cover .meta{color:#B9C2FF;font-size:1.1rem;line-height:1.7}
+.cover .meta b{color:#fff}
+
+/* PROOF SLIDES — modelo simples: título em texto puro + print completo, fundo branco */
+.proof-slide{align-items:flex-start;justify-content:flex-start}
+.proof-title{font-size:1.7rem;font-weight:700;color:var(--t1);letter-spacing:0}
+.proof-shot-s{display:block;margin-top:36px;max-width:850px;max-height:480px;width:auto;height:auto;box-shadow:0 2px 16px rgba(0,0,0,.10)}
+.slide-rule{position:absolute;left:60px;right:60px;bottom:56px;height:1px;background:var(--border)}
+
+/* MOBILE COMBINADO */
+.mobile-combo{display:flex;gap:70px;margin-top:36px;align-items:flex-start}
+.mobile-combo-item{display:flex;flex-direction:column;gap:14px;align-items:center}
+.mobile-combo-item .proof-shot-s{margin-top:0;height:490px;width:auto;max-width:none;max-height:none}
+.mobile-combo-lbl{font-size:.95rem;font-weight:600;color:var(--t2)}
+
+/* CONTRACAPA */
+.back{background:linear-gradient(160deg,#EEF1FF,#F4F6FF 50%,#EBF7F5)}
+.back .slide-in{justify-content:center;align-items:center;text-align:center}
+.back p{color:var(--t2);font-size:1.05rem}
+.back-logos{display:flex;align-items:center;justify-content:center;gap:30px;margin-bottom:22px}
+.back-gdf{height:64px;width:auto}
+.back-esquina{height:30px;width:auto}
+.back-div{width:1px;height:46px;background:rgba(0,0,0,.12)}
+
+@media print{@page{size:1280px 720px;margin:0}body{background:#fff}.slide{margin:0}*{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}}
+</style>
+</head>
+<body>
+
+<!-- 01 CAPA -->
+<div class="slide cover"><img class="cover-esquina" src="assets/logo-esquina-branco.png" alt="Esquina"><div class="slide-in">
+  <img class="cover-gdf" src="assets/gdf-logo-branco.png" alt="Governo do Distrito Federal">
+  <span class="badge"><span style="width:7px;height:7px;border-radius:50%;background:#7FEAD9;display:inline-block"></span>Comprovação de Veiculação</span>
+  <h1>Prints Comprobatórios</h1>
+  <p class="meta"><b>Governo do Distrito Federal</b> · Balanço Institucional 2026<br>Display Programática · 23 de junho a 03 de julho de 2026<br>PI 141061 · Peça Nova Gestão do GDF</p>
+</div></div>
+
+<!-- 300x600 -->
+<div class="slide proof"><div class="slide-in proof-slide">
+  <span class="proof-title">GDF_300x600_SAUDE</span>
+  <img class="proof-shot-s" src="assets/prints/print_300x600.jpeg" alt="Print 300x600">
+  <div class="slide-rule"></div>
+</div></div>
+
+<!-- 970x90 -->
+<div class="slide proof"><div class="slide-in proof-slide">
+  <span class="proof-title">GDF_970x90_SAUDE</span>
+  <img class="proof-shot-s" src="assets/prints/print_970x90.jpeg" alt="Print 970x90">
+  <div class="slide-rule"></div>
+</div></div>
+
+<!-- 728x90 -->
+<div class="slide proof"><div class="slide-in proof-slide">
+  <span class="proof-title">GDF_728x90_SAUDE</span>
+  <img class="proof-shot-s" src="assets/prints/print_728x90.jpeg" alt="Print 728x90">
+  <div class="slide-rule"></div>
+</div></div>
+
+<!-- 468x60 -->
+<div class="slide proof"><div class="slide-in proof-slide">
+  <span class="proof-title">GDF_468x60_SAUDE</span>
+  <img class="proof-shot-s" src="assets/prints/print_468x60.jpeg" alt="Print 468x60">
+  <div class="slide-rule"></div>
+</div></div>
+
+<!-- 336x280 -->
+<div class="slide proof"><div class="slide-in proof-slide">
+  <span class="proof-title">GDF_336x280_SAUDE</span>
+  <img class="proof-shot-s" src="assets/prints/print_336x280.jpeg" alt="Print 336x280">
+  <div class="slide-rule"></div>
+</div></div>
+
+<!-- 300x250 -->
+<div class="slide proof"><div class="slide-in proof-slide">
+  <span class="proof-title">GDF_300x250_SAUDE</span>
+  <img class="proof-shot-s" src="assets/prints/print_300x250.jpeg" alt="Print 300x250">
+  <div class="slide-rule"></div>
+</div></div>
+
+<!-- 250x250 -->
+<div class="slide proof"><div class="slide-in proof-slide">
+  <span class="proof-title">GDF_250x250_SAUDE</span>
+  <img class="proof-shot-s" src="assets/prints/print_250x250.jpeg" alt="Print 250x250">
+  <div class="slide-rule"></div>
+</div></div>
+
+<!-- MOBILE COMBINADO -->
+<div class="slide proof"><div class="slide-in proof-slide">
+  <span class="proof-title">GDF_320x50_SAUDE e GDF_320x100_SAUDE</span>
+  <div class="mobile-combo">
+    <div class="mobile-combo-item">
+      <img class="proof-shot-s" src="assets/prints/print_320x50.jpeg" alt="Print 320x50">
+      <span class="mobile-combo-lbl">320x50</span>
+    </div>
+    <div class="mobile-combo-item">
+      <img class="proof-shot-s" src="assets/prints/print_320x100.jpeg" alt="Print 320x100">
+      <span class="mobile-combo-lbl">320x100</span>
+    </div>
+  </div>
+  <div class="slide-rule"></div>
+</div></div>
+
+<!-- CONTRACAPA -->
+<div class="slide back"><div class="slide-in">
+  <div class="back-logos">
+    <img class="back-gdf" src="assets/gdf-logo-navy.png" alt="Governo do Distrito Federal">
+    <span class="back-div"></span>
+    <img class="back-esquina" src="assets/logo-esquina.png" alt="Esquina">
+  </div>
+  <p style="margin-top:6px">Prints Comprobatórios · Balanço Institucional 2026</p>
+  <p>Display Programática · 23 de junho a 03 de julho de 2026</p>
+  <p style="margin-top:10px;color:var(--tm)">Governo do Distrito Federal · Esquina Comunicação Online</p>
+</div></div>
+
+</body>
+</html>
