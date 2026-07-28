@@ -38,7 +38,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--text-1);line-heigh
 .chip-yt{background:rgba(204,0,0,.09);color:#CC0000}
 .chip-pending{opacity:.55;font-style:italic}
 .nav-actions{display:flex;align-items:center;gap:10px;flex-shrink:0}
-.btn-export{display:inline-flex;align-items:center;gap:6px;padding:8px 18px;background:var(--primary);color:#fff;border:none;border-radius:100px;font-family:var(--font);font-size:.73rem;font-weight:600;letter-spacing:.05em;cursor:pointer;transition:all .2s;text-transform:uppercase}
+.btn-export{display:inline-flex;align-items:center;gap:6px;padding:8px 18px;background:var(--primary);color:#fff;border:none;border-radius:100px;font-family:var(--font);font-size:.73rem;font-weight:600;letter-spacing:.05em;cursor:pointer;transition:all .2s;text-transform:uppercase;text-decoration:none}
 .btn-export:hover{background:#1430CC;transform:translateY(-1px);box-shadow:0 4px 16px rgba(26,60,255,.3)}
 
 /* ── SECTIONS ── */
@@ -232,10 +232,10 @@ body{font-family:var(--font);background:var(--bg);color:var(--text-1);line-heigh
     <span class="chip chip-yt">YouTube</span>
   </div>
   <div class="nav-actions">
-    <button class="btn-export" onclick="window.print()">
+    <a class="btn-export" href="relatorio-dae-jundiai-julho2026.pdf" target="_blank" rel="noopener" download>
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
       Exportar PDF
-    </button>
+    </a>
   </div>
 </nav>
 
