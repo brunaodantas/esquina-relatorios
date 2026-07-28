@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Americana — Temas Diversos julho/2026 — Slides</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<style>
+  :root{
+    --blue:#1A3CFF; --navy:#0A0A5C; --teal:#17A697; --purple:#7B2FBE;
+    --orange:#C44A00; --warn:#CC8800; --green:#1DB954;
+    --bg:#F4F6FF; --ink:#0A0A5C; --muted:#6a6a80;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',sans-serif;background:#333;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .slide{width:1280px;height:720px;overflow:hidden;position:relative;background:var(--bg);margin:0 auto}
+  .pad{position:absolute;inset:0;padding:52px 72px;display:flex;flex-direction:column}
+  .dark{background:linear-gradient(135deg,#0A0A5C 0%,#12208f 55%,#1A3CFF 120%);color:#fff}
+  .eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);margin-bottom:12px;display:flex;align-items:center;gap:10px}
+  .eyebrow::before{content:"";width:26px;height:2px;background:var(--teal);display:inline-block}
+  .dark .eyebrow{color:#7fe9d8}
+  .dark .eyebrow::before{background:#7fe9d8}
+  h1{font-size:3.4rem;font-weight:800;line-height:1.04;letter-spacing:-.02em}
+  h2{font-size:2.5rem;font-weight:800;color:var(--ink);line-height:1.05;letter-spacing:-.02em}
+  .dark h2{color:#fff}
+  .sub{font-size:1.02rem;color:var(--muted);margin-top:14px;max-width:920px;line-height:1.5}
+  .dark .sub{color:rgba(255,255,255,.8)}
+  .grow{flex:1}
+  .card{background:#fff;border:1px solid rgba(10,10,92,.07);border-radius:16px;padding:22px 24px;box-shadow:0 8px 24px rgba(10,10,92,.05)}
+  .grid{display:grid;gap:18px}
+  .kpi-lbl{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .kpi-val{font-size:2.1rem;font-weight:800;color:var(--ink);line-height:1.1;margin-top:6px}
+  .kpi-sub{font-size:.8rem;color:var(--muted);margin-top:6px}
+  .tag{display:inline-block;font-size:.62rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:20px;margin-top:8px}
+  .t-blue{background:rgba(26,60,255,.1);color:var(--blue)}
+  .t-teal{background:rgba(23,166,151,.12);color:var(--teal)}
+  .t-purple{background:rgba(123,47,190,.12);color:var(--purple)}
+  .t-orange{background:rgba(196,74,0,.1);color:var(--orange)}
+  .pill{display:inline-block;padding:3px 12px;border-radius:20px;background:rgba(23,166,151,.14);color:var(--teal);font-weight:700;font-size:.82rem}
+  .track{height:9px;background:rgba(10,10,92,.08);border-radius:6px;overflow:hidden;margin-top:12px}
+  .fill{height:100%;border-radius:6px}
+  table{width:100%;border-collapse:collapse;font-size:.95rem}
+  th{font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding:11px 14px;border-bottom:2px solid rgba(10,10,92,.1)}
+  td{padding:11px 14px;border-bottom:1px solid rgba(10,10,92,.06);color:#333}
+  tr.tot td{background:rgba(26,60,255,.04);font-weight:700;color:var(--ink);border-bottom:none}
+  .ins{margin-top:16px;background:#fff;border:1px solid rgba(10,10,92,.07);border-left:4px solid var(--teal);border-radius:12px;padding:16px 20px}
+  .ins .l{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);margin-bottom:6px}
+  .ins .x{font-size:.9rem;color:#3a3a4a;line-height:1.5}
+  .ins.purple{border-left-color:var(--purple)} .ins.purple .l{color:var(--purple)}
+  .ins.blue{border-left-color:var(--blue)} .ins.blue .l{color:var(--blue)}
+  .ins.orange{border-left-color:var(--orange)} .ins.orange .l{color:var(--orange)}
+  .dc{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:24px;position:relative;overflow:hidden}
+  .dc .num{font-size:.72rem;font-weight:700;color:rgba(255,255,255,.45);letter-spacing:.1em}
+  .dc .m{font-size:1.9rem;font-weight:800;margin:8px 0 6px;color:#fff}
+  .dc .t{font-size:1rem;font-weight:700;color:#fff;margin-bottom:8px}
+  .dc .x{font-size:.82rem;color:rgba(255,255,255,.78);line-height:1.45}
+  .dc .acc{position:absolute;top:0;left:0;width:4px;height:100%}
+  .barrow{margin-bottom:14px}
+  .barrow .top{display:flex;justify-content:space-between;font-size:.85rem;color:#333;margin-bottom:5px}
+  .barrow .bt{height:9px;background:rgba(10,10,92,.08);border-radius:6px;overflow:hidden}
+  .barrow .bf{height:100%;border-radius:6px}
+  .logo-e{height:26px}
+</style>
+</head>
+<body>
+
+<!-- 01 CAPA -->
+<div class="slide">
+  <div class="pad dark" style="justify-content:space-between;background:linear-gradient(115deg, rgba(6,6,48,.92) 0%, rgba(10,10,92,.82) 40%, rgba(13,27,110,.66) 70%, rgba(26,60,255,.45) 100%), url('assets/hero-americana.jpg'); background-size:cover; background-position:center 50%;">
+    <div style="display:flex;align-items:center;justify-content:space-between">
+      <img src="assets/logo-esquina.png" class="logo-e" style="filter:brightness(0) invert(1);height:30px" alt="Esquina">
+      <span style="font-size:.8rem;font-weight:600;color:rgba(255,255,255,.7)">Relatório de Performance · Fechamento</span>
+    </div>
+    <div>
+      <div class="eyebrow">Temas Diversos · Meta Ads · 13 a 27 de julho de 2026</div>
+      <h1>Relatório de<br><span style="color:#7fe9d8">Performance</span></h1>
+      <div style="font-size:1.4rem;font-weight:600;margin-top:14px;opacity:.9">Campanha Temas Diversos · julho</div>
+      <div style="font-size:1.15rem;font-weight:600;margin-top:6px;opacity:.85">Prefeitura de Americana</div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:18px;max-width:900px">
+      <div><div style="font-size:2.3rem;font-weight:800">1,05M</div><div style="font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;opacity:.75;margin-top:4px">Impressões</div></div>
+      <div><div style="font-size:2.3rem;font-weight:800">387K</div><div style="font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;opacity:.75;margin-top:4px">Contas alcançadas</div></div>
+      <div><div style="font-size:2.3rem;font-weight:800;color:#7fe9d8">4/4</div><div style="font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;opacity:.75;margin-top:4px">Metas atingidas</div></div>
+      <div><div style="font-size:2.3rem;font-weight:800;color:#7fe9d8">104,8%</div><div style="font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;opacity:.75;margin-top:4px">Da meta total</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- 02 CONTRATADO x ENTREGUE -->
+<div class="slide">
+  <div class="pad">
+    <div class="eyebrow">Entrega da Campanha</div>
+    <h2>As quatro linhas contratadas foram cumpridas</h2>
+    <p class="sub">Todas as frentes de veiculação de julho fecharam acima da meta, dentro do período contratado de 13 a 27 de julho.</p>
+    <div class="card" style="margin-top:20px;display:flex;align-items:center;justify-content:center;gap:70px;padding:24px">
+      <div style="text-align:center"><div style="font-size:2rem;font-weight:800;color:var(--navy)">1.048.149</div><div class="kpi-lbl" style="margin-top:6px">Impressões entregues</div></div>
+      <div style="text-align:center"><div style="font-size:3.4rem;font-weight:800;color:var(--teal);line-height:1">104,8<span style="font-size:1.5rem;vertical-align:top">%</span></div><div class="kpi-lbl" style="color:var(--teal);margin-top:2px">da meta cumprida</div></div>
+      <div style="text-align:center"><div style="font-size:2rem;font-weight:800;color:#bcbccc">1.000.000</div><div class="kpi-lbl" style="margin-top:6px">Meta total contratada</div></div>
+    </div>
+    <div class="card" style="margin-top:16px;padding:6px 10px">
+      <table>
+        <thead><tr><th style="text-align:left">Linha de veiculação</th><th style="text-align:right">Meta</th><th style="text-align:right">Entregue</th><th style="text-align:right">% da meta</th><th style="text-align:right">Investimento</th><th style="text-align:right">CPM</th></tr></thead>
+        <tbody>
+          <tr><td>Geolocalizado · Reconhecimento</td><td style="text-align:right">450.000</td><td style="text-align:right">466.273</td><td style="text-align:right"><span class="pill">103,6%</span></td><td style="text-align:right">R$673,43</td><td style="text-align:right">R$1,44</td></tr>
+          <tr><td>Clusters · Reconhecimento</td><td style="text-align:right">350.000</td><td style="text-align:right">366.479</td><td style="text-align:right"><span class="pill">104,7%</span></td><td style="text-align:right">R$526,61</td><td style="text-align:right">R$1,44</td></tr>
+          <tr><td>Remarketing · Reconhecimento</td><td style="text-align:right">100.000</td><td style="text-align:right">111.847</td><td style="text-align:right"><span class="pill">111,8%</span></td><td style="text-align:right">R$174,53</td><td style="text-align:right">R$1,56</td></tr>
+          <tr><td>Visita ao Perfil · Tráfego</td><td style="text-align:right">100.000</td><td style="text-align:right">103.550</td><td style="text-align:right"><span class="pill">103,6%</span></td><td style="text-align:right">R$1.245,11</td><td style="text-align:right">R$12,02</td></tr>
+          <tr class="tot"><td>Total Meta Ads</td><td style="text-align:right">1.000.000</td><td style="text-align:right">1.048.149</td><td style="text-align:right"><span class="pill">104,8%</span></td><td style="text-align:right">R$2.619,68</td><td style="text-align:right">R$2,50</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- 03 PROGRESSO POR LINHA -->
+<div class="slide">
+  <div class="pad">
+    <div class="eyebrow">Metas por Linha</div>
+    <h2>Progresso de cada frente</h2>
+    <p class="sub">Nenhuma linha ficou abaixo do contratado. O excedente de 48.149 impressões foi entregue sem custo adicional para a Prefeitura.</p>
+    <div class="card" style="margin-top:24px;padding:30px 34px">
+      <div class="barrow">
+        <div class="top"><span><strong>Geolocalizado</strong> · 466.273 de 450.000 impressões</span><span style="font-weight:700;color:var(--blue)">103,6%</span></div>
+        <div class="bt"><div class="bf" style="width:100%;background:var(--blue)"></div></div>
+      </div>
+      <div class="barrow">
+        <div class="top"><span><strong>Clusters</strong> · 366.479 de 350.000 impressões</span><span style="font-weight:700;color:var(--teal)">104,7%</span></div>
+        <div class="bt"><div class="bf" style="width:100%;background:var(--teal)"></div></div>
+      </div>
+      <div class="barrow">
+        <div class="top"><span><strong>Remarketing</strong> · 111.847 de 100.000 impressões</span><span style="font-weight:700;color:var(--purple)">111,8%</span></div>
+        <div class="bt"><div class="bf" style="width:100%;background:var(--purple)"></div></div>
+      </div>
+      <div class="barrow" style="margin-bottom:0">
+        <div class="top"><span><strong>Visita ao Perfil</strong> · 103.550 de 100.000 impressões</span><span style="font-weight:700;color:var(--orange)">103,6%</span></div>
+        <div class="bt"><div class="bf" style="width:100%;background:var(--orange)"></div></div>
+      </div>
+    </div>
+    <div class="ins blue" style="margin-top:18px"><div class="l">Custo abaixo do previsto</div><div class="x">As três linhas de reconhecimento fecharam com CPM entre R$1,44 e R$1,56, abaixo da referência de planejamento de R$1,60. A economia gerada foi convertida em entrega adicional dentro do mesmo período.</div></div>
+  </div>
+</div>
+
+<!-- 04 KPIs -->
+<div class="slide">
+  <div class="pad">
+    <div class="eyebrow">Métricas Consolidadas</div>
+    <h2>KPIs principais</h2>
+    <p class="sub">Meta Ads · conta da Prefeitura de Americana · 13 a 27 de julho de 2026.</p>
+    <div class="grid" style="grid-template-columns:repeat(4,1fr);margin-top:24px;gap:16px">
+      <div class="card"><div class="kpi-lbl">Impressões</div><div class="kpi-val">1.048.149</div><div class="kpi-sub">104,8% da meta contratada</div></div>
+      <div class="card"><div class="kpi-lbl">Contas alcançadas</div><div class="kpi-val">387.275</div><div class="kpi-sub">Pessoas únicas, sem duplicidade</div></div>
+      <div class="card"><div class="kpi-lbl">Frequência média</div><div class="kpi-val">2,71×</div><div class="kpi-sub">Exposições por pessoa</div></div>
+      <div class="card"><div class="kpi-lbl">CPM médio</div><div class="kpi-val">R$2,50</div><div class="kpi-sub">Média das quatro linhas</div></div>
+      <div class="card"><div class="kpi-lbl">Interações com as publicações</div><div class="kpi-val">57.896</div><div class="kpi-sub">Reações, comentários, salvamentos e cliques</div></div>
+      <div class="card"><div class="kpi-lbl">Cliques no link</div><div class="kpi-val">2.817</div><div class="kpi-sub">2.578 vindos da linha de Tráfego</div></div>
+      <div class="card"><div class="kpi-lbl">CTR · linha de Tráfego</div><div class="kpi-val">2,48%</div><div class="kpi-sub">Acima da referência de 1,00%</div></div>
+      <div class="card"><div class="kpi-lbl">Investimento total</div><div class="kpi-val">R$2.619,68</div><div class="kpi-sub">Dentro da verba do período</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- 05 CURVA DE ENTREGA -->
+<div class="slide">
+  <div class="pad">
+    <div class="eyebrow">Ritmo de Veiculação</div>
+    <h2>Curva de entrega dia a dia</h2>
+    <p class="sub">Concentração no início do período, quando as pautas foram publicadas, e ritmo constante até o encerramento em 27 de julho.</p>
+    <div class="card" style="margin-top:20px">
+      <div style="font-weight:700;color:var(--ink);margin-bottom:4px">Impressões por dia</div>
+      <div style="font-size:.8rem;color:var(--muted);margin-bottom:10px">Total do período: 1.048.149 impressões em 15 dias de veiculação</div>
+      <div style="height:300px"><canvas id="chartDaily"></canvas></div>
+    </div>
+    <div class="ins" style="margin-top:14px"><div class="l">Leitura do ritmo</div><div class="x">Os três primeiros dias concentraram 43% da entrega, acompanhando a publicação das pautas de manutenção asfáltica e do Revelando SP. A partir de 17 de julho a veiculação foi mantida em patamar estável, o que sustentou presença contínua até o fim do período sem esgotar a verba antes do prazo.</div></div>
+  </div>
+</div>
+
+<!-- 06 PAUTAS / CRIATIVOS -->
+<div class="slide">
+  <div class="pad">
+    <div class="eyebrow">Conteúdo Veiculado</div>
+    <h2>Pautas em veiculação</h2>
+    <p class="sub">Três pautas institucionais dividiram a entrega do período, com peso equilibrado entre serviços urbanos e cultura.</p>
+    <div style="display:flex;gap:22px;margin-top:18px">
+      <div style="flex:1;display:flex;flex-direction:column;gap:10px">
+        <div class="card" style="padding:13px 20px"><span class="tag t-blue" style="margin-top:0">Serviços urbanos</span><div style="font-weight:700;font-size:1.05rem;color:var(--ink);margin:6px 0 8px">Manutenção Asfáltica</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+            <div><div class="kpi-val" style="font-size:1.2rem">487.353</div><div class="kpi-sub">Impressões · 46,5%</div></div>
+            <div><div class="kpi-val" style="font-size:1.2rem">R$917,84</div><div class="kpi-sub">Investimento</div></div>
+          </div></div>
+        <div class="card" style="padding:13px 20px"><span class="tag t-purple" style="margin-top:0">Cultura</span><div style="font-weight:700;font-size:1.05rem;color:var(--ink);margin:6px 0 8px">Revelando SP</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+            <div><div class="kpi-val" style="font-size:1.2rem">466.320</div><div class="kpi-sub">Impressões · 44,5%</div></div>
+            <div><div class="kpi-val" style="font-size:1.2rem">R$1.310,32</div><div class="kpi-sub">Investimento</div></div>
+          </div></div>
+        <div class="card" style="padding:13px 20px"><span class="tag t-teal" style="margin-top:0">Saúde</span><div style="font-weight:700;font-size:1.05rem;color:var(--ink);margin:6px 0 8px">Banco de Sangue</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+            <div><div class="kpi-val" style="font-size:1.2rem">69.247</div><div class="kpi-sub">Impressões · 6,6%</div></div>
+            <div><div class="kpi-val" style="font-size:1.2rem">R$101,71</div><div class="kpi-sub">Investimento</div></div>
+          </div></div>
+      </div>
+      <div style="width:430px">
+        <div class="card"><div style="font-weight:700;color:var(--ink);margin-bottom:4px">Distribuição por pauta</div><div style="font-size:.8rem;color:var(--muted);margin-bottom:8px">Participação nas impressões do período</div><div style="height:270px"><canvas id="chartPautas"></canvas></div></div>
+      </div>
+    </div>
+    <div class="ins purple" style="margin-top:12px"><div class="l">Equilíbrio entre serviço e cultura</div><div class="x">Manutenção Asfáltica e Revelando SP responderam juntas por 91% da entrega, com outras 25.229 impressões na peça combinada das duas pautas. O Banco de Sangue entrou na segunda metade do período, com CPM de R$1,47.</div></div>
+  </div>
+</div>
+
+<!-- 07 PÚBLICO ALCANÇADO -->
+<div class="slide">
+  <div class="pad">
+    <div class="eyebrow">Perfil do Público</div>
+    <h2>Quem foi alcançado</h2>
+    <p class="sub">Distribuição das impressões entre faixas de idade, gênero e plataformas dentro do período.</p>
+    <div style="display:flex;gap:20px;margin-top:20px">
+      <div class="card" style="flex:1.35"><div style="font-weight:700;color:var(--ink);margin-bottom:4px">Faixa de idade</div><div style="font-size:.8rem;color:var(--muted);margin-bottom:8px">Impressões por faixa</div><div style="height:262px"><canvas id="chartIdade"></canvas></div></div>
+      <div style="width:340px;display:flex;flex-direction:column;gap:14px">
+        <div class="card"><div style="font-weight:700;color:var(--ink);margin-bottom:8px">Gênero</div><div style="height:172px"><canvas id="chartGenero"></canvas></div></div>
+        <div class="card"><div style="font-weight:700;color:var(--ink);margin-bottom:10px">Plataformas</div>
+          <div style="display:flex;height:16px;border-radius:100px;overflow:hidden;margin-bottom:12px"><div style="width:99.4%;background:var(--purple)"></div><div style="width:.6%;background:var(--blue)"></div></div>
+          <div style="display:flex;justify-content:space-between;font-size:.85rem;color:#333"><span><strong style="color:var(--purple)">99,4%</strong> Instagram</span><span><strong style="color:var(--blue)">0,6%</strong> Facebook</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="ins orange" style="margin-top:14px"><div class="l">Público jovem e majoritariamente feminino</div><div class="x">As faixas de 18 a 34 anos concentraram 74,8% das impressões, e mulheres responderam por 66,9% da entrega. A veiculação ficou praticamente toda no Instagram, plataforma onde o perfil da Prefeitura tem maior base ativa.</div></div>
+  </div>
+</div>
+
+<!-- 08 VISITA AO PERFIL -->
+<div class="slide">
+  <div class="pad">
+    <div class="eyebrow">Linha de Tráfego</div>
+    <h2>Visita ao Perfil: cliques acima da referência</h2>
+    <p class="sub">A linha de tráfego tem função diferente das de reconhecimento: levar a população ao perfil oficial da Prefeitura.</p>
+    <div class="grid" style="grid-template-columns:repeat(4,1fr);margin-top:24px;gap:16px">
+      <div class="card"><div class="kpi-lbl">Impressões</div><div class="kpi-val" style="font-size:1.8rem">103.550</div><div class="kpi-sub">103,6% da meta de 100.000</div></div>
+      <div class="card"><div class="kpi-lbl">Cliques no link</div><div class="kpi-val" style="font-size:1.8rem">2.578</div><div class="kpi-sub">Acessos ao perfil oficial</div></div>
+      <div class="card"><div class="kpi-lbl">CTR</div><div class="kpi-val" style="font-size:1.8rem">2,48%</div><div class="kpi-sub">Referência de mercado: 1,00%</div></div>
+      <div class="card"><div class="kpi-lbl">CPC</div><div class="kpi-val" style="font-size:1.8rem">R$0,49</div><div class="kpi-sub">Custo por clique no link</div></div>
+    </div>
+    <div class="card" style="margin-top:18px;padding:24px 28px">
+      <div style="font-weight:700;color:var(--ink);margin-bottom:10px">Alcance e repetição</div>
+      <div style="display:flex;gap:48px">
+        <div><div class="kpi-val" style="font-size:1.5rem">42.258</div><div class="kpi-sub">Contas alcançadas pela linha</div></div>
+        <div><div class="kpi-val" style="font-size:1.5rem">2,45×</div><div class="kpi-sub">Frequência média</div></div>
+        <div><div class="kpi-val" style="font-size:1.5rem">26.645</div><div class="kpi-sub">Interações com as publicações</div></div>
+        <div><div class="kpi-val" style="font-size:1.5rem">R$1.245,11</div><div class="kpi-sub">Investimento na linha</div></div>
+      </div>
+    </div>
+    <div class="ins orange" style="margin-top:16px"><div class="l">Ponto de atenção com contexto</div><div class="x">O CPM de R$12,02 é naturalmente mais alto nesta linha, porque a compra é otimizada para clique e não para impressão. Comparado ao objetivo dela, o resultado ficou favorável: CTR de 2,48% e CPC de R$0,49, com 2.578 acessos ao perfil da Prefeitura no período.</div></div>
+  </div>
+</div>
+
+<!-- 08B REPERCUSSÃO NA IMPRENSA -->
+<div class="slide">
+  <div class="pad">
+    <div class="eyebrow">Repercussão na Imprensa</div>
+    <h2>A agenda da cidade no período</h2>
+    <p class="sub">Levantamento de clipagem do período: 17 registros sobre Americana e a Prefeitura entre 13 e 27 de julho, em canais próprios e na imprensa regional.</p>
+    <div style="display:flex;gap:20px;margin-top:18px">
+      <div class="card" style="flex:1.15"><div style="font-weight:700;color:var(--ink);margin-bottom:4px">Registros por tema</div><div style="font-size:.8rem;color:var(--muted);margin-bottom:8px">17 registros no período</div><div style="height:250px"><canvas id="chartClip"></canvas></div></div>
+      <div style="width:400px;display:flex;flex-direction:column;gap:14px">
+        <div class="card" style="padding:18px 22px"><div style="font-weight:700;color:var(--ink);margin-bottom:12px">Origem dos registros</div>
+          <div style="display:flex;height:16px;border-radius:100px;overflow:hidden;margin-bottom:12px"><div style="width:58.8%;background:var(--blue)"></div><div style="width:41.2%;background:var(--teal)"></div></div>
+          <div style="display:flex;justify-content:space-between;font-size:.85rem;color:#333"><span><strong style="color:var(--blue)">10</strong> canais próprios</span><span><strong style="color:var(--teal)">7</strong> imprensa regional</span></div>
+          <div style="font-size:.78rem;color:var(--muted);margin-top:10px">Portal Atualidade, SB Notícias, Novo Momento, Jornal Americanense e liberal.com.br.</div>
+        </div>
+        <div class="card" style="padding:18px 22px"><span class="tag t-teal" style="margin-top:0">Assunto mais replicado</span><div style="font-weight:700;color:var(--ink);margin:8px 0 6px;font-size:1.02rem">Inscrições para vagas em creche</div><div style="font-size:.85rem;color:#444;line-height:1.5">Único assunto do período publicado por três veículos diferentes, entre 23 e 26 de julho, sem apoio de mídia paga.</div></div>
+      </div>
+    </div>
+    <div class="ins" style="margin-top:14px"><div class="l">Leitura da clipagem</div><div class="x">Saúde foi o tema com mais registros (5 de 17), com CAPS 24 horas, Julho Amarelo, testagem de ISTs e orientações do Hospital Municipal. Infraestrutura e mobilidade somaram 3 registros, todos ligados ao pacote de recuperação asfáltica, a mesma pauta que concentrou 46,5% da mídia paga do período.</div></div>
+  </div>
+</div>
+
+<!-- 08C CRUZAMENTO -->
+<div class="slide">
+  <div class="pad">
+    <div class="eyebrow">Análise Qualitativa</div>
+    <h2>Mídia paga e agenda espontânea</h2>
+    <p class="sub">Cruzamento entre as pautas veiculadas na campanha e o que a imprensa registrou no mesmo período.</p>
+    <div class="grid" style="grid-template-columns:repeat(3,1fr);margin-top:22px;gap:18px">
+      <div class="card" style="border-top:3px solid var(--teal)"><span class="tag t-teal" style="margin-top:0">Convergência</span><div style="font-weight:700;color:var(--ink);margin:8px 0 8px;font-size:1.02rem">Recuperação asfáltica</div><div style="font-size:.86rem;color:#444;line-height:1.5">A pauta com maior investimento (487.353 impressões) foi também a que gerou registro espontâneo: conclusão da primeira etapa na Avenida de Cillo, publicada em 24 e 27 de julho, e a interdição na Avenida Brasil em 26 de julho. Mídia paga e imprensa contaram a mesma história na mesma semana.</div></div>
+      <div class="card" style="border-top:3px solid var(--purple)"><span class="tag t-purple" style="margin-top:0">Só na mídia paga</span><div style="font-weight:700;color:var(--ink);margin:8px 0 8px;font-size:1.02rem">Revelando SP e Banco de Sangue</div><div style="font-size:.86rem;color:#444;line-height:1.5">As duas pautas não apareceram na clipagem do período. Juntas somaram 535.567 impressões, ou 51% da entrega. A divulgação dependeu dos canais próprios e da mídia paga, o que reforça o papel da campanha para esses temas.</div></div>
+      <div class="card" style="border-top:3px solid var(--orange)"><span class="tag t-orange" style="margin-top:0">Só na agenda espontânea</span><div style="font-weight:700;color:var(--ink);margin:8px 0 8px;font-size:1.02rem">Creche, habitação e esporte</div><div style="font-size:.86rem;color:#444;line-height:1.5">Vagas em creche, o Feirão Casa Paulista com 147 cartas de crédito e a terceira colocação nos Jogos Regionais entre 46 cidades circularam sem apoio de mídia paga. São temas de serviço com procura espontânea da população.</div></div>
+    </div>
+    <div class="ins purple" style="margin-top:16px"><div class="l">Síntese</div><div class="x">A campanha de julho reforçou uma pauta que já tinha tração na imprensa, a recuperação asfáltica, e sustentou sozinha duas pautas que não teriam circulado de outra forma. As inscrições para creche foram o assunto mais replicado do período e não tiveram cobertura paga: é uma pauta de serviço com demanda espontânea, candidata natural ao próximo ciclo.</div></div>
+  </div>
+</div>
+
+<!-- 09 FONTES -->
+<div class="slide">
+  <div class="pad">
+    <div class="eyebrow">&#10003; Fontes e Verificação</div>
+    <h2 style="font-size:2rem">De onde vêm os dados deste relatório</h2>
+    <div class="grid" style="grid-template-columns:repeat(3,1fr);margin-top:26px;gap:20px">
+      <div class="card"><div style="font-weight:800;color:var(--ink);margin-bottom:8px">Performance</div><div style="font-size:.88rem;color:var(--muted);line-height:1.5">Dados obtidos diretamente da API do Meta Ads, na conta da Prefeitura de Americana, com granularidade por campanha e por anúncio, período de 13 a 27 de julho de 2026.</div></div>
+      <div class="card"><div style="font-weight:800;color:var(--ink);margin-bottom:8px">Metas contratadas</div><div style="font-size:.88rem;color:var(--muted);line-height:1.5">Metas por linha conforme contratado com a Prefeitura, conferidas uma a uma contra a entrega apurada na plataforma.</div></div>
+      <div class="card"><div style="font-weight:800;color:var(--ink);margin-bottom:8px">Repercussão na imprensa</div><div style="font-size:.88rem;color:var(--muted);line-height:1.5">Clipagem do painel Pulse da Esquina, com captação automática de publicações sobre Americana e a Prefeitura: 17 registros no período, em canais próprios e imprensa regional.</div></div>
+    </div>
+    <div class="ins" style="margin-top:24px"><div class="x" style="font-style:italic">Nenhum número deste relatório foi estimado: cada dado é rastreável à sua fonte original, plataforma de mídia ou publicação de imprensa, e foi conferido antes da publicação. A clipagem não traz classificação de sentimento, apenas o registro das publicações do período. Os dados de monitoramento de redes sociais são apresentados em documento próprio.</div></div>
+  </div>
+</div>
+
+<!-- 10 DIAGNÓSTICO -->
+<div class="slide">
+  <div class="pad dark">
+    <div class="eyebrow">Diagnóstico do Período</div>
+    <h2>O que a campanha de julho entregou</h2>
+    <p class="sub">Quatro linhas contratadas, quatro metas cumpridas, com custo por mil impressões abaixo do previsto em planejamento.</p>
+    <div class="grid" style="grid-template-columns:repeat(2,1fr);margin-top:24px;gap:18px;flex:1">
+      <div class="dc"><div class="acc" style="background:var(--teal)"></div><div class="num">01</div><div class="m">104,8%</div><div class="t">Meta total superada</div><div class="x">1.048.149 impressões contra 1.000.000 contratadas. As 48.149 impressões excedentes foram entregues sem custo adicional, resultado do CPM ter fechado abaixo do previsto.</div></div>
+      <div class="dc"><div class="acc" style="background:var(--blue)"></div><div class="num">02</div><div class="m">387.275</div><div class="t">Contas únicas alcançadas</div><div class="x">Cerca de 1,6 vez a população de Americana em contas alcançadas, com frequência média de 2,71 exposições por pessoa, faixa adequada para fixar mensagem sem saturar o público.</div></div>
+      <div class="dc"><div class="acc" style="background:var(--purple)"></div><div class="num">03</div><div class="m">91%</div><div class="t">Foco em serviços urbanos e cultura</div><div class="x">Manutenção Asfáltica (46,5%) e Revelando SP (44,5%) concentraram a entrega, com Banco de Sangue somando 6,6% como comunicado de utilidade pública na segunda metade do período.</div></div>
+      <div class="dc"><div class="acc" style="background:var(--orange)"></div><div class="num">04</div><div class="m">2,48%</div><div class="t">Tráfego acima da referência</div><div class="x">A linha de Visita ao Perfil registrou CTR de 2,48% e CPC de R$0,49, levando 2.578 acessos ao perfil oficial da Prefeitura no período.</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- 11 O QUE VAMOS FAZER -->
+<div class="slide">
+  <div class="pad">
+    <div class="eyebrow">Próximos Passos</div>
+    <h2>O que a Esquina vai fazer no próximo ciclo</h2>
+    <p class="sub">Encaminhamentos operacionais a partir do que os dados de julho mostraram.</p>
+    <div class="grid" style="grid-template-columns:repeat(2,1fr);margin-top:24px;gap:18px;flex:1">
+      <div class="card"><span class="tag t-blue" style="margin-top:0">Distribuição de verba</span><div style="font-weight:700;color:var(--ink);margin:8px 0 8px;font-size:1.05rem">Manter o peso das linhas de reconhecimento</div><div style="font-size:.9rem;color:#444;line-height:1.5">Geolocalizado e Clusters entregaram a CPM de R$1,44 e sustentaram a maior parte do volume. Vamos manter essa proporção no próximo flight e monitorar o custo semana a semana.</div></div>
+      <div class="card"><span class="tag t-purple" style="margin-top:0">Remarketing</span><div style="font-weight:700;color:var(--ink);margin:8px 0 8px;font-size:1.05rem">Renovar a base de público</div><div style="font-size:.9rem;color:#444;line-height:1.5">A linha fechou com frequência de 3,38×, a mais alta do período. Vamos atualizar a base de remarketing no próximo ciclo para reduzir repetição sobre as mesmas contas.</div></div>
+      <div class="card"><span class="tag t-orange" style="margin-top:0">Visita ao Perfil</span><div style="font-weight:700;color:var(--ink);margin:8px 0 8px;font-size:1.05rem">Ampliar o público da linha de tráfego</div><div style="font-size:.9rem;color:#444;line-height:1.5">Com CTR de 2,48% e frequência de 2,45×, há espaço para ampliar a segmentação e buscar novos acessos ao perfil mantendo o CPC na faixa atual.</div></div>
+      <div class="card"><span class="tag t-teal" style="margin-top:0">Facebook</span><div style="font-weight:700;color:var(--ink);margin:8px 0 8px;font-size:1.05rem">Testar entrega na plataforma</div><div style="font-size:.9rem;color:#444;line-height:1.5">A veiculação ficou praticamente toda no Instagram (99,4%). Vamos testar uma parcela de verba no Facebook para alcançar faixas acima de 45 anos, hoje com 12,7% das impressões.</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- 12 ENCERRAMENTO -->
+<div class="slide">
+  <div class="pad dark" style="align-items:center;justify-content:center;text-align:center">
+    <img src="assets/logo-americana-oficial.png" alt="Prefeitura de Americana" style="width:220px;background:#fff;border-radius:12px;padding:16px 20px;box-shadow:0 12px 40px rgba(0,0,0,.35);margin-bottom:32px">
+    <h2 style="font-size:2rem">Temas Diversos · julho de 2026</h2>
+    <p class="sub" style="text-align:center;margin:16px auto 36px">Campanha encerrada com as quatro linhas contratadas cumpridas e 1.048.149 impressões entregues.<br>Período de 13 a 27 de julho de 2026 · Meta Ads.</p>
+    <img src="assets/logo-esquina.png" style="filter:brightness(0) invert(1);height:34px" alt="Esquina">
+    <div style="font-size:.78rem;opacity:.7;margin-top:14px">Relatório de Performance · Esquina Comunicação Online</div>
+  </div>
+</div>
+
+<script>
+Chart.defaults.animation = false;
+Chart.defaults.font.family = "'Inter', sans-serif";
+const TIP={backgroundColor:'#fff',titleColor:'#111',bodyColor:'#555',borderColor:'rgba(0,0,0,.09)',borderWidth:1,cornerRadius:10,padding:12,displayColors:false};
+const BR=v=>v.toLocaleString('pt-BR');
+
+new Chart(document.getElementById('chartDaily'),{type:'bar',
+  data:{labels:['13/07','14/07','15/07','16/07','17/07','18/07','19/07','20/07','21/07','22/07','23/07','24/07','25/07','26/07','27/07'],
+    datasets:[{data:[70633,195987,184734,112168,55887,45080,61344,46141,36684,32502,36144,43072,48118,65752,13903],backgroundColor:'#1A3CFF',borderRadius:5,borderSkipped:false}]},
+  options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{...TIP,callbacks:{label:c=>' '+BR(c.parsed.y)+' impressões'}}},
+    scales:{x:{grid:{display:false},border:{display:false},ticks:{font:{size:10},color:'#555'}},y:{grid:{color:'rgba(0,0,0,.04)'},border:{display:false},ticks:{callback:v=>v>=1000?Math.round(v/1000)+'K':v,font:{size:10},color:'#555'}}}}});
+
+new Chart(document.getElementById('chartPautas'),{type:'doughnut',
+  data:{labels:['Manutenção Asfáltica','Revelando SP','Banco de Sangue','Peça combinada'],
+    datasets:[{data:[487353,466320,69247,25229],backgroundColor:['#1A3CFF','#7B2FBE','#17A697','#C44A00'],borderColor:'#fff',borderWidth:4}]},
+  options:{responsive:true,maintainAspectRatio:false,cutout:'62%',plugins:{legend:{position:'bottom',labels:{font:{size:11,weight:'500'},color:'#444',padding:12,boxWidth:12}},tooltip:{...TIP,callbacks:{label:c=>{const t=c.dataset.data.reduce((a,b)=>a+b,0);return ' '+BR(c.parsed)+' ('+(c.parsed/t*100).toFixed(1)+'%)';}}}}}});
+
+new Chart(document.getElementById('chartIdade'),{type:'bar',
+  data:{labels:['18-24','25-34','35-44','45-54','55-64','65+'],
+    datasets:[{data:[461331,322388,131173,75890,37229,20018],backgroundColor:['#1A3CFF','rgba(26,60,255,.78)','#7B2FBE','rgba(123,47,190,.62)','#17A697','rgba(23,166,151,.55)'],borderRadius:5,borderSkipped:false}]},
+  options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{...TIP,callbacks:{label:c=>{const t=c.dataset.data.reduce((a,b)=>a+b,0);return ' '+BR(c.parsed.x)+' ('+(c.parsed.x/t*100).toFixed(1)+'%)';}}}},
+    scales:{x:{grid:{color:'rgba(0,0,0,.04)'},border:{display:false},ticks:{callback:v=>v>=1000?Math.round(v/1000)+'K':v,font:{size:10},color:'#555'}},y:{grid:{display:false},border:{display:false},ticks:{font:{size:12,weight:'600'},color:'#333'}}}}});
+
+new Chart(document.getElementById('chartClip'),{type:'bar',
+  data:{labels:['Saúde','Educação','Infraestrutura','Cultura e esporte','Habitação e social','Serviços'],
+    datasets:[{data:[5,3,3,3,2,1],backgroundColor:['#17A697','#1A3CFF','rgba(26,60,255,.7)','#7B2FBE','#C44A00','rgba(23,166,151,.5)'],borderRadius:5,borderSkipped:false}]},
+  options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{...TIP,callbacks:{label:c=>' '+c.parsed.x+(c.parsed.x===1?' registro':' registros')}}},
+    scales:{x:{grid:{color:'rgba(0,0,0,.04)'},border:{display:false},ticks:{stepSize:1,font:{size:10},color:'#555'}},y:{grid:{display:false},border:{display:false},ticks:{font:{size:11,weight:'600'},color:'#333'}}}}});
+
+new Chart(document.getElementById('chartGenero'),{type:'doughnut',
+  data:{labels:['Mulheres','Homens'],datasets:[{data:[701163,344879],backgroundColor:['#C44A00','#1A3CFF'],borderColor:'#fff',borderWidth:4}]},
+  options:{responsive:true,maintainAspectRatio:false,cutout:'62%',plugins:{legend:{position:'bottom',labels:{font:{size:11,weight:'500'},color:'#444',padding:10,boxWidth:12}},tooltip:{...TIP,callbacks:{label:c=>{const t=c.dataset.data.reduce((a,b)=>a+b,0);return ' '+BR(c.parsed)+' ('+(c.parsed/t*100).toFixed(1)+'%)';}}}}}});
+</script>
+</body>
+</html>
