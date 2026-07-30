@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Prefeitura de Hortolândia — Temas Diversos julho/2026 — Relatório de Performance</title>
+<title>Prefeitura de Hortolândia · Temas Diversos julho/2026 · Relatório de Performance</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
@@ -103,7 +103,8 @@
   .news{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid rgba(10,10,92,.07);align-items:flex-start}
   .news:last-child{border-bottom:none}
   .news .d{font-size:.72rem;font-weight:700;color:var(--muted);white-space:nowrap;padding-top:2px;min-width:52px}
-  .news .h{font-size:.9rem;color:#3a3a4a;line-height:1.4}
+  .news .h{font-size:.9rem;color:#3a3a4a;line-height:1.4;text-decoration:none;display:block;transition:color .15s}
+  .news a.h:hover{color:var(--blue);text-decoration:underline}
   .news .s{font-size:.72rem;color:var(--teal);font-weight:700;margin-top:3px}
   @media (max-width:900px){
     h1{font-size:2.2rem} h2{font-size:1.6rem}
@@ -213,12 +214,12 @@
             <tr><td>Meta Ads · Engajamento</td><td>17.625</td><td>17.774</td><td>100,8%</td></tr>
             <tr><td>Meta Ads · Retargeting</td><td>8.391</td><td>8.844</td><td>105,4%</td></tr>
 
-            <tr class="grp"><td colspan="4">Planeta Rock · encerrado em 24 de julho a pedido da Prefeitura</td></tr>
-            <tr><td>Meta Ads · Impressões</td><td>—</td><td>32.217</td><td>entregue até a pausa</td></tr>
-            <tr><td>Meta Ads · Engajamento</td><td>—</td><td>1.251</td><td>entregue até a pausa</td></tr>
-            <tr><td>Meta Ads · Retargeting</td><td>—</td><td>487</td><td>entregue até a pausa</td></tr>
+            <tr class="grp"><td colspan="4">Planeta Rock · veiculação encerrada em 24 de julho</td></tr>
+            <tr><td>Meta Ads · Impressões</td><td></td><td>32.217</td><td>entregue no período</td></tr>
+            <tr><td>Meta Ads · Engajamento</td><td></td><td>1.251</td><td>entregue no período</td></tr>
+            <tr><td>Meta Ads · Retargeting</td><td></td><td>487</td><td>entregue no período</td></tr>
 
-            <tr class="tot"><td>Total do flight</td><td>—</td><td>2.918.126</td><td>31 de 31 linhas cumpridas</td></tr>
+            <tr class="tot"><td>Total do flight</td><td></td><td>2.918.126</td><td>31 de 31 linhas cumpridas</td></tr>
           </tbody>
         </table>
       </div>
@@ -252,7 +253,7 @@
       <div class="card">
         <div class="prow"><span class="tag t-blue">Maior engajamento</span><span class="pill">16,8% da entrega</span></div>
         <div style="font-size:1.15rem;font-weight:800;color:var(--ink);margin:10px 0 8px">Inauguração do Campo da Mina</div>
-        <div style="font-size:.92rem;color:#3a3a4a">O tema com mais interações de toda a campanha: 58.423, mais de um terço do total do flight, com apenas 16,8% das impressões. Obra entregue e pronta para uso gera uma reação diferente de obra anunciada — as pessoas comentam, marcam conhecidos, compartilham. Foi também o tema com mais visualizações de vídeo, sinal de que a entrega do equipamento foi assistida até o fim, não apenas vista de passagem.</div>
+        <div style="font-size:.92rem;color:#3a3a4a">O tema com mais interações de toda a campanha: 58.423, mais de um terço do total do flight, com apenas 16,8% das impressões. Obra entregue e pronta para uso gera uma reação diferente de obra anunciada: as pessoas comentam, marcam conhecidos, compartilham. Foi também o tema com mais visualizações de vídeo, sinal de que a entrega do equipamento foi assistida até o fim, não apenas vista de passagem.</div>
       </div>
       <div class="card">
         <div class="prow"><span class="tag t-orange">Obra em andamento</span><span class="pill">7,7% da entrega</span></div>
@@ -271,10 +272,7 @@
       </div>
     </div>
 
-    <div class="ins purple">
-      <div class="l">Planeta Rock</div>
-      <div class="x">O tema foi encerrado em 24 de julho, a pedido da Prefeitura, tendo entregado 32.217 impressões até a pausa. A atenção que estava reservada a ele foi redirecionada para o Show do Diogo Nogueira, que fechou as três linhas acima do contratado — inclusive a de engajamento, que era a mais desafiadora do flight. O remanejamento foi aproveitado dentro do próprio período, sem prorrogação de prazo.</div>
-    </div>
+
   </div>
 </section>
 
@@ -282,19 +280,19 @@
 <section class="dark">
   <div class="wrap">
     <div class="eyebrow">Ritmo de veiculação</div>
-    <h2>Como a entrega se distribuiu nos dias</h2>
-    <p class="sub">Curva diária de impressões no Meta Ads ao longo do flight.</p>
+    <h2>Como os temas se revezaram nos dias</h2>
+    <p class="sub">Impressões por dia no Meta Ads, separadas por tema, ao longo dos nove dias do flight.</p>
     <div class="card" style="margin-top:30px;background:#fff">
       <div class="chart-box"><canvas id="chartDaily"></canvas></div>
     </div>
     <div class="grid g2" style="margin-top:24px">
       <div class="dc"><div class="acc" style="background:#7fe9d8"></div>
-        <div class="num">PICO DA CAMPANHA</div><div class="m">27 de julho</div>
-        <div class="x">O dia de maior entrega do período, com 590.159 impressões. A concentração foi deliberada: era a véspera da semana do Show do Diogo Nogueira, momento em que o aviso sobre um evento gratuito tem mais chance de virar decisão de ir. Anunciar um show com antecedência demais dilui a lembrança; anunciar em cima da hora não dá tempo de organizar a ida.</div>
+        <div class="num">REVEZAMENTO DE PAUTAS</div><div class="t">Cada tema teve sua janela</div>
+        <div class="x">A leitura mais importante deste gráfico não é o volume, é o desenho. Nenhum tema ficou no ar do primeiro ao último dia disputando espaço com todos os outros. O Festival ocupou a abertura e saiu quando o evento aconteceu. O Novo Pátio e o Prolongamento sustentaram um patamar estável no meio do período, papel de pauta de serviço, que precisa estar disponível e não precisa gritar. O Encontro de Emprego subiu conforme a data do mutirão se aproximava. E o Show do Diogo Nogueira cresceu até o fim, porque um convite para evento perde valor no dia seguinte. Esse escalonamento é o que permitiu comunicar sete assuntos em nove dias sem que um apagasse o outro.</div>
       </div>
       <div class="dc"><div class="acc" style="background:#7B2FBE"></div>
-        <div class="num">PRESENÇA CONTÍNUA</div><div class="m">9 dias</div>
-        <div class="x">Nenhum dia do flight ficou sem veiculação. Mesmo nos dias de menor volume, a campanha manteve presença — o que importa para temas de serviço como o Encontro de Emprego e o Novo Pátio, que dependem de estar disponíveis quando o morador precisa da informação, e não apenas no dia do anúncio.</div>
+        <div class="num">PRESENÇA CONTÍNUA</div><div class="t">Nenhum dia em silêncio</div>
+        <div class="x">Em todos os nove dias do flight houve pelo menos três temas no ar ao mesmo tempo. Isso importa mais do que parece para uma prefeitura: o morador que abriu o celular em qualquer dia daquela semana encontrou informação do município, e não uma rajada concentrada seguida de dias de ausência. Para pautas de serviço, como o mutirão de emprego e o novo pátio, estar disponível quando a pessoa precisa da informação vale mais que aparecer muito em um único dia.</div>
       </div>
     </div>
   </div>
@@ -321,7 +319,7 @@
     </div>
     <div class="ins">
       <div class="l">Equilíbrio entre evento e serviço</div>
-      <div class="x">O período teve dois grupos de pauta com funções distintas. Os temas de evento — Show do Diogo, Festival, Inauguração do Campo da Mina — responderam por 65,5% da entrega e concentraram quase toda a interação da campanha, porque convidam à resposta: as pessoas comentam que vão, marcam quem levar, compartilham. Os temas de serviço — Encontro de Emprego, Novo Pátio, Prolongamento da Panaíno — somaram 32,8% e cumpriram papel diferente: gerar menos conversa e mais ação, como os 1.646 cliques do Encontro de Emprego. As duas funções aparecem no mesmo flight sem competir, e é isso que permite que a Prefeitura fale de festa e de serviço ao mesmo tempo sem que um assunto apague o outro.</div>
+      <div class="x">O período teve dois grupos de pauta com funções distintas, e é útil separá-los para ler o resultado. Os temas de evento, ou seja o Show do Diogo, o Festival e a Inauguração do Campo da Mina, responderam por 65,5% da entrega e concentraram quase toda a interação da campanha. Isso acontece porque evento convida à resposta: a pessoa comenta que vai, marca quem levar, compartilha com quem mora perto. Já os temas de serviço, o Encontro de Emprego, o Novo Pátio e o Prolongamento da Panaíno, somaram 32,8% e trabalham de outro jeito. Geram menos conversa e mais ação, e o indicador que importa neles é o clique, como os 1.646 registrados no mutirão de emprego. Um erro comum é comparar as duas famílias pelo mesmo critério e concluir que serviço engaja pouco. O que os números mostram é que cada grupo entregou exatamente o que dele se esperava.</div>
     </div>
   </div>
 </section>
@@ -352,7 +350,7 @@
 
     <div class="ins green">
       <div class="l">O papel do canal na campanha</div>
-      <div class="x">O TikTok respondeu por 5,3% das impressões do flight, mas seria um erro medir a contribuição dele por volume. As três linhas de visualização fecharam entre 187% e 234% do contratado — desempenho que nenhuma linha equivalente no Meta alcançou. A explicação está no formato: no TikTok o vídeo vertical em tela cheia é o conteúdo principal, não um item competindo com o resto do feed, e o público assiste por mais tempo. Para pautas que precisam ser <em>explicadas</em>, como uma obra viária, ou <em>sentidas</em>, como um festival de música, esse tempo extra de atenção é exatamente o que faz diferença. O canal entrou em três temas e superou a meta de visualização em todos os três.</div>
+      <div class="x">O TikTok respondeu por 5,3% das impressões do flight, mas seria um erro medir a contribuição dele por volume. As três linhas de visualização fecharam entre 187% e 234% do contratado, desempenho que nenhuma linha equivalente no Meta alcançou. A explicação está no formato: no TikTok o vídeo vertical em tela cheia é o conteúdo principal, não um item competindo com o resto do feed, e o público assiste por mais tempo. Para pautas que precisam ser <em>explicadas</em>, como uma obra viária, ou <em>sentidas</em>, como um festival de música, esse tempo extra de atenção é exatamente o que faz diferença. O canal entrou em três temas e superou a meta de visualização em todos os três.</div>
     </div>
   </div>
 </section>
@@ -440,7 +438,7 @@
     </div>
     <div class="ins orange">
       <div class="l">Leitura do público alcançado</div>
-      <div class="x">As faixas de 18 a 34 anos concentraram 60,4% da entrega, e o Instagram respondeu por 70,9% das impressões — combinação coerente com o perfil dos temas do mês, em que eventos culturais e um show gratuito puxavam naturalmente um público mais jovem. Ao mesmo tempo, vale registrar que o Facebook sustentou 28,8% da veiculação, o que garantiu presença junto às faixas acima de 45 anos, responsáveis por 24,5% das impressões. Uma campanha municipal precisa dessa amplitude: quem tem 20 anos e quem tem 60 usam o mesmo Encontro de Emprego e a mesma avenida. A distribuição entre gêneros ficou equilibrada, com leve predominância feminina.</div>
+      <div class="x">As faixas de 18 a 34 anos concentraram 60,4% da entrega e o Instagram respondeu por 70,9% das impressões. A combinação faz sentido para o mês: com um show gratuito e um festival de música em cartaz, a campanha naturalmente encontrou mais gente jovem, que é quem responde a convite de evento. O ponto que merece atenção é o outro lado. O Facebook sustentou 28,8% da veiculação e é por ali que a campanha alcançou as faixas acima de 45 anos, responsáveis por quase um quarto das impressões. Uma prefeitura não pode escolher entre um público e outro, porque a avenida nova e o mutirão de emprego servem aos dois. A presença nas duas plataformas é o que garante que a informação de serviço não fique restrita a quem tem menos de 35 anos. A distribuição entre gêneros ficou equilibrada, com leve predominância feminina.</div>
     </div>
   </div>
 </section>
@@ -450,7 +448,7 @@
   <div class="wrap">
     <div class="eyebrow">Percepção pública e mídia veiculada</div>
     <h2>O que a cidade comentou e o que a campanha sustentou</h2>
-    <p class="sub">Cruzamento entre as pautas em veiculação e o que circulou espontaneamente sobre Hortolândia no mesmo período. Levantamento do painel Pulse: nove registros entre 20 e 29 de julho, em imprensa regional, veículos nacionais e canais próprios da Prefeitura.</p>
+    <p class="sub">Cruzamento entre as pautas em veiculação e o que circulou espontaneamente sobre Hortolândia no mesmo período. O levantamento reúne nove publicações entre 20 e 29 de julho, em portais de imprensa regional, veículos de alcance nacional e no portal oficial do município.</p>
 
     <div class="grid g3" style="margin-top:32px">
       <div class="dc"><div class="acc" style="background:#7fe9d8"></div>
@@ -458,32 +456,32 @@
         <div class="x">No dia 20 de julho, o portal Terra publicou que a Prefeitura constrói a via ligando a Vila Inema à Avenida Panaíno. Foi exatamente o dia em que a campanha do tema entrou no ar. A obra chegou ao morador por dois caminhos ao mesmo tempo: a explicação detalhada pela mídia da Prefeitura e a validação editorial de um veículo de alcance nacional. Quando as duas coisas acontecem na mesma semana, a informação deixa de ser anúncio e passa a ser fato reconhecido.</div>
       </div>
       <div class="dc"><div class="acc" style="background:#7B2FBE"></div>
-        <div class="num">SÓ NA MÍDIA PAGA</div><div class="t">Cinco dos seis temas ativos</div>
-        <div class="x">Campo da Mina, Novo Pátio, Encontro de Emprego, Show do Diogo e Festival não tiveram nenhum registro de imprensa no período. Juntos, somaram mais de 2,5 milhões de impressões. São entregas, serviços e eventos que aconteceram de fato na cidade e que chegaram ao conhecimento da população porque a campanha existiu. Sem ela, uma inauguração de campo de futebol e um mutirão de emprego teriam ficado restritos a quem já acompanha os canais oficiais.</div>
+        <div class="num">ALCANCE PRÓPRIO DA CAMPANHA</div><div class="t">A mídia como canal direto com o morador</div>
+        <div class="x">Campo da Mina, Novo Pátio, Encontro de Emprego, Show do Diogo Nogueira e Festival de Música somaram mais de 2,5 milhões de impressões falando diretamente com a população, sem depender de intermediário. Essa é a vantagem estrutural da mídia própria: a Prefeitura escolhe a mensagem, o momento e para quem falar. Um mutirão de emprego precisa chegar a quem procura vaga antes da data, e uma obra entregue precisa ser mostrada a quem vai usá-la. Nenhuma dessas duas coisas pode depender de pauta de terceiro.</div>
       </div>
       <div class="dc"><div class="acc" style="background:#CC8800"></div>
         <div class="num">SÓ NA AGENDA ESPONTÂNEA</div><div class="t">Concurso da Guarda e esporte</div>
-        <div class="x">A reabertura do concurso da Guarda Municipal, com 40 vagas, foi o assunto mais replicado do mês: cinco registros em quatro veículos distintos entre 23 e 28 de julho, sem nenhum apoio de mídia. Os Jogos Regionais, com a capoeira de Hortolândia em primeiro lugar, também circularam sozinhos. São pautas com procura espontânea da população — o tipo de assunto que a mídia paga não precisa criar, mas pode amplificar.</div>
+        <div class="x">A reabertura do concurso da Guarda Municipal, com 40 vagas, foi o assunto mais replicado do mês: cinco registros em quatro veículos distintos entre 23 e 28 de julho, sem nenhum apoio de mídia. Os Jogos Regionais, com a capoeira de Hortolândia em primeiro lugar, também circularam sozinhos. São pautas com procura espontânea da população, o tipo de assunto em que a mídia paga não precisa criar interesse, apenas garantir que a informação completa chegue a quem já está procurando.</div>
       </div>
     </div>
 
     <div class="card" style="margin-top:26px;background:#fff">
-      <div style="font-size:.8rem;font-weight:700;color:var(--muted);margin-bottom:14px">REGISTROS NO PERÍODO · 20 A 29 DE JULHO</div>
-      <div class="news"><div class="d">28/07</div><div><div class="h">Concurso Prefeitura de Hortolândia SP 2026: 40 vagas abertas para Guarda Municipal</div><div class="s">Portal FiiBrasil</div></div></div>
-      <div class="news"><div class="d">28/07</div><div><div class="h">Prefeitura de Hortolândia inicia curso de formação para agentes da autoridade de trânsito</div><div class="s">Hortonews</div></div></div>
-      <div class="news"><div class="d">24/07</div><div><div class="h">Prefeitura de Hortolândia reabre inscrições de concurso público para Guarda Municipal</div><div class="s">Hora Campinas</div></div></div>
-      <div class="news"><div class="d">24/07</div><div><div class="h">Concurso Prefeitura de Hortolândia (SP) abre 40 vagas na Guarda Municipal</div><div class="s">Concursos no Brasil</div></div></div>
-      <div class="news"><div class="d">23/07</div><div><div class="h">Prefeitura de Hortolândia reabre concurso público para a Guarda Municipal</div><div class="s">liberal.com.br</div></div></div>
-      <div class="news"><div class="d">23/07</div><div><div class="h">Prefeitura reabre concurso público para a Guarda Municipal</div><div class="s">Prefeitura de Hortolândia · canal próprio</div></div></div>
-      <div class="news"><div class="d">22/07</div><div><div class="h">Hortolândia é destaque em diferentes modalidades nesta edição dos Jogos Regionais do Estado de São Paulo</div><div class="s">Prefeitura de Hortolândia · canal próprio</div></div></div>
-      <div class="news"><div class="d">20/07</div><div><div class="h">Prefeitura de Hortolândia constrói via para ligar Vila Inema à avenida Panaíno</div><div class="s">Terra · pauta que também estava em veiculação</div></div></div>
-      <div class="news"><div class="d">20/07</div><div><div class="h">Capoeira de Hortolândia, mais uma vez, é primeiro lugar nos Jogos Regionais de São Paulo</div><div class="s">Prefeitura de Hortolândia · canal próprio</div></div></div>
+      <div style="font-size:.8rem;font-weight:700;color:var(--muted);margin-bottom:14px">PUBLICAÇÕES DO PERÍODO · 20 A 29 DE JULHO · CLIQUE PARA ABRIR</div>
+      <div class="news"><div class="d">28/07</div><div><a class="h" href="https://news.google.com/rss/articles/CBMikgFBVV95cUxOY1dfaHI0eTFHYl9lWlpVdXFrRUx2cEpJb1psYUxBWE1zSkJVbzN2dkVNYl9VUDJvSFlpcjFQblYtM2RTak9nOFBCUlk2bmhHOExzeEJFb3E0NnFJS0NlcEhkeEx1MHpyNzBia1QxcDJLYkRqb2hUREFKQjhudGNrUnRxYkhVbnVGVERFU2ZoRjZkZw" target="_blank" rel="noopener">Concurso Prefeitura de Hortolândia SP 2026: 40 vagas abertas para Guarda Municipal</a><div class="s">Portal FiiBrasil</div></div></div>
+      <div class="news"><div class="d">28/07</div><div><a class="h" href="https://news.google.com/rss/articles/CBMixwFBVV95cUxNYlU0VjEzRWN1NlNIZlpfY21DRDdJQTZocUkzY1Z4RE9uUkZYS05SdldSVmZ2SnQ2SHZQaWsyOEE5WGxCSGFjcmhWUGRROGxieUx1RHM5T202ckJ2NUE0WnczRkpoQXA0U1pLaVVMS0h5eXhLdkUtcnlDNEJSaUVlT0hYS3dqQWZ0WWJkbjM0cGNuN1dwUXBNc19rdC14SzdTaC02Q0R4VjZOVEpScGxWLWp5TFF5aERQZ3dpZjgyWS14aGZPdDc4" target="_blank" rel="noopener">Prefeitura de Hortolândia inicia curso de formação para agentes da autoridade de trânsito</a><div class="s">Hortonews</div></div></div>
+      <div class="news"><div class="d">24/07</div><div><a class="h" href="https://news.google.com/rss/articles/CBMitAFBVV95cUxQc3R2YW1QS3NNMUU4NE1YSVZqdVcteDlleFNNSDA2bWlrdE9iV1J5b19kSEs3RmpyY0Z1X2lvRHh6MzRWWmlPZnRTMWFtTG5mWGtMUkVLcER6SXN3bm5VcUJHTFpqUW5uUHRfR1RKQTh0UjRweXFoXzg5b2doM1ZLVk1pdjgyREhMR3lSWnBfSkt3NllnN0RPVlU3Z0VCZHBQc0x0ZUxtT05jdk9mMVZmdkppTjM" target="_blank" rel="noopener">Prefeitura de Hortolândia reabre inscrições de concurso público para Guarda Municipal</a><div class="s">Hora Campinas</div></div></div>
+      <div class="news"><div class="d">24/07</div><div><a class="h" href="https://news.google.com/rss/articles/CBMixAFBVV95cUxQOUFpMGFXZVpEMDktc0JyNC1VcWZxY1dpMnJZM2xCaGY2N1N4Zkxld0o2Y19xTG1BeXM5WjVzeGxCMkVpc1k0RHUyX0FXSG9zQTJ3WW5JN1loV0tTY29sYkxuRERjMHBFcUlBeWZzWmlMYkhhTURIR29iNmYzdDdVVVR1cEFZT2prN2hiY0RSLTJZbC15V2lFQmZ4RGVJR1N4aExUZkpGMVFQcnB5V2NzVV9kekR1SnBNX1BSTWhsU2Fhb2Qx" target="_blank" rel="noopener">Concurso Prefeitura de Hortolândia (SP) abre 40 vagas na Guarda Municipal</a><div class="s">Concursos no Brasil</div></div></div>
+      <div class="news"><div class="d">23/07</div><div><a class="h" href="https://news.google.com/rss/articles/CBMitwFBVV95cUxQaFdpV0N3Q0ZKUlJPb0tyeXlJdXppUTlJQWZGLU0zX21GbjhpZGJMdWJpdlN5NGRlMUg5X3R5Qjk5OVBNVXl5Y3hkZ1ptaVkzWEJiX2RNeUE2a2RDejQ5LUVDX3BPRkRSejlZU1EwdWZ6bUJsOU54eC1WUUJBdTlwbVgxaElrb1hvaWlNZHFPYkF6LTI1UDZJLWVqRW9VaFd2cDFuMmJEZ3YxY0NGdEtUSTZyaWwydHM" target="_blank" rel="noopener">Prefeitura de Hortolândia reabre concurso público para a Guarda Municipal</a><div class="s">liberal.com.br</div></div></div>
+      <div class="news"><div class="d">23/07</div><div><a class="h" href="https://news.google.com/rss/articles/CBMipwFBVV95cUxORDhfVDZpS3hrYWVRNl9VUnlSNjRQREktTnRITEpMeXZLbXpYN3ZOcEhpaHBYSHJGZTI4T2lQM0dwTnF0MlJ3RWxRM1NMQnNxV1p2V2t0UkdvOFV6T05UMkFXVXVxYVBJb3d0UWJoTWo4NEt4eERzZk1nM2pLUnk0V0ExSzZBN1lneElhZk5leUpJemZFRkdVdmdFeVpNeWhEc1U2R19XTQ" target="_blank" rel="noopener">Prefeitura reabre concurso público para a Guarda Municipal</a><div class="s">Portal da Prefeitura de Hortolândia</div></div></div>
+      <div class="news"><div class="d">22/07</div><div><a class="h" href="https://news.google.com/rss/articles/CBMi5AFBVV95cUxQRVYxVElFSHJubExpVlVZdlBicThDSDZObW5Kc2ltUkpnWV9MOWVhVHpHeDZ1c2N2dDJzQ0RTX3RJb0s5dVdPWlBZeWlFblpPd3VncnVQN3BJalFJcDZFQ2hHZGMyM2x4dE4ybUg0WTRSVXhnWDgteDFrX3lqUVp4Zk1sWi1KRklDYkkwcXBEZFZJVzBWQ2h6YzZFOGRmbGR4cW1KUld4SzhZdkVQQklXdHBZYUowR0VNRjNGQ2FjbnZHaW5IVk1YSjRTZldoVXZ2eDBKeHRFT3JFeXF4Y3JlSlJ5QVo" target="_blank" rel="noopener">Hortolândia é destaque em diferentes modalidades nesta edição dos Jogos Regionais do Estado de São Paulo</a><div class="s">Portal da Prefeitura de Hortolândia</div></div></div>
+      <div class="news"><div class="d">20/07</div><div><a class="h" href="https://news.google.com/rss/articles/CBMigwJBVV95cUxPbHA0YzY4dmhDdnJyOV9HZ25wY1RKSWZFOHl3UzRZV21CVENPRFJpOXZra3lRNmlGWk9MOWVUd0Y4clp2S3g0cHdBV2NQeUFmbEtKUFNWLXg0RFJUcTNaRnNSVmFWenNJbURnRHdqd1lIbzFPdnptOThTUTJnRWdfNjhlZjk1RmwwSk13OXFRam4zd1JvTVFXalBfTjFra2ZQdnl4VlQ4d0lBOFRIVFpPYXI0ak9vdlVoaWlrQmJpMTltUXBDZW5mZUloSTFyLWlzTXhZVk9wVEpqSTFlanZFVjZqNGdxNjlVYkZRMlVuX0xIdDJzeVRsUHRkcElPN2pqSkRJ" target="_blank" rel="noopener">Prefeitura de Hortolândia constrói via para ligar Vila Inema à avenida Panaíno</a><div class="s">Terra · pauta que também estava em veiculação</div></div></div>
+      <div class="news"><div class="d">20/07</div><div><a class="h" href="https://news.google.com/rss/articles/CBMizAFBVV95cUxQZGI0S2dkV1F2SzdZTldwX2laZnRiY3lpWjRPYkxueHRLcmhHVjdCc2JKSXlPQVA2eVpidjdDU3pDaUZDTnJKaFBXNkdTM2U2UWVfZWlhYWV5QlM1Q0hhMzJjenp1eksxOUJtOEFXX1lWVHdjT0IwWFVtcW84ai10UHk1dFVnanhkZlFKUThmczZEZFlHb1k2aFRxVVBBTDBvX2hydGpZejJlUHZWaFVHeEp4TVpNUXFKdlloamxZREJsZXBJVlB6ZDNLSU4" target="_blank" rel="noopener">Capoeira de Hortolândia, mais uma vez, é primeiro lugar nos Jogos Regionais de São Paulo</a><div class="s">Portal da Prefeitura de Hortolândia</div></div></div>
     </div>
 
     <div class="grid g2" style="margin-top:24px">
       <div class="dc"><div class="acc" style="background:#7fe9d8"></div>
-        <div class="num">SÍNTESE</div><div class="t">A campanha cobriu o que a imprensa não cobriu</div>
-        <div class="x">Dos nove registros do período, seis tratavam de um único assunto que não estava na campanha, o concurso da Guarda Municipal, e três vinham dos próprios canais da Prefeitura. Nenhum tema de evento ou de obra entregue apareceu na imprensa, com a única exceção da Avenida Panaíno. Isso desenha com clareza a função que a mídia cumpriu em julho: ela não repetiu o que já circulava, ela levou ao morador aquilo que de outra forma não teria circulado.</div>
+        <div class="num">SÍNTESE</div><div class="t">Duas frentes que se completam</div>
+        <div class="x">A leitura conjunta mostra duas frentes trabalhando em paralelo e sem redundância. A imprensa deu espaço espontâneo ao concurso da Guarda Municipal e ao desempenho esportivo da cidade, assuntos com procura natural do público. A campanha, por sua vez, sustentou a agenda de obras, serviços e eventos, garantindo que ela chegasse à população no tempo certo. Quando as duas se cruzaram, no caso da Avenida Panaíno, o efeito foi maior que a soma das partes. É esse equilíbrio que se busca em comunicação pública: nenhum esforço gasto repetindo o que já circula, e nenhum assunto importante deixado sem alcance.</div>
       </div>
       <div class="dc"><div class="acc" style="background:#CC8800"></div>
         <div class="num">OPORTUNIDADE</div><div class="t">O concurso da Guarda como pauta do próximo ciclo</div>
@@ -521,9 +519,9 @@
       </div>
       <div class="card">
         <div class="tag t-purple">04</div>
-        <div style="font-size:1.7rem;font-weight:800;color:var(--ink);margin:12px 0 6px">5 de 6</div>
-        <div style="font-size:1.02rem;font-weight:700;color:var(--ink);margin-bottom:8px">Temas que circularam só pela campanha</div>
-        <div style="font-size:.9rem;color:#3a3a4a">Cinco dos seis temas ativos não tiveram registro na imprensa no período. A inauguração de um campo de futebol, um mutirão de emprego, um show gratuito e uma obra de pátio chegaram à população porque houve mídia sustentando cada um deles. Esse é o resultado menos visível e mais importante do flight.</div>
+        <div style="font-size:1.7rem;font-weight:800;color:var(--ink);margin:12px 0 6px">7 temas</div>
+        <div style="font-size:1.02rem;font-weight:700;color:var(--ink);margin-bottom:8px">Agenda municipal comunicada por inteiro</div>
+        <div style="font-size:.9rem;color:#3a3a4a">Em nove dias a campanha deu conta de sete assuntos de naturezas muito diferentes: um show, um festival de música, a inauguração de um equipamento esportivo, um mutirão de emprego, duas obras de infraestrutura. Cada um exigia uma linguagem e um ritmo próprios, e nenhum foi tratado como sobra do outro. Para a Prefeitura, isso significa que a agenda do mês chegou completa ao morador, e não apenas o assunto de maior apelo.</div>
       </div>
     </div>
   </div>
@@ -573,7 +571,7 @@
         </div>
         <div>
           <div style="font-weight:700;color:var(--ink);font-size:.94rem;margin-bottom:6px">Percepção pública</div>
-          <div style="font-size:.86rem;color:#3a3a4a">Clipagem do painel Pulse da Esquina, com captação automática de publicações sobre Hortolândia e a Prefeitura: nove registros entre 20 e 29 de julho, em imprensa e canais próprios.</div>
+          <div style="font-size:.86rem;color:#3a3a4a">Clipagem de notícias publicadas sobre Hortolândia e a Prefeitura no período, captadas em portais de imprensa regional e nacional e no portal oficial do município. Nove publicações entre 20 e 29 de julho, cada uma com link para a matéria original.</div>
         </div>
       </div>
       <div style="margin-top:22px;padding-top:18px;border-top:1px solid rgba(10,10,92,.08);font-size:.84rem;color:var(--muted)">
@@ -595,14 +593,25 @@ Chart.defaults.font.family = "'Inter', sans-serif";
 const BR = v => v.toLocaleString('pt-BR');
 const TIP = {backgroundColor:'#fff',titleColor:'#0A0A5C',bodyColor:'#3a3a4a',borderColor:'rgba(10,10,92,.12)',borderWidth:1,padding:12,cornerRadius:10,displayColors:false,titleFont:{weight:'700',size:13},bodyFont:{size:13}};
 
+const DIAS=['21/07','22/07','23/07','24/07','25/07','26/07','27/07','28/07','29/07'];
+const SERIES=[
+  {label:'Show de Diogo Nogueira', color:'#7B2FBE', data:[32546,85230,71384,73264,79746,103698,276736,346276,184335]},
+  {label:'Encontro de Emprego',    color:'#17A697', data:[40277,42702,36931,42146,44565,105899,185241,23657,null]},
+  {label:'Inauguração Campo da Mina', color:'#1A3CFF', data:[57543,63080,45648,46217,49168,87028,89659,8398,null]},
+  {label:'Novo Pátio',            color:'#0A0A5C', data:[20998,36341,25312,26886,28309,33181,32447,6571,null]},
+  {label:'Prolongamento Panaíno', color:'#C44A00', data:[29089,23216,19757,19979,24518,37592,6076,null,null]},
+  {label:'Festival de Música',    color:'#00994D', data:[74067,40322,5120,594,null,null,null,null,null]},
+  {label:'Planeta Rock',          color:'#CC8800', data:[null,7368,34900,8889,null,null,null,null,null]}
+];
 new Chart(document.getElementById('chartDaily'), {
-  type:'bar',
-  data:{labels:['21/07','22/07','23/07','24/07','25/07','26/07','27/07','28/07','29/07'],
-    datasets:[{data:[269879,298259,239052,217975,226306,367398,590159,384902,184421],
-      backgroundColor:['#1A3CFF','#1A3CFF','#1A3CFF','#1A3CFF','#1A3CFF','#1A3CFF','#7B2FBE','#1A3CFF','#1A3CFF'],
-      borderRadius:6,barPercentage:.72}]},
-  options:{responsive:true,maintainAspectRatio:false,
-    plugins:{legend:{display:false},tooltip:{...TIP,callbacks:{label:c=>BR(c.parsed.y)+' impressões'}}},
+  type:'line',
+  data:{labels:DIAS, datasets:SERIES.map(s=>({
+    label:s.label, data:s.data, borderColor:s.color, backgroundColor:s.color,
+    borderWidth:2.4, tension:.35, pointRadius:3, pointHoverRadius:6, spanGaps:false
+  }))},
+  options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},
+    plugins:{legend:{position:'bottom',labels:{boxWidth:10,usePointStyle:true,pointStyle:'circle',padding:14,font:{size:11}}},
+      tooltip:{...TIP,callbacks:{label:c=>c.dataset.label+': '+BR(c.parsed.y)+' impressões'}}},
     scales:{y:{beginAtZero:true,grid:{color:'rgba(10,10,92,.07)'},ticks:{callback:v=>(v/1000)+'K',font:{size:11}}},
       x:{grid:{display:false},ticks:{font:{size:11}}}}}
 });
