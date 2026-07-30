@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Prefeitura de Hortolândia · Temas Diversos julho/2026 · Relatório de Performance</title>
+<title>Prefeitura de Hortolândia · Julho/2026 · Relatório de Performance</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
@@ -84,12 +84,17 @@
   .pacc{height:4px;width:100%}
   .pimg{height:262px;background:linear-gradient(180deg,#eceefb 0%,#e4e7f6 100%);overflow:hidden;display:flex;align-items:center;justify-content:center}
   .pimg img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;object-position:center center;display:block;margin:0 auto}
+  .pimg.fill{padding:0}
+  .pimg.fill img{width:100%;height:100%;object-fit:cover;object-position:center center}
   .pimg.ph::after{content:"Print do criativo";font-size:.78rem;font-weight:600;color:#8e94bd;letter-spacing:.04em}
   .pimg.carr{padding:14px}
   .carousel{position:relative;width:100%;height:100%;display:flex;align-items:center;justify-content:center}
   .carousel .ctrack{display:flex;gap:4px;width:100%;height:100%}
   .carousel .cf{flex:0 0 auto;width:78%;background:linear-gradient(180deg,#e4e7f6 0%,#dcdff2 100%);border-radius:9px;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative;box-shadow:0 2px 10px rgba(10,10,92,.12)}
+  .carousel .cf{transition:width .28s ease,opacity .28s ease}
   .carousel .cf.peek{width:16%;opacity:.55}
+  .carousel .nav,.carousel .dots span{cursor:pointer}
+  .carousel .nav:hover{background:rgba(10,10,92,.75)}
   .carousel .cf img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;display:block}
   .carousel .cf:empty::after{content:"aguardando imagem";font-size:.6rem;font-weight:700;color:#8e94bd;letter-spacing:.04em;padding:0 6px;text-align:center}
   .carousel .nav{position:absolute;top:50%;transform:translateY(-50%);width:26px;height:26px;border-radius:50%;background:rgba(10,10,92,.55);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.8rem;z-index:2}
@@ -140,9 +145,9 @@
     <div class="hero-top">
       <img class="pref" src="assets/logoPMH.png" alt="Prefeitura de Hortolândia">
     </div>
-    <div class="eyebrow">Temas Diversos · Meta Ads e TikTok · 20 a 29 de julho de 2026</div>
+    <div class="eyebrow">Meta Ads e TikTok · 20 a 29 de julho de 2026</div>
     <h1>Relatório de<br>Performance</h1>
-    <div style="font-size:1.1rem;opacity:.85;margin-top:16px">Campanha Temas Diversos · julho<br>Prefeitura de Hortolândia</div>
+    <div style="font-size:1.1rem;opacity:.85;margin-top:16px">Campanha de julho<br>Prefeitura de Hortolândia</div>
     <div class="hero-kpis">
       <div><div class="v">2,92M</div><div class="k">Impressões entregues</div></div>
       <div><div class="v">31/31</div><div class="k">Metas atingidas</div></div>
@@ -389,7 +394,7 @@
 
       <div class="post">
         <div class="pacc" style="background:var(--pink)"></div>
-        <div class="pimg"><img src="assets/criativo-festival.jpeg" alt="Festival Internacional de Música"></div>
+        <div class="pimg fill"><img src="assets/criativo-festival.jpeg" alt="Festival Internacional de Música"></div>
         <div class="pbody">
           <div class="prow"><span class="pbadge t-green">★ Maior engajamento</span><span class="pfmt">Instagram</span></div>
           <div class="ptitle">Festival Internacional de Música</div>
@@ -403,7 +408,7 @@
 
       <div class="post">
         <div class="pacc" style="background:var(--blue)"></div>
-        <div class="pimg"><img src="assets/criativo-campo-da-mina.jpeg" alt="Inauguração do Campo da Mina"></div>
+        <div class="pimg fill"><img src="assets/criativo-campo-da-mina.jpeg" alt="Inauguração do Campo da Mina"></div>
         <div class="pbody">
           <div class="prow"><span class="pbadge t-blue">★ Mais visualizações</span><span class="pfmt">Vídeo</span></div>
           <div class="ptitle">Inauguração do Campo da Mina</div>
@@ -423,8 +428,12 @@
               <div class="cf"><img src="assets/criativo-emprego-1.jpg" alt="Encontro Mensal de Emprego · card 1"></div>
               <div class="cf peek"><img src="assets/criativo-emprego-2.jpg" alt="Encontro Mensal de Emprego · card 2"></div>
             </div>
-            <span class="nav l">‹</span><span class="nav r">›</span>
-            <div class="dots"><span class="on"></span><span></span></div>
+            <span class="nav l" onclick="nextCarousel(this.closest('.carousel'))">‹</span>
+            <span class="nav r" onclick="nextCarousel(this.closest('.carousel'))">›</span>
+            <div class="dots">
+              <span class="on" onclick="nextCarousel(this.closest('.carousel'))"></span>
+              <span onclick="nextCarousel(this.closest('.carousel'))"></span>
+            </div>
           </div>
         </div>
         <div class="pbody">
@@ -587,13 +596,21 @@
 
 <footer>
   <img class="pref" src="assets/logoPMH.png" alt="Prefeitura de Hortolândia">
-  <div style="font-size:1.4rem;font-weight:800;margin-bottom:10px">Temas Diversos · julho de 2026</div>
+  <div style="font-size:1.4rem;font-weight:800;margin-bottom:10px">Julho de 2026</div>
   <div style="font-size:.94rem;opacity:.78;max-width:640px;margin:0 auto 26px">Flight encerrado com as 31 linhas contratadas cumpridas e 2.918.126 impressões entregues em sete temas. Julho de 2026 · Meta Ads e TikTok.</div>
   <img src="assets/logo-esquina-branca.png" alt="Esquina Comunicação Online" style="height:22px;opacity:.9;margin-bottom:16px">
   <div style="font-size:.78rem;opacity:.6;letter-spacing:.08em">RELATÓRIO DE PERFORMANCE · ESQUINA COMUNICAÇÃO ONLINE</div>
 </footer>
 
 <script>
+function nextCarousel(el){
+  if(!el) return;
+  const track=el.querySelector('.ctrack');
+  const cfs=track.querySelectorAll('.cf');
+  cfs.forEach(cf=>cf.classList.toggle('peek'));
+  track.appendChild(track.firstElementChild);
+  el.querySelectorAll('.dots span').forEach(d=>d.classList.toggle('on'));
+}
 Chart.defaults.font.family = "'Inter', sans-serif";
 const BR = v => v.toLocaleString('pt-BR');
 const TIP = {backgroundColor:'#fff',titleColor:'#0A0A5C',bodyColor:'#3a3a4a',borderColor:'rgba(10,10,92,.12)',borderWidth:1,padding:12,cornerRadius:10,displayColors:false,titleFont:{weight:'700',size:13},bodyFont:{size:13}};
