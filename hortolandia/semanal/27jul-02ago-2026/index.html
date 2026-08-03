@@ -48,7 +48,14 @@
   .ins.blue{border-left-color:var(--blue)} .ins.blue .l{color:var(--blue)}
   .ins.purple{border-left-color:var(--purple)} .ins.purple .l{color:var(--purple)}
   .chart-box{position:relative;height:280px}
-  .hero{background:linear-gradient(135deg, #060630, #0A0A5C, #0D1B6E, #1A3CFF);color:#fff;padding:56px 0 64px}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact;color-adjust:exact}
+  .hero{
+    background:
+      linear-gradient(115deg, rgba(6,6,48,.92) 0%, rgba(10,10,92,.84) 40%, rgba(13,27,110,.68) 70%, rgba(26,60,255,.45) 100%),
+      url('assets/hero-hortolandia.jpg');
+    background-size:cover; background-position:center 45%;
+    color:#fff;padding:56px 0 64px
+  }
   .hero .eyebrow{color:#7fe9d8}
   .hero .eyebrow::before{background:#7fe9d8}
   .hero-top{display:flex;align-items:center;gap:16px;margin-bottom:56px}
@@ -82,6 +89,8 @@
     h1{font-size:2.1rem} h2{font-size:1.5rem}
   }
   @media print{ nav button{display:none} }
+  @page{ margin:0.4cm }
+  nav .back{background:transparent;color:var(--blue);border:1px solid rgba(26,60,255,.25);margin-right:0}
 </style>
 </head>
 <body>
@@ -91,6 +100,7 @@
     <img src="assets/logoPMH.png" alt="Prefeitura de Hortolândia">
     <span class="cliente">Prefeitura de Hortolândia</span>
     <div class="chip"><span>Meta Ads</span><span>TikTok</span></div>
+    <a href="../index.html" class="back" style="text-decoration:none;font-weight:700;font-size:.78rem;padding:9px 16px;border-radius:8px;background:transparent;color:var(--blue);border:1px solid rgba(26,60,255,.25)">Central de Relatórios</a>
     <button onclick="window.print()">Exportar PDF</button>
   </div>
 </nav>
