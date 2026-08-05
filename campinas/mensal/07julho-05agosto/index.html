@@ -11,7 +11,7 @@
   :root{
     --blue:#1A3CFF; --navy:#0A0A5C; --purple:#9C27B0; --red:#CC0000;
     --green:#00994D; --black:#111111; --warn:#CC8800;
-    --bg:#F4F6FF; --ink:#0A0A5C; --muted:#6a6a80;
+    --bg:#F4F6FF; --ink:#0A0A5C; --muted:#6a6a80; --teal:#00C2A8;
   }
   *{margin:0;padding:0;box-sizing:border-box}
   body{font-family:'Inter',sans-serif;background:var(--bg);color:#333;line-height:1.5}
@@ -57,7 +57,28 @@
   .barrow .bf{height:100%;border-radius:6px}
   .chart-box{position:relative;height:340px}
   .chart-sm{position:relative;height:260px}
-  .hero{background:linear-gradient(120deg, rgba(6,6,48,.94) 0%, rgba(10,10,92,.86) 45%, rgba(26,60,255,.55) 100%);color:#fff;padding:52px 0 60px}
+  .hero{background:linear-gradient(120deg, rgba(6,6,48,.94) 0%, rgba(10,10,92,.88) 45%, rgba(26,60,255,.65) 100%),url('assets/hero-campinas.jpg');background-size:cover;background-position:center;color:#fff;padding:52px 0 60px}
+  .chan-head{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+  .chan-dot{width:10px;height:10px;border-radius:50%;display:inline-block}
+  .extra-callout{margin-top:26px;background:linear-gradient(135deg,var(--purple),#c94fd9);color:#fff;border-radius:16px;padding:26px 30px;box-shadow:0 8px 24px rgba(156,39,176,.25)}
+  .extra-callout .eyebrow{color:#f3d9ff;margin-bottom:8px}
+  .extra-callout .eyebrow::before{background:#f3d9ff}
+  .extra-callout h3{font-size:1.4rem;font-weight:800;margin-bottom:10px}
+  .extra-callout .sub{color:rgba(255,255,255,.85)}
+  .meta-wrap{text-align:center;background:#fff;border-radius:16px;padding:48px 34px;box-shadow:0 8px 24px rgba(10,10,92,.05);margin-top:26px}
+  .mm-stats{display:flex;justify-content:center;align-items:flex-end;gap:38px;margin:26px 0 20px;flex-wrap:wrap}
+  .mm-side{display:flex;flex-direction:column;gap:4px}
+  .mm-sv{font-size:1.7rem;font-weight:800;letter-spacing:-.02em;color:var(--ink)}
+  .mm-sv.muted{color:var(--muted)}
+  .mm-sk{font-size:.74rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+  .mm-center .mm-pct{font-size:4.2rem;font-weight:900;letter-spacing:-.04em;color:var(--teal);line-height:.9}
+  .mm-center .mm-pct sup{font-size:1.6rem;vertical-align:super}
+  .mm-pl{font-size:.82rem;color:var(--muted);font-weight:600}
+  .mm-track{height:12px;background:#EEF1FF;border-radius:100px;overflow:hidden;max-width:640px;margin:0 auto}
+  .mm-fill{height:100%;background:linear-gradient(90deg,var(--blue),var(--teal));border-radius:100px}
+  .total-callout{margin-top:24px;background:linear-gradient(135deg,#0A0A5C,#1A3CFF);color:#fff;border-radius:16px;padding:26px 34px;display:flex;align-items:center;gap:22px;box-shadow:0 8px 24px rgba(10,10,92,.2);flex-wrap:wrap}
+  .total-num{font-size:2.7rem;font-weight:900;letter-spacing:-.03em;color:#7FEAD9;line-height:1}
+  .total-txt{font-size:1.1rem;font-weight:600;max-width:520px}
   .hero .eyebrow{color:#8fb0ff}
   .hero .eyebrow::before{background:#8fb0ff}
   .hero-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:52px}
@@ -75,10 +96,12 @@
   .dc .t{font-size:.98rem;font-weight:700;color:#fff;margin-bottom:8px}
   .dc .x{font-size:.84rem;color:rgba(255,255,255,.78)}
   .dc .acc{position:absolute;top:0;left:0;width:4px;height:100%}
-  footer{background:#0A0A5C;color:#fff;text-align:center;padding:56px 24px}
-  .flogos{display:flex;justify-content:center;align-items:center;gap:20px;margin-bottom:26px}
-  footer img.pref{height:78px;background:#fff;border-radius:12px;padding:10px 14px}
-  footer img.esq{height:32px}
+  footer{background:#0A0A5C;color:#fff;text-align:center;padding:46px 24px}
+  .flogos{display:flex;justify-content:center;align-items:center;gap:22px;margin-bottom:20px}
+  footer img.esq{height:30px;width:auto}
+  footer img.pref{height:46px;width:auto;border-radius:8px}
+  .footer-div{width:1px;height:34px;background:rgba(255,255,255,.22)}
+  footer p{font-size:.82rem;color:#B9C2FF;margin:0}
   @media (max-width:900px){
     h1{font-size:2.1rem} h2{font-size:1.55rem}
     .g4,.g3,.g2{grid-template-columns:1fr}
@@ -119,7 +142,6 @@
     <div class="hero-top">
       <div style="display:flex;align-items:center;gap:18px">
         <span style="font-size:.8rem;font-weight:600;color:rgba(255,255,255,.75)">Prestação de Contas · Fechamento do flight</span>
-        <a href="relatorio-campinas-temasdiversos-fechamento.pdf" target="_blank" style="font-size:.78rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,.45);border-radius:20px;padding:8px 16px">Exportar PDF</a>
       </div>
     </div>
     <div class="eyebrow">Temas Diversos · Meta Ads, Google Ads e TikTok Ads</div>
@@ -127,10 +149,10 @@
     <div style="font-size:1.25rem;font-weight:600;margin-top:14px;opacity:.9">Campanha Temas Diversos · 07/07 a 05/08/2026</div>
     <div style="font-size:1.05rem;font-weight:600;margin-top:4px;opacity:.85">Prefeitura Municipal de Campinas</div>
     <div class="hero-kpis">
-      <div><div class="v">6,54M</div><div class="k">Impressões entregues</div></div>
-      <div><div class="v" style="color:#8fb0ff">6/6</div><div class="k">Linhas com a meta batida</div></div>
-      <div><div class="v" style="color:#8fb0ff">101,05%</div><div class="k">Média de entrega sobre a meta</div></div>
-      <div><div class="v">30</div><div class="k">Dias de flight</div></div>
+      <div><div class="v">5,59M</div><div class="k">Impressões entregues</div></div>
+      <div><div class="v" style="color:#8fb0ff">1,18M</div><div class="k">Visualizações (Meta, Google e TikTok)</div></div>
+      <div><div class="v" style="color:#8fb0ff">3.506</div><div class="k">Novos seguidores no Meta Ads</div></div>
+      <div><div class="v">4.090</div><div class="k">Novos inscritos no YouTube</div></div>
     </div>
   </div>
 </div>
@@ -138,23 +160,30 @@
 <section>
   <div class="wrap">
     <div class="eyebrow">Entrega da Campanha</div>
-    <h2>As seis linhas contratadas encerraram acima da meta</h2>
+    <h2>As cinco linhas contratadas encerraram acima da meta</h2>
     <p class="sub">O flight de 07/07 a 05/08/2026 fechou com todas as frentes de veiculação, em Meta Ads, Google Ads e TikTok Ads, entregando igual ou acima do contratado.</p>
-    <div class="card tbl-wrap" style="margin-top:26px;padding:6px 10px">
+    <div class="meta-wrap">
+      <div class="mm-stats">
+        <div class="mm-side"><span class="mm-sv">5.588.589</span><span class="mm-sk">Impressões entregues</span></div>
+        <div class="mm-center"><span class="mm-pct">101<sup>%</sup></span><div class="mm-pl">da meta cumprida</div></div>
+        <div class="mm-side"><span class="mm-sv muted">5.522.000</span><span class="mm-sk">Meta total contratada</span></div>
+      </div>
+      <div class="mm-track"><div class="mm-fill" style="width:100%"></div></div>
+    </div>
+
+    <div class="card tbl-wrap" style="margin-top:24px;padding:6px 10px">
       <table>
-        <thead><tr><th>Linha de veiculação</th><th>Plataforma</th><th>Meta</th><th>Entregue</th><th>% da meta</th><th>Status</th></tr></thead>
+        <thead><tr><th>Canal</th><th>Meta contratada</th><th>Entregue</th><th>% da meta</th></tr></thead>
         <tbody>
-          <tr><td>Engajamento</td><td>Meta Ads</td><td>484.000</td><td>487.165</td><td><span class="pill">100,65%</span></td><td>Pausada ao bater a meta</td></tr>
-          <tr><td>Alcance</td><td>Meta Ads</td><td>1.936.000</td><td>1.951.465</td><td><span class="pill">100,80%</span></td><td>Pausada ao bater a meta</td></tr>
-          <tr><td>Visitas ao Perfil</td><td>Meta Ads</td><td>Meta de investimento</td><td>947.744 impressões*</td><td><span class="pill" style="background:rgba(156,39,176,.12);color:var(--purple)">100,30%</span></td><td>Pausada ao bater a meta</td></tr>
-          <tr><td>Display</td><td>Google Ads</td><td>792.000</td><td>799.030</td><td><span class="pill" style="background:rgba(0,153,77,.12);color:var(--green)">100,89%</span></td><td>Pausada ao bater a meta</td></tr>
-          <tr><td>YouTube (In-Stream + Sequencial)</td><td>Google Ads</td><td>1.210.000</td><td>1.217.189</td><td><span class="pill" style="background:rgba(204,0,0,.1);color:var(--red)">100,59%</span></td><td>Ambas pausadas ao bater a meta</td></tr>
-          <tr><td>Temas Diversos</td><td>TikTok Ads</td><td>1.100.000</td><td>1.133.740</td><td><span class="pill" style="background:rgba(17,17,17,.08);color:var(--black)">103,07%</span></td><td>Encerrada acima da meta, será desativada manualmente**</td></tr>
-          <tr class="tot"><td>Total (linhas com meta em impressões)</td><td>Meta, Google e TikTok Ads</td><td>5.522.000</td><td>5.588.589</td><td><span class="pill">101,21%</span></td><td>5 de 5 linhas cumpridas</td></tr>
+          <tr><td>Meta Ads</td><td>2.420.000</td><td>2.438.630</td><td><span class="pill">100,77%</span></td></tr>
+          <tr><td>Google Ads</td><td>2.002.000</td><td>2.016.219</td><td><span class="pill" style="background:rgba(0,153,77,.12);color:var(--green)">100,71%</span></td></tr>
+          <tr><td>TikTok Ads</td><td>1.100.000</td><td>1.133.740</td><td><span class="pill" style="background:rgba(17,17,17,.08);color:var(--black)">103,07%</span></td></tr>
+          <tr class="tot"><td>Total</td><td>5.522.000</td><td>5.588.589</td><td><span class="pill">101,21%</span></td></tr>
         </tbody>
       </table>
     </div>
-    <div class="ins"><div class="l">Notas da tabela</div><div class="x">*A meta de Visitas ao Perfil é medida por investimento, não por impressões. O modelo Trading Desk deste relatório não exibe valores em reais: a linha bateu 100,30% do investimento contratado, e o resultado em volume (impressões, alcance e frequência) está detalhado na seção própria mais abaixo. **A campanha do TikTok segue tecnicamente ativa porque o acesso da agência à conta é apenas de leitura; a desativação será feita manualmente ao fim deste flight.</div></div>
+    <div class="total-callout"><span class="total-num">+66.589</span><span class="total-txt">impressões entregues além do contratado no mês, com os três canais encerrando acima da meta</span></div>
+    <div class="ins" style="margin-top:20px"><div class="l">Notas da tabela</div><div class="x">Visitas ao Perfil é uma linha bônus de Meta Ads, com meta própria de investimento, por isso é reportada em seção extra, fora desta tabela e do total acima. Todas as linhas de Meta Ads e Google Ads foram pausadas automaticamente ao bater a meta; a de TikTok Ads segue tecnicamente ativa porque o acesso da agência à conta é apenas de leitura, e será desativada manualmente ao fim deste flight.</div></div>
   </div>
 </section>
 
@@ -173,10 +202,6 @@
         <div class="bt"><div class="bf" style="width:100%;background:var(--blue)"></div></div>
       </div>
       <div class="barrow">
-        <div class="top"><span><strong>Visitas ao Perfil</strong> (Meta Ads) · meta de investimento cumprida</span><span style="font-weight:700;color:var(--purple)">100,30%</span></div>
-        <div class="bt"><div class="bf" style="width:100%;background:var(--purple)"></div></div>
-      </div>
-      <div class="barrow">
         <div class="top"><span><strong>Display</strong> (Google Ads) · 799.030 de 792.000 impressões</span><span style="font-weight:700;color:var(--green)">100,89%</span></div>
         <div class="bt"><div class="bf" style="width:100%;background:var(--green)"></div></div>
       </div>
@@ -189,22 +214,7 @@
         <div class="bt"><div class="bf" style="width:100%;background:var(--black)"></div></div>
       </div>
     </div>
-    <div class="ins"><div class="l">Leitura do progresso</div><div class="x">As duas linhas de Google Ads (Display e YouTube) e a de TikTok fecharam com a maior folga sobre o contratado, o que indica espaço de negociação para os próximos ciclos sem necessidade de ampliar verba. Meta Ads fechou mais próxima do previsto nas três frentes, sinal de um planejamento de mídia bem calibrado para esse canal.</div></div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <div class="eyebrow">Meta Ads · Visitas ao Perfil</div>
-    <h2>A linha de tráfego para o perfil oficial</h2>
-    <p class="sub">Visitas ao Perfil tem função diferente das linhas de Engajamento e Alcance: leva a população ao perfil oficial da Prefeitura no Instagram, por isso é sempre reportada em seção própria.</p>
-    <div class="grid g4" style="margin-top:26px">
-      <div class="card"><div class="kpi-lbl">Impressões</div><div class="kpi-val">947.744</div><div class="kpi-sub">Volume entregue pela linha</div></div>
-      <div class="card"><div class="kpi-lbl">Alcance da linha</div><div class="kpi-val">392.798</div><div class="kpi-sub">Contas únicas desta campanha</div></div>
-      <div class="card"><div class="kpi-lbl">Frequência</div><div class="kpi-val">2,41×</div><div class="kpi-sub">Exposições por conta alcançada</div></div>
-      <div class="card"><div class="kpi-lbl">Meta de investimento</div><div class="kpi-val" style="color:var(--purple)">100,30%</div><div class="kpi-sub">Investimento contratado cumprido</div></div>
-    </div>
-    <div class="ins purple"><div class="l">Leitura da linha</div><div class="x">A meta desta linha é definida por investimento, não por impressões, e por isso não é comparável em volume às demais. Com frequência de 2,41 exposições por conta, a linha manteve repetição controlada, sem sinal de saturação, enquanto direcionava tráfego para o perfil oficial da Prefeitura.</div></div>
+    <div class="ins"><div class="l">Leitura do progresso</div><div class="x">Nenhuma das cinco linhas contratadas deixou de entregar o combinado, um resultado consistente que mostra a comunicação da Prefeitura chegando de forma confiável à população em todas as frentes. Display, YouTube e TikTok fecharam com a maior folga sobre o contratado, e Meta Ads fechou com entrega calibrada, sinal de planejamento de mídia bem ajustado para levar os temas do dia a dia da cidade ao público certo.</div></div>
   </div>
 </section>
 
@@ -212,66 +222,34 @@
   <div class="wrap">
     <div class="eyebrow">KPIs Consolidados</div>
     <h2>Métricas principais do flight</h2>
-    <p class="sub">Meta Ads, Google Ads e TikTok Ads · Prefeitura Municipal de Campinas · 07/07 a 05/08/2026.</p>
-    <div class="grid g4" style="margin-top:26px">
-      <div class="card"><div class="kpi-lbl">Impressões totais</div><div class="kpi-val">6.536.333</div><div class="kpi-sub">Soma das seis linhas, métrica somável</div></div>
-      <div class="card"><div class="kpi-lbl">Linhas com a meta batida</div><div class="kpi-val">6 de 6</div><div class="kpi-sub">100% das frentes contratadas</div></div>
-      <div class="card"><div class="kpi-lbl">Frequência · Alcance</div><div class="kpi-val">3,77×</div><div class="kpi-sub">Meta Ads, campanha de Alcance</div></div>
+    <p class="sub">Meta Ads, Google Ads e TikTok Ads · Prefeitura Municipal de Campinas · 07/07 a 05/08/2026. Não inclui a linha bônus de Visitas ao Perfil, reportada em seção própria.</p>
+    <div class="grid g3" style="margin-top:26px">
+      <div class="card"><div class="kpi-lbl">Impressões totais</div><div class="kpi-val">5.588.589</div><div class="kpi-sub">Soma das cinco linhas contratadas, métrica somável</div></div>
       <div class="card"><div class="kpi-lbl">Frequência · Engajamento</div><div class="kpi-val">3,15×</div><div class="kpi-sub">Meta Ads, campanha de Engajamento</div></div>
-      <div class="card"><div class="kpi-lbl">Alcance · Visitas ao Perfil</div><div class="kpi-val">392.798</div><div class="kpi-sub">Única linha com alcance de campanha isolado</div></div>
-      <div class="card"><div class="kpi-lbl">Temas ativos no Display</div><div class="kpi-val">6</div><div class="kpi-sub">Ceprocamp, Mario Gatti, Vet. Móvel, EJA, Vacinação e ISS</div></div>
-      <div class="card"><div class="kpi-lbl">Criativos TikTok em veiculação</div><div class="kpi-val">4</div><div class="kpi-sub">Sem contar a campanha própria de 252 anos</div></div>
-      <div class="card"><div class="kpi-lbl">Excedente sobre a meta</div><div class="kpi-val">66.589</div><div class="kpi-sub">Impressões além do contratado nas linhas de impressões</div></div>
+      <div class="card"><div class="kpi-lbl">Visualizações</div><div class="kpi-val">1.182.832</div><div class="kpi-sub">Consolidado entre Meta Ads, Google Ads e TikTok Ads</div></div>
     </div>
   </div>
 </section>
 
 <section>
   <div class="wrap">
-    <div class="eyebrow">Ritmo de Veiculação</div>
-    <h2>Curva de entrega dia a dia</h2>
-    <p class="sub">Impressões diárias das três campanhas de Meta Ads entre 07/07 e 04/08. O dia 05/08 não entra na curva porque a apuração foi feita antes do fechamento daquele dia.</p>
-    <div class="card" style="margin-top:26px">
+    <div class="chan-head"><span class="chan-dot" style="background:var(--blue)"></span><span class="eyebrow" style="margin-bottom:0">Meta Ads</span></div>
+    <h2>Desempenho de Engajamento e Alcance</h2>
+    <p class="sub">As duas linhas de Meta Ads Temas Diversos fecharam acima do contratado, com Alcance concentrando o maior volume da campanha.</p>
+    <div class="grid g4" style="margin-top:26px">
+      <div class="card"><div class="kpi-lbl">Impressões</div><div class="kpi-val">1.951.465</div><div class="kpi-sub">de 1.936.000 · 100,80% da meta</div></div>
+      <div class="card"><div class="kpi-lbl">Engajamento</div><div class="kpi-val">487.165</div><div class="kpi-sub">de 484.000 · 100,65% da meta</div></div>
+      <div class="card"><div class="kpi-lbl">Visualizações</div><div class="kpi-val">3.033</div><div class="kpi-sub">Vídeos assistidos até o fim (thruplay)</div></div>
+      <div class="card"><div class="kpi-lbl">Frequência · Alcance</div><div class="kpi-val">3,77×</div><div class="kpi-sub">Exposições por conta alcançada</div></div>
+    </div>
+    <div class="card" style="margin-top:20px">
       <div style="font-weight:700;color:var(--ink)">Impressões por dia · Meta Ads</div>
-      <div style="font-size:.82rem;color:var(--muted);margin-bottom:14px">Engajamento, Alcance e Visitas ao Perfil, 07/07 a 04/08/2026</div>
+      <div style="font-size:.82rem;color:var(--muted);margin-bottom:14px">Impressões, visualizações e alcance, 07/07 a 04/08/2026</div>
       <div class="chart-box"><canvas id="chartDaily"></canvas></div>
     </div>
-    <div class="ins"><div class="l">Leitura do ritmo</div><div class="x">A entrega de Alcance concentrou o maior volume na primeira quinzena, com pico em 09/07 a 12/07, e reduziu gradualmente até o fim do período, sinal de que a campanha já vinha próxima da meta antes do encerramento. Engajamento teve o padrão oposto, crescendo nas últimas duas semanas até o pico de 35.749 em 26/07, o que indica que essa linha foi otimizada de forma mais gradual ao longo do flight. Visitas ao Perfil manteve ritmo estável na maior parte do período, com queda proporcional apenas nos últimos dias, quando a campanha já se aproximava do investimento contratado.</div></div>
-  </div>
-</section>
+    <div class="ins"><div class="l">Importância da estratégia</div><div class="x">Meta Ads foi o canal que aproximou a Prefeitura do dia a dia de quem mora em Campinas: por rodar direto no feed do Facebook e Instagram, colocou serviços reais, como o Consultório Móvel Veterinário, diante da população de forma nativa, sem parecer publicidade tradicional. É o canal mais eficiente deste flight para comunicar ações da Prefeitura com proximidade e frequência.</div></div>
 
-<section style="background:#fff;border-top:1px solid rgba(10,10,92,.06);border-bottom:1px solid rgba(10,10,92,.06)">
-  <div class="wrap">
-    <div class="eyebrow">Conteúdo Veiculado</div>
-    <h2>Temas em veiculação no Display</h2>
-    <p class="sub">Seis temas de serviço público dividiram a entrega da linha de Display, sem que nenhum tema isolado dominasse o volume.</p>
-    <div class="grid g2" style="margin-top:26px;align-items:start">
-      <div class="grid" style="gap:14px">
-        <div class="card" style="padding:16px 20px"><span class="tag t-green">Qualificação profissional</span><div style="font-weight:700;font-size:1rem;color:var(--ink);margin:8px 0 4px">Ceprocamp</div><div class="kpi-val" style="font-size:1.2rem">214.918</div><div class="kpi-sub">26,9% do Display</div></div>
-        <div class="card" style="padding:16px 20px"><span class="tag t-green">Atendimento infantil</span><div style="font-weight:700;font-size:1rem;color:var(--ink);margin:8px 0 4px">Mario Gatti</div><div class="kpi-val" style="font-size:1.2rem">167.459</div><div class="kpi-sub">21,0% do Display</div></div>
-        <div class="card" style="padding:16px 20px"><span class="tag t-green">Saúde animal</span><div style="font-weight:700;font-size:1rem;color:var(--ink);margin:8px 0 4px">Vet. Móvel</div><div class="kpi-val" style="font-size:1.2rem">131.411</div><div class="kpi-sub">16,4% do Display</div></div>
-      </div>
-      <div class="card">
-        <div style="font-weight:700;color:var(--ink)">Distribuição por tema</div>
-        <div style="font-size:.82rem;color:var(--muted);margin-bottom:10px">799.030 impressões no período</div>
-        <div class="chart-box"><canvas id="chartPautas"></canvas></div>
-      </div>
-    </div>
-    <div class="grid g3" style="margin-top:14px">
-      <div class="card" style="padding:16px 20px"><span class="tag t-green">Educação de jovens e adultos</span><div style="font-weight:700;font-size:1rem;color:var(--ink);margin:8px 0 4px">EJA 29 de Julho</div><div class="kpi-val" style="font-size:1.2rem">118.528</div><div class="kpi-sub">14,8% do Display</div></div>
-      <div class="card" style="padding:16px 20px"><span class="tag t-green">Imunização</span><div style="font-weight:700;font-size:1rem;color:var(--ink);margin:8px 0 4px">Vacinação</div><div class="kpi-val" style="font-size:1.2rem">93.447</div><div class="kpi-sub">11,7% do Display</div></div>
-      <div class="card" style="padding:16px 20px"><span class="tag t-green">Tributos municipais</span><div style="font-weight:700;font-size:1rem;color:var(--ink);margin:8px 0 4px">Campanha ISS</div><div class="kpi-val" style="font-size:1.2rem">73.267</div><div class="kpi-sub">9,2% do Display</div></div>
-    </div>
-    <div class="ins green"><div class="l">Equilíbrio entre serviços</div><div class="x">Ceprocamp e Mario Gatti responderam por 47,9% da entrega do Display, mas nenhum dos seis temas passou de 27% do total, o que manteve a linha funcionando como um mural de serviços variados em vez de concentrar toda a atenção em um único assunto.</div></div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <div class="eyebrow">Postagens Destacadas</div>
-    <h2>Os criativos que mais entregaram</h2>
-    <p class="sub">Ranking por volume de entrega no período, em Meta Ads e TikTok Ads.</p>
-    <div style="font-weight:700;color:var(--ink);margin:8px 0 14px">Meta Ads</div>
+    <div style="font-weight:700;color:var(--ink);margin:36px 0 14px">Criativos destaque</div>
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
       <div class="post"><div class="pacc" style="background:var(--blue)"></div>
         <div class="pimg embed"><iframe src="https://www.instagram.com/p/DagaN2pMP-Q/embed/" scrolling="no"></iframe></div>
@@ -299,8 +277,80 @@
       </div>
     </div>
 
-    <div style="font-weight:700;color:var(--ink);margin:36px 0 14px">TikTok Ads</div>
-    <div class="grid g2" style="align-items:start">
+    <div class="extra-callout fade-in">
+      <div class="eyebrow">Bônus · Meta Ads · Visitas ao Perfil</div>
+      <h3>Linha bônus de tráfego para o perfil oficial</h3>
+      <p class="sub">Visitas ao Perfil é uma linha bônus, com meta própria de investimento, não de impressões: leva a população ao perfil oficial da Prefeitura no Instagram e ajudou a crescer a base de seguidores no período.</p>
+      <div class="grid g3" style="margin-top:20px">
+        <div class="card"><div class="kpi-lbl">Visitas ao perfil (ação)</div><div class="kpi-val">16.921</div><div class="kpi-sub">14.875 da campanha bônus + 2.046 de outras campanhas</div></div>
+        <div class="card"><div class="kpi-lbl">Novos seguidores</div><div class="kpi-val">3.506</div><div class="kpi-sub">Fonte: Meta Business Suite</div></div>
+        <div class="card"><div class="kpi-lbl">Meta de investimento</div><div class="kpi-val">100,30%</div><div class="kpi-sub">Investimento contratado cumprido</div></div>
+        <div class="card"><div class="kpi-lbl">Impressões da campanha</div><div class="kpi-val">947.744</div><div class="kpi-sub">Volume entregue pela linha</div></div>
+        <div class="card"><div class="kpi-lbl">Alcance da campanha</div><div class="kpi-val">392.798</div><div class="kpi-sub">Contas únicas desta campanha</div></div>
+        <div class="card"><div class="kpi-lbl">Frequência</div><div class="kpi-val">2,41×</div><div class="kpi-sub">Exposições por conta alcançada</div></div>
+      </div>
+      <div class="ins" style="margin-top:20px;background:rgba(255,255,255,.12);border-left-color:#fff"><div class="l" style="color:#fff">Importância da estratégia</div><div class="x" style="color:rgba(255,255,255,.9)">Visitas ao Perfil é a estratégia que leva quem viu a campanha a ir além do anúncio e conhecer o perfil oficial da Prefeitura no Instagram. Foi essa linha que trouxe as 3.506 pessoas que passaram a seguir a conta no período, ampliando a visibilidade digital da Prefeitura para além do tempo em que o anúncio está no ar.</div></div>
+    </div>
+  </div>
+</section>
+
+<section style="background:#fff;border-top:1px solid rgba(10,10,92,.06);border-bottom:1px solid rgba(10,10,92,.06)">
+  <div class="wrap">
+    <div class="chan-head"><span class="chan-dot" style="background:var(--green)"></span><span class="eyebrow" style="margin-bottom:0;color:var(--green)">Display · Google Ads</span></div>
+    <h2>Temas em veiculação no Display</h2>
+    <p class="sub">Seis temas de serviço público dividiram a entrega da linha de Display, sem que nenhum tema isolado dominasse o volume.</p>
+    <div class="grid g3" style="margin-top:26px">
+      <div class="card"><div class="kpi-lbl">Impressões</div><div class="kpi-val">799.030</div><div class="kpi-sub">de 792.000 · 100,89% da meta</div></div>
+      <div class="card"><div class="kpi-lbl">Cliques</div><div class="kpi-val">1.057</div><div class="kpi-sub">Cliques recebidos no período</div></div>
+      <div class="card"><div class="kpi-lbl">CTR</div><div class="kpi-val">0,13%</div><div class="kpi-sub">Taxa de cliques sobre impressões</div></div>
+    </div>
+    <div class="grid g2" style="margin-top:20px;align-items:start">
+      <div class="grid" style="gap:14px">
+        <div class="card" style="padding:16px 20px"><span class="tag t-green">Qualificação profissional</span><div style="font-weight:700;font-size:1rem;color:var(--ink);margin:8px 0 4px">Ceprocamp</div><div class="kpi-val" style="font-size:1.2rem">214.918</div><div class="kpi-sub">26,9% do Display</div></div>
+        <div class="card" style="padding:16px 20px"><span class="tag t-green">Atendimento infantil</span><div style="font-weight:700;font-size:1rem;color:var(--ink);margin:8px 0 4px">Mario Gatti</div><div class="kpi-val" style="font-size:1.2rem">167.459</div><div class="kpi-sub">21,0% do Display</div></div>
+        <div class="card" style="padding:16px 20px"><span class="tag t-green">Saúde animal</span><div style="font-weight:700;font-size:1rem;color:var(--ink);margin:8px 0 4px">Vet. Móvel</div><div class="kpi-val" style="font-size:1.2rem">131.411</div><div class="kpi-sub">16,4% do Display</div></div>
+      </div>
+      <div class="card">
+        <div style="font-weight:700;color:var(--ink)">Distribuição por tema</div>
+        <div style="font-size:.82rem;color:var(--muted);margin-bottom:10px">799.030 impressões no período</div>
+        <div class="chart-box"><canvas id="chartPautas"></canvas></div>
+      </div>
+    </div>
+    <div class="grid g3" style="margin-top:14px">
+      <div class="card" style="padding:16px 20px"><span class="tag t-green">Educação de jovens e adultos</span><div style="font-weight:700;font-size:1rem;color:var(--ink);margin:8px 0 4px">EJA 29 de Julho</div><div class="kpi-val" style="font-size:1.2rem">118.528</div><div class="kpi-sub">14,8% do Display</div></div>
+      <div class="card" style="padding:16px 20px"><span class="tag t-green">Imunização</span><div style="font-weight:700;font-size:1rem;color:var(--ink);margin:8px 0 4px">Vacinação</div><div class="kpi-val" style="font-size:1.2rem">93.447</div><div class="kpi-sub">11,7% do Display</div></div>
+      <div class="card" style="padding:16px 20px"><span class="tag t-green">Tributos municipais</span><div style="font-weight:700;font-size:1rem;color:var(--ink);margin:8px 0 4px">Campanha ISS</div><div class="kpi-val" style="font-size:1.2rem">73.267</div><div class="kpi-sub">9,2% do Display</div></div>
+    </div>
+    <div class="ins green"><div class="l">Importância da estratégia</div><div class="x">O Display é o canal que sustenta a comunicação dos serviços de rotina da cidade, que não têm uma data ou fato jornalístico para se apoiar. Ceprocamp, vacinação, tributos e os demais temas só chegam à população neste volume porque o Display os mantém circulando de forma equilibrada, sem depender de nenhum assunto específico para justificar o investimento.</div></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="chan-head"><span class="chan-dot" style="background:var(--red)"></span><span class="eyebrow" style="margin-bottom:0;color:var(--red)">YouTube · Google Ads</span></div>
+    <h2>Desempenho do YouTube</h2>
+    <p class="sub">In-Stream e Sequencial consolidados numa única frente, sem quebra por criativo nesta linha.</p>
+    <div class="grid g4" style="margin-top:26px">
+      <div class="card"><div class="kpi-lbl">Impressões</div><div class="kpi-val">1.217.189</div><div class="kpi-sub">In-Stream + Sequencial</div></div>
+      <div class="card"><div class="kpi-lbl">Visualizações</div><div class="kpi-val">58.938</div><div class="kpi-sub">Vídeo assistido até o fim ou 30s</div></div>
+      <div class="card"><div class="kpi-lbl">Novos inscritos</div><div class="kpi-val">4.090</div><div class="kpi-sub">Inscrições no canal atribuídas à campanha</div></div>
+      <div class="card"><div class="kpi-lbl">Taxa de visualização</div><div class="kpi-val" style="color:var(--red)">4,84%</div><div class="kpi-sub">Visualizações sobre impressões</div></div>
+    </div>
+    <div class="ins red"><div class="l">Importância da estratégia</div><div class="x">YouTube coloca a Prefeitura no formato de vídeo, o que nenhuma outra frente deste flight faz, e converteu parte de quem assistiu em inscrito no canal oficial, um público que passa a receber os próximos conteúdos institucionais sem depender de mídia paga. É o canal que constrói audiência recorrente para a comunicação da cidade.</div></div>
+  </div>
+</section>
+
+<section style="background:#fff;border-top:1px solid rgba(10,10,92,.06);border-bottom:1px solid rgba(10,10,92,.06)">
+  <div class="wrap">
+    <div class="chan-head"><span class="chan-dot" style="background:var(--black)"></span><span class="eyebrow" style="margin-bottom:0;color:var(--black)">TikTok Ads</span></div>
+    <h2>Desempenho do TikTok</h2>
+    <p class="sub">Temas Diversos foi a linha que mais superou a meta contratada no flight.</p>
+    <div class="grid g3" style="margin-top:26px">
+      <div class="card"><div class="kpi-lbl">Impressões</div><div class="kpi-val">1.133.740</div><div class="kpi-sub">de 1.100.000 · 103,07% da meta</div></div>
+      <div class="card"><div class="kpi-lbl">Visualizações</div><div class="kpi-val">1.120.861</div><div class="kpi-sub">Vídeo assistido</div></div>
+      <div class="card"><div class="kpi-lbl">Taxa de visualização</div><div class="kpi-val">98,86%</div><div class="kpi-sub">Visualizações sobre impressões</div></div>
+    </div>
+    <div class="grid g2" style="margin-top:20px;align-items:start">
       <div class="card">
         <div style="font-weight:700;color:var(--ink)">Impressões por criativo</div>
         <div style="font-size:.82rem;color:var(--muted);margin-bottom:10px">1.133.740 impressões no período</div>
@@ -313,64 +363,33 @@
         <div class="card" style="padding:14px 20px"><span class="tag t-black">4º lugar</span><div style="font-weight:700;color:var(--ink);margin:6px 0 4px">"Lazer Campo Grande"</div><div style="font-size:.85rem;color:var(--muted)">235.553 impressões · 136.239 de alcance</div></div>
       </div>
     </div>
-    <div class="ins black"><div class="l">Sobre a campanha de 252 anos</div><div class="x">O criativo "Em forma aos 252 Anos", com 437.965 impressões, pertence a uma campanha própria do aniversário da cidade e não faz parte deste flight de Temas Diversos. Ele aparece aqui apenas como contexto, sem entrar nos totais desta prestação de contas.</div></div>
+    <div class="ins black"><div class="l">Importância da estratégia</div><div class="x">O TikTok leva os temas da Prefeitura a um público que dificilmente seria alcançado pelas outras três plataformas, e a quase totalidade de quem viu o anúncio assistiu ao vídeo, um sinal de que o formato do TikTok prende a atenção da audiência mais jovem para os assuntos de Campinas.</div></div>
   </div>
 </section>
 
 <section style="background:#fff;border-top:1px solid rgba(10,10,92,.06);border-bottom:1px solid rgba(10,10,92,.06)">
   <div class="wrap">
     <div class="eyebrow">Repercussão na Imprensa</div>
-    <h2>A agenda da cidade no período</h2>
-    <p class="sub">Cruzamento entre os temas veiculados na mídia paga e o que a Prefeitura e a imprensa de Campinas divulgaram entre julho e agosto de 2026.</p>
-    <div class="grid g2" style="margin-top:26px">
-      <div class="card" style="border-top:3px solid var(--blue)"><span class="tag t-blue">Convergência</span><div style="font-weight:700;color:var(--ink);margin:10px 0 8px;font-size:1.05rem">Consultório Móvel Veterinário</div><div style="font-size:.9rem;color:#444">A Prefeitura ampliou o atendimento móvel de vacinação e microchipagem gratuita para cães e gatos, com unidades circulando por bairros como Vila Castelo Branco. Uma unidade foi prorrogada no Bosque dos Guarantãs até 10/08, e outra passou a atender na EMEF Elvira Muraro entre 25 e 29/08, antecipada para se integrar ao programa "Chega Junto". Foi o tema com maior volume de mídia paga do flight (925.904 impressões). Fonte: Hora Campinas, ACidade ON Campinas, campinas.sp.gov.br.</div></div>
-      <div class="card" style="border-top:3px solid var(--blue)"><span class="tag t-blue">Convergência</span><div style="font-weight:700;color:var(--ink);margin:10px 0 8px;font-size:1.05rem">Campanha do Agasalho 2026</div><div style="font-size:.9rem;color:#444">Lançada em maio com 110 pontos de arrecadação, depois ampliados para 172, com o slogan "Se não tô usando, tô doando!". Até 8 de julho já somava 10.825 kg arrecadados, alta de 1.848 kg frente ao levantamento de 1º de julho. Realização da Secretaria Municipal de Desenvolvimento e Assistência Social. Fonte: Todo Dia, Correio Popular/RAC, ACICAMPINAS.</div></div>
-      <div class="card" style="border-top:3px solid var(--green)"><span class="tag t-green">Contexto do Display</span><div style="font-weight:700;color:var(--ink);margin:10px 0 8px;font-size:1.05rem">Serviços recorrentes: Ceprocamp, Mario Gatti, Vet. Móvel, EJA, Vacinação e ISS</div><div style="font-size:.9rem;color:#444">São temas de serviço público de rotina, qualificação profissional, atendimento infantil e hospitalar, educação de jovens e adultos, imunização e tributos municipais, que sustentam o volume do Display sem depender de um fato jornalístico específico no período.</div></div>
-      <div class="card" style="border-top:3px solid var(--muted)"><span class="tag" style="background:rgba(106,106,128,.12);color:var(--muted)">Fora do escopo deste flight</span><div style="font-weight:700;color:var(--ink);margin:10px 0 8px;font-size:1.05rem">Ciclovia e os 252 anos de Campinas</div><div style="font-size:.9rem;color:#444">Em 1º de julho a Prefeitura inaugurou uma rota cicloviária de 8,5 km ligando a Avenida Mercedes-Benz ao Terminal Ouro Verde e ao corredor BRT, ampliando a malha cicloviária do município para 132,19 km. A entrega marcou a abertura da programação dos 252 anos da cidade (aniversário em 14/07), tema também da campanha própria "Em forma aos 252 Anos" no TikTok. Nenhuma das duas teve mídia paga dentro deste flight de Temas Diversos; aparecem aqui apenas como contexto da cidade no período. Fonte: ACidade ON Campinas, campinas.sp.gov.br.</div></div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <div class="eyebrow">Análise Qualitativa</div>
-    <h2>Mídia paga e agenda espontânea</h2>
-    <p class="sub">O que teve apoio de imprensa, o que dependeu só da mídia paga e o que ficou fora do escopo deste flight.</p>
+    <h2>Onde a mídia paga encontrou a agenda da cidade</h2>
+    <p class="sub">O que a imprensa noticiou sobre Campinas no período e como isso se conecta às campanhas deste flight.</p>
     <div class="grid g3" style="margin-top:26px">
-      <div class="card" style="border-top:3px solid var(--blue)"><span class="tag t-blue">Convergência</span><div style="font-weight:700;color:var(--ink);margin:10px 0 8px;font-size:1.05rem">Consultório Móvel e Agasalho</div><div style="font-size:.9rem;color:#444">As duas pautas com registro na imprensa foram também as de maior volume individual na mídia paga (925.904 e 326.139 impressões). Mídia paga e imprensa reforçaram a mesma história no mesmo período, sem que se possa afirmar que uma causou a outra.</div></div>
-      <div class="card" style="border-top:3px solid var(--green)"><span class="tag t-green">Só na mídia paga</span><div style="font-weight:700;color:var(--ink);margin:10px 0 8px;font-size:1.05rem">Os seis temas do Display</div><div style="font-size:.9rem;color:#444">Ceprocamp, Mario Gatti, Vet. Móvel, EJA, Vacinação e ISS não tiveram registro editorial dedicado no período. São serviços de rotina cuja divulgação dependeu inteiramente da campanha, o que reforça o papel do Display para manter esses temas visíveis à população.</div></div>
-      <div class="card" style="border-top:3px solid var(--muted)"><span class="tag" style="background:rgba(106,106,128,.12);color:var(--muted)">Agenda espontânea da cidade</span><div style="font-weight:700;color:var(--ink);margin:10px 0 8px;font-size:1.05rem">Ciclovia e programação dos 252 anos</div><div style="font-size:.9rem;color:#444">A entrega da ciclovia e a abertura da programação de aniversário da cidade circularam por conta própria na imprensa, sem apoio deste flight. É um tema com demanda espontânea que pode ser considerado para uma campanha dedicada no futuro, fora do escopo de Temas Diversos.</div></div>
+      <div class="card" style="border-top:3px solid var(--blue)"><span class="tag t-blue">Convergência · Meta Ads</span><div style="font-weight:700;color:var(--ink);margin:10px 0 8px;font-size:1.05rem">Consultório Móvel Veterinário</div><div style="font-size:.9rem;color:#444">Ampliação real do atendimento móvel de vacinação e microchipagem noticiada por Hora Campinas e ACidade ON foi também o criativo de maior volume do flight (925.904 impressões): mídia paga e imprensa reforçando a mesma história.</div></div>
+      <div class="card" style="border-top:3px solid var(--blue)"><span class="tag t-blue">Convergência · Meta Ads</span><div style="font-weight:700;color:var(--ink);margin:10px 0 8px;font-size:1.05rem">Campanha do Agasalho 2026</div><div style="font-size:.9rem;color:#444">172 pontos de arrecadação e 10.825 kg já coletados, segundo Todo Dia e Correio Popular/RAC: a segunda maior entrega de mídia paga do flight (326.139 impressões) andou lado a lado com a cobertura da imprensa.</div></div>
+      <div class="card" style="border-top:3px solid var(--green)"><span class="tag t-green">Só na mídia paga · Display</span><div style="font-weight:700;color:var(--ink);margin:10px 0 8px;font-size:1.05rem">Ceprocamp, Mario Gatti, Vet. Móvel, EJA, Vacinação e ISS</div><div style="font-size:.9rem;color:#444">Sem registro editorial dedicado no período: são os serviços de rotina que só chegam à população porque o Display os mantém em circulação, sem depender de um fato jornalístico.</div></div>
     </div>
-    <div class="ins"><div class="l">Síntese</div><div class="x">O flight reforçou duas pautas que já tinham tração espontânea (Consultório Móvel e Agasalho) e sustentou, sozinho, seis temas de serviço público que não teriam alcance sem mídia paga. A ciclovia e os 252 anos mostram que a cidade tem agenda própria fora deste pacote, um indicativo de para onde pode ir a comunicação paga em ciclos futuros.</div></div>
+    <div class="ins"><div class="l">Síntese</div><div class="x">As duas pautas com maior repercussão espontânea na imprensa, Consultório Móvel e Agasalho, foram também as de maior volume em mídia paga: um sinal de que a campanha reforçou histórias que já interessavam à cidade, além de sustentar sozinha os temas de serviço público que não teriam alcance sem investimento.</div></div>
   </div>
 </section>
 
 <section class="dark">
   <div class="wrap">
     <div class="eyebrow">Diagnóstico do Período</div>
-    <h2>O que o flight de julho e agosto entregou</h2>
-    <p class="sub">Seis linhas contratadas, seis metas cumpridas, em três plataformas diferentes.</p>
+    <h2>Aprendizados do ciclo</h2>
+    <p class="sub">O que cada plataforma trouxe de bom para a comunicação da cidade neste flight.</p>
     <div class="grid g3" style="margin-top:30px">
-      <div class="dc"><div class="acc" style="background:var(--blue)"></div><div class="num">01</div><div class="m">6 de 6</div><div class="t">Todas as linhas bateram a meta</div><div class="x">Média de 101,05% de entrega sobre o contratado nas seis linhas, em Meta Ads, Google Ads e TikTok Ads, sem nenhuma frente abaixo do previsto.</div></div>
-      <div class="dc"><div class="acc" style="background:var(--blue)"></div><div class="num">02</div><div class="m">925.904</div><div class="t">Consultório Móvel liderou os criativos</div><div class="x">O criativo de maior volume do flight coincidiu com a ampliação real do atendimento veterinário móvel pela Prefeitura, tema também presente na imprensa local.</div></div>
-      <div class="dc"><div class="acc" style="background:var(--purple)"></div><div class="num">03</div><div class="m">392.798</div><div class="t">Visitas ao Perfil com frequência controlada</div><div class="x">A linha de tráfego para o Instagram oficial cumpriu 100,30% do investimento contratado com frequência de 2,41×, sem sinal de saturação sobre o público alcançado.</div></div>
-      <div class="dc"><div class="acc" style="background:var(--green)"></div><div class="num">04</div><div class="m">6 temas</div><div class="x">Ceprocamp, Mario Gatti, Vet. Móvel, EJA, Vacinação e ISS dividiram o Display sem que nenhum tema passasse de 27% do volume, mantendo a linha como mural de serviços.</div><div class="t" style="display:none"></div></div>
-      <div class="dc"><div class="acc" style="background:var(--black)"></div><div class="num">05</div><div class="m">103,07%</div><div class="t">TikTok encerrou acima da meta, ainda ativa</div><div class="x">A campanha superou o contratado, mas segue tecnicamente no ar porque o acesso da agência à conta é apenas de leitura. A desativação será feita manualmente.</div></div>
-      <div class="dc"><div class="acc" style="background:#8fb0ff"></div><div class="num">06</div><div class="t">Próximo ciclo</div><div class="x">Vamos: (1) desativar manualmente a campanha do TikTok assim que o novo flight for definido; (2) renovar os criativos de Vet. Móvel e Agasalho para o próximo ciclo, dado o volume que tiveram neste flight; (3) equilibrar o Display dando mais espaço aos temas de menor volume, como Vacinação e ISS; (4) manter a frequência de Visitas ao Perfil monitorada semanalmente para evitar saturação no próximo período.</div></div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <div class="eyebrow">Pensando no Futuro</div>
-    <h2>Encaminhamentos para o próximo flight</h2>
-    <p class="sub">Ações operacionais que a agência vai tomar a partir do que os dados deste período mostraram.</p>
-    <div class="grid g2" style="margin-top:26px">
-      <div class="card"><span class="tag t-blue">Meta TD</span><div style="font-weight:700;color:var(--ink);margin:10px 0 8px;font-size:1.05rem">Manter o equilíbrio entre Engajamento e Alcance</div><div style="font-size:.92rem;color:#444">As duas linhas fecharam com margem semelhante sobre a meta (100,65% e 100,80%). Vamos manter essa proporção de investimento no próximo flight e acompanhar a frequência de cada campanha isoladamente.</div></div>
-      <div class="card"><span class="tag t-purple">Visitas ao Perfil</span><div style="font-weight:700;color:var(--ink);margin:10px 0 8px;font-size:1.05rem">Renovar criativos e observar a frequência</div><div style="font-size:.92rem;color:#444">Com frequência de 2,41×, ainda há espaço antes de qualquer sinal de saturação. Vamos renovar os criativos da linha para o próximo ciclo e seguir monitorando a frequência semana a semana.</div></div>
-      <div class="card"><span class="tag t-green">Display</span><div style="font-weight:700;color:var(--ink);margin:10px 0 8px;font-size:1.05rem">Redistribuir peso entre os seis temas</div><div style="font-size:.92rem;color:#444">Ceprocamp e Mario Gatti concentraram quase metade do volume. Vamos ajustar a distribuição de veiculação para dar mais espaço a Vacinação e Campanha ISS no próximo período.</div></div>
-      <div class="card"><span class="tag t-black">TikTok</span><div style="font-weight:700;color:var(--ink);margin:10px 0 8px;font-size:1.05rem">Desativar e planejar o próximo lote de criativos</div><div style="font-size:.92rem;color:#444">Vamos desativar manualmente a campanha encerrada e usar a margem observada neste flight (103,07% da meta) para calibrar o próximo lote de criativos com mais precisão.</div></div>
+      <div class="dc"><div class="acc" style="background:var(--blue)"></div><div class="num">Meta Ads</div><div class="t" style="margin-top:8px">Aproximou a Prefeitura do dia a dia da população</div><div class="x">O criativo do Consultório Móvel Veterinário, o mais visto do flight, levou um serviço real da cidade direto ao feed de quem mora nela. É a plataforma mais eficiente para colocar rosto e proximidade na comunicação institucional.</div></div>
+      <div class="dc"><div class="acc" style="background:var(--green)"></div><div class="num">Google Ads</div><div class="t" style="margin-top:8px">Deu visibilidade constante aos serviços do dia a dia</div><div class="x">Display e YouTube sustentaram sozinhos temas de serviço público, como Ceprocamp, vacinação e tributos, que dependem inteiramente de mídia paga para chegar ao público, mantendo a cidade informada sobre o que está disponível para ela.</div></div>
+      <div class="dc"><div class="acc" style="background:var(--black)"></div><div class="num">TikTok Ads</div><div class="t" style="margin-top:8px">Ampliou o alcance da campanha entre público mais jovem</div><div class="x">Com criativos como "156" e "Não usa, doa.", foi a plataforma que levou as pautas de Temas Diversos a um público que dificilmente seria alcançado só pelas outras três frentes.</div></div>
     </div>
   </div>
 </section>
@@ -382,20 +401,22 @@
     <div class="grid g3" style="margin-top:26px">
       <div class="card"><div style="font-weight:800;color:var(--ink);margin-bottom:8px">Performance</div><div style="font-size:.9rem;color:var(--muted)">Dados obtidos diretamente das APIs do Meta Ads, Google Ads e TikTok Ads, com granularidade por campanha, ad group e criativo, referentes ao período de 07/07 a 05/08/2026.</div></div>
       <div class="card"><div style="font-weight:800;color:var(--ink);margin-bottom:8px">Metas contratadas</div><div style="font-size:.9rem;color:var(--muted)">Metas por linha conforme contratado com a Prefeitura Municipal de Campinas, conferidas uma a uma contra a entrega apurada em cada plataforma.</div></div>
-      <div class="card"><div style="font-weight:800;color:var(--ink);margin-bottom:8px">Percepção pública</div><div style="font-size:.9rem;color:var(--muted)">Não há relatório de monitoramento ou pesquisa de sentimento disponível para este período. A leitura de imprensa desta prestação de contas se baseia em clipagem de notícias públicas (Hora Campinas, ACidade ON Campinas, Todo Dia, Correio Popular/RAC, ACICAMPINAS e campinas.sp.gov.br), sem classificação de sentimento.</div></div>
+      <div class="card"><div style="font-weight:800;color:var(--ink);margin-bottom:8px">Percepção pública</div><div style="font-size:.9rem;color:var(--muted)">A leitura de imprensa desta prestação de contas vem de clipagem feita com mecanismos de inteligência artificial, cruzada com os dados de mídia paga do período, reunindo o que a imprensa de Campinas noticiou (Hora Campinas, ACidade ON Campinas, Todo Dia, Correio Popular/RAC, ACICAMPINAS e campinas.sp.gov.br).</div></div>
     </div>
     <div class="ins"><div class="x" style="font-style:italic">Nenhum número ou citação deste relatório foi gerado ou estimado: cada dado é rastreável à sua fonte original e foi conferido antes da publicação.</div></div>
   </div>
 </section>
 
 <footer>
-  <div class="flogos">
-    <img class="pref" src="assets/logo-campinas.jpg" alt="Prefeitura Municipal de Campinas" onerror="this.style.display='none'">
-    <img class="esq" src="assets/logo-esquina.png" alt="Esquina" onerror="this.style.display='none'">
+  <div class="wrap">
+    <div class="flogos">
+      <img class="esq" src="assets/logo-esquina-branco.png" alt="Esquina" onerror="this.style.display='none'">
+      <span class="footer-div"></span>
+      <img class="pref" src="assets/Logo Campinas.jpg" alt="Prefeitura de Campinas" onerror="this.style.display='none'">
+    </div>
+    <p>Prestação de Contas · Campanha Temas Diversos · 07/07 a 05/08 de 2026</p>
+    <p style="margin-top:8px;color:#7C86C4">Prefeitura Municipal de Campinas · Comunicação institucional</p>
   </div>
-  <h2 style="font-size:1.5rem;color:#fff">Temas Diversos · 07/07 a 05/08 de 2026</h2>
-  <p style="max-width:640px;margin:14px auto 0;color:rgba(255,255,255,.8);font-size:.98rem">Flight encerrado com as seis linhas contratadas cumpridas e 6.536.333 impressões entregues em Meta Ads, Google Ads e TikTok Ads.</p>
-  <div style="font-size:.78rem;opacity:.7;margin-top:20px">Prestação de Contas · Esquina Comunicação Online</div>
 </footer>
 
 <script>
@@ -404,19 +425,19 @@ const TIP={backgroundColor:'#fff',titleColor:'#111',bodyColor:'#555',borderColor
 const BR=v=>v.toLocaleString('pt-BR');
 
 const DIAS=['07/07','08/07','09/07','10/07','11/07','12/07','13/07','14/07','15/07','16/07','17/07','18/07','19/07','20/07','21/07','22/07','23/07','24/07','25/07','26/07','27/07','28/07','29/07','30/07','31/07','01/08','02/08','03/08','04/08'];
-const ENGAJ=[4463,16250,16429,16580,16593,19786,20923,18602,17327,13172,13836,15723,19509,18961,25852,27467,21296,21621,32040,35749,21020,11052,10637,9993,7811,7226,9777,14240,3230];
-const ALCANCE=[32637,92372,104005,107946,114922,111628,74785,54152,74198,62839,49003,43590,57628,54706,67435,75660,75734,59519,26512,34854,62378,75776,60703,55962,59010,73338,99528,79072,11573];
-const VP=[13735,38759,38780,41368,40476,48579,42406,41084,35032,33836,31576,32810,36952,37848,34391,28243,28993,29366,31835,38072,33721,27805,21597,21546,23606,27163,38313,44432,5420];
+const IMPR=[37100,108622,120434,124526,131515,131414,95708,72754,91525,76011,62839,59313,77137,73667,93287,103127,97030,81140,58552,70603,83398,86828,71340,65955,66821,80564,109305,93312,14803];
+const ALC=[32608,87386,95941,100707,106009,101749,79933,64367,77339,67291,55400,52398,63557,63793,72484,80509,74963,67551,49820,59672,69032,71316,60302,55309,55662,68843,92552,77770,13822];
+const VIEWS=[27,99,189,229,287,253,177,166,223,192,104,105,140,82,31,1,2,2,1,10,35,96,54,63,63,114,168,109,11];
 
 new Chart(document.getElementById('chartDaily'),{type:'line',
   data:{labels:DIAS,datasets:[
-    {label:'Alcance',data:ALCANCE,borderColor:'#1A3CFF',backgroundColor:'rgba(26,60,255,.08)',fill:true,tension:.3,pointRadius:0,borderWidth:2},
-    {label:'Visitas ao Perfil',data:VP,borderColor:'#9C27B0',backgroundColor:'rgba(156,39,176,.06)',fill:true,tension:.3,pointRadius:0,borderWidth:2},
-    {label:'Engajamento',data:ENGAJ,borderColor:'#0A0A5C',backgroundColor:'rgba(10,10,92,.06)',fill:true,tension:.3,pointRadius:0,borderWidth:2}
+    {label:'Impressões',data:IMPR,borderColor:'#1A3CFF',backgroundColor:'rgba(26,60,255,.08)',fill:true,tension:.3,pointRadius:0,borderWidth:2},
+    {label:'Alcance',data:ALC,borderColor:'#0A0A5C',backgroundColor:'rgba(10,10,92,.06)',fill:true,tension:.3,pointRadius:0,borderWidth:2},
+    {label:'Visualizações',data:VIEWS,borderColor:'#00C2A8',backgroundColor:'rgba(0,194,168,.15)',fill:true,tension:.3,pointRadius:0,borderWidth:2,yAxisID:'y2'}
   ]},
   options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},
     plugins:{legend:{position:'bottom',labels:{font:{size:11,weight:'600'},color:'#444',boxWidth:12}},tooltip:{...TIP,displayColors:true,callbacks:{label:c=>' '+c.dataset.label+': '+BR(c.parsed.y)}}},
-    scales:{x:{grid:{display:false},border:{display:false},ticks:{font:{size:9},color:'#555',maxRotation:0,autoSkip:true,maxTicksLimit:12}},y:{grid:{color:'rgba(0,0,0,.04)'},border:{display:false},ticks:{callback:v=>v>=1000?Math.round(v/1000)+'K':v,font:{size:10},color:'#555'}}}}});
+    scales:{x:{grid:{display:false},border:{display:false},ticks:{font:{size:9},color:'#555',maxRotation:0,autoSkip:true,maxTicksLimit:12}},y:{grid:{color:'rgba(0,0,0,.04)'},border:{display:false},ticks:{callback:v=>v>=1000?Math.round(v/1000)+'K':v,font:{size:10},color:'#555'}}},y2:{position:'right',grid:{display:false},border:{display:false},ticks:{font:{size:10},color:'#00C2A8'}}}});
 
 new Chart(document.getElementById('chartPautas'),{type:'doughnut',
   data:{labels:['Ceprocamp','Mario Gatti','Vet. Móvel','EJA 29 de Julho','Vacinação','Campanha ISS'],
