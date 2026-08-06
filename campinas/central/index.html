@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prefeitura de Campinas, Central de Relatórios</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue:#1A3CFF; --navy:#0A0A5C; --teal:#17A697; --purple:#9C27B0; --orange:#00994D;
+    --bg:#F4F6FF; --ink:#0A0A5C; --muted:#6a6a80; --line:rgba(10,10,92,.10);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',sans-serif;background:var(--bg);color:#333;line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1060px;margin:0 auto;padding:0 28px}
+  nav{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.93);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  nav .in{max-width:1060px;margin:0 auto;padding:0 28px;height:64px;display:flex;align-items:center;gap:16px}
+  nav img{height:32px;border-radius:6px}
+  nav .div{width:1px;height:22px;background:var(--line)}
+  nav .cliente{font-weight:700;color:var(--ink);font-size:.92rem}
+  nav .cliente span{display:block;font-size:.72rem;font-weight:500;color:var(--muted)}
+
+  .hero{background:linear-gradient(135deg,#060630,#0A0A5C 48%,#0D1B6E 76%,#1A3CFF);color:#fff;padding:70px 0 64px}
+  .hero-logo{height:52px;background:#fff;border-radius:9px;padding:6px 9px;display:inline-block;margin-bottom:34px}
+  .badge{display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);color:#fff;font-size:.7rem;font-weight:700;padding:7px 14px;border-radius:20px;letter-spacing:.05em;text-transform:uppercase}
+  h1{font-size:2.6rem;font-weight:800;letter-spacing:-.03em;line-height:1.1;margin:20px 0 14px}
+  .hero p{color:rgba(255,255,255,.78);font-size:1rem;line-height:1.65;max-width:680px}
+
+  section{padding:56px 0 12px}
+  section:last-of-type{padding-bottom:70px}
+
+  /* MONTH TABS */
+  .tabs{display:flex;align-items:center;gap:28px;border-bottom:1px solid var(--line);margin-bottom:26px}
+  .tab{display:flex;align-items:center;gap:8px;background:none;border:none;cursor:pointer;padding:0 0 14px;font-family:inherit;font-size:.92rem;font-weight:700;color:var(--muted);position:relative;transition:color .15s}
+  .tab .dot{width:7px;height:7px;border-radius:50%;background:var(--muted)}
+  .tab .novo{font-size:.6rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;background:rgba(23,166,151,.12);color:var(--teal);padding:2px 8px;border-radius:20px}
+  .tab.active{color:var(--blue)}
+  .tab.active .dot{background:var(--blue)}
+  .tab.active::after{content:'';position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--blue)}
+  .tab:hover{color:var(--ink)}
+
+  /* PERIOD PILLS */
+  .pills{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px}
+  .pill{display:flex;align-items:center;gap:7px;background:#fff;border:1px solid var(--line);border-radius:100px;padding:9px 18px;font-size:.82rem;font-weight:700;color:var(--ink);cursor:pointer;transition:.15s;font-family:inherit}
+  .pill .dot{width:6px;height:6px;border-radius:50%;background:var(--muted)}
+  .pill:hover{border-color:rgba(26,60,255,.3)}
+  .pill.active{background:var(--blue);border-color:var(--blue);color:#fff}
+  .pill.active .dot{background:#fff}
+  .pill.consolidado{border:1.5px dashed var(--orange);color:var(--orange)}
+  .pill.consolidado .dot{background:var(--orange)}
+  .pill.consolidado.active{background:var(--orange);border-color:var(--orange);border-style:solid;color:#fff}
+  .pill.consolidado.active .dot{background:#fff}
+
+  /* REPORT PANEL */
+  .panel{
+    background:#fff;border:1px solid var(--line);border-radius:16px;padding:28px 30px;
+    box-shadow:0 2px 14px rgba(10,10,92,.06);display:flex;align-items:center;gap:26px;
+    position:relative;overflow:hidden;text-decoration:none;color:inherit
+  }
+  .panel::before{content:'';position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--blue)}
+  .panel.m::before{background:var(--purple)}
+  .panel.r::before{background:var(--teal)}
+  .panel.e::before{background:var(--orange)}
+  .panel-date{flex:0 0 auto;width:110px;text-align:center;border-right:1px solid var(--line);padding-right:22px}
+  .panel-tag{font-size:.64rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--blue)}
+  .panel.m .panel-tag{color:var(--purple)}
+  .panel.r .panel-tag{color:var(--teal)}
+  .panel.e .panel-tag{color:var(--orange)}
+  .panel-range{font-size:.98rem;font-weight:800;color:var(--ink);margin-top:5px}
+  .panel-year{font-size:.74rem;color:var(--muted);margin-top:2px}
+  .panel-body{flex:1}
+  .panel-body h3{font-size:1.12rem;font-weight:800;color:var(--ink);margin-bottom:6px}
+  .panel-body p{font-size:.88rem;color:var(--muted);line-height:1.55}
+  .chips{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+  .chip{font-size:.66rem;font-weight:700;letter-spacing:.03em;text-transform:uppercase;padding:4px 10px;border-radius:20px}
+  .chip-meta{background:rgba(156,39,176,.1);color:var(--purple)}
+  .chip-google{background:rgba(0,153,77,.1);color:var(--orange)}
+  .chip-yt{background:rgba(204,0,0,.1);color:#CC0000}
+  .chip-tiktok{background:rgba(17,17,17,.08);color:#111}
+  .chip-pdf{background:rgba(26,60,255,.09);color:var(--blue)}
+  .panel-go{flex:0 0 auto;display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;text-decoration:none;font-weight:700;font-size:.86rem;padding:11px 20px;border-radius:11px;transition:.15s}
+  .panel-go:hover{background:var(--navy)}
+
+  .note{margin-top:30px;background:linear-gradient(135deg,rgba(26,60,255,.045),rgba(23,166,151,.045));border:1px solid rgba(26,60,255,.14);border-left:4px solid var(--blue);border-radius:13px;padding:20px 24px}
+  .note-t{font-size:.66rem;font-weight:800;text-transform:uppercase;letter-spacing:.09em;color:var(--blue);margin-bottom:7px}
+  .note p{font-size:.88rem;color:#3a3a4a;line-height:1.65}
+
+  footer{background:#060630;padding:42px 0;text-align:center}
+  footer img{height:24px;opacity:.9}
+  footer p{color:rgba(255,255,255,.52);font-size:.76rem;margin-top:12px;line-height:1.7}
+
+  @media(max-width:820px){
+    h1{font-size:1.9rem}
+    .tabs{gap:20px;overflow-x:auto}
+    .panel{flex-direction:column;align-items:flex-start;gap:14px}
+    .panel-date{border-right:none;width:auto;text-align:left;padding-right:0}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="in">
+    <img src="assets/logo-campinas.jpg" alt="Prefeitura de Campinas">
+    <div class="div"></div>
+    <div class="cliente">Prefeitura Municipal de Campinas<span>Central de relatórios</span></div>
+  </div>
+</nav>
+
+<section class="hero" style="padding-top:52px">
+  <div class="wrap">
+    <img src="assets/logo-campinas.jpg" class="hero-logo" alt="Prefeitura de Campinas">
+    <span class="badge">Meta Ads &middot; Google Ads &middot; YouTube &middot; TikTok &middot; 2026</span>
+    <h1>Central de relatórios</h1>
+    <p>Todos os relatórios de performance da campanha Temas Diversos da Prefeitura de Campinas reunidos em um só lugar, organizados por mês, do mais recente para o mais antigo.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+
+    <div class="tabs" id="tabs"></div>
+    <div class="pills" id="pills"></div>
+    <div id="panel-slot"></div>
+
+    <div class="note">
+      <div class="note-t">Como esta central funciona</div>
+      <p>Os relatórios estão agrupados por mês, do mais recente para o mais antigo. Cada mês reúne os boletins semanais do período e o fechamento consolidado do flight, quando o ciclo se encerra naquele mês. Clique no mês para ver os períodos disponíveis, e no período para abrir o relatório.</p>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <img src="assets/logo-esquina-branco.png" alt="Esquina">
+  <p>Central de Relatórios, Esquina Comunicação Online<br>Prefeitura Municipal de Campinas</p>
+</footer>
+
+<script>
+const DATA = {
+  "junho": {
+    "label": "Junho", "novo": false,
+    "periodos": [
+      {
+        "id":"jun-0915","tag":"Semanal","tipo":"r","range":"09 a 15/06","ano":"2026",
+        "titulo":"Boletim Semanal, Temas Diversos",
+        "desc":"Acompanhamento semanal de entrega em Meta, Google Display, YouTube e TikTok dentro do flight em andamento.",
+        "chips":["meta","google","yt","tiktok"],
+        "href":"../semanal/0915-jun-2026/index.html"
+      },
+      {
+        "id":"jun-1621","tag":"Semanal","tipo":"r","range":"16 a 21/06","ano":"2026",
+        "titulo":"Boletim Semanal, Temas Diversos",
+        "desc":"Acompanhamento semanal de entrega em Meta, Google Display, YouTube e TikTok dentro do flight em andamento.",
+        "chips":["meta","google","yt","tiktok"],
+        "href":"../semanal/1621-jun-2026/index.html"
+      }
+    ]
+  },
+  "julho": {
+    "label": "Julho", "novo": false,
+    "periodos": [
+      {
+        "id":"jul-0714","tag":"Semanal","tipo":"r","range":"07 a 14/07","ano":"2026",
+        "titulo":"Boletim Semanal, Temas Diversos",
+        "desc":"Acompanhamento semanal de entrega em Meta, Google Display, YouTube e TikTok dentro do flight em andamento.",
+        "chips":["meta","google","yt","tiktok"],
+        "href":"../semanal/0714-jul-2026/index.html"
+      },
+      {
+        "id":"jul-252anos","tag":"Especial","tipo":"e","range":"29/06 a 14/07","ano":"2026",
+        "titulo":"252 Anos de Campinas",
+        "desc":"Campanha especial de aniversário da cidade, com 2,47 milhões de impressões entregues e 106% da meta contratada.",
+        "chips":["meta","pdf"],
+        "href":"../extras/252anos/index.html"
+      },
+      {
+        "id":"jul-consolidado","tag":"Consolidado","tipo":"m","range":"08/06 a 06/07","ano":"2026","consolidado":true,
+        "titulo":"Relatório Mensal, Temas Diversos",
+        "desc":"Fechamento do ciclo com 5,67 milhões de impressões entregues, 113% da meta contratada em quatro canais.",
+        "chips":["meta","google","yt","tiktok","pdf"],
+        "href":"../mensal/08jun-06jul-2026/index.html"
+      }
+    ]
+  },
+  "agosto": {
+    "label": "Agosto", "novo": true,
+    "periodos": [
+      {
+        "id":"ago-consolidado","tag":"Consolidado","tipo":"m","range":"07/07 a 05/08","ano":"2026","consolidado":true,
+        "titulo":"Prestação de Contas, Temas Diversos",
+        "desc":"Fechamento do flight com 5,59 milhões de impressões entregues em quatro canais, 111% da meta contratada. Inclui repercussão na imprensa e diagnóstico do período.",
+        "chips":["meta","google","yt","tiktok","pdf"],
+        "href":"../mensal/07julho-05agosto/index.html"
+      }
+    ]
+  }
+};
+
+const CHIP_LABEL = {meta:"Meta Ads",google:"Display",yt:"YouTube",tiktok:"TikTok",pdf:"PDF disponível"};
+const CHIP_CLASS = {meta:"chip-meta",google:"chip-google",yt:"chip-yt",tiktok:"chip-tiktok",pdf:"chip-pdf"};
+const MONTH_ORDER = ["junho","julho","agosto"];
+
+let activeMonth = "agosto";
+let activePeriodo = {};
+MONTH_ORDER.forEach(m => activePeriodo[m] = DATA[m].periodos[DATA[m].periodos.length-1].id);
+
+function renderTabs(){
+  const el = document.getElementById('tabs');
+  el.innerHTML = MONTH_ORDER.map(m => {
+    const d = DATA[m];
+    return `<button class="tab${m===activeMonth?' active':''}" data-month="${m}">
+      <span class="dot"></span>${d.label.toUpperCase()}
+      ${d.novo?'<span class="novo">Novo</span>':''}
+    </button>`;
+  }).join('');
+  el.querySelectorAll('.tab').forEach(btn=>btn.addEventListener('click',()=>{
+    activeMonth = btn.dataset.month;
+    renderTabs(); renderPills(); renderPanel();
+  }));
+}
+
+function renderPills(){
+  const el = document.getElementById('pills');
+  const periodos = DATA[activeMonth].periodos;
+  el.innerHTML = periodos.map(p => {
+    const active = activePeriodo[activeMonth] === p.id;
+    const cls = ['pill'];
+    if(p.consolidado) cls.push('consolidado');
+    if(active) cls.push('active');
+    return `<button class="${cls.join(' ')}" data-id="${p.id}"><span class="dot"></span>${p.consolidado ? 'Consolidado '+DATA[activeMonth].label : p.range}</button>`;
+  }).join('');
+  el.querySelectorAll('.pill').forEach(btn=>btn.addEventListener('click',()=>{
+    activePeriodo[activeMonth] = btn.dataset.id;
+    renderPills(); renderPanel();
+  }));
+}
+
+function renderPanel(){
+  const p = DATA[activeMonth].periodos.find(x=>x.id===activePeriodo[activeMonth]);
+  const chips = p.chips.map(c=>`<span class="chip ${CHIP_CLASS[c]}">${CHIP_LABEL[c]}</span>`).join('');
+  document.getElementById('panel-slot').innerHTML = `
+    <a class="panel ${p.tipo}" href="${p.href}">
+      <div class="panel-date">
+        <div class="panel-tag">${p.tag}</div>
+        <div class="panel-range">${p.range}</div>
+        <div class="panel-year">${p.ano}</div>
+      </div>
+      <div class="panel-body">
+        <h3>${p.titulo}</h3>
+        <p>${p.desc}</p>
+        <div class="chips">${chips}</div>
+      </div>
+      <span class="panel-go">Abrir relatório &#8594;</span>
+    </a>`;
+}
+
+renderTabs(); renderPills(); renderPanel();
+</script>
+
+</body>
+</html>
