@@ -45,17 +45,19 @@ h1,h2{letter-spacing:-.02em;line-height:1.1}
 .btn-pdf svg{width:15px;height:15px}
 
 /* HERO */
-.hero{background:linear-gradient(135deg,#060630,#0A0A5C,#0D1B6E,#1A3CFF);color:#fff;padding:96px 0 88px;position:relative;overflow:hidden}
-.hero:after{content:"";position:absolute;right:-120px;top:-120px;width:460px;height:460px;background:radial-gradient(circle,rgba(23,166,151,.28),transparent 70%);border-radius:50%}
-.hero-logo{display:block;height:72px;width:auto;border-radius:12px;margin-bottom:22px;box-shadow:0 6px 22px rgba(0,0,0,.28)}
-.hbadge{display:inline-block;background:rgba(23,166,151,.18);border:1px solid rgba(23,166,151,.4);color:#7FEAD9;padding:6px 14px;border-radius:100px;font-size:.74rem;font-weight:600;letter-spacing:.04em}
-.htitle{font-size:clamp(2.3rem,6vw,4rem);font-weight:800;letter-spacing:-.03em;margin:22px 0 10px;max-width:900px}
-.hmeta{color:#B9C2FF;font-size:1rem;margin-bottom:38px}
-.hpills{display:flex;flex-wrap:wrap;gap:16px}
-.hpill{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:18px 22px;min-width:170px;backdrop-filter:blur(4px)}
-.hpill .v{font-size:2rem;font-weight:800;letter-spacing:-.02em;line-height:1}
-.hpill .l{font-size:.74rem;color:#B9C2FF;margin-top:8px;text-transform:uppercase;letter-spacing:.08em}
-.hpill.tl .v{color:#7FEAD9}.hpill.pu .v{color:#E0A6F5}
+.hero{background:linear-gradient(100deg,rgba(6,6,48,.95),rgba(10,10,92,.88) 45%,rgba(26,60,255,.55)),url(assets/hero-campinas.jpg);background-size:cover;background-position:center;color:#fff;padding:44px 0 40px;position:relative;overflow:hidden}
+.htop{font-size:.86rem;font-weight:600;color:#fff;opacity:.9}
+.heyebrow{display:flex;align-items:center;gap:12px;margin:26px 0 14px;font-size:.76rem;font-weight:700;letter-spacing:.1em;color:#AFC0FF}
+.heyebrow .dash{width:28px;height:2px;background:#5B74FF}
+.htitle{font-size:clamp(2.1rem,5.2vw,3.4rem);font-weight:800;letter-spacing:-.03em;line-height:1.05;margin:0 0 18px}
+.htitle .hi{color:#6C8CFF}
+.hmeta{font-size:1rem;font-weight:700;margin-bottom:4px}
+.hmeta2{color:#B9C2FF;font-size:.92rem;margin-bottom:36px}
+.hpills{display:flex;flex-wrap:wrap;gap:40px}
+.hpill{min-width:150px}
+.hpill .v{font-size:1.9rem;font-weight:800;letter-spacing:-.02em;line-height:1}
+.hpill .l{font-size:.76rem;color:#B9C2FF;margin-top:8px;letter-spacing:.01em;max-width:170px}
+.hpill.tl .v{color:#AFC0FF}.hpill.pu .v{color:#AFC0FF}
 
 /* ENCANTAMENTO */
 .enc{background:linear-gradient(160deg,#EEF1FF,#F4F6FF 45%,#EBF7F5)}
@@ -211,14 +213,16 @@ tr.bonus td{color:#7A1E8C}
 <!-- HERO -->
 <header class="hero">
   <div class="wrap">
-    <img class="hero-logo" src="assets/logo-campinas.jpg" alt="Prefeitura de Campinas">
-    <span class="hbadge">Prestação de Contas · Campanha Temas Diversos</span>
-    <h1 class="htitle">Um flight de comunicação institucional para Campinas</h1>
-    <p class="hmeta">Prefeitura Municipal de Campinas · 07 de julho a 05 de agosto de 2026</p>
+    <div class="htop">Prestação de Contas · Fechamento do flight</div>
+    <div class="heyebrow"><span class="dash"></span>TEMAS DIVERSOS · META ADS, GOOGLE ADS E TIKTOK ADS</div>
+    <h1 class="htitle">Prestação de<br><span class="hi">Contas</span></h1>
+    <p class="hmeta">Campanha Temas Diversos · 07/07 a 05/08/2026</p>
+    <p class="hmeta2">Prefeitura Municipal de Campinas</p>
     <div class="hpills">
       <div class="hpill"><div class="v" data-count="5588589">0</div><div class="l">Impressões entregues</div></div>
-      <div class="hpill tl"><div class="v"><span data-count="111">0</span>%</div><div class="l">da meta contratada</div></div>
-      <div class="hpill pu"><div class="v" data-count="14875">0</div><div class="l">Visitas ao perfil</div></div>
+      <div class="hpill tl"><div class="v" data-count="1182832">0</div><div class="l">Visualizações (Meta, Google e TikTok)</div></div>
+      <div class="hpill pu"><div class="v" data-count="3506">0</div><div class="l">Novos seguidores no Meta Ads</div></div>
+      <div class="hpill pu"><div class="v" data-count="4090">0</div><div class="l">Novos inscritos no YouTube</div></div>
     </div>
   </div>
 </header>
@@ -400,6 +404,7 @@ tr.bonus td{color:#7A1E8C}
       <div class="kc tk fade-in"><div class="kc-lbl">Impressões</div><div class="kc-val" data-count="1133740">0</div><div class="kc-sub">113,37% da meta contratada</div></div>
       <div class="kc tk fade-in"><div class="kc-lbl">Meta contratada</div><div class="kc-val" data-count="1000000">0</div><div class="kc-sub">Superada em 133,7 mil impressões</div></div>
       <div class="kc tk fade-in"><div class="kc-lbl">Temas Diversos</div><div class="kc-val">1º</div><div class="kc-sub">Linha que mais superou a meta no flight</div></div>
+      <div class="kc tk fade-in"><div class="kc-lbl">Visualizações</div><div class="kc-val" data-count="1120861">0</div><div class="kc-sub">Vídeo assistido, atribuído à campanha</div></div>
     </div>
     <div class="chart-box fade-in">
       <div class="chart-title">Impressões por Criativo</div>
