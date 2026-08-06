@@ -189,43 +189,12 @@
 
 <section style="background:#fff;border-top:1px solid rgba(10,10,92,.06);border-bottom:1px solid rgba(10,10,92,.06)">
   <div class="wrap">
-    <div class="eyebrow">Metas por Linha</div>
-    <h2>Progresso de cada frente</h2>
-    <p class="sub">Nenhuma linha ficou abaixo do contratado. O TikTok foi a frente que mais superou a meta, com 103,07%.</p>
-    <div style="margin-top:30px">
-      <div class="barrow">
-        <div class="top"><span><strong>Engajamento</strong> (Meta Ads) · 487.165 de 484.000 impressões</span><span style="font-weight:700;color:var(--blue)">100,65%</span></div>
-        <div class="bt"><div class="bf" style="width:100%;background:var(--blue)"></div></div>
-      </div>
-      <div class="barrow">
-        <div class="top"><span><strong>Alcance</strong> (Meta Ads) · 1.951.465 de 1.936.000 impressões</span><span style="font-weight:700;color:var(--blue)">100,80%</span></div>
-        <div class="bt"><div class="bf" style="width:100%;background:var(--blue)"></div></div>
-      </div>
-      <div class="barrow">
-        <div class="top"><span><strong>Display</strong> (Google Ads) · 799.030 de 792.000 impressões</span><span style="font-weight:700;color:var(--green)">100,89%</span></div>
-        <div class="bt"><div class="bf" style="width:100%;background:var(--green)"></div></div>
-      </div>
-      <div class="barrow">
-        <div class="top"><span><strong>YouTube</strong> (Google Ads) · 1.217.189 de 1.210.000 impressões</span><span style="font-weight:700;color:var(--red)">100,59%</span></div>
-        <div class="bt"><div class="bf" style="width:100%;background:var(--red)"></div></div>
-      </div>
-      <div class="barrow" style="margin-bottom:0">
-        <div class="top"><span><strong>TikTok</strong> · 1.133.740 de 1.100.000 impressões</span><span style="font-weight:700;color:var(--black)">103,07%</span></div>
-        <div class="bt"><div class="bf" style="width:100%;background:var(--black)"></div></div>
-      </div>
-    </div>
-    <div class="ins"><div class="l">Leitura do progresso</div><div class="x">Nenhuma das cinco linhas contratadas deixou de entregar o combinado, um resultado consistente que mostra a comunicação da Prefeitura chegando de forma confiável à população em todas as frentes. Display, YouTube e TikTok fecharam com a maior folga sobre o contratado, e Meta Ads fechou com entrega calibrada, sinal de planejamento de mídia bem ajustado para levar os temas do dia a dia da cidade ao público certo.</div></div>
-  </div>
-</section>
-
-<section style="background:#fff;border-top:1px solid rgba(10,10,92,.06);border-bottom:1px solid rgba(10,10,92,.06)">
-  <div class="wrap">
     <div class="eyebrow">KPIs Consolidados</div>
     <h2>Métricas principais do flight</h2>
     <p class="sub">Meta Ads, Google Ads e TikTok Ads · Prefeitura Municipal de Campinas · 07/07 a 05/08/2026. Não inclui a linha bônus de Visitas ao Perfil, reportada em seção própria.</p>
     <div class="grid g3" style="margin-top:26px">
       <div class="card"><div class="kpi-lbl">Impressões totais</div><div class="kpi-val">5.588.589</div><div class="kpi-sub">Soma das cinco linhas contratadas, métrica somável</div></div>
-      <div class="card"><div class="kpi-lbl">Frequência · Engajamento</div><div class="kpi-val">3,15×</div><div class="kpi-sub">Meta Ads, campanha de Engajamento</div></div>
+      <div class="card"><div class="kpi-lbl">Engajamentos</div><div class="kpi-val">60.677</div><div class="kpi-sub">Meta Ads, únicas frentes com dado disponível</div></div>
       <div class="card"><div class="kpi-lbl">Visualizações</div><div class="kpi-val">1.182.832</div><div class="kpi-sub">Consolidado entre Meta Ads, Google Ads e TikTok Ads</div></div>
     </div>
   </div>
@@ -244,7 +213,7 @@
     </div>
     <div class="card" style="margin-top:20px">
       <div style="font-weight:700;color:var(--ink)">Impressões por dia · Meta Ads</div>
-      <div style="font-size:.82rem;color:var(--muted);margin-bottom:14px">Impressões, visualizações e alcance, 07/07 a 04/08/2026</div>
+      <div style="font-size:.82rem;color:var(--muted);margin-bottom:14px">Alcance, 07/07 a 04/08/2026</div>
       <div class="chart-box"><canvas id="chartDaily"></canvas></div>
     </div>
     <div class="ins"><div class="l">Importância da estratégia</div><div class="x">Meta Ads foi o canal que aproximou a Prefeitura do dia a dia de quem mora em Campinas: por rodar direto no feed do Facebook e Instagram, colocou serviços reais, como o Consultório Móvel Veterinário, diante da população de forma nativa, sem parecer publicidade tradicional. É o canal mais eficiente deste flight para comunicar ações da Prefeitura com proximidade e frequência.</div></div>
@@ -431,13 +400,11 @@ const VIEWS=[27,99,189,229,287,253,177,166,223,192,104,105,140,82,31,1,2,2,1,10,
 
 new Chart(document.getElementById('chartDaily'),{type:'line',
   data:{labels:DIAS,datasets:[
-    {label:'Impressões',data:IMPR,borderColor:'#1A3CFF',backgroundColor:'rgba(26,60,255,.08)',fill:true,tension:.3,pointRadius:0,borderWidth:2},
-    {label:'Alcance',data:ALC,borderColor:'#0A0A5C',backgroundColor:'rgba(10,10,92,.06)',fill:true,tension:.3,pointRadius:0,borderWidth:2},
-    {label:'Visualizações',data:VIEWS,borderColor:'#00C2A8',backgroundColor:'rgba(0,194,168,.15)',fill:true,tension:.3,pointRadius:0,borderWidth:2,yAxisID:'y2'}
+    {label:'Alcance',data:ALC,borderColor:'#1A3CFF',backgroundColor:'rgba(26,60,255,.08)',fill:true,tension:.3,pointRadius:0,borderWidth:2}
   ]},
   options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},
     plugins:{legend:{position:'bottom',labels:{font:{size:11,weight:'600'},color:'#444',boxWidth:12}},tooltip:{...TIP,displayColors:true,callbacks:{label:c=>' '+c.dataset.label+': '+BR(c.parsed.y)}}},
-    scales:{x:{grid:{display:false},border:{display:false},ticks:{font:{size:9},color:'#555',maxRotation:0,autoSkip:true,maxTicksLimit:12}},y:{grid:{color:'rgba(0,0,0,.04)'},border:{display:false},ticks:{callback:v=>v>=1000?Math.round(v/1000)+'K':v,font:{size:10},color:'#555'}}},y2:{position:'right',grid:{display:false},border:{display:false},ticks:{font:{size:10},color:'#00C2A8'}}}});
+    scales:{x:{grid:{display:false},border:{display:false},ticks:{font:{size:9},color:'#555',maxRotation:0,autoSkip:true,maxTicksLimit:12}},y:{grid:{color:'rgba(0,0,0,.04)'},border:{display:false},ticks:{callback:v=>v>=1000?Math.round(v/1000)+'K':v,font:{size:10},color:'#555'}}}}});
 
 new Chart(document.getElementById('chartPautas'),{type:'doughnut',
   data:{labels:['Ceprocamp','Mario Gatti','Vet. Móvel','EJA 29 de Julho','Vacinação','Campanha ISS'],
