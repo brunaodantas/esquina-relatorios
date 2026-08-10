@@ -74,8 +74,8 @@
   .foot{margin-top:auto;padding-top:14px;font-size:.68rem;color:var(--muted);display:flex;justify-content:space-between}
   .dark .foot{color:rgba(255,255,255,.55)}
   .foot .fl{display:flex;align-items:center;gap:10px}
-  .foot .fl img{height:15px;filter:invert(1);opacity:.55}
-  .dark .foot .fl img{filter:none;opacity:.7}
+  .foot .fl img{height:14px;mix-blend-mode:multiply;opacity:.7}
+  .dark .foot .fl img{filter:invert(1);mix-blend-mode:screen;opacity:.8}
 </style>
 </head>
 <body>
@@ -85,7 +85,7 @@
   <div class="sc">
     <div style="display:flex;align-items:center;gap:20px;margin-bottom:auto">
       <img src="assets/logoPMH.png" class="hero-logo" style="margin-bottom:0" alt="Prefeitura de Hortolândia">
-      <img src="assets/logo-esquina.png" style="height:30px;opacity:.92" alt="Esquina">
+      <img src="assets/logo-esquina.png" style="height:34px;filter:invert(1);mix-blend-mode:screen;opacity:.95" alt="Esquina">
     </div>
     <div class="eyebrow">Relatório Semanal · Meta Ads e TikTok · 03 a 09 de agosto de 2026</div>
     <h1>Relatório Semanal<br>de Performance</h1>
@@ -147,6 +147,10 @@
         <div class="kpi-val">4</div>
         <div class="kpi-sub">Segurança, Bairros, Planeta Rock e Semana Cultural</div>
       </div>
+    </div>
+    <div class="ins blue" style="margin-top:20px">
+      <div class="l">Como ler estes números</div>
+      <div class="x">A semana atingiu 347.986 pessoas diferentes no Meta Ads, com cada uma vendo o conteúdo 1,62 vez em média. É uma frequência baixa, o que significa que a verba está sendo usada para ampliar o público atingido e não para repetir a mensagem em quem já foi impactado. As visualizações de vídeo aparecem separadas por canal porque cada plataforma usa um critério próprio para contar o que é uma visualização: no Meta Ads o padrão é o ThruPlay, mais exigente, e no TikTok vale o critério da própria plataforma.</div>
     </div>
     <div class="foot"><span class="fl"><img src="assets/logo-esquina.png" alt="Esquina">03 a 09 de agosto de 2026</span><span>Prefeitura de Hortolândia</span></div>
   </div>
