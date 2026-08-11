@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Relatório de Performance — PMC Temas Diversos — 06-10 Ago 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+/* ===== ESQUINA DESIGN SYSTEM — TRADING DESK ===== */
+:root {
+  --esq-orange: #1A3CFF;
+  --esq-orange-dark: #1430CC;
+  --esq-orange-light: #4D66FF;
+  --esq-navy: #0A0A5C;
+  --esq-blue: #1A3CFF;
+  --esq-purple: #9C27B0;
+  --esq-yellow: #FFB300;
+  --esq-black: #111111;
+  --esq-dark: #1A1A1A;
+  --esq-gray-900: #F7F7F8;
+  --esq-gray-800: #EEEFF1;
+  --esq-gray-700: #DADCE0;
+  --esq-gray-600: #888888;
+  --esq-gray-400: #666666;
+  --esq-gray-200: #333333;
+  --esq-gray-100: #F2F2F2;
+  --esq-white: #FFFFFF;
+  --esq-success: #00994D;
+  --esq-danger: #CC3333;
+  --esq-warning: #CC8800;
+  --esq-info: #1A3CFF;
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-display: 'Inter', sans-serif;
+  --space-xs: 4px; --space-sm: 8px; --space-md: 16px; --space-lg: 24px;
+  --space-xl: 32px; --space-2xl: 48px; --space-3xl: 64px; --space-4xl: 96px;
+  --radius-sm: 6px; --radius-md: 12px; --radius-lg: 16px; --radius-xl: 24px;
+  --shadow-card: 0 1px 3px rgba(0,0,0,0.06), 0 4px 12px rgba(0,0,0,0.04);
+  --shadow-hover: 0 4px 16px rgba(26,60,255,0.12), 0 8px 32px rgba(0,0,0,0.06);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; overflow-x: hidden; }
+body { font-family: var(--font-primary); background: var(--esq-white); color: var(--esq-black); line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+
+.nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,255,255,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(0,0,0,0.07); padding: var(--space-md) var(--space-lg); display: flex; align-items: center; justify-content: space-between; }
+.nav-logo { display: flex; align-items: center; }
+.nav-logo img { height: 44px; width: auto; }
+.nav-links { display: flex; gap: var(--space-lg); list-style: none; }
+.nav-links a { color: var(--esq-gray-400); text-decoration: none; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; transition: color 0.3s; }
+.nav-links a:hover { color: var(--esq-orange); }
+
+.section { padding: var(--space-4xl) var(--space-lg); max-width: 1200px; margin: 0 auto; }
+.section-label { display: inline-flex; align-items: center; gap: var(--space-sm); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--esq-orange); margin-bottom: var(--space-md); }
+.section-label::before { content: ''; display: block; width: 20px; height: 2px; background: var(--esq-orange); }
+.section-title { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 700; line-height: 1.1; margin-bottom: var(--space-md); letter-spacing: -0.02em; color: var(--esq-black); }
+.section-subtitle { font-size: 1.1rem; color: var(--esq-gray-400); max-width: 600px; line-height: 1.7; }
+.section-divider { height: 1px; background: var(--esq-gray-800); margin: 0; }
+
+.hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: stretch; padding: 0; position: relative; overflow: hidden; }
+#hero > .section { width: 100%; }
+#hero .kpi-grid { grid-template-columns: repeat(4, 1fr); }
+.hero::after { content: ''; position: absolute; top: 20%; right: -10%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(26,60,255,0.06) 0%, transparent 70%); pointer-events: none; }
+.hero-badge { display: inline-flex; align-items: center; gap: var(--space-sm); padding: 6px 18px; border-radius: 100px; border: 1px solid rgba(26,60,255,0.3); background: rgba(26,60,255,0.07); color: #1A3CFF; font-size: 0.73rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: var(--space-lg); }
+.hero-title { font-size: clamp(3rem, 8vw, 6rem); font-weight: 700; line-height: 0.95; letter-spacing: -0.03em; margin-bottom: var(--space-lg); color: var(--esq-black); }
+.hero-subtitle { font-size: clamp(1rem, 2vw, 1.3rem); color: var(--esq-gray-400); max-width: 550px; line-height: 1.7; margin-bottom: var(--space-2xl); }
+.hero-meta { display: flex; gap: var(--space-2xl); flex-wrap: wrap; margin-top: var(--space-xl); }
+.hero-meta-item { display: flex; flex-direction: column; gap: 4px; }
+.hero-meta-label { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--esq-gray-600); }
+.hero-meta-value { font-size: 0.9rem; font-weight: 600; color: var(--esq-gray-200); }
+
+.kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-md); margin-top: var(--space-xl); }
+.kpi-card { background: var(--esq-gray-900); border: 1px solid rgba(0,0,0,0.06); border-radius: var(--radius-md); padding: var(--space-lg); transition: all 0.3s ease; position: relative; overflow: hidden; }
+.kpi-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--esq-orange); transform: scaleX(0); transition: transform 0.4s ease; }
+.kpi-card:hover { border-color: rgba(26,60,255,0.2); box-shadow: var(--shadow-hover); transform: translateY(-2px); }
+.kpi-card:hover::before { transform: scaleX(1); }
+.kpi-label { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--esq-gray-400); margin-bottom: var(--space-sm); }
+.kpi-value { font-size: 2rem; font-weight: 700; color: var(--esq-black); margin-bottom: var(--space-xs); }
+.kpi-change { font-size: 0.8rem; font-weight: 600; display: inline-flex; align-items: center; gap: 4px; }
+.kpi-change.positive { color: var(--esq-success); }
+.kpi-change.negative { color: var(--esq-danger); }
+.kpi-change.neutral { color: var(--esq-warning); }
+
+.platform-section { --accent: #1A3CFF; }
+#meta-td   { --accent: #1A3CFF; }
+#meta-vp   { --accent: #9C27B0; }
+#display   { --accent: #00994D; }
+#youtube   { --accent: #CC0000; }
+#tiktok    { --accent: #111111; }
+.platform-badge { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: 100px; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; margin-bottom: var(--space-lg); }
+.platform-badge.meta-td { background: rgba(26,60,255,0.10);  color: #1A3CFF; }
+.platform-badge.meta-vp { background: rgba(156,39,176,0.10); color: #9C27B0; }
+.platform-badge.display { background: rgba(0,153,77,0.10);   color: #00994D; }
+.platform-badge.youtube { background: rgba(204,0,0,0.10);    color: #CC0000; }
+.platform-badge.tiktok  { background: rgba(17,17,17,0.08);   color: #111111; }
+.platform-section .section-label { color: var(--accent); }
+.platform-section .section-label::before { background: var(--accent); }
+.platform-section .kpi-card::before { background: var(--accent); }
+
+.chart-container { background: var(--esq-gray-900); border: 1px solid rgba(0,0,0,0.06); border-radius: var(--radius-lg); padding: var(--space-xl); margin-bottom: var(--space-lg); }
+.chart-title { font-size: 1.2rem; font-weight: 700; color: var(--esq-black); }
+.chart-wrapper { position: relative; width: 100%; height: 320px; }
+.chart-wrapper canvas { width: 100% !important; height: 100% !important; }
+
+.demo-section { background: var(--esq-gray-900); border-radius: var(--radius-lg); padding: var(--space-xl); margin-top: var(--space-xl); }
+.demo-title { font-weight: 700; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--esq-gray-600); margin-bottom: var(--space-lg); }
+.demo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: var(--space-lg); }
+.demo-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--esq-gray-600); margin-bottom: 4px; }
+.demo-value { font-size: 1.35rem; font-weight: 700; color: var(--esq-gray-200); }
+.demo-sub { font-size: 0.73rem; color: var(--esq-gray-600); margin-top: 2px; }
+
+.diag-single { margin-top: var(--space-xl); }
+.diag-card { background: var(--esq-gray-900); border-radius: var(--radius-lg); padding: var(--space-xl); border-top: 3px solid transparent; }
+.diag-card.positive { border-top-color: var(--esq-success); }
+.diag-title { font-weight: 700; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: var(--space-md); }
+.diag-card.positive .diag-title { color: var(--esq-success); }
+.diag-list { list-style: none; padding: 0; margin: 0; }
+.diag-list li { display: flex; align-items: flex-start; gap: 10px; padding: 10px 0; border-bottom: 1px solid var(--esq-gray-800); font-size: 0.88rem; color: var(--esq-gray-200); line-height: 1.55; }
+.diag-list li:last-child { border-bottom: none; }
+.diag-list li::before { content: '\2713'; color: var(--esq-success); font-weight: 700; font-size: 0.82rem; line-height: 1.55; flex-shrink: 0; min-width: 14px; }
+.diag-note { font-size: 0.88rem; color: var(--esq-gray-200); line-height: 1.75; margin-top: var(--space-lg); }
+
+.context-block { background: var(--esq-gray-900); border-radius: var(--radius-md); padding: var(--space-lg) var(--space-xl); margin-top: var(--space-xl); }
+.context-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--esq-gray-600); margin-bottom: var(--space-sm); }
+.context-text { font-size: 0.95rem; color: var(--esq-gray-200); line-height: 1.75; }
+
+.footer { text-align: center; padding: var(--space-2xl) var(--space-lg); border-top: 1px solid rgba(0,0,0,0.08); margin-top: var(--space-4xl); }
+
+.btn-export { display: inline-flex; align-items: center; gap: 6px; padding: 8px 18px; background: var(--esq-orange); color: #fff; border: none; border-radius: 100px; font-family: var(--font-primary); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer; transition: all 0.25s ease; flex-shrink: 0; }
+.btn-export:hover { background: var(--esq-orange-dark); box-shadow: 0 4px 16px rgba(26,60,255,0.25); transform: translateY(-1px); }
+.btn-central { background: transparent; color: var(--esq-orange); border: 1px solid var(--esq-orange); text-decoration: none; }
+.btn-central:hover { background: rgba(26,60,255,0.08); color: var(--esq-orange); box-shadow: none; }
+
+/* fade-in nasce visível: a animação só acontece se o JS marcar .js-anim no html */
+.fade-in { opacity: 1; transform: none; }
+html.js-anim .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
+html.js-anim .fade-in.visible { opacity: 1; transform: translateY(0); }
+.count-up { display: inline-block; }
+
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .section { padding: var(--space-2xl) var(--space-md); }
+  .hero { padding: 0; min-height: 90vh; }
+  #hero .kpi-grid { grid-template-columns: 1fr 1fr; }
+  .kpi-grid { grid-template-columns: 1fr 1fr; }
+  .demo-grid { grid-template-columns: 1fr 1fr; }
+  .chart-wrapper { height: 250px; }
+}
+
+@media print {
+  * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+  body { background: #fff !important; color: #111 !important; font-size: 10pt; }
+  .nav, .btn-export { display: none !important; }
+  .fade-in { opacity: 1 !important; transform: none !important; }
+  @page { size: A4 landscape; margin: 15mm; }
+  .section { page-break-inside: auto !important; padding: 24px 40px !important; }
+  .section-divider { display: none !important; }
+  #hero .section { padding-top: 20px !important; padding-bottom: 20px !important; }
+  .hero { min-height: auto !important; padding: 0 !important; page-break-inside: avoid; break-inside: avoid; page-break-after: always; break-after: page; }
+  .hero::after { display: none !important; }
+  .platform-section { break-before: page; page-break-before: always; page-break-inside: auto; }
+  #aprendizados { break-before: page; page-break-before: always; page-break-inside: auto; }
+  .diag-card { page-break-inside: auto; break-inside: auto; }
+  .diag-list li { page-break-inside: avoid !important; break-inside: avoid !important; font-size: 0.72rem !important; line-height: 1.4 !important; padding: 5px 0 !important; }
+  .diag-title { font-size: 0.75rem !important; margin-bottom: 6px !important; }
+  .diag-note { font-size: 0.72rem !important; line-height: 1.4 !important; margin-top: 8px !important; }
+  .context-block { page-break-inside: avoid !important; break-inside: avoid !important; padding: 12px 16px !important; margin-top: 10px !important; }
+  .context-label { font-size: 0.6rem !important; margin-bottom: 3px !important; }
+  .context-text { font-size: 0.72rem !important; line-height: 1.45 !important; }
+  .footer { break-before: auto; page-break-before: auto; margin-top: 24px !important; min-height: 90vh !important; display: flex !important; align-items: center !important; justify-content: center !important; }
+  .kpi-grid { page-break-inside: avoid; break-inside: avoid; grid-template-columns: repeat(4, 1fr) !important; gap: 10px !important; margin-top: 10px !important; }
+  .kpi-card { page-break-inside: avoid; break-inside: avoid; padding: 10px 14px !important; }
+  .kpi-value { font-size: 1.5rem !important; }
+  .chart-container { page-break-inside: avoid; break-inside: avoid; padding: 10px 14px !important; overflow: hidden !important; margin-top: 6px !important; }
+  .chart-title { font-size: 0.85rem !important; margin-bottom: 6px !important; }
+  .chart-wrapper { page-break-inside: avoid; break-inside: avoid; height: 160px !important; max-height: 160px !important; }
+  .chart-wrapper canvas { display: block !important; position: relative !important; max-width: 100% !important; height: 160px !important; max-height: 160px !important; }
+  #youtube .chart-wrapper, #meta-td .chart-wrapper { height: 200px !important; max-height: 200px !important; }
+  #youtube .chart-wrapper canvas, #meta-td .chart-wrapper canvas { height: 200px !important; max-height: 200px !important; }
+  #meta-vp .chart-wrapper { height: 200px !important; max-height: 200px !important; }
+  #meta-vp .chart-wrapper canvas { height: 200px !important; max-height: 200px !important; }
+  .demo-section { margin-top: 6px !important; padding: 8px 14px !important; page-break-inside: avoid !important; break-inside: avoid !important; }
+  .demo-value { font-size: 0.85rem !important; }
+  .demo-grid { gap: 6px !important; grid-template-columns: repeat(4, 1fr) !important; }
+  .demo-title { margin-bottom: 4px !important; font-size: 0.65rem !important; }
+  .demo-label { font-size: 0.6rem !important; margin-bottom: 2px !important; }
+  .demo-sub { font-size: 0.6rem !important; }
+  .hero-title { font-size: 3rem !important; }
+  .section-label { margin-bottom: 4px !important; }
+  .section-title { font-size: 1.5rem !important; margin-bottom: 4px !important; }
+  .section-subtitle { font-size: 0.80rem !important; margin-bottom: 8px !important; }
+  .platform-badge { margin-bottom: 4px !important; }
+  .diag-single { margin-top: 12px !important; }
+  .diag-card { padding: 16px !important; }
+  .footer .section { flex-direction: column !important; align-items: center !important; justify-content: center !important; text-align: center !important; }
+  .footer p { text-align: center !important; }
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--esq-white); }
+::-webkit-scrollbar-thumb { background: var(--esq-gray-700); border-radius: 3px; }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-logo">
+    <img src="assets/logo-esquina.png" alt="Esquina" />
+  </div>
+  <div class="nav-links">
+    <a href="#meta-td">Meta TD</a>
+    <a href="#meta-vp">Meta VP</a>
+    <a href="#display">Display</a>
+    <a href="#youtube">YouTube</a>
+    <a href="#tiktok">TikTok</a>
+    <a href="#aprendizados">Aprendizados</a>
+  </div>
+  <div style="display:flex;align-items:center;gap:var(--space-sm);">
+    <a class="btn-export btn-central" href="https://esquina-relatorios.vercel.app/campinas/central/">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+      Central de Relatórios
+    </a>
+  <button class="btn-export" onclick="window.print()">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+    Exportar PDF
+  </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero" class="hero">
+  <div class="section" style="padding-top:120px;padding-bottom:var(--space-4xl);">
+    <span class="hero-badge">Temas Diversos &nbsp;·&nbsp; Boletim Semanal</span>
+    <h1 class="hero-title">Relatório de<br><span style="color:var(--esq-orange)">Performance</span></h1>
+    <p class="hero-subtitle">Prefeitura Municipal de Campinas</p>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Período</span>
+        <span class="hero-meta-value">6 a 10 de agosto de 2026</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Plataformas</span>
+        <span class="hero-meta-value">Meta · Display · YouTube · TikTok</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Agência</span>
+        <span class="hero-meta-value">Esquina</span>
+      </div>
+    </div>
+    <div class="kpi-grid fade-in" style="margin-top:var(--space-3xl);">
+      <div class="kpi-card">
+        <div class="kpi-label">IMPRESSÕES TOTAIS</div>
+        <div class="kpi-value count-up" data-target="876975" data-format="compact">+877,0K</div>
+        <div class="kpi-change neutral">Meta, Display, YouTube e TikTok</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">VISITAS AO PERFIL</div>
+        <div class="kpi-value count-up" data-target="2967" data-format="number">2.967</div>
+        <div class="kpi-change positive">Via campanha Visitas ao Perfil</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">NOVOS SEGUIDORES</div>
+        <div class="kpi-value count-up" data-target="1483" data-format="number">1.483</div>
+        <div class="kpi-change positive">Metade das visitas ao perfil</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">VISUALIZAÇÕES, YOUTUBE</div>
+        <div class="kpi-value count-up" data-target="8482" data-format="number">8.482</div>
+        <div class="kpi-change positive">Visualizações de TrueView</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- META TEMAS DIVERSOS -->
+<section id="meta-td" class="section platform-section fade-in">
+  <span class="platform-badge meta-td">&#11045; Meta Ads, Temas Diversos</span>
+  <div class="section-label">META ADS | ALCANCE E ENGAJAMENTO</div>
+  <h2 class="section-title">Meta, Temas Diversos</h2>
+  <p class="section-subtitle">Duas campanhas no Instagram e no Facebook, uma de alcance e uma de engajamento, com papéis distintos na entrega da mensagem.</p>
+
+  <div class="kpi-grid fade-in">
+    <div class="kpi-card">
+      <div class="kpi-label">IMPRESSÕES</div>
+      <div class="kpi-value count-up" data-target="384536" data-format="compact">+384,5K</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">ENGAJAMENTOS</div>
+      <div class="kpi-value count-up" data-target="2260" data-format="number">2.260</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">CLIQUES</div>
+      <div class="kpi-value count-up" data-target="3119" data-format="number">3.119</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">CTR MÉDIO</div>
+      <div class="kpi-value">0,81%</div>
+    </div>
+  </div>
+
+  <div class="chart-container fade-in" style="margin-top:var(--space-xl);">
+    <div class="chart-title">Impressões por Campanha</div>
+    <div class="chart-wrapper" style="height:160px;">
+      <canvas id="chartMetaTDCampanha"></canvas>
+    </div>
+  </div>
+
+  <div class="demo-section fade-in">
+    <div class="demo-title">Cobertura por Campanha</div>
+    <div class="demo-grid">
+      <div class="demo-item">
+        <div class="demo-label">Alcance, campanha de Alcance</div>
+        <div class="demo-value">165.864</div>
+        <div class="demo-sub">frequência 1,82</div>
+      </div>
+      <div class="demo-item">
+        <div class="demo-label">Alcance, campanha de Engajamento</div>
+        <div class="demo-value">45.006</div>
+        <div class="demo-sub">frequência 1,85</div>
+      </div>
+      <div class="demo-item">
+        <div class="demo-label">CTR, Engajamento</div>
+        <div class="demo-value">2,86%</div>
+        <div class="demo-sub">melhor CTR das duas</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="context-block fade-in">
+    <div class="context-label">Leitura do Período</div>
+    <p class="context-text">O Meta é a base de cobertura da campanha, a rede que coloca a mensagem da Prefeitura na frente do maior número de pessoas em menos tempo. A campanha de Alcance responde pela maior parte da entrega e é a que constrói presença. A de Engajamento entrega menos impressões, o que é esperado do objetivo, e devolve um CTR quase quatro vezes maior, ou seja, é a linha que mede se a mensagem gera reação, não só exposição. As duas trabalham em conjunto: uma garante que a informação chegue, a outra mostra que ela foi recebida.</p>
+  </div>
+
+</section>
+
+<div class="section-divider"></div>
+
+<!-- META VISITAS AO PERFIL -->
+<section id="meta-vp" class="section platform-section fade-in">
+  <span class="platform-badge meta-vp">&#11045; Meta Ads, Visitas ao Perfil</span>
+  <div class="section-label">META ADS | CRESCIMENTO DE PERFIL</div>
+  <h2 class="section-title">Meta, Visitas ao Perfil</h2>
+  <p class="section-subtitle">Campanha dedicada a direcionar usuários ao perfil da Prefeitura no Instagram, ampliando a visibilidade do canal. Linha bônus, não somada ao total de entrega das outras campanhas.</p>
+
+  <div class="kpi-grid fade-in">
+    <div class="kpi-card">
+      <div class="kpi-label">IMPRESSÕES</div>
+      <div class="kpi-value count-up" data-target="79176" data-format="compact">+79,2K</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">ALCANCE</div>
+      <div class="kpi-value count-up" data-target="56994" data-format="compact">+57,0K</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">VISITAS AO PERFIL</div>
+      <div class="kpi-value count-up" data-target="2967" data-format="number">2.967</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">NOVOS SEGUIDORES</div>
+      <div class="kpi-value count-up" data-target="1483" data-format="number">1.483</div>
+    </div>
+  </div>
+
+  <div class="demo-section fade-in">
+    <div class="demo-title">Da Visita ao Seguidor</div>
+    <div class="demo-grid">
+      <div class="demo-item">
+        <div class="demo-label">Visitas ao Perfil</div>
+        <div class="demo-value">2.967</div>
+        <div class="demo-sub">no período</div>
+      </div>
+      <div class="demo-item">
+        <div class="demo-label">Novos Seguidores</div>
+        <div class="demo-value">1.483</div>
+        <div class="demo-sub">no período</div>
+      </div>
+      <div class="demo-item">
+        <div class="demo-label">Conversão da Visita</div>
+        <div class="demo-value">50,0%</div>
+        <div class="demo-sub">visitas que viraram seguidor</div>
+      </div>
+      <div class="demo-item">
+        <div class="demo-label">Frequência</div>
+        <div class="demo-value">1,39</div>
+        <div class="demo-sub">exposições por pessoa</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="context-block fade-in">
+    <div class="context-label">Leitura do Período</div>
+    <p class="context-text">Esta é a linha que transforma audiência de mídia em canal próprio da Prefeitura. A frequência de 1,39 é a mais baixa entre as três campanhas do Meta, ou seja, é a que menos repete a mesma pessoa e mais amplia base nova, comportamento adequado a quem quer levar gente ao perfil e não apenas reexpor quem já foi alcançado.</p>
+    <p class="context-text" style="margin-top:var(--space-md);">O ponto mais relevante do período está na conversão: de cada duas pessoas que visitaram o perfil da Prefeitura, uma passou a seguir o canal. É uma taxa alta para uma campanha de topo de funil, e indica que quem chega ao perfil encontra conteúdo que justifica ficar. O efeito não se limita à mídia: ele depende do que o perfil publica na mesma semana em que a campanha traz gente nova.</p>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- GOOGLE DISPLAY -->
+<section id="display" class="section platform-section fade-in">
+  <span class="platform-badge display">&#9670; Google Display</span>
+  <div class="section-label">REDE DE DISPLAY</div>
+  <h2 class="section-title">Google Display</h2>
+  <p class="section-subtitle">Veiculação em sites e aplicativos da Rede de Display do Google, fora das redes sociais, onde o cidadão está consumindo outro conteúdo.</p>
+
+  <div class="kpi-grid fade-in">
+    <div class="kpi-card">
+      <div class="kpi-label">IMPRESSÕES</div>
+      <div class="kpi-value count-up" data-target="116169" data-format="compact">+116,2K</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">ALCANCE</div>
+      <div class="kpi-value count-up" data-target="44143" data-format="compact">+44,1K</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">CLIQUES</div>
+      <div class="kpi-value count-up" data-target="158" data-format="number">158</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">CTR MÉDIO</div>
+      <div class="kpi-value">0,14%</div>
+    </div>
+  </div>
+
+  <div class="context-block fade-in">
+    <div class="context-label">Leitura do Período</div>
+    <p class="context-text">O Display cumpre o papel de estar onde as redes sociais não chegam: portais de notícia, sites de serviço e aplicativos que o cidadão usa no dia a dia. É a rede que sustenta lembrança a baixo custo de atenção, com o CTR no patamar habitual do formato, em que o objetivo é presença e não clique. Para uma comunicação de prestação de contas, esse alcance fora da rede social é o que garante que a informação não fique restrita a quem já segue a Prefeitura.</p>
+  </div>
+
+</section>
+
+<div class="section-divider"></div>
+
+<!-- YOUTUBE -->
+<section id="youtube" class="section platform-section fade-in">
+  <span class="platform-badge youtube">&#9654; YouTube Ads</span>
+  <div class="section-label">YOUTUBE ADS</div>
+  <h2 class="section-title">YouTube</h2>
+  <p class="section-subtitle">Campanhas in-stream e sequencial para ampliar o alcance dos vídeos da Prefeitura e trazer novos inscritos ao canal.</p>
+
+  <div class="kpi-grid fade-in">
+    <div class="kpi-card">
+      <div class="kpi-label">IMPRESSÕES</div>
+      <div class="kpi-value count-up" data-target="214305" data-format="compact">+214,3K</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">VISUALIZAÇÕES</div>
+      <div class="kpi-value count-up" data-target="8482" data-format="number">8.482</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">CLIQUES</div>
+      <div class="kpi-value count-up" data-target="1056" data-format="number">1.056</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">CTR MÉDIO</div>
+      <div class="kpi-value">0,49%</div>
+    </div>
+  </div>
+
+  <div class="chart-container fade-in" style="margin-top:var(--space-xl);">
+    <div class="chart-title">Impressões por Campanha</div>
+    <div class="chart-wrapper" style="height:200px;">
+      <canvas id="chartYouTube"></canvas>
+    </div>
+  </div>
+
+  <div class="demo-section fade-in">
+    <div class="demo-title">Taxa de Visualização por Campanha</div>
+    <div class="demo-grid">
+      <div class="demo-item">
+        <div class="demo-label">In-Stream</div>
+        <div class="demo-value">5,16%</div>
+        <div class="demo-sub">5.681 visualizações</div>
+      </div>
+      <div class="demo-item">
+        <div class="demo-label">Sequencial (#Inscritos)</div>
+        <div class="demo-value">2,69%</div>
+        <div class="demo-sub">2.801 visualizações</div>
+      </div>
+      <div class="demo-item">
+        <div class="demo-label">CTR, Sequencial</div>
+        <div class="demo-value">0,71%</div>
+        <div class="demo-sub">melhor CTR do YouTube</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="context-block fade-in">
+    <div class="context-label">Leitura do Período</div>
+    <p class="context-text">O YouTube é a rede onde a mensagem tem tempo de ser explicada. É o único canal do mix em que o cidadão assiste a um vídeo completo, e por isso é o que melhor carrega assunto que não cabe numa imagem. O In-Stream tem a melhor taxa de visualização, esperado num formato em que a pessoa já está em contexto de assistir. O Sequencial entrega volume próximo e o melhor CTR dos dois, coerente com o objetivo de levar o espectador ao canal da Prefeitura.</p>
+  </div>
+
+</section>
+
+<div class="section-divider"></div>
+
+<!-- TIKTOK -->
+<section id="tiktok" class="section platform-section fade-in">
+  <span class="platform-badge tiktok">&#9673; TikTok Ads</span>
+  <div class="section-label">TIKTOK ADS</div>
+  <h2 class="section-title">TikTok</h2>
+  <p class="section-subtitle">Campanha de vídeo curto no feed, direcionada ao público de Campinas. Iniciada em 6 de agosto, segue ativa até 7 de setembro.</p>
+
+  <div class="kpi-grid fade-in">
+    <div class="kpi-card">
+      <div class="kpi-label">IMPRESSÕES</div>
+      <div class="kpi-value count-up" data-target="161965" data-format="compact">+162,0K</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">ALCANCE</div>
+      <div class="kpi-value count-up" data-target="78912" data-format="compact">+78,9K</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">VISUALIZAÇÕES</div>
+      <div class="kpi-value count-up" data-target="1763" data-format="number">1.763</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">CTR</div>
+      <div class="kpi-value">0,18%</div>
+    </div>
+  </div>
+
+  <div class="context-block fade-in">
+    <div class="context-label">Leitura do Período</div>
+    <p class="context-text">O TikTok resolve a faixa de público que as outras redes alcançam menos. É onde está a parcela mais jovem da cidade, que consome informação por vídeo curto e raramente busca canal oficial de prefeitura por conta própria. Entrou no ar já com volume relevante e é a rede que amplia a base de quem recebe a comunicação municipal para além de quem já acompanha a gestão.</p>
+  </div>
+
+</section>
+
+<div class="section-divider"></div>
+
+<!-- APRENDIZADOS -->
+<section id="aprendizados" class="section fade-in">
+  <div class="section-label">ANÁLISE DO PERÍODO</div>
+  <h2 class="section-title">Aprendizados</h2>
+  <p class="section-subtitle">O papel de cada rede na tarefa de contar ao cidadão de Campinas o que a Prefeitura está fazendo.</p>
+
+  <div class="diag-single fade-in">
+    <div class="diag-card positive">
+      <div class="diag-title">O que cada rede entrega</div>
+      <ul class="diag-list">
+        <li><span><strong>Meta.</strong> É a base de cobertura. Garante que a informação chegue ao maior número de pessoas da cidade, e a campanha de engajamento mostra quando ela gera reação, não apenas exposição.</span></li>
+        <li><span><strong>Visitas ao Perfil.</strong> Converte audiência de mídia em canal próprio. Metade de quem visitou o perfil passou a seguir a Prefeitura, o que transforma verba de campanha em público permanente, que continua sendo informado depois que o anúncio sai do ar.</span></li>
+        <li><span><strong>Display.</strong> Alcança o cidadão fora da rede social, em portais de notícia e sites de serviço. É o que impede que a comunicação municipal fique restrita a quem já segue a Prefeitura.</span></li>
+        <li><span><strong>YouTube.</strong> É a única rede do mix em que há tempo de explicar. Serve ao assunto que não cabe numa imagem e é onde o cidadão assiste, não só vê.</span></li>
+        <li><span><strong>TikTok.</strong> Cobre a faixa mais jovem da cidade, que consome informação por vídeo curto e raramente procura canal oficial de prefeitura por conta própria.</span></li>
+      </ul>
+      <p class="diag-note">As cinco linhas entraram no ar juntas no início do ciclo, sem intervalo em relação ao período anterior, e nenhuma delas depende das outras para cumprir seu papel. A combinação cobre quem já acompanha a gestão e quem ainda não acompanha, em quatro contextos de consumo diferentes.</p>
+    </div>
+  </div>
+
+  <div class="context-block fade-in">
+    <div class="context-label">Contexto da Cidade</div>
+    <p class="context-text">A semana teve agenda pública que dialoga com a comunicação em veiculação. Em 7 de agosto, dentro do período deste boletim, a Prefeitura realizou a 15ª edição do Feirão de Emprego e Oportunidades, no Tribunal Regional do Trabalho da 15ª Região, no centro da cidade, com provas de concurso público municipal previstas para 23 de agosto. É a mesma frente de qualificação e acesso ao trabalho que a campanha vem comunicando.</p>
+    <p class="context-text" style="margin-top:var(--space-md);">No campo da saúde, a ampliação da cesta de medicamentos gratuitos nas farmácias da rede municipal, anunciada em 30 de julho, reforça a pauta de atendimento público que a campanha acompanha. E o calendário de agosto ganhou um marco novo: Campinas passou a ter, pela primeira vez, um feriado municipal no mês, o Dia do Evangélico, em 12 de agosto, com repartições, centros de saúde e escolas sem expediente e serviços de urgência mantidos. É informação de serviço que tende a concentrar a atenção do cidadão nos canais oficiais da Prefeitura na semana seguinte a este boletim.</p>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="section" style="padding-top:var(--space-2xl);padding-bottom:var(--space-2xl);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:var(--space-md);">
+    <img src="assets/logo-esquina.png" alt="Esquina" style="height:36px;width:auto;" />
+    <p style="font-size:0.78rem;color:var(--esq-gray-600);text-align:center;">
+      Boletim Semanal de Performance, PMC Temas Diversos<br />
+      6 a 10 de agosto de 2026
+    </p>
+    <a href="https://esquina-relatorios.vercel.app/campinas/central/" style="display:inline-flex;align-items:center;gap:6px;padding:8px 18px;border:1px solid var(--esq-orange);border-radius:100px;color:var(--esq-orange);text-decoration:none;font-size:0.72rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;">
+      Ver todos os relatórios
+    </a>
+  </div>
+</footer>
+
+<!-- Chart.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<script>
+// ===== PMC TEMAS DIVERSOS — CHARTS 06/08-10/08/2026 =====
+document.documentElement.classList.add('js-anim');
+Chart.defaults.color = '#666666';
+Chart.defaults.borderColor = 'rgba(0,0,0,0.06)';
+Chart.defaults.font.family = "'Inter', sans-serif";
+Chart.defaults.plugins.legend.labels.usePointStyle = true;
+Chart.defaults.animation.duration = 1500;
+Chart.defaults.animation.easing = 'easeOutQuart';
+const tooltipStyle = { backgroundColor:'#FFFFFF', titleColor:'#111111', bodyColor:'#333333', borderColor:'rgba(0,0,0,0.12)', borderWidth:1, cornerRadius:8, padding:12 };
+const C = {
+  metaTD:'#1A3CFF', metaVP:'#9C27B0', display:'#00994D', youtube:'#CC0000', tiktok:'#111111',
+  metaTDA:'rgba(26,60,255,0.35)', metaVPA:'rgba(156,39,176,0.35)', displayA:'rgba(0,153,77,0.35)', youtubeA:'rgba(204,0,0,0.35)', tiktokA:'rgba(17,17,17,0.35)'
+};
+function fmtBR(v){ return v.toLocaleString('pt-BR'); }
+const kFmt = v => v>=1000?(v/1000).toFixed(1).replace('.',',')+'K':v;
+
+// META TD - POR CAMPANHA
+(function(){
+  const ctx = document.getElementById('chartMetaTDCampanha'); if(!ctx) return;
+  new Chart(ctx,{ type:'bar', data:{ labels:['Alcance','Engajamento'],
+    datasets:[{label:'Impressões', data:[301478,83058],
+      backgroundColor:[C.metaTD,C.metaTDA], borderColor:C.metaTD, borderWidth:1, borderRadius:4}]},
+    options:{ indexAxis:'y', responsive:true, maintainAspectRatio:false,
+      plugins:{legend:{display:false}, tooltip:{...tooltipStyle, callbacks:{label:c=>' '+fmtBR(c.raw)+' impressões'}}},
+      scales:{x:{grid:{color:'rgba(0,0,0,0.05)'},ticks:{font:{size:11},callback:kFmt}}, y:{grid:{display:false},ticks:{font:{size:12}}}}}});
+})();
+
+
+
+
+// YOUTUBE
+(function(){
+  const ctx = document.getElementById('chartYouTube'); if(!ctx) return;
+  new Chart(ctx,{ type:'bar', data:{ labels:['In-Stream','Sequencial'],
+    datasets:[{label:'Impressões', data:[110088,104217],
+      backgroundColor:[C.youtube,C.youtubeA,C.youtubeA], borderColor:C.youtube, borderWidth:1, borderRadius:4}]},
+    options:{ indexAxis:'y', responsive:true, maintainAspectRatio:false,
+      plugins:{legend:{display:false}, tooltip:{...tooltipStyle, callbacks:{label:c=>' '+fmtBR(c.raw)+' impressões'}}},
+      scales:{x:{grid:{color:'rgba(0,0,0,0.05)'},ticks:{font:{size:11},callback:kFmt}}, y:{grid:{display:false},ticks:{font:{size:11}}}}}});
+})();
+
+
+// BEFOREPRINT
+window.addEventListener('beforeprint',()=>{
+  document.querySelectorAll('canvas').forEach(canvas=>{
+    const chart=Chart.getChart(canvas); if(!chart) return;
+    const w=canvas.parentElement; let h;
+    if(chart.config.type==='doughnut'){h=220;}else{
+      const n=chart.config.data?.labels?.length??0; h=n>=5?200:n===4?175:160;}
+    w.style.height=h+'px'; const cw=w.clientWidth||600; canvas.width=cw; canvas.height=h; chart.resize(cw,h); chart.draw();
+  });
+});
+window.addEventListener('afterprint',()=>{
+  document.querySelectorAll('canvas').forEach(canvas=>{
+    const chart=Chart.getChart(canvas); if(!chart) return; canvas.parentElement.style.height=''; chart.resize();
+  });
+});
+
+// ANIMATIONS
+const fadeObs=new IntersectionObserver(e=>{e.forEach(en=>{if(en.isIntersecting){en.target.classList.add('visible');fadeObs.unobserve(en.target);}});},{threshold:0.1,rootMargin:'0px 0px -50px 0px'});
+document.querySelectorAll('.fade-in').forEach(el=>fadeObs.observe(el));
+
+function animateCountUp(el){
+  const t=parseFloat(el.dataset.target),fmt=el.dataset.format||'number',dur=2000,s=performance.now();
+  function f(n){if(fmt==='compact'){if(n>=1e6)return(n/1e6).toFixed(1).replace('.',',')+'MI';if(n>=1e3)return(n/1e3).toFixed(1).replace('.',',')+'K';return Math.round(n).toString();}return Math.round(n).toLocaleString('pt-BR');}
+  function ease(x){return 1-Math.pow(1-x,4);}
+  function u(now){const p=Math.min((now-s)/dur,1);el.textContent=f(t*ease(p));if(p<1)requestAnimationFrame(u);}
+  requestAnimationFrame(u);
+}
+const cntObs=new IntersectionObserver(e=>{e.forEach(en=>{if(en.isIntersecting){animateCountUp(en.target);cntObs.unobserve(en.target);}});},{threshold:0.5});
+document.querySelectorAll('.count-up').forEach(el=>cntObs.observe(el));
+
+document.querySelectorAll('.nav-links a').forEach(l=>{l.addEventListener('click',e=>{e.preventDefault();const t=document.querySelector(l.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth',block:'start'});});});
+document.querySelectorAll('.kpi-card').forEach(c=>{
+  c.addEventListener('mousemove',e=>{const r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-0.5,y=(e.clientY-r.top)/r.height-0.5;c.style.transform=`translateY(-2px) perspective(500px) rotateX(${-y*3}deg) rotateY(${x*3}deg)`;});
+  c.addEventListener('mouseleave',()=>{c.style.transform='translateY(0)';});
+});
+</script>
+</body>
+</html>
