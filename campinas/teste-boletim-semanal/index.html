@@ -172,8 +172,20 @@
   .acao p { font-size:0.88rem; color:var(--g2); line-height:1.65; margin:0; }
   .cr-b > p:first-of-type { margin-top:0; }
 
-  .cr.solo { grid-template-columns:1fr; gap:0; padding:var(--s6); }
+  /* card de criativo compacto, sem coluna de midia */
+  .cr.solo { grid-template-columns:1fr; gap:0; padding:var(--s5) var(--s6); }
   .cr.solo .cr-b { padding:0; }
+  .cr.solo .cr-a { margin-bottom:var(--s3); }
+  .cr.solo .ms { padding-bottom:var(--s3); margin-bottom:var(--s3); gap:var(--s5); }
+  .cr.solo .apd { margin-bottom:var(--s3); padding-bottom:var(--s3); }
+  .cr.solo .apd p, .cr.solo .cr-b p { line-height:1.6; font-size:0.88rem; }
+  .cr.solo .cr-b > p { margin-bottom:var(--s2); }
+  .cr.solo .acao { margin-top:var(--s3); padding-top:var(--s3); }
+  .cr.solo .acao p { line-height:1.6; }
+  .creatives { gap:var(--s4); }
+  a.post { color:var(--blue); font-weight:700; text-decoration:none; border-bottom:1px solid rgba(26,60,255,0.3); }
+  a.post:hover { border-bottom-color:var(--blue); }
+  td em { font-style:normal; font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:var(--ok); margin-left:6px; }
 </style>
 <nav class="nav">
   <div class="wrap nav-in">
@@ -196,7 +208,7 @@
     <div class="hc"><div class="hc-t">Dia do ciclo</div><div class="hc-v">9 de 30</div><div class="hc-s">encerramento em 04/09</div></div>
     <div class="hc"><div class="hc-t">Interações no Meta Ads</div><div class="hc-v">18.621</div><div class="hc-s">curtidas, comentários e salvamentos</div></div>
     <div class="hc"><div class="hc-t">Visualizações no TikTok</div><div class="hc-v">282.581</div><div class="hc-s">de 285.845 exibições</div></div>
-    <div class="hc"><div class="hc-t">Canais no ar</div><div class="hc-v">3</div><div class="hc-s">Meta Ads, Google e TikTok</div></div>
+    <div class="hc"><div class="hc-t">Canais no ar</div><div class="hc-v">4</div><div class="hc-s">Meta Ads, Display, YouTube e TikTok</div></div>
     <div class="hc accent"><div class="hc-t">Linhas no ritmo</div><div class="hc-v">6 de 6</div><div class="hc-s">nenhuma atrasada</div></div>
     <div class="hc accent"><div class="hc-t">A entregar</div><div class="hc-v">4.020.498</div><div class="hc-s">impressões até 04/09</div></div>
   </div>
@@ -210,7 +222,7 @@
       <div class="vt"><div class="v">5.522.000</div><div class="l">Impressões contratadas</div><div class="n">soma das cinco linhas de volume</div></div>
       <div class="vt avail"><div class="v">1.501.502</div><div class="l">Entregues</div><div class="n">27,2% do contratado</div></div>
       <div class="vt"><div class="v">4.020.498</div><div class="l">A entregar</div><div class="n">em 22 dias de veiculação</div></div>
-      <div class="vt free"><div class="v">27,0%</div><div class="l">Visitas ao Perfil</div><div class="n">linha com contratação própria</div></div>
+      <div class="vt free"><div class="v">27,0%</div><div class="l">Visitas ao Perfil</div><div class="n">linha bônus</div></div>
     </div>
     <div class="bar">
       <i style="width:27.2%;background:linear-gradient(90deg,var(--blue),var(--purple))"></i>
@@ -221,7 +233,7 @@
   <div class="ins">
     <b>Onde estamos</b>
     <p>O ciclo começou em 06 de agosto e termina em 07 de setembro, com fechamento operacional em 04 de setembro. Passados 9 dias, a entrega acumulada está em 27,2%, um pouco acima dos 26,7% que o calendário pedia.</p>
-    <p>A linha de Visitas ao Perfil tem contratação própria, separada das linhas de volume, por isso aparece à parte. Ela está em 27,0% de entrega, no mesmo compasso das demais, e gerou 149.049 exibições no período.</p>
+    <p>A Visitas ao Perfil é uma linha bônus, fora das linhas de volume, por isso aparece à parte. Ela está em 27,0% de entrega, no mesmo compasso das demais, e gerou 149.049 exibições no período.</p>
   </div>
 </section>
 
@@ -240,13 +252,14 @@
       <tbody>
         <tr class="champion"><td rowspan="4"><strong>Meta Ads</strong></td><td>Alcance</td><td class="n">1.936.000</td><td class="n">535.566</td><td class="n">27,7%</td><td class="n">1.400.434</td></tr>
         <tr><td>Engajamento</td><td class="n">484.000</td><td class="n">136.051</td><td class="n">28,1%</td><td class="n">347.949</td></tr>
-        <tr><td>Visitas ao Perfil</td><td class="n"></td><td class="n">149.049</td><td class="n">27,0%</td><td class="n"></td></tr>
+        <tr><td>Visitas ao Perfil <em>bônus</em></td><td class="n"></td><td class="n">149.049</td><td class="n">27,0%</td><td class="n"></td></tr>
         <tr><td><strong>Total Meta Ads</strong></td><td class="n"><strong>2.420.000</strong></td><td class="n"><strong>671.617</strong></td><td class="n"><strong>27,8%</strong></td><td class="n"><strong>1.748.383</strong></td></tr>
 
-        <tr><td rowspan="4"><strong>Google</strong></td><td>Rede de Display</td><td class="n">792.000</td><td class="n">226.290</td><td class="n">28,6%</td><td class="n">565.710</td></tr>
-        <tr><td>YouTube In-Stream</td><td class="n"></td><td class="n">201.759</td><td class="n"></td><td class="n"></td></tr>
-        <tr><td>YouTube Sequencial</td><td class="n"></td><td class="n">115.991</td><td class="n"></td><td class="n"></td></tr>
-        <tr><td><strong>Total Google</strong></td><td class="n"><strong>2.002.000</strong></td><td class="n"><strong>544.040</strong></td><td class="n"><strong>27,2%</strong></td><td class="n"><strong>1.457.960</strong></td></tr>
+        <tr><td><strong>Rede de Display</strong></td><td>Display</td><td class="n">792.000</td><td class="n">226.290</td><td class="n">28,6%</td><td class="n">565.710</td></tr>
+
+        <tr><td rowspan="3"><strong>YouTube</strong></td><td>In-Stream</td><td class="n"></td><td class="n">201.759</td><td class="n"></td><td class="n"></td></tr>
+        <tr><td>Sequencial</td><td class="n"></td><td class="n">115.991</td><td class="n"></td><td class="n"></td></tr>
+        <tr><td><strong>Total YouTube</strong></td><td class="n"><strong>1.210.000</strong></td><td class="n"><strong>317.750</strong></td><td class="n"><strong>26,3%</strong></td><td class="n"><strong>892.250</strong></td></tr>
 
         <tr><td><strong>TikTok</strong></td><td>Alcance</td><td class="n">1.100.000</td><td class="n">285.845</td><td class="n">26,0%</td><td class="n">814.155</td></tr>
       </tbody>
@@ -255,8 +268,8 @@
   </div>
   <div class="ins">
     <b>Leitura</b>
-    <p>As duas linhas de YouTube são contratadas juntas, como uma só, por isso a meta aparece apenas no total do canal. Somadas, entregaram 317.750 impressões, 26,3% do contratado.</p>
-    <p>A linha de Visitas ao Perfil tem contratação própria e não entra na soma das impressões contratadas, mas as 149.049 exibições que ela gerou aparecem na tabela para dar a dimensão do que foi ao ar.</p>
+    <p>In-Stream e Sequencial são contratados juntos, como uma linha só, por isso a meta do YouTube aparece apenas no total do canal. Somados, entregaram 317.750 impressões, 26,3% do contratado.</p>
+    <p>A Visitas ao Perfil é linha bônus e não entra na soma das impressões contratadas, mas as 149.049 exibições que ela gerou aparecem na tabela para dar a dimensão do que foi ao ar.</p>
     <p>O Engajamento é a linha que anda mais à frente, com 28,1%, e também a que produz o resultado mais direto: 18.621 interações com as publicações da Prefeitura nos 9 dias.</p>
   </div>
 </section>
@@ -270,7 +283,7 @@
     <article class="cr solo">
       <div class="cr-b">
         <div class="cr-h"><div class="cr-t">Vacinação · 10 de agosto</div><span class="bd w">Peça do ciclo</span></div>
-        <div class="cr-a">No ar desde 10/08 · presente em três campanhas ao mesmo tempo</div>
+        <div class="cr-a">No ar desde 10/08 · presente em três campanhas ao mesmo tempo · <a class="post" href="https://www.facebook.com/259066967468437/posts/1557809249720300" target="_blank" rel="noopener">ver publicação</a></div>
         <div class="ms">
           <div><b>92%</b><span>Da entrega do Alcance</span></div>
           <div><b>66%</b><span>Da entrega em Visitas</span></div>
@@ -291,7 +304,7 @@
     <article class="cr solo">
       <div class="cr-b">
         <div class="cr-h"><div class="cr-t">Campinas são muitas</div><span class="bd o">Melhor no Engajamento</span></div>
-        <div class="cr-a">No ar desde 10/08 · campanha de Engajamento</div>
+        <div class="cr-a">No ar desde 10/08 · campanha de Engajamento · <a class="post" href="https://www.facebook.com/259066967468437/posts/1555532539947971" target="_blank" rel="noopener">ver publicação</a></div>
         <div class="ms">
           <div><b>86%</b><span>Da entrega do Engajamento</span></div>
           <div><b>42.158</b><span>Impressões em 3 dias</span></div>
