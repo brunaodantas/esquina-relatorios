@@ -82,9 +82,9 @@
   .ppct small { display:block; font-weight:500; font-size:0.71rem; color:var(--g4); }
 
   .creatives { display:flex; flex-direction:column; gap:var(--s5); }
-  .cr { background:var(--white); border:1px solid var(--line); border-radius:var(--r3); box-shadow:0 1px 3px rgba(10,10,92,0.04), 0 8px 24px rgba(10,10,92,0.05); display:grid; grid-template-columns:340px 1fr; align-items:start; gap:var(--s7); padding:var(--s6); }
-  .cr-e { background:#fafbff; border:1px solid var(--line); border-radius:var(--r2); padding:var(--s3); height:420px; overflow:hidden; align-self:flex-start; }
-  .cr-e iframe { display:block; width:143%; height:585px; border:none; border-radius:var(--r1); background:#fff; transform:scale(0.7); transform-origin:top left; }
+  .cr { background:var(--white); border:1px solid var(--line); border-radius:var(--r3); box-shadow:0 1px 3px rgba(10,10,92,0.04), 0 8px 24px rgba(10,10,92,0.05); padding:var(--s5) var(--s6); }
+  .cr-link { display:inline-flex; align-items:center; gap:var(--s2); font-size:0.8rem; font-weight:700; color:var(--blue); text-decoration:none; padding:8px 16px; border:1px solid rgba(26,60,255,0.25); border-radius:100px; margin-bottom:var(--s4); }
+  .cr-link:hover { background:rgba(26,60,255,0.06); }
   .cr-b { padding:var(--s2) var(--s3) var(--s4) 0; }
   .cr-h { display:flex; align-items:baseline; justify-content:space-between; gap:var(--s3); flex-wrap:wrap; margin-bottom:var(--s1); }
   .cr-t { font-size:1.18rem; font-weight:800; letter-spacing:-0.01em; }
@@ -123,8 +123,8 @@
   .ins p { font-size:0.9rem; color:var(--g2); line-height:1.7; margin-bottom:var(--s3); }
   .ins p:last-child { margin-bottom:0; }
 
-  .common { background:linear-gradient(135deg,var(--navy),#1a1a8f); border-radius:var(--r3); padding:var(--s7) var(--s7); margin:var(--s7) 0; }
-  .common .prose { display:flex; flex-direction:column; gap:var(--s5); margin-top:var(--s5); }
+  .common { background:linear-gradient(135deg,var(--navy),#1a1a8f); border-radius:var(--r3); padding:var(--s6) var(--s6); margin:var(--s6) 0; }
+  .common .prose { display:flex; flex-direction:column; gap:var(--s4); margin-top:var(--s4); }
   
   .common .prose p { margin:0; padding-bottom:var(--s5); border-bottom:1px solid rgba(255,255,255,0.12); }
   .common .prose p:last-child { padding-bottom:0; border-bottom:none; }
@@ -152,7 +152,6 @@
     .hero-cards, .verba-top, .wins, .diag, .g2 { grid-template-columns:1fr; }
     .hc.accent { grid-column:span 1; }
     .cr { grid-template-columns:1fr; }
-    .cr-e { height:420px; }
     .cr-b { padding:0 var(--s3) var(--s3); }
     .pn { flex:0 0 120px; }
   }
@@ -264,10 +263,10 @@
   <div class="creatives">
 
     <article class="cr">
-      <div class="cr-e"><iframe src="https://www.instagram.com/p/Dbn8VtlsXCm/embed" loading="lazy" scrolling="no" title="Segurança Vídeo 3"></iframe></div>
       <div class="cr-b">
         <div class="cr-h"><div class="cr-t">Segurança · Operação GM 153</div><span class="bd w">Melhor gancho</span></div>
         <div class="cr-a">No ar desde 03/08 · 10 dias</div>
+        <a class="cr-link" href="https://www.instagram.com/p/Dbn8VtlsXCm/" target="_blank" rel="noopener">Ver a publicação no Instagram ↗</a>
         <div class="ms">
           <div><b>60s</b><span>Duração da peça</span></div>
           <div><b>7s</b><span>Atenção que recebe</span></div>
@@ -290,10 +289,10 @@
     </article>
 
     <article class="cr">
-      <div class="cr-e"><iframe src="https://www.instagram.com/p/Db3sD2-MoEr/embed" loading="lazy" scrolling="no" title="Agosto Lilás"></iframe></div>
       <div class="cr-b">
         <div class="cr-h"><div class="cr-t">Agosto Lilás</div><span class="bd o">Começo promissor</span></div>
         <div class="cr-a">No ar desde 10/08 · 3 dias, leitura preliminar</div>
+        <a class="cr-link" href="https://www.instagram.com/p/Db3sD2-MoEr/" target="_blank" rel="noopener">Ver a publicação no Instagram ↗</a>
         <div class="ms">
           <div><b>2min05</b><span>Duração da peça</span></div>
           <div><b>7s</b><span>Atenção que recebe</span></div>
@@ -316,10 +315,10 @@
     </article>
 
     <article class="cr">
-      <div class="cr-e"><iframe src="https://www.instagram.com/p/Db_k1KKsXT8/embed" loading="lazy" scrolling="no" title="Nova data Diogo Nogueira"></iframe></div>
       <div class="cr-b">
         <div class="cr-h"><div class="cr-t">Nova data · Show do Diogo Nogueira</div><span class="bd g">Estreia de hoje</span></div>
         <div class="cr-a">No ar desde 13/08, às 18h · poucas horas</div>
+        <a class="cr-link" href="https://www.instagram.com/p/Db_k1KKsXT8/" target="_blank" rel="noopener">Ver a publicação no Instagram ↗</a>
         <div class="ms">
           <div><b>1 em 10</b><span>Clica no feed</span></div>
           <div><b>Nenhum</b><span>Clique em tela cheia</span></div>
