@@ -61,6 +61,14 @@
   .bar-lg { display:flex; justify-content:space-between; font-size:0.74rem; color:var(--g4); margin-top:var(--s2); font-variant-numeric:tabular-nums; }
 
   .tw { overflow-x:auto; margin-top:var(--s5); }
+  .tbl-card { margin-top:var(--s5); padding:var(--s4) var(--s5); }
+  .tbl-card .tw { margin-top:0; }
+  .tbl-card table tbody tr:last-child td { border-bottom:none; }
+  @media (max-width:700px){
+    .tbl-card { padding:var(--s3) var(--s3); }
+    .tbl-card table { font-size:0.8rem; }
+    .tbl-card td, .tbl-card th { padding:var(--s2); }
+  }
   .novo { font-size:0.62rem; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:var(--blue); background:rgba(26,60,255,0.08); padding:2px 7px; border-radius:100px; margin-left:6px; vertical-align:1px; }
   table tr.total-row td { border-top:1.5px solid rgba(10,10,92,0.14); }
   table tr.group-start td { padding-top:var(--s4); }
@@ -217,7 +225,8 @@
 <section class="wrap">
   <div class="sn">02</div>
   <h2>O que entregamos</h2>
-  <div class="tw">
+  <div class="card tbl-card">
+    <div class="tw">
     <table>
       <thead>
         <tr><th>Linha</th><th>Métrica</th><th class="n">10 a 16/08</th><th class="n">03 a 09/08</th></tr>
@@ -240,6 +249,7 @@
         <tr><td colspan="2">Consolidado · visualizações</td><td class="n">12.481</td><td class="n">29.309</td></tr>
       </tfoot>
     </table>
+    </div>
   </div>
   <div class="ins">
     <b>Leitura</b>
