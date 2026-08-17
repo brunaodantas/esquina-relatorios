@@ -117,14 +117,6 @@
   .row .v { flex:0 0 52px; text-align:right; font-size:0.81rem; font-weight:700; font-variant-numeric:tabular-nums; }
   .cap { font-size:0.78rem; color:var(--g4); margin-top:var(--s3); }
 
-  .esf { margin-top:var(--s5); }
-  .esf h3 { font-size:0.95rem; margin:0 0 var(--s3); }
-  .esf-g { display:grid; grid-template-columns:repeat(3,1fr); gap:var(--s3); }
-  .esf-c { border:1px solid var(--g2); border-radius:var(--r1); padding:var(--s3) var(--s4); }
-  .esf-c .o { font-size:0.72rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--g5); }
-  .esf-c .d { font-size:0.95rem; font-weight:700; margin-top:4px; }
-  .esf-c.menor .d { color:var(--ok); }
-  @media (max-width:640px){ .esf-g { grid-template-columns:1fr; } }
   .ins { background:rgba(26,60,255,0.05); border-left:3px solid var(--blue); border-radius:0 var(--r1) var(--r1) 0; padding:var(--s4) var(--s4); margin-top:var(--s5); }
   .ins b { display:block; font-size:0.63rem; font-weight:700; text-transform:uppercase; letter-spacing:0.12em; color:var(--blue); margin-bottom:var(--s2); }
   .ins p { font-size:0.9rem; color:var(--g2); line-height:1.7; margin-bottom:var(--s3); }
@@ -228,41 +220,32 @@
   <div class="tw">
     <table>
       <thead>
-        <tr><th rowspan="2">Canal</th><th rowspan="2">Pauta</th><th class="n" colspan="2">Impressões</th><th class="n" colspan="2">Visualizações</th></tr>
-        <tr><th class="n">10 a 16/08</th><th class="n">03 a 09/08</th><th class="n">10 a 16/08</th><th class="n">03 a 09/08</th></tr>
+        <tr><th>Linha</th><th>Métrica</th><th class="n">10 a 16/08</th><th class="n">03 a 09/08</th></tr>
       </thead>
       <tbody>
-        <tr><td rowspan="5"><strong>Meta Ads</strong></td><td>Segurança</td><td class="n">277.884</td><td class="n">346.543</td><td class="n">8.658</td><td class="n">16.571</td></tr>
-        <tr><td>Agosto Lilás <span class="novo">novo</span></td><td class="n">55.085</td><td class="n"></td><td class="n">2.083</td><td class="n"></td></tr>
-        <tr><td>Nova data · Diogo Nogueira <span class="novo">novo</span></td><td class="n">19.608</td><td class="n"></td><td class="n">0</td><td class="n"></td></tr>
-        <tr><td>Planeta Rock e Semana Cultural <span class="novo">encerradas 08/08</span></td><td class="n"></td><td class="n">216.755</td><td class="n"></td><td class="n">6.787</td></tr>
-        <tr class="total-row"><td><strong>Total Meta Ads</strong></td><td class="n"><strong>352.577</strong></td><td class="n"><strong>563.298</strong></td><td class="n"><strong>10.741</strong></td><td class="n"><strong>23.358</strong></td></tr>
-
-        <tr class="group-start"><td rowspan="3"><strong>YouTube</strong></td><td>Agosto Lilás <span class="novo">novo</span></td><td class="n">8.045</td><td class="n"></td><td class="n">1.740</td><td class="n"></td></tr>
-        <tr><td>Planeta Rock <span class="novo">encerrada 06/08</span></td><td class="n"></td><td class="n">26.603</td><td class="n"></td><td class="n">5.951</td></tr>
-        <tr class="total-row"><td><strong>Total YouTube</strong></td><td class="n"><strong>8.045</strong></td><td class="n"><strong>26.603</strong></td><td class="n"><strong>1.740</strong></td><td class="n"><strong>5.951</strong></td></tr>
+        <tr><td><strong>Meta Ads · Segurança</strong></td><td>impressões</td><td class="n">277.884</td><td class="n">346.543</td></tr>
+        <tr><td><strong>Meta Ads · Segurança</strong></td><td>visualizações</td><td class="n">8.658</td><td class="n">16.571</td></tr>
+        <tr><td><strong>Meta Ads · Agosto Lilás</strong></td><td>impressões</td><td class="n">55.085</td><td class="n"></td></tr>
+        <tr><td><strong>Meta Ads · Agosto Lilás</strong></td><td>visualizações</td><td class="n">2.083</td><td class="n"></td></tr>
+        <tr><td><strong>Meta Ads · Nova data do show</strong></td><td>impressões</td><td class="n">19.608</td><td class="n"></td></tr>
+        <tr><td><strong>Meta Ads · Planeta Rock e Semana Cultural</strong></td><td>impressões</td><td class="n"></td><td class="n">216.755</td></tr>
+        <tr><td><strong>Meta Ads · Planeta Rock e Semana Cultural</strong></td><td>visualizações</td><td class="n"></td><td class="n">6.787</td></tr>
+        <tr><td><strong>YouTube · Agosto Lilás</strong></td><td>impressões</td><td class="n">8.045</td><td class="n"></td></tr>
+        <tr><td><strong>YouTube · Agosto Lilás</strong></td><td>visualizações</td><td class="n">1.740</td><td class="n"></td></tr>
+        <tr><td><strong>YouTube · Planeta Rock</strong></td><td>impressões</td><td class="n"></td><td class="n">26.603</td></tr>
+        <tr><td><strong>YouTube · Planeta Rock</strong></td><td>visualizações</td><td class="n"></td><td class="n">5.951</td></tr>
       </tbody>
-      <tfoot><tr><td colspan="2">Consolidado</td><td class="n">360.622</td><td class="n">589.901</td><td class="n">12.481</td><td class="n">29.309</td></tr></tfoot>
+      <tfoot>
+        <tr><td colspan="2">Consolidado · impressões</td><td class="n">360.622</td><td class="n">589.901</td></tr>
+        <tr><td colspan="2">Consolidado · visualizações</td><td class="n">12.481</td><td class="n">29.309</td></tr>
+      </tfoot>
     </table>
   </div>
   <div class="ins">
     <b>Leitura</b>
     <p>Segurança mantém volume estável, dentro da margem normal de veiculação, enquanto Agosto Lilás e Diogo Nogueira somam entrega nova. A diferença contra a semana anterior vem das duas pautas de evento: Planeta Rock e Semana Cultural respondiam por 216.755 impressões e 6.787 visualizações entre 03 e 09/08, mais o YouTube de Planeta Rock, e encerraram a veiculação em 08/08 com todas as linhas contratadas cumpridas. As pautas que entraram no lugar são de período mais longo e ainda estão subindo. TikTok não tem campanha neste flight.</p>
     <p>Distribuição por posicionamento (todas as 14 campanhas ativas de Meta Ads no período): Stories do Instagram concentra 42,5% das impressões, Feed 32,2% e Reels do Instagram 23,1%. Facebook e in-stream somam o restante, com volume pequeno mas taxa de visualização mais alta: in-stream chega a 34,4% de visualização contra 2,7% no Story e 3,6% no Feed, sinal de que o público que assiste vídeo em tela cheia sustenta a atenção por mais tempo.</p>
-  </div>
-  <div class="esf">
-    <h3>Esforço de mídia por objetivo</h3>
-    <div class="esf-g">
-      <div class="esf-c menor"><div class="o">Para atingir uma visualização</div><div class="d">Esforço menor que na semana anterior</div></div>
-      <div class="esf-c"><div class="o">Para atingir uma interação</div><div class="d">Esforço maior</div></div>
-      <div class="esf-c"><div class="o">Para atingir um compartilhamento</div><div class="d">Esforço maior</div></div>
-    </div>
-    <div class="ins" style="margin-top:var(--s4)">
-      <b>Leitura</b>
-      <p>Visualização exigiu menos esforço nesta semana, com o encerramento do YouTube de Planeta Rock e o bom desempenho das peças de vídeo nos posicionamentos de tela cheia.</p>
-      <p>Interação e compartilhamento exigiram mais, pela mesma razão: as campanhas de engajamento de Segurança encerraram a veiculação entre 06 e 10/08, e eram as que geravam interação com o menor esforço. O objetivo segue no ar pelas pautas novas, ainda nos primeiros dias, fase em que o esforço é naturalmente maior.</p>
-      <p><strong>Ação:</strong> sugerimos concentrar as próximas peças de engajamento nos formatos que já rendiam em Segurança, para encurtar essa fase inicial.</p>
-    </div>
+    <p>No esforço de mídia por objetivo, visualização exigiu menos esforço que na semana anterior, com o encerramento do YouTube de Planeta Rock e o bom desempenho das peças de vídeo em tela cheia. Interação e compartilhamento exigiram mais, pela mesma razão: as campanhas de engajamento de Segurança encerraram a veiculação entre 06 e 10/08, e eram as que geravam interação com o menor esforço. O objetivo segue no ar pelas pautas novas, ainda nos primeiros dias, fase em que o esforço é naturalmente maior. <strong>Ação:</strong> sugerimos concentrar as próximas peças de engajamento nos formatos que já rendiam em Segurança.</p>
   </div>
 </section>
 
