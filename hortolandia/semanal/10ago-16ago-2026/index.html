@@ -59,6 +59,9 @@
   .bar-lg { display:flex; justify-content:space-between; font-size:0.74rem; color:var(--g4); margin-top:var(--s2); font-variant-numeric:tabular-nums; }
 
   .tw { overflow-x:auto; margin-top:var(--s5); }
+  .novo { font-size:0.62rem; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:var(--blue); background:rgba(26,60,255,0.08); padding:2px 7px; border-radius:100px; margin-left:6px; vertical-align:1px; }
+  table tr.total-row td { border-top:1.5px solid rgba(10,10,92,0.14); }
+  table tr.group-start td { padding-top:var(--s4); }
   table { width:100%; border-collapse:collapse; font-size:0.85rem; }
   th { text-align:left; font-size:0.63rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--g6); padding:var(--s2) var(--s3); border-bottom:1px solid var(--line); white-space:nowrap; }
   td { padding:var(--s2) var(--s3); border-bottom:1px solid rgba(10,10,92,0.05); font-variant-numeric:tabular-nums; }
@@ -180,8 +183,8 @@
     <div class="hc"><div class="hc-t">Taxa de engajamento</div><div class="hc-v">10,17%</div><div class="hc-s up">era 9,56% na semana anterior</div></div>
     <div class="hc"><div class="hc-t">CTR</div><div class="hc-v">0,37%</div><div class="hc-s up">era 0,25%</div></div>
     <div class="hc"><div class="hc-t">Taxa de visualização</div><div class="hc-v">3,40%</div><div class="hc-s up">era 2,85%</div></div>
-    <div class="hc accent"><div class="hc-t">Verba livre</div><div class="hc-v">R$ 0,00</div><div class="hc-s">Toda a verba já está alocada em pauta</div></div>
-    <div class="hc accent"><div class="hc-t">Alocado em campanhas</div><div class="hc-v">R$ 40.000</div><div class="hc-s">100% do plano</div></div>
+    <div class="hc accent"><div class="hc-t">Verba livre</div><div class="hc-v">R$ 1.500</div><div class="hc-s">Sem pauta definida</div></div>
+    <div class="hc accent"><div class="hc-t">Alocado em campanhas</div><div class="hc-v">R$ 38.500</div><div class="hc-s">96,3% do plano</div></div>
   </div>
 </header>
 
@@ -190,21 +193,21 @@
   <h2>Verba do plano</h2>
   <div class="card">
     <div class="verba-top">
-      <div class="vt"><div class="v">R$ 40.000,00</div><div class="l">Alocado em campanhas</div><div class="n">100% do plano contratado</div></div>
-      <div class="vt"><div class="v">R$ 2.522,44</div><div class="l">Gasto até agora</div><div class="n">6,3% do valor alocado</div></div>
-      <div class="vt avail"><div class="v">R$ 37.477,56</div><div class="l">A gastar</div><div class="n">dentro dos R$40.000,00 alocados</div></div>
-      <div class="vt free"><div class="v">R$ 0,00</div><div class="l">Ainda livre</div><div class="n">em relação aos R$40.000,00 contratados</div></div>
+      <div class="vt"><div class="v">R$ 38.500,00</div><div class="l">Alocado em campanhas</div><div class="n">96,3% do plano</div></div>
+      <div class="vt"><div class="v">R$ 2.522,44</div><div class="l">Gasto até agora</div><div class="n">6,6% do valor alocado</div></div>
+      <div class="vt avail"><div class="v">R$ 35.977,56</div><div class="l">A gastar</div><div class="n">dentro dos R$38.500,00 alocados</div></div>
+      <div class="vt free"><div class="v">R$ 1.500,00</div><div class="l">Ainda livre</div><div class="n">em relação aos R$40.000,00 contratados</div></div>
     </div>
     <div class="bar">
-      <i style="width:6.3%;background:linear-gradient(90deg,var(--blue),var(--purple))"></i>
-      <i style="width:93.7%;background:rgba(26,60,255,0.18)"></i>
-      <i style="width:0%;background:rgba(0,153,77,0.35)"></i>
+      <i style="width:6.6%;background:linear-gradient(90deg,var(--blue),var(--purple))"></i>
+      <i style="width:89.6%;background:rgba(26,60,255,0.18)"></i>
+      <i style="width:3.8%;background:rgba(0,153,77,0.35)"></i>
     </div>
     <div class="bar-lg"><span>Gasto</span><span>A gastar</span><span>Livre</span></div>
   </div>
   <div class="ins">
     <b>Leitura</b>
-    <p>Com as seis pautas do mês já distribuídas, os R$40.000,00 contratados estão 100% alocados em campanha desde a estreia de Diogo Nogueira em 13/08. O ritmo de consumo da verba segue mais lento do que o estimado no plano original, o que garante fôlego para os últimos dias do flight sem necessidade de aporte adicional.</p>
+    <p>Com as seis pautas do mês já distribuídas, R$38.500 dos R$40.000,00 contratados estão alocados em campanha, e R$1.500,00 seguem livres, sem pauta definida. O ritmo de consumo da verba segue mais lento do que o estimado no plano original, o que garante fôlego para os últimos dias do flight sem necessidade de aporte adicional.</p>
   </div>
 </section>
 
@@ -219,12 +222,12 @@
       </thead>
       <tbody>
         <tr><td rowspan="4"><strong>Meta Ads</strong></td><td>Segurança</td><td class="n">267.787</td><td class="n">266.699</td><td class="n">8.237</td><td class="n">7.599</td></tr>
-        <tr><td>Agosto Lilás</td><td class="n">50.558</td><td class="n"></td><td class="n">1.791</td><td class="n"></td></tr>
-        <tr><td>Nova data · Diogo Nogueira</td><td class="n">18.230</td><td class="n"></td><td class="n">0</td><td class="n"></td></tr>
-        <tr><td><strong>Total Meta Ads</strong></td><td class="n"><strong>336.575</strong></td><td class="n"><strong>266.699</strong></td><td class="n"><strong>10.028</strong></td><td class="n"><strong>7.599</strong></td></tr>
+        <tr><td>Agosto Lilás <span class="novo">novo</span></td><td class="n">50.558</td><td class="n"></td><td class="n">1.791</td><td class="n"></td></tr>
+        <tr><td>Nova data · Diogo Nogueira <span class="novo">novo</span></td><td class="n">18.230</td><td class="n"></td><td class="n">0</td><td class="n"></td></tr>
+        <tr class="total-row"><td><strong>Total Meta Ads</strong></td><td class="n"><strong>336.575</strong></td><td class="n"><strong>266.699</strong></td><td class="n"><strong>10.028</strong></td><td class="n"><strong>7.599</strong></td></tr>
 
-        <tr><td rowspan="2"><strong>YouTube</strong></td><td>Agosto Lilás</td><td class="n">7.669</td><td class="n"></td><td class="n">1.680</td><td class="n"></td></tr>
-        <tr><td><strong>Total YouTube</strong></td><td class="n"><strong>7.669</strong></td><td class="n"></td><td class="n"><strong>1.680</strong></td><td class="n"></td></tr>
+        <tr class="group-start"><td rowspan="2"><strong>YouTube</strong></td><td>Agosto Lilás <span class="novo">novo</span></td><td class="n">7.669</td><td class="n"></td><td class="n">1.680</td><td class="n"></td></tr>
+        <tr class="total-row"><td><strong>Total YouTube</strong></td><td class="n"><strong>7.669</strong></td><td class="n"></td><td class="n"><strong>1.680</strong></td><td class="n"></td></tr>
       </tbody>
       <tfoot><tr><td colspan="2">Consolidado</td><td class="n">344.244</td><td class="n">266.699</td><td class="n">11.708</td><td class="n">7.599</td></tr></tfoot>
     </table>
