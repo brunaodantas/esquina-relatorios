@@ -16,7 +16,7 @@ from playwright.async_api import async_playwright
 BASE = Path(__file__).parent
 SLIDES_FILE = BASE / "slides.html"
 SLIDES_DIR = BASE / "slides_png"
-PDF_OUT = BASE / "boletim-prefeitura-jundiai-10a16ago2026.pdf"     # renomeie se quiser
+PDF_OUT = BASE / "boletim-dae-jundiai-10a16ago2026.pdf"     # renomeie se quiser
 W, H, SCALE, RES = 720, 1280, 2, 192  # 2560/192*72 = 960pt · 1440/192*72 = 540pt
 
 async def main():
