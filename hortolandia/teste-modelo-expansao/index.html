@@ -1,0 +1,382 @@
+<title>Boletim Semanal · Prefeitura de Hortolândia · Teste resumo+expansão</title>
+<style>
+  :root {
+    --blue: #1A3CFF; --navy: #0A0A5C; --purple: #7B2FBE; --lilac: #C77DFF;
+    --ink: #111111; --bg: #F4F6FF; --white: #FFFFFF;
+    --line: rgba(10,10,92,0.10);
+    --g4: #5A5F80; --g6: #868AA6; --g2: #242844;
+    --ok: #00994D; --warn: #CC8800;
+    --f: -apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Helvetica, sans-serif;
+    --s1:4px; --s2:8px; --s3:16px; --s4:24px; --s5:32px; --s6:48px; --s7:72px; --s8:96px;
+    --r1:8px; --r2:14px; --r3:20px;
+  }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  html { font-size:16px; scroll-behavior:smooth; }
+  body { font-family:var(--f); background:var(--bg); color:var(--ink); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  .wrap { max-width:1080px; margin:0 auto; padding:0 var(--s4); }
+
+  .nav { background:rgba(255,255,255,0.92); backdrop-filter:blur(20px); border-bottom:1px solid var(--line); padding:var(--s4) 0; position:sticky; top:0; z-index:50; }
+  .nav-in { display:flex; align-items:center; justify-content:space-between; gap:var(--s4); flex-wrap:wrap; }
+  .nav-logo img { height:30px; width:auto; display:block; }
+  .nav-r { display:flex; align-items:center; gap:var(--s2); flex-wrap:wrap; }
+  .chip { font-size:0.66rem; font-weight:700; letter-spacing:0.07em; text-transform:uppercase; padding:5px 12px; border-radius:100px; background:rgba(26,60,255,0.08); color:var(--blue); }
+  .chip.m { background:rgba(10,10,92,0.06); color:var(--g4); }
+  .chip.central { text-decoration:none; background:transparent; border:1px solid rgba(10,10,92,0.14); color:var(--g4); }
+  .chip.central:hover { background:rgba(10,10,92,0.05); }
+  .chip.test { background:rgba(0,153,77,0.1); color:var(--ok); border:none; }
+
+  .hero { padding:var(--s8) 0 var(--s7); }
+  .eb { display:inline-flex; align-items:center; gap:var(--s2); font-size:0.7rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:var(--blue); margin-bottom:var(--s3); }
+  .eb::before { content:''; width:22px; height:2px; background:var(--blue); }
+  h1 { font-size:clamp(2rem,4.6vw,3rem); font-weight:800; letter-spacing:-0.025em; line-height:1.08; text-wrap:balance; margin-bottom:var(--s3); }
+  .lead { color:var(--g4); font-size:1.02rem; max-width:60ch; }
+
+  .hero-cards { display:grid; grid-template-columns:repeat(4,1fr); gap:var(--s3); margin-top:var(--s6); }
+  .hc { background:var(--white); border:1px solid var(--line); border-radius:var(--r2); padding:var(--s4); display:flex; flex-direction:column; gap:var(--s1); min-height:126px; justify-content:space-between; }
+  .hc-t { font-size:0.66rem; font-weight:700; text-transform:uppercase; letter-spacing:0.09em; color:var(--g6); }
+  .hc-v { font-size:1.85rem; font-weight:800; font-variant-numeric:tabular-nums; letter-spacing:-0.025em; line-height:1.05; }
+  .hc-s { font-size:0.75rem; color:var(--g4); }
+  .hc-s.up { color:var(--ok); font-weight:600; }
+  .hc-s.down { color:var(--g6); }
+  .hc.accent { background:linear-gradient(135deg,var(--navy),#161680); border-color:transparent; }
+  .hc.accent .hc-t { color:rgba(255,255,255,0.55); }
+  .hc.accent .hc-v { color:#fff; }
+  .hc.accent .hc-s { color:rgba(255,255,255,0.7); }
+
+  section { padding:var(--s8) 0; border-top:1px solid var(--line); }
+  .sn { font-size:0.66rem; font-weight:700; color:var(--g6); letter-spacing:0.14em; text-transform:uppercase; margin-bottom:var(--s1); }
+  h2 { font-size:1.55rem; font-weight:800; letter-spacing:-0.015em; margin-bottom:var(--s2); text-wrap:balance; }
+  .sl { color:var(--g4); font-size:0.95rem; max-width:70ch; margin-bottom:var(--s5); }
+
+  .card { background:var(--white); border:1px solid var(--line); border-radius:var(--r3); padding:var(--s5); }
+  .verba-top { display:grid; grid-template-columns:repeat(4,1fr); gap:var(--s4); margin-bottom:var(--s5); }
+  .vt .v { font-size:1.9rem; font-weight:800; font-variant-numeric:tabular-nums; letter-spacing:-0.025em; }
+  .vt .l { font-size:0.7rem; color:var(--g6); text-transform:uppercase; letter-spacing:0.08em; font-weight:700; margin-top:2px; }
+  .vt .n { font-size:0.78rem; color:var(--g4); margin-top:var(--s1); }
+  .vt.free .v { color:var(--ok); }
+  .vt.avail .v { color:var(--blue); }
+  .bar { height:12px; border-radius:100px; background:rgba(10,10,92,0.08); overflow:hidden; display:flex; }
+  .bar i { display:block; height:100%; }
+  .bar-lg { display:flex; justify-content:space-between; font-size:0.74rem; color:var(--g4); margin-top:var(--s2); font-variant-numeric:tabular-nums; }
+
+  .tw { overflow-x:auto; margin-top:var(--s5); }
+  .tbl-card { margin-top:var(--s5); padding:var(--s4) var(--s5); }
+  .tbl-card .tw { margin-top:0; }
+  .tbl-card table tbody tr:last-child td { border-bottom:none; }
+  @media (max-width:700px){
+    .tbl-card { padding:var(--s3) var(--s3); }
+    .tbl-card table { font-size:0.8rem; }
+    .tbl-card td, .tbl-card th { padding:var(--s2); }
+  }
+  table { width:100%; border-collapse:collapse; font-size:0.85rem; }
+  th { text-align:left; font-size:0.63rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--g6); padding:var(--s2) var(--s3); border-bottom:1px solid var(--line); white-space:nowrap; }
+  td { padding:var(--s2) var(--s3); border-bottom:1px solid rgba(10,10,92,0.05); font-variant-numeric:tabular-nums; }
+  td.n, th.n { text-align:right; }
+  tfoot td { font-weight:800; border-top:2px solid var(--line); border-bottom:none; }
+
+  .creatives { display:flex; flex-direction:column; gap:var(--s4); }
+  .cr { background:var(--white); border:1px solid var(--line); border-radius:var(--r3); box-shadow:0 1px 3px rgba(10,10,92,0.04), 0 8px 24px rgba(10,10,92,0.05); padding:var(--s4) var(--s5); list-style:none; }
+  .cr::-webkit-details-marker { display:none; }
+  .cr summary { list-style:none; cursor:pointer; }
+  .cr summary::-webkit-details-marker { display:none; }
+  .cr-link { display:inline-flex; align-items:center; gap:var(--s2); font-size:0.78rem; font-weight:700; color:var(--blue); text-decoration:none; padding:6px 14px; border:1px solid rgba(26,60,255,0.25); border-radius:100px; margin-bottom:var(--s3); }
+  .cr-title-row { display:flex; align-items:baseline; gap:var(--s3); flex-wrap:wrap; }
+  .cr-link-inline { font-size:0.76rem; font-weight:700; color:var(--blue); text-decoration:none; white-space:nowrap; }
+  .cr-link-inline:hover { text-decoration:underline; }
+  .cr-link:hover { background:rgba(26,60,255,0.06); }
+  .cr-h { display:flex; align-items:baseline; justify-content:space-between; gap:var(--s3); flex-wrap:wrap; margin-bottom:var(--s1); }
+  .cr-t { font-size:1.05rem; font-weight:800; letter-spacing:-0.01em; }
+  .bd { font-size:0.62rem; font-weight:700; letter-spacing:0.07em; text-transform:uppercase; padding:3px 10px; border-radius:100px; }
+  .bd.w { background:rgba(0,153,77,0.1); color:var(--ok); }
+  .bd.o { background:rgba(26,60,255,0.1); color:var(--blue); }
+  .bd.g { background:rgba(134,138,166,0.14); color:var(--g4); }
+  .cr-a { font-size:0.76rem; color:var(--g6); font-weight:600; margin-bottom:var(--s4); }
+  .cr-b p { font-size:0.88rem; color:var(--g2); line-height:1.6; margin-bottom:var(--s2); }
+  .cr-b p:last-child { margin-bottom:0; }
+  .ms { display:flex; gap:var(--s5); flex-wrap:wrap; margin-top:var(--s3); }
+  .ms div { display:flex; flex-direction:column; }
+  .ms b { font-size:1rem; font-weight:800; font-variant-numeric:tabular-nums; }
+  .ms span { font-size:0.66rem; color:var(--g6); text-transform:uppercase; letter-spacing:0.07em; font-weight:700; }
+
+  .apd { margin-bottom:var(--s3); padding-bottom:var(--s3); border-bottom:1px solid rgba(10,10,92,0.08); }
+  .apd b { display:block; font-size:0.62rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--g6); margin-bottom:var(--s2); }
+  .apd p { font-size:0.86rem; color:var(--g2); line-height:1.65; margin:0; }
+  .acao { margin-top:var(--s3); padding-top:var(--s3); border-top:1px solid rgba(10,10,92,0.08); }
+  .acao b { display:block; font-size:0.62rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--blue); margin-bottom:var(--s2); }
+  .acao p { font-size:0.88rem; color:var(--g2); line-height:1.65; margin:0; }
+  .cr-body { padding-top:var(--s4); margin-top:var(--s4); border-top:1px solid rgba(10,10,92,0.08); }
+
+  .ins { background:rgba(26,60,255,0.05); border-left:3px solid var(--blue); border-radius:0 var(--r1) var(--r1) 0; padding:var(--s4) var(--s4); margin-top:var(--s5); }
+  .ins b { display:block; font-size:0.63rem; font-weight:700; text-transform:uppercase; letter-spacing:0.12em; color:var(--blue); margin-bottom:var(--s2); }
+  .ins p { font-size:0.9rem; color:var(--g2); line-height:1.7; margin-bottom:var(--s3); }
+  .ins p:last-child { margin-bottom:0; }
+
+  .common { background:linear-gradient(135deg,var(--navy),#1a1a8f); border-radius:var(--r3); padding:var(--s6) var(--s6); margin:var(--s6) 0; }
+  .common .prose { display:flex; flex-direction:column; gap:var(--s4); margin-top:var(--s4); }
+  .common .prose p { margin:0; padding-bottom:var(--s5); border-bottom:1px solid rgba(255,255,255,0.12); }
+  .common .prose p:last-child { padding-bottom:0; border-bottom:none; }
+  .common .sn { color:rgba(255,255,255,0.5); }
+  .common h2 { color:#fff; }
+  .common .sl { color:rgba(255,255,255,0.65); }
+  .prose p { font-size:0.96rem; color:var(--g2); line-height:1.75; margin-bottom:var(--s4); }
+  .prose strong { color:var(--ink); }
+
+  footer { text-align:center; padding:var(--s8) 0 var(--s8); margin-top:var(--s8); border-top:1px solid var(--line); }
+  footer img { height:26px; margin-bottom:var(--s5); opacity:0.75; }
+  footer p { font-size:0.76rem; color:var(--g6); }
+  footer p + p { margin-top:6px; }
+
+  @media (max-width:900px) {
+    .hero-cards, .verba-top { grid-template-columns:1fr; }
+  }
+
+  /* --- padrão de expansão (novo) --- */
+  details.dsec { list-style:none; }
+  details.dsec > summary { list-style:none; cursor:pointer; display:flex; align-items:flex-start; justify-content:space-between; gap:var(--s4); }
+  details.dsec > summary::-webkit-details-marker { display:none; }
+  .dsec-top h2 { margin-bottom:var(--s2); }
+  .dsum { color:var(--g4); font-size:0.95rem; max-width:64ch; }
+  .dsum b { color:var(--ink); font-variant-numeric:tabular-nums; }
+  .dtoggle { flex:0 0 auto; display:inline-flex; align-items:center; gap:8px; font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--blue); white-space:nowrap; margin-top:6px; }
+  .dchev { width:8px; height:8px; border-right:2px solid var(--blue); border-bottom:2px solid var(--blue); transform:rotate(45deg); transition:transform .2s ease; }
+  details[open] .dchev { transform:rotate(-135deg); }
+  details:not([open]) .dtxt-open { display:none; }
+  details[open] .dtxt-closed { display:none; }
+  details.dsec > .dbody { padding-top:var(--s6); }
+
+  .cr .cr-toggle { display:inline-flex; align-items:center; gap:8px; font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--blue); margin-top:var(--s4); }
+  .cr .cr-toggle .dchev { border-color:var(--blue); }
+</style>
+
+<nav class="nav">
+  <div class="wrap nav-in">
+    <div class="nav-logo"><img src="LOGOPLACEHOLDER" alt="Esquina"></div>
+    <div class="nav-r">
+      <span class="chip">Meta Ads</span><span class="chip">YouTube</span>
+      <span class="chip m">Prefeitura de Hortolândia</span><span class="chip test">TESTE · resumo + expansão</span>
+      <a class="chip central" href="../../central/index.html">Central de relatórios</a>
+      <a class="chip central" href="boletim-hortolandia-semanal-10ago-16ago2026.pdf" target="_blank" rel="noopener" download>Exportar PDF</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero wrap">
+  <div class="eb">Boletim semanal · 10 a 16 de agosto de 2026</div>
+  <h1>Três pautas no ar e um ciclo de eventos encerrado</h1>
+  <p class="lead">Semana com as três pautas do mês rodando juntas: Segurança se mantém estável, Agosto Lilás completa sua primeira semana cheia e a nova data do show de Diogo Nogueira estreia. Planeta Rock e Semana Cultural encerraram em 08/08.</p>
+
+  <div class="hero-cards">
+    <div class="hc"><div class="hc-t">Impressões</div><div class="hc-v">360.622</div></div>
+    <div class="hc"><div class="hc-t">Interações</div><div class="hc-v">37.998</div></div>
+    <div class="hc"><div class="hc-t">Visualizações</div><div class="hc-v">12.481</div></div>
+    <div class="hc"><div class="hc-t">Taxa de engajamento</div><div class="hc-v">10,78%</div></div>
+    <div class="hc"><div class="hc-t">CTR</div><div class="hc-v">0,39%</div></div>
+    <div class="hc"><div class="hc-t">Taxa de visualização</div><div class="hc-v">3,05%</div></div>
+    <div class="hc accent"><div class="hc-t">Verba livre</div><div class="hc-v">R$ 1.500</div><div class="hc-s">Sem pauta definida</div></div>
+    <div class="hc accent"><div class="hc-t">Alocado em campanhas</div><div class="hc-v">R$ 38.500</div><div class="hc-s">96,3% do plano</div></div>
+  </div>
+</header>
+
+<section class="wrap">
+  <details class="dsec" open>
+    <summary>
+      <div class="dsec-top">
+        <div class="sn">01</div>
+        <h2>Verba do plano</h2>
+        <p class="dsum"><b>R$ 24.240,74</b> gastos de <b>R$ 38.500,00</b> alocados · <b>63,0%</b> · <b>R$ 1.500,00</b> ainda livres</p>
+      </div>
+      <span class="dtoggle"><span class="dtxt-closed">Ver detalhes</span><span class="dtxt-open">Recolher</span><i class="dchev"></i></span>
+    </summary>
+    <div class="dbody">
+      <div class="card">
+        <div class="verba-top">
+          <div class="vt"><div class="v">R$ 38.500,00</div><div class="l">Alocado em campanhas</div><div class="n">96,3% do plano</div></div>
+          <div class="vt"><div class="v">R$ 24.240,74</div><div class="l">Gasto até agora</div><div class="n">63,0% do valor alocado</div></div>
+          <div class="vt avail"><div class="v">R$ 14.259,26</div><div class="l">A gastar</div><div class="n">dentro dos R$38.500,00 alocados</div></div>
+          <div class="vt free"><div class="v">R$ 1.500,00</div><div class="l">Ainda livre</div><div class="n">em relação aos R$40.000,00 contratados</div></div>
+        </div>
+        <div class="bar">
+          <i style="width:60.6%;background:linear-gradient(90deg,var(--blue),var(--purple))"></i>
+          <i style="width:35.6%;background:rgba(26,60,255,0.18)"></i>
+          <i style="width:3.8%;background:rgba(0,153,77,0.35)"></i>
+        </div>
+        <div class="bar-lg"><span>Gasto</span><span>A gastar</span><span>Livre</span></div>
+      </div>
+      <div class="ins">
+        <b>Leitura</b>
+        <p>Com as seis pautas do mês já distribuídas, R$38.500 dos R$40.000,00 contratados estão alocados em campanha, e R$1.500,00 seguem livres, sem pauta definida. O consumo está em 63,0% do valor alocado, em linha com o calendário do flight, que vai até 27/08. Os R$1.500,00 livres seguem disponíveis para reforçar a pauta que tiver mais peso na reta final.</p>
+      </div>
+    </div>
+  </details>
+</section>
+
+<section class="wrap">
+  <details class="dsec">
+    <summary>
+      <div class="dsec-top">
+        <div class="sn">02</div>
+        <h2>O que entregamos</h2>
+        <p class="dsum"><b>360.622</b> impressões nesta semana, queda de <b>38,9%</b> vs. a semana anterior</p>
+      </div>
+      <span class="dtoggle"><span class="dtxt-closed">Ver detalhes</span><span class="dtxt-open">Recolher</span><i class="dchev"></i></span>
+    </summary>
+    <div class="dbody">
+  <div class="card tbl-card">
+    <div class="tw">
+    <table>
+      <thead>
+        <tr><th>Linha</th><th>Métrica</th><th class="n">10 a 16/08</th><th class="n">03 a 09/08</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Meta Ads · Segurança</strong></td><td>impressões</td><td class="n">277.884</td><td class="n">346.543</td></tr>
+        <tr><td><strong>Meta Ads · Segurança</strong></td><td>visualizações</td><td class="n">8.658</td><td class="n">16.571</td></tr>
+        <tr><td><strong>Meta Ads · Agosto Lilás</strong></td><td>impressões</td><td class="n">55.085</td><td class="n"></td></tr>
+        <tr><td><strong>Meta Ads · Agosto Lilás</strong></td><td>visualizações</td><td class="n">2.083</td><td class="n"></td></tr>
+        <tr><td><strong>Meta Ads · Nova data do show</strong></td><td>impressões</td><td class="n">19.608</td><td class="n"></td></tr>
+        <tr><td><strong>Meta Ads · Planeta Rock e Semana Cultural</strong></td><td>impressões</td><td class="n"></td><td class="n">216.755</td></tr>
+        <tr><td><strong>Meta Ads · Planeta Rock e Semana Cultural</strong></td><td>visualizações</td><td class="n"></td><td class="n">6.787</td></tr>
+        <tr><td><strong>YouTube · Agosto Lilás</strong></td><td>impressões</td><td class="n">8.045</td><td class="n"></td></tr>
+        <tr><td><strong>YouTube · Agosto Lilás</strong></td><td>visualizações</td><td class="n">1.740</td><td class="n"></td></tr>
+        <tr><td><strong>YouTube · Planeta Rock</strong></td><td>impressões</td><td class="n"></td><td class="n">26.603</td></tr>
+        <tr><td><strong>YouTube · Planeta Rock</strong></td><td>visualizações</td><td class="n"></td><td class="n">5.951</td></tr>
+      </tbody>
+      <tfoot>
+        <tr><td colspan="2">Consolidado · impressões</td><td class="n">360.622</td><td class="n">589.901</td></tr>
+        <tr><td colspan="2">Consolidado · visualizações</td><td class="n">12.481</td><td class="n">29.309</td></tr>
+      </tfoot>
+    </table>
+    </div>
+  </div>
+  <div class="ins">
+    <b>Leitura</b>
+    <p>Segurança mantém volume estável e as pautas novas somam entrega.</p>
+    <p>Stories do Instagram concentra 42,5% das impressões, Feed 32,2% e Reels 23,1%. O in-stream tem a melhor retenção: 34,4% de visualização, contra 3,6% no Feed.</p>
+    <p>A entrega se concentra em 18 a 34 anos, 69,5% das impressões, mas quem responde é o público de 35 a 54: taxa de engajamento de 20,6% contra 6,7%, e CTR quase seis vezes maior. Mulheres recebem 53,6% do volume e homens 46,4%. <strong>Ação:</strong> sugerimos peças pensadas para a faixa de 35 a 54, que hoje recebe menos volume e responde mais.</p>
+      </div>
+    </div>
+  </details>
+</section>
+
+<section class="wrap">
+  <div class="sn">03</div>
+  <h2>Peças em destaque</h2>
+  <p class="sl">Leitura qualitativa dos criativos no ar, considerando há quanto tempo cada um veicula.</p>
+  <div class="creatives">
+
+    <details class="cr">
+      <summary>
+        <div class="cr-h">
+          <div class="cr-title-row">
+            <span class="cr-t">Segurança · Operação GM 153, Canil da GM</span>
+            <a class="cr-link-inline" href="https://www.instagram.com/p/DbYi6SPAK7j/" target="_blank" rel="noopener">Ver publicação ↗</a>
+          </div>
+          <span class="bd w">Vai bem, com espaço para render mais</span>
+        </div>
+        <div class="ms">
+          <div><b>1min52</b><span>Duração da peça</span></div>
+          <div><b>8s</b><span>Atenção média na semana</span></div>
+          <div><b>64.959</b><span>Impressões</span></div>
+          <div><b>1.922</b><span>Thruplays</span></div>
+        </div>
+        <span class="cr-toggle"><span class="dtxt-closed">Ver análise completa</span><span class="dtxt-open">Recolher</span><i class="dchev"></i></span>
+      </summary>
+      <div class="cr-b cr-body">
+        <div class="apd">
+          <b>Audiência e posicionamento</b>
+          <p>No recorte de posicionamento desta semana, o vídeo in-stream e o Stories do Instagram seguram bem mais atenção (32,3% e 26,6% de visualização) do que o Reels (13,3%) e o Feed (10,3%).</p>
+        </div>
+
+        <p><strong>Segura bem quem passa dos primeiros segundos.</strong> Entre as peças de Segurança, é a que mais segura quem chega ao primeiro quarto do vídeo. A entrada é que custa: 5,8% de quem dá play chega a esse ponto. Com 1 minuto e 52 segundos de duração contra 8 segundos de atenção média, a maior parte da mensagem é entregue fora da janela em que o público assiste.</p>
+
+        <div class="acao">
+          <b>Ação</b>
+          <p>A peça tem 1min52 confirmado e atenção média de 8 segundos, 7,2% da duração. Sugerimos versões reduzidas de até 15 segundos, com a informação principal já na abertura. Como ela retém mais no Stories do Instagram do que no Feed, sugerimos também uma versão vertical dedicada, já que hoje o mesmo arquivo atende todos os posicionamentos.</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="cr">
+      <summary>
+        <div class="cr-h">
+          <div class="cr-title-row">
+            <span class="cr-t">Agosto Lilás</span>
+            <a class="cr-link-inline" href="https://www.instagram.com/p/Db3uXqgsOhi/" target="_blank" rel="noopener">Ver publicação ↗</a>
+          </div>
+          <span class="bd o">Primeira semana cheia</span>
+        </div>
+        <div class="ms">
+          <div><b>2min05</b><span>Duração da peça</span></div>
+          <div><b>7s</b><span>Atenção média na semana</span></div>
+          <div><b>18-34</b><span>Faixa que concentra a entrega</span></div>
+          <div><b>31.487</b><span>Impressões</span></div>
+          <div><b>1.224</b><span>Thruplays</span></div>
+        </div>
+        <span class="cr-toggle"><span class="dtxt-closed">Ver análise completa</span><span class="dtxt-open">Recolher</span><i class="dchev"></i></span>
+      </summary>
+      <div class="cr-b cr-body">
+        <div class="apd">
+          <b>Audiência e posicionamento</b>
+          <p>Homens e mulheres de 18 a 34 anos respondem por praticamente toda a entrega verificada. Por posicionamento, Stories do Instagram e in-stream retêm bem mais (30,2% e 34,8% de visualização) do que o Feed (7,6%), padrão oposto ao do vídeo de Segurança acima.</p>
+        </div>
+
+        <p><strong>A peça sustenta atenção melhor fora do Feed.</strong> Com a mesma duração longa (2min05) da checagem anterior, os 7 segundos de atenção média mostram que o trecho final, sobre a rede de apoio da cidade, segue chegando a poucas pessoas dentro do tempo assistido. A legenda do anúncio já reforça esses canais de apoio, o que ajuda a cobrir essa lacuna.</p>
+
+        <div class="acao">
+          <b>Ação</b>
+          <p>Assim como no vídeo de Segurança, aqui a peça tem 2min05 e atenção média de 7 segundos, 5,6% da duração. Sugerimos versões reduzidas de até 15 segundos, com a rede de apoio logo no início, e uma versão vertical dedicada ao Stories, onde ela retém quase quatro vezes mais que no Feed.</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="cr">
+      <summary>
+        <div class="cr-h">
+          <div class="cr-title-row">
+            <span class="cr-t">Nova data · Show do Diogo Nogueira</span>
+            <a class="cr-link-inline" href="https://www.instagram.com/p/Db_lK1Us9Os/" target="_blank" rel="noopener">Ver publicação ↗</a>
+          </div>
+          <span class="bd g">Leitura preliminar</span>
+        </div>
+        <div class="ms">
+          <div><b>19.608</b><span>Impressões</span></div>
+          <div><b>632</b><span>Engajamentos</span></div>
+          <div><b>18-34</b><span>Faixa que concentra a entrega</span></div>
+        </div>
+        <span class="cr-toggle"><span class="dtxt-closed">Ver análise completa</span><span class="dtxt-open">Recolher</span><i class="dchev"></i></span>
+      </summary>
+      <div class="cr-b cr-body">
+        <div class="apd">
+          <b>Audiência e posicionamento</b>
+          <p>Entrega concentrada em Feed e Stories do Instagram e Facebook, público de 18 a 34 anos. O volume ainda é baixo para uma leitura de retenção com confiança, por ser a primeira semana da peça no ar.</p>
+        </div>
+
+        <p><strong>Ainda é cedo para uma leitura de criativo.</strong> Com apenas 3 dias completos no ar, o volume por posicionamento é baixo demais para separar sinal de ruído. O padrão observado até aqui, mais entrega em Feed do que em Stories e Reels, está em linha com o comportamento inicial de peças novas nas outras pautas do mês.</p>
+
+        <div class="acao">
+          <b>Ação</b>
+          <p>Sugerimos aguardar mais uma semana completa de veiculação antes de qualquer ajuste de criativo.</p>
+        </div>
+      </div>
+    </details>
+
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="common">
+    <div class="sn">04</div>
+    <h2>Aprendizados da semana</h2>
+    <div class="prose">
+      <p style="color:rgba(255,255,255,0.88)"><strong style="color:#fff">Diogo Nogueira lidera em volume e em taxa ao mesmo tempo.</strong> 5,6% das impressões, 39,8% dos cliques, taxa de 2,82% contra 0,39% da média. Sinal de interesse espontâneo. Sugerimos manter esse ritmo na próxima leva de peças do show.</p>
+      <p style="color:rgba(255,255,255,0.88)"><strong style="color:#fff">O formato entregue não é o que o público consome.</strong> Vídeos de 60 a 125 segundos, atenção média de 6 a 8. Retêm mais no Stories e em tela cheia do que no Feed, sem versão vertical própria. Sugerimos que o corte de 15 segundos e a versão vertical já nasçam junto com a peça principal.</p>
+      <p style="color:rgba(255,255,255,0.88)"><strong style="color:#fff">Quem mais responde não é quem mais recebe.</strong> A faixa de 35 a 54 anos recebe pouco volume e reage muito mais. Sugerimos criativos com linguagem própria para esse público, hoje atendido pela mesma peça pensada pros mais jovens.</p>
+
+    </div>
+  </div>
+</section>
+
+<footer class="wrap">
+  <img src="LOGOPLACEHOLDER" alt="Esquina">
+  <p>Boletim semanal de 10 a 16 de agosto de 2026 · Prefeitura de Hortolândia</p>
+  <p>Fontes: Meta Ads e Google Ads (YouTube). Dados apurados em 17/08/2026. Comparativo com o período de 03 a 09/08.</p>
+</footer>
