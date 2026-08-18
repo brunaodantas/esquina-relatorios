@@ -28,6 +28,12 @@
   .chip.m { background:rgba(10,10,92,0.06); color:var(--g4); }
 
   .hero { padding:var(--s8) 0 var(--s7); }
+  .hero-intro { background:linear-gradient(135deg,var(--navy),#1a1a8f); border-radius:var(--r3); padding:var(--s6); margin-bottom:var(--s6); }
+  .hero-intro .eb { color:#8fb3ff; }
+  .hero-intro .eb::before { background:#8fb3ff; }
+  .hero-intro h1 { color:#fff; }
+  .hero-intro .lead { color:rgba(255,255,255,0.75); }
+
   .eb { display:inline-flex; align-items:center; gap:var(--s2); font-size:0.7rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:var(--blue); margin-bottom:var(--s3); }
   .eb::before { content:''; width:22px; height:2px; background:var(--blue); }
   h1 { font-size:clamp(2rem,4.6vw,3rem); font-weight:800; letter-spacing:-0.025em; line-height:1.08; text-wrap:balance; margin-bottom:var(--s3); }
@@ -197,9 +203,11 @@
 </nav>
 
 <header class="hero wrap">
+  <div class="hero-intro">
   <div class="eb">Boletim semanal · 10 a 16 de agosto de 2026</div>
   <h1>Conteúdo novo assume a liderança de volume e o formato de pergunta domina o engajamento</h1>
   <p class="lead">O flight ganhou escala nesta semana com a entrada em ritmo pleno das quatro linhas. Volume e taxas de resposta cresceram juntos, e o tema mais recente, "O que sabem sobre DAE Jundiaí", já é a peça de maior entrega.</p>
+  </div>
   <div class="hero-cards"><div class="hc"><div class="hc-t">Impressões</div><div class="hc-v">95.448</div></div><div class="hc"><div class="hc-t">Interações</div><div class="hc-v">17.872</div></div><div class="hc"><div class="hc-t">Visualizações</div><div class="hc-v">4.117</div></div><div class="hc"><div class="hc-t">Taxa de engajamento</div><div class="hc-v">18,7%</div></div><div class="hc"><div class="hc-t">CTR</div><div class="hc-v">0,27%</div></div><div class="hc"><div class="hc-t">Taxa de visualização</div><div class="hc-v">4,3%</div></div><div class="hc accent"><div class="hc-t">Gasto até agora</div><div class="hc-v">R$ 1.760,00</div><div class="hc-s">17,6% do plano</div></div><div class="hc accent"><div class="hc-t">A gastar</div><div class="hc-v">R$ 2.240,00</div><div class="hc-s">dentro do valor alocado</div></div></div>
 </header>
 

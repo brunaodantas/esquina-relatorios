@@ -25,6 +25,12 @@
   .chip.central:hover { background:rgba(10,10,92,0.05); }
 
   .hero { padding:var(--s8) 0 var(--s7); }
+  .hero-intro { background:linear-gradient(135deg,var(--navy),#1a1a8f); border-radius:var(--r3); padding:var(--s6); margin-bottom:var(--s6); }
+  .hero-intro .eb { color:#8fb3ff; }
+  .hero-intro .eb::before { background:#8fb3ff; }
+  .hero-intro h1 { color:#fff; }
+  .hero-intro .lead { color:rgba(255,255,255,0.75); }
+
   .eb { display:inline-flex; align-items:center; gap:var(--s2); font-size:0.7rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:var(--blue); margin-bottom:var(--s3); }
   .eb::before { content:''; width:22px; height:2px; background:var(--blue); }
   h1 { font-size:clamp(2rem,4.6vw,3rem); font-weight:800; letter-spacing:-0.025em; line-height:1.08; text-wrap:balance; margin-bottom:var(--s3); }
@@ -132,9 +138,11 @@
 </nav>
 
 <header class="hero wrap">
+  <div class="hero-intro">
   <div class="eb">Boletim semanal · 10 a 16 de agosto de 2026</div>
   <h1>Segunda semana confirma o vídeo institucional como o formato de maior retenção da conta</h1>
   <p class="lead">Primeira leitura com um período anterior completo (7 dias) para comparar. As taxas consolidadas desta semana refletem um mix mais concentrado em impressão e vídeo, com peso menor de engajamento, o que explica a variação frente ao período anterior.</p>
+  </div>
 
   <div class="hero-cards">
     <div class="hc"><div class="hc-t">Impressões</div><div class="hc-v">252.413</div></div>
