@@ -66,22 +66,22 @@
   tfoot td { font-weight:800; border-top:2px solid var(--line); border-bottom:none; }
 
   .creatives { display:flex; flex-direction:column; gap:var(--s4); }
-  .cr { background:var(--white); border:1px solid var(--line); border-radius:var(--r3); box-shadow:0 1px 3px rgba(10,10,92,0.04), 0 8px 24px rgba(10,10,92,0.05); padding:var(--s5) var(--s6); }
+  .cr { background:var(--white); border:1px solid var(--line); border-radius:var(--r3); box-shadow:0 1px 3px rgba(10,10,92,0.04), 0 8px 24px rgba(10,10,92,0.05); padding:var(--s4) var(--s5); }
   .cr-b { padding:0; }
   .cr-link { display:inline-flex; align-items:center; gap:var(--s2); font-size:0.8rem; font-weight:700; color:var(--blue); text-decoration:none; padding:8px 16px; border:1px solid rgba(26,60,255,0.25); border-radius:100px; margin-bottom:var(--s4); }
   .cr-link:hover { background:rgba(26,60,255,0.06); }
   .cr-h { display:flex; align-items:baseline; justify-content:space-between; gap:var(--s3); flex-wrap:wrap; margin-bottom:var(--s1); }
-  .cr-t { font-size:1.18rem; font-weight:800; letter-spacing:-0.01em; }
+  .cr-t { font-size:1.05rem; font-weight:800; letter-spacing:-0.01em; }
   .bd { font-size:0.62rem; font-weight:700; letter-spacing:0.07em; text-transform:uppercase; padding:3px 10px; border-radius:100px; }
   .bd.w { background:rgba(0,153,77,0.1); color:var(--ok); }
   .bd.o { background:rgba(26,60,255,0.1); color:var(--blue); }
   .bd.g { background:rgba(134,138,166,0.14); color:var(--g4); }
   .cr-a { font-size:0.76rem; color:var(--g6); font-weight:600; margin-bottom:var(--s4); }
-  .cr-b p { font-size:0.92rem; color:var(--g2); line-height:1.8; margin-bottom:var(--s3); }
+  .cr-b p { font-size:0.88rem; color:var(--g2); line-height:1.6; margin-bottom:var(--s2); }
   .cr-b p:last-child { margin-bottom:0; }
-  .ms { display:flex; gap:var(--s6); flex-wrap:wrap; padding-bottom:var(--s4); margin-bottom:var(--s4); border-bottom:1px solid rgba(10,10,92,0.06); }
+  .ms { display:flex; gap:var(--s5); flex-wrap:wrap; padding-bottom:var(--s3); margin-bottom:var(--s3); border-bottom:1px solid rgba(10,10,92,0.06); }
   .ms div { display:flex; flex-direction:column; }
-  .ms b { font-size:1.12rem; font-weight:800; font-variant-numeric:tabular-nums; }
+  .ms b { font-size:1rem; font-weight:800; font-variant-numeric:tabular-nums; }
   .ms span { font-size:0.66rem; color:var(--g6); text-transform:uppercase; letter-spacing:0.07em; font-weight:700; }
 
   .apd { margin-bottom:var(--s4); padding-bottom:var(--s3); border-bottom:1px solid rgba(10,10,92,0.08); }
@@ -137,12 +137,12 @@
   <p class="lead">Primeira leitura com um período anterior completo (7 dias) para comparar. As taxas consolidadas desta semana refletem um mix mais concentrado em impressão e vídeo, com peso menor de engajamento, o que explica a variação frente ao período anterior.</p>
 
   <div class="hero-cards">
-    <div class="hc"><div class="hc-t">Impressões</div><div class="hc-v">252.413</div><div class="hc-s up">44,3% acima da semana anterior</div></div>
-    <div class="hc"><div class="hc-t">Interações</div><div class="hc-v">34.530</div><div class="hc-s down">9,8% abaixo (CPE saiu do ar)</div></div>
-    <div class="hc"><div class="hc-t">Visualizações</div><div class="hc-v">13.822</div><div class="hc-s up">6,6% acima</div></div>
-    <div class="hc"><div class="hc-t">CTR</div><div class="hc-v">0,10%</div><div class="hc-s up">era 0,09%</div></div>
-    <div class="hc"><div class="hc-t">Taxa de engajamento</div><div class="hc-v">13,68%</div><div class="hc-s down">era 21,88% (mix mudou, ver acima)</div></div>
-    <div class="hc"><div class="hc-t">Taxa de visualização</div><div class="hc-v">5,48%</div><div class="hc-s down">era 7,41% (mix mudou, ver acima)</div></div>
+    <div class="hc"><div class="hc-t">Impressões</div><div class="hc-v">252.413</div></div>
+    <div class="hc"><div class="hc-t">Interações</div><div class="hc-v">34.530</div></div>
+    <div class="hc"><div class="hc-t">Visualizações</div><div class="hc-v">13.822</div></div>
+    <div class="hc"><div class="hc-t">CTR</div><div class="hc-v">0,10%</div></div>
+    <div class="hc"><div class="hc-t">Taxa de engajamento</div><div class="hc-v">13,68%</div></div>
+    <div class="hc"><div class="hc-t">Taxa de visualização</div><div class="hc-v">5,48%</div></div>
     <div class="hc accent"><div class="hc-t">Gasto até agora</div><div class="hc-v">R$ 7.312,50</div><div class="hc-s">40,6% do plano</div></div>
     <div class="hc accent"><div class="hc-t">A gastar</div><div class="hc-v">R$ 6.187,50</div><div class="hc-s">dentro do valor alocado</div></div>
   </div>
@@ -203,13 +203,12 @@
 <section class="wrap">
   <div class="sn">03</div>
   <h2>Peças em destaque</h2>
-  <p class="sl">Leitura qualitativa dos criativos no ar, considerando há quanto tempo cada um veicula.</p>
+  <p class="sl">Leitura qualitativa dos criativos no ar, com dados do período.</p>
   <div class="creatives">
 
     <article class="cr">
       <div class="cr-b">
         <div class="cr-h"><div class="cr-t">Concurso 7 Maravilhas de Americana</div><span class="bd w">Vai bem, com espaço para render mais</span></div>
-        <div class="cr-a">No ar desde 05/08 · 12 dias</div>
         <a class="cr-link" href="https://www.instagram.com/p/DbqgJ-VA08V/" target="_blank" rel="noopener">Ver a publicação no Instagram ↗</a>
         <div class="ms">
           <div><b>1min41</b><span>Duração da peça, confirmada agora</span></div>
@@ -237,7 +236,6 @@
     <article class="cr">
       <div class="cr-b">
         <div class="cr-h"><div class="cr-t">Feliz de verdade na Infra</div><span class="bd o">O CTR é bom, mas pode melhorar</span></div>
-        <div class="cr-a">No ar desde 06/08 · 11 dias</div>
         <a class="cr-link" href="https://www.instagram.com/p/Dbtt4Rxg1p1/" target="_blank" rel="noopener">Ver a publicação no Instagram ↗</a>
         <div class="ms">
           <div><b>1min50</b><span>Duração da peça, confirmada agora</span></div>
@@ -265,7 +263,6 @@
     <article class="cr">
       <div class="cr-b">
         <div class="cr-h"><div class="cr-t">Americana vem avançando na saúde</div><span class="bd g">Terceira melhor da semana</span></div>
-        <div class="cr-a">No ar desde 12/08 · 5 dias</div>
         <a class="cr-link" href="https://www.facebook.com/100064250906991/posts/1483770003774682/" target="_blank" rel="noopener">Ver a publicação no Facebook ↗</a>
         <div class="ms">
           <div><b>2</b><span>Cartões no carrossel</span></div>
