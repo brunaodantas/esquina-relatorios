@@ -67,7 +67,8 @@
   .vt.avail .v { color:var(--blue); }
   .bar { height:12px; border-radius:100px; background:rgba(10,10,92,0.08); overflow:hidden; display:flex; }
   .bar i { display:block; height:100%; }
-  .bar-lg { display:flex; justify-content:space-between; font-size:0.74rem; color:var(--g4); margin-top:var(--s2); font-variant-numeric:tabular-nums; }
+  .bar-lg { display:flex; font-size:0.74rem; color:var(--g4); margin-top:var(--s2); font-variant-numeric:tabular-nums; }
+  .bar-lg span { overflow:hidden; white-space:nowrap; }
 
   .tw { overflow-x:auto; margin-top:var(--s5); }
   table { width:100%; border-collapse:collapse; font-size:0.85rem; }
@@ -226,7 +227,7 @@
       <i style="width:61.2%;background:rgba(26,60,255,0.18)"></i>
       <i style="width:0.0%;background:rgba(0,153,77,0.35)"></i>
     </div>
-    <div class="bar-lg"><span>Gasto</span><span>A gastar</span><span>Livre</span></div>
+    <div class="bar-lg"><span style="width:38.8%;text-align:left">Gasto</span><span style="width:61.2%;text-align:center">A gastar</span><span style="width:0.0%;text-align:right">Livre</span></div>
   </div>
   <div class="ins">
     <b>Leitura</b>
