@@ -1,0 +1,229 @@
+<title>Boletim Semanal Campinas 11-18 ago 2026 · slides</title>
+<style>
+  :root {
+    --blue:#1A3CFF; --navy:#0A0A5C; --purple:#9C27B0;
+    --ink:#111; --bg:#F4F6FF; --white:#fff;
+    --line:rgba(10,10,92,0.10); --g4:#5A5F80; --g6:#868AA6; --g2:#242844; --ok:#00994D;
+    --f:-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Helvetica,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#333;font-family:var(--f);color:var(--ink);-webkit-font-smoothing:antialiased}
+  .slide{width:720px;height:1280px;overflow:hidden;position:relative;background:var(--bg);margin:0 auto 24px}
+  .slide-in{position:absolute;inset:0;padding:56px 48px;display:flex;flex-direction:column}
+  .dark{background:linear-gradient(150deg,var(--navy),#161680)}
+  .dark *{color:#fff}
+  .lg{height:26px;width:auto;display:block}
+  .eb{display:inline-flex;align-items:center;gap:8px;font-size:0.66rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--blue);margin-bottom:14px}
+  .eb::before{content:'';width:20px;height:2px;background:var(--blue)}
+  .dark .eb{color:rgba(255,255,255,0.75)} .dark .eb::before{background:rgba(255,255,255,0.6)}
+  h1{font-size:2.5rem;font-weight:800;letter-spacing:-0.025em;line-height:1.1}
+  h2{font-size:1.5rem;font-weight:800;letter-spacing:-0.015em;margin-bottom:8px}
+  .sn{font-size:0.62rem;font-weight:700;color:var(--g6);letter-spacing:0.14em;text-transform:uppercase;margin-bottom:4px}
+  .dark .sn{color:rgba(255,255,255,0.5)}
+  .sl{color:var(--g4);font-size:0.86rem;margin-bottom:26px;max-width:62ch}
+  .dark .sl{color:rgba(255,255,255,0.65)}
+  .lead{color:var(--g4);font-size:0.95rem;line-height:1.6;margin-top:16px}
+  .dark .lead{color:rgba(255,255,255,0.78)}
+  .foot{margin-top:auto;padding-top:20px;border-top:1px solid var(--line);font-size:0.66rem;color:var(--g6);display:flex;justify-content:space-between;align-items:center}
+  .dark .foot{border-top-color:rgba(255,255,255,0.16)} .dark .foot,.dark .foot *{color:rgba(255,255,255,0.6)}
+  .kpis{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .hc{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:20px;min-height:118px;display:flex;flex-direction:column;justify-content:space-between}
+  .hc-t{font-size:0.62rem;font-weight:700;text-transform:uppercase;letter-spacing:0.09em;color:var(--g6)}
+  .hc-v{font-size:1.7rem;font-weight:800;font-variant-numeric:tabular-nums;letter-spacing:-0.025em;line-height:1.05}
+  .hc-s{font-size:0.7rem;color:var(--g4);line-height:1.35}
+  .hc-s.up{color:var(--ok);font-weight:600}
+  .hc.accent{background:linear-gradient(135deg,var(--navy),#161680);border-color:transparent}
+  .hc.accent .hc-t{color:rgba(255,255,255,0.55)} .hc.accent .hc-v{color:#fff} .hc.accent .hc-s{color:rgba(255,255,255,0.72)}
+  table{width:100%;border-collapse:collapse;font-size:0.78rem}
+  th{text-align:left;font-size:0.58rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--g6);padding:8px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
+  td{padding:9px 10px;border-bottom:1px solid rgba(10,10,92,0.05);font-variant-numeric:tabular-nums}
+  td.n,th.n{text-align:right}
+  tfoot td{font-weight:800;border-top:2px solid var(--line);border-bottom:none}
+  td em{font-style:normal;font-size:0.62rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--ok);margin-left:5px}
+  .ins{background:rgba(26,60,255,0.05);border-left:3px solid var(--blue);border-radius:0 8px 8px 0;padding:18px 20px;margin-top:22px}
+  .ins b{display:block;font-size:0.6rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--blue);margin-bottom:8px}
+  .ins p{font-size:0.8rem;color:var(--g2);line-height:1.6;margin-bottom:10px}
+  .ins p:last-child{margin-bottom:0}
+  .prose p{font-size:0.85rem;color:var(--g2);line-height:1.65;margin-bottom:16px}
+  .dark .prose p{color:rgba(255,255,255,0.86)}
+  .prose p:last-child{margin-bottom:0}
+  .prose strong{color:var(--ink)} .dark .prose strong{color:#fff}
+  .bd{display:inline-block;font-size:0.58rem;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;padding:4px 11px;border-radius:100px;margin-bottom:14px}
+  .bd.w{background:rgba(0,153,77,0.1);color:var(--ok)}
+  .bd.o{background:rgba(26,60,255,0.1);color:var(--blue)}
+  .bd.g{background:rgba(134,138,166,0.16);color:var(--g4)}
+  .cr-t{font-size:1.6rem;font-weight:800;letter-spacing:-0.02em;line-height:1.15;margin-bottom:6px}
+  .cr-a{font-size:0.7rem;color:var(--g6);font-weight:600;margin-bottom:22px}
+  .ms{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding-bottom:22px;margin-bottom:22px;border-bottom:1px solid rgba(10,10,92,0.08)}
+  .ms div{display:flex;flex-direction:column;gap:2px}
+  .ms b{font-size:1.35rem;font-weight:800;font-variant-numeric:tabular-nums;letter-spacing:-0.02em}
+  .ms span{font-size:0.6rem;color:var(--g6);text-transform:uppercase;letter-spacing:0.07em;font-weight:700;line-height:1.3}
+  .acao{margin-top:auto;padding-top:18px;border-top:1px solid rgba(10,10,92,0.08)}
+  .acao b{display:block;font-size:0.6rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--blue);margin-bottom:7px}
+  .acao p{font-size:0.8rem;color:var(--g2);line-height:1.6}
+  .cap{font-size:0.72rem;color:var(--g6);margin-top:14px}
+</style>
+<div class="slide dark"><div class="slide-in">
+  <div style="margin-top:auto">
+    <div class="eb">Boletim semanal · 11 a 18 de agosto de 2026</div>
+    <h1>A entrega quase dobra de ritmo e um vídeo de bairro muda o patamar de conversa</h1>
+    <p class="lead">As quatro linhas contratadas cresceram em relação aos sete dias anteriores, de 04 a 10 de agosto. A peça "Campinas são muitas" levou a taxa de engajamento a 10,99% e concentrou quase toda a interação do período.</p>
+  </div>
+  <div class="foot"><span>Temas Diversos e Visitas ao Perfil</span><span>Esquina</span></div>
+</div></div>
+
+<div class="slide"><div class="slide-in">
+  <div class="eb">Panorama da semana</div>
+  <h2>Os números do período</h2>
+  <p class="sl">Cada indicador comparado com o período anterior, de 04 a 10 de agosto.</p>
+  <div class="kpis">
+    <div class="hc"><div class="hc-t">Impressões</div><div class="hc-v">1.519.682</div><div class="hc-s up">49,1% a mais por dia que o período anterior</div></div>
+    <div class="hc"><div class="hc-t">Interações</div><div class="hc-v">74.065</div><div class="hc-s up">era 2.439 no período anterior</div></div>
+    <div class="hc"><div class="hc-t">Visualizações</div><div class="hc-v">312.024</div><div class="hc-s">Temas Diversos e TikTok</div></div>
+    <div class="hc"><div class="hc-t">Taxa de engajamento</div><div class="hc-v">10,99%</div><div class="hc-s">Temas Diversos no Meta</div></div>
+    <div class="hc"><div class="hc-t">Taxa de visualização</div><div class="hc-v">3,16%</div><div class="hc-s">Temas Diversos no Meta</div></div>
+    <div class="hc"><div class="hc-t">Taxa de clique no TikTok</div><div class="hc-v">0,15%</div><div class="hc-s">era 0,18% no período anterior</div></div>
+    <div class="hc accent"><div class="hc-t">Visitas ao Perfil</div><div class="hc-v">3.536</div><div class="hc-s">visitas na semana, bônus</div></div>
+    <div class="hc accent"><div class="hc-t">Novos seguidores</div><div class="hc-v">823</div><div class="hc-s">779 no Instagram, 44 no Facebook</div></div>
+  </div>
+</div></div>
+
+<div class="slide"><div class="slide-in">
+  <div class="sn">01</div>
+  <h2>Impressões totais contratadas</h2>
+  <p class="sl">Volume contratado para o ciclo de 06 de agosto a 07 de setembro e o quanto já foi entregue.</p>
+  <div class="kpis">
+    <div class="hc"><div class="hc-t">Contratado no ciclo</div><div class="hc-v">5.020.000</div><div class="hc-s">nas quatro linhas</div></div>
+    <div class="hc"><div class="hc-t">Entregue até agora</div><div class="hc-v">2.397.427</div><div class="hc-s up">47,8% do contratado</div></div>
+    <div class="hc"><div class="hc-t">A entregar</div><div class="hc-v">2.622.573</div><div class="hc-s">até 07/09</div></div>
+    <div class="hc"><div class="hc-t">Do ciclo decorrido</div><div class="hc-v">39,4%</div><div class="hc-s">dia 13 de 33</div></div>
+  </div>
+  <table style="margin-top:26px">
+    <thead><tr><th>Linha</th><th class="n">Contratado</th><th class="n">Entregue</th><th class="n">%</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Meta Ads</strong></td><td class="n">2.200.000</td><td class="n">1.058.563</td><td class="n">48,1%</td></tr>
+      <tr><td><strong>Rede de Display</strong></td><td class="n">720.000</td><td class="n">348.072</td><td class="n">48,3%</td></tr>
+      <tr><td><strong>YouTube</strong></td><td class="n">1.100.000</td><td class="n">534.217</td><td class="n">48,6%</td></tr>
+      <tr><td><strong>TikTok</strong></td><td class="n">1.000.000</td><td class="n">456.575</td><td class="n">45,7%</td></tr>
+    </tbody>
+    <tfoot><tr><td>Consolidado</td><td class="n">5.020.000</td><td class="n">2.397.427</td><td class="n">47,8%</td></tr></tfoot>
+  </table>
+  <p class="cap">Com 39,4% do ciclo decorrido, as quatro linhas estão acima do ritmo necessário para chegar à meta em 07 de setembro.</p>
+</div></div>
+
+<div class="slide"><div class="slide-in">
+  <div class="sn">02</div>
+  <h2>O que entregamos</h2>
+  <p class="sl">Comparação entre 11 e 18 de agosto (8 dias) e o período anterior, de 04 a 10 de agosto (7 dias).</p>
+  <table>
+    <thead><tr><th>Linha</th><th>Métrica</th><th class="n">11 a 18/08</th><th class="n">04 a 10/08</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Meta Ads</strong> · Alcance</td><td>impressões</td><td class="n">536.504</td><td class="n">301.658</td></tr>
+      <tr><td><strong>Meta Ads</strong> · Engajamento</td><td>impressões</td><td class="n">137.263</td><td class="n">86.364</td></tr>
+      <tr><td><strong>Meta Ads</strong> · Engajamento</td><td>interações</td><td class="n">71.904</td><td class="n">2.013</td></tr>
+      <tr><td><strong>Meta Ads</strong> · Visitas ao Perfil <em>bônus</em></td><td>impressões</td><td class="n">189.625</td><td class="n">84.596</td></tr>
+      <tr><td><strong>Rede de Display</strong></td><td>impressões</td><td class="n">231.602</td><td class="n">127.270</td></tr>
+      <tr><td><strong>YouTube</strong> · In-Stream</td><td>impressões</td><td class="n">278.191</td><td class="n">110.305</td></tr>
+      <tr><td><strong>YouTube</strong> · Sequencial</td><td>impressões</td><td class="n">41.512</td><td class="n">104.209</td></tr>
+      <tr><td><strong>TikTok</strong></td><td>impressões</td><td class="n">294.610</td><td class="n">161.965</td></tr>
+      <tr><td><strong>TikTok</strong></td><td>visualizações</td><td class="n">290.704</td><td class="n">160.272</td></tr>
+    </tbody>
+    <tfoot><tr><td>Consolidado, linhas contratadas</td><td>impressões</td><td class="n">1.519.682</td><td class="n">891.771</td></tr></tfoot>
+  </table>
+  <p class="cap">A linha de Visitas ao Perfil é bônus e não entra na soma das impressões contratadas.</p>
+</div></div>
+
+<div class="slide"><div class="slide-in">
+  <div class="sn">02</div>
+  <h2>Leitura da entrega</h2>
+  <div class="prose" style="margin-top:8px">
+    <p>Os dois períodos têm tamanhos diferentes (8 dias contra 7), então o número que importa é a média diária: <strong>189.960 impressões por dia</strong> nesta semana, contra 127.396 no período anterior, 49,1% a mais. As quatro linhas cresceram nesse ritmo.</p>
+    <p>No Temas Diversos do Meta, o Feed concentra 47,0% das impressões, Stories do Instagram 23,5%, Reels do Instagram 22,7% e Stories do Facebook 6,9%. O Feed é também onde a conversa acontece: <strong>18,2% de taxa de engajamento</strong>, contra 9,25% no Reels e 1,46% no Stories do Instagram.</p>
+    <p><strong>Quem mais recebe não é quem mais responde.</strong> A faixa de 18 a 24 anos leva 30,3% do volume e tem a menor taxa de engajamento, 1,16%. Já o público de 65 anos ou mais recebe 11,6% do volume e responde a 32,84%, quase trinta vezes mais. O mesmo padrão aparece nas Visitas ao Perfil: a taxa de clique sobe de 1,34% na faixa de 18 a 24 para 3,46% acima dos 65.</p>
+    <p><strong>O YouTube reorganizou a entrega entre os dois formatos.</strong> O In-Stream mais que dobrou de volume e passou a carregar a linha, enquanto o Sequencial reduziu o ritmo. Como In-Stream e Sequencial formam uma linha só, o resultado consolidado da linha cresceu 49,0% em relação ao período anterior.</p>
+    <p><strong>Ação:</strong> sugerimos peças com linguagem pensada para o público de 45 anos ou mais, que hoje recebe menos volume e responde muito mais.</p>
+  </div>
+</div></div>
+
+<div class="slide"><div class="slide-in">
+  <div class="sn">03 · Peças em destaque · 1 de 3</div>
+  <span class="bd w">Melhor taxa de engajamento</span>
+  <div class="cr-t">Campinas são muitas</div>
+  <div class="cr-a">Vídeo, campanhas de Engajamento e de Alcance</div>
+  <div class="ms">
+    <div><b>153.673</b><span>Impressões na semana</span></div>
+    <div><b>72.683</b><span>Interações</span></div>
+    <div><b>47,3%</b><span>Taxa de engajamento</span></div>
+    <div><b>13,9%</b><span>Taxa de visualização</span></div>
+  </div>
+  <div class="prose">
+    <p><strong>É a peça que muda o patamar de conversa da conta.</strong> O vídeo convida para um passeio pelos bairros tradicionais de Campinas e responde por 98,1% de todas as interações do Temas Diversos na semana, com quase metade de quem vê interagindo com ela. O sinal é da pauta: conteúdo sobre bairros e identidade da cidade gera conversa em volume que peças institucionais não alcançam.</p>
+    <p>No Engajamento, que é onde ela concentra volume, a taxa é praticamente igual no Feed e no Reels do Instagram, em torno de 52,9%, e cai para 42,9% no Stories. Por idade, a resposta cresce com a faixa: acima dos 65 anos chega a 32,84% no conjunto do Temas Diversos, contra 1,16% de 18 a 24.</p>
+  </div>
+  <div class="acao"><b>Ação</b><p>Sugerimos preparar um segundo bairro no mesmo formato enquanto o interesse está alto, e testar uma versão reduzida de 15 a 20 segundos, com o trecho mais forte na abertura, para ampliar a parcela que assiste até o fim.</p></div>
+</div></div>
+
+<div class="slide"><div class="slide-in">
+  <div class="sn">03 · Peças em destaque · 2 de 3</div>
+  <span class="bd g">Maior volume da semana</span>
+  <div class="cr-t">Vacinação</div>
+  <div class="cr-a">Imagem estática, em três campanhas</div>
+  <div class="ms">
+    <div><b>578.562</b><span>Impressões na semana</span></div>
+    <div><b>1,58%</b><span>Clique na versão de perfil</span></div>
+    <div><b>0,12%</b><span>Clique na versão de alcance</span></div>
+    <div><b>18-34</b><span>Faixa que concentra a entrega</span></div>
+  </div>
+  <div class="prose">
+    <p><strong>O botão define o clique mais do que a imagem.</strong> É a peça de maior volume do ciclo, uma arte de utilidade pública sobre a vacinação nas escolas. Com arte e legenda idênticas, a versão com botão que leva ao perfil converte a 1,58% e a de alcance a 0,12%, treze vezes menos. O que muda o resultado é o destino do botão, não o criativo.</p>
+    <p>Na campanha de Alcance se espalha por Feed, Stories do Instagram e Reels; nas Visitas ao Perfil vai quase toda para Reels e Stories do Instagram, que juntos levam 96,6% da entrega da campanha. A faixa de 18 a 34 anos concentra o volume, mas é o público mais velho que clica: 3,46% acima dos 65 anos contra 1,34% de 18 a 24.</p>
+  </div>
+  <div class="acao"><b>Ação</b><p>Sugerimos manter as duas versões no ar, já que atendem objetivos distintos, e preparar uma nova arte de utilidade pública para revezar com esta, evitando o desgaste da mesma imagem.</p></div>
+</div></div>
+
+<div class="slide"><div class="slide-in">
+  <div class="sn">03 · Peças em destaque · 3 de 3</div>
+  <span class="bd o">Melhor taxa de clique</span>
+  <div class="cr-t">Convite ao perfil</div>
+  <div class="cr-a">Vídeo curto, campanha de Visitas ao Perfil</div>
+  <div class="ms">
+    <div><b>2,48%</b><span>Taxa de clique</span></div>
+    <div><b>15,9%</b><span>Taxa de engajamento</span></div>
+    <div><b>3,0%</b><span>Taxa de visualização</span></div>
+    <div><b>73.100</b><span>Impressões na semana</span></div>
+  </div>
+  <div class="prose">
+    <p><strong>Converte cedo, mas retém pouco.</strong> O vídeo curto de convite a seguir o perfil é a peça que mais leva gente a clicar, acima de qualquer outra no ar. Em retenção o desempenho se inverte: apenas 3,0% assiste o bastante para contar como visualização. O clique acontece nos primeiros segundos, então o formato funciona mesmo com pouca retenção.</p>
+    <p>Roda num único público, de não seguidores, que é o alvo do objetivo. O Reels do Instagram leva 60,8% da entrega da campanha e o Stories 35,8%, mas a taxa de clique é mais alta justamente onde há menos volume: 3,20% no Feed, contra 2,16% no Stories e 1,72% no Reels.</p>
+  </div>
+  <div class="acao"><b>Ação</b><p>Sugerimos testar uma versão de até 6 segundos, que caiba dentro da atenção real da peça, e dar mais espaço ao Feed nessa nova versão, onde a taxa de clique é quase o dobro da do Reels.</p></div>
+</div></div>
+
+<div class="slide"><div class="slide-in">
+  <div class="sn">04</div>
+  <h2>Visitas ao Perfil e crescimento do perfil</h2>
+  <p class="sl">A campanha de Visitas ao Perfil tem entrega própria e não soma no total das linhas contratadas.</p>
+  <div class="kpis">
+    <div class="hc"><div class="hc-t">Visitas ao perfil</div><div class="hc-v">3.536</div><div class="hc-s">ação medida na campanha</div></div>
+    <div class="hc"><div class="hc-t">Cliques no link</div><div class="hc-v">3.657</div><div class="hc-s">taxa de 1,93%</div></div>
+    <div class="hc"><div class="hc-t">Pessoas alcançadas</div><div class="hc-v">118.199</div><div class="hc-s">na semana</div></div>
+    <div class="hc accent"><div class="hc-t">Novos seguidores</div><div class="hc-v">823</div><div class="hc-s">779 no Instagram, 44 no Facebook</div></div>
+  </div>
+  <div class="ins">
+    <b>Leitura</b>
+    <p>Os dois números de resultado vêm de fontes diferentes e são apresentados lado a lado, sem relação de causa entre eles. As visitas ao perfil são a ação medida dentro da campanha. O crescimento de seguidores vem do painel do perfil e soma todas as origens, orgânicas e pagas, então não é atribuível somente à mídia.</p>
+    <p>A campanha mais que dobrou de volume em relação ao período anterior, de 84.596 para 189.625 impressões, e a resposta acompanha a idade: a taxa de clique sobe de 1,34% na faixa de 18 a 24 anos para 3,46% acima dos 65.</p>
+  </div>
+</div></div>
+
+<div class="slide dark"><div class="slide-in">
+  <div class="sn">05</div>
+  <h2 style="color:#fff">Aprendizados da semana</h2>
+  <p class="sl">O que a semana deixa para a próxima leva de criativos.</p>
+  <div class="prose">
+    <p><strong>Conteúdo sobre bairros e identidade da cidade gera conversa em outro patamar.</strong> "Campinas são muitas" respondeu por 98,1% das interações do Temas Diversos e levou a taxa de engajamento da semana a 10,99%, contra uma base muito menor no período anterior. Duas leituras apontam para a mesma direção: a pauta interessa à população e o formato de passeio pelos bairros sustenta atenção. Sugerimos que a próxima leva de criativos explore essa linha, com um bairro por peça.</p>
+    <p><strong>O botão da peça define o clique mais do que a imagem.</strong> A arte de Vacinação roda idêntica em campanhas diferentes e a versão que leva ao perfil converte treze vezes mais que a de alcance. É um achado que se repete pela segunda semana seguida, então deixa de ser coincidência. Sugerimos alinhar o destino do botão ao objetivo de cada campanha já na criação da peça.</p>
+    <p><strong>Quem mais responde não é quem mais recebe.</strong> A faixa de 18 a 24 anos leva 30,3% do volume e engaja a 1,16%; acima dos 65 anos são 11,6% do volume e 32,84% de engajamento. O mesmo padrão vale para os cliques nas Visitas ao Perfil. Sugerimos criativos com linguagem própria para o público de 45 anos ou mais, hoje atendido pela mesma peça pensada para os mais jovens.</p>
+  </div>
+  <div class="foot"><span>Boletim de 11 a 18 de agosto de 2026 · Prefeitura de Campinas</span><span>Esquina</span></div>
+</div></div>
