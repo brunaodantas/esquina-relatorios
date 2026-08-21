@@ -1,0 +1,552 @@
+<title>Anatomia das Entregas Esquina</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap">
+
+<style>
+  :root{
+    --ground:#F1F3FC;
+    --card:#FFFFFF;
+    --card-2:#FAFBFF;
+    --ink:#0B1033;
+    --muted:#565E85;
+    --faint:#7A82A6;
+    --blue:#1A3CFF;
+    --blue-soft:#E6EAFF;
+    --navy:#0A0A5C;
+    --line:rgba(11,16,51,.11);
+    --line-strong:rgba(11,16,51,.22);
+    --ok:#0F8A4F;
+    --warn:#B4610A;
+    --shadow:0 1px 2px rgba(11,16,51,.05), 0 12px 28px -18px rgba(11,16,51,.35);
+
+    --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s5:24px; --s6:32px; --s7:48px; --s8:72px;
+    --maxw:1080px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --ground:#080B1C;
+      --card:#111634;
+      --card-2:#0D1229;
+      --ink:#E9EBF7;
+      --muted:#A3AACB;
+      --faint:#848CB0;
+      --blue:#8AA0FF;
+      --blue-soft:#1B2352;
+      --navy:#C3CCFF;
+      --line:rgba(233,235,247,.12);
+      --line-strong:rgba(233,235,247,.24);
+      --ok:#4BC98A;
+      --warn:#E0A159;
+      --shadow:0 1px 2px rgba(0,0,0,.4), 0 12px 28px -18px rgba(0,0,0,.9);
+    }
+  }
+  :root[data-theme="dark"]{
+    --ground:#080B1C;
+    --card:#111634;
+    --card-2:#0D1229;
+    --ink:#E9EBF7;
+    --muted:#A3AACB;
+    --faint:#848CB0;
+    --blue:#8AA0FF;
+    --blue-soft:#1B2352;
+    --navy:#C3CCFF;
+    --line:rgba(233,235,247,.12);
+    --line-strong:rgba(233,235,247,.24);
+    --ok:#4BC98A;
+    --warn:#E0A159;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 12px 28px -18px rgba(0,0,0,.9);
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--ground);
+    color:var(--ink);
+    font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--s5);}
+
+  h1,h2,h3{text-wrap:balance;margin:0;line-height:1.15;letter-spacing:-0.02em;}
+  h1{font-size:clamp(2rem,4.4vw,3.1rem);font-weight:800;}
+  h2{font-size:clamp(1.35rem,2.4vw,1.75rem);font-weight:700;}
+  h3{font-size:1.02rem;font-weight:700;letter-spacing:-0.01em;}
+  p{margin:0;max-width:66ch;text-wrap:pretty;}
+
+  .mono{
+    font-family:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+    font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.12em;
+  }
+
+  /* ---------- header ---------- */
+  header{
+    background:var(--card);
+    border-bottom:1px solid var(--line);
+    padding:var(--s8) 0 var(--s7);
+  }
+  .head-grid{display:flex;flex-direction:column;gap:var(--s5);}
+  .brand{display:flex;align-items:center;gap:var(--s3);}
+  .brand .dot{width:10px;height:10px;border-radius:50%;background:var(--blue);flex:none;}
+  .brand .mono{color:var(--muted);}
+  .lead{color:var(--muted);font-size:1.06rem;}
+
+  /* ---------- fluxo ---------- */
+  .flow{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:var(--s3);
+    margin-top:var(--s5);
+  }
+  .fl{
+    background:var(--card-2);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:var(--s4);
+    display:flex;flex-direction:column;gap:var(--s2);
+  }
+  .fl .mono{color:var(--blue);}
+  .fl b{font-size:.95rem;}
+  .fl span{font-size:.83rem;color:var(--muted);line-height:1.45;}
+
+  /* ---------- seções ---------- */
+  main{padding:var(--s8) 0;display:flex;flex-direction:column;gap:var(--s8);}
+
+  .sec-head{display:flex;flex-direction:column;gap:var(--s3);margin-bottom:var(--s5);}
+  .tagrow{display:flex;flex-wrap:wrap;gap:var(--s2);align-items:center;}
+  .tag{
+    display:inline-flex;align-items:center;
+    background:var(--blue-soft);color:var(--blue);
+    border-radius:999px;padding:5px 11px;
+  }
+  .tag.neutral{background:transparent;color:var(--muted);border:1px solid var(--line-strong);}
+
+  .cols{display:grid;grid-template-columns:1.22fr 1fr;gap:var(--s4);align-items:stretch;}
+
+  .card{
+    height:100%;
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:var(--s5);
+    box-shadow:var(--shadow);
+    display:flex;flex-direction:column;gap:var(--s4);
+  }
+  .card > .mono{color:var(--faint);}
+
+  ol.steps{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:var(--s4);counter-reset:st;}
+  ol.steps li{
+    position:relative;padding-left:38px;counter-increment:st;
+    display:flex;flex-direction:column;gap:3px;
+  }
+  ol.steps li::before{
+    content:counter(st,decimal-leading-zero);
+    position:absolute;left:0;top:1px;width:26px;
+    font-family:"IBM Plex Mono",monospace;font-size:.68rem;font-weight:600;
+    color:var(--blue);background:var(--blue-soft);
+    border-radius:5px;padding:3px 0;text-align:center;
+  }
+  ol.steps b{font-size:.95rem;line-height:1.4;}
+  ol.steps span{font-size:.86rem;color:var(--muted);line-height:1.55;}
+
+  ul.rules{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:var(--s3);}
+  ul.rules li{
+    position:relative;padding-left:20px;
+    font-size:.88rem;color:var(--muted);line-height:1.55;
+  }
+  ul.rules li::before{
+    content:"";position:absolute;left:2px;top:8px;
+    width:6px;height:6px;border-radius:50%;background:var(--blue);
+  }
+  ul.rules li.no::before{background:var(--warn);border-radius:1px;}
+  ul.rules strong{color:var(--ink);font-weight:600;}
+
+  .metrics{display:flex;flex-wrap:wrap;gap:var(--s2);}
+  .m{
+    font-size:.8rem;border:1px solid var(--line-strong);border-radius:7px;
+    padding:5px 10px;color:var(--ink);background:var(--card-2);
+  }
+
+  /* ---------- tabela ---------- */
+  .tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--card);box-shadow:var(--shadow);}
+  table{border-collapse:collapse;width:100%;min-width:720px;font-size:.87rem;}
+  th,td{text-align:left;padding:13px var(--s4);border-bottom:1px solid var(--line);vertical-align:top;}
+  thead th{
+    font-family:"IBM Plex Mono",monospace;font-size:.68rem;font-weight:600;
+    text-transform:uppercase;letter-spacing:.1em;color:var(--faint);
+    background:var(--card-2);white-space:nowrap;
+  }
+  tbody th{font-weight:600;color:var(--ink);white-space:nowrap;}
+  td{color:var(--muted);}
+  tbody tr:last-child th,tbody tr:last-child td{border-bottom:none;}
+  .yes{color:var(--ok);font-weight:600;}
+  .no{color:var(--warn);font-weight:600;}
+
+  footer{
+    border-top:1px solid var(--line);
+    background:var(--card);
+    padding:var(--s6) 0;
+    color:var(--faint);
+    font-size:.82rem;
+  }
+  footer .wrap{display:flex;flex-wrap:wrap;gap:var(--s4);justify-content:space-between;}
+
+
+  /* ---------- exemplos ---------- */
+  .exs{
+    margin-top:var(--s3);
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:var(--s5);
+    box-shadow:var(--shadow);
+    display:flex;flex-direction:column;gap:var(--s3);
+  }
+  .exs > .mono{color:var(--faint);}
+  .exlist{display:flex;flex-wrap:wrap;gap:var(--s2);}
+  a.ex{
+    flex:1 1 262px;
+    display:flex;align-items:center;gap:var(--s3);
+    text-decoration:none;color:var(--ink);
+    border:1px solid var(--line);border-radius:9px;
+    padding:10px var(--s3);background:var(--card-2);
+    font-size:.87rem;line-height:1.35;
+    transition:border-color .15s ease, transform .15s ease;
+  }
+  a.ex:hover{border-color:var(--blue);transform:translateY(-1px);}
+  a.ex:focus-visible{outline:2px solid var(--blue);outline-offset:2px;}
+  a.ex .who{font-weight:600;}
+  a.ex .who{flex:1 1 auto;min-width:0;}
+  a.ex .when{flex:0 0 auto;color:var(--faint);font-size:.75rem;margin-left:auto;white-space:nowrap;font-family:"IBM Plex Mono",monospace;letter-spacing:.02em;}
+  @media (prefers-reduced-motion:reduce){a.ex{transition:none;}a.ex:hover{transform:none;}}
+
+  @media (max-width:860px){
+    .cols{grid-template-columns:1fr;}
+    .flow{grid-template-columns:repeat(2,1fr);}
+  }
+  @media (max-width:520px){
+    .flow{grid-template-columns:1fr;}
+  }
+</style>
+
+<header>
+  <div class="wrap head-grid">
+    <div class="brand">
+      <span class="dot"></span>
+      <span class="mono">Esquina · padrão de entregas</span>
+    </div>
+    <h1>O que cada entrega precisa ter</h1>
+    <p class="lead">Quatro entregas, quatro recortes de tempo. Cada uma reaproveita o dado da anterior e amplia a janela: o boletim cobre sete dias, o parcial acumula o meio do ciclo, o mensal fecha o mês e a prestação de contas fecha a campanha inteira.</p>
+
+    <div class="flow">
+      <div class="fl">
+        <span class="mono">7 dias</span>
+        <b>Boletim Semanal</b>
+        <span>Pulso da semana, com verba do plano e peças em destaque.</span>
+      </div>
+      <div class="fl">
+        <span class="mono">Meio do ciclo</span>
+        <b>Relatório Parcial</b>
+        <span>Acumulado das semanas até aqui. Mostra se o ritmo bate a meta.</span>
+      </div>
+      <div class="fl">
+        <span class="mono">30 dias</span>
+        <b>Relatório Mensal</b>
+        <span>Fechamento do mês. O acumulado dos parciais responde por ele.</span>
+      </div>
+      <div class="fl">
+        <span class="mono">Campanha</span>
+        <b>Prestação de Contas</b>
+        <span>Fechamento do contrato inteiro, todos os canais consolidados.</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- BOLETIM -->
+  <section>
+    <div class="sec-head">
+      <div class="tagrow">
+        <span class="tag mono">7 dias</span>
+        <span class="tag neutral mono">HTML publicado + PDF vertical</span>
+        <span class="tag neutral mono">Cliente e agência parceira</span>
+      </div>
+      <h2>Boletim Semanal</h2>
+      <p>Cobre os últimos sete dias e compara com os sete anteriores. Nunca acumulado do flight. O comparativo é o que dá sentido ao número: volume pode cair porque uma pauta encerrou e a qualidade subir junto.</p>
+    </div>
+
+    <div class="cols">
+      <div class="card">
+        <span class="mono">Ordem das seções</span>
+        <ol class="steps">
+          <li><b>Nav</b><span>Logo Esquina, chips dos canais ativos e botão para a central de relatórios do cliente.</span></li>
+          <li><b>Hero, 8 cards</b><span>Impressões, interações, visualizações, taxa de engajamento, CTR, taxa de visualização, verba livre e alocado em campanhas. Os dois de verba em card escuro. Cada indicador traz a variação contra o período anterior.</span></li>
+          <li><b>Verba do plano</b><span>Quatro números e a barra segmentada: alocado em campanhas, gasto até agora, a gastar, ainda livre. Sem tabela detalhada.</span></li>
+          <li><b>O que entregamos</b><span>Tabela por canal e pauta, com as duas colunas de período lado a lado.</span></li>
+          <li><b>Peças em destaque</b><span>Sempre três. Nome, link da publicação, métricas e análise. Cada uma fecha com uma linha de Ação.</span></li>
+          <li><b>Aprendizados da semana</b><span>Bloco escuro, texto corrido em duas colunas. É a única seção que nunca colapsa.</span></li>
+          <li><b>Footer</b></li>
+        </ol>
+      </div>
+
+      <div class="card">
+        <span class="mono">Regras duras</span>
+        <ul class="rules">
+          <li><strong>Um boletim por cliente.</strong> Nunca dois no mesmo texto, nunca somados.</li>
+          <li class="no"><strong>Nenhum custo de plataforma.</strong> Sem CPM, CPC, custo por resultado ou gasto real. O único dinheiro que aparece é o do plano.</li>
+          <li class="no"><strong>Meta não vira análise.</strong> Nada de "entregou acima da meta" ou "bateu 221%". Meta entra só no cálculo de verba.</li>
+          <li class="no"><strong>Não expor pausa.</strong> Não dizer que uma linha encerrou ou ficou parada, salvo se estava no planejamento.</li>
+          <li><strong>Sempre "sugerimos".</strong> A linha de ação fala com quem produz o criativo, não é ordem.</li>
+          <li><strong>Ver a peça inteira antes de analisar.</strong> Descrever vídeo pela capa já deu erro.</li>
+          <li><strong>Entra na central.</strong> Toda rodada cria uma entrada nova no topo da central de relatórios do cliente.</li>
+          <li><strong>Pasta datada por intervalo</strong>, nunca numerada por semana.</li>
+        </ul>
+        <div>
+          <span class="mono" style="color:var(--faint);display:block;margin-bottom:var(--s3);">Formato enxuto</span>
+          <p style="font-size:.88rem;color:var(--muted);">Cada seção é um bloco expansível: título mais uma linha de resumo com os números sempre visível, conteúdo completo atrás do clique. Nas peças, nome, link e métricas ficam à mostra; público, análise e ação expandem.</p>
+        </div>
+      </div>
+    </div>
+      <div class="exs">
+        <span class="mono">Exemplos publicados</span>
+        <div class="exlist">
+          <a class="ex" href="https://esquina-relatorios.vercel.app/hortolandia/semanal/10ago-16ago-2026/" target="_blank" rel="noopener"><span class="who">Prefeitura de Hortolândia</span><span class="when">10 a 16 ago</span></a>
+          <a class="ex" href="https://esquina-relatorios.vercel.app/americana/semanal/11ago-17ago-2026/" target="_blank" rel="noopener"><span class="who">Prefeitura de Americana</span><span class="when">11 a 17 ago</span></a>
+          <a class="ex" href="https://esquina-relatorios.vercel.app/prefeiturajundiai/semanal/10ago-16ago-2026/" target="_blank" rel="noopener"><span class="who">Prefeitura de Jundiaí</span><span class="when">10 a 16 ago</span></a>
+          <a class="ex" href="https://esquina-relatorios.vercel.app/daejundiai/semanal/11ago-17ago-2026/" target="_blank" rel="noopener"><span class="who">DAE Jundiaí</span><span class="when">11 a 17 ago</span></a>
+          <a class="ex" href="https://esquina-relatorios.vercel.app/campinas/semanal/11ago-18ago-2026/" target="_blank" rel="noopener"><span class="who">Prefeitura de Campinas</span><span class="when">11 a 18 ago</span></a>
+          <a class="ex" href="https://esquina-relatorios.vercel.app/hortolandia/teste-modelo-expansao/" target="_blank" rel="noopener"><span class="who">Modelo enxuto, referência</span><span class="when">Hortolândia</span></a>
+        </div>
+      </div>
+  </section>
+
+  <!-- PARCIAL -->
+  <section>
+    <div class="sec-head">
+      <div class="tagrow">
+        <span class="tag mono">Meio do ciclo</span>
+        <span class="tag neutral mono">HTML + PDF em slides</span>
+      </div>
+      <h2>Relatório Parcial</h2>
+      <p>Snapshot do acumulado até a data, no meio do ciclo. É o mensal sem o módulo narrativo de abertura: serve para mostrar o ritmo enquanto ainda dá tempo de corrigir. O acumulado dos parciais é o que responde pelo relatório mensal.</p>
+    </div>
+
+    <div class="cols">
+      <div class="card">
+        <span class="mono">Ordem das seções</span>
+        <ol class="steps">
+          <li><b>Nav</b><span>Chips dos canais e botão de exportar PDF.</span></li>
+          <li><b>Hero</b><span>Fundo escuro, cliente, período e as métricas principais em pills.</span></li>
+          <li><b>KPIs gerais</b><span>Seis cards ou mais, consolidando todos os canais ativos.</span></li>
+          <li><b>Meta da campanha</b><span>Barra de progresso com o percentual entregue. Só no modelo sem custos.</span></li>
+          <li><b>Destaques do período</b><span>Três conquistas narradas. Só no modelo com custos, no lugar da barra de meta.</span></li>
+          <li><b>Uma seção por canal</b><span>KPIs do canal, gráfico, cards de criativo e caixa de insight. Separador visual entre canais.</span></li>
+          <li><b>Diagnóstico</b><span>Seis cards estratégicos, o último com as ações concretas.</span></li>
+          <li><b>Footer</b></li>
+        </ol>
+      </div>
+      <div class="card">
+        <span class="mono">O que muda por modelo</span>
+        <ul class="rules">
+          <li><strong>Trading Desk:</strong> nenhum custo em R$. Foco em volume, alcance e frequência, com barra de meta contratada.</li>
+          <li><strong>Tradicional:</strong> custo sempre acompanhado do benchmark de mercado, com a variação em verde quando está abaixo.</li>
+          <li>A marca e o modelo são independentes: cliente da Esquina pode ser Tradicional. Confirmar os dois antes de começar.</li>
+        </ul>
+        <div>
+          <span class="mono" style="color:var(--faint);display:block;margin-bottom:var(--s3);">Como alimenta o mensal</span>
+          <p style="font-size:.88rem;color:var(--muted);">Os números do parcial são os mesmos do mensal, só com o recorte menor. Nada é recalculado do zero no fim do mês: o mensal soma os períodos já fechados e acrescenta a narrativa e o diagnóstico de fechamento.</p>
+        </div>
+      </div>
+    </div>
+      <div class="exs">
+        <span class="mono">Exemplos publicados</span>
+        <div class="exlist">
+          <a class="ex" href="https://esquina-relatorios.vercel.app/americana/parcial/04a26junho/" target="_blank" rel="noopener"><span class="who">Prefeitura de Americana</span><span class="when">04 a 26 jun</span></a>
+          <a class="ex" href="https://esquina-relatorios.vercel.app/anfavea/parcial/29-06a21-07/" target="_blank" rel="noopener"><span class="who">ANFAVEA, Move Brasil</span><span class="when">29 jun a 21 jul</span></a>
+        </div>
+      </div>
+  </section>
+
+  <!-- MENSAL -->
+  <section>
+    <div class="sec-head">
+      <div class="tagrow">
+        <span class="tag mono">30 dias</span>
+        <span class="tag neutral mono">HTML + PDF em slides</span>
+        <span class="tag neutral mono">Multi-canal</span>
+      </div>
+      <h2>Relatório Mensal</h2>
+      <p>Fechamento do mês. A diferença real para o parcial é o módulo de encantamento, que conta a história do mês antes de apresentar qualquer número, e o diagnóstico de fechamento.</p>
+    </div>
+
+    <div class="cols">
+      <div class="card">
+        <span class="mono">Ordem das seções</span>
+        <ol class="steps">
+          <li><b>Nav</b><span>Chips dos canais, seletor de canais e botão de PDF.</span></li>
+          <li><b>Hero</b><span>Fundo escuro com mídia da campanha, métricas em pills.</span></li>
+          <li><b>Módulo de encantamento</b><span>Exclusivo do mensal. Headline com o resultado do mês, parágrafo narrativo de três a quatro linhas e quatro cards de número grande com contexto.</span></li>
+          <li><b>KPIs gerais</b><span>Seis cards ou mais, com o percentual da verba contratada já consumida ao lado do percentual de entrega da meta.</span></li>
+          <li><b>Meta do mês ou Destaques</b><span>Barra de progresso no Trading Desk, três cards de conquista no Tradicional.</span></li>
+          <li><b>Seção por canal</b><span>KPIs, gráfico, criativos e insight. No Meta, também distribuição por conjunto e perfil do público.</span></li>
+          <li><b>Top 3 criativos</b><span>Com análise qualitativa: por que funcionou, gancho, linguagem e tema. Não só o ranking.</span></li>
+          <li><b>Diagnóstico</b><span>Seis cards estratégicos, o último com as ações concretas do que escalar, pausar ou testar.</span></li>
+          <li><b>Footer</b></li>
+        </ol>
+      </div>
+      <div class="card">
+        <span class="mono">Checklist de fechamento</span>
+        <ul class="rules">
+          <li><strong>Percentual de verba consumida junto do percentual de entrega.</strong> São os dois números que o cliente acompanha.</li>
+          <li><strong>Avaliar o material recebido do cliente no período</strong> e responder o que funcionou e o que se recomenda para o mês seguinte.</li>
+          <li><strong>Consolidar o padrão do que funciona em criativo</strong> ao longo do tempo, não só o do mês corrente.</li>
+          <li><strong>Diagnóstico estratégico na abertura</strong>, com contexto e hipótese, não só números.</li>
+          <li>Recomendação descreve o que a agência vai fazer, nunca decisão estratégica do cliente.</li>
+        </ul>
+        <div>
+          <span class="mono" style="color:var(--faint);display:block;margin-bottom:var(--s3);">Métricas do mês</span>
+          <div class="metrics">
+            <span class="m">Impressões</span><span class="m">Alcance</span><span class="m">Frequência</span>
+            <span class="m">Interações</span><span class="m">CTR</span><span class="m">Visualizações</span>
+            <span class="m">Visitas ao perfil</span><span class="m">% da meta</span>
+          </div>
+        </div>
+      </div>
+    </div>
+      <div class="exs">
+        <span class="mono">Exemplos publicados</span>
+        <div class="exlist">
+          <a class="ex" href="https://esquina-relatorios.vercel.app/daejundiai/mensal/julho2026/" target="_blank" rel="noopener"><span class="who">DAE Jundiaí</span><span class="when">julho 2026</span></a>
+          <a class="ex" href="https://esquina-relatorios.vercel.app/americana/mensal/04junho-04julho/" target="_blank" rel="noopener"><span class="who">Prefeitura de Americana</span><span class="when">04 jun a 04 jul</span></a>
+          <a class="ex" href="https://esquina-relatorios.vercel.app/americana/temasdiversos/julho/" target="_blank" rel="noopener"><span class="who">Americana, Temas Diversos</span><span class="when">julho 2026</span></a>
+        </div>
+      </div>
+  </section>
+
+  <!-- PRESTAÇÃO -->
+  <section>
+    <div class="sec-head">
+      <div class="tagrow">
+        <span class="tag mono">Campanha inteira</span>
+        <span class="tag neutral mono">HTML + PDF em slides</span>
+      </div>
+      <h2>Prestação de Contas</h2>
+      <p>Fecha o contrato inteiro, não um mês. Consolida todos os canais num único documento, com uma tabela geral no fim reunindo o que cada canal entregou contra o que foi contratado.</p>
+    </div>
+
+    <div class="cols">
+      <div class="card">
+        <span class="mono">Ordem das seções</span>
+        <ol class="steps">
+          <li><b>Nav e Hero</b><span>Fundo escuro escalonado, resultado total da campanha em pills.</span></li>
+          <li><b>Módulo de encantamento, versão encerramento</b><span>Narrativa de toda a campanha, quatro cards e uma frase de transição.</span></li>
+          <li><b>Meta total ou Destaques da campanha</b><span>Percentual da meta total contratada, ou três conquistas narrativas.</span></li>
+          <li><b>KPIs gerais</b><span>Seis cards consolidando a campanha inteira.</span></li>
+          <li><b>Uma seção por canal</b><span>Divisor numerado, KPIs, tabela de entrega, insight e prints. Entre um canal e outro, uma linha de transição narrativa.</span></li>
+          <li><b>Consolidação</b><span>Tabela geral com todos os canais: contratado, entregue e percentual.</span></li>
+          <li><b>Diagnóstico final</b><span>Seis cards em fundo escuro, o último com as ações concretas.</span></li>
+          <li><b>Footer</b></li>
+        </ol>
+      </div>
+      <div class="card">
+        <span class="mono">Cuidados</span>
+        <ul class="rules">
+          <li><strong>Chamar de Consolidado</strong> na peça, não de fechamento.</li>
+          <li class="no"><strong>Sem card de próximo ciclo.</strong> O último card do diagnóstico traz ação concreta, não promessa de etapa seguinte.</li>
+          <li class="no"><strong>Sem nota interna.</strong> Ressalva técnica e raciocínio de operação ficam no e-mail, nunca na peça.</li>
+          <li><strong>Nunca nomear a DSP.</strong> Usar "Display Programática" e "Relatório de Entrega".</li>
+          <li>O mesmo KPI não pode aparecer com número diferente em duas seções. Definir a fonte antes de montar.</li>
+        </ul>
+      </div>
+    </div>
+      <div class="exs">
+        <span class="mono">Exemplos publicados</span>
+        <div class="exlist">
+          <a class="ex" href="https://esquina-relatorios.vercel.app/campinas/mensal/07julho-05agosto/" target="_blank" rel="noopener"><span class="who">Prefeitura de Campinas</span><span class="when">07 jul a 05 ago</span></a>
+          <a class="ex" href="https://esquina-relatorios.vercel.app/hortolandia/mensal/" target="_blank" rel="noopener"><span class="who">Prefeitura de Hortolândia</span><span class="when">junho 2026</span></a>
+          <a class="ex" href="https://esquina-relatorios.vercel.app/mpba/2-de-julho/" target="_blank" rel="noopener"><span class="who">Ministério Público da Bahia</span><span class="when">2 de Julho</span></a>
+        </div>
+      </div>
+  </section>
+
+  <!-- TABELA -->
+  <section>
+    <div class="sec-head">
+      <h2>Comparativo rápido</h2>
+      <p>O que existe em cada entrega, para decidir o formato sem reler as instruções.</p>
+    </div>
+    <div class="tablewrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Elemento</th><th>Boletim</th><th>Parcial</th><th>Mensal</th><th>Prestação</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><th>Recorte</th><td>7 dias vs 7 anteriores</td><td>Acumulado do ciclo</td><td>Mês fechado</td><td>Campanha inteira</td></tr>
+          <tr><th>Verba do plano</th><td class="yes">Sim, 4 cards</td><td>Opcional</td><td class="yes">Sim, com % de entrega</td><td class="yes">Sim, consolidada</td></tr>
+          <tr><th>Custo de plataforma</th><td class="no">Nunca</td><td>Só no Tradicional</td><td>Só no Tradicional</td><td>Só no Tradicional</td></tr>
+          <tr><th>Módulo de encantamento</th><td class="no">Não</td><td class="no">Não</td><td class="yes">Sim</td><td class="yes">Sim, encerramento</td></tr>
+          <tr><th>Peças em destaque</th><td class="yes">3, com ação</td><td>2 a 3 por canal</td><td class="yes">Top 3 com análise</td><td>Prints por canal</td></tr>
+          <tr><th>Barra de meta</th><td class="no">Não</td><td class="yes">Trading Desk</td><td class="yes">Trading Desk</td><td class="yes">Meta total</td></tr>
+          <tr><th>Diagnóstico de 6 cards</th><td class="no">Não</td><td class="yes">Sim</td><td class="yes">Sim</td><td class="yes">Sim, fundo escuro</td></tr>
+          <tr><th>Aprendizados</th><td class="yes">Bloco próprio</td><td>Dentro do insight</td><td>Dentro do diagnóstico</td><td>Dentro do diagnóstico</td></tr>
+          <tr><th>Tabela consolidada</th><td class="no">Não</td><td class="no">Não</td><td>Por canal</td><td class="yes">Geral, no fim</td></tr>
+          <tr><th>PDF</th><td>Vertical, boletim</td><td>Slides 16:9</td><td>Slides 16:9</td><td>Slides 16:9</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- REGRAS COMUNS -->
+  <section>
+    <div class="sec-head">
+      <h2>Valem para as quatro</h2>
+    </div>
+    <div class="cols">
+      <div class="card">
+        <span class="mono">Dado</span>
+        <ul class="rules">
+          <li><strong>Alcance nunca se soma.</strong> É métrica deduplicada. Usar a linha de campanha ou o Meta Insights.</li>
+          <li><strong>O mesmo KPI não muda de número</strong> entre seções. Definir a fonte antes de montar.</li>
+          <li><strong>Seguidores ganhos do CSV é só crescimento pago.</strong> O total vem do Business Suite.</li>
+          <li><strong>Nunca usar o custo médio da planilha de plano</strong> para calcular orçamento. É rate card figurativo.</li>
+          <li><strong>Sem fonte, o número não entra.</strong></li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="mono">Forma</span>
+        <ul class="rules">
+          <li><strong>Valores no padrão R$1.490,00</strong> e percentuais com vírgula, como 2,07%.</li>
+          <li class="no"><strong>Sem travessão em nenhum texto.</strong> Trocar por vírgula, ponto ou dois-pontos.</li>
+          <li><strong>Tom neutro.</strong> Sem "excepcional", "massivo", "robusto".</li>
+          <li><strong>Chamar ThruPlay de visualizações</strong>, nunca pelo nome técnico.</li>
+          <li><strong>Posicionamento sempre com a plataforma</strong>, nunca "Feed" sozinho.</li>
+          <li><strong>Caminhos relativos</strong> no HTML e PDF gerado por screenshot, nunca impressão do navegador.</li>
+        </ul>
+      </div>
+    </div>
+      <div class="exs">
+        <span class="mono">Centrais de relatórios do cliente</span>
+        <div class="exlist">
+          <a class="ex" href="https://esquina-relatorios.vercel.app/hortolandia/central/" target="_blank" rel="noopener"><span class="who">Prefeitura de Hortolândia</span><span class="when">central</span></a>
+          <a class="ex" href="https://esquina-relatorios.vercel.app/campinas/central/" target="_blank" rel="noopener"><span class="who">Prefeitura de Campinas</span><span class="when">central</span></a>
+          <a class="ex" href="https://esquina-relatorios.vercel.app/americana/central/" target="_blank" rel="noopener"><span class="who">Prefeitura de Americana</span><span class="when">central</span></a>
+          <a class="ex" href="https://esquina-relatorios.vercel.app/daejundiai/central/" target="_blank" rel="noopener"><span class="who">DAE Jundiaí</span><span class="when">central</span></a>
+          <a class="ex" href="https://esquina-relatorios.vercel.app/prefeiturajundiai/central/" target="_blank" rel="noopener"><span class="who">Prefeitura de Jundiaí</span><span class="when">central</span></a>
+        </div>
+      </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Esquina · padrão de entregas</span>
+    <span>Atualizado em 19/08/2026</span>
+  </div>
+</footer>
