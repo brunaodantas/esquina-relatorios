@@ -194,6 +194,29 @@
   footer .wrap{display:flex;flex-wrap:wrap;gap:var(--s4);justify-content:space-between;}
 
 
+  /* ---------- método de vídeo ---------- */
+  .steps-cmd{display:flex;flex-direction:column;gap:var(--s5);}
+  .cmd-step{display:flex;flex-direction:column;gap:var(--s2);}
+  .cmd-step p{font-size:.9rem;color:var(--muted);}
+  pre.cmd{
+    margin:0;overflow-x:auto;
+    background:var(--card-2);border:1px solid var(--line);border-radius:9px;
+    padding:12px var(--s4);
+  }
+  pre.cmd code{
+    font-family:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+    font-size:.8rem;color:var(--ink);white-space:pre;
+  }
+  .qs{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:var(--s3);counter-reset:q;}
+  .qs li{
+    position:relative;padding-left:26px;counter-increment:q;
+    font-size:.88rem;color:var(--muted);line-height:1.55;
+  }
+  .qs li::before{
+    content:"?";position:absolute;left:0;top:0;
+    font-family:"IBM Plex Mono",monospace;font-size:.8rem;font-weight:600;color:var(--blue);
+  }
+
   /* ---------- alternador de tema ---------- */
   .topbar{display:flex;align-items:center;justify-content:space-between;gap:var(--s4);flex-wrap:wrap;}
   .theme-toggle{
@@ -528,6 +551,65 @@
           <tr><th>PDF</th><td>Vertical, boletim</td><td>Slides 16:9</td><td>Slides 16:9</td><td>Slides 16:9</td></tr>
         </tbody>
       </table>
+    </div>
+  </section>
+
+
+  <!-- MÉTODO DE VÍDEO -->
+  <section>
+    <div class="sec-head">
+      <div class="tagrow">
+        <span class="tag mono">Método</span>
+        <span class="tag neutral mono">Vale para qualquer entrega</span>
+      </div>
+      <h2>Como analisar o vídeo de uma peça</h2>
+      <p>Número sozinho não explica queda de retenção. Antes de escrever qualquer análise de criativo, a peça é assistida de verdade: baixada, medida e transcrita. Nunca analisar pela capa.</p>
+    </div>
+
+    <div class="cols">
+      <div class="card">
+        <span class="mono">Passo a passo</span>
+        <div class="steps-cmd">
+          <div class="cmd-step">
+            <p>Pegar o arquivo. Se a peça já está publicada, o link do post basta. Se é anúncio não publicado, a API dá a fonte em <code>/{video-id}?fields=source,length,picture</code>. Depois, baixar:</p>
+            <pre class="cmd"><code>yt-dlp -o "peca.%(ext)s" "URL_DO_POST"</code></pre>
+          </div>
+          <div class="cmd-step">
+            <p>Ver os metadados reais, duração e proporção da tela:</p>
+            <pre class="cmd"><code>ffprobe -v error -show_entries format=duration:stream=width,height -of default=nw=1 peca.mp4</code></pre>
+            <p>Isso resolve duas coisas de uma vez: a duração, para calcular a retenção percentual, e se a peça é 9:16, 4:5 ou 16:9, que decide se ela serve para Stories e Reels.</p>
+          </div>
+          <div class="cmd-step">
+            <p>Extrair quadros para ver o vídeo, um a cada dois segundos:</p>
+            <pre class="cmd"><code>ffmpeg -i peca.mp4 -vf fps=0.5 -q:v 3 frame_%03d.jpg</code></pre>
+          </div>
+          <div class="cmd-step">
+            <p>Vale extrair também os cinco primeiros segundos com mais densidade, porque é onde a retenção despenca:</p>
+            <pre class="cmd"><code>ffmpeg -i peca.mp4 -t 5 -vf fps=2 -q:v 3 gancho_%02d.jpg</code></pre>
+          </div>
+          <div class="cmd-step">
+            <p>Pegar a fala, para analisar a locução e não só a imagem:</p>
+            <pre class="cmd"><code>ffmpeg -i peca.mp4 -vn -ac 1 -ar 16000 audio.wav</code></pre>
+            <p>Aí transcreve, com Whisper ou com a legenda do post quando existir.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="mono">O que a análise responde</span>
+        <ul class="qs">
+          <li>O que aparece nos três primeiros segundos, e se isso é gancho ou vinheta. Vinheta de abertura mata a retenção.</li>
+          <li>Se tem pessoa em cena, e em que momento ela entra.</li>
+          <li>Se o texto na tela é legível no celular, e se a peça funciona sem som.</li>
+          <li>Quando a mensagem principal aparece, e se ela chega antes do ponto em que a atenção média termina.</li>
+          <li>Se o corte serve para a proporção onde a peça mais roda.</li>
+          <li>Se o CTA existe, onde está e o que promete.</li>
+        </ul>
+        <div>
+          <span class="mono" style="color:var(--faint);display:block;margin-bottom:var(--s3);">Fechando com o número</span>
+          <p style="font-size:.88rem;color:var(--muted);">Atenção média dividida pela duração dá a retenção percentual. Se der algo como 7%, olhar em qual quadro a queda acontece e nomear o motivo concreto, em vez de dizer que o vídeo é longo demais.</p>
+        </div>
+      </div>
     </div>
   </section>
 
