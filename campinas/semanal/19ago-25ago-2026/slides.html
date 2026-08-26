@@ -1,0 +1,232 @@
+<title>Boletim Semanal Campinas 19-25 ago 2026 · slides</title>
+<style>
+  :root {
+    --blue:#1A3CFF; --navy:#0A0A5C; --purple:#9C27B0;
+    --ink:#111; --bg:#F4F6FF; --white:#fff;
+    --line:rgba(10,10,92,0.10); --g4:#5A5F80; --g6:#868AA6; --g2:#242844; --ok:#00994D;
+    --f:-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Helvetica,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#333;font-family:var(--f);color:var(--ink);-webkit-font-smoothing:antialiased}
+  .slide{width:720px;height:1280px;overflow:hidden;position:relative;background:var(--bg);margin:0 auto 24px}
+  .slide-in{position:absolute;inset:0;padding:56px 48px;display:flex;flex-direction:column}
+  .dark{background:linear-gradient(150deg,var(--navy),#161680)}
+  .dark *{color:#fff}
+  .lg{height:26px;width:auto;display:block}
+  .eb{display:inline-flex;align-items:center;gap:8px;font-size:0.66rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--blue);margin-bottom:14px}
+  .eb::before{content:'';width:20px;height:2px;background:var(--blue)}
+  .dark .eb{color:rgba(255,255,255,0.75)} .dark .eb::before{background:rgba(255,255,255,0.6)}
+  h1{font-size:2.5rem;font-weight:800;letter-spacing:-0.025em;line-height:1.1}
+  h2{font-size:1.5rem;font-weight:800;letter-spacing:-0.015em;margin-bottom:8px}
+  .sn{font-size:0.62rem;font-weight:700;color:var(--g6);letter-spacing:0.14em;text-transform:uppercase;margin-bottom:4px}
+  .dark .sn{color:rgba(255,255,255,0.5)}
+  .sl{color:var(--g4);font-size:0.86rem;margin-bottom:26px;max-width:62ch}
+  .dark .sl{color:rgba(255,255,255,0.65)}
+  .lead{color:var(--g4);font-size:0.95rem;line-height:1.6;margin-top:16px}
+  .dark .lead{color:rgba(255,255,255,0.78)}
+  .foot{margin-top:auto;padding-top:20px;border-top:1px solid var(--line);font-size:0.66rem;color:var(--g6);display:flex;justify-content:space-between;align-items:center}
+  .dark .foot{border-top-color:rgba(255,255,255,0.16)} .dark .foot,.dark .foot *{color:rgba(255,255,255,0.6)}
+  .kpis{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .hc{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:20px;min-height:118px;display:flex;flex-direction:column;justify-content:space-between}
+  .hc-t{font-size:0.62rem;font-weight:700;text-transform:uppercase;letter-spacing:0.09em;color:var(--g6)}
+  .hc-v{font-size:1.7rem;font-weight:800;font-variant-numeric:tabular-nums;letter-spacing:-0.025em;line-height:1.05}
+  .hc-s{font-size:0.7rem;color:var(--g4);line-height:1.35}
+  .hc-s.up{color:var(--ok);font-weight:600}
+  .hc.accent{background:linear-gradient(135deg,var(--navy),#161680);border-color:transparent}
+  .hc.accent .hc-t{color:rgba(255,255,255,0.55)} .hc.accent .hc-v{color:#fff} .hc.accent .hc-s{color:rgba(255,255,255,0.72)}
+  table{width:100%;border-collapse:collapse;font-size:0.78rem}
+  th{text-align:left;font-size:0.58rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--g6);padding:8px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
+  td{padding:9px 10px;border-bottom:1px solid rgba(10,10,92,0.05);font-variant-numeric:tabular-nums}
+  td.n,th.n{text-align:right}
+  tfoot td{font-weight:800;border-top:2px solid var(--line);border-bottom:none}
+  td em{font-style:normal;font-size:0.62rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--ok);margin-left:5px}
+  .ins{background:rgba(26,60,255,0.05);border-left:3px solid var(--blue);border-radius:0 8px 8px 0;padding:18px 20px;margin-top:22px}
+  .ins b{display:block;font-size:0.6rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--blue);margin-bottom:8px}
+  .ins p{font-size:0.8rem;color:var(--g2);line-height:1.6;margin-bottom:10px}
+  .ins p:last-child{margin-bottom:0}
+  .prose p{font-size:0.85rem;color:var(--g2);line-height:1.65;margin-bottom:16px}
+  .dark .prose p{color:rgba(255,255,255,0.86)}
+  .prose p:last-child{margin-bottom:0}
+  .prose strong{color:var(--ink)} .dark .prose strong{color:#fff}
+  .bd{display:inline-block;font-size:0.58rem;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;padding:4px 11px;border-radius:100px;margin-bottom:14px}
+  .bd.w{background:rgba(0,153,77,0.1);color:var(--ok)}
+  .bd.o{background:rgba(26,60,255,0.1);color:var(--blue)}
+  .bd.g{background:rgba(134,138,166,0.16);color:var(--g4)}
+  .cr-t{font-size:1.6rem;font-weight:800;letter-spacing:-0.02em;line-height:1.15;margin-bottom:6px}
+  .cr-a{font-size:0.7rem;color:var(--g6);font-weight:600;margin-bottom:22px}
+  .ms{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding-bottom:22px;margin-bottom:22px;border-bottom:1px solid rgba(10,10,92,0.08)}
+  .ms div{display:flex;flex-direction:column;gap:2px}
+  .ms b{font-size:1.35rem;font-weight:800;font-variant-numeric:tabular-nums;letter-spacing:-0.02em}
+  .ms span{font-size:0.6rem;color:var(--g6);text-transform:uppercase;letter-spacing:0.07em;font-weight:700;line-height:1.3}
+  .acao{margin-top:auto;padding-top:18px;border-top:1px solid rgba(10,10,92,0.08)}
+  .acao b{display:block;font-size:0.6rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--blue);margin-bottom:7px}
+  .acao p{font-size:0.8rem;color:var(--g2);line-height:1.6}
+  .cap{font-size:0.72rem;color:var(--g6);margin-top:14px}
+</style>
+<div class="slide dark"><div class="slide-in">
+  <div style="margin-top:auto">
+    <div class="eb">Boletim semanal · 19 a 25 de agosto de 2026</div>
+    <h1>As obras do BRT dão à conta o melhor número de conversa do ciclo</h1>
+    <p class="lead">A peça sobre a obra da Avenida Moraes Sales levou a taxa de engajamento a 53,5%, acima de tudo o que já rodou neste ciclo. E a entrega chegou onde a resposta é maior: 45,1% do volume no Meta ficou com o público de 45 anos ou mais.</p>
+  </div>
+  <div class="foot"><span>Temas Diversos e Visitas ao Perfil</span><span>Esquina</span></div>
+</div></div>
+
+<div class="slide"><div class="slide-in">
+  <div class="eb">Panorama da semana</div>
+  <h2>Os números do período</h2>
+  <p class="sl">Consolidado das quatro plataformas no período de 19 a 25 de agosto.</p>
+  <div class="kpis">
+    <div class="hc"><div class="hc-t">Impressões</div><div class="hc-v">1.401.109</div><div class="hc-s">consolidado de Meta, Display, YouTube e TikTok</div></div>
+    <div class="hc"><div class="hc-t">Interações</div><div class="hc-v">80.171</div><div class="hc-s">curtidas, comentários e compartilhamentos no Meta</div></div>
+    <div class="hc"><div class="hc-t">Visualizações</div><div class="hc-v">273.719</div><div class="hc-s">consolidado de Meta, YouTube e TikTok</div></div>
+    <div class="hc"><div class="hc-t">Taxa de engajamento</div><div class="hc-v">12,12%</div><div class="hc-s">no Meta</div></div>
+    <div class="hc"><div class="hc-t">Melhor peça em engajamento</div><div class="hc-v">53,5%</div><div class="hc-s up">Obras do BRT, recorde do ciclo</div></div>
+    <div class="hc"><div class="hc-t">Melhor taxa de visualização</div><div class="hc-v">98,6%</div><div class="hc-s">no TikTok</div></div>
+    <div class="hc accent"><div class="hc-t">Melhor taxa de clique</div><div class="hc-v">0,76%</div><div class="hc-s">no YouTube Sequencial</div></div>
+    <div class="hc accent"><div class="hc-t">Cliques para o perfil</div><div class="hc-v">3.497</div><div class="hc-s">na campanha de Visitas ao Perfil, bônus</div></div>
+  </div>
+</div></div>
+
+<div class="slide"><div class="slide-in">
+  <div class="sn">01</div>
+  <h2>Impressões contratadas no ciclo</h2>
+  <p class="sl">Volume contratado para o ciclo de 06 de agosto a 07 de setembro e o quanto já foi entregue.</p>
+  <div class="kpis">
+    <div class="hc"><div class="hc-t">Contratado no ciclo</div><div class="hc-v">5.020.000</div><div class="hc-s">nas quatro linhas</div></div>
+    <div class="hc"><div class="hc-t">Entregue até agora</div><div class="hc-v">3.689.021</div><div class="hc-s">Meta, Display, YouTube e TikTok</div></div>
+    <div class="hc"><div class="hc-t">A entregar</div><div class="hc-v">1.330.979</div><div class="hc-s">até 07/09</div></div>
+    <div class="hc"><div class="hc-t">Dia do ciclo</div><div class="hc-v">21 de 33</div><div class="hc-s">12 dias pela frente</div></div>
+  </div>
+  <table style="margin-top:26px">
+    <thead><tr><th>Linha</th><th class="n">Contratado</th><th class="n">Entregue</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Meta Ads</strong></td><td class="n">2.200.000</td><td class="n">1.593.379</td></tr>
+      <tr><td><strong>Rede de Display</strong></td><td class="n">720.000</td><td class="n">566.985</td></tr>
+      <tr><td><strong>YouTube</strong></td><td class="n">1.100.000</td><td class="n">822.563</td></tr>
+      <tr><td><strong>TikTok</strong></td><td class="n">1.000.000</td><td class="n">706.094</td></tr>
+    </tbody>
+    <tfoot><tr><td>Consolidado</td><td class="n">5.020.000</td><td class="n">3.689.021</td></tr></tfoot>
+  </table>
+  <p class="cap">Com 12 dias pela frente, nenhuma linha depende de recuperação: no ritmo dos últimos sete dias, todas fecham o ciclo acima do contratado em 07 de setembro.</p>
+</div></div>
+
+<div class="slide"><div class="slide-in">
+  <div class="sn">02</div>
+  <h2>O que entregamos</h2>
+  <p class="sl">Comparação entre 19 e 25 de agosto e o período anterior, de 12 a 18 de agosto, ambos de sete dias.</p>
+  <table>
+    <thead><tr><th>Linha</th><th>Métrica</th><th class="n">19 a 25/08</th><th class="n">12 a 18/08</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Meta Ads</strong> · Alcance</td><td>impressões</td><td class="n">424.691</td><td class="n">458.023</td></tr>
+      <tr><td><strong>Meta Ads</strong> · Engajamento</td><td>impressões</td><td class="n">100.821</td><td class="n">119.400</td></tr>
+      <tr><td><strong>Meta Ads</strong> · Engajamento</td><td>interações</td><td class="n">55.996</td><td class="n">67.318</td></tr>
+      <tr><td><strong>Meta Ads</strong> · Visitas ao Perfil <em>bônus</em></td><td>impressões</td><td class="n">136.073</td><td class="n">163.977</td></tr>
+      <tr><td><strong>Meta Ads</strong> · Visitas ao Perfil <em>bônus</em></td><td>cliques</td><td class="n">3.497</td><td class="n">3.158</td></tr>
+      <tr><td><strong>Rede de Display</strong></td><td>impressões</td><td class="n">213.374</td><td class="n">198.012</td></tr>
+      <tr><td><strong>YouTube</strong> · In-Stream</td><td>impressões</td><td class="n">235.528</td><td class="n">254.269</td></tr>
+      <tr><td><strong>YouTube</strong> · Sequencial</td><td>impressões</td><td class="n">45.163</td><td class="n">36.016</td></tr>
+      <tr><td><strong>TikTok</strong></td><td>impressões</td><td class="n">245.458</td><td class="n">256.281</td></tr>
+      <tr><td><strong>TikTok</strong></td><td>visualizações</td><td class="n">241.988</td><td class="n">252.896</td></tr>
+    </tbody>
+    <tfoot><tr><td>Consolidado, linhas contratadas</td><td>impressões</td><td class="n">1.401.109</td><td class="n">1.485.978</td></tr></tfoot>
+  </table>
+  <p class="cap">A linha de Visitas ao Perfil é bônus e não entra na soma das impressões contratadas.</p>
+</div></div>
+
+<div class="slide"><div class="slide-in">
+  <div class="sn">02</div>
+  <h2>Leitura da entrega</h2>
+  <div class="prose" style="margin-top:8px">
+    <p>A semana entregou <strong>200.158 impressões por dia</strong>, no mesmo patamar da semana anterior, com entrega diária estável e sem interrupção em nenhum dia.</p>
+    <p>O Display cresceu e o YouTube Sequencial cresceu junto: a peça sequencial ganhou 25% de volume e é a que tem a <strong>melhor taxa de clique de toda a operação, 0,76%</strong>.</p>
+    <p>No Meta, o Feed concentra 53,3% das impressões, mas o <strong>Reels foi onde a conversa aconteceu nesta semana</strong>, com 20,03% de taxa de engajamento, contra 12,29% no Feed e 8,20% no Stories. É uma virada em relação à semana passada, quando o Feed liderava, e acompanha a entrada das peças em vídeo vertical.</p>
+    <p><strong>Quem mais responde não é quem mais recebe.</strong> A faixa de 25 a 34 anos leva 34,1% do volume e interage com 5,13% do que recebe; acima dos 65 anos são 12,7% do volume e 23,60%. O público de 45 anos ou mais já responde por 45,1% da entrega.</p>
+    <p><strong>Ação:</strong> seguimos com criativos de linguagem pensada para esse público, que é quem devolve conversa.</p>
+  </div>
+</div></div>
+
+<div class="slide"><div class="slide-in">
+  <div class="sn">03 · Peças em destaque · 1 de 3</div>
+  <span class="bd w">Melhor taxa de engajamento do ciclo</span>
+  <div class="cr-t">Obras do BRT</div>
+  <div class="cr-a">Vídeo vertical da obra na Avenida Moraes Sales</div>
+  <div class="ms">
+    <div><b>92.038</b><span>Impressões na semana</span></div>
+    <div><b>49.219</b><span>Interações</span></div>
+    <div><b>53,5%</b><span>Taxa de engajamento</span></div>
+    <div><b>17,1%</b><span>Taxa de visualização</span></div>
+  </div>
+  <div class="prose">
+    <p><strong>É a peça de maior conversa de todo o ciclo.</strong> O vídeo mostra a obra do BRT acontecendo, com a máquina trabalhando e o asfalto sendo substituído por pavimento de concreto, e explica em poucas linhas por que a mudança importa: mais de 4 km de via ganham uma estrutura mais durável, preparada para o tráfego dos ônibus. Obra filmada de perto é o tipo de conteúdo que o morador para para comentar, porque fala de uma rua que ele conhece.</p>
+    <p>A peça responde por 87,7% da entrega da linha de Engajamento e a resposta cresce com a idade: quem tem 65 anos ou mais interage com 63,1% das impressões que recebe, contra 43,0% na faixa de 25 a 34. Entre Feed, Reels e Stories a taxa fica próxima, de 45,5% a 57,8%.</p>
+  </div>
+  <div class="acao"><b>Ação</b><p>Vamos manter a peça no ar até o fim do ciclo e preparar um segundo trecho da mesma obra no mesmo formato vertical, com legenda na tela para funcionar sem som. Sugerimos também uma versão de 15 a 20 segundos, com o trecho mais forte na abertura, para ampliar a parcela que assiste até o fim.</p></div>
+</div></div>
+
+<div class="slide"><div class="slide-in">
+  <div class="sn">03 · Peças em destaque · 2 de 3</div>
+  <span class="bd o">Melhor taxa de clique do Meta</span>
+  <div class="cr-t">Segue a gente</div>
+  <div class="cr-a">Vídeo vertical com convite ao perfil</div>
+  <div class="ms">
+    <div><b>118.575</b><span>Impressões</span></div>
+    <div><b>3.279</b><span>Cliques no link</span></div>
+    <div><b>2,77%</b><span>Taxa de clique</span></div>
+    <div><b>82.696</b><span>Pessoas alcançadas</span></div>
+  </div>
+  <div class="prose">
+    <p><strong>É a peça que mais leva gente ao perfil da Prefeitura.</strong> O vídeo é uma conversa direta com a câmera, no formato vertical e com legenda na tela, então funciona sem som, que é como a maior parte das pessoas assiste. A abertura faz uma pergunta que segura a atenção nos primeiros segundos e o pedido vem no fim, sem rodeio: quem quer saber o que acontece em Campinas, segue a página.</p>
+    <p>A peça responde por 93,8% dos cliques no link da linha de Visitas ao Perfil. O clique cresce com a idade: acima dos 65 anos a taxa chega a 4,56%, contra 1,68% na faixa de 25 a 34. O convite explícito ao perfil segue sendo o que mais rende clique na conta.</p>
+  </div>
+  <div class="acao"><b>Ação</b><p>Vamos manter a peça no ar até o fim do ciclo, já que é ela que sustenta o resultado da linha. Sugerimos preparar uma segunda versão com outra pessoa falando à câmera, no mesmo formato e com o mesmo tipo de pergunta na abertura, para revezar com esta.</p></div>
+</div></div>
+
+<div class="slide"><div class="slide-in">
+  <div class="sn">03 · Peças em destaque · 3 de 3</div>
+  <span class="bd w">Lidera em duas frentes</span>
+  <div class="cr-t">Campinas Innovation Week 2026</div>
+  <div class="cr-a">Peça com data, local e gratuidade</div>
+  <div class="ms">
+    <div><b>188.551</b><span>Impressões da pauta</span></div>
+    <div><b>0,142%</b><span>Taxa de clique no Display</span></div>
+    <div><b>0,104%</b><span>Média do Display</span></div>
+    <div><b>118.330</b><span>Impressões no Meta</span></div>
+  </div>
+  <div class="prose">
+    <p><strong>Chamada com data marcada e informação objetiva é o que converte no Display.</strong> A peça anuncia o Campinas Innovation Week de 14 a 18 de setembro, no Prédio do Relógio, no Pátio Ferroviário, e traz na frente o que mais importa para quem lê: a participação é gratuita. Data, lugar e gratuidade resolvem a dúvida do morador no próprio anúncio.</p>
+    <p>No Display é a pauta de melhor taxa de clique entre todas as que estão no ar, 37% acima da média da linha. No Meta, é a segunda pauta de maior volume da linha de Alcance na semana. Liderar em duas frentes ao mesmo tempo é o sinal mais claro de que o assunto interessa à cidade.</p>
+  </div>
+  <div class="acao"><b>Ação</b><p>Vamos manter a pauta no ar até o fim do ciclo, com data, local e gratuidade sempre visíveis na peça. Como o evento acontece de 14 a 18 de setembro, a janela de inscrição continua aberta: sugerimos reforçar a chamada de inscrição na última semana de agosto, quando a decisão de ir começa a ser tomada.</p></div>
+</div></div>
+
+<div class="slide"><div class="slide-in">
+  <div class="sn">04</div>
+  <h2>Visitas ao Perfil</h2>
+  <p class="sl">A campanha de Visitas ao Perfil tem entrega própria e não soma no total das linhas contratadas.</p>
+  <div class="kpis">
+    <div class="hc"><div class="hc-t">Cliques no link</div><div class="hc-v">3.497</div><div class="hc-s up">339 mais que na semana anterior</div></div>
+    <div class="hc"><div class="hc-t">Taxa de clique</div><div class="hc-v">2,57%</div><div class="hc-s up">era 1,93% na semana anterior</div></div>
+    <div class="hc"><div class="hc-t">Pessoas alcançadas</div><div class="hc-v">97.735</div><div class="hc-s">na semana</div></div>
+    <div class="hc accent"><div class="hc-t">Impressões</div><div class="hc-v">136.073</div><div class="hc-s">bônus, fora do total contratado</div></div>
+  </div>
+  <div class="ins">
+    <b>Leitura</b>
+    <p><strong>A linha melhorou o que importa nela.</strong> Os cliques para o perfil subiram de 3.158 para 3.497 mesmo com menos impressões que na semana anterior, o que levou a taxa de clique de 1,93% para 2,57%. Em outras palavras, a mesma entrega passou a converter mais: cada mil pessoas alcançadas mandam mais gente ao perfil da Prefeitura do que mandavam há uma semana.</p>
+    <p>A resposta acompanha a idade, como no resto da conta: a taxa de clique vai de 1,68% na faixa de 25 a 34 anos a 4,56% acima dos 65.</p>
+  </div>
+</div></div>
+
+<div class="slide dark"><div class="slide-in">
+  <div class="sn">05</div>
+  <h2 style="color:#fff">Aprendizados da semana</h2>
+  <p class="sl">O que a semana deixa para a próxima leva de criativos.</p>
+  <div class="prose">
+    <p><strong>Obra em andamento, filmada de perto, é o conteúdo que mais gera conversa.</strong> Obras do BRT levou a taxa de engajamento a 53,5%, o melhor número de todo o ciclo, falando de uma rua que o morador conhece. Sugerimos seguir nessa linha nas próximas peças, com um trecho de obra por vídeo.</p>
+    <p><strong>O convite explícito ao perfil continua sendo o que mais rende clique.</strong> A taxa de clique da linha de Visitas ao Perfil subiu de 1,93% para 2,57% na semana, com menos impressões que antes. Vamos manter a peça no ar e preparar uma segunda versão para revezar.</p>
+    <p><strong>Chamada com data marcada rende mais clique no Display.</strong> O Campinas Innovation Week chegou nesta semana e já tem a melhor taxa de clique da linha, 37% acima da média, com data, lugar e gratuidade visíveis na própria peça. Vamos manter esse padrão nas próximas pautas com data definida.</p>
+    <p><strong>Vídeo vertical mudou de lugar a conversa no Meta.</strong> Com a entrada das peças em vídeo, o Reels passou o Feed em taxa de engajamento nesta semana, 20,03% contra 12,29%. É a primeira vez no ciclo que isso acontece e vale acompanhar se sustenta.</p>
+    <p><strong>Quem mais responde não é quem mais recebe.</strong> A faixa de 25 a 34 anos leva 34,1% do volume e interage com 5,13% do que recebe; acima dos 65 anos são 12,7% do volume e 23,60%. O público de 45 anos ou mais já é 45,1% da entrega, e é para ele que a linguagem das próximas peças vai ser pensada.</p>
+  </div>
+  <div class="foot"><span>Boletim de 19 a 25 de agosto de 2026 · Prefeitura de Campinas</span><span>Esquina</span></div>
+</div></div>
