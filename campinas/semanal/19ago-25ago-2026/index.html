@@ -90,7 +90,7 @@
   .ppct small { display:block; font-weight:500; font-size:0.71rem; color:var(--g4); }
 
   .creatives { display:flex; flex-direction:column; gap:var(--s4); }
-  .cr { background:var(--white); border:1px solid var(--line); border-radius:var(--r3); box-shadow:0 1px 3px rgba(10,10,92,0.04), 0 8px 24px rgba(10,10,92,0.05); display:grid; grid-template-columns:340px 1fr; align-items:start; gap:var(--s7); padding:var(--s6); }
+  .cr { background:var(--white); border:1px solid var(--line); border-radius:var(--r3); box-shadow:0 1px 3px rgba(10,10,92,0.04), 0 8px 24px rgba(10,10,92,0.05); padding:var(--s5) var(--s6); }
   .cr-e { background:#fafbff; border:1px solid var(--line); border-radius:var(--r2); padding:var(--s3); height:420px; overflow:hidden; align-self:flex-start; }
   .cr-e iframe { display:block; width:143%; height:585px; border:none; border-radius:var(--r1); background:#fff; transform:scale(0.7); transform-origin:top left; }
   .cr-b { padding:var(--s2) var(--s3) var(--s4) 0; }
@@ -206,6 +206,30 @@
     .tbl-card table { font-size:0.8rem; }
     .tbl-card td, .tbl-card th { padding:var(--s2); }
   }
+
+  /* --- padrão de expansão (novo) --- */
+  details.dsec { list-style:none; }
+  details.dsec > summary { list-style:none; cursor:pointer; display:flex; align-items:flex-start; justify-content:space-between; gap:var(--s4); }
+  details.dsec > summary::-webkit-details-marker { display:none; }
+  .dsec-top h2 { margin-bottom:var(--s2); }
+  .dsum { color:var(--g4); font-size:0.95rem; max-width:64ch; }
+  .dsum b { color:var(--ink); font-variant-numeric:tabular-nums; }
+  .dtoggle { flex:0 0 auto; display:inline-flex; align-items:center; gap:8px; font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--blue); white-space:nowrap; margin-top:6px; }
+  .dchev { width:8px; height:8px; border-right:2px solid var(--blue); border-bottom:2px solid var(--blue); transform:rotate(45deg); transition:transform .2s ease; }
+  details[open] .dchev { transform:rotate(-135deg); }
+  details:not([open]) .dtxt-open { display:none; }
+  details[open] .dtxt-closed { display:none; }
+  details.dsec > .dbody { padding-top:var(--s6); }
+
+  .cr { list-style:none; }
+  .cr::-webkit-details-marker { display:none; }
+  .cr summary { list-style:none; cursor:pointer; }
+  .cr summary::-webkit-details-marker { display:none; }
+  .cr-title-row { display:flex; align-items:baseline; gap:var(--s3); flex-wrap:wrap; }
+  .cr-link-inline { font-size:0.76rem; font-weight:700; color:var(--blue); text-decoration:none; white-space:nowrap; }
+  .cr-link-inline:hover { text-decoration:underline; }
+  .cr .cr-toggle { display:inline-flex; align-items:center; gap:8px; font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--blue); margin-top:var(--s4); }
+  .cr .cr-toggle .dchev { border-color:var(--blue); }
 </style>
 <nav class="nav">
   <div class="wrap nav-in">
@@ -239,74 +263,94 @@
 </header>
 
 <section class="wrap">
-  <div class="sn">01</div>
-  <h2>Impressões contratadas no ciclo</h2>
-  <div class="card">
-    <div class="verba-top">
-      <div class="vt"><div class="v">5.020.000</div><div class="l">Contratado no ciclo</div><div class="n">nas quatro linhas</div></div>
-      <div class="vt"><div class="v">3.689.021</div><div class="l">Entregue até agora</div><div class="n">Meta, Display, YouTube e TikTok</div></div>
-      <div class="vt avail"><div class="v">1.330.979</div><div class="l">A entregar</div><div class="n">até 07/09</div></div>
-      <div class="vt free"><div class="v">21 de 33</div><div class="l">Dia do ciclo</div><div class="n">12 dias pela frente</div></div>
+  <details class="dsec" open>
+    <summary>
+      <div class="dsec-top">
+        <div class="sn">01</div>
+        <h2>Impressões contratadas no ciclo</h2>
+        <p class="dsum"><b>3.689.021</b> de <b>5.020.000</b> impressões contratadas · <b>73,5%</b><br>As quatro linhas seguem acima do ritmo necessário para o ciclo até 07/09</p>
+      </div>
+      <span class="dtoggle"><span class="dtxt-closed">Ver detalhes</span><span class="dtxt-open">Recolher</span><i class="dchev"></i></span>
+    </summary>
+    <div class="dbody">
+      <div class="card">
+        <div class="verba-top">
+          <div class="vt"><div class="v">5.020.000</div><div class="l">Contratado no ciclo</div><div class="n">nas quatro linhas</div></div>
+          <div class="vt"><div class="v">3.689.021</div><div class="l">Entregue até agora</div><div class="n">Meta, Display, YouTube e TikTok</div></div>
+          <div class="vt avail"><div class="v">1.330.979</div><div class="l">A entregar</div><div class="n">até 07/09</div></div>
+          <div class="vt free"><div class="v">21 de 33</div><div class="l">Dia do ciclo</div><div class="n">12 dias pela frente</div></div>
+        </div>
+        <div class="bar">
+          <i style="width:73.5%;background:linear-gradient(90deg,var(--blue),var(--purple))"></i>
+          <i style="width:26.5%;background:rgba(26,60,255,0.18)"></i>
+        </div>
+        <div class="bar-lg"><span style="width:73.5%;text-align:left">Entregue</span><span style="width:26.5%;text-align:right">A entregar</span></div>
+      </div>
+      <div class="ins">
+        <b>Leitura</b>
+        <p>Das 5.020.000 impressões contratadas para o ciclo, 3.689.021 já foram entregues, com 12 dias pela frente. As quatro linhas caminham juntas e nenhuma depende de recuperação: no ritmo dos últimos sete dias, todas fecham o ciclo acima do que foi contratado. Meta Ads, Display, YouTube e TikTok seguem com entrega diária estável, sem interrupção em nenhum dia da semana.</p>
+      </div>
     </div>
-    <div class="bar">
-      <i style="width:73.5%;background:linear-gradient(90deg,var(--blue),var(--purple))"></i>
-      <i style="width:26.5%;background:rgba(26,60,255,0.18)"></i>
-    </div>
-    <div class="bar-lg"><span style="width:73.5%;text-align:left">Entregue</span><span style="width:26.5%;text-align:right">A entregar</span></div>
-  </div>
-  <div class="ins">
-    <b>Leitura</b>
-    <p>Das 5.020.000 impressões contratadas para o ciclo, 3.689.021 já foram entregues, com 12 dias pela frente. As quatro linhas caminham juntas e nenhuma depende de recuperação: no ritmo dos últimos sete dias, todas fecham o ciclo acima do que foi contratado. Meta Ads, Display, YouTube e TikTok seguem com entrega diária estável, sem interrupção em nenhum dia da semana.</p>
-  </div>
+  </details>
 </section>
 
 <section class="wrap">
-  <div class="sn">02</div>
-  <h2>O que entregamos</h2>
-  <p class="sl">Comparação entre 19 e 25 de agosto e o período anterior, de 12 a 18 de agosto, ambos de sete dias. Só as linhas contratadas.</p>
-  <div class="card tbl-card">
-    <div class="tw">
-    <table>
-      <thead>
-        <tr><th>Linha</th><th>Métrica</th><th class="n">19 a 25/08</th><th class="n">12 a 18/08</th></tr>
-      </thead>
-      <tbody>
-        <tr><td><strong>Meta Ads</strong></td><td>impressões</td><td class="n">525.512</td><td class="n">577.423</td></tr>
-        <tr><td><strong>Rede de Display</strong></td><td>impressões</td><td class="n">213.374</td><td class="n">198.012</td></tr>
-        <tr><td><strong>YouTube</strong></td><td>impressões</td><td class="n">280.691</td><td class="n">290.285</td></tr>
-        <tr><td><strong>TikTok</strong></td><td>impressões</td><td class="n">245.458</td><td class="n">256.281</td></tr>
-        <tr><td><strong>Meta Ads · Visitas ao Perfil</strong> <em>bônus</em></td><td>impressões</td><td class="n">136.073</td><td class="n">163.977</td></tr>
-      </tbody>
-      <tfoot>
-        <tr><td colspan="2">Consolidado, linhas contratadas · impressões</td><td class="n">1.265.035</td><td class="n">1.322.001</td></tr>
-      </tfoot>
-    </table>
-    </div>
-    <details class="ins acc">
-      <summary>Ver detalhamento por linha</summary>
-      <div class="tw" style="margin-top:var(--s3)">
-      <table>
-        <thead>
-          <tr><th>Linha</th><th class="n">Impressões</th><th>Resultado</th><th class="n">19 a 25/08</th></tr>
-        </thead>
-        <tbody>
-          <tr><td rowspan="2"><strong>Meta Ads</strong></td><td rowspan="2" class="n">525.512</td><td>Alcance <span style="color:var(--g6);font-weight:500">(campanha de Alcance)</span></td><td class="n">183.807</td></tr>
-          <tr><td>Thruplay / visualizações <span style="color:var(--g6);font-weight:500">(campanha de Engajamento)</span></td><td class="n">17.381</td></tr>
-          <tr><td><strong>Rede de Display</strong></td><td class="n">213.374</td><td>Cliques</td><td class="n">221</td></tr>
-          <tr><td><strong>YouTube</strong></td><td class="n">280.691</td><td>Visualizações</td><td class="n">10.200</td></tr>
-          <tr><td><strong>TikTok</strong></td><td class="n">245.458</td><td>Visualizações</td><td class="n">241.988</td></tr>
-          <tr><td><strong>Meta Ads · Visitas ao Perfil</strong> <em>bônus</em></td><td class="n">136.073</td><td>Novos seguidores <span style="color:var(--g6);font-weight:500">(painel do perfil, todas as origens)</span></td><td class="n">906</td></tr>
-        </tbody>
-      </table>
+  <details class="dsec">
+    <summary>
+      <div class="dsec-top">
+        <div class="sn">02</div>
+        <h2>O que entregamos</h2>
+        <p class="dsum"><b>1.265.035</b> impressões nas linhas contratadas nesta semana, contra <b>1.322.001</b> nos sete dias anteriores</p>
       </div>
-    </details>
-  </div>
-  <div class="ins">
-    <b>Leitura</b>
-    <p>A semana entregou <strong>200.158 impressões por dia</strong>, no mesmo patamar da semana anterior. O Display cresceu e o YouTube Sequencial cresceu junto: a peça sequencial ganhou 25% de volume e é a que tem a melhor taxa de clique de toda a operação, 0,76%.</p>
-    <p>No Meta, o Feed concentra 53,3% das impressões, mas o <strong>Reels foi onde a conversa aconteceu nesta semana</strong>, com 20,03% de taxa de engajamento, contra 12,29% no Feed e 8,20% no Stories. É uma virada em relação à semana passada, quando o Feed liderava, e acompanha a entrada de peças em vídeo vertical.</p>
-    <p><strong>Quem mais responde não é quem mais recebe.</strong> A faixa de 25 a 34 anos leva 34,1% do volume e interage com 5,13% das impressões que recebe; acima dos 65 anos são 12,7% do volume e 23,60% de interação. O público de 45 anos ou mais já responde por 45,1% da entrega. <strong>Ação:</strong> seguimos com criativos de linguagem pensada para esse público, que é quem devolve conversa.</p>
-  </div>
+      <span class="dtoggle"><span class="dtxt-closed">Ver detalhes</span><span class="dtxt-open">Recolher</span><i class="dchev"></i></span>
+    </summary>
+    <div class="dbody">
+      <p class="sl">Comparação entre 19 e 25 de agosto e o período anterior, de 12 a 18 de agosto, ambos de sete dias. Só as linhas contratadas.</p>
+      <div class="card tbl-card">
+        <div class="tw">
+        <table>
+          <thead>
+            <tr><th>Linha</th><th>Métrica</th><th class="n">19 a 25/08</th><th class="n">12 a 18/08</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Meta Ads</strong></td><td>impressões</td><td class="n">525.512</td><td class="n">577.423</td></tr>
+            <tr><td><strong>Rede de Display</strong></td><td>impressões</td><td class="n">213.374</td><td class="n">198.012</td></tr>
+            <tr><td><strong>YouTube</strong></td><td>impressões</td><td class="n">280.691</td><td class="n">290.285</td></tr>
+            <tr><td><strong>TikTok</strong></td><td>impressões</td><td class="n">245.458</td><td class="n">256.281</td></tr>
+            <tr><td><strong>Meta Ads · Visitas ao Perfil</strong> <em>bônus</em></td><td>impressões</td><td class="n">136.073</td><td class="n">163.977</td></tr>
+          </tbody>
+          <tfoot>
+            <tr><td colspan="2">Consolidado, linhas contratadas · impressões</td><td class="n">1.265.035</td><td class="n">1.322.001</td></tr>
+          </tfoot>
+        </table>
+        </div>
+      </div>
+      <h3 style="font-size:0.98rem;font-weight:800;margin-top:var(--s5);margin-bottom:var(--s3)">Detalhamento por linha</h3>
+      <div class="card tbl-card">
+        <div class="tw">
+        <table>
+          <thead>
+            <tr><th>Linha</th><th class="n">Impressões</th><th>Resultado</th><th class="n">19 a 25/08</th></tr>
+          </thead>
+          <tbody>
+            <tr><td rowspan="2"><strong>Meta Ads</strong></td><td rowspan="2" class="n">525.512</td><td>Alcance <span style="color:var(--g6);font-weight:500">(campanha de Alcance)</span></td><td class="n">183.807</td></tr>
+            <tr><td>Thruplay / visualizações <span style="color:var(--g6);font-weight:500">(campanha de Engajamento)</span></td><td class="n">17.381</td></tr>
+            <tr><td><strong>Rede de Display</strong></td><td class="n">213.374</td><td>Cliques</td><td class="n">221</td></tr>
+            <tr><td><strong>YouTube</strong></td><td class="n">280.691</td><td>Visualizações</td><td class="n">10.200</td></tr>
+            <tr><td><strong>TikTok</strong></td><td class="n">245.458</td><td>Visualizações</td><td class="n">241.988</td></tr>
+            <tr><td><strong>Meta Ads · Visitas ao Perfil</strong> <em>bônus</em></td><td class="n">136.073</td><td>Novos seguidores <span style="color:var(--g6);font-weight:500">(painel do perfil, todas as origens)</span></td><td class="n">906</td></tr>
+          </tbody>
+        </table>
+        </div>
+      </div>
+      <div class="ins">
+        <b>Leitura</b>
+        <p>A semana entregou <strong>200.158 impressões por dia</strong>, no mesmo patamar da semana anterior. O Display cresceu e o YouTube Sequencial cresceu junto: a peça sequencial ganhou 25% de volume e é a que tem a melhor taxa de clique de toda a operação, 0,76%.</p>
+        <p>No Meta, o Feed concentra 53,3% das impressões, mas o <strong>Reels foi onde a conversa aconteceu nesta semana</strong>, com 20,03% de taxa de engajamento, contra 12,29% no Feed e 8,20% no Stories. É uma virada em relação à semana passada, quando o Feed liderava, e acompanha a entrada de peças em vídeo vertical.</p>
+        <p><strong>Quem mais responde não é quem mais recebe.</strong> A faixa de 25 a 34 anos leva 34,1% do volume e interage com 5,13% das impressões que recebe; acima dos 65 anos são 12,7% do volume e 23,60% de interação. O público de 45 anos ou mais já responde por 45,1% da entrega. <strong>Ação:</strong> seguimos com criativos de linguagem pensada para esse público, que é quem devolve conversa.</p>
+      </div>
+    </div>
+  </details>
 </section>
 
 <section class="wrap">
@@ -315,18 +359,24 @@
   <p class="sl">Leitura qualitativa dos criativos no ar, com dados do período.</p>
   <div class="creatives">
 
-    <article class="cr solo">
-      <div class="cr-b">
-        <div class="cr-h"><div class="cr-t">Obras do BRT</div><span class="bd w">Melhor taxa de engajamento do ciclo</span></div>
-        <a class="cr-link" href="https://www.facebook.com/259066967468437/videos/4523574741299758" target="_blank" rel="noopener">Ver a publicação ↗</a>
+    <details class="cr">
+      <summary>
+        <div class="cr-h">
+          <div class="cr-title-row">
+            <span class="cr-t">Obras do BRT</span>
+            <a class="cr-link-inline" href="https://www.facebook.com/259066967468437/videos/4523574741299758" target="_blank" rel="noopener">Ver publicação ↗</a>
+          </div>
+          <span class="bd w">Melhor taxa de engajamento do ciclo</span>
+        </div>
         <div class="ms">
           <div><b>92.038</b><span>Impressões</span></div>
           <div><b>49.219</b><span>Interações</span></div>
           <div><b>53,5%</b><span>Taxa de engajamento</span></div>
           <div><b>17,1%</b><span>Taxa de visualização</span></div>
-          <div><b>55+</b><span>Faixa que mais responde</span></div>
         </div>
-
+        <span class="cr-toggle"><span class="dtxt-closed">Ver análise completa</span><span class="dtxt-open">Recolher</span><i class="dchev"></i></span>
+      </summary>
+      <div class="cr-b cr-body">
         <div class="apd">
           <b>Audiência e posicionamento</b>
           <p>A peça responde por 87,7% da entrega da linha de Engajamento. Dentro dela, a resposta cresce com a idade: quem tem 65 anos ou mais interage com 63,1% das impressões que recebe, contra 43,0% na faixa de 25 a 34. Entre Feed, Reels e Stories a taxa fica próxima, de 45,5% a 57,8%, ou seja a peça funciona bem em qualquer lugar onde apareça.</p>
@@ -338,22 +388,27 @@
           <b>Ação</b>
           <p>Vamos manter a peça no ar até o fim do ciclo e preparar um segundo trecho da mesma obra no mesmo formato vertical, com legenda na tela para funcionar sem som. Como a taxa de visualização está em 17,1%, sugerimos também uma versão de 15 a 20 segundos, com o trecho mais forte na abertura, para ampliar a parcela que assiste até o fim.</p>
         </div>
-
       </div>
-    </article>
+    </details>
 
-    <article class="cr solo">
-      <div class="cr-b">
-        <div class="cr-h"><div class="cr-t">Segue a gente</div><span class="bd o">Melhor taxa de clique do Meta</span></div>
-        <a class="cr-link" href="https://www.facebook.com/259066967468437/posts/1118785050289391" target="_blank" rel="noopener">Ver a publicação ↗</a>
+    <details class="cr">
+      <summary>
+        <div class="cr-h">
+          <div class="cr-title-row">
+            <span class="cr-t">Segue a gente</span>
+            <a class="cr-link-inline" href="https://www.facebook.com/259066967468437/posts/1118785050289391" target="_blank" rel="noopener">Ver publicação ↗</a>
+          </div>
+          <span class="bd o">Melhor taxa de clique do Meta</span>
+        </div>
         <div class="ms">
           <div><b>118.575</b><span>Impressões</span></div>
           <div><b>3.279</b><span>Cliques no link</span></div>
           <div><b>2,77%</b><span>Taxa de clique</span></div>
           <div><b>82.696</b><span>Pessoas alcançadas</span></div>
-          <div><b>65+</b><span>Faixa que mais clica</span></div>
         </div>
-
+        <span class="cr-toggle"><span class="dtxt-closed">Ver análise completa</span><span class="dtxt-open">Recolher</span><i class="dchev"></i></span>
+      </summary>
+      <div class="cr-b cr-body">
         <div class="apd">
           <b>Audiência e resultado</b>
           <p>A peça responde por 93,8% dos cliques no link da linha de Visitas ao Perfil. O clique cresce com a idade: acima dos 65 anos a taxa chega a 4,56%, contra 1,68% na faixa de 25 a 34. O Stories do Instagram concentra 68,6% da entrega da linha e é de lá que vem a maior parte desses cliques.</p>
@@ -365,21 +420,27 @@
           <b>Ação</b>
           <p>Vamos manter a peça no ar até o fim do ciclo, já que é ela que sustenta o resultado da linha. Sugerimos preparar uma segunda versão com outra pessoa falando à câmera, no mesmo formato e com o mesmo tipo de pergunta na abertura, para revezar com esta e evitar o desgaste da mesma imagem nos últimos dias.</p>
         </div>
-
       </div>
-    </article>
+    </details>
 
-    <article class="cr solo">
-      <div class="cr-b">
-        <div class="cr-h"><div class="cr-t">Campinas Innovation Week 2026</div><span class="bd w">Lidera em duas frentes</span></div>
-        <a class="cr-link" href="https://www.facebook.com/259066967468437/posts/1562670489234176" target="_blank" rel="noopener">Ver a publicação ↗</a>
+    <details class="cr">
+      <summary>
+        <div class="cr-h">
+          <div class="cr-title-row">
+            <span class="cr-t">Campinas Innovation Week 2026</span>
+            <a class="cr-link-inline" href="https://www.facebook.com/259066967468437/posts/1562670489234176" target="_blank" rel="noopener">Ver publicação ↗</a>
+          </div>
+          <span class="bd w">Lidera em duas frentes</span>
+        </div>
         <div class="ms">
           <div><b>188.551</b><span>Impressões da pauta</span></div>
           <div><b>0,142%</b><span>Taxa de clique no Display</span></div>
           <div><b>0,104%</b><span>Média do Display</span></div>
           <div><b>118.330</b><span>Impressões no Meta</span></div>
         </div>
-
+        <span class="cr-toggle"><span class="dtxt-closed">Ver análise completa</span><span class="dtxt-open">Recolher</span><i class="dchev"></i></span>
+      </summary>
+      <div class="cr-b cr-body">
         <div class="apd">
           <b>Desempenho por linha</b>
           <p>No Display, a pauta tem a melhor taxa de clique entre todas as que estão no ar, 37% acima da média da linha, à frente do Concilia, do Feirão ISS e das duas pautas de vacinação. No Meta, é a segunda pauta de maior volume da linha de Alcance na semana. Liderar em duas frentes ao mesmo tempo é o sinal mais claro de que o assunto interessa à cidade.</p>
@@ -391,30 +452,39 @@
           <b>Ação</b>
           <p>Vamos manter a pauta no ar até o fim do ciclo, com data, local e gratuidade sempre visíveis na peça. Como o evento acontece de 14 a 18 de setembro, a janela de inscrição continua aberta depois deste ciclo: sugerimos reforçar a chamada de inscrição na última semana de agosto, quando a decisão de ir começa a ser tomada.</p>
         </div>
-
       </div>
-    </article>
+    </details>
 
   </div>
 </section>
 
 <section class="wrap">
-  <div class="sn">04</div>
-  <h2>Visitas ao Perfil e crescimento do perfil <span style="font-weight:600;color:var(--g4);font-size:0.7em;text-transform:none;letter-spacing:0">bônus, fora do total</span></h2>
-  <p class="sl">A campanha de Visitas ao Perfil tem entrega própria e não soma no total das linhas contratadas.</p>
-  <div class="card">
-    <div class="verba-top" style="grid-template-columns:repeat(4,1fr)">
-      <div class="vt"><div class="v">3.471</div><div class="l">Visitas ao perfil</div><div class="n">ação medida na campanha</div></div>
-      <div class="vt avail"><div class="v">3.497</div><div class="l">Cliques no link</div><div class="n">taxa de 2,57%</div></div>
-      <div class="vt"><div class="v">97.735</div><div class="l">Pessoas alcançadas</div></div>
-      <div class="vt free"><div class="v">906</div><div class="l">Novos seguidores</div><div class="n">855 no Instagram, 51 no Facebook</div></div>
+  <details class="dsec">
+    <summary>
+      <div class="dsec-top">
+        <div class="sn">04</div>
+        <h2>Visitas ao Perfil e crescimento do perfil <span style="font-weight:600;color:var(--g4);font-size:0.7em;text-transform:none;letter-spacing:0">bônus, fora do total</span></h2>
+        <p class="dsum"><b>3.471</b> visitas ao perfil e <b>906</b> novos seguidores na semana, bônus fora do total contratado</p>
+      </div>
+      <span class="dtoggle"><span class="dtxt-closed">Ver detalhes</span><span class="dtxt-open">Recolher</span><i class="dchev"></i></span>
+    </summary>
+    <div class="dbody">
+      <p class="sl">A campanha de Visitas ao Perfil tem entrega própria e não soma no total das linhas contratadas.</p>
+      <div class="card">
+        <div class="verba-top" style="grid-template-columns:repeat(4,1fr)">
+          <div class="vt"><div class="v">3.471</div><div class="l">Visitas ao perfil</div><div class="n">ação medida na campanha</div></div>
+          <div class="vt avail"><div class="v">3.497</div><div class="l">Cliques no link</div><div class="n">taxa de 2,57%</div></div>
+          <div class="vt"><div class="v">97.735</div><div class="l">Pessoas alcançadas</div></div>
+          <div class="vt free"><div class="v">906</div><div class="l">Novos seguidores</div><div class="n">855 no Instagram, 51 no Facebook</div></div>
+        </div>
+      </div>
+      <div class="ins">
+        <b>Leitura</b>
+        <p>Visitas ao perfil é a ação medida na campanha. O crescimento de seguidores vem do painel do perfil e soma todas as origens, orgânicas e pagas, então não é atribuível somente à mídia. Os dois números aparecem lado a lado, sem relação de causa entre eles.</p>
+        <p><strong>A linha melhorou o que importa nela.</strong> Os cliques para o perfil subiram de 3.158 para 3.497 mesmo com menos impressões que na semana anterior, o que levou a taxa de clique de 1,93% para 2,57%. A resposta acompanha a idade, como no resto da conta: a taxa de clique vai de 1,68% na faixa de 25 a 34 anos a 4,56% acima dos 65.</p>
+      </div>
     </div>
-  </div>
-  <div class="ins">
-    <b>Leitura</b>
-    <p>Visitas ao perfil é a ação medida na campanha. O crescimento de seguidores vem do painel do perfil e soma todas as origens, orgânicas e pagas, então não é atribuível somente à mídia. Os dois números aparecem lado a lado, sem relação de causa entre eles.</p>
-    <p><strong>A linha melhorou o que importa nela.</strong> Os cliques para o perfil subiram de 3.158 para 3.497 mesmo com menos impressões que na semana anterior, o que levou a taxa de clique de 1,93% para 2,57%. A resposta acompanha a idade, como no resto da conta: a taxa de clique vai de 1,68% na faixa de 25 a 34 anos a 4,56% acima dos 65.</p>
-  </div>
+  </details>
 </section>
 
 <section class="wrap">
