@@ -37,6 +37,8 @@
     .chip-yt{background:rgba(204,0,0,.07);border-color:rgba(204,0,0,.2);color:#CC0000}
     .btn-pdf{display:inline-flex;align-items:center;gap:6px;padding:7px 16px;background:var(--p);color:#fff;border:none;border-radius:100px;font-family:var(--font);font-size:.72rem;font-weight:700;letter-spacing:.05em;cursor:pointer;transition:all .2s;text-transform:uppercase;flex-shrink:0}
     .btn-pdf:hover{background:#1430CC;transform:translateY(-1px);box-shadow:0 4px 16px rgba(26,60,255,.3)}
+    .btn-central{display:inline-flex;align-items:center;padding:7px 16px;background:transparent;color:var(--t2);border:1px solid var(--border);border-radius:100px;font-family:var(--font);font-size:.72rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;text-decoration:none;flex-shrink:0;transition:all .2s}
+    .btn-central:hover{background:rgba(10,10,92,.05)}
 
     /* ══ TYPOGRAPHY / SECTIONS ══ */
     .wrap{max-width:1200px;margin:0 auto;padding:0 24px}
@@ -349,10 +351,13 @@
     <span class="chip chip-tiktok">TikTok</span>
     <span class="chip chip-yt">YouTube</span>
   </div>
-  <a class="btn-pdf" href="relatorio-hortolandia-temasdiversos-ago2026.pdf" target="_blank" rel="noopener" download style="text-decoration:none">
-    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-    Exportar PDF
-  </a>
+  <div style="display:flex;align-items:center;gap:10px">
+    <a class="btn-central" href="../../central/index.html">Central de Relatórios</a>
+    <a class="btn-pdf" href="relatorio-hortolandia-temasdiversos-ago2026.pdf" target="_blank" rel="noopener" download style="text-decoration:none">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      Exportar PDF
+    </a>
+  </div>
 </nav>
 
 <!-- HERO -->
