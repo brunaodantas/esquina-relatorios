@@ -285,6 +285,8 @@
     @media print{
       *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
       .nav,.btn-pdf{display:none!important}
+      details.clip-dsec>.dbody{display:block!important}
+      details.clip-dsec .dtoggle{display:none}
       .fade-in{opacity:1!important;transform:none!important}
       .hero{min-height:0}
       .sec,.ch-body,.meta-wrap,.enc,.diag{padding-top:32px;padding-bottom:32px}
@@ -322,6 +324,13 @@
     .pauta-ttl{font-size:.95rem;font-weight:700;color:var(--t1);margin:9px 0 6px;line-height:1.3}
     .pauta-txt{font-size:.79rem;color:var(--t2);line-height:1.6}
     .clip-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:22px}
+    .clip-temas{margin-top:24px;display:flex;flex-direction:column;gap:12px}
+    details.clip-dsec{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:18px 22px;box-shadow:var(--sh);margin-top:0}
+    details.clip-dsec>summary{align-items:center}
+    details.clip-dsec .dsec-top h3{font-size:1.05rem;font-weight:700;color:var(--t1);margin:0}
+    details.clip-dsec .dsum{margin-top:2px}
+    details.clip-dsec>.dbody{padding-top:4px}
+    details.clip-dsec .clip-grid{margin-top:16px}
     @media(max-width:900px){.clip-grid{grid-template-columns:1fr}}
     .clip{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--p);border-radius:0 var(--r) var(--r) 0;padding:15px 18px;box-shadow:var(--sh);break-inside:avoid}
     .clip.tl{border-left-color:var(--teal)}.clip.pu{border-left-color:var(--purple)}.clip.or{border-left-color:var(--orange)}
@@ -773,23 +782,95 @@
 
     <p class="lead fade-in">Agosto foi um mês de agenda cheia em Americana, e ela se organizou em torno de três eixos. O primeiro é infraestrutura: 18 publicações no período, quase todas sobre o programa Asfalto Novo avançando bairro a bairro, do Cariobinha ao São Vito, terminando com o anúncio de um novo pacote de recapeamento em 76 ruas. O segundo é saúde, com 13 registros que vão das obras das novas UBS aos mutirões de atendimento. O terceiro é a própria data da cidade, que reuniu no fim do mês o aniversário de 151 anos, o resultado das 7 Maravilhas e a abertura do Roteiro Gastronômico.</p>
 
-    <div class="clip-grid fade-in">
-      <div class="clip"><div class="clip-meta"><span class="tag t-blue">Infraestrutura</span><span class="clip-src">Prefeitura de Americana &middot; 07/08</span></div><div class="clip-ttl">Prefeitura inicia obras de recuperação asfáltica na Avenida Paulista e no Cariobinha</div><a href="https://www.americana.sp.gov.br/americana-index.php?a=noticia&amp;id=36732" target="_blank" rel="noopener">Ver publicação</a></div>
-      <div class="clip"><div class="clip-meta"><span class="tag t-blue">Infraestrutura</span><span class="clip-src">Prefeitura de Americana &middot; 26/08</span></div><div class="clip-ttl">Prefeito Chico anuncia novo pacote de recapeamento com 76 ruas em seis bairros</div><a href="https://www.americana.sp.gov.br/americana-index.php?a=noticia&amp;id=36919" target="_blank" rel="noopener">Ver publicação</a></div>
-      <div class="clip tl"><div class="clip-meta"><span class="tag t-teal">Saúde</span><span class="clip-src">Prefeitura de Americana &middot; 05/08</span></div><div class="clip-ttl">Obras da nova UBS do Jardim da Balsa 2 avançam com início do piso interno e cobertura</div><a href="https://www.americana.sp.gov.br/americana-index.php?a=noticia&amp;id=36705" target="_blank" rel="noopener">Ver publicação</a></div>
-      <div class="clip tl"><div class="clip-meta"><span class="tag t-teal">Saúde</span><span class="clip-src">Prefeitura de Americana &middot; 25/08</span></div><div class="clip-ttl">Com visita do Ministério da Saúde, 11º mutirão Mil Cuidados Em Um Dia realiza 2,5 mil procedimentos</div><a href="https://www.americana.sp.gov.br/americana-index.php?a=noticia&amp;id=36905" target="_blank" rel="noopener">Ver publicação</a></div>
-      <div class="clip tl"><div class="clip-meta"><span class="tag t-teal">Saúde</span><span class="clip-src">Prefeitura de Americana &middot; 27/08</span></div><div class="clip-ttl">Construção do novo Banco de Sangue do HM entra na fase de pintura</div><a href="https://www.americana.sp.gov.br/americana-index.php?a=noticia&amp;id=36927" target="_blank" rel="noopener">Ver publicação</a></div>
-      <div class="clip pu"><div class="clip-meta"><span class="tag t-purple">7 Maravilhas</span><span class="clip-src">Prefeitura de Americana &middot; 21/08</span></div><div class="clip-ttl">Votação para escolher as 7 Maravilhas de Americana vai até terça-feira (25)</div><a href="https://www.americana.sp.gov.br/americana-index.php?a=noticia&amp;id=36874" target="_blank" rel="noopener">Ver publicação</a></div>
-      <div class="clip pu"><div class="clip-meta"><span class="tag t-purple">7 Maravilhas</span><span class="clip-src">Todo Dia &middot; 27/08</span></div><div class="clip-ttl">Americana divulga os vencedores do concurso das 7 Maravilhas da cidade</div><a href="https://tododia.com.br/cidades/americana/americana-divulga-os-vencedores-do-concurso-das-7-maravilhas-da-cidade/" target="_blank" rel="noopener">Ver publicação</a></div>
-      <div class="clip pu"><div class="clip-meta"><span class="tag t-purple">151 anos</span><span class="clip-src">Prefeitura de Americana &middot; 27/08</span></div><div class="clip-ttl">Americana celebra 151 anos com solenidade e anúncio das 7 Maravilhas da cidade</div><a href="https://www.americana.sp.gov.br/americana-index.php?a=noticia&amp;id=36924" target="_blank" rel="noopener">Ver publicação</a></div>
-      <div class="clip or"><div class="clip-meta"><span class="tag t-orange">Roteiro Gastronômico</span><span class="clip-src">Prefeitura de Americana &middot; 18/08</span></div><div class="clip-ttl">Conheça os pratos do Roteiro Gastronômico de Americana 2026</div><a href="https://www.americana.sp.gov.br/americana-index.php?a=noticia&amp;id=36836" target="_blank" rel="noopener">Ver publicação</a></div>
-      <div class="clip or"><div class="clip-meta"><span class="tag t-orange">Roteiro Gastronômico</span><span class="clip-src">Liberal &middot; 28/08</span></div><div class="clip-ttl">Roteiro Gastronômico promete agitar Americana com shows e boa gastronomia</div><a href="https://liberal.com.br/cidades/americana/roteiro-gastronomico-promete-agitar-americana-com-shows-e-boa-gastronomia" target="_blank" rel="noopener">Ver publicação</a></div>
-      <div class="clip"><div class="clip-meta"><span class="tag t-blue">Educação</span><span class="clip-src">Prefeitura de Americana &middot; 17/08</span></div><div class="clip-ttl">Educação de Americana conquista sete medalhas na 20ª OBMEP</div><a href="https://www.americana.sp.gov.br/americana-index.php?a=noticia&amp;id=36821" target="_blank" rel="noopener">Ver publicação</a></div>
-      <div class="clip"><div class="clip-meta"><span class="tag t-blue">Educação</span><span class="clip-src">Prefeitura de Americana &middot; 11/08</span></div><div class="clip-ttl">Educação de Americana abre inscrições em setembro para o ano letivo de 2027</div><a href="https://www.americana.sp.gov.br/americana-index.php?a=noticia&amp;id=36757" target="_blank" rel="noopener">Ver publicação</a></div>
-      <div class="clip tl"><div class="clip-meta"><span class="tag t-teal">Meio ambiente</span><span class="clip-src">Prefeitura de Americana &middot; 14/08</span></div><div class="clip-ttl">Prefeitura conclui primeira etapa da requalificação ambiental do Bosque dos Ipês</div><a href="https://www.americana.sp.gov.br/americana-index.php?a=noticia&amp;id=36803" target="_blank" rel="noopener">Ver publicação</a></div>
-      <div class="clip tl"><div class="clip-meta"><span class="tag t-teal">Meio ambiente</span><span class="clip-src">Liberal &middot; 27/08</span></div><div class="clip-ttl">Americana vira referência na gestão de resíduos; reciclagem tem investimentos</div><a href="https://liberal.com.br/cidades/americana/americana-vira-referencia-na-gestao-de-residuos-reciclagem-tem-investimentos" target="_blank" rel="noopener">Ver publicação</a></div>
-      <div class="clip or"><div class="clip-meta"><span class="tag t-orange">Segurança</span><span class="clip-src">Prefeitura de Americana &middot; 21/08</span></div><div class="clip-ttl">GAMA investe em novo drone e cão-robô para reforçar o combate ao crime</div><a href="https://www.americana.sp.gov.br/americana-index.php?a=noticia&amp;id=36868" target="_blank" rel="noopener">Ver publicação</a></div>
-      <div class="clip or"><div class="clip-meta"><span class="tag t-orange">Esporte</span><span class="clip-src">Prefeitura de Americana &middot; 12/08</span></div><div class="clip-ttl">Judocas de Americana sobem ao pódio na final estadual dos Jogos Escolares</div><a href="https://www.americana.sp.gov.br/americana-index.php?a=noticia&amp;id=36768" target="_blank" rel="noopener">Ver publicação</a></div>
+    <div class="clip-temas fade-in">
+      <details class="dsec clip-dsec">
+        <summary>
+          <div class="dsec-top"><h3>Infraestrutura</h3><p class="dsum">2 notícias no período</p></div>
+          <span class="dtoggle"><span class="dtxt-closed">Ver</span><span class="dtxt-open">Recolher</span><i class="dchev"></i></span>
+        </summary>
+        <div class="dbody"><div class="clip-grid">
+          <div class="clip"><div class="clip-meta"><span class="tag t-blue">Infraestrutura</span><span class="clip-src">Prefeitura de Americana &middot; 07/08</span></div><div class="clip-ttl">Prefeitura inicia obras de recuperação asfáltica na Avenida Paulista e no Cariobinha</div><a href="https://www.americana.sp.gov.br/americana-index.php?a=noticia&amp;id=36732" target="_blank" rel="noopener">Ver publicação</a></div>
+          <div class="clip"><div class="clip-meta"><span class="tag t-blue">Infraestrutura</span><span class="clip-src">Prefeitura de Americana &middot; 26/08</span></div><div class="clip-ttl">Prefeito Chico anuncia novo pacote de recapeamento com 76 ruas em seis bairros</div><a href="https://www.americana.sp.gov.br/americana-index.php?a=noticia&amp;id=36919" target="_blank" rel="noopener">Ver publicação</a></div>
+        </div></div>
+      </details>
+      <details class="dsec clip-dsec">
+        <summary>
+          <div class="dsec-top"><h3>Saúde</h3><p class="dsum">3 notícias no período</p></div>
+          <span class="dtoggle"><span class="dtxt-closed">Ver</span><span class="dtxt-open">Recolher</span><i class="dchev"></i></span>
+        </summary>
+        <div class="dbody"><div class="clip-grid">
+          <div class="clip tl"><div class="clip-meta"><span class="tag t-teal">Saúde</span><span class="clip-src">Prefeitura de Americana &middot; 05/08</span></div><div class="clip-ttl">Obras da nova UBS do Jardim da Balsa 2 avançam com início do piso interno e cobertura</div><a href="https://www.americana.sp.gov.br/americana-index.php?a=noticia&amp;id=36705" target="_blank" rel="noopener">Ver publicação</a></div>
+          <div class="clip tl"><div class="clip-meta"><span class="tag t-teal">Saúde</span><span class="clip-src">Prefeitura de Americana &middot; 25/08</span></div><div class="clip-ttl">Com visita do Ministério da Saúde, 11º mutirão Mil Cuidados Em Um Dia realiza 2,5 mil procedimentos</div><a href="https://www.americana.sp.gov.br/americana-index.php?a=noticia&amp;id=36905" target="_blank" rel="noopener">Ver publicação</a></div>
+          <div class="clip tl"><div class="clip-meta"><span class="tag t-teal">Saúde</span><span class="clip-src">Prefeitura de Americana &middot; 27/08</span></div><div class="clip-ttl">Construção do novo Banco de Sangue do HM entra na fase de pintura</div><a href="https://www.americana.sp.gov.br/americana-index.php?a=noticia&amp;id=36927" target="_blank" rel="noopener">Ver publicação</a></div>
+        </div></div>
+      </details>
+      <details class="dsec clip-dsec">
+        <summary>
+          <div class="dsec-top"><h3>7 Maravilhas</h3><p class="dsum">2 notícias no período</p></div>
+          <span class="dtoggle"><span class="dtxt-closed">Ver</span><span class="dtxt-open">Recolher</span><i class="dchev"></i></span>
+        </summary>
+        <div class="dbody"><div class="clip-grid">
+          <div class="clip pu"><div class="clip-meta"><span class="tag t-purple">7 Maravilhas</span><span class="clip-src">Prefeitura de Americana &middot; 21/08</span></div><div class="clip-ttl">Votação para escolher as 7 Maravilhas de Americana vai até terça-feira (25)</div><a href="https://www.americana.sp.gov.br/americana-index.php?a=noticia&amp;id=36874" target="_blank" rel="noopener">Ver publicação</a></div>
+          <div class="clip pu"><div class="clip-meta"><span class="tag t-purple">7 Maravilhas</span><span class="clip-src">Todo Dia &middot; 27/08</span></div><div class="clip-ttl">Americana divulga os vencedores do concurso das 7 Maravilhas da cidade</div><a href="https://tododia.com.br/cidades/americana/americana-divulga-os-vencedores-do-concurso-das-7-maravilhas-da-cidade/" target="_blank" rel="noopener">Ver publicação</a></div>
+        </div></div>
+      </details>
+      <details class="dsec clip-dsec">
+        <summary>
+          <div class="dsec-top"><h3>151 anos</h3><p class="dsum">1 notícia no período</p></div>
+          <span class="dtoggle"><span class="dtxt-closed">Ver</span><span class="dtxt-open">Recolher</span><i class="dchev"></i></span>
+        </summary>
+        <div class="dbody"><div class="clip-grid">
+          <div class="clip pu"><div class="clip-meta"><span class="tag t-purple">151 anos</span><span class="clip-src">Prefeitura de Americana &middot; 27/08</span></div><div class="clip-ttl">Americana celebra 151 anos com solenidade e anúncio das 7 Maravilhas da cidade</div><a href="https://www.americana.sp.gov.br/americana-index.php?a=noticia&amp;id=36924" target="_blank" rel="noopener">Ver publicação</a></div>
+        </div></div>
+      </details>
+      <details class="dsec clip-dsec">
+        <summary>
+          <div class="dsec-top"><h3>Roteiro Gastronômico</h3><p class="dsum">2 notícias no período</p></div>
+          <span class="dtoggle"><span class="dtxt-closed">Ver</span><span class="dtxt-open">Recolher</span><i class="dchev"></i></span>
+        </summary>
+        <div class="dbody"><div class="clip-grid">
+          <div class="clip or"><div class="clip-meta"><span class="tag t-orange">Roteiro Gastronômico</span><span class="clip-src">Prefeitura de Americana &middot; 18/08</span></div><div class="clip-ttl">Conheça os pratos do Roteiro Gastronômico de Americana 2026</div><a href="https://www.americana.sp.gov.br/americana-index.php?a=noticia&amp;id=36836" target="_blank" rel="noopener">Ver publicação</a></div>
+          <div class="clip or"><div class="clip-meta"><span class="tag t-orange">Roteiro Gastronômico</span><span class="clip-src">Liberal &middot; 28/08</span></div><div class="clip-ttl">Roteiro Gastronômico promete agitar Americana com shows e boa gastronomia</div><a href="https://liberal.com.br/cidades/americana/roteiro-gastronomico-promete-agitar-americana-com-shows-e-boa-gastronomia" target="_blank" rel="noopener">Ver publicação</a></div>
+        </div></div>
+      </details>
+      <details class="dsec clip-dsec">
+        <summary>
+          <div class="dsec-top"><h3>Educação</h3><p class="dsum">2 notícias no período</p></div>
+          <span class="dtoggle"><span class="dtxt-closed">Ver</span><span class="dtxt-open">Recolher</span><i class="dchev"></i></span>
+        </summary>
+        <div class="dbody"><div class="clip-grid">
+          <div class="clip"><div class="clip-meta"><span class="tag t-blue">Educação</span><span class="clip-src">Prefeitura de Americana &middot; 17/08</span></div><div class="clip-ttl">Educação de Americana conquista sete medalhas na 20ª OBMEP</div><a href="https://www.americana.sp.gov.br/americana-index.php?a=noticia&amp;id=36821" target="_blank" rel="noopener">Ver publicação</a></div>
+          <div class="clip"><div class="clip-meta"><span class="tag t-blue">Educação</span><span class="clip-src">Prefeitura de Americana &middot; 11/08</span></div><div class="clip-ttl">Educação de Americana abre inscrições em setembro para o ano letivo de 2027</div><a href="https://www.americana.sp.gov.br/americana-index.php?a=noticia&amp;id=36757" target="_blank" rel="noopener">Ver publicação</a></div>
+        </div></div>
+      </details>
+      <details class="dsec clip-dsec">
+        <summary>
+          <div class="dsec-top"><h3>Meio ambiente</h3><p class="dsum">2 notícias no período</p></div>
+          <span class="dtoggle"><span class="dtxt-closed">Ver</span><span class="dtxt-open">Recolher</span><i class="dchev"></i></span>
+        </summary>
+        <div class="dbody"><div class="clip-grid">
+          <div class="clip tl"><div class="clip-meta"><span class="tag t-teal">Meio ambiente</span><span class="clip-src">Prefeitura de Americana &middot; 14/08</span></div><div class="clip-ttl">Prefeitura conclui primeira etapa da requalificação ambiental do Bosque dos Ipês</div><a href="https://www.americana.sp.gov.br/americana-index.php?a=noticia&amp;id=36803" target="_blank" rel="noopener">Ver publicação</a></div>
+          <div class="clip tl"><div class="clip-meta"><span class="tag t-teal">Meio ambiente</span><span class="clip-src">Liberal &middot; 27/08</span></div><div class="clip-ttl">Americana vira referência na gestão de resíduos; reciclagem tem investimentos</div><a href="https://liberal.com.br/cidades/americana/americana-vira-referencia-na-gestao-de-residuos-reciclagem-tem-investimentos" target="_blank" rel="noopener">Ver publicação</a></div>
+        </div></div>
+      </details>
+      <details class="dsec clip-dsec">
+        <summary>
+          <div class="dsec-top"><h3>Segurança</h3><p class="dsum">1 notícia no período</p></div>
+          <span class="dtoggle"><span class="dtxt-closed">Ver</span><span class="dtxt-open">Recolher</span><i class="dchev"></i></span>
+        </summary>
+        <div class="dbody"><div class="clip-grid">
+          <div class="clip or"><div class="clip-meta"><span class="tag t-orange">Segurança</span><span class="clip-src">Prefeitura de Americana &middot; 21/08</span></div><div class="clip-ttl">GAMA investe em novo drone e cão-robô para reforçar o combate ao crime</div><a href="https://www.americana.sp.gov.br/americana-index.php?a=noticia&amp;id=36868" target="_blank" rel="noopener">Ver publicação</a></div>
+        </div></div>
+      </details>
+      <details class="dsec clip-dsec">
+        <summary>
+          <div class="dsec-top"><h3>Esporte</h3><p class="dsum">1 notícia no período</p></div>
+          <span class="dtoggle"><span class="dtxt-closed">Ver</span><span class="dtxt-open">Recolher</span><i class="dchev"></i></span>
+        </summary>
+        <div class="dbody"><div class="clip-grid">
+          <div class="clip or"><div class="clip-meta"><span class="tag t-orange">Esporte</span><span class="clip-src">Prefeitura de Americana &middot; 12/08</span></div><div class="clip-ttl">Judocas de Americana sobem ao pódio na final estadual dos Jogos Escolares</div><a href="https://www.americana.sp.gov.br/americana-index.php?a=noticia&amp;id=36768" target="_blank" rel="noopener">Ver publicação</a></div>
+        </div></div>
+      </details>
     </div>
 
     <p class="lead fade-in">A seleção acima traz 16 das 77 publicações do período, uma amostra por tema. O levantamento cobriu o canal oficial de notícias da Prefeitura e os veículos regionais Liberal e Todo Dia. Não foram encontradas publicações sobre Americana no período em outros veículos consultados, e nenhuma publicação entrou nesta lista sem que título, data e link fossem conferidos na página de origem.</p>
