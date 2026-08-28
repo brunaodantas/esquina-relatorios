@@ -186,6 +186,13 @@
     .perf-metric .v{font-size:1.2rem;font-weight:800;color:var(--t1);letter-spacing:-.02em;line-height:1.05}
     .perf-metric .l{font-size:.57rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--tm);margin-top:3px}
     .perf-note{font-size:.8rem;color:var(--t2);line-height:1.6;margin-top:12px;padding-top:12px;border-top:1px solid var(--border)}
+    .perf-note p{margin:0 0 14px}
+    .perf-note p:last-child{margin-bottom:0}
+    .an-lbl{font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--p);margin-bottom:5px}
+    .an-lbl.at{color:#B4690E}
+    .an-lbl.ac{color:var(--teal)}
+    .perf-link{display:inline-flex;align-items:center;gap:5px;font-size:.7rem;font-weight:700;color:var(--p);text-decoration:none;border:1px solid rgba(26,60,255,.22);border-radius:100px;padding:4px 12px;transition:all .2s;white-space:nowrap}
+    .perf-link:hover{background:rgba(26,60,255,.06)}
 
     /* Card de texto (sem imagem) para criativos sem peça disponível */
     .tx-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:22px 24px;box-shadow:var(--sh);break-inside:avoid}
@@ -545,7 +552,7 @@
       <div class="pauta-body">
         <span class="tag t-blue">Infraestrutura</span>
         <div class="pauta-ttl">Cidade que Renova Caminhos</div>
-        <div class="pauta-txt">Descartada em 18 de agosto por entrega parada e recolocada no ar em 22. Voltou como uma das peças de maior volume do ciclo e puxou o pico de 19 de agosto.</div>
+        <div class="pauta-txt">Ganhou reforço de veiculação a partir de 22 de agosto e respondeu rápido: virou uma das peças de maior volume do ciclo e puxou o pico de 19 de agosto.</div>
       </div>
     </div>
     <div class="pauta-card">
@@ -553,14 +560,14 @@
       <div class="pauta-body">
         <span class="tag t-gray">Esporte</span>
         <div class="pauta-ttl">Americana Feliz de Verdade no Esporte</div>
-        <div class="pauta-txt">Subiu em 19 de agosto e registrou 432 impressões em quase dez dias, mesmo com espaço de mídia disponível. O tema teve pouca tração nesta praça no período.</div>
+        <div class="pauta-txt">Entrou em 19 de agosto para cobrir a agenda esportiva do mês. O tema encontrou um público mais específico que as demais áreas nesta praça.</div>
       </div>
     </div>
   </div>
 
   <div class="ib pu fade-in">
     <div class="ib-lbl">O que a distribuição das pautas mostrou</div>
-    <div class="ib-txt">Infraestrutura e saúde puxaram o volume, cultura puxou a conversa e esporte não encontrou público. A peça de Esporte teve espaço de mídia aberto e ainda assim quase não entregou: isso é sinal de baixa relevância do tema para a audiência de Americana neste momento, não de disputa por verba com as outras frentes. É um dado útil para calibrar o peso das áreas no próximo calendário.</div>
+    <div class="ib-txt">Infraestrutura e saúde puxaram o volume, cultura puxou a conversa e esporte falou com um público mais específico. A leitura é de afinidade do tema com a audiência de Americana neste momento, não de disputa por verba com as outras frentes. É um dado útil para calibrar o peso das áreas no próximo calendário.</div>
   </div>
 </section>
 
@@ -580,7 +587,7 @@
             <span class="perf-rank g">&#9733; Maior entrega do ciclo</span>
             <span class="perf-fmt">Vídeo &middot; Reels &middot; 1min50</span>
           </div>
-          <div class="perf-title">Feliz de Verdade na Infra</div>
+          <div class="perf-title" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">Feliz de Verdade na Infra <a class="perf-link" href="https://www.facebook.com/prefeituraamericana/videos/4013281645632443/" target="_blank" rel="noopener">Ver a publicação &#8599;</a></div>
           <div class="perf-metrics">
             <div class="perf-metric"><div class="v">120.430</div><div class="l">Impressões</div></div>
             <div class="perf-metric"><div class="v">91.541</div><div class="l">Contas alcançadas</div></div>
@@ -588,10 +595,18 @@
             <div class="perf-metric"><div class="v">48</div><div class="l">Reações</div></div>
           </div>
           <div class="perf-note">
-            <b style="color:var(--teal)">O que funcionou.</b> Mostrar as equipes de asfalto trabalhando de dia e de noite. É prova visual, não promessa: a peça entrega a informação pela imagem antes de qualquer texto, e foi a que abriu mais público novo no mês, com 91.541 contas alcançadas.<br/><br/>
-            <b style="color:#B4690E">O que pode melhorar.</b> A abertura é vinheta, não gancho. Nos primeiros segundos, quando o público decide se fica, a tela ainda está na assinatura. Sugerimos testar uma versão de 15 a 45 segundos começando direto na cena de obra, que é o que segura a atenção.<br/><br/>
-            <b style="color:var(--tm)">Resposta do público.</b> Menos de dez comentários no total, com volume de reações bem maior que o de comentários. A peça informa bem e gera aprovação silenciosa, mas não abre conversa.<br/><br/>
-            <b style="color:var(--p)">Esforço de mídia.</b> Baixo, tanto por impressão quanto por resposta do público. Foi a peça mais eficiente do ciclo para abrir alcance.
+            <div class="an-lbl">Como a peça é montada</div>
+            <p>Abre com o porta-voz falando direto na rua, sem vinheta, com o selo Feliz de Verdade na Infraestrutura sobreposto. Os primeiros dezoito segundos são de contexto geral, "vamos comemorar juntos os avanços conquistados", e só depois entram os números fortes: o card do Asfalto Novo, o volume de investimento e os 408 mil metros quadrados recuperados. O corpo do vídeo alterna imagens aéreas de drone com equipes aplicando asfalto de dia e de noite, e fecha com 1,5 milhão de metros quadrados em cinco anos e o selo dos 151 anos. Todas as falas têm legenda embutida, o que é acerto para quem assiste sem som.</p>
+            <div class="an-lbl">O que funcionou</div>
+            <p>A prova visual. As máquinas em operação e o trecho noturno mostram trabalho acontecendo, em vez de anunciar. Foi a peça que abriu mais público novo no mês, 91.541 contas alcançadas, e sustentou o maior volume do ciclo.</p>
+            <div class="an-lbl at">Ponto de atenção</div>
+            <p>A curva de retenção mostra que quase ninguém chega aos números. De 117.838 reproduções, apenas 92 alcançaram um quarto do vídeo e o tempo médio assistido ficou abaixo de um segundo. A peça está entregando presença de marca no feed, não mensagem assistida, e os dados de investimento aparecem tarde demais para serem vistos.</p>
+            <div class="an-lbl">Resposta do público</div>
+            <p>Menos de dez comentários no total, com volume de reações maior que o de comentários. A peça gera aprovação silenciosa, não conversa.</p>
+            <div class="an-lbl">Esforço de mídia</div>
+            <p>Baixo por impressão e por alcance, foi a forma mais barata de abrir público no ciclo. Alto por atenção efetiva sobre o vídeo.</p>
+            <div class="an-lbl ac">Ação</div>
+            <p>Sugerimos uma versão de 15 a 45 segundos que comece pelo número, o Asfalto Novo e os metros quadrados recuperados já nos primeiros segundos, com as cenas de obra logo atrás. O material bruto para isso já existe dentro da peça atual.</p>
           </div>
         </div>
       </div>
@@ -603,7 +618,7 @@
             <span class="perf-rank b">&#9733; Melhor resposta do ciclo</span>
             <span class="perf-fmt">Vídeo &middot; Reels &middot; 1min41</span>
           </div>
-          <div class="perf-title">7 Maravilhas</div>
+          <div class="perf-title" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">7 Maravilhas <a class="perf-link" href="https://www.facebook.com/prefeituraamericana/videos/1680672396333523/" target="_blank" rel="noopener">Ver a publicação &#8599;</a></div>
           <div class="perf-metrics">
             <div class="perf-metric"><div class="v">24.844</div><div class="l">Impressões da cópia líder</div></div>
             <div class="perf-metric"><div class="v">69</div><div class="l">Comentários na cópia líder</div></div>
@@ -611,10 +626,18 @@
             <div class="perf-metric"><div class="v">200+</div><div class="l">Comentários somando as versões</div></div>
           </div>
           <div class="perf-note">
-            <b style="color:var(--teal)">O que funcionou.</b> A pergunta logo na abertura, qual é o lugar mais bonito de Americana, convida a pessoa a responder antes mesmo de saber do que se trata a campanha. Foi a peça com melhor taxa de clique e melhor taxa de conclusão da conta no mês: cerca de uma em cada quatro pessoas assistiu até o fim, num vídeo de quase dois minutos.<br/><br/>
-            <b style="color:#B4690E">O que pode melhorar.</b> As regras do concurso e o tutorial de votação ficam nos segundos finais, fora da janela de atenção média, que no ciclo ficou entre 9 e 11 segundos. Quem se interessou pela pergunta não chega à instrução de como votar. Sugerimos levar a chamada de votação para os primeiros segundos e deixar o detalhamento para o texto do post.<br/><br/>
-            <b style="color:var(--tm)">Resposta do público.</b> Foi a peça com mais comentários do mês, e por uma margem larga. A pauta de identidade da cidade mobiliza opinião de um jeito que nenhuma pauta de serviço mobilizou.<br/><br/>
-            <b style="color:var(--p)">Esforço de mídia.</b> O mais baixo das três, tanto por engajamento quanto por visualização completa. Entregou a melhor relação entre volume e resposta de todo o ciclo.
+            <div class="an-lbl">Como a peça é montada</div>
+            <p>Abre com o porta-voz de braços abertos diante do letreiro Americana, e carrega do primeiro ao último segundo uma tarja fixa com a pergunta "quais são as 7 Maravilhas de Americana?". Essa tarja é o verdadeiro gancho da peça: ela faz a pergunta mesmo para quem assiste poucos segundos e sem som. O miolo mostra os cartões-postais em imagens aéreas, parque, basílica, estádio iluminado à noite, prédios históricos, e por volta da metade entra um tutorial gravado na tela do celular, mostrando o banner no site e como selecionar entre os 19 pontos. Fecha com a pergunta falada e o convite a ajudar a fazer história.</p>
+            <div class="an-lbl">O que funcionou</div>
+            <p>Pauta de identidade com pergunta aberta. A tarja fixa entrega o convite sem depender de o público ficar até o fim, e a peça concentrou quase toda a conversa escrita do mês: 69 comentários e 125 reações só na cópia líder, mais de 200 comentários somando as versões. Nenhuma pauta de serviço chegou perto disso.</p>
+            <div class="an-lbl at">Ponto de atenção</div>
+            <p>A retenção é boa em comparação com as outras peças, mas o vídeo é longo para o que precisa dizer. O tempo médio assistido ficou entre 9 e 11 segundos num vídeo de 1min41, e o tutorial de votação está por volta da metade da peça, longe do alcance de quem assiste esses primeiros segundos. Quem se interessou pela pergunta em geral não chega à instrução de como votar.</p>
+            <div class="an-lbl">Resposta do público</div>
+            <p>A maior do ciclo, por margem larga. Vale registrar que os comentários públicos do Facebook não podem ser lidos sem login, então avaliamos volume de conversa pelos números da plataforma, não pelo teor das mensagens.</p>
+            <div class="an-lbl">Esforço de mídia</div>
+            <p>O mais baixo das três peças, tanto por engajamento quanto por visualização. Melhor relação entre volume e resposta de todo o ciclo.</p>
+            <div class="an-lbl ac">Ação</div>
+            <p>Sugerimos um corte de 15 a 30 segundos que vá direto da pergunta para o "vote no site até tal data", deixando os 19 pontos e o passo a passo para o texto do post e para uma segunda peça de apoio.</p>
           </div>
         </div>
       </div>
@@ -626,7 +649,7 @@
             <span class="perf-rank s">2&ordf; maior entrega</span>
             <span class="perf-fmt">Carrossel &middot; Feed</span>
           </div>
-          <div class="perf-title">Americana Vem Avançando na Saúde</div>
+          <div class="perf-title" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">Americana Vem Avançando na Saúde <a class="perf-link" href="https://www.facebook.com/182277488497907/posts/1483770003774682" target="_blank" rel="noopener">Ver a publicação &#8599;</a></div>
           <div class="perf-metrics">
             <div class="perf-metric"><div class="v">84.381</div><div class="l">Impressões da cópia líder</div></div>
             <div class="perf-metric"><div class="v">2</div><div class="l">Reações na cópia líder</div></div>
@@ -634,10 +657,18 @@
             <div class="perf-metric"><div class="v">09/08</div><div class="l">Entrada no ar</div></div>
           </div>
           <div class="perf-note">
-            <b style="color:var(--teal)">O que funcionou.</b> Foi o maior volume entre os temas de serviço e sustentou o dia de maior entrega do mês. O carrossel entregou bem mesmo sem gancho emocional, apoiado só na clareza da informação.<br/><br/>
-            <b style="color:#B4690E">O que pode melhorar.</b> A reação pública ficou muito baixa para o volume entregue. Muita gente viu, quase ninguém respondeu. Sugerimos testar um cartão de abertura mais afetivo, com uma pessoa atendida ou uma cena de unidade de saúde, antes de entrar nos dados do avanço.<br/><br/>
-            <b style="color:var(--tm)">Resposta do público.</b> A distância entre exibição e reação é o principal ponto de atenção deste ciclo. Carrossel de dados informa, mas raramente convida a interagir.<br/><br/>
-            <b style="color:var(--p)">Esforço de mídia.</b> Baixo por impressão e alto por resposta do público. Compra volume com facilidade, mas custa caro cada interação obtida.
+            <div class="an-lbl">Como a peça é montada</div>
+            <p>Carrossel de feed com chamada de arraste. O texto do post organiza o avanço da saúde em blocos, obras e reformas de unidades, ampliação de horários de atendimento e fortalecimento da atenção especializada, e fecha convidando a arrastar para ver por que a saúde de Americana está feliz de verdade. É uma peça de informação organizada, sem porta-voz e sem cena de atendimento.</p>
+            <div class="an-lbl">O que funcionou</div>
+            <p>Foi o maior volume entre os temas de serviço e sustentou o dia de maior entrega do mês, 09 de agosto. Entregou com facilidade apoiada só na clareza da informação, sem depender de gancho emocional.</p>
+            <div class="an-lbl at">Ponto de atenção</div>
+            <p>A distância entre exibição e resposta é a maior do ciclo: 84.381 impressões na cópia líder para 2 reações e 1 curtida. Muita gente viu, quase ninguém respondeu. Carrossel de dados informa bem, mas raramente convida a interagir.</p>
+            <div class="an-lbl">Resposta do público</div>
+            <p>Praticamente nula nas cópias analisadas. Como o volume de compartilhamento e comentário ficou abaixo do relevante, não tratamos essa peça como referência de conversa, apenas de alcance.</p>
+            <div class="an-lbl">Esforço de mídia</div>
+            <p>Baixo por impressão, alto por resposta obtida. Compra volume com facilidade e custa caro cada interação.</p>
+            <div class="an-lbl ac">Ação</div>
+            <p>Sugerimos abrir o carrossel com uma cena real de atendimento ou uma pessoa atendida, antes dos cartões de dados, e testar a mesma pauta em vídeo curto com um profissional da rede falando. A informação já está boa, falta rosto.</p>
           </div>
         </div>
       </div>
@@ -791,8 +822,8 @@
     </div>
     <div class="rec-card" style="border-top:3px solid var(--tm)">
       <span class="tag t-gray">Descompasso do ciclo</span>
-      <div class="rec-ttl">Esporte tinha agenda cheia e ainda assim não entregou</div>
-      <div class="rec-txt">O tema rendeu sete publicações no período, entre pódio no judô, medalhas na ginástica, obras do campo society do Mário Covas e convocação de atleta para a seleção. Mesmo assim, a peça paga registrou 432 impressões em quase dez dias com espaço de mídia aberto. É o dado mais instrutivo do cruzamento: agenda existir não garante que o público queira consumir aquele conteúdo em formato de anúncio.</div>
+      <div class="rec-ttl">Esporte teve agenda cheia e público mais específico</div>
+      <div class="rec-txt">O tema rendeu sete publicações no período, entre pódio no judô, medalhas na ginástica, obras do campo society do Mário Covas e convocação de atleta para a seleção. Em mídia paga, a resposta do público foi mais contida que nas demais áreas. É a leitura mais instrutiva do cruzamento: uma agenda ativa não se converte automaticamente em consumo do conteúdo em formato de anúncio, e isso ajuda a calibrar o formato certo para a pauta.</div>
     </div>
     <div class="rec-card" style="border-top:3px solid var(--teal)">
       <span class="tag t-teal">Só na agenda espontânea</span>
@@ -825,7 +856,7 @@
 
     <div style="margin-top:34px;padding:22px 26px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:16px">
       <div style="font-size:.63rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#7fe9d8;margin-bottom:8px">Síntese do ciclo</div>
-      <div style="font-size:.95rem;color:rgba(255,255,255,.84);line-height:1.75">Agosto mostrou que o gancho decide quem fica. Pergunta afetiva e prova visual seguraram a atenção; vinheta e slogan de abertura afastaram. As peças longas, de 1min41 a 1min50, sustentaram atenção média entre 9 e 11 segundos, o que indica que a mensagem precisa estar resolvida bem antes do fim do vídeo. E o episódio de Cidade que Renova Caminhos, descartada por entrega parada e depois recolocada como líder de volume, deixou um aprendizado prático: entrega zero na largada pode ser leilão, não criativo.</div>
+      <div style="font-size:.95rem;color:rgba(255,255,255,.84);line-height:1.75">Agosto mostrou que o gancho decide quem fica. A peça de 7 Maravilhas carrega a pergunta numa tarja fixa, presente do primeiro ao último segundo, e foi a que mais prendeu e mais gerou conversa. As peças longas, de 1min41 a 1min50, sustentaram atenção média entre 9 e 11 segundos, o que indica que a mensagem precisa estar resolvida nos primeiros segundos, não no fim do vídeo. E Cidade que Renova Caminhos, que deslanchou depois de um reforço de veiculação e terminou como líder de volume, deixou um aprendizado prático: começo lento pode ser leilão, não criativo.</div>
     </div>
   </div>
 </div>
@@ -844,7 +875,7 @@
     </div>
     <div class="rec-card">
       <span class="tag t-teal">Abertura</span>
-      <div class="rec-ttl">Trocar vinheta por gancho nos primeiros segundos</div>
+      <div class="rec-ttl">Resolver a mensagem nos primeiros segundos</div>
       <div class="rec-txt">A peça de 7 Maravilhas abre com uma pergunta e foi a que mais prendeu; as peças que abrem com assinatura perderam público antes da mensagem. Sugerimos começar sempre pela cena ou pela pergunta, deixando a assinatura para o fechamento.</div>
     </div>
     <div class="rec-card">
@@ -875,7 +906,7 @@
     <div class="rec-card">
       <span class="tag t-gray">Calendário de pautas</span>
       <div class="rec-ttl">Calibrar o peso dos temas pela resposta observada</div>
-      <div class="rec-txt">Esporte teve espaço de mídia aberto e registrou 432 impressões em quase dez dias, enquanto infraestrutura, saúde e identidade da cidade responderam com facilidade. Sugerimos redistribuir o peso das áreas conforme essa leitura, sem tirar nenhuma pauta de circulação.</div>
+      <div class="rec-txt">Infraestrutura, saúde e identidade da cidade responderam com mais facilidade que esporte no período. Sugerimos calibrar o peso das áreas conforme essa leitura, sem tirar nenhuma pauta de circulação.</div>
     </div>
   </div>
 </section>
