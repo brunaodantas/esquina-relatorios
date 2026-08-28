@@ -17,7 +17,7 @@ h2{font-size:2.1rem;font-weight:800;letter-spacing:-.02em;line-height:1.1;color:
 .cap-sub{font-size:1.05rem;color:rgba(255,255,255,.8);margin-top:22px;line-height:1.6}
 .badge{display:inline-flex;align-items:center;gap:8px;padding:7px 16px;border-radius:100px;background:rgba(255,255,255,.12);color:#fff;font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:26px}
 .logo{height:30px;position:absolute;top:44px;right:72px}
-.logo-d{filter:brightness(0) invert(1)}
+.logo-d{background:#fff;padding:7px 12px;border-radius:9px;box-sizing:content-box}
 .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-bottom:24px}
 .kc{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:24px 22px;box-shadow:0 2px 10px rgba(0,0,0,.05)}
 .kc .k{font-size:.66rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--tm);margin-bottom:8px}
@@ -92,17 +92,17 @@ td.n{font-variant-numeric:tabular-nums;font-weight:700}
 <!-- 1 CAPA -->
 <div class="slide dark"><div class="si" style="justify-content:center">
   <img src="assets/logo-esquina.png" class="logo logo-d">
-  <div class="badge">Relatório Mensal &middot; Meta Ads &middot; Agosto 2026</div>
-  <h1>Campanha<br>DAE Jundiaí<br>em agosto</h1>
+  <div class="badge">Prestação de Contas &middot; Fechamento de Ciclo &middot; Agosto 2026</div>
+  <h1>Temas Diversos<br>Agosto 2026</h1>
   <div class="cap-sub">Água que chega, obra que aparece e conta que fecha:<br>um mês de conversa direta com Jundiaí.<br>Período: 07 a 28 de agosto de 2026.</div>
-  <div class="foot" style="color:rgba(255,255,255,.5)"><span>Esquina &middot; Trading Desk</span><span>DAE Jundiaí</span></div>
+  <div class="foot" style="color:rgba(255,255,255,.5)"><span>Esquina &middot; Prestação de Contas</span><span>DAE Jundiaí</span></div>
 </div></div>
 
 <!-- 2 KPIs -->
 <div class="slide"><div class="si">
   <img src="assets/logo-esquina.png" class="logo">
   <div class="sl">Métricas Consolidadas</div>
-  <h2>O mês em números</h2>
+  <h2>Os Números do Ciclo</h2>
   <p class="ss">Entrega das quatro linhas contratadas em Meta Ads, de 07 a 28 de agosto de 2026.</p>
   <div class="kpis">
     <div class="kc b"><div class="k">Impressões</div><div class="v">419.163</div><div class="s">299.581 só na linha de Reconhecimento, acima da meta de 250.000</div></div>
@@ -117,8 +117,8 @@ td.n{font-variant-numeric:tabular-nums;font-weight:700}
 <!-- 3 ENTREGA -->
 <div class="slide"><div class="si">
   <img src="assets/logo-esquina.png" class="logo">
-  <div class="sl t">Acompanhamento de Metas</div>
-  <h2>Entrega vs Objetivo</h2>
+  <div class="sl t">Metas de Entrega</div>
+  <h2>Entrega Fechou Acima do Contratado</h2>
   <p class="ss">As quatro metas contratadas para agosto, cada uma medida na métrica em que foi comprada.</p>
   <table>
     <thead><tr><th>Linha</th><th>Métrica de compra</th><th>Objetivo</th><th>Entregue</th><th>Status</th></tr></thead>
@@ -136,7 +136,7 @@ td.n{font-variant-numeric:tabular-nums;font-weight:700}
 <!-- 4 CAMPANHAS -->
 <div class="slide"><div class="si">
   <img src="assets/logo-esquina.png" class="logo">
-  <div class="sl p">Campanhas do Mês</div>
+  <div class="sl p">Campanhas do Ciclo</div>
   <h2>As quatro linhas no ar</h2>
   <p class="ss">Todas rodaram o ciclo completo, de 07 a 28 de agosto, e todas encerraram acima da meta.</p>
   <div class="cj">
@@ -155,17 +155,17 @@ td.n{font-variant-numeric:tabular-nums;font-weight:700}
 <div class="slide"><div class="si">
   <img src="assets/logo-esquina.png" class="logo">
   <div class="sl">Ritmo de Entrega</div>
-  <h2>Curva de entrega dia a dia</h2>
-  <p class="ss">Impressões por dia somando as quatro linhas. A campanha veiculou todos os 22 dias do ciclo, sem nenhum dia parado.</p>
-  <div class="chart-wrap"><h3>Impressões por dia</h3><div class="cs">As quatro linhas somadas, de 07 a 28 de agosto</div><div class="ch-h"><canvas id="chDia"></canvas></div></div>
-  <div class="note">O ciclo começou em ritmo baixo, ganhou volume a partir de 14 de agosto, quando as peças de obra e o vox pop entraram no ar, e teve o pico em 24 de agosto, quando os orçamentos foram redimensionados para garantir o fechamento das quatro metas no prazo.</div>
+  <h2>Ritmo de Entrega ao Longo do Ciclo</h2>
+  <p class="ss">Entrega acumulada da linha de Impressões contra a meta contratada de 250.000. A campanha veiculou todos os 22 dias do ciclo, sem nenhum dia parado.</p>
+  <div class="chart-wrap"><h3>Impressões acumuladas contra a meta</h3><div class="cs">Linha de Reconhecimento, acumulado de 07 a 28 de agosto</div><div class="ch-h"><canvas id="chDia"></canvas></div></div>
+  <div class="note">A linha cruzou a meta contratada de 250.000 impressões em 25 de agosto, três dias antes do fim do ciclo, e seguiu entregando até 28 de agosto, fechando em 299.581.</div>
   <div class="foot"><span>Esquina para DAE Jundiaí</span><span>Agosto de 2026</span></div>
 </div></div>
 
 <!-- 5 CRIATIVOS 1 -->
 <div class="slide"><div class="si">
   <img src="assets/logo-esquina.png" class="logo">
-  <div class="sl t">Criativos</div>
+  <div class="sl t">Análise de Criativos</div>
   <h2>As peças que rodaram (1 de 3)</h2>
   <p class="ss">Cada vídeo foi assistido do começo ao fim antes da análise.</p>
   <div class="cr2">
@@ -192,7 +192,7 @@ td.n{font-variant-numeric:tabular-nums;font-weight:700}
 <!-- 6 CRIATIVOS 2 -->
 <div class="slide"><div class="si">
   <img src="assets/logo-esquina.png" class="logo">
-  <div class="sl t">Criativos</div>
+  <div class="sl t">Análise de Criativos</div>
   <h2>As peças que rodaram (2 de 3)</h2>
   <p class="ss">Cada vídeo foi assistido do começo ao fim antes da análise.</p>
   <div class="cr2">
@@ -219,7 +219,7 @@ td.n{font-variant-numeric:tabular-nums;font-weight:700}
 <!-- 7 CRIATIVOS 3 -->
 <div class="slide"><div class="si">
   <img src="assets/logo-esquina.png" class="logo">
-  <div class="sl t">Criativos</div>
+  <div class="sl t">Análise de Criativos</div>
   <h2>As peças que rodaram (3 de 3)</h2>
   <p class="ss">Cada vídeo foi assistido do começo ao fim antes da análise.</p>
   <div class="cr2">
@@ -259,8 +259,8 @@ td.n{font-variant-numeric:tabular-nums;font-weight:700}
 <!-- 8 NOTICIAS 1 -->
 <div class="slide"><div class="si">
   <img src="assets/logo-esquina.png" class="logo">
-  <div class="sl p">Agenda da cidade</div>
-  <h2>O que Jundiaí noticiou (1 de 2)</h2>
+  <div class="sl p">Contexto na Cidade</div>
+  <h2>Contexto na cidade em agosto (1 de 2)</h2>
   <p class="ss">12 publicações confirmadas entre 07 e 28 de agosto de 2026, nos canais oficiais e na imprensa local. Obras e pauta da água.</p>
   <div class="ngrid">
     <div class="nc"><div><span class="d">19/08/2026</span> <span class="src">DAE Jundiaí</span></div><h4>DAE inicia obras de água no Loteamento Santa Rosa e amplia saneamento na Roseira</h4><p>420 metros de rede atendendo 30 famílias, somando-se às redes já entregues na região.</p><span class="tg o">Obra</span></div>
@@ -276,8 +276,8 @@ td.n{font-variant-numeric:tabular-nums;font-weight:700}
 <!-- 9 NOTICIAS 2 -->
 <div class="slide"><div class="si">
   <img src="assets/logo-esquina.png" class="logo">
-  <div class="sl p">Agenda da cidade</div>
-  <h2>O que Jundiaí noticiou (2 de 2)</h2>
+  <div class="sl p">Contexto na Cidade</div>
+  <h2>Contexto na cidade em agosto (2 de 2)</h2>
   <p class="ss">Atendimento ao morador e pautas gerais da cidade no mesmo período.</p>
   <div class="ngrid">
     <div class="nc"><div><span class="d">11/08/2026</span> <span class="src">DAE Jundiaí</span></div><h4>Agência Virtual da DAE facilita acesso à segunda via da fatura</h4><p>Canal on-line para consultar fatura e emitir segunda via, com acesso por CPF e unidade consumidora.</p><span class="tg p">Conta de água</span></div>
@@ -313,7 +313,7 @@ td.n{font-variant-numeric:tabular-nums;font-weight:700}
 <div class="slide dark"><div class="si">
   <img src="assets/logo-esquina.png" class="logo logo-d">
   <div class="sl">Diagnóstico Final</div>
-  <h2>O que agosto ensinou (1 de 2)</h2>
+  <h2>O que o Ciclo Revelou (1 de 2)</h2>
   <p class="ss">Leitura qualitativa do ciclo, do que a entrega mostrou e do que os criativos revelaram.</p>
   <div class="dc">
     <div class="dcc"><div class="n">01</div><div class="m">4/4</div><h3>Todas as linhas acima da meta</h3><p>Reconhecimento, Engajamento, Visualização e Cliques encerraram entre 120% e 130% do contratado, com ritmo ajustado ao longo do mês.</p></div>
@@ -327,7 +327,7 @@ td.n{font-variant-numeric:tabular-nums;font-weight:700}
 <div class="slide dark"><div class="si">
   <img src="assets/logo-esquina.png" class="logo logo-d">
   <div class="sl">Diagnóstico Final</div>
-  <h2>O que agosto ensinou (2 de 2)</h2>
+  <h2>O que o Ciclo Revelou (2 de 2)</h2>
   <p class="ss">Os pontos que orientam o próximo ciclo.</p>
   <div class="dc">
     <div class="dcc"><div class="n">04</div><div class="m">1.193</div><h3>Visitas ao perfil como ganho extra</h3><p>Além dos cliques contratados, a campanha levou 1.193 pessoas ao perfil da DAE, onde estão os canais de atendimento.</p></div>
@@ -371,7 +371,7 @@ td.n{font-variant-numeric:tabular-nums;font-weight:700}
 <script>
 Chart.defaults.animation=false;Chart.defaults.font.family="Inter, sans-serif";Chart.defaults.color="#888";Chart.defaults.font.size=13;
 const G={color:"rgba(0,0,0,.06)"};
-new Chart(document.getElementById('chDia'),{type:'line',data:{labels:['07/08', '08/08', '09/08', '10/08', '11/08', '12/08', '13/08', '14/08', '15/08', '16/08', '17/08', '18/08', '19/08', '20/08', '21/08', '22/08', '23/08', '24/08', '25/08', '26/08', '27/08', '28/08'],datasets:[{data:[2415, 6329, 10025, 9371, 7455, 8293, 9193, 17062, 15598, 28553, 21681, 21413, 18436, 24105, 23319, 19966, 26423, 61185, 42064, 5537, 29536, 11251],borderColor:'#1A3CFF',backgroundColor:'rgba(26,60,255,.10)',borderWidth:2.5,fill:true,tension:.35,pointRadius:3,pointBackgroundColor:'#1A3CFF'}]},options:{maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{y:{grid:G,ticks:{callback:v=>(v/1000)+'k'}},x:{grid:{display:false}}}}});
+new Chart(document.getElementById('chDia'),{type:'line',data:{labels:['07/08', '08/08', '09/08', '10/08', '11/08', '12/08', '13/08', '14/08', '15/08', '16/08', '17/08', '18/08', '19/08', '20/08', '21/08', '22/08', '23/08', '24/08', '25/08', '26/08', '27/08', '28/08'],datasets:[{label:'Entregue (acumulado)',data:[1853, 6515, 14987, 21521, 26702, 32467, 35736, 47211, 58345, 77800, 93927, 110993, 126374, 142966, 159852, 172791, 193568, 237842, 262892, 265507, 290483, 299617],borderColor:'#1A3CFF',backgroundColor:'rgba(26,60,255,.10)',borderWidth:2.5,fill:true,tension:.3,pointRadius:2.5,pointBackgroundColor:'#1A3CFF'},{label:'Meta contratada',data:[250000, 250000, 250000, 250000, 250000, 250000, 250000, 250000, 250000, 250000, 250000, 250000, 250000, 250000, 250000, 250000, 250000, 250000, 250000, 250000, 250000, 250000],borderColor:'#17A697',borderWidth:2,borderDash:[6,5],pointRadius:0,fill:false}]},options:{maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{boxWidth:12,padding:12}}},scales:{y:{grid:G,beginAtZero:true,ticks:{callback:v=>(v/1000)+'k'}},x:{grid:{display:false}}}}});
 new Chart(document.getElementById('chIdade'),{type:'bar',data:{labels:['18-24','25-34','35-44','45-54','55-64','65+'],datasets:[{label:'Impressões',data:[19.2,18.2,11.8,15.0,17.1,18.6],backgroundColor:'rgba(26,60,255,.75)',borderRadius:5},{label:'Engajamentos',data:[4.2,6.3,7.9,14.8,24.6,42.2],backgroundColor:'rgba(23,166,151,.85)',borderRadius:5}]},options:{maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{boxWidth:12,padding:12}}},scales:{y:{grid:G,ticks:{callback:v=>v+'%'}},x:{grid:{display:false}}}}});
 new Chart(document.getElementById('chGenero'),{type:'doughnut',data:{labels:['Mulheres','Homens'],datasets:[{data:[47.7,52.3],backgroundColor:['#7B2FBE','#1A3CFF'],borderColor:'#fff',borderWidth:3}]},options:{maintainAspectRatio:false,cutout:'62%',plugins:{legend:{position:'bottom',labels:{boxWidth:12,padding:12}}}}});
 </script>
