@@ -73,7 +73,7 @@ td.n{font-variant-numeric:tabular-nums;font-weight:700}
 .fc .tag{display:inline-block;font-size:.6rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 11px;border-radius:100px;background:rgba(26,60,255,.1);color:var(--primary);margin-bottom:10px}
 .fc h3{font-size:1rem;font-weight:800;margin-bottom:6px}
 .fc p{font-size:.82rem;color:var(--t2);line-height:1.55}
-.note{margin-top:18px;padding:16px 20px;background:var(--surface);border-left:3px solid var(--primary);border-radius:0 12px 12px 0;font-size:.8rem;color:var(--t2);line-height:1.55}
+.note{margin-top:14px;margin-bottom:34px;padding:16px 20px;background:var(--surface);border-left:3px solid var(--primary);border-radius:0 12px 12px 0;font-size:.8rem;color:var(--t2);line-height:1.55}
 .foot{position:absolute;bottom:34px;left:72px;right:72px;display:flex;justify-content:space-between;font-size:.66rem;color:var(--tm);font-weight:600;letter-spacing:.04em}
 .cruz3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .cc{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px 22px;box-shadow:0 2px 8px rgba(0,0,0,.04)}
@@ -81,6 +81,13 @@ td.n{font-variant-numeric:tabular-nums;font-weight:700}
 .cc.no .l{color:var(--purple)}
 .cc h4{font-size:.92rem;font-weight:800;margin-bottom:6px}
 .cc p{font-size:.78rem;color:var(--t2);line-height:1.5}
+.chart-wrap{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:22px 24px;box-shadow:0 2px 10px rgba(0,0,0,.05);flex:0 0 auto}
+.chart-wrap h3{font-size:.95rem;font-weight:800;margin-bottom:2px}
+.chart-wrap .cs{font-size:.72rem;color:var(--tm);margin-bottom:12px}
+.ch-h{position:relative;height:290px}
+.ch-h.sm{height:260px}
+.ch-h canvas{width:100%!important;height:100%!important}
+.ch2{display:grid;grid-template-columns:1.7fr 1fr;gap:18px}
 </style></head><body>
 <!-- 1 CAPA -->
 <div class="slide dark"><div class="si" style="justify-content:center">
@@ -114,12 +121,12 @@ td.n{font-variant-numeric:tabular-nums;font-weight:700}
   <h2>Entrega vs Objetivo</h2>
   <p class="ss">As quatro metas contratadas para agosto, cada uma medida na métrica em que foi comprada.</p>
   <table>
-    <thead><tr><th>Linha</th><th>Métrica de compra</th><th>Objetivo</th><th>Entregue</th><th>Entrega</th><th>Status</th></tr></thead>
+    <thead><tr><th>Linha</th><th>Métrica de compra</th><th>Objetivo</th><th>Entregue</th><th>Status</th></tr></thead>
     <tbody>
-      <tr><td>Reconhecimento (Amplo)</td><td>Impressões</td><td class="n">250.000</td><td class="n">299.581</td><td class="n">120%</td><td><span class="pill">Superada</span></td></tr>
-      <tr><td>Engajamento (Clusters)</td><td>Engajamentos</td><td class="n">10.000</td><td class="n">13.020</td><td class="n">130%</td><td><span class="pill">Superada</span></td></tr>
-      <tr><td>Reconhecimento (Clusters)</td><td>Visualizações</td><td class="n">10.000</td><td class="n">12.209</td><td class="n">122%</td><td><span class="pill">Superada</span></td></tr>
-      <tr><td>Engajamento (Clusters)</td><td>Cliques no link</td><td class="n">1.000</td><td class="n">1.234</td><td class="n">123%</td><td><span class="pill">Superada</span></td></tr>
+      <tr><td>Reconhecimento (Amplo)</td><td>Impressões</td><td class="n">250.000</td><td class="n">299.581</td><td><span class="pill">Superada</span></td></tr>
+      <tr><td>Engajamento (Clusters)</td><td>Engajamentos</td><td class="n">10.000</td><td class="n">13.020</td><td><span class="pill">Superada</span></td></tr>
+      <tr><td>Reconhecimento (Clusters)</td><td>Visualizações</td><td class="n">10.000</td><td class="n">12.209</td><td><span class="pill">Superada</span></td></tr>
+      <tr><td>Engajamento (Clusters)</td><td>Cliques no link</td><td class="n">1.000</td><td class="n">1.234</td><td><span class="pill">Superada</span></td></tr>
     </tbody>
   </table>
   <div class="note">Cada linha é medida apenas na métrica em que foi comprada. Volume gerado fora da métrica de compra existe e aparece nos cards de campanha, mas não entra no cálculo de meta de outra linha.</div>
@@ -144,6 +151,17 @@ td.n{font-variant-numeric:tabular-nums;font-weight:700}
   </div>
   <div class="foot"><span>Esquina para DAE Jundiaí</span><span>Agosto de 2026</span></div>
 </div></div>
+<!-- CURVA -->
+<div class="slide"><div class="si">
+  <img src="assets/logo-esquina.png" class="logo">
+  <div class="sl">Ritmo de Entrega</div>
+  <h2>Curva de entrega dia a dia</h2>
+  <p class="ss">Impressões por dia somando as quatro linhas. A campanha veiculou todos os 22 dias do ciclo, sem nenhum dia parado.</p>
+  <div class="chart-wrap"><h3>Impressões por dia</h3><div class="cs">As quatro linhas somadas, de 07 a 28 de agosto</div><div class="ch-h"><canvas id="chDia"></canvas></div></div>
+  <div class="note">O ciclo começou em ritmo baixo, ganhou volume a partir de 14 de agosto, quando as peças de obra e o vox pop entraram no ar, e teve o pico em 24 de agosto, quando os orçamentos foram redimensionados para garantir o fechamento das quatro metas no prazo.</div>
+  <div class="foot"><span>Esquina para DAE Jundiaí</span><span>Agosto de 2026</span></div>
+</div></div>
+
 <!-- 5 CRIATIVOS 1 -->
 <div class="slide"><div class="si">
   <img src="assets/logo-esquina.png" class="logo">
@@ -224,6 +242,20 @@ td.n{font-variant-numeric:tabular-nums;font-weight:700}
   </div>
   <div class="foot"><span>Esquina para DAE Jundiaí</span><span>Agosto de 2026</span></div>
 </div></div>
+<!-- PUBLICO -->
+<div class="slide"><div class="si">
+  <img src="assets/logo-esquina.png" class="logo">
+  <div class="sl p">Público</div>
+  <h2>Quem foi alcançado</h2>
+  <p class="ss">Perfil de quem viu e de quem respondeu à campanha, por faixa de idade e por gênero.</p>
+  <div class="ch2">
+    <div class="chart-wrap"><h3>Idade: quem viu e quem interagiu</h3><div class="cs">Participação nas impressões e nos engajamentos</div><div class="ch-h"><canvas id="chIdade"></canvas></div></div>
+    <div class="chart-wrap"><h3>Gênero</h3><div class="cs">Participação nas impressões</div><div class="ch-h sm"><canvas id="chGenero"></canvas></div></div>
+  </div>
+  <div class="note">Quem é alcançado e quem responde não são as mesmas pessoas: de 18 a 34 anos concentrou a maior parte das impressões e respondeu por pouco mais de 10% das interações, enquanto o público de 55 anos ou mais respondeu por cerca de dois terços do engajamento do ciclo.</div>
+  <div class="foot"><span>Esquina para DAE Jundiaí</span><span>Agosto de 2026</span></div>
+</div></div>
+
 <!-- 8 NOTICIAS 1 -->
 <div class="slide"><div class="si">
   <img src="assets/logo-esquina.png" class="logo">
@@ -334,4 +366,13 @@ td.n{font-variant-numeric:tabular-nums;font-weight:700}
   <div class="foot" style="color:rgba(255,255,255,.5)"><span>Relatório produzido pela Esquina para DAE Jundiaí</span><span>Agosto de 2026</span></div>
 </div></div>
 
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<script>
+Chart.defaults.animation=false;Chart.defaults.font.family="Inter, sans-serif";Chart.defaults.color="#888";Chart.defaults.font.size=13;
+const G={color:"rgba(0,0,0,.06)"};
+new Chart(document.getElementById('chDia'),{type:'line',data:{labels:['07/08', '08/08', '09/08', '10/08', '11/08', '12/08', '13/08', '14/08', '15/08', '16/08', '17/08', '18/08', '19/08', '20/08', '21/08', '22/08', '23/08', '24/08', '25/08', '26/08', '27/08', '28/08'],datasets:[{data:[2415, 6329, 10025, 9371, 7455, 8293, 9193, 17062, 15598, 28553, 21681, 21413, 18436, 24105, 23319, 19966, 26423, 61185, 42064, 5537, 29536, 11251],borderColor:'#1A3CFF',backgroundColor:'rgba(26,60,255,.10)',borderWidth:2.5,fill:true,tension:.35,pointRadius:3,pointBackgroundColor:'#1A3CFF'}]},options:{maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{y:{grid:G,ticks:{callback:v=>(v/1000)+'k'}},x:{grid:{display:false}}}}});
+new Chart(document.getElementById('chIdade'),{type:'bar',data:{labels:['18-24','25-34','35-44','45-54','55-64','65+'],datasets:[{label:'Impressões',data:[19.2,18.2,11.8,15.0,17.1,18.6],backgroundColor:'rgba(26,60,255,.75)',borderRadius:5},{label:'Engajamentos',data:[4.2,6.3,7.9,14.8,24.6,42.2],backgroundColor:'rgba(23,166,151,.85)',borderRadius:5}]},options:{maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{boxWidth:12,padding:12}}},scales:{y:{grid:G,ticks:{callback:v=>v+'%'}},x:{grid:{display:false}}}}});
+new Chart(document.getElementById('chGenero'),{type:'doughnut',data:{labels:['Mulheres','Homens'],datasets:[{data:[47.7,52.3],backgroundColor:['#7B2FBE','#1A3CFF'],borderColor:'#fff',borderWidth:3}]},options:{maintainAspectRatio:false,cutout:'62%',plugins:{legend:{position:'bottom',labels:{boxWidth:12,padding:12}}}}});
+</script>
 </body></html>

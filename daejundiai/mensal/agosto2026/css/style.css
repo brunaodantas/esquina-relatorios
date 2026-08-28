@@ -263,3 +263,12 @@ body{font-family:var(--font);background:var(--bg);color:var(--text-1);line-heigh
 .cruz-card.no .lbl{color:var(--purple)}
 .cruz-card h4{font-size:.95rem;font-weight:700;margin-bottom:7px}
 .cruz-card p{font-size:.84rem;color:var(--text-2);line-height:1.55}
+/* graficos */
+.chart-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);box-shadow:var(--sh);padding:26px 28px}
+.chart-card h3{font-size:1rem;font-weight:800;margin-bottom:4px}
+.chart-card .cc-sub{font-size:.8rem;color:var(--text-m);margin-bottom:18px}
+.chart-h{position:relative;height:300px}
+.chart-h canvas{width:100%!important;height:100%!important}
+.chart-2{display:grid;grid-template-columns:1.6fr 1fr;gap:20px}
+@media(max-width:860px){.chart-2{grid-template-columns:1fr}}
+.chart-h.sm{height:260px}

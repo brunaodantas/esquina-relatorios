@@ -103,7 +103,7 @@
   <div class="dt-wrap fade-in">
     <table class="dt">
       <thead>
-        <tr><th>Linha</th><th>Métrica de compra</th><th>Objetivo</th><th>Entregue</th><th>Progresso</th><th>Status</th></tr>
+        <tr><th>Linha</th><th>Métrica de compra</th><th>Objetivo</th><th>Entregue</th><th>Status</th></tr>
       </thead>
       <tbody>
         <tr>
@@ -111,7 +111,6 @@
           <td>Impressões</td>
           <td class="n">250.000</td>
           <td class="n">299.581</td>
-          <td class="bar-cell"><div class="bar-wrap"><div class="bar-track"><div class="bar-fill bf-meta" data-w="100%"></div></div><span class="bar-pct ov">120%</span></div></td>
           <td><span class="status ov">&#8593; Superada</span></td>
         </tr>
         <tr>
@@ -119,7 +118,6 @@
           <td>Engajamentos</td>
           <td class="n">10.000</td>
           <td class="n">13.020</td>
-          <td class="bar-cell"><div class="bar-wrap"><div class="bar-track"><div class="bar-fill bf-meta" data-w="100%"></div></div><span class="bar-pct ov">130%</span></div></td>
           <td><span class="status ov">&#8593; Superada</span></td>
         </tr>
         <tr>
@@ -127,7 +125,6 @@
           <td>Visualizações</td>
           <td class="n">10.000</td>
           <td class="n">12.209</td>
-          <td class="bar-cell"><div class="bar-wrap"><div class="bar-track"><div class="bar-fill bf-meta" data-w="100%"></div></div><span class="bar-pct ov">122%</span></div></td>
           <td><span class="status ov">&#8593; Superada</span></td>
         </tr>
         <tr>
@@ -135,7 +132,6 @@
           <td>Cliques no link</td>
           <td class="n">1.000</td>
           <td class="n">1.234</td>
-          <td class="bar-cell"><div class="bar-wrap"><div class="bar-track"><div class="bar-fill bf-meta" data-w="100%"></div></div><span class="bar-pct ov">123%</span></div></td>
           <td><span class="status ov">&#8593; Superada</span></td>
         </tr>
       </tbody>
@@ -203,10 +199,25 @@
   </div>
 </section>
 
+<section class="section" id="curva">
+  <span class="sl">Ritmo de Entrega</span>
+  <h2 class="st fade-in">Curva de entrega dia a dia</h2>
+  <p class="ss fade-in">Impressões por dia somando as quatro linhas, de 07 a 28 de agosto de 2026. A campanha veiculou todos os 22 dias do ciclo, sem nenhum dia parado.</p>
+  <div class="chart-card fade-in">
+    <h3>Impressões por dia</h3>
+    <div class="cc-sub">As quatro linhas somadas, dia a dia</div>
+    <div class="chart-h"><canvas id="chDia"></canvas></div>
+  </div>
+  <div class="ib fade-in">
+    <div class="ib-lbl">Como ler a curva</div>
+    <div class="ib-txt">O ciclo começou em ritmo baixo, ganhou volume a partir de 14 de agosto, quando as peças de obra e o vox pop entraram no ar, e teve o pico em 24 de agosto, quando os orçamentos foram redimensionados para garantir o fechamento das quatro metas dentro do prazo. A queda de 26 de agosto corresponde ao dia em que parte das linhas já havia atingido o contratado e teve o ritmo reduzido.</div>
+  </div>
+</section>
+
 <section class="section" id="criativos">
   <span class="sl teal">Criativos</span>
   <h2 class="st fade-in">As peças que rodaram, uma por uma</h2>
-  <p class="ss fade-in">Assistimos cada vídeo veiculado do começo ao fim antes de escrever qualquer linha aqui. Cada peça traz o resultado do período e, no botão, a leitura completa: o que funcionou, o ponto de atenção e como o público respondeu, por posicionamento e por dispositivo.</p>
+  <p class="ss fade-in">Assistimos cada vídeo veiculado do começo ao fim antes de escrever qualquer linha aqui. Cada peça traz o resultado do período e, no botão, a leitura completa: o que funcionou, o ponto de atenção, como o público respondeu e onde a peça foi entregue.</p>
 
   <div class="creatives">
 
@@ -214,39 +225,22 @@
       <div class="cr-h">
         <div class="cr-title-row">
           <span class="cr-t">O que sabem sobre a DAE Jundiaí</span>
-          <a class="cr-link-inline" href="https://www.facebook.com/1512106230720359/videos/1850482099697184" target="_blank" rel="noopener">Ver publicação &#8599;</a>
+          <a class="cr-link-inline" href="https://www.facebook.com/permalink.php?story_fbid=1850482099697184&amp;id=607561639448619" target="_blank" rel="noopener">Ver publicação &#8599;</a>
         </div>
         <span class="bd w">Destaque do mês</span>
       </div>
       <div class="cr-a">Vídeo vertical 9:16 &middot; 56 segundos &middot; depoimentos de moradores na rua</div>
       <div class="cr-side">
-        <div class="ms">
-          <div><b>99.645</b><span>Impressões</span></div>
-          <div><b>31.283</b><span>Engajamentos</span></div>
-          <div><b>11.882</b><span>Visualizações</span></div>
-          <div><b>1.497</b><span>Reações</span></div>
-          <div><b>37</b><span>Novos seguidores</span></div>
-        </div>
+        <div class="ms"><div><b>99.645</b><span>Impressões</span></div><div><b>31.283</b><span>Engajamentos</span></div><div><b>11.882</b><span>Visualizações</span></div><div><b>1.497</b><span>Reações</span></div><div><b>37</b><span>Novos seguidores</span></div></div>
         <p class="cr-lead">A peça mais assistida do mês com folga: atenção média acima de 14 segundos, muito além das demais, e sozinha respondeu por quase toda a meta de visualização.</p>
         <button class="cr-btn" type="button" onclick="toggleCr(this)"><span class="t-closed">Ver análise completa</span><span class="t-open">Recolher</span><i class="chev"></i></button>
       </div>
       <div class="cr-b">
-        <div class="apd">
-          <b>O que funcionou</b>
-          <p>Foi a peça que melhor resolveu o problema mais difícil de uma comunicação institucional: dar credibilidade sem soar propaganda. Quem fala é o vizinho de quem assiste, com nome na tela, e isso segura a atenção num vídeo de quase um minuto. Recebeu o maior esforço de mídia entre as peças do mês e devolveu bem: em Reels do Facebook, quase um terço de quem viu assistiu o vídeo até o fim, uma proporção muito acima do padrão do período.</p>
-        </div>
-        <div class="apd">
-          <b>Ponto de atenção</b>
-          <p>São 56 segundos, e o essencial já está entregue no primeiro terço. Nas linhas de cobertura ampla, onde a peça roda em feed, a proporção de gente que assiste até o fim cai bastante, o que indica corte antes da hora.</p>
-        </div>
-        <div class="apd">
-          <b>Resposta do público</b>
-          <p>Quem interagiu foi principalmente o público mais velho: na linha de Visualização, onde a peça concentrou entrega, quem tem 65 anos ou mais respondeu por cerca de dois terços do engajamento, e a faixa acima de 55 anos por quase 90%. A entrega foi quase toda em celular Android, com iPhone em participação bem menor e computador sem relevância. Nos posicionamentos, Reels e Stories do Facebook foram onde a peça mais reteve, enquanto o Reels do Instagram, que é o lugar natural de um vídeo 9:16, praticamente não recebeu entrega.</p>
-        </div>
-        <div class="acao">
-          <b>Ação</b>
-          <p>Sugerimos manter o vox pop como formato recorrente, forçar a entrega em Reels e Stories do Instagram, onde o formato vertical se encaixa e a peça mal apareceu, e montar uma versão de 15 a 20 segundos, com dois depoimentos e a assinatura, para as linhas de cobertura ampla.</p>
-        </div>
+        <div class="apd"><b>O que funcionou</b><p>Foi a peça que melhor resolveu o problema mais difícil de uma comunicação institucional: dar credibilidade sem soar propaganda. Abre com um plano aéreo do centro de Jundiaí e corta direto para a rua, onde quem fala é o vizinho de quem assiste, identificado com nome na tela. Em Reels do Facebook, quase um terço de quem viu assistiu o vídeo até o fim, proporção muito acima do padrão do período. Recebeu o maior esforço de mídia entre as peças do mês e devolveu em entrega.</p></div>
+        <div class="apd"><b>Ponto de atenção</b><p>São 56 segundos, e o essencial já está entregue no primeiro terço. Nas linhas de cobertura ampla, onde a peça roda em feed, a proporção de gente que assiste até o fim cai bastante, o que indica corte antes da hora.</p></div>
+        <div class="apd"><b>Resposta do público</b><p>Foi a peça que mais gerou conversa no ciclo, com o maior volume de reações e comentários do período, e a que mais trouxe seguidores novos junto com a Avenida da Uva. Quem interagiu foi principalmente o público mais velho: na linha de Visualização, onde a peça concentrou entrega, quem tem 65 anos ou mais respondeu por cerca de dois terços do engajamento, e a faixa acima de 55 anos por quase 90%.</p></div>
+        <div class="apd"><b>Audiência e posicionamento</b><p>Reels e Stories do Facebook foram os posicionamentos em que a peça mais reteve, enquanto o Reels do Instagram, que é o lugar natural de um vídeo 9:16, praticamente não recebeu entrega. A audiência é quase toda de celular Android, com iPhone em participação bem menor e computador sem relevância.</p></div>
+        <div class="acao"><b>Ação</b><p>Sugerimos manter o vox pop como formato recorrente, forçar a entrega em Reels e Stories do Instagram, onde o formato se encaixa e a peça mal apareceu, e montar uma versão de 15 a 20 segundos, com dois depoimentos e a assinatura, para as linhas de cobertura ampla.</p></div>
       </div>
     </article>
 
@@ -254,38 +248,22 @@
       <div class="cr-h">
         <div class="cr-title-row">
           <span class="cr-t">Sinais de vazamento dentro de casa</span>
-          <a class="cr-link-inline" href="https://www.facebook.com/1512106230720359/videos/992578693804639" target="_blank" rel="noopener">Ver publicação &#8599;</a>
+          <a class="cr-link-inline" href="https://www.facebook.com/permalink.php?story_fbid=992578693804639&amp;id=607561639448619" target="_blank" rel="noopener">Ver publicação &#8599;</a>
         </div>
         <span class="bd o">Maior circulação</span>
       </div>
       <div class="cr-a">Vídeo vertical 9:16 &middot; 59 segundos &middot; apresentador em formato de transmissão ao vivo</div>
       <div class="cr-side">
-        <div class="ms">
-          <div><b>215.425</b><span>Impressões</span></div>
-          <div><b>30.481</b><span>Engajamentos</span></div>
-          <div><b>3.086</b><span>Visualizações</span></div>
-          <div><b>881</b><span>Reações</span></div>
-        </div>
+        <div class="ms"><div><b>215.425</b><span>Impressões</span></div><div><b>30.481</b><span>Engajamentos</span></div><div><b>3.086</b><span>Visualizações</span></div><div><b>881</b><span>Reações</span></div></div>
         <p class="cr-lead">A peça que mais circulou pela cidade, com utilidade doméstica direta: como descobrir um vazamento que ninguém vê e quanto ele custa por dia.</p>
         <button class="cr-btn" type="button" onclick="toggleCr(this)"><span class="t-closed">Ver análise completa</span><span class="t-open">Recolher</span><i class="chev"></i></button>
       </div>
       <div class="cr-b">
-        <div class="apd">
-          <b>O que funcionou</b>
-          <p>É a peça de maior utilidade prática do mês: caixa d'água perdendo mais de três mil litros por dia, o teste da tinta no vaso sanitário e a leitura do hidrômetro, tudo em legenda grande e legível no celular sem som. Recebeu o maior esforço de mídia do ciclo, distribuído em duas linhas de cobertura, e foi o que garantiu a circulação recorde.</p>
-        </div>
-        <div class="apd">
-          <b>Ponto de atenção</b>
-          <p>A primeira informação útil demora a chegar, e há uma passagem escura logo nos primeiros segundos, justo onde a pessoa decide se continua. A moldura de transmissão ao vivo ocupa a faixa inferior da tela, disputando espaço com a legenda. O resultado aparece na retenção: apesar do volume enorme, a proporção de gente que assistiu o vídeo até o fim foi das mais baixas do mês.</p>
-        </div>
-        <div class="apd">
-          <b>Resposta do público</b>
-          <p>A entrega se concentrou no feed do Facebook e do Instagram, que é onde um vídeo vertical de um minuto rende menos: ali, cerca de 1% de quem viu chegou ao fim. Nos poucos milhares de impressões que caíram em Reels e Stories, essa proporção passou de 20%, mais de vinte vezes melhor. O público que interagiu volta a ser o mais velho, com a faixa acima de 55 anos concentrando a maior parte das reações, e a entrega foi predominantemente em celular Android.</p>
-        </div>
-        <div class="acao">
-          <b>Ação</b>
-          <p>O formato é vertical e o desempenho mostra que o lugar dele é Reels e Stories, não feed. Sugerimos priorizar esses posicionamentos no próximo ciclo, abrir a peça direto no número forte dos três mil litros por dia e testar uma versão sem a moldura de transmissão, liberando a área de legenda.</p>
-        </div>
+        <div class="apd"><b>O que funcionou</b><p>Utilidade prática pura: a caixa d'água que perde mais de três mil litros por dia, o teste da tinta no vaso sanitário e a leitura do hidrômetro, tudo em legenda grande e legível no celular sem som. Recebeu o maior esforço de mídia do ciclo, distribuído em duas linhas de cobertura, e foi isso que garantiu a circulação recorde.</p></div>
+        <div class="apd"><b>Ponto de atenção</b><p>A primeira informação útil demora a chegar, e há uma passagem escura logo nos primeiros segundos, justo onde a pessoa decide se continua. A moldura de transmissão ao vivo ocupa a faixa inferior da tela, disputando espaço com a legenda. O resultado aparece na retenção: apesar do volume enorme, a proporção de gente que assistiu o vídeo até o fim foi das mais baixas do mês.</p></div>
+        <div class="apd"><b>Resposta do público</b><p>A resposta veio em interação leve, reação e clique, e não em conversa: foram poucas dezenas de comentários para mais de duzentas mil exibições. Quem interagiu é o público de mais idade, com a faixa acima de 55 anos concentrando a maior parte das reações, mesmo com a entrega alcançando bastante gente de 18 a 34 anos.</p></div>
+        <div class="apd"><b>Audiência e posicionamento</b><p>A entrega se concentrou no feed do Facebook e do Instagram, que é onde um vídeo vertical de um minuto rende menos: ali, cerca de 1% de quem viu chegou ao fim. Nos poucos milhares de impressões que caíram em Reels e Stories, essa proporção passou de 20%, mais de vinte vezes melhor. A audiência é quase toda de celular Android.</p></div>
+        <div class="acao"><b>Ação</b><p>O formato é vertical e o desempenho mostra que o lugar dele é Reels e Stories, não feed. Sugerimos priorizar esses posicionamentos no próximo ciclo, abrir a peça direto no número forte dos três mil litros por dia e testar uma versão sem a moldura de transmissão, liberando a área de legenda.</p></div>
       </div>
     </article>
 
@@ -293,39 +271,22 @@
       <div class="cr-h">
         <div class="cr-title-row">
           <span class="cr-t">O que está acontecendo na Avenida da Uva</span>
-          <a class="cr-link-inline" href="https://www.facebook.com/1512106230720359/videos/1361426705770389" target="_blank" rel="noopener">Ver publicação &#8599;</a>
+          <a class="cr-link-inline" href="https://www.facebook.com/permalink.php?story_fbid=1361426705770389&amp;id=607561639448619" target="_blank" rel="noopener">Ver publicação &#8599;</a>
         </div>
         <span class="bd o">Melhor em cliques</span>
       </div>
       <div class="cr-a">Vídeo vertical 9:16 &middot; 47 segundos &middot; obra explicada no local por técnico da DAE</div>
       <div class="cr-side">
-        <div class="ms">
-          <div><b>23.499</b><span>Impressões</span></div>
-          <div><b>10.162</b><span>Engajamentos</span></div>
-          <div><b>3.323</b><span>Visualizações</span></div>
-          <div><b>962</b><span>Cliques no link</span></div>
-          <div><b>39</b><span>Novos seguidores</span></div>
-        </div>
+        <div class="ms"><div><b>23.499</b><span>Impressões</span></div><div><b>10.162</b><span>Engajamentos</span></div><div><b>3.323</b><span>Visualizações</span></div><div><b>962</b><span>Cliques no link</span></div><div><b>39</b><span>Novos seguidores</span></div></div>
         <p class="cr-lead">A peça mais eficiente do mês em levar gente adiante: sozinha respondeu pela maior parte dos cliques no link e por boa parte dos novos seguidores, com esforço de mídia moderado.</p>
         <button class="cr-btn" type="button" onclick="toggleCr(this)"><span class="t-closed">Ver análise completa</span><span class="t-open">Recolher</span><i class="chev"></i></button>
       </div>
       <div class="cr-b">
-        <div class="apd">
-          <b>O que funcionou</b>
-          <p>O gancho é hiperlocal: fala de uma rua específica, não de um problema geral, e quem passa ali todo dia se reconhece na primeira frase. O técnico aparece no canteiro desde o início, a obra é mostrada de verdade e o vídeo termina explicando quantas famílias vão ser beneficiadas. Com esforço de mídia bem menor que o das peças de cobertura, foi a que mais converteu atenção em ação, puxando a linha de Cliques para 123% da meta.</p>
-        </div>
-        <div class="apd">
-          <b>Ponto de atenção</b>
-          <p>O aviso mais útil, usar rota alternativa enquanto a obra acontece, só aparece na segunda metade do vídeo. Para quem passa pela avenida diariamente, essa informação precisa estar nos primeiros segundos.</p>
-        </div>
-        <div class="apd">
-          <b>Resposta do público</b>
-          <p>Stories do Facebook foi disparado o melhor posicionamento desta peça: concentrou a maior parte da entrega e quase um quinto de quem viu assistiu até o fim, resultado bem superior ao do feed. O Reels do Instagram, que caberia perfeitamente num vídeo 9:16, recebeu volume pequeno. Na linha de Cliques, quem mais respondeu foi o público masculino acima de 45 anos, e a entrega foi majoritariamente em celular Android.</p>
-        </div>
-        <div class="acao">
-          <b>Ação</b>
-          <p>Como a peça funcionou melhor em Stories, sugerimos tratá-la como conteúdo de Stories no próximo ciclo, com uma versão pensada para esse posicionamento, o aviso de trânsito logo na abertura e raio fechado nos bairros vizinhos à obra.</p>
-        </div>
+        <div class="apd"><b>O que funcionou</b><p>O gancho é hiperlocal: fala de uma rua específica, não de um problema geral, e quem passa ali todo dia se reconhece na primeira frase. O técnico aparece no canteiro desde o início, a obra é mostrada de verdade, com vala, escavadeira e sinaleiro, e o vídeo termina explicando quantas famílias vão ser beneficiadas. Com esforço de mídia bem menor que o das peças de cobertura, foi a que mais converteu atenção em ação.</p></div>
+        <div class="apd"><b>Ponto de atenção</b><p>O aviso mais útil, usar rota alternativa enquanto a obra acontece, só aparece na segunda metade do vídeo. Para quem passa pela avenida diariamente, essa informação precisa estar nos primeiros segundos.</p></div>
+        <div class="apd"><b>Resposta do público</b><p>Foi a peça que mais trouxe seguidores novos no ciclo, junto com o vox pop, o que indica que quem assistiu quis continuar acompanhando a autarquia. Na linha de Cliques, quem mais respondeu foi o público masculino acima de 45 anos, perfil compatível com morador fixo do entorno.</p></div>
+        <div class="apd"><b>Audiência e posicionamento</b><p>Stories do Facebook foi disparado o melhor posicionamento desta peça: concentrou a maior parte da entrega e quase um quinto de quem viu assistiu até o fim, resultado bem superior ao do feed. O Reels do Instagram, que caberia perfeitamente num vídeo 9:16, recebeu volume pequeno. A entrega foi majoritariamente em celular Android.</p></div>
+        <div class="acao"><b>Ação</b><p>Como a peça funcionou melhor em Stories, sugerimos tratá-la como conteúdo de Stories no próximo ciclo, com uma versão pensada para esse posicionamento, o aviso de trânsito logo na abertura e raio fechado nos bairros vizinhos à obra.</p></div>
       </div>
     </article>
 
@@ -333,38 +294,22 @@
       <div class="cr-h">
         <div class="cr-title-row">
           <span class="cr-t">Quanta água você usa por dia</span>
-          <a class="cr-link-inline" href="https://www.facebook.com/1512106230720359/videos/1356333909946983" target="_blank" rel="noopener">Ver publicação &#8599;</a>
+          <a class="cr-link-inline" href="https://www.facebook.com/permalink.php?story_fbid=1356333909946983&amp;id=607561639448619" target="_blank" rel="noopener">Ver publicação &#8599;</a>
         </div>
         <span class="bd g">Utilidade doméstica</span>
       </div>
       <div class="cr-a">Vídeo vertical 9:16 &middot; 61 segundos &middot; contagem de consumo pela rotina da casa</div>
       <div class="cr-side">
-        <div class="ms">
-          <div><b>45.623</b><span>Impressões</span></div>
-          <div><b>4.730</b><span>Engajamentos</span></div>
-          <div><b>531</b><span>Visualizações</span></div>
-          <div><b>601</b><span>Reações</span></div>
-        </div>
+        <div class="ms"><div><b>45.623</b><span>Impressões</span></div><div><b>4.730</b><span>Engajamentos</span></div><div><b>531</b><span>Visualizações</span></div><div><b>601</b><span>Reações</span></div></div>
         <p class="cr-lead">A peça mais fácil de entender sem áudio: cada atividade da rotina aparece com o consumo em litros na tela e o vídeo fecha somando o total do dia.</p>
         <button class="cr-btn" type="button" onclick="toggleCr(this)"><span class="t-closed">Ver análise completa</span><span class="t-open">Recolher</span><i class="chev"></i></button>
       </div>
       <div class="cr-b">
-        <div class="apd">
-          <b>O que funcionou</b>
-          <p>A construção é clara e didática: banho, descarga, hidratação, louça e rega, cada uma com o número na tela em legenda grande e ilustrada. Rodou com esforço de mídia moderado, principalmente na linha de cobertura, e cumpriu bem o papel de circular a mensagem de consumo consciente.</p>
-        </div>
-        <div class="apd">
-          <b>Ponto de atenção</b>
-          <p>O número que sustenta a peça, o total consumido no dia, só chega no fim, e é justamente ele o gancho. Foi a peça com a menor proporção de gente assistindo até o fim entre as de volume alto, sinal de que a informação principal está tarde demais.</p>
-        </div>
-        <div class="apd">
-          <b>Resposta do público</b>
-          <p>A entrega se dividiu entre feed e Reels do Facebook, com participação menor do Instagram, e em nenhum dos dois a retenção passou de patamar baixo, o que reforça que o problema é a estrutura do vídeo, não o posicionamento. O público que interagiu segue concentrado acima de 45 anos e a entrega foi quase toda em celular Android.</p>
-        </div>
-        <div class="acao">
-          <b>Ação</b>
-          <p>Sugerimos inverter a ordem, abrindo com o total do dia e destrinchando depois de onde ele vem, e cortar uma versão de até 20 segundos com as três atividades de maior consumo, dirigida a Reels e Stories.</p>
-        </div>
+        <div class="apd"><b>O que funcionou</b><p>A construção é clara e didática, e o encadeamento leva a pessoa pela própria casa: banho, descarga, hidratação, louça e rega, cada uma com o número na tela em legenda grande e ilustrada. Rodou com esforço de mídia moderado, principalmente na linha de cobertura, e cumpriu bem o papel de circular a mensagem de consumo consciente.</p></div>
+        <div class="apd"><b>Ponto de atenção</b><p>O número que sustenta a peça, o total consumido no dia, só chega no fim, e é justamente ele o gancho. Foi a peça com a menor proporção de gente assistindo até o fim entre as de volume alto.</p></div>
+        <div class="apd"><b>Resposta do público</b><p>A interação ficou concentrada em reação, com volume de comentários muito baixo para o tamanho da entrega. Como nas demais peças do ciclo, quem respondeu foi majoritariamente o público acima de 45 anos.</p></div>
+        <div class="apd"><b>Audiência e posicionamento</b><p>A entrega se dividiu entre feed e Reels do Facebook, com participação menor do Instagram, e em nenhum dos dois a retenção passou de patamar baixo, o que reforça que aqui o problema é a estrutura do vídeo, não o posicionamento. A audiência é quase toda de celular Android.</p></div>
+        <div class="acao"><b>Ação</b><p>Sugerimos inverter a ordem, abrindo com o total do dia e destrinchando depois de onde ele vem, e cortar uma versão de até 20 segundos com as três atividades de maior consumo, dirigida a Reels e Stories.</p></div>
       </div>
     </article>
 
@@ -372,37 +317,22 @@
       <div class="cr-h">
         <div class="cr-title-row">
           <span class="cr-t">Nova rede de esgoto no Jardim Aeroporto</span>
-          <a class="cr-link-inline" href="https://www.facebook.com/1512106230720359/videos/2269401420526520" target="_blank" rel="noopener">Ver publicação &#8599;</a>
+          <a class="cr-link-inline" href="https://www.facebook.com/permalink.php?story_fbid=2269401420526520&amp;id=607561639448619" target="_blank" rel="noopener">Ver publicação &#8599;</a>
         </div>
         <span class="bd g">Pauta de bairro</span>
       </div>
       <div class="cr-a">Vídeo vertical 9:16 &middot; 56 segundos &middot; obra com depoimento de moradores</div>
       <div class="cr-side">
-        <div class="ms">
-          <div><b>15.273</b><span>Impressões</span></div>
-          <div><b>1.580</b><span>Engajamentos</span></div>
-          <div><b>197</b><span>Visualizações</span></div>
-        </div>
+        <div class="ms"><div><b>15.273</b><span>Impressões</span></div><div><b>1.580</b><span>Engajamentos</span></div><div><b>197</b><span>Visualizações</span></div></div>
         <p class="cr-lead">A peça mais humana do mês: moradores falam dentro de casa sobre o esgoto que esperavam havia anos, e a obra aparece logo em seguida.</p>
         <button class="cr-btn" type="button" onclick="toggleCr(this)"><span class="t-closed">Ver análise completa</span><span class="t-open">Recolher</span><i class="chev"></i></button>
       </div>
       <div class="cr-b">
-        <div class="apd">
-          <b>O que funcionou</b>
-          <p>Quem chega ao fim entende exatamente o que mudou no bairro. O depoimento de quem esperou anos pela rede é o tipo de conteúdo que sustenta reputação melhor do que qualquer número, e a obra aparece sendo executada com recursos próprios da autarquia. Rodou com esforço de mídia baixo, o menor entre as peças do ciclo.</p>
-        </div>
-        <div class="apd">
-          <b>Ponto de atenção</b>
-          <p>O limite aqui não é o criativo, é a distribuição: uma pauta de bairro rodando em público amplo circula pouco por natureza, e foi a peça de menor volume entre as de conteúdo de obra.</p>
-        </div>
-        <div class="apd">
-          <b>Resposta do público</b>
-          <p>A entrega se espalhou entre feed do Facebook, Reels do Facebook e Reels do Instagram, sem que nenhum posicionamento se destacasse em retenção, o que é coerente com um público que não tem ligação com o bairro. Como nas demais peças, quem interagiu foi majoritariamente o público acima de 45 anos, em celular Android.</p>
-        </div>
-        <div class="acao">
-          <b>Ação</b>
-          <p>Sugerimos tratar peça de obra como conteúdo local, com raio fechado no bairro atendido e nos vizinhos, onde a mesma história vale muito mais por pessoa alcançada.</p>
-        </div>
+        <div class="apd"><b>O que funcionou</b><p>Quem chega ao fim entende exatamente o que mudou no bairro. O engenheiro abre explicando a ampliação da rede, os moradores aparecem em seguida, cada um com nome na tela, e a obra é mostrada sendo executada com recursos próprios da autarquia. O depoimento de quem esperou anos pela rede sustenta reputação melhor do que qualquer número, e a peça rodou com o menor esforço de mídia do ciclo.</p></div>
+        <div class="apd"><b>Ponto de atenção</b><p>O limite aqui não é o criativo, é a distribuição: uma pauta de bairro rodando em público amplo circula pouco por natureza, e foi a peça de menor volume entre as de conteúdo de obra.</p></div>
+        <div class="apd"><b>Resposta do público</b><p>O volume de interação acompanhou o tamanho da entrega, sem concentração de conversa. É coerente com um público que, na maior parte, não tem ligação com o Jardim Aeroporto e por isso não se reconhece na história contada.</p></div>
+        <div class="apd"><b>Audiência e posicionamento</b><p>A entrega se espalhou entre feed do Facebook, Reels do Facebook e Reels do Instagram, sem que nenhum posicionamento se destacasse em retenção. A audiência segue majoritariamente Android e mobile.</p></div>
+        <div class="acao"><b>Ação</b><p>Sugerimos tratar peça de obra como conteúdo local, com raio fechado no bairro atendido e nos vizinhos, onde a mesma história vale muito mais por pessoa alcançada.</p></div>
       </div>
     </article>
 
@@ -410,37 +340,22 @@
       <div class="cr-h">
         <div class="cr-title-row">
           <span class="cr-t">Quando uma ocorrência acontece</span>
-          <a class="cr-link-inline" href="https://www.facebook.com/1512106230720359/videos/1978388246194162" target="_blank" rel="noopener">Ver publicação &#8599;</a>
+          <a class="cr-link-inline" href="https://www.facebook.com/permalink.php?story_fbid=1978388246194162&amp;id=607561639448619" target="_blank" rel="noopener">Ver publicação &#8599;</a>
         </div>
         <span class="bd g">Entrou no fim do ciclo</span>
       </div>
       <div class="cr-a">Vídeo vertical 9:16 &middot; 65 segundos &middot; bastidor do atendimento e da manutenção</div>
       <div class="cr-side">
-        <div class="ms">
-          <div><b>19.669</b><span>Impressões</span></div>
-          <div><b>794</b><span>Engajamentos</span></div>
-          <div><b>112</b><span>Visualizações</span></div>
-        </div>
+        <div class="ms"><div><b>19.669</b><span>Impressões</span></div><div><b>794</b><span>Engajamentos</span></div><div><b>112</b><span>Visualizações</span></div></div>
         <p class="cr-lead">Mostra o que ninguém vê: a central atendendo, a equipe saindo e o reparo sendo feito, com o dado de 90% das ocorrências atendidas antes do prazo.</p>
         <button class="cr-btn" type="button" onclick="toggleCr(this)"><span class="t-closed">Ver análise completa</span><span class="t-open">Recolher</span><i class="chev"></i></button>
       </div>
       <div class="cr-b">
-        <div class="apd">
-          <b>O que funcionou</b>
-          <p>É a peça que melhor traduz estrutura de serviço em imagem, e o argumento da manutenção descentralizada é forte para quem já ligou pedindo reparo. Mesmo com esforço de mídia baixo e poucos dias de veiculação, circulou por quase vinte mil impressões.</p>
-        </div>
-        <div class="apd">
-          <b>Ponto de atenção</b>
-          <p>Entrou no ar em 24 de agosto, com o ciclo quase fechado, e teve pouco tempo de rua. É também a única peça em resolução menor que as demais, o que aparece na tela do celular e pesa contra numa entrega majoritariamente mobile.</p>
-        </div>
-        <div class="apd">
-          <b>Resposta do público</b>
-          <p>Com poucos dias no ar, a peça não acumulou volume suficiente para uma leitura firme de posicionamento, e por isso não forçamos conclusão aqui. O que já dá para dizer é que a entrega seguiu o padrão do ciclo, quase toda em celular, e que o volume de conversa ficou muito abaixo do das outras peças.</p>
-        </div>
-        <div class="acao">
-          <b>Ação</b>
-          <p>Sugerimos reeditar em alta resolução, subir o dado dos 90% para a abertura e recolocar a peça no ar no começo do próximo ciclo, com tempo de veiculação cheio para uma leitura real de desempenho.</p>
-        </div>
+        <div class="apd"><b>O que funcionou</b><p>É a peça que melhor traduz estrutura de serviço em imagem: sem porta-voz, acompanha a ligação chegando na central, o drone mostrando a cidade dividida por regiões, a equipe em campo e o reparo sendo feito. O argumento da manutenção descentralizada é forte para quem já ligou pedindo reparo, e mesmo com esforço de mídia baixo a peça circulou por quase vinte mil impressões.</p></div>
+        <div class="apd"><b>Ponto de atenção</b><p>Entrou no ar em 24 de agosto, com o ciclo quase fechado, e teve pouco tempo de rua. É também a única peça em resolução menor que as demais, o que aparece na tela do celular e pesa contra numa entrega quase toda mobile.</p></div>
+        <div class="apd"><b>Resposta do público</b><p>O volume de conversa ficou muito abaixo do das outras peças, o que é esperado para poucos dias de veiculação e não permite conclusão sobre a recepção do conteúdo em si.</p></div>
+        <div class="apd"><b>Audiência e posicionamento</b><p>Com o tempo curto no ar, a peça não acumulou volume suficiente para uma leitura firme de posicionamento, e por isso não forçamos conclusão aqui. O que já dá para dizer é que a entrega seguiu o padrão do ciclo, quase toda em celular.</p></div>
+        <div class="acao"><b>Ação</b><p>Sugerimos reeditar em alta resolução, subir o dado dos 90% para a abertura e recolocar a peça no ar no começo do próximo ciclo, com tempo de veiculação cheio.</p></div>
       </div>
     </article>
 
@@ -449,6 +364,28 @@
   <div class="ib fade-in" style="margin-top:32px">
     <div class="ib-lbl">Sobre a leitura dos comentários</div>
     <div class="ib-txt">O volume de conversa apurado nas peças vem direto da plataforma: reações, comentários e novos seguidores por anúncio. A leitura do conteúdo dos comentários um a um depende de acesso autenticado à página, que não faz parte desta apuração, então o que trazemos aqui é volume de conversa, não análise de sentimento.</div>
+  </div>
+</section>
+
+<section class="section" id="publico">
+  <span class="sl purple">Público</span>
+  <h2 class="st fade-in">Quem foi alcançado</h2>
+  <p class="ss fade-in">Perfil de quem viu e de quem respondeu à campanha, apurado por faixa de idade e por gênero nas quatro linhas.</p>
+  <div class="chart-2">
+    <div class="chart-card fade-in">
+      <h3>Idade: quem viu e quem interagiu</h3>
+      <div class="cc-sub">Participação de cada faixa nas impressões e nos engajamentos</div>
+      <div class="chart-h"><canvas id="chIdade"></canvas></div>
+    </div>
+    <div class="chart-card fade-in">
+      <h3>Gênero</h3>
+      <div class="cc-sub">Participação nas impressões do ciclo</div>
+      <div class="chart-h sm"><canvas id="chGenero"></canvas></div>
+    </div>
+  </div>
+  <div class="ib fade-in">
+    <div class="ib-lbl">O contraste que orienta o próximo ciclo</div>
+    <div class="ib-txt">Quem é alcançado e quem responde não são as mesmas pessoas. A faixa de 18 a 34 anos concentrou a maior parte das impressões, mas respondeu por pouco mais de 10% das interações. Já o público de 55 anos ou mais, que recebeu bem menos entrega, respondeu por cerca de dois terços de tudo que foi engajamento no ciclo, com a faixa de 65 anos ou mais sozinha passando de 40%. A divisão por gênero foi equilibrada na entrega, com leve predominância masculina. A audiência é quase toda de celular, com Android bem à frente do iPhone e o computador sem relevância nenhuma.</div>
   </div>
 </section>
 
@@ -714,6 +651,16 @@
   <div class="footer-txt">Relatório produzido pela Esquina para DAE Jundiaí &middot; Agosto de 2026</div>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<script>
+Chart.defaults.animation=false;
+Chart.defaults.font.family="Inter, -apple-system, sans-serif";
+Chart.defaults.color="#888";
+const GRID={color:"rgba(0,0,0,.06)"};
+new Chart(document.getElementById('chDia'),{type:'line',data:{labels:['07/08', '08/08', '09/08', '10/08', '11/08', '12/08', '13/08', '14/08', '15/08', '16/08', '17/08', '18/08', '19/08', '20/08', '21/08', '22/08', '23/08', '24/08', '25/08', '26/08', '27/08', '28/08'],datasets:[{label:'Impressões',data:[2415, 6329, 10025, 9371, 7455, 8293, 9193, 17062, 15598, 28553, 21681, 21413, 18436, 24105, 23319, 19966, 26423, 61185, 42064, 5537, 29536, 11251],borderColor:'#1A3CFF',backgroundColor:'rgba(26,60,255,.10)',borderWidth:2.5,fill:true,tension:.35,pointRadius:3,pointBackgroundColor:'#1A3CFF'}]},options:{maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{backgroundColor:'#fff',titleColor:'#111',bodyColor:'#111',borderColor:'rgba(0,0,0,.1)',borderWidth:1,callbacks:{label:c=>c.parsed.y.toLocaleString('pt-BR')+' impressões'}}},scales:{y:{grid:GRID,ticks:{callback:v=>(v/1000)+'k'}},x:{grid:{display:false}}}}});
+new Chart(document.getElementById('chIdade'),{type:'bar',data:{labels:['18-24','25-34','35-44','45-54','55-64','65+'],datasets:[{label:'Impressões',data:[19.2,18.2,11.8,15.0,17.1,18.6],backgroundColor:'rgba(26,60,255,.75)',borderRadius:5},{label:'Engajamentos',data:[4.2,6.3,7.9,14.8,24.6,42.2],backgroundColor:'rgba(23,166,151,.85)',borderRadius:5}]},options:{maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{boxWidth:12,padding:14}},tooltip:{backgroundColor:'#fff',titleColor:'#111',bodyColor:'#111',borderColor:'rgba(0,0,0,.1)',borderWidth:1,callbacks:{label:c=>c.dataset.label+': '+String(c.parsed.y).replace('.',',')+'%'}}},scales:{y:{grid:GRID,ticks:{callback:v=>v+'%'}},x:{grid:{display:false}}}}});
+new Chart(document.getElementById('chGenero'),{type:'doughnut',data:{labels:['Mulheres','Homens'],datasets:[{data:[47.7,52.3],backgroundColor:['#7B2FBE','#1A3CFF'],borderColor:'#fff',borderWidth:3}]},options:{maintainAspectRatio:false,cutout:'62%',plugins:{legend:{position:'bottom',labels:{boxWidth:12,padding:14}},tooltip:{backgroundColor:'#fff',titleColor:'#111',bodyColor:'#111',borderColor:'rgba(0,0,0,.1)',borderWidth:1,callbacks:{label:c=>c.label+': '+String(c.parsed).replace('.',',')+'%'}}}}});
+</script>
 <script src="js/animations.js"></script>
 <script>
 function toggleCr(btn){
