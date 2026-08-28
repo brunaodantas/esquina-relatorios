@@ -192,28 +192,6 @@
     .status.ok{background:rgba(26,60,255,.08);color:var(--p)}
 
     /* Criativo showcase */
-    .perf-grid{display:grid;gap:20px;margin-top:22px}
-    .perf-grid.g3{grid-template-columns:repeat(3,1fr)}
-    .perf-grid.g2{grid-template-columns:repeat(2,1fr)}
-    .perf-grid.g1{grid-template-columns:1fr}
-    .perf-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;box-shadow:var(--sh);break-inside:avoid;display:flex;flex-direction:column}
-    .perf-card.wide{flex-direction:row}
-    .perf-card.wide .perf-media{width:340px;flex-shrink:0}
-    .perf-media{position:relative;background:#111;overflow:hidden}
-    .perf-media img{width:100%;height:300px;object-fit:cover;object-position:center top;display:block}
-    .perf-card.wide .perf-media img{height:100%}
-    .perf-body{padding:16px 18px;display:flex;flex-direction:column;flex:1}
-    .perf-top{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:10px}
-    .perf-rank{font-size:.58rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:3px 9px;border-radius:100px;white-space:nowrap}
-    .perf-rank.g{background:rgba(23,166,151,.12);color:var(--teal)}
-    .perf-rank.s{background:rgba(26,60,255,.08);color:var(--p)}
-    .perf-rank.b{background:rgba(123,47,190,.10);color:var(--purple)}
-    .perf-fmt{font-size:.58rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--tm);text-align:right}
-    .perf-title{font-size:.95rem;font-weight:700;color:var(--t1);padding-bottom:12px;border-bottom:1px solid var(--border);margin-bottom:12px;line-height:1.25}
-    .perf-metrics{display:grid;grid-template-columns:1fr 1fr;gap:14px 10px}
-    .perf-metric .v{font-size:1.2rem;font-weight:800;color:var(--t1);letter-spacing:-.02em;line-height:1.05}
-    .perf-metric .l{font-size:.57rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--tm);margin-top:3px}
-    .perf-note{font-size:.8rem;color:var(--t2);line-height:1.6;margin-top:12px;padding-top:12px;border-top:1px solid var(--border)}
 
     /* Card de texto (sem imagem) para criativos sem peça disponível */
     .tx-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:22px 24px;box-shadow:var(--sh);break-inside:avoid}
@@ -296,6 +274,31 @@
     .fade-in.visible{opacity:1;transform:translateY(0)}
     .g2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
 
+    /* ══ CARDS DE CRIATIVO (padrão boletim, sempre abertos) ══ */
+    .creatives{display:flex;flex-direction:column;gap:20px;margin-top:22px}
+    .cr{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);box-shadow:var(--sh);padding:22px 24px;break-inside:avoid}
+    .cr-h{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:4px}
+    .cr-title-row{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+    .cr-t{font-size:1.05rem;font-weight:800;letter-spacing:-.01em;color:var(--t1)}
+    .cr-link-inline{font-size:.76rem;font-weight:700;color:var(--p);text-decoration:none;white-space:nowrap}
+    .cr-link-inline:hover{text-decoration:underline}
+    .bd{font-size:.62rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:3px 10px;border-radius:100px;white-space:nowrap}
+    .bd.o{background:rgba(26,60,255,.10);color:var(--p)}
+    .bd.w{background:rgba(23,166,151,.12);color:var(--teal)}
+    .bd.g{background:rgba(0,0,0,.06);color:var(--tm)}
+    .ms{display:flex;gap:28px;flex-wrap:wrap;margin-top:14px}
+    .ms div{display:flex;flex-direction:column}
+    .ms b{font-size:1rem;font-weight:800;font-variant-numeric:tabular-nums;color:var(--t1)}
+    .ms span{font-size:.62rem;color:var(--tm);text-transform:uppercase;letter-spacing:.07em;font-weight:700;margin-top:2px}
+    .cr-body{padding-top:18px;margin-top:18px;border-top:1px solid var(--border)}
+    .tp{margin-top:14px;padding-top:12px;border-top:1px solid var(--border)}
+    .tp:first-child{margin-top:0;padding-top:0;border-top:none}
+    .tp b{display:block;font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--p);margin-bottom:6px}
+    .tp:nth-child(2) b{color:#B4690E}
+    .tp:nth-child(3) b{color:var(--teal)}
+    .tp:nth-child(4) b{color:var(--purple)}
+    .tp p{font-size:.88rem;color:var(--t2);line-height:1.7;margin:0}
+
     /* ══ SEÇÕES ABERTAS (dsec) ══ */
     .dsec{margin-top:48px}
     .dsec-head{display:block;padding-bottom:2px;border-bottom:1px solid var(--border)}
@@ -308,9 +311,9 @@
     .dtext+.dtext{margin-top:12px}
 
     @media(max-width:1024px){.enc-cards{grid-template-columns:repeat(2,1fr)}}
-    @media(max-width:900px){.dc-grid{grid-template-columns:1fr 1fr}.mm-stats{grid-template-columns:1fr;text-align:center}.mm-side{align-items:center}.perf-card.wide{flex-direction:column}.perf-card.wide .perf-media{width:100%}.perf-grid.g3,.perf-grid.g2{grid-template-columns:1fr 1fr}.tx-grid{grid-template-columns:1fr}}
+    @media(max-width:900px){.dc-grid{grid-template-columns:1fr 1fr}.mm-stats{grid-template-columns:1fr;text-align:center}.mm-side{align-items:center}.tx-grid{grid-template-columns:1fr}}
     @media(max-width:768px){.nav-chips{display:none}.enc-cards{grid-template-columns:1fr 1fr}.kpi-grid{grid-template-columns:1fr 1fr}.g2{grid-template-columns:1fr}.sd-inner{flex-direction:column}.sd-body{border-left:none;border-top:1px solid rgba(255,255,255,.15);padding-top:24px}}
-    @media(max-width:600px){.dc-grid{grid-template-columns:1fr}.enc-cards{grid-template-columns:1fr}.perf-grid.g3,.perf-grid.g2{grid-template-columns:1fr}}
+    @media(max-width:600px){.dc-grid{grid-template-columns:1fr}.enc-cards{grid-template-columns:1fr}}
     @media print{
       *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
       .nav,.btn-pdf{display:none!important}
@@ -585,47 +588,75 @@
     <div class="dsec-head">
       <div class="dsec-top">
         <h2>Segurança</h2>
-        <p class="dsum">Três vídeos, com <b>Canil da GM</b> como destaque de impressões entre eles</p>
+        <p class="dsum">Três vídeos da série <b>Operação GM 153</b>, com o Canil da GM como destaque do tema</p>
       </div>
     </div>
     <div class="dbody">
-      <p class="dtext" style="margin-top:0">Segurança foi o tema com a maior fatia do plano e o maior volume de entrega em Meta Ads: 584.841 impressões somando as três peças em vídeo. As três trabalham a mesma frente, o dia a dia da Guarda Municipal, mas cada uma abre de um jeito diferente, e é justamente a abertura que explica a diferença de desempenho entre elas.</p>
-      <div class="perf-grid g1" style="margin-top:22px">
-        <div class="perf-card wide">
-          <div class="perf-media"><img src="assets/criativo-operacao-gm.jpeg" alt="Guarda Municipal de Hortolândia com o Canil, vídeo de Segurança"/></div>
-          <div class="perf-body">
-            <div class="perf-top"><span class="perf-rank g">&#9733; Segurança</span><span class="perf-fmt">Meta Ads · Vídeo · 3 peças</span></div>
-            <div class="perf-title">Canil da Guarda Municipal</div>
-            <div class="perf-metrics">
-              <div class="perf-metric"><div class="v">584.841</div><div class="l">Impressões (3 vídeos)</div></div>
-              <div class="perf-metric"><div class="v">194.390</div><div class="l">Maior impressão entre os 3</div></div>
-              <div class="perf-metric"><div class="v">26.900</div><div class="l">Engajamento (3 vídeos)</div></div>
-              <div class="perf-metric"><div class="v">17.820</div><div class="l">Visualizações (3 vídeos)</div></div>
+      <p class="dtext" style="margin-top:0">Segurança foi o tema de maior volume de entrega em Meta Ads: 584.841 impressões somando as três peças em vídeo. As três trabalham a mesma frente, o dia a dia da Guarda Municipal, mas cada uma abre de um jeito diferente, e é justamente a abertura que explica a diferença de desempenho entre elas.</p>
+
+      <div class="creatives">
+
+        <div class="cr">
+          <div class="cr-h">
+            <div class="cr-title-row">
+              <span class="cr-t">Canil da Guarda Municipal</span>
+              <a class="cr-link-inline" href="https://www.facebook.com/permalink.php?story_fbid=2181615399449608&amp;id=360632640709196" target="_blank" rel="noopener">Ver a publicação no Facebook ↗</a>
             </div>
-            <div class="perf-note">A imagem acima é uma referência visual do tema; a leitura de cada peça está detalhada abaixo.</div>
+            <span class="bd o">Destaque do tema Segurança</span>
+          </div>
+          <div class="ms">
+            <div><b>194.390</b><span>Impressões da peça</span></div>
+            <div><b>584.841</b><span>Impressões do tema, 3 vídeos</span></div>
+            <div><b>37,5%</b><span>Fatia do plano no tema</span></div>
+          </div>
+          <div class="cr-b cr-body">
+            <div class="tp"><b>O que funcionou</b><p>A peça teve a leitura mais ampla do tema entre faixas de idade: o engajamento se espalhou de 18 a 24 anos até 65 ou mais, e o público de 45 anos ou mais respondeu por cerca de 37% das interações, proporção que nenhuma outra peça de Segurança alcançou. O tema também trabalhou com o menor esforço de mídia do ciclo, cerca de 22 exibições para cada engajamento.</p></div>
+            <div class="tp"><b>Ponto de atenção</b><p>O protagonismo fica quase todo no cão, e o guarda condutor aparece pouco. É a dupla, cão e condutor, que sustenta a história do Canil, e o lado humano é o que costuma puxar comentário e reação.</p></div>
+            <div class="tp"><b>Resposta do público</b><p>A reação veio mais em interação leve, curtida e clique, do que em conversa: foram pouquíssimos comentários e salvamentos para o volume entregue. Homens responderam por cerca de 54% do engajamento, com a entrega equilibrada entre homens e mulheres.</p></div>
+            <div class="tp"><b>Audiência e posicionamento</b><p>Cerca de 68% da entrega saiu em Reels e Stories do Instagram, e esta é a única peça de Segurança com participação relevante do Feed do Facebook, 15%. A audiência é quase toda de celular, com predominância de Android, 62%. Como o corte vertical carrega a maior parte da entrega, sugerimos produzir a peça já em 9:16 como versão principal e manter uma versão em proporção de Feed para o Facebook, onde ela é a peça do tema que melhor circula.</p></div>
           </div>
         </div>
-      </div>
 
-      <div class="tx-grid" style="margin-top:24px">
-        <div class="tx-card">
-          <div class="tx-card-ttl">Canil da Guarda Municipal</div>
-          <div class="tx-card-fmt">Vídeo · 194.390 impressões, o maior número entre as três peças do tema</div>
-          <div class="tx-block"><b>O que funcionou</b><p>Abre com um gancho emocional forte, centrado no cão farejando em ação real: busca, abordagem em área comercial, interação com criança em evento comunitário, com legenda embutida linha a linha. Trazer um protagonista não humano é mais raro e mais chamativo no feed, e ajuda a peça a se destacar num ambiente saturado de conteúdo institucional.</p></div>
-          <div class="tx-block at"><b>O que pode melhorar</b><p>O rosto do condutor quase não aparece. Sugerimos dar mais espaço ao guarda humano ao lado do cão nas próximas peças, o que tende a render ainda mais engajamento. Vale manter a peça entre 15 e 45 segundos, com versão horizontal e vertical, para funcionar bem em qualquer posicionamento.</p></div>
+        <div class="cr">
+          <div class="cr-h">
+            <div class="cr-title-row">
+              <span class="cr-t">Guardiã Maria da Penha</span>
+              <a class="cr-link-inline" href="https://www.facebook.com/permalink.php?story_fbid=1721424932500013&amp;id=360632640709196" target="_blank" rel="noopener">Ver a publicação no Facebook ↗</a>
+            </div>
+          </div>
+          <div class="ms">
+            <div><b>194.819</b><span>Impressões da peça</span></div>
+            <div><b>584.841</b><span>Impressões do tema, 3 vídeos</span></div>
+            <div><b>37,5%</b><span>Fatia do plano no tema</span></div>
+          </div>
+          <div class="cr-b cr-body">
+            <div class="tp"><b>O que funcionou</b><p>A peça conversa diretamente com a pauta do Agosto Lilás, que corria no mesmo período, e isso aparece no perfil de quem viu: foi a peça de Segurança com maior participação feminina na entrega, cerca de 59%.</p></div>
+            <div class="tp"><b>Ponto de atenção</b><p>O engajamento ficou abaixo do das outras duas peças do tema, com cerca de 26 exibições para cada interação, contra 22 nas demais. Foi também a única das três sem cliques no link, sinal de que a peça informou, mas não levou o público a buscar mais.</p></div>
+            <div class="tp"><b>Resposta do público</b><p>A resposta veio concentrada nas faixas mais jovens: de 18 a 34 anos respondeu por cerca de 71% das interações, enquanto o público de 45 anos ou mais, mais próximo do tema de proteção à mulher, participou pouco.</p></div>
+            <div class="tp"><b>Audiência e posicionamento</b><p>Cerca de 84% da entrega saiu em Stories e Reels do Instagram, com o Stories do Instagram sozinho levando 52%. O Feed do Facebook ficou em 1,5%. Sugerimos tratar o vertical de tela cheia como o formato principal desta peça, com a abertura pensada para os primeiros segundos do Stories, e reforçar a entrega no Feed do Facebook, onde se concentra o público de mais idade que o tema busca.</p></div>
+          </div>
         </div>
-        <div class="tx-card">
-          <div class="tx-card-ttl">Guardiã Maria da Penha</div>
-          <div class="tx-card-fmt">Vídeo · 194.819 impressões</div>
-          <div class="tx-block"><b>O que funcionou</b><p>Abre de forma que passa credibilidade institucional, com duas guardas municipais em pose de dupla protagonista. Usa ponto de vista de câmera corporal dentro da viatura, no efeito de acompanhar o plantão. A presença feminina forte na linha de frente da segurança pública reforça a mensagem do programa de proteção à mulher e conversa diretamente com a pauta do Agosto Lilás, que corria no mesmo período.</p></div>
-          <div class="tx-block at"><b>O que pode melhorar</b><p>O gancho de abertura é menos imediato que o do Canil da Guarda Municipal, que abre direto em ação. Sugerimos aproximar a abertura de uma cena em movimento, como fez o Canil, o que tende a reter mais atenção nos primeiros segundos.</p></div>
+
+        <div class="cr">
+          <div class="cr-h">
+            <div class="cr-title-row">
+              <span class="cr-t">Apresentação da Guarda Municipal</span>
+              <a class="cr-link-inline" href="https://www.facebook.com/permalink.php?story_fbid=941011252348152&amp;id=360632640709196" target="_blank" rel="noopener">Ver a publicação no Facebook ↗</a>
+            </div>
+          </div>
+          <div class="ms">
+            <div><b>195.632</b><span>Impressões da peça</span></div>
+            <div><b>584.841</b><span>Impressões do tema, 3 vídeos</span></div>
+            <div><b>37,5%</b><span>Fatia do plano no tema</span></div>
+          </div>
+          <div class="cr-b cr-body">
+            <div class="tp"><b>O que funcionou</b><p>Foi a peça de Segurança com maior engajamento e maior volume de cliques no link, o que indica que a apresentação da série cumpriu o papel de porta de entrada: quem viu quis saber mais. O esforço de mídia foi o menor entre as três, cerca de 21 exibições para cada engajamento.</p></div>
+            <div class="tp"><b>Ponto de atenção</b><p>Por ser peça de apresentação, ela abre pela identidade institucional e não por uma cena, e o público de mais idade participou pouco: 55 anos ou mais respondeu por cerca de 5% das interações, contra 37% na peça do Canil.</p></div>
+            <div class="tp"><b>Resposta do público</b><p>Homens responderam por cerca de 63% do engajamento, mesmo com a entrega equilibrada entre homens e mulheres. A reação se concentrou de 18 a 34 anos, cerca de dois terços do total.</p></div>
+            <div class="tp"><b>Audiência e posicionamento</b><p>Cerca de 86% da entrega saiu em Stories e Reels do Instagram, e o Feed do Facebook ficou em 2%. A audiência é quase toda de celular, 56% Android e 44% iPhone. Sendo uma peça de abertura de série, que precisa ser vista inteira, sugerimos produzi-la em 9:16 e com duração entre 15 e 45 segundos, formato em que o Stories e o Reels entregam a peça sem corte.</p></div>
+          </div>
         </div>
-        <div class="tx-card">
-          <div class="tx-card-ttl">Apresentação da Guarda Municipal</div>
-          <div class="tx-card-fmt">Vídeo · 195.632 impressões</div>
-          <div class="tx-block"><b>O que funcionou</b><p>Funciona como vinheta de anúncio do tema, com a marca da Guarda Municipal ganhando protagonismo desde o início. Cumpre bem o papel de apresentar a corporação para quem ainda não conhecia o trabalho dela na cidade.</p></div>
-          <div class="tx-block at"><b>O que pode melhorar</b><p>O gancho não é tão forte quanto o das outras duas peças, que abrem direto em cena. Sugerimos publicar as peças em sequência de vídeos no Meta Ads, formato pensado para conteúdo encadeado, o que ajuda a reter a atenção mesmo numa abertura mais institucional. Em vídeos futuros do tema, manter a duração entre 15 e 45 segundos, com versões horizontal e vertical.</p></div>
-        </div>
+
       </div>
     </div>
   </div>
@@ -634,24 +665,32 @@
     <div class="dsec-head">
       <div class="dsec-top">
         <h2>Nova Data Show Diogo Nogueira</h2>
-        <p class="dsum">Peça estática, mas com a <b>maior impressão do ciclo, 283.860</b></p>
+        <p class="dsum">Peça de card, concentrada na linha de <b>impressões</b></p>
       </div>
     </div>
     <div class="dbody">
-      <p class="dtext" style="margin-top:0">O reagendamento do show exigia uma comunicação de utilidade pública: avisar, o mais rápido e para o maior número de pessoas possível, que a data tinha mudado. A peça foi construída para isso, e é a que mais impactou gente em todo o ciclo, mesmo sendo a única sem vídeo.</p>
-      <div class="perf-grid g1" style="margin-top:22px">
-        <div class="perf-card wide">
-          <div class="perf-media"><img src="assets/criativo-diogo-nogueira.jpg" alt="Nova data do show de Diogo Nogueira, foto do artista com texto de reagendamento"/></div>
-          <div class="perf-body">
-            <div class="perf-top"><span class="perf-rank g">&#9733; Maior impressão do ciclo</span><span class="perf-fmt">Meta Ads · Imagem</span></div>
-            <div class="perf-title">Nova Data Show Diogo Nogueira</div>
-            <div class="perf-metrics">
-              <div class="perf-metric"><div class="v">283.860</div><div class="l">Impressões</div></div>
-              <div class="perf-metric"><div class="v">8.185</div><div class="l">Engajamento</div></div>
-              <div class="perf-metric"><div class="v">8.401</div><div class="l">Visualização retargeting</div></div>
+      <p class="dtext" style="margin-top:0">O reagendamento do show exigia uma comunicação de utilidade pública: avisar, o mais rápido e para o maior número de pessoas possível, que a data tinha mudado. A peça foi construída para isso e é a que mais impactou pessoas dentro do seu tema. Por ser um card, e não um vídeo, toda a força dela se concentrou na linha de impressões, onde entregou 283.860.</p>
+
+      <div class="creatives">
+        <div class="cr">
+          <div class="cr-h">
+            <div class="cr-title-row">
+              <span class="cr-t">Nova Data Show Diogo Nogueira</span>
+              <a class="cr-link-inline" href="https://www.facebook.com/permalink.php?story_fbid=1488210866675417&amp;id=360632640709196" target="_blank" rel="noopener">Ver a publicação no Facebook ↗</a>
             </div>
-            <div class="tx-block" style="margin-top:14px"><b>O que funcionou</b><p>Foto do artista com texto anunciando o reagendamento do show para 04/09. É a maior impressão entre todos os temas do ciclo, mesmo sendo uma peça estática: comunicação direta e objetiva de uma mudança de agenda, exatamente o que o público precisava saber. O tema também tinha o segundo maior percentual do plano, 15%, o que ajudou a levar o aviso longe.</p></div>
-            <div class="tx-block at"><b>O que pode melhorar</b><p>Sugerimos testar um formato com leve animação ou contagem regressiva, que tende a reter mais atenção que uma foto parada quando o assunto é aguardar a nova data.</p></div>
+            <span class="bd o">Maior alcance dentro do tema</span>
+          </div>
+          <div class="ms">
+            <div><b>283.860</b><span>Impressões</span></div>
+            <div><b>8.185</b><span>Engajamento</span></div>
+            <div><b>8.401</b><span>Visualização retargeting</span></div>
+            <div><b>842</b><span>Comentários</span></div>
+          </div>
+          <div class="cr-b cr-body">
+            <div class="tp"><b>O que funcionou</b><p>O aviso de reagendamento chegou rápido e longe, que é o resultado que importa numa comunicação de utilidade pública com data marcada. Por ser um card, e não um vídeo, a peça concentrou toda a força na linha de impressões, onde entregou 283.860, o maior alcance dentro do tema.</p></div>
+            <div class="tp"><b>Ponto de atenção</b><p>O esforço de mídia por interação ficou acima do de Segurança: cerca de 35 exibições para cada engajamento, contra 22. O card avisa bem, mas não sustenta a atenção como o vídeo.</p></div>
+            <div class="tp"><b>Resposta do público</b><p>O volume de comentários foi o maior do ciclo, 842 no total, concentrado em reações à data e à atração escolhida. É um tema que naturalmente divide opinião, e a conversa aparece em volume alto sem que isso signifique adesão ao evento. Mulheres responderam por cerca de 63% das interações, e a faixa de 18 a 34 anos por cerca de 57%. Sugerimos, para peças de show e agenda cultural, avaliar antes o quanto a atração tende a dividir a opinião pública, e tratar essas peças como comunicação de aviso, medindo alcance e não engajamento.</p></div>
+            <div class="tp"><b>Audiência e posicionamento</b><p>Cerca de 75% da entrega saiu em posicionamentos verticais de tela cheia: Stories do Facebook (28%), Reels do Instagram (27%) e Stories do Instagram (20%). O Feed do Facebook e o Feed do Instagram somaram apenas 24%. Este é o cruzamento mais importante da peça: ela é uma imagem estática pensada para Feed, mas três de cada quatro exibições aconteceram onde o formato natural é o vertical de tela cheia. Sugerimos produzir a versão 9:16 do aviso, com a data em destaque no primeiro quadro, para que a peça ocupe a tela inteira onde ela de fato está sendo entregue. A audiência é predominantemente Android, 68%.</p></div>
           </div>
         </div>
       </div>
@@ -666,13 +705,28 @@
       </div>
     </div>
     <div class="dbody">
-      <p class="dtext" style="margin-top:0">Com a menor fatia do plano, 3,75%, e uma janela de sete dias, o tema de asfalto entrou no fim do mês para mostrar o andamento das obras. Entregou 192.664 impressões em Meta Ads, à frente de temas com verba maior, o que indica que o assunto obra na rua encontra público na cidade.</p>
-      <div class="tx-grid g1" style="margin-top:22px">
-        <div class="tx-card">
-          <div class="tx-card-ttl">Asfalto · Infraestrutura</div>
-          <div class="tx-card-fmt">Vídeo · sem imagem disponível para reprodução neste relatório</div>
-          <div class="tx-block"><b>O que funcionou</b><p>Vídeo funcional, com boa variedade visual, alternando rolo compactador em ação, plano aéreo de drone e a equipe finalizando o serviço, com números fortes sobrepostos ("115 km de vias recuperadas desde 2021", "mais de R$2,4 milhões investidos"). O plano aéreo de drone é o diferencial visual da peça, quebrando a monotonia de "obra na rua" comum nesse tipo de conteúdo.</p></div>
-          <div class="tx-block at"><b>O que pode melhorar</b><p>Aproximar mais do morador é uma via para a próxima peça do tema. Sugerimos trazer alguém da comunidade em cena ao lado da equipe de obra, e manter a duração entre 15 e 45 segundos, com versão horizontal e vertical.</p></div>
+      <p class="dtext" style="margin-top:0">O tema de asfalto correu de 21 a 27 de agosto e entregou 192.664 impressões em Meta Ads. Entrou no fim do mês para mostrar o andamento das obras, e o volume alcançado numa janela de sete dias indica que o assunto obra na rua encontra público na cidade.</p>
+
+      <div class="creatives">
+        <div class="cr">
+          <div class="cr-h">
+            <div class="cr-title-row">
+              <span class="cr-t">Asfalto · Infraestrutura</span>
+              <a class="cr-link-inline" href="https://www.facebook.com/permalink.php?story_fbid=1576273227210961&amp;id=360632640709196" target="_blank" rel="noopener">Ver a publicação no Facebook ↗</a>
+            </div>
+            <span class="bd g">Sete dias de veiculação</span>
+          </div>
+          <div class="ms">
+            <div><b>192.664</b><span>Impressões</span></div>
+            <div><b>3,75%</b><span>Fatia do plano</span></div>
+            <div><b>7 dias</b><span>Janela de veiculação</span></div>
+          </div>
+          <div class="cr-b cr-body">
+            <div class="tp"><b>O que funcionou</b><p>Numa janela de apenas sete dias, o tema alcançou volume comparável ao de temas que correram o mês inteiro, o que indica que obra na rua encontra público na cidade. Foi também a peça com maior volume de cliques no link entre as de vídeo.</p></div>
+            <div class="tp"><b>Ponto de atenção</b><p>O engajamento se concentrou em interação leve, com pouquíssimas reações para o volume entregue. A peça mostra o serviço e o número, mas não mostra quem usa a via depois de pronta, que é o elo mais direto com o morador.</p></div>
+            <div class="tp"><b>Resposta do público</b><p>É a peça de resposta mais madura do ciclo: o público de 55 anos ou mais respondeu por cerca de 18% das interações, a maior proporção entre todas as peças. Homens responderam por cerca de 59% do engajamento.</p></div>
+            <div class="tp"><b>Audiência e posicionamento</b><p>Cerca de 82% da entrega saiu em Stories (46%) e Reels (36%) do Instagram, contra 14% no Feed do Instagram e 4% no Feed do Facebook. Sugerimos produzir a peça em 9:16 como versão principal, já que o vertical de tela cheia carrega quase toda a entrega, e abrir com o morador em cena ao lado da equipe de obra. A audiência é quase toda de celular, com 55% de Android.</p></div>
+          </div>
         </div>
       </div>
     </div>
@@ -686,13 +740,28 @@
       </div>
     </div>
     <div class="dbody">
-      <p class="dtext" style="margin-top:0">A peça de Agosto Lilás correu de 10 a 27 de agosto com 10% do plano e entregou 117.030 impressões em Meta Ads. É o tema em que o cuidado com o tom importa mais, porque trata de violência contra a mulher, e a construção do vídeo mostra essa preocupação.</p>
-      <div class="tx-grid g1" style="margin-top:22px">
-        <div class="tx-card">
-          <div class="tx-card-ttl">Agosto Lilás</div>
-          <div class="tx-card-fmt">Vídeo · sem imagem disponível para reprodução neste relatório</div>
-          <div class="tx-block"><b>O que funcionou</b><p>Alterna um depoimento em tom pessoal, mulher sorrindo em ambiente externo e acolhedor, com a fala institucional de uma guarda municipal explicando sinais de violência. Esse equilíbrio entre humano e informativo é o que o tema pede, e a mensagem se conecta diretamente com os 20 anos da Lei Maria da Penha, celebrados pela própria Prefeitura na abertura do Agosto Lilás.</p></div>
-          <div class="tx-block at"><b>O que pode melhorar</b><p>Para mais agilidade na retenção, sugerimos abrir o vídeo já em cena real, com o depoimento ou a fala institucional, deixando o card de texto com o título da campanha para reforçar a mensagem no meio ou no fim, não como abertura. Manter a duração entre 15 e 45 segundos, com versão horizontal e vertical.</p></div>
+      <p class="dtext" style="margin-top:0">A peça de Agosto Lilás correu de 10 a 27 de agosto e entregou 117.030 impressões em Meta Ads.</p>
+
+      <div class="creatives">
+        <div class="cr">
+          <div class="cr-h">
+            <div class="cr-title-row">
+              <span class="cr-t">Agosto Lilás</span>
+              <a class="cr-link-inline" href="https://www.facebook.com/permalink.php?story_fbid=1052560254027410&amp;id=360632640709196" target="_blank" rel="noopener">Ver a publicação no Facebook ↗</a>
+            </div>
+          </div>
+          <div class="ms">
+            <div><b>117.030</b><span>Impressões</span></div>
+            <div><b>4.468</b><span>Engajamento</span></div>
+            <div><b>4.725</b><span>Visualização</span></div>
+            <div><b>10%</b><span>Fatia do plano</span></div>
+          </div>
+          <div class="cr-b cr-body">
+            <div class="tp"><b>O que funcionou</b><p>A peça alcançou o público que a pauta pede: mulheres responderam por cerca de 56% da entrega e por 56% do engajamento, a maior participação feminina entre todas as peças do ciclo. O esforço de mídia ficou em cerca de 26 exibições por engajamento, abaixo da média dos temas de agenda.</p></div>
+            <div class="tp"><b>Ponto de atenção</b><p>Foi a única peça de vídeo do ciclo sem cliques no link, e a de menor volume de reações. Num tema que oferece uma rede de proteção, com CRAM, delegacia e o programa Guardiã Maria da Penha, faltou um caminho claro para quem viu e precisa de ajuda.</p></div>
+            <div class="tp"><b>Resposta do público</b><p>A resposta veio das faixas mais jovens, de 18 a 34 anos, cerca de 61% das interações. O público de 45 anos ou mais participou pouco, cerca de 22%.</p></div>
+            <div class="tp"><b>Audiência e posicionamento</b><p>Metade da entrega saiu em Stories do Instagram, com Reels em 23% e Feed do Instagram em 24%, o maior share de Feed entre as peças de vídeo do ciclo. Sugerimos duas versões da mesma peça: uma vertical de tela cheia para o Stories, abrindo já no depoimento, e uma em proporção de Feed com o canal de ajuda visível em texto, já que é no Feed do Instagram que a peça tem espaço para a informação de serviço.</p></div>
+          </div>
         </div>
       </div>
     </div>
@@ -702,17 +771,32 @@
     <div class="dsec-head">
       <div class="dsec-top">
         <h2>Semana Cultural</h2>
-        <p class="dsum">A peça de maior alcance foi um post de texto e link, sem vídeo próprio</p>
+        <p class="dsum">Tema de agenda, com janela curta de oito dias</p>
       </div>
     </div>
     <div class="dbody">
-      <p class="dtext" style="margin-top:0">A Semana Cultural teve oito dias de veiculação, de 01 a 08 de agosto, com 12,5% do plano, e entregou 143.923 impressões em Meta Ads. É um tema de agenda, com data marcada e vida curta, e a peça mais forte do período refletiu isso.</p>
-      <div class="tx-grid g1" style="margin-top:22px">
-        <div class="tx-card">
-          <div class="tx-card-ttl">Semana Cultural</div>
-          <div class="tx-card-fmt">Post de texto e link · sem imagem própria além do card padrão</div>
-          <div class="tx-block"><b>O que funcionou</b><p>A peça de maior alcance do tema foi a chamada de divulgação da programação completa da Semana Cultural, texto e link direto para o site da Prefeitura. Funcionou bem como aviso de agenda, entregando o essencial, o que acontece, quando e onde, sem exigir do público mais que alguns segundos de leitura.</p></div>
-          <div class="tx-block at"><b>O que pode melhorar</b><p>Para reter mais atenção no feed, sugerimos testar uma peça em vídeo curto de "prepare-se" mostrando um recorte da programação, entre 15 e 45 segundos, em versão horizontal e vertical.</p></div>
+      <p class="dtext" style="margin-top:0">A Semana Cultural teve oito dias de veiculação, de 01 a 08 de agosto, e entregou 143.923 impressões em Meta Ads. É um tema de agenda, com data marcada e vida curta, e a peça mais forte do período refletiu isso.</p>
+
+      <div class="creatives">
+        <div class="cr">
+          <div class="cr-h">
+            <div class="cr-title-row">
+              <span class="cr-t">Semana Cultural</span>
+              <a class="cr-link-inline" href="https://www.facebook.com/permalink.php?story_fbid=1474762391353598&amp;id=360632640709196" target="_blank" rel="noopener">Ver a publicação no Facebook ↗</a>
+            </div>
+          </div>
+          <div class="ms">
+            <div><b>143.923</b><span>Impressões</span></div>
+            <div><b>3.151</b><span>Engajamento</span></div>
+            <div><b>5.504</b><span>Visualização</span></div>
+            <div><b>12,5%</b><span>Fatia do plano</span></div>
+          </div>
+          <div class="cr-b cr-body">
+            <div class="tp"><b>O que funcionou</b><p>Como aviso de agenda, funcionou: entregou o essencial, o que acontece, quando e onde, e levou o público ao site da Prefeitura pelo link, tudo em poucos segundos de leitura.</p></div>
+            <div class="tp"><b>Ponto de atenção</b><p>Foi a peça de maior esforço de mídia do ciclo, cerca de 46 exibições para cada engajamento, contra 22 em Segurança. O aviso chegou, mas mobilizou pouco.</p></div>
+            <div class="tp"><b>Resposta do público</b><p>A resposta foi bastante jovem: de 18 a 24 anos respondeu por cerca de 56% das interações, e de 25 a 34 anos por mais 28%. Homens responderam por cerca de 57% do engajamento.</p></div>
+            <div class="tp"><b>Audiência e posicionamento</b><p>Cerca de 90% da entrega saiu em Reels (56%) e Stories (35%) do Instagram, e apenas 8% no Feed do Instagram e 2% no Feed do Facebook. A entrega se concentrou em posicionamentos de vídeo vertical em tela cheia, e não no Feed. Sugerimos produzir a peça em vídeo 9:16, entre 15 e 45 segundos, com um recorte da programação, que é o formato que o Reels e o Stories pedem.</p></div>
+          </div>
         </div>
       </div>
     </div>
@@ -722,17 +806,32 @@
     <div class="dsec-head">
       <div class="dsec-top">
         <h2>Planeta Rock</h2>
-        <p class="dsum">A peça de maior alcance também foi um post de texto e link, sem vídeo próprio</p>
+        <p class="dsum">Mesma janela curta da Semana Cultural, de 01 a 08 de agosto</p>
       </div>
     </div>
     <div class="dbody">
-      <p class="dtext" style="margin-top:0">Planeta Rock dividiu a mesma janela curta da Semana Cultural, de 01 a 08 de agosto, com os mesmos 12,5% do plano, e entregou 133.528 impressões em Meta Ads. Os dois temas de agenda cultural do mês seguiram a mesma lógica de comunicação e tiveram o mesmo tipo de peça em destaque.</p>
-      <div class="tx-grid g1" style="margin-top:22px">
-        <div class="tx-card">
-          <div class="tx-card-ttl">Planeta Rock</div>
-          <div class="tx-card-fmt">Post de texto e link · sem imagem própria além do card padrão</div>
-          <div class="tx-block"><b>O que funcionou</b><p>A peça de maior alcance do tema foi a contagem regressiva para o festival, texto direto sobre a data, o local e a entrada gratuita mediante doação de alimento. Funcionou bem como aviso de agenda, com a informação prática na frente e a chamada de urgência no fim.</p></div>
-          <div class="tx-block at"><b>O que pode melhorar</b><p>Para reter mais atenção no feed, sugerimos testar uma peça em vídeo curto de "prepare-se", com um recorte de bandas ou do line-up, entre 15 e 45 segundos, em versão horizontal e vertical.</p></div>
+      <p class="dtext" style="margin-top:0">Planeta Rock dividiu a mesma janela curta da Semana Cultural, de 01 a 08 de agosto, e entregou 133.528 impressões em Meta Ads. Os dois temas de agenda cultural do mês seguiram a mesma lógica de comunicação e tiveram o mesmo tipo de peça em destaque.</p>
+
+      <div class="creatives">
+        <div class="cr">
+          <div class="cr-h">
+            <div class="cr-title-row">
+              <span class="cr-t">Planeta Rock</span>
+              <a class="cr-link-inline" href="https://www.facebook.com/permalink.php?story_fbid=1478127677683736&amp;id=360632640709196" target="_blank" rel="noopener">Ver a publicação no Facebook ↗</a>
+            </div>
+          </div>
+          <div class="ms">
+            <div><b>133.528</b><span>Impressões</span></div>
+            <div><b>3.141</b><span>Engajamento</span></div>
+            <div><b>6.858</b><span>Visualização</span></div>
+            <div><b>12,5%</b><span>Fatia do plano</span></div>
+          </div>
+          <div class="cr-b cr-body">
+            <div class="tp"><b>O que funcionou</b><p>A contagem regressiva com data, local e entrada gratuita mediante doação de alimento entregou a informação prática na frente e a urgência no fim, e alcançou exatamente o público do festival.</p></div>
+            <div class="tp"><b>Ponto de atenção</b><p>Assim como na Semana Cultural, o esforço de mídia ficou alto, cerca de 43 exibições para cada engajamento. A peça cumpre o aviso, mas não segura a atenção.</p></div>
+            <div class="tp"><b>Resposta do público</b><p>É a peça de público mais jovem do ciclo: de 18 a 24 anos respondeu por cerca de 64% das interações. Homens responderam por cerca de 56% do engajamento.</p></div>
+            <div class="tp"><b>Audiência e posicionamento</b><p>Cerca de 84% da entrega saiu em Reels (62%) e Stories (22%) do Instagram, com 16% no Feed do Instagram e presença praticamente nula no Facebook. O Reels sozinho levou quase dois terços da entrega, e é onde está o público de 18 a 24 anos que respondeu à peça. Sugerimos produzir a peça em vídeo 9:16 com recorte do line-up, entre 15 e 45 segundos, formato nativo do Reels. A audiência é predominantemente Android, 65%.</p></div>
+          </div>
         </div>
       </div>
     </div>
@@ -759,7 +858,7 @@
       </div>
     </div>
     <div class="dbody">
-      <p class="dtext" style="margin-top:0">A tabela abaixo é informativa: mostra como a entrega do Meta Ads se distribuiu entre os sete temas do mês. A meta contratada é do plano inteiro, não de cada tema, por isso a leitura aqui é de distribuição, não de cumprimento de meta. Segurança concentra o maior volume em todas as três métricas, resultado direto de ter recebido 37,5% do plano e de ter corrido por quase todo o mês.</p>
+      <p class="dtext" style="margin-top:0">A tabela abaixo é informativa: mostra como a entrega do Meta Ads se distribuiu entre os sete temas do mês. A meta contratada é do plano inteiro, não de cada tema, por isso a leitura aqui é de distribuição, não de cumprimento de meta. Segurança concentra o maior volume em todas as três métricas, por ter corrido com três peças ao longo de quase todo o mês.</p>
       <div class="chart-box fade-in" style="margin-top:22px">
         <div class="chart-title no-line" style="justify-content:space-between;flex-wrap:wrap;gap:10px">
           <span>Meta Ads por tema em agosto</span>
@@ -903,14 +1002,14 @@
         <div class="dc-n">02</div>
         <div class="dc-m">Vídeo à frente do texto</div>
         <div class="dc-ttl">Segurança e conscientização renderam mais em vídeo</div>
-        <div class="dc-txt">Nos temas de segurança e conscientização, como os vídeos de Segurança e Agosto Lilás, o formato vídeo superou os posts de texto e link em capacidade de prender a atenção, mostrando ação real em vez de apenas anunciar a pauta. É uma pista clara de onde vale concentrar produção nos temas que dependem de convencimento, não só de aviso.</div>
+        <div class="dc-txt">Nos temas de segurança e conscientização, como os vídeos de Segurança e Agosto Lilás, o vídeo prendeu mais a atenção, mostrando ação real em vez de apenas anunciar a pauta. É uma pista clara de onde vale concentrar produção nos temas que dependem de convencimento, não só de aviso.</div>
       </div>
       <div class="dc">
         <div class="dc-acc t"></div>
         <div class="dc-n">03</div>
         <div class="dc-m">Planeta Rock e Semana Cultural</div>
-        <div class="dc-ttl">Agenda de evento ainda depende de texto e link</div>
-        <div class="dc-txt">Nos dois temas de agenda cultural, as peças de maior alcance foram posts de texto e link, sem vídeo ou imagem própria. Funcionaram como aviso, entregando data, local e condição de entrada, mas não geraram a mesma conexão que os vídeos de outros temas do ciclo. Os dois tiveram janela curta, de oito dias, o que também limita o tempo de maturação de uma peça mais elaborada.</div>
+        <div class="dc-ttl">Agenda de evento pede peça em vídeo vertical</div>
+        <div class="dc-txt">Nos dois temas de agenda cultural, a entrega se concentrou em Reels e Stories do Instagram, posicionamentos de vídeo vertical. As peças cumpriram o aviso, entregando data, local e condição de entrada, mas não geraram a mesma conexão que os vídeos de outros temas do ciclo. Sugerimos, para a próxima agenda, uma peça em 9:16 já pensada para esses posicionamentos.</div>
       </div>
       <div class="dc">
         <div class="dc-acc b"></div>
