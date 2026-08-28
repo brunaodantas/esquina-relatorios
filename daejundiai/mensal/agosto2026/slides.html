@@ -15,7 +15,7 @@ h2{font-size:2.1rem;font-weight:800;letter-spacing:-.02em;line-height:1.1;color:
 .dark{background:var(--navy)}
 .dark h2{color:#fff}.dark .ss{color:rgba(255,255,255,.72)}.dark .sl{color:#8FA8FF}
 .cap-sub{font-size:1.05rem;color:rgba(255,255,255,.8);margin-top:22px;line-height:1.6}
-.badge{display:inline-flex;align-items:center;gap:8px;padding:7px 16px;border-radius:100px;background:rgba(255,255,255,.12);color:#fff;font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:26px}
+.badge{align-self:flex-start;display:inline-flex;align-items:center;gap:8px;padding:7px 16px;border-radius:100px;background:rgba(255,255,255,.12);color:#fff;font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:26px}
 .logo{height:30px;position:absolute;top:44px;right:72px}
 .logo-d{background:#fff;padding:7px 12px;border-radius:9px;box-sizing:content-box}
 .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-bottom:24px}
@@ -88,30 +88,44 @@ td.n{font-variant-numeric:tabular-nums;font-weight:700}
 .ch-h.sm{height:260px}
 .ch-h canvas{width:100%!important;height:100%!important}
 .ch2{display:grid;grid-template-columns:1.7fr 1fr;gap:18px}
+.logo-box{align-self:flex-start;display:inline-flex;align-items:center;justify-content:center;background:#fff;border-radius:12px;padding:14px 20px;margin-bottom:24px;box-shadow:0 6px 24px rgba(0,0,0,.3)}
+.logo-box img{height:44px;width:auto;display:block}
+.cap-kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:34px;max-width:860px}
+.cap-kpis div{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:12px;padding:16px 18px}
+.cap-kpis b{display:block;font-size:1.9rem;font-weight:800;color:#fff;letter-spacing:-.02em}
+.cap-kpis span{display:block;font-size:.66rem;letter-spacing:.09em;text-transform:uppercase;color:rgba(255,255,255,.7);margin-top:4px}
+.rk3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.rkc{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:22px 24px;box-shadow:0 2px 10px rgba(0,0,0,.05)}
+.rkc h3{font-size:.98rem;font-weight:800;margin-bottom:2px}
+.rkc .rs{font-size:.7rem;color:var(--tm);margin-bottom:14px}
+.rkc ol{list-style:none;counter-reset:r}
+.rkc li{counter-increment:r;display:flex;gap:11px;padding:10px 0;border-top:1px solid var(--border)}
+.rkc li:first-child{border-top:none}
+.rkc li::before{content:counter(r);flex:0 0 21px;height:21px;border-radius:50%;background:rgba(26,60,255,.10);color:var(--p);font-size:.66rem;font-weight:800;display:flex;align-items:center;justify-content:center}
+.rkc .n1{display:block;font-size:.82rem;font-weight:700;line-height:1.3}
+.rkc .n2{display:block;font-size:.72rem;color:var(--t2);margin-top:2px;line-height:1.4}
+.rkc.off{background:var(--bg);border-style:dashed}
+.rkc.off p{font-size:.76rem;color:var(--t2);line-height:1.55}
+.hip3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.hipc{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:22px 24px;box-shadow:0 2px 10px rgba(0,0,0,.05)}
+.hipc .q{font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:var(--purple);margin-bottom:7px}
+.hipc h3{font-size:.98rem;font-weight:800;margin-bottom:7px;line-height:1.3}
+.hipc p{font-size:.8rem;color:var(--t2);line-height:1.55}
 </style></head><body>
 <!-- 1 CAPA -->
 <div class="slide dark"><div class="si" style="justify-content:center">
   <img src="assets/logo-esquina.png" class="logo logo-d">
+  <div class="logo-box"><img src="assets/logo-dae.png" alt="DAE Jundiaí"></div>
   <div class="badge">Prestação de Contas &middot; Fechamento de Ciclo &middot; Agosto 2026</div>
   <h1>Temas Diversos<br>Agosto 2026</h1>
   <div class="cap-sub">Água que chega, obra que aparece e conta que fecha:<br>um mês de conversa direta com Jundiaí.<br>Período: 07 a 28 de agosto de 2026.</div>
-  <div class="foot" style="color:rgba(255,255,255,.5)"><span>Esquina &middot; Prestação de Contas</span><span>DAE Jundiaí</span></div>
-</div></div>
-
-<!-- 2 KPIs -->
-<div class="slide"><div class="si">
-  <img src="assets/logo-esquina.png" class="logo">
-  <div class="sl">Métricas Consolidadas</div>
-  <h2>Os Números do Ciclo</h2>
-  <p class="ss">Entrega das quatro linhas contratadas em Meta Ads, de 07 a 28 de agosto de 2026.</p>
-  <div class="kpis">
-    <div class="kc b"><div class="k">Impressões</div><div class="v">419.163</div><div class="s">299.581 só na linha de Reconhecimento, acima da meta de 250.000</div></div>
-    <div class="kc t"><div class="k">Engajamentos</div><div class="v">79.041</div><div class="s">13.020 na linha de Engajamento contratada, contra meta de 10.000</div></div>
-    <div class="kc p"><div class="k">Maior cobertura em uma linha</div><div class="v">150.271</div><div class="s">Pessoas alcançadas pela linha de Reconhecimento</div></div>
-    <div class="kc b"><div class="k">Visualizações</div><div class="v">12.209</div><div class="s">Vídeos assistidos até o fim ou por pelo menos 15 segundos</div></div>
+  <div class="cap-kpis">
+    <div><b>419.163</b><span>Impressões</span></div>
+    <div><b>79.041</b><span>Engajamentos</span></div>
+    <div><b>12.209</b><span>Visualizações</span></div>
+    <div><b>4/4</b><span>Metas cumpridas</span></div>
   </div>
-  <div class="note">Alcance é métrica de pessoas únicas e não se soma entre campanhas: a mesma pessoa aparece em mais de uma linha. Por isso mostramos a cobertura da linha de maior abrangência, não um total somado.</div>
-  <div class="foot"><span>Esquina para DAE Jundiaí</span><span>Agosto de 2026</span></div>
+  <div class="foot" style="color:rgba(255,255,255,.5)"><span>Esquina &middot; Prestação de Contas</span><span>DAE Jundiaí</span></div>
 </div></div>
 
 <!-- 3 ENTREGA -->
@@ -119,17 +133,17 @@ td.n{font-variant-numeric:tabular-nums;font-weight:700}
   <img src="assets/logo-esquina.png" class="logo">
   <div class="sl t">Metas de Entrega</div>
   <h2>Entrega Fechou Acima do Contratado</h2>
-  <p class="ss">As quatro metas contratadas para agosto, cada uma medida na métrica em que foi comprada.</p>
+  <p class="ss">As quatro metas contratadas para agosto, cada uma medida na métrica que foi contratada.</p>
   <table>
-    <thead><tr><th>Linha</th><th>Métrica de compra</th><th>Objetivo</th><th>Entregue</th><th>Status</th></tr></thead>
+    <thead><tr><th>Linha</th><th>O que foi contratado</th><th>Objetivo</th><th>Entregue</th><th>Status</th></tr></thead>
     <tbody>
-      <tr><td>Reconhecimento (Amplo)</td><td>Impressões</td><td class="n">250.000</td><td class="n">299.581</td><td><span class="pill">Superada</span></td></tr>
-      <tr><td>Engajamento (Clusters)</td><td>Engajamentos</td><td class="n">10.000</td><td class="n">13.020</td><td><span class="pill">Superada</span></td></tr>
-      <tr><td>Reconhecimento (Clusters)</td><td>Visualizações</td><td class="n">10.000</td><td class="n">12.209</td><td><span class="pill">Superada</span></td></tr>
-      <tr><td>Engajamento (Clusters)</td><td>Cliques no link</td><td class="n">1.000</td><td class="n">1.234</td><td><span class="pill">Superada</span></td></tr>
+      <tr><td>Cobertura</td><td>Impressões</td><td class="n">250.000</td><td class="n">299.581</td><td><span class="pill">Superada</span></td></tr>
+      <tr><td>Engajamento</td><td>Engajamentos</td><td class="n">10.000</td><td class="n">13.020</td><td><span class="pill">Superada</span></td></tr>
+      <tr><td>Visualização</td><td>Visualizações</td><td class="n">10.000</td><td class="n">12.209</td><td><span class="pill">Superada</span></td></tr>
+      <tr><td>Engajamento</td><td>Cliques no link</td><td class="n">1.000</td><td class="n">1.234</td><td><span class="pill">Superada</span></td></tr>
     </tbody>
   </table>
-  <div class="note">Cada linha é medida apenas na métrica em que foi comprada. Volume gerado fora da métrica de compra existe e aparece nos cards de campanha, mas não entra no cálculo de meta de outra linha.</div>
+  <div class="note">Cada linha é medida apenas na métrica que foi contratada. Volume gerado fora da métrica de compra existe e aparece nos cards de campanha, mas não entra no cálculo de meta de outra linha.</div>
   <div class="foot"><span>Esquina para DAE Jundiaí</span><span>Agosto de 2026</span></div>
 </div></div>
 
@@ -140,12 +154,12 @@ td.n{font-variant-numeric:tabular-nums;font-weight:700}
   <h2>Como o Investimento Foi Dividido</h2>
   <p class="ss">Distribuição dos R$10.000,00 do plano contratado entre as quatro linhas, todas veiculando de 07 a 28 de agosto.</p>
   <table>
-    <thead><tr><th>Linha</th><th>Métrica de compra</th><th>% do plano</th><th>Valor</th><th>Período</th></tr></thead>
+    <thead><tr><th>Linha</th><th>O que foi contratado</th><th>% do plano</th><th>Valor</th><th>Período</th></tr></thead>
     <tbody>
-      <tr><td>Engajamento (Clusters)</td><td>Engajamentos</td><td class="n">30%</td><td class="n">R$3.000,00</td><td>07/08 a 28/08</td></tr>
-      <tr><td>Reconhecimento (Amplo)</td><td>Impressões</td><td class="n">25%</td><td class="n">R$2.500,00</td><td>07/08 a 28/08</td></tr>
-      <tr><td>Engajamento (Clusters)</td><td>Cliques e visitas ao perfil</td><td class="n">25%</td><td class="n">R$2.500,00</td><td>07/08 a 28/08</td></tr>
-      <tr><td>Reconhecimento (Clusters)</td><td>Visualizações</td><td class="n">20%</td><td class="n">R$2.000,00</td><td>07/08 a 28/08</td></tr>
+      <tr><td>Engajamento</td><td>Engajamentos</td><td class="n">30%</td><td class="n">R$3.000,00</td><td>07/08 a 28/08</td></tr>
+      <tr><td>Cobertura</td><td>Impressões</td><td class="n">25%</td><td class="n">R$2.500,00</td><td>07/08 a 28/08</td></tr>
+      <tr><td>Engajamento</td><td>Cliques e visitas ao perfil</td><td class="n">25%</td><td class="n">R$2.500,00</td><td>07/08 a 28/08</td></tr>
+      <tr><td>Visualização</td><td>Visualizações</td><td class="n">20%</td><td class="n">R$2.000,00</td><td>07/08 a 28/08</td></tr>
     </tbody>
   </table>
   <div class="note">A linha de Engajamento recebeu a maior fatia por ser a que exige mais esforço por resultado. A de Visualização, com a menor fatia, foi a que entregou mais volume por real investido no ciclo.</div>
@@ -159,13 +173,13 @@ td.n{font-variant-numeric:tabular-nums;font-weight:700}
   <h2>As quatro linhas no ar</h2>
   <p class="ss">Todas rodaram o ciclo completo, de 07 a 28 de agosto, e todas encerraram acima da meta.</p>
   <div class="cj">
-    <div class="cjc"><div class="tag">Reconhecimento</div><h3>DAE Jundiaí | Reconhecimento | CPM</h3><p>Compra por mil impressões, a linha de maior cobertura da campanha.</p>
+    <div class="cjc"><div class="tag">Cobertura</div><h3>Linha de Cobertura</h3><p>A linha de maior abrangência do ciclo.</p>
       <div class="cjm"><div><b>150.271</b><span>Alcance</span></div><div><b>299.581</b><span>Impressões</span></div><div><b>1,99&#215;</b><span>Frequência</span></div><div><b>0,25%</b><span>CTR</span></div></div></div>
-    <div class="cjc"><div class="tag">Engajamento</div><h3>DAE Jundiaí | Engajamento | CPE</h3><p>Compra por engajamento, focada em conversa e interação com o conteúdo.</p>
+    <div class="cjc"><div class="tag">Engajamento</div><h3>Linha de Engajamento</h3><p>Linha voltada à conversa e à interação com o conteúdo.</p>
       <div class="cjm"><div><b>23.854</b><span>Alcance</span></div><div><b>53.304</b><span>Impressões</span></div><div><b>13.020</b><span>Engajamentos</span></div><div><b>3,69%</b><span>CTR</span></div></div></div>
-    <div class="cjc"><div class="tag">Visualização</div><h3>DAE Jundiaí | Reconhecimento | CPV</h3><p>Compra por visualização, para quem assiste o vídeo até o fim.</p>
+    <div class="cjc"><div class="tag">Visualização</div><h3>Linha de Visualização</h3><p>Linha voltada a quem assiste o vídeo até o fim.</p>
       <div class="cjm"><div><b>35.461</b><span>Alcance</span></div><div><b>12.209</b><span>Visualizações</span></div><div><b>1,18&#215;</b><span>Frequência</span></div><div><b>1,44%</b><span>CTR</span></div></div></div>
-    <div class="cjc"><div class="tag">Cliques</div><h3>DAE Jundiaí | Engajamento | CPC</h3><p>Compra por clique, levando quem se interessou até o conteúdo e o perfil.</p>
+    <div class="cjc"><div class="tag">Cliques e perfil</div><h3>Linha de Cliques</h3><p>Linha voltada a levar quem se interessou até o conteúdo e o perfil.</p>
       <div class="cjm"><div><b>18.098</b><span>Alcance</span></div><div><b>1.234</b><span>Cliques</span></div><div><b>1.193</b><span>Visitas ao perfil</span></div><div><b>5,58%</b><span>CTR</span></div></div></div>
   </div>
   <div class="foot"><span>Esquina para DAE Jundiaí</span><span>Agosto de 2026</span></div>
@@ -176,7 +190,7 @@ td.n{font-variant-numeric:tabular-nums;font-weight:700}
   <div class="sl">Ritmo de Entrega</div>
   <h2>Ritmo de Entrega ao Longo do Ciclo</h2>
   <p class="ss">Entrega acumulada da linha de Impressões contra a meta contratada de 250.000. A campanha veiculou todos os 22 dias do ciclo, sem nenhum dia parado.</p>
-  <div class="chart-wrap"><h3>Impressões acumuladas contra a meta</h3><div class="cs">Linha de Reconhecimento, acumulado de 07 a 28 de agosto</div><div class="ch-h"><canvas id="chDia"></canvas></div></div>
+  <div class="chart-wrap"><h3>Impressões acumuladas contra a meta</h3><div class="cs">Linha de Cobertura, acumulado de 07 a 28 de agosto</div><div class="ch-h"><canvas id="chDia"></canvas></div></div>
   <div class="note">A linha cruzou a meta contratada de 250.000 impressões em 25 de agosto, três dias antes do fim do ciclo, e seguiu entregando até 28 de agosto, fechando em 299.581.</div>
   <div class="foot"><span>Esquina para DAE Jundiaí</span><span>Agosto de 2026</span></div>
 </div></div>
@@ -188,17 +202,17 @@ td.n{font-variant-numeric:tabular-nums;font-weight:700}
   <h2>As peças que rodaram (1 de 3)</h2>
   <p class="ss">Cada vídeo foi assistido do começo ao fim antes da análise.</p>
   <div class="cr2">
-    <div class="crc"><span class="bd w">Destaque do mês</span>
-      <h3>O que sabem sobre a DAE Jundiaí</h3><div class="fmt">Vídeo vertical 9:16 &middot; 56 segundos &middot; depoimentos na rua</div>
-      <div class="ms"><div><b>99.645</b><span>Impressões</span></div><div><b>31.283</b><span>Engajamentos</span></div><div><b>11.882</b><span>Visualizações</span></div><div><b>37</b><span>Seguidores</span></div></div>
+    <div class="crc"><span class="bd w">#1 no ranking</span>
+      <h3>O que está acontecendo na Avenida da Uva</h3><div class="fmt">Vídeo vertical 9:16 &middot; 47 segundos &middot; obra explicada no local</div>
+      <div class="ms"><div><b>23.499</b><span>Impressões</span></div><div><b>10.162</b><span>Engajamentos</span></div><div><b>962</b><span>Cliques</span></div><div><b>39</b><span>Seguidores</span></div></div>
       <p class="lead"><b>O que funcionou:</b> quem fala é o vizinho de quem assiste, com nome na tela. Recebeu o maior esforço de mídia do mês e devolveu: em Reels do Facebook, quase um terço assistiu até o fim.</p>
       <p class="lead"><b>Ponto de atenção:</b> 56 segundos com o essencial já no primeiro terço; nas linhas de cobertura, em feed, a retenção cai bastante.</p>
       <p class="lead"><b>Resposta do público:</b> interagiu sobretudo quem tem mais de 55 anos, em celular Android. Reels e Stories do Facebook retiveram melhor, e o Reels do Instagram quase não recebeu entrega.</p>
       <div class="acao"><b>Ação</b><p>Forçar Reels e Stories do Instagram e cortar uma versão de 15 a 20 segundos para as linhas de cobertura ampla.</p></div>
     </div>
-    <div class="crc"><span class="bd">Maior circulação</span>
-      <h3>Sinais de vazamento dentro de casa</h3><div class="fmt">Vídeo vertical 9:16 &middot; 59 segundos &middot; formato de transmissão ao vivo</div>
-      <div class="ms"><div><b>215.425</b><span>Impressões</span></div><div><b>30.481</b><span>Engajamentos</span></div><div><b>3.086</b><span>Visualizações</span></div><div><b>881</b><span>Reações</span></div></div>
+    <div class="crc"><span class="bd w">#2 no ranking</span>
+      <h3>O que sabem sobre a DAE Jundiaí</h3><div class="fmt">Vídeo vertical 9:16 &middot; 56 segundos &middot; depoimentos na rua</div>
+      <div class="ms"><div><b>99.645</b><span>Impressões</span></div><div><b>31.283</b><span>Engajamentos</span></div><div><b>11.882</b><span>Visualizações</span></div><div><b>37</b><span>Seguidores</span></div></div>
       <p class="lead"><b>O que funcionou:</b> utilidade prática pura, com legenda grande e legível sem som. Maior esforço de mídia do ciclo, distribuído em duas linhas de cobertura.</p>
       <p class="lead"><b>Ponto de atenção:</b> a primeira informação útil demora, há uma passagem escura no início e a moldura de live disputa espaço com a legenda.</p>
       <p class="lead"><b>Resposta do público:</b> entrega concentrada em feed, onde cerca de 1% chegou ao fim; nos poucos milhares em Reels e Stories, passou de 20%. Público acima de 55 anos, em Android.</p>
@@ -215,15 +229,15 @@ td.n{font-variant-numeric:tabular-nums;font-weight:700}
   <h2>As peças que rodaram (2 de 3)</h2>
   <p class="ss">Cada vídeo foi assistido do começo ao fim antes da análise.</p>
   <div class="cr2">
-    <div class="crc"><span class="bd">Melhor em cliques</span>
-      <h3>O que está acontecendo na Avenida da Uva</h3><div class="fmt">Vídeo vertical 9:16 &middot; 47 segundos &middot; obra explicada no local</div>
-      <div class="ms"><div><b>23.499</b><span>Impressões</span></div><div><b>10.162</b><span>Engajamentos</span></div><div><b>962</b><span>Cliques</span></div><div><b>39</b><span>Seguidores</span></div></div>
+    <div class="crc"><span class="bd w">#3 no ranking</span>
+      <h3>Sinais de vazamento dentro de casa</h3><div class="fmt">Vídeo vertical 9:16 &middot; 59 segundos &middot; formato de transmissão ao vivo</div>
+      <div class="ms"><div><b>215.425</b><span>Impressões</span></div><div><b>30.481</b><span>Engajamentos</span></div><div><b>3.086</b><span>Visualizações</span></div><div><b>881</b><span>Reações</span></div></div>
       <p class="lead"><b>O que funcionou:</b> gancho hiperlocal, fala de uma rua específica. Com esforço de mídia bem menor que o das peças de cobertura, foi a que mais converteu atenção em ação.</p>
       <p class="lead"><b>Ponto de atenção:</b> o aviso de rota alternativa só aparece na segunda metade do vídeo.</p>
       <p class="lead"><b>Resposta do público:</b> Stories do Facebook foi disparado o melhor posicionamento, com quase um quinto assistindo até o fim. Respondeu mais o público masculino acima de 45 anos, em Android.</p>
       <div class="acao"><b>Ação</b><p>Tratar como conteúdo de Stories, com o aviso de trânsito na abertura e raio fechado nos bairros vizinhos.</p></div>
     </div>
-    <div class="crc"><span class="bd g">Utilidade doméstica</span>
+    <div class="crc"><span class="bd w">#4 no ranking</span>
       <h3>Quanta água você usa por dia</h3><div class="fmt">Vídeo vertical 9:16 &middot; 61 segundos &middot; consumo pela rotina da casa</div>
       <div class="ms"><div><b>45.623</b><span>Impressões</span></div><div><b>4.730</b><span>Engajamentos</span></div><div><b>531</b><span>Visualizações</span></div><div><b>601</b><span>Reações</span></div></div>
       <p class="lead"><b>O que funcionou:</b> construção didática, cada atividade com o número na tela. É a peça mais fácil de entender sem áudio, com esforço de mídia moderado.</p>
@@ -242,7 +256,7 @@ td.n{font-variant-numeric:tabular-nums;font-weight:700}
   <h2>As peças que rodaram (3 de 3)</h2>
   <p class="ss">Cada vídeo foi assistido do começo ao fim antes da análise.</p>
   <div class="cr2">
-    <div class="crc"><span class="bd g">Pauta de bairro</span>
+    <div class="crc"><span class="bd w">#5 no ranking</span>
       <h3>Nova rede de esgoto no Jardim Aeroporto</h3><div class="fmt">Vídeo vertical 9:16 &middot; 56 segundos &middot; obra com depoimento de moradores</div>
       <div class="ms"><div><b>15.273</b><span>Impressões</span></div><div><b>1.580</b><span>Engajamentos</span></div><div><b>197</b><span>Visualizações</span></div></div>
       <p class="lead"><b>O que funcionou:</b> moradores falando do esgoto que esperavam havia anos, com a obra logo em seguida. Sustenta reputação melhor que qualquer número, e rodou com o menor esforço de mídia do ciclo.</p>
@@ -250,7 +264,7 @@ td.n{font-variant-numeric:tabular-nums;font-weight:700}
       <p class="lead"><b>Resposta do público:</b> entrega espalhada entre feed e Reels, sem posicionamento se destacando em retenção, coerente com público sem ligação com o bairro.</p>
       <div class="acao"><b>Ação</b><p>Tratar peça de obra como conteúdo local, com raio fechado no bairro atendido e nos vizinhos.</p></div>
     </div>
-    <div class="crc"><span class="bd g">Entrou no fim do ciclo</span>
+    <div class="crc"><span class="bd w">#6 no ranking</span>
       <h3>Quando uma ocorrência acontece</h3><div class="fmt">Vídeo vertical 9:16 &middot; 65 segundos &middot; bastidor do atendimento</div>
       <div class="ms"><div><b>19.669</b><span>Impressões</span></div><div><b>794</b><span>Engajamentos</span></div><div><b>112</b><span>Visualizações</span></div></div>
       <p class="lead"><b>O que funcionou:</b> traduz estrutura de serviço em imagem, com o dado de 90% das ocorrências atendidas antes do prazo. Mesmo com esforço baixo, circulou por quase vinte mil impressões.</p>
@@ -261,6 +275,60 @@ td.n{font-variant-numeric:tabular-nums;font-weight:700}
   </div>
   <div class="foot"><span>Esquina para DAE Jundiaí</span><span>Agosto de 2026</span></div>
 </div></div>
+<!-- RANKINGS -->
+<div class="slide"><div class="si">
+  <img src="assets/logo-esquina.png" class="logo">
+  <div class="sl">Rankings de Conteúdo</div>
+  <h2>Quem entregou seguidor, comentário e compartilhamento</h2>
+  <p class="ss">Régua declarada: só entra a peça com pelo menos 20.000 impressões no ciclo e pelo menos 5 ocorrências do indicador, para não eleger conteúdo que trouxe um ou dois resultados muito baratos.</p>
+  <div class="rk3">
+    <div class="rkc"><h3>Top 3 em novos seguidores</h3><div class="rs">Seguidores no Instagram atribuídos à peça</div>
+      <ol>
+        <li><span><span class="n1">Avenida da Uva</span><span class="n2">39 seguidores, com 23.499 impressões: um a cada 603 exibições</span></span></li>
+        <li><span><span class="n1">O que sabem sobre a DAE</span><span class="n2">37 seguidores, com 99.645 impressões: um a cada 2.693 exibições</span></span></li>
+        <li><span><span class="n1">Sinais de vazamento</span><span class="n2">13 seguidores, com 215.425 impressões: um a cada 16.571 exibições</span></span></li>
+      </ol></div>
+    <div class="rkc"><h3>Top 3 em comentários</h3><div class="rs">Comentários nas publicações impulsionadas</div>
+      <ol>
+        <li><span><span class="n1">O que sabem sobre a DAE</span><span class="n2">14 comentários, o maior volume de conversa do ciclo</span></span></li>
+        <li><span><span class="n1">Sinais de vazamento</span><span class="n2">10 comentários, somando os dois anúncios da mesma peça</span></span></li>
+        <li><span><span class="n1">Quanta água você usa por dia</span><span class="n2">5 comentários, no limite da régua</span></span></li>
+      </ol></div>
+    <div class="rkc off"><h3>Compartilhamentos</h3><div class="rs">Ranking não publicado nesta edição</div>
+      <p>A plataforma não devolve compartilhamento como métrica por anúncio nesta conta, e não estimamos número. Nas próximas edições o dado pode ser levantado publicação a publicação no perfil, e o ranking passa a entrar.</p></div>
+  </div>
+  <div class="note">Seguidor vem de conteúdo local e específico, conversa vem de conteúdo em que o morador aparece. A peça que mais circulou não lidera nenhuma das duas frentes, o que é coerente com o papel dela, que era informar em escala.</div>
+  <div class="foot"><span>Esquina &middot; Prestação de Contas</span><span>Agosto de 2026</span></div>
+</div></div>
+
+<!-- HIPOTESES 1 -->
+<div class="slide"><div class="si">
+  <img src="assets/logo-esquina.png" class="logo">
+  <div class="sl p">Leitura Comparada</div>
+  <h2>Hipóteses sobre o que separou as peças (1 de 2)</h2>
+  <p class="ss">Por que peças da mesma campanha tiveram resultados tão diferentes.</p>
+  <div class="hip3">
+    <div class="hipc"><div class="q">Hipótese 01</div><h3>Eficiência e volume não andam juntos</h3><p>A peça da Avenida da Uva teve um nono das impressões da peça de vazamentos e trouxe três vezes mais seguidores. Quanto mais específico o conteúdo, menos gente ele alcança e mais fundo entra em quem alcança.</p></div>
+    <div class="hipc"><div class="q">Hipótese 02</div><h3>Quem aparece na tela muda a resposta</h3><p>As duas peças em que o morador fala foram as que mais sustentaram atenção por segundo assistido. As duas com o apresentador contratado circularam mais e retiveram menos. Presença de gente reconhecível vale mais que produção.</p></div>
+    <div class="hipc"><div class="q">Hipótese 03</div><h3>A ordem da informação decide a retenção</h3><p>As duas peças de utilidade doméstica têm construção parecida e desempenho diferente, e a diferença está em onde o número forte aparece. A que deixa o número para o fim é a de menor retenção entre as de volume alto.</p></div>
+  </div>
+  <div class="foot"><span>Esquina &middot; Prestação de Contas</span><span>Agosto de 2026</span></div>
+</div></div>
+
+<!-- HIPOTESES 2 -->
+<div class="slide"><div class="si">
+  <img src="assets/logo-esquina.png" class="logo">
+  <div class="sl p">Leitura Comparada</div>
+  <h2>Hipóteses sobre o que separou as peças (2 de 2)</h2>
+  <p class="ss">O que orienta a produção e a distribuição do próximo ciclo.</p>
+  <div class="hip3">
+    <div class="hipc"><div class="q">Hipótese 04</div><h3>O posicionamento explicou mais que o criativo</h3><p>A mesma peça teve cerca de 1% de gente assistindo até o fim no feed e mais de 20% em Reels e Stories. Antes de concluir que uma peça não funcionou, vale olhar onde ela foi entregue.</p></div>
+    <div class="hipc"><div class="q">Hipótese 05</div><h3>Conversa alta não é o mesmo que adesão</h3><p>Comentário mede volume de conversa, não concordância. Neste ciclo os volumes foram baixos em todas as peças e não sustentam leitura de recepção. Para dizer se a conversa foi favorável seria preciso ler os comentários um a um.</p></div>
+    <div class="hipc"><div class="q">Hipótese 06</div><h3>Tempo de rua é parte do resultado</h3><p>A peça do bastidor do atendimento entrou a quatro dias do fim e aparece no fim do ranking. Não rendeu pouco: rendeu pouco tempo. Peça institucional precisa entrar no começo do ciclo para ser avaliada em pé de igualdade.</p></div>
+  </div>
+  <div class="foot"><span>Esquina &middot; Prestação de Contas</span><span>Agosto de 2026</span></div>
+</div></div>
+
 <!-- PUBLICO -->
 <div class="slide"><div class="si">
   <img src="assets/logo-esquina.png" class="logo">
@@ -280,7 +348,7 @@ td.n{font-variant-numeric:tabular-nums;font-weight:700}
   <img src="assets/logo-esquina.png" class="logo">
   <div class="sl p">Contexto na Cidade</div>
   <h2>Contexto na cidade em agosto (1 de 2)</h2>
-  <p class="ss">12 publicações confirmadas entre 07 e 28 de agosto de 2026, nos canais oficiais e na imprensa local. Obras e pauta da água.</p>
+  <p class="ss">Cruzamento de dados de mídia paga com o que foi noticiado publicamente sobre a cidade no período. São 12 publicações confirmadas entre 07 e 28 de agosto. Obras e pauta da água.</p>
   <div class="ngrid">
     <div class="nc"><div><span class="d">19/08/2026</span> <span class="src">DAE Jundiaí</span></div><h4>DAE inicia obras de água no Loteamento Santa Rosa e amplia saneamento na Roseira</h4><p>420 metros de rede atendendo 30 famílias, somando-se às redes já entregues na região.</p><span class="tg o">Obra</span></div>
     <div class="nc"><div><span class="d">27/08/2026</span> <span class="src">DAE Jundiaí</span></div><h4>DAE amplia saneamento no Ivoturucaia com nova rede de água</h4><p>530 metros na Avenida José Mezzalira, atendendo cerca de 50 famílias, no mesmo pacote de Roseira, Traviú e Jardim Aeroporto.</p><span class="tg o">Obra</span></div>
@@ -335,7 +403,7 @@ td.n{font-variant-numeric:tabular-nums;font-weight:700}
   <h2>O que o Ciclo Revelou (1 de 2)</h2>
   <p class="ss">Leitura qualitativa do ciclo, do que a entrega mostrou e do que os criativos revelaram.</p>
   <div class="dc">
-    <div class="dcc"><div class="n">01</div><div class="m">4/4</div><h3>Todas as linhas acima da meta</h3><p>Reconhecimento, Engajamento, Visualização e Cliques encerraram entre 120% e 130% do contratado, com ritmo ajustado ao longo do mês.</p></div>
+    <div class="dcc"><div class="n">01</div><div class="m">4/4</div><h3>Todas as linhas acima da meta</h3><p>As quatro linhas contratadas encerraram acima do combinado, com ritmo ajustado ao longo do mês. A linha de Cobertura cruzou a meta três dias antes do prazo.</p></div>
     <div class="dcc"><div class="n">02</div><div class="m">14s</div><h3>Gente de verdade segura a atenção</h3><p>A peça com moradores falando na rua manteve atenção média de 14 segundos e sozinha respondeu por quase toda a meta de visualização.</p></div>
     <div class="dcc"><div class="n">03</div><div class="m">5,58%</div><h3>Obra explicada gera clique</h3><p>A linha de Cliques fechou com CTR de 5,58%, puxada pela peça da Avenida da Uva. Pergunta concreta do morador vira ação.</p></div>
   </div>
@@ -351,7 +419,7 @@ td.n{font-variant-numeric:tabular-nums;font-weight:700}
   <div class="dc">
     <div class="dcc"><div class="n">04</div><div class="m">1.193</div><h3>Visitas ao perfil como ganho extra</h3><p>Além dos cliques contratados, a campanha levou 1.193 pessoas ao perfil da DAE, onde estão os canais de atendimento.</p></div>
     <div class="dcc"><div class="n">05</div><div class="m">1,99&#215;</div><h3>Cobertura ampla sem cansar</h3><p>A linha de maior alcance fechou com frequência de 1,99 vezes por pessoa. Não houve sinal de saturação em nenhuma linha.</p></div>
-    <div class="dcc"><div class="n">06</div><div class="m">9:16</div><h3>Formato certo, lugar errado</h3><p>Todas as peças são verticais, mas boa parte da entrega caiu em feed. Em Reels e Stories a retenção chega a ser vinte vezes maior.</p></div>
+    <div class="dcc"><div class="n">06</div><div class="m">Reels e Stories</div><h3>O posicionamento pesou mais que o criativo</h3><p>Todas as peças são verticais, mas boa parte da entrega caiu em feed, onde a retenção chega a ser vinte vezes menor. Corrigir posicionamento é o ajuste de maior impacto.</p></div>
   </div>
   <div class="foot" style="color:rgba(255,255,255,.5)"><span>Esquina para DAE Jundiaí</span><span>Agosto de 2026</span></div>
 </div></div>
