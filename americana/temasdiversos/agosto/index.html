@@ -197,10 +197,7 @@
     .perf-grid.g2{grid-template-columns:repeat(2,1fr)}
     .perf-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;box-shadow:var(--sh);break-inside:avoid;display:flex;flex-direction:column}
     .perf-card.wide{flex-direction:row}
-    .perf-card.wide .perf-media{width:300px;flex-shrink:0}
-    .perf-media{position:relative;background:#111;overflow:hidden}
-    .perf-media img{width:100%;height:300px;object-fit:cover;object-position:center top;display:block}
-    .perf-card.wide .perf-media img{height:100%}
+    .perf-card.wide
     .perf-body{padding:16px 18px;display:flex;flex-direction:column;flex:1}
     .perf-top{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:10px;flex-wrap:wrap}
     .perf-topleft{display:inline-flex;align-items:center}
@@ -308,7 +305,7 @@
     details.dsec>.dbody{padding-top:28px}
 
     @media(max-width:1024px){.enc-cards{grid-template-columns:repeat(2,1fr)}}
-    @media(max-width:900px){.dc-grid{grid-template-columns:1fr 1fr}.mm-stats{grid-template-columns:1fr;text-align:center}.mm-side{align-items:center}.perf-card.wide{flex-direction:column}.perf-card.wide .perf-media{width:100%}.perf-grid.g2{grid-template-columns:1fr}.tx-grid{grid-template-columns:1fr}}
+    @media(max-width:900px){.dc-grid{grid-template-columns:1fr 1fr}.mm-stats{grid-template-columns:1fr;text-align:center}.mm-side{align-items:center}.perf-card.wide{flex-direction:column}.perf-grid.g2{grid-template-columns:1fr}.tx-grid{grid-template-columns:1fr}}
     @media(max-width:768px){.nav-chips{display:none}.enc-cards{grid-template-columns:1fr 1fr}.kpi-grid{grid-template-columns:1fr 1fr}.g2{grid-template-columns:1fr}.sd-inner{flex-direction:column}.sd-body{border-left:none;border-top:1px solid rgba(255,255,255,.15);padding-top:24px}}
     @media(max-width:600px){.dc-grid{grid-template-columns:1fr}.enc-cards{grid-template-columns:1fr}.perf-grid.g2{grid-template-columns:1fr}}
     @media print{
@@ -421,7 +418,6 @@
     .hdr-sub{font-size:.95rem;color:rgba(255,255,255,.6);line-height:1.7;max-width:660px}
     @media(max-width:768px){.hdr-in{flex-direction:column;align-items:flex-start;gap:22px;padding:34px 24px}.hdr-star{border-right:none;padding-right:0}.hdr-star svg{width:76px;height:76px}}
     /* ══ THUMB DE CRIATIVO SEM IMAGEM ══ */
-    .perf-solid{width:100%;height:100%;min-height:300px;display:flex;align-items:center;justify-content:center;padding:26px;text-align:center;color:#fff;font-weight:800;font-size:1.35rem;line-height:1.25;letter-spacing:-.01em;background:linear-gradient(150deg,#17A697,#0A0A5C)}
   </style>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
 </head>
