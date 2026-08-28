@@ -352,3 +352,10 @@ body{font-family:var(--font);background:var(--bg);color:var(--text-1);line-heigh
 .nl-v{color:var(--text-m);font-size:.74rem;font-weight:600}
 .news-list a{color:var(--text-1);text-decoration:none;flex:1 1 300px}
 .news-list a:hover{color:var(--primary);text-decoration:underline}
+/* alinhamento das tabelas: 1a coluna à esquerda, numéricas à direita */
+.dt th:not(:first-child),.dt td:not(:first-child){text-align:right}
+.dt th:first-child,.dt td:first-child{text-align:left;width:38%}
+.dt td.n,.dt th{white-space:nowrap}
+#temas .dt th:first-child,#temas .dt td:first-child{width:34%}
+#plataformas .dt th:first-child,#plataformas .dt td:first-child{width:22%}
+#verba .dt th:last-child,#verba .dt td:last-child{width:22%}
