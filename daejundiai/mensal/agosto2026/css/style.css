@@ -285,7 +285,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--text-1);line-heigh
 .rk li::before{content:counter(rk);flex:0 0 24px;height:24px;border-radius:50%;background:rgba(26,60,255,.10);color:var(--primary);font-size:.72rem;font-weight:800;display:flex;align-items:center;justify-content:center;margin-top:1px}
 .rk .rk-n{font-size:.88rem;font-weight:700;line-height:1.35;display:block}
 .rk .rk-v{font-size:.78rem;color:var(--text-2);margin-top:2px;display:block}
-.rk.off{background:var(--bg);border-style:dashed}
+.rk.off{background:var(--surface)}
 .rk.off p{font-size:.84rem;color:var(--text-2);line-height:1.6}
 .regua{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--teal);border-radius:0 var(--r-md) var(--r-md) 0;padding:18px 22px;margin-bottom:26px}
 .regua b{display:block;font-size:.66rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:var(--teal);margin-bottom:6px}
