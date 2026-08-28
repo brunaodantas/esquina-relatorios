@@ -343,3 +343,12 @@ body{font-family:var(--font);background:var(--bg);color:var(--text-1);line-heigh
 .hip-f{margin-top:auto;padding:15px 17px;border-radius:var(--r-md);background:var(--bg)}
 .hip-f b{display:block;font-size:.62rem;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--teal);margin-bottom:5px}
 .hip-f p{font-size:.84rem;color:var(--text-2);line-height:1.6}
+.fontes-lista{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-md);padding:16px 22px;box-shadow:var(--sh)}
+.fl-t{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:var(--primary)}
+.news-list{list-style:none;margin-top:14px}
+.news-list li{padding:9px 0;border-top:1px solid var(--border);font-size:.83rem;line-height:1.5;display:flex;gap:10px;flex-wrap:wrap;align-items:baseline}
+.news-list li:first-child{border-top:none}
+.nl-d{font-weight:700;color:var(--primary);font-size:.74rem;flex:0 0 auto}
+.nl-v{color:var(--text-m);font-size:.74rem;font-weight:600}
+.news-list a{color:var(--text-1);text-decoration:none;flex:1 1 300px}
+.news-list a:hover{color:var(--primary);text-decoration:underline}
