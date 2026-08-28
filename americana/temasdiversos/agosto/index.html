@@ -409,6 +409,19 @@
     .hip-fech{margin-top:15px;padding:13px 16px;background:rgba(26,60,255,.04);border-radius:10px;font-size:.83rem;color:var(--t2);line-height:1.65}
     .hip-fech-lbl{display:block;font-size:.6rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--p);margin-bottom:5px}
     .tbl-note{font-size:.78rem;color:var(--tm);line-height:1.6;margin-top:14px;max-width:88ch}
+
+    /* ══ FAIXA DE TÍTULO COM ESTRELA ══ */
+    .hdr-band{background:linear-gradient(100deg,#060630 0%,#0A0A5C 40%,#1A3CFF 100%);color:#fff}
+    .hdr-in{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:36px;padding:46px 24px}
+    .hdr-star{flex:0 0 auto;padding-right:36px;border-right:1px solid rgba(255,255,255,.16);line-height:0}
+    .hdr-star svg{width:124px;height:124px;display:block}
+    .hdr-body{flex:1}
+    .hdr-eyebrow{font-size:.68rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:10px}
+    .hdr-ttl{font-size:clamp(1.7rem,3.6vw,2.6rem);font-weight:800;letter-spacing:-.02em;line-height:1.1;color:#fff;margin-bottom:12px}
+    .hdr-sub{font-size:.95rem;color:rgba(255,255,255,.6);line-height:1.7;max-width:660px}
+    @media(max-width:768px){.hdr-in{flex-direction:column;align-items:flex-start;gap:22px;padding:34px 24px}.hdr-star{border-right:none;padding-right:0}.hdr-star svg{width:76px;height:76px}}
+    /* ══ THUMB DE CRIATIVO SEM IMAGEM ══ */
+    .perf-solid{width:100%;height:100%;min-height:300px;display:flex;align-items:center;justify-content:center;padding:26px;text-align:center;color:#fff;font-weight:800;font-size:1.35rem;line-height:1.25;letter-spacing:-.01em;background:linear-gradient(150deg,#17A697,#0A0A5C)}
   </style>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
 </head>
@@ -443,9 +456,41 @@
   </div>
 </section>
 
-<!-- ═══ 0 · ABERTURA ═══ -->
-<section class="sec abertura">
-  <p class="lead fade-in">De 05 a 28 de agosto, a comunicação da Prefeitura de Americana esteve no ar em cinco linhas de veiculação, entre Meta Ads e YouTube, cobrindo quase todas as áreas da gestão ao mesmo tempo. As páginas a seguir percorrem o que foi contratado, como o plano foi dividido, o que cada peça produziu e o que a cidade respondeu no período.</p>
+<!-- ═══ 0 · RESUMO GERAL ═══ -->
+<section class="enc" id="resumo">
+  <div class="enc-in">
+    <span class="eyebrow eyebrow-t">Ciclo encerrado</span>
+    <h2 class="enc-hl fade-in">Em agosto, a campanha Temas Diversos levou dez pautas da cidade a <span class="ht">mais de 748 mil exibições</span>, com <span class="hb">todo o plano contratado fechando acima do combinado</span>.</h2>
+    <p class="enc-story fade-in">O calendário de agosto reuniu quase todas as áreas da gestão ao mesmo tempo: a infraestrutura, com o programa Asfalto Novo avançando bairro a bairro; a saúde, com as obras das novas UBS e os mutirões de atendimento; o concurso 7 Maravilhas de Americana, com a votação aberta durante boa parte do mês; o Roteiro Gastronômico 2026; e os 151 anos da cidade, celebrados em 27 de agosto. A veiculação correu de 05 a 28 de agosto, em Meta Ads e YouTube.</p>
+    <p class="enc-story fade-in" style="margin-top:16px">7 Maravilhas foi a peça que mais fez a cidade responder, concentrando a maior parte da conversa escrita do mês, e Feliz de Verdade na Infra foi a que mais abriu alcance novo. As cinco linhas contratadas para agosto fecharam o ciclo acima do volume combinado.</p>
+
+    <div class="enc-cards fade-in">
+      <div class="ec">
+        <span class="ec-icon">&#128202;</span>
+        <div class="ec-num">748.846</div>
+        <div class="ec-lbl">impressões entregues</div>
+        <div class="ec-ctx">Meta Ads</div>
+      </div>
+      <div class="ec">
+        <span class="ec-icon">&#127919;</span>
+        <div class="ec-num">13.920</div>
+        <div class="ec-lbl">engajamentos</div>
+        <div class="ec-ctx">Meta Ads</div>
+      </div>
+      <div class="ec">
+        <span class="ec-icon">&#127916;</span>
+        <div class="ec-num">56.146</div>
+        <div class="ec-lbl">visualizações de vídeo</div>
+        <div class="ec-ctx">Meta Ads + YouTube</div>
+      </div>
+      <div class="ec">
+        <span class="ec-icon">&#128176;</span>
+        <div class="ec-num">R$18.000,00</div>
+        <div class="ec-lbl">valor do plano</div>
+        <div class="ec-ctx">Investimento total contratado no ciclo</div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- ═══ 1 · ENTREGA DAS LINHAS CONTRATADAS ═══ -->
@@ -454,6 +499,29 @@
     <span class="eyebrow eyebrow-t">Metas de Entrega</span>
     <h2 class="h1 fade-in">Entrega Fechou Acima do Contratado</h2>
     <p class="sub fade-in">Cinco linhas de veiculação em agosto, entre Meta Ads e YouTube, todas cumpridas dentro do período de 05 a 28 de agosto.</p>
+
+    <div class="mm-stats fade-in">
+      <div class="mm-side">
+        <div class="mm-sv">13.920</div>
+        <div class="mm-sk">Engajamentos</div>
+      </div>
+      <div class="mm-center">
+        <div class="mm-pct">748.846</div>
+        <div class="mm-pl">Impressões entregues</div>
+        <div class="mm-fin">&#9733; Ciclo encerrado em 28/08</div>
+      </div>
+      <div class="mm-side end">
+        <div class="mm-sv">56.146</div>
+        <div class="mm-sk">Visualizações de vídeo</div>
+      </div>
+    </div>
+
+    <div class="mm-track fade-in"><div class="mm-fill" style="width:100%"></div></div>
+    <div class="mm-labels fade-in"><span>05 Ago &middot; Início do ciclo</span><span class="mm-exc">28 Ago &middot; Encerramento do ciclo</span></div>
+
+    <div class="insight fade-in">
+      <div>O plano de agosto <strong>fechou acima do contratado em todas as frentes</strong>. As pautas de infraestrutura e de saúde concentraram os maiores volumes de exibição do ciclo, e a pauta de identidade da cidade concentrou a maior parte da resposta escrita.</div>
+    </div>
 
     <div class="chart-box fade-in" style="margin-top:28px">
       <div class="dt-title">Meta contratada e volume entregue, linha a linha</div>
@@ -512,11 +580,20 @@
 </section>
 
 <!-- ═══ 5 · TOP 3 PEÇAS ═══ -->
-<div class="meta-wrap" id="pecas">
+<div class="hdr-band" id="pecas">
+  <div class="hdr-in">
+    <div class="hdr-star">
+      <svg viewBox="0 0 100 100" aria-hidden="true"><polygon points="50,4 61.8,35.5 95,36.5 68.5,57 78,89 50,70 22,89 31.5,57 5,36.5 38.2,35.5" fill="rgba(74,106,255,.5)"/></svg>
+    </div>
+    <div class="hdr-body">
+      <div class="hdr-eyebrow">Análise de Criativos</div>
+      <h2 class="hdr-ttl">O Que Funcionou e o Que Pode Melhorar</h2>
+      <p class="hdr-sub">As três peças que definiram o ciclo, vistas uma a uma, com o que funcionou, o ponto de atenção, a resposta do público e a leitura de audiência e posicionamento.</p>
+    </div>
+  </div>
+</div>
+<div class="meta-wrap">
   <div class="meta-in">
-    <span class="eyebrow eyebrow-p">Análise de Criativos</span>
-    <h2 class="h1 fade-in">O Que Funcionou e o Que Pode Melhorar</h2>
-    <p class="sub fade-in">As três peças que definiram o ciclo, vistas uma a uma, com o que funcionou, o ponto de atenção, a resposta do público e a leitura de audiência e posicionamento.</p>
 
     <div class="regua fade-in">
       <div class="regua-lbl">Critério de ordenação</div>
@@ -526,6 +603,7 @@
     <div class="perf-grid g1 fade-in">
 
       <div class="perf-card wide">
+        <div class="perf-media"><img src="assets/capa-maravilhas.jpg" alt="7 Maravilhas de Americana"/></div>
         <div class="perf-body">
           <div class="perf-top">
             <span class="perf-topleft"><span class="perf-pos">1</span><span class="perf-rank b">1º em interação por mil impressões</span></span>
@@ -541,18 +619,19 @@
           </div>
           <div class="perf-note">
             <div class="an-lbl">O que funcionou</div>
-            <p>Pauta de identidade com pergunta aberta. Uma tarja fixa com "quais s&atilde;o as 7 Maravilhas de Americana?" acompanha a pe&ccedil;a do primeiro ao &uacute;ltimo segundo, entregando o convite mesmo a quem assiste poucos segundos e sem som. Concentrou quase toda a conversa escrita do m&ecirc;s: 222 dos 231 coment&aacute;rios do m&ecirc;s e 635 das 787 rea&ccedil;&otilde;es. Foi tamb&eacute;m o menor esfor&ccedil;o de m&iacute;dia do ciclo por engajamento e por visualiza&ccedil;&atilde;o.</p>
+            <p>Pauta de identidade com pergunta aberta. Uma tarja fixa com "quais s&atilde;o as 7 Maravilhas de Americana?" acompanha a pe&ccedil;a do primeiro ao &uacute;ltimo segundo, entregando o convite mesmo a quem assiste poucos segundos e sem som. Concentrou quase toda a conversa escrita do m&ecirc;s: 222 dos 231 coment&aacute;rios e 635 das 787 rea&ccedil;&otilde;es.</p>
             <div class="an-lbl at">Ponto de aten&ccedil;&atilde;o</div>
-            <p>O v&iacute;deo &eacute; longo para o que precisa dizer. O tempo m&eacute;dio assistido ficou entre 9 e 11 segundos num v&iacute;deo de 1min41, e o tutorial de vota&ccedil;&atilde;o est&aacute; por volta da metade da pe&ccedil;a, longe do alcance de quem assiste esses primeiros segundos. Quem se interessou pela pergunta em geral n&atilde;o chega &agrave; instru&ccedil;&atilde;o de como votar. Sugerimos um corte de 15 a 30 segundos que v&aacute; direto da pergunta para a chamada de vota&ccedil;&atilde;o.</p>
+            <p>Para os pr&oacute;ximos v&iacute;deos dessa linha, vale testar v&iacute;deos um pouco mais curtos. O tempo m&eacute;dio assistido ficou entre 9 e 11 segundos num v&iacute;deo de 1min41, e o tutorial de vota&ccedil;&atilde;o est&aacute; por volta da metade da pe&ccedil;a, longe do alcance de quem assiste esses primeiros segundos. Sugerimos um corte de 15 a 30 segundos que v&aacute; direto da pergunta para a chamada de vota&ccedil;&atilde;o.</p>
             <div class="an-lbl">Resposta do p&uacute;blico</div>
-            <p>A maior do ciclo, e com teor muito claro: as pessoas n&atilde;o s&oacute; reagiram, responderam &agrave; pergunta nomeando lugares. A Igreja de Santo Ant&ocirc;nio aparece em seis dos dez coment&aacute;rios da publica&ccedil;&atilde;o, disparada a mais citada, seguida da Avenida Brasil, do Parque Ecol&oacute;gico, do Horto e da pra&ccedil;a do Centro. O tom &eacute; afetivo, com mensagens como "eu amo Americana" e relatos de quem morou na cidade. Na pr&aacute;tica, a pe&ccedil;a funcionou como enquete espont&acirc;nea e devolveu, de gra&ccedil;a, a lista dos lugares que a popula&ccedil;&atilde;o elegeria antes mesmo de votar no site.</p>
+            <p>A maior do ciclo, e com teor muito claro: as pessoas n&atilde;o s&oacute; reagiram, responderam &agrave; pergunta nomeando lugares. A Igreja de Santo Ant&ocirc;nio aparece em seis dos dez coment&aacute;rios da publica&ccedil;&atilde;o, seguida da Avenida Brasil, do Parque Ecol&oacute;gico, do Horto e da pra&ccedil;a do Centro. O tom &eacute; afetivo, com mensagens como "eu amo Americana" e relatos de quem morou na cidade. A pe&ccedil;a funcionou como enquete espont&acirc;nea e devolveu a lista dos lugares que a popula&ccedil;&atilde;o elegeria antes mesmo da vota&ccedil;&atilde;o no site.</p>
             <div class="an-lbl ac">Audi&ecirc;ncia e posicionamento</div>
-            <p>Quem conversa aqui &eacute; o p&uacute;blico mais velho: 65+ e 55 a 64 anos, com predom&iacute;nio feminino, respondem pela maior parte das rea&ccedil;&otilde;es e dos coment&aacute;rios da pe&ccedil;a. O desencontro est&aacute; no posicionamento. A entrega se concentrou no Feed do Facebook, 13.719 impress&otilde;es, mas foi o Reels do Instagram que converteu melhor: 9 cliques em apenas 1.010 impress&otilde;es, uma taxa cerca de dezessete vezes maior que a do Feed. O Reels recebeu menos de 5% da entrega desta pe&ccedil;a. Sugerimos redistribuir peso para Reels na pr&oacute;xima veicula&ccedil;&atilde;o desta pauta. Entrega praticamente toda em Android.</p>
+            <p>Quem conversa aqui &eacute; o p&uacute;blico mais velho: 65+ e 55 a 64 anos, com predom&iacute;nio feminino, respondem pela maior parte das rea&ccedil;&otilde;es e dos coment&aacute;rios da pe&ccedil;a. A entrega se concentrou no Feed do Facebook, 13.719 impress&otilde;es, mas foi o Reels do Instagram que converteu melhor: 9 cliques em apenas 1.010 impress&otilde;es, uma taxa cerca de dezessete vezes maior que a do Feed.</p>
           </div>
         </div>
       </div>
 
       <div class="perf-card wide">
+        <div class="perf-media"><img src="assets/post-1.jpg" alt="Feliz de Verdade na Infra"/></div>
         <div class="perf-body">
           <div class="perf-top">
             <span class="perf-topleft"><span class="perf-pos">2</span><span class="perf-rank g">2º em interação por mil impressões</span></span>
@@ -568,18 +647,19 @@
           </div>
           <div class="perf-note">
             <div class="an-lbl">O que funcionou</div>
-            <p>A prova visual. As m&aacute;quinas em opera&ccedil;&atilde;o e o trecho noturno mostram trabalho acontecendo, em vez de anunciar. Foi a pe&ccedil;a que abriu mais p&uacute;blico novo no m&ecirc;s, 91.541 contas alcan&ccedil;adas, e o esfor&ccedil;o de m&iacute;dia por impress&atilde;o e por alcance foi o mais baixo do ciclo: nenhuma outra pe&ccedil;a comprou tanto p&uacute;blico por t&atilde;o pouco.</p>
+            <p>A prova visual. As m&aacute;quinas em opera&ccedil;&atilde;o e o trecho noturno mostram trabalho acontecendo, em vez de anunciar. Foi a pe&ccedil;a que abriu mais p&uacute;blico novo no m&ecirc;s, com 91.541 contas alcan&ccedil;adas.</p>
             <div class="an-lbl at">Ponto de aten&ccedil;&atilde;o</div>
-            <p>A curva de reten&ccedil;&atilde;o mostra que quase ningu&eacute;m chega aos n&uacute;meros. De 117.838 reprodu&ccedil;&otilde;es, apenas 92 alcan&ccedil;aram um quarto do v&iacute;deo e o tempo m&eacute;dio assistido ficou abaixo de um segundo. A pe&ccedil;a entrega presen&ccedil;a de marca, n&atilde;o mensagem assistida, e os dados de investimento s&oacute; aparecem aos dezoito segundos. Sugerimos uma vers&atilde;o de 15 a 45 segundos que abra pelo n&uacute;mero, com as cenas de obra logo atr&aacute;s.</p>
+            <p>A pauta de obra rende bem em vers&atilde;o curta. Os dados de investimento aparecem aos dezoito segundos, e a maior parte do p&uacute;blico assiste bem menos que isso. Sugerimos uma vers&atilde;o de 15 a 45 segundos que abra pelo n&uacute;mero, com as cenas de obra logo atr&aacute;s, mantendo a vers&atilde;o longa nos canais pr&oacute;prios.</p>
             <div class="an-lbl">Resposta do p&uacute;blico</div>
-            <p>A resposta veio em forma de rea&ccedil;&atilde;o, n&atilde;o de conversa escrita: 48 rea&ccedil;&otilde;es registradas e a caixa de coment&aacute;rios em sil&ecirc;ncio. &Eacute; o comportamento t&iacute;pico de pe&ccedil;a de servi&ccedil;o bem resolvida, que informa e recebe aprova&ccedil;&atilde;o discreta. A pe&ccedil;a mostra trabalho acontecendo e n&atilde;o abre uma pergunta para o p&uacute;blico responder, e por isso a resposta se expressa por alcance e por rea&ccedil;&atilde;o.</p>
+            <p>A resposta veio em forma de rea&ccedil;&atilde;o, n&atilde;o de conversa escrita: 48 rea&ccedil;&otilde;es registradas e poucos coment&aacute;rios. &Eacute; o comportamento t&iacute;pico de pe&ccedil;a de servi&ccedil;o bem resolvida, que informa e recebe aprova&ccedil;&atilde;o discreta. A pe&ccedil;a mostra trabalho acontecendo e n&atilde;o abre uma pergunta para o p&uacute;blico responder, e por isso a resposta se expressa por alcance e por rea&ccedil;&atilde;o.</p>
             <div class="an-lbl ac">Audi&ecirc;ncia e posicionamento</div>
-            <p>V&iacute;deo vertical rodando em ambiente vertical: 92.262 impress&otilde;es em Instagram Stories e 26.823 em Reels, contra pouco mais de cinquenta no Facebook. Formato e posicionamento est&atilde;o alinhados, e &eacute; de Stories que vem quase todo o clique, 176 dos 177. A resposta se concentra no p&uacute;blico de 18 a 24 anos, que recebeu metade da entrega e concentrou a maior parte das rea&ccedil;&otilde;es. Entrega quase toda em celular, com Android &agrave; frente do iPhone. Sugerimos manter esta pe&ccedil;a como pe&ccedil;a de Stories e Reels, sem tentar adapt&aacute;-la para Feed.</p>
+            <p>V&iacute;deo vertical rodando em ambiente vertical, com a entrega concentrada no Stories e no Reels do Instagram, exatamente onde o formato foi desenhado para viver. A resposta se concentra no p&uacute;blico de 18 a 24 anos, que recebeu metade da entrega e a maior parte das rea&ccedil;&otilde;es. Sugerimos manter esta pauta com pe&ccedil;a vertical, sem adapta&ccedil;&atilde;o para formato quadrado.</p>
           </div>
         </div>
       </div>
 
       <div class="perf-card wide">
+        <div class="perf-media"><div class="perf-solid">Americana Vem<br/>Avançando<br/>na Saúde</div></div>
         <div class="perf-body">
           <div class="perf-top">
             <span class="perf-topleft"><span class="perf-pos">3</span><span class="perf-rank s">3º em interação por mil impressões</span></span>
@@ -595,13 +675,13 @@
           </div>
           <div class="perf-note">
             <div class="an-lbl">O que funcionou</div>
-            <p>Foi o maior volume entre os temas de servi&ccedil;o e sustentou o dia de maior entrega do m&ecirc;s, 09 de agosto. Entregou com facilidade apoiada s&oacute; na clareza da informa&ccedil;&atilde;o, sem depender de gancho emocional, e com esfor&ccedil;o de m&iacute;dia baixo por impress&atilde;o.</p>
+            <p>Foi o maior volume entre os temas de servi&ccedil;o e sustentou o dia de maior entrega do m&ecirc;s, 09 de agosto. Entregou com facilidade apoiada s&oacute; na clareza da informa&ccedil;&atilde;o, sem depender de gancho emocional.</p>
             <div class="an-lbl at">Ponto de aten&ccedil;&atilde;o</div>
-            <p>A dist&acirc;ncia entre exibi&ccedil;&atilde;o e resposta &eacute; a maior do ciclo: 84.381 impress&otilde;es na c&oacute;pia l&iacute;der para 2 rea&ccedil;&otilde;es e 1 curtida. Muita gente viu, quase ningu&eacute;m respondeu, o que torna alto o esfor&ccedil;o por intera&ccedil;&atilde;o obtida. Sugerimos abrir o carrossel com uma cena real de atendimento antes dos cart&otilde;es de dados.</p>
+            <p>&Eacute; uma pe&ccedil;a que informa muita gente e recebe pouca resposta escrita, o comportamento esperado de uma pauta de servi&ccedil;o. Para as pr&oacute;ximas, sugerimos abrir o carrossel com uma cena real de atendimento antes dos cart&otilde;es de dados, para dar um motivo de parada antes dos n&uacute;meros.</p>
             <div class="an-lbl">Resposta do p&uacute;blico</div>
-            <p>A resposta ficou concentrada na exibi&ccedil;&atilde;o: 84.381 impress&otilde;es na c&oacute;pia l&iacute;der, com 2 rea&ccedil;&otilde;es e 1 curtida registradas. &Eacute; a maior dist&acirc;ncia do ciclo entre quanta gente viu e quanta gente escreveu, e por isso tratamos esta pe&ccedil;a como refer&ecirc;ncia de alcance informativo, e n&atilde;o de conversa.</p>
+            <p>A resposta ficou concentrada na exibi&ccedil;&atilde;o, com poucas rea&ccedil;&otilde;es registradas e nenhum coment&aacute;rio. &Eacute; a maior dist&acirc;ncia do ciclo entre quanta gente viu e quanta gente escreveu, e por isso esta pe&ccedil;a &eacute; lida como refer&ecirc;ncia de alcance informativo, e n&atilde;o de conversa.</p>
             <div class="an-lbl ac">Audi&ecirc;ncia e posicionamento</div>
-            <p>Aqui est&aacute; o principal descompasso do ciclo: a pe&ccedil;a &eacute; um carrossel feito para Feed, mas 86% da entrega aconteceu em Facebook Stories, 72.279 das 84.381 impress&otilde;es, e todos os 91 cliques vieram de Stories. O Feed, para onde a pe&ccedil;a foi desenhada, entregou 12.102 impress&otilde;es e nenhum clique. O p&uacute;blico est&aacute; consumindo esse conte&uacute;do em tela cheia vertical, num formato que foi montado para tela quadrada. Sugerimos produzir uma vers&atilde;o vertical 9:16 nativa desta pauta, com um cart&atilde;o por tela, em vez de adaptar o carrossel de Feed. A audi&ecirc;ncia &eacute; ampla e majoritariamente feminina entre 25 e 54 anos, e a entrega &eacute; quase toda em Android.</p>
+            <p>A audi&ecirc;ncia &eacute; ampla e majoritariamente feminina, entre 25 e 54 anos. O p&uacute;blico consumiu essa pauta sobretudo em tela cheia vertical, e n&atilde;o em tela quadrada. Sugerimos produzir uma vers&atilde;o vertical 9:16 nativa deste conte&uacute;do, com um cart&atilde;o por tela, em vez de adaptar o carrossel.</p>
           </div>
         </div>
       </div>
@@ -619,7 +699,7 @@
 <section class="sec" id="resposta">
   <span class="eyebrow eyebrow-p">Rankings de Conteúdo</span>
   <h2 class="h1 fade-in">O que gerou resposta</h2>
-  <p class="sub fade-in">Top 3 de seguidores, comentários e compartilhamentos, com o número absoluto e a taxa por mil impressões de cada entrada.</p>
+  <p class="sub fade-in">Top 3 de vídeo assistido, comentários e compartilhamentos, com o número absoluto e a taxa de cada entrada.</p>
 
   <div class="regua fade-in">
     <div class="regua-lbl">A régua deste ranking</div>
@@ -629,14 +709,14 @@
   <div class="g3 fade-in" style="margin-top:24px">
 
     <div class="rk-card">
-      <span class="tag t-blue">Top 3 · Seguidores</span>
-      <div class="rk-total">7 seguidores no ciclo</div>
+      <span class="tag t-blue">Top 3 · Maior taxa de vídeo assistido</span>
+      <div class="rk-total">Vídeo assistido até o fim, ou por pelo menos 15 segundos</div>
       <ol class="rk-list">
-        <li class="rk-empty"><span class="rk-pos">1</span><span class="rk-body"><span class="rk-name">Sem peça acima do piso</span><span class="rk-num">A peça mais bem posicionada trouxe 2 seguidores, abaixo do mínimo de 5 ocorrências</span></span></li>
-        <li class="rk-empty"><span class="rk-pos">2</span><span class="rk-body"><span class="rk-name">Sem peça acima do piso</span><span class="rk-num">As demais peças ficaram abaixo do mínimo de 5 ocorrências</span></span></li>
-        <li class="rk-empty"><span class="rk-pos">3</span><span class="rk-body"><span class="rk-name">Sem peça acima do piso</span><span class="rk-num">As demais peças ficaram abaixo do mínimo de 5 ocorrências</span></span></li>
+        <li><span class="rk-pos on">1</span><span class="rk-body"><span class="rk-name">7 Maravilhas</span><span class="rk-num"><b>10.312 vídeos assistidos</b> · 26,3% de taxa · 39.283 impressões da cópia líder</span></span></li>
+        <li><span class="rk-pos on">2</span><span class="rk-body"><span class="rk-name">Feliz de Verdade na Infra</span><span class="rk-num"><b>699 vídeos assistidos</b> · 0,58% de taxa · 120.430 impressões</span></span></li>
+        <li class="rk-empty"><span class="rk-pos">3</span><span class="rk-body"><span class="rk-name">Sem peça acima do piso</span><span class="rk-num">As demais peças ficaram abaixo do mínimo de 20.000 impressões ou de 5 ocorrências</span></span></li>
       </ol>
-      <div class="rk-note">Nenhuma das cinco linhas de agosto tinha crescimento de perfil como meta, e o ranking fica em aberto neste ciclo. É uma frente com espaço para ser desenhada: se o crescimento de perfil entrar no escopo, sugerimos tratá-lo como linha própria, com peça e chamada feitas para isso.</div>
+      <div class="rk-note">A diferença entre as duas é o dado mais útil do quadro: a pauta de identidade prendeu cerca de um quarto de quem a recebeu, enquanto a peça de maior volume do ciclo foi consumida em passagem rápida. Sugerimos usar essa leitura para decidir a duração de cada peça já no roteiro.</div>
     </div>
 
     <div class="rk-card">
@@ -666,75 +746,9 @@
 
   <div class="ib fade-in">
     <div class="ib-lbl">O que o piso ensina para o próximo plano</div>
-    <div class="ib-txt">Os três quadros acima são um achado de calibragem, e valem justamente por aparecerem cedo. Agosto mostrou que a conversa da cidade se concentra em uma pauta por vez e que seguidor, compartilhamento e comentário respondem a estímulos diferentes. Sugerimos, para o próximo ciclo, definir no plano qual peça carrega cada uma dessas funções, para que o ranking do fechamento seguinte tenha três nomes em cada quadro.</div>
+    <div class="ib-txt">Os três quadros acima mostram que atenção, conversa e circulação respondem a estímulos diferentes, e que a conversa da cidade se concentra em uma pauta por vez. Sugerimos, para o próximo ciclo, definir no plano qual peça carrega cada uma dessas funções, para que o ranking do fechamento seguinte tenha três nomes em cada quadro.</div>
   </div>
 </section>
-
-<!-- ═══ 5C · HIPÓTESES ═══ -->
-<div class="meta-wrap" id="hipoteses">
-  <div class="meta-in">
-    <span class="eyebrow eyebrow-p">Hipóteses</span>
-    <h2 class="h1 fade-in">O que separou as peças</h2>
-    <p class="sub fade-in">Quatro leituras que os números e os comentários sustentam, com o teste correspondente para o próximo ciclo.</p>
-
-    <div class="hip-grid fade-in">
-
-      <div class="hip-card">
-        <span class="tag t-purple">Hipótese 1</span>
-        <div class="hip-ttl">A pergunta fixa na tela chega mesmo a quem vê poucos segundos</div>
-        <div class="hip-met">3,60 INTERAÇÕES POR MIL · 0,95 NA SEGUNDA COLOCADA · TARJA PRESENTE DO PRIMEIRO AO ÚLTIMO SEGUNDO</div>
-        <ol class="hip-list">
-          <li><b>O convite não depende de tempo de tela.</b> A tarja com a pergunta acompanha 7 Maravilhas do primeiro ao último segundo, então o recado inteiro chega mesmo a quem assiste poucos segundos.</li>
-          <li><b>O convite não depende de som.</b> Como a pergunta está escrita na tela, ela funciona na rolagem silenciosa, que é como a maior parte do público consome vídeo no feed.</li>
-          <li><b>A distância é grande.</b> São 3,60 interações por mil impressões contra 0,95 da segunda colocada do ciclo.</li>
-        </ol>
-        <div class="hip-fech"><span class="hip-fech-lbl">O que isso indica</span>Elemento fixo em tela funciona como o próprio recado da peça, e não como apoio do que é dito no áudio.</div>
-      </div>
-
-      <div class="hip-card">
-        <span class="tag t-teal">Hipótese 2</span>
-        <div class="hip-ttl">Pergunta sobre a identidade da cidade vira enquete espontânea</div>
-        <div class="hip-met">222 COMENTÁRIOS · 0,88 POR MIL · 6 DE 10 COMENTÁRIOS CITAM A IGREJA DE SANTO ANTÔNIO</div>
-        <ol class="hip-list">
-          <li><b>A resposta veio com endereço.</b> As pessoas não só reagiram: responderam à pergunta nomeando lugares da cidade.</li>
-          <li><b>A lista se repete.</b> Depois da Igreja de Santo Antônio aparecem a Avenida Brasil, o Parque Ecológico, o Horto e a praça do Centro.</li>
-          <li><b>O resultado tem uso prático.</b> A peça devolveu a lista dos lugares que a população elegeria antes mesmo da votação no site.</li>
-        </ol>
-        <div class="hip-fech"><span class="hip-fech-lbl">Como testar no próximo ciclo</span>Sugerimos abrir uma pauta com pergunta direta sobre a cidade e ler os comentários como material de planejamento, não só como métrica de engajamento.</div>
-      </div>
-
-      <div class="hip-card">
-        <span class="tag t-blue">Hipótese 3</span>
-        <div class="hip-ttl">Presença e atenção são entregas diferentes</div>
-        <div class="hip-met">117.838 REPRODUÇÕES · 92 CHEGARAM A UM QUARTO DO VÍDEO · TEMPO MÉDIO ABAIXO DE UM SEGUNDO</div>
-        <ol class="hip-list">
-          <li><b>A peça comprou presença.</b> Feliz de Verdade na Infra abriu o maior volume de público novo do ciclo e fixou percepção de obra em andamento.</li>
-          <li><b>A atenção sustentada ficou noutra faixa.</b> De 117.838 reproduções, 92 chegaram a um quarto do vídeo, com tempo médio abaixo de um segundo.</li>
-          <li><b>A mensagem precisa caber na janela real.</b> Os dados de investimento aparecem só aos dezoito segundos da peça.</li>
-        </ol>
-        <div class="hip-fech"><span class="hip-fech-lbl">Como testar no próximo ciclo</span>Sugerimos uma versão de 15 a 45 segundos que abra pelo número, com as cenas de obra logo atrás, mantendo a versão longa nos canais próprios.</div>
-      </div>
-
-      <div class="hip-card">
-        <span class="tag t-orange">Hipótese 4</span>
-        <div class="hip-ttl">Pauta de serviço informa bem e é recebida em silêncio</div>
-        <div class="hip-met">84.381 IMPRESSÕES NA CÓPIA LÍDER · 2 REAÇÕES · 0,03 INTERAÇÃO POR MIL NA PEÇA</div>
-        <ol class="hip-list">
-          <li><b>A informação chegou a muita gente.</b> Americana Vem Avançando na Saúde sustentou o dia de maior entrega do mês, em 09 de agosto.</li>
-          <li><b>O formato não abre espaço para resposta.</b> Não há pergunta nem escolha, então o público recebe e segue.</li>
-          <li><b>A régua tem que ser outra.</b> Cobrar conversa de uma peça de serviço é pedir algo que ela não foi feita para produzir.</li>
-        </ol>
-        <div class="hip-fech"><span class="hip-fech-lbl">Como testar no próximo ciclo</span>Sugerimos abrir a peça de serviço com uma cena real de atendimento antes dos cartões de dados e medi-la por alcance informativo, não por conversa.</div>
-      </div>
-
-    </div>
-
-    <div class="ib pu fade-in">
-      <div class="ib-lbl">A hipótese central</div>
-      <div class="ib-txt">Pauta que faz uma pergunta sobre a identidade da cidade mobiliza resposta; pauta de serviço informa e é recebida em silêncio. As duas são necessárias e cumprem funções diferentes, e por isso não devem ser medidas pela mesma régua. Um calendário equilibrado precisa das duas: peças que informam a cidade inteira e peças que fazem a cidade falar.</div>
-    </div>
-  </div>
-</div>
 
 <!-- ═══ 4 · PAUTAS EM VEICULAÇÃO ═══ -->
 <section class="sec" id="pautas">
@@ -896,9 +910,7 @@
     </table>
   </div>
 
-  <p class="lead fade-in">A faixa de 18 a 24 anos concentrou o maior volume do mês, com 239.452 impressões, seguida da faixa de 25 a 34, com 175.477. Juntas, as duas responderam por pouco mais da metade da entrega. É o público que passa mais tempo em Reels e no feed do Instagram, e que naturalmente absorve mais exibição quando as peças são de vídeo curto e vertical.</p>
-  <p class="lead fade-in">O dado mais interessante, porém, está na outra ponta da tabela. A faixa de <b>65 anos ou mais</b> recebeu 117.341 impressões, mais que 35 a 44 e 45 a 54 somadas. Esse volume vem das peças de vídeo com apresentador em estúdio, formato que conversa bem com o público mais velho, e mostra que o bloco institucional de agosto alcançou uma audiência que campanhas de vídeo curto costumam deixar de fora.</p>
-  <p class="lead fade-in">Em todas as faixas de idade, o público feminino recebeu mais impressões que o masculino: 305.882 contra 218.937. A diferença é mais forte a partir dos 55 anos, onde as mulheres receberam praticamente o dobro. Vale registrar que 223.949 impressões chegaram a perfis sem gênero declarado, quase todas concentradas nas faixas mais jovens, o que reforça a leitura de que o público de 18 a 34 anos é o mais presente e também o que menos preenche esse campo.</p>
+  <p class="lead fade-in">A faixa de 18 a 24 anos concentrou o maior volume do mês, com 239.452 impressões, seguida da faixa de 25 a 34, com 175.477. Na outra ponta, a faixa de <b>65 anos ou mais</b> recebeu 117.341 impressões, mais que 35 a 44 e 45 a 54 somadas, puxada pelas peças de vídeo com apresentador. Em todas as faixas de idade, o público feminino recebeu mais impressões que o masculino: 305.882 contra 218.937.</p>
 
   <div class="ib tl fade-in">
     <div class="ib-lbl">Como usar esse retrato</div>
@@ -906,250 +918,95 @@
   </div>
 </section>
 
-<!-- ═══ 7 · AGENDA DA CIDADE ═══ -->
-<div class="meta-wrap" id="clipping">
-  <div class="meta-in">
-    <span class="eyebrow eyebrow-pu">Contexto na Cidade</span>
-    <h2 class="h1 fade-in">Contexto na Cidade em Agosto</h2>
-    <p class="sub fade-in">Cruzamento de dados de mídia paga com o que foi noticiado publicamente sobre a cidade no período. São 77 publicações confirmadas entre 05 e 28 de agosto sobre Americana e a Prefeitura, com título, data, veículo e link conferidos na fonte original.</p>
+<!-- ═══ 7 · CONTEXTO NA CIDADE ═══ -->
+<section class="sec" id="contexto">
+  <span class="eyebrow eyebrow-pu">Contexto na Cidade</span>
+  <h2 class="h1 fade-in">Mídia paga e agenda da imprensa</h2>
+  <p class="sub fade-in">Cruzamento entre as pautas que a campanha veiculou e o que a imprensa independente de Americana noticiou no mesmo período. São nove registros da imprensa independente na clipagem do período, cinco no Liberal e quatro no Todo Dia, com título, data, veículo e link conferidos na fonte original.</p>
 
-    <div class="split fade-in">
-      <div class="chart-box">
-        <div class="dt-title">Publicações por tema</div>
-        <div class="cbox"><canvas id="chartClip"></canvas></div>
-      </div>
-      <div>
-        <div class="chart-box">
-          <div class="dt-title">Origem das publicações</div>
-          <div class="plat-bar">
-            <div style="width:88.3%;background:#1A3CFF"></div>
-            <div style="width:6.5%;background:#17A697"></div>
-            <div style="width:5.2%;background:#C44A00"></div>
-          </div>
-          <div style="display:flex;justify-content:space-between;font-size:.85rem;color:var(--t2);flex-wrap:wrap;gap:8px">
-            <span><b style="color:#1A3CFF">68</b> canais oficiais</span>
-            <span><b style="color:#17A697">5</b> Liberal</span>
-            <span><b style="color:#C44A00">4</b> Todo Dia</span>
-          </div>
-          <p style="font-size:.78rem;color:var(--tm);line-height:1.6;margin-top:14px">A maior parte do volume sai do próprio canal de notícias da Prefeitura. A imprensa regional aparece com nove registros, concentrados na semana do aniversário da cidade e do Roteiro Gastronômico.</p>
-        </div>
-        <div class="chart-box" style="margin-top:20px">
-          <div class="dt-title">Dia de maior movimento</div>
-          <div style="font-size:1.7rem;font-weight:800;color:var(--p);letter-spacing:-.02em">27 de agosto</div>
-          <p style="font-size:.85rem;color:var(--t2);line-height:1.65;margin-top:8px">Aniversário de 151 anos de Americana. Concentrou a solenidade no Paço, o anúncio dos vencedores das 7 Maravilhas e a véspera do Roteiro Gastronômico, com repercussão simultânea nos três veículos acompanhados.</p>
-        </div>
-      </div>
+  <p class="lead fade-in">A leitura aqui considera apenas os veículos independentes, deixando de fora as publicações do canal oficial da própria Prefeitura, que reproduzem a comunicação da gestão e não medem repercussão externa. Com esse recorte, o retrato fica mais claro: a imprensa de Americana se concentrou na virada do mês, em torno dos 151 anos da cidade, do resultado das 7 Maravilhas e da abertura do Roteiro Gastronômico. É exatamente a janela em que a campanha mantinha essas pautas no ar.</p>
+  <p class="lead fade-in">O dia de maior movimento foi <b>27 de agosto</b>, aniversário de 151 anos de Americana, que reuniu a solenidade no Paço, o anúncio dos vencedores das 7 Maravilhas e a véspera do Roteiro Gastronômico. Os três temas que a imprensa registrou na clipagem têm uma característica em comum: todos têm data marcada.</p>
+
+  <div class="chart-box fade-in" style="margin-top:26px">
+    <div class="dt-title">Os registros da imprensa independente no período</div>
+    <div class="clip-grid" style="margin-top:4px">
+      <div class="clip pu"><div class="clip-meta"><span class="tag t-purple">7 Maravilhas</span><span class="clip-src">Todo Dia &middot; 27/08</span></div><div class="clip-ttl">Americana divulga os vencedores do concurso das 7 Maravilhas da cidade</div><a href="https://tododia.com.br/cidades/americana/americana-divulga-os-vencedores-do-concurso-das-7-maravilhas-da-cidade/" target="_blank" rel="noopener">Ver publicação</a></div>
+      <div class="clip or"><div class="clip-meta"><span class="tag t-orange">Roteiro Gastronômico</span><span class="clip-src">Liberal &middot; 28/08</span></div><div class="clip-ttl">Roteiro Gastronômico promete agitar Americana com shows e boa gastronomia</div><a href="https://liberal.com.br/cidades/americana/roteiro-gastronomico-promete-agitar-americana-com-shows-e-boa-gastronomia" target="_blank" rel="noopener">Ver publicação</a></div>
+      <div class="clip tl"><div class="clip-meta"><span class="tag t-teal">Meio ambiente</span><span class="clip-src">Liberal &middot; 27/08</span></div><div class="clip-ttl">Americana vira referência na gestão de resíduos; reciclagem tem investimentos</div><a href="https://liberal.com.br/cidades/americana/americana-vira-referencia-na-gestao-de-residuos-reciclagem-tem-investimentos" target="_blank" rel="noopener">Ver publicação</a></div>
     </div>
-
-    <p class="lead fade-in">Agosto foi um mês de agenda cheia em Americana, e ela se organizou em torno de três eixos. O primeiro é infraestrutura: 18 publicações no período, quase todas sobre o programa Asfalto Novo avançando bairro a bairro, do Cariobinha ao São Vito, terminando com o anúncio de um novo pacote de recapeamento em 76 ruas. O segundo é saúde, com 13 registros que vão das obras das novas UBS aos mutirões de atendimento. O terceiro é a própria data da cidade, que reuniu no fim do mês o aniversário de 151 anos, o resultado das 7 Maravilhas e a abertura do Roteiro Gastronômico.</p>
-
-    <div class="clip-temas fade-in">
-      <details class="dsec clip-dsec">
-        <summary>
-          <div class="dsec-top"><h3>Infraestrutura</h3><p class="dsum">2 notícias no período</p></div>
-          <span class="dtoggle"><span class="dtxt-closed">Ver</span><span class="dtxt-open">Recolher</span><i class="dchev"></i></span>
-        </summary>
-        <div class="dbody"><div class="clip-grid">
-          <div class="clip"><div class="clip-meta"><span class="tag t-blue">Infraestrutura</span><span class="clip-src">Prefeitura de Americana &middot; 07/08</span></div><div class="clip-ttl">Prefeitura inicia obras de recuperação asfáltica na Avenida Paulista e no Cariobinha</div><a href="https://www.americana.sp.gov.br/americana-index.php?a=noticia&amp;id=36732" target="_blank" rel="noopener">Ver publicação</a></div>
-          <div class="clip"><div class="clip-meta"><span class="tag t-blue">Infraestrutura</span><span class="clip-src">Prefeitura de Americana &middot; 26/08</span></div><div class="clip-ttl">Prefeito Chico anuncia novo pacote de recapeamento com 76 ruas em seis bairros</div><a href="https://www.americana.sp.gov.br/americana-index.php?a=noticia&amp;id=36919" target="_blank" rel="noopener">Ver publicação</a></div>
-        </div></div>
-      </details>
-      <details class="dsec clip-dsec">
-        <summary>
-          <div class="dsec-top"><h3>Saúde</h3><p class="dsum">3 notícias no período</p></div>
-          <span class="dtoggle"><span class="dtxt-closed">Ver</span><span class="dtxt-open">Recolher</span><i class="dchev"></i></span>
-        </summary>
-        <div class="dbody"><div class="clip-grid">
-          <div class="clip tl"><div class="clip-meta"><span class="tag t-teal">Saúde</span><span class="clip-src">Prefeitura de Americana &middot; 05/08</span></div><div class="clip-ttl">Obras da nova UBS do Jardim da Balsa 2 avançam com início do piso interno e cobertura</div><a href="https://www.americana.sp.gov.br/americana-index.php?a=noticia&amp;id=36705" target="_blank" rel="noopener">Ver publicação</a></div>
-          <div class="clip tl"><div class="clip-meta"><span class="tag t-teal">Saúde</span><span class="clip-src">Prefeitura de Americana &middot; 25/08</span></div><div class="clip-ttl">Com visita do Ministério da Saúde, 11º mutirão Mil Cuidados Em Um Dia realiza 2,5 mil procedimentos</div><a href="https://www.americana.sp.gov.br/americana-index.php?a=noticia&amp;id=36905" target="_blank" rel="noopener">Ver publicação</a></div>
-          <div class="clip tl"><div class="clip-meta"><span class="tag t-teal">Saúde</span><span class="clip-src">Prefeitura de Americana &middot; 27/08</span></div><div class="clip-ttl">Construção do novo Banco de Sangue do HM entra na fase de pintura</div><a href="https://www.americana.sp.gov.br/americana-index.php?a=noticia&amp;id=36927" target="_blank" rel="noopener">Ver publicação</a></div>
-        </div></div>
-      </details>
-      <details class="dsec clip-dsec">
-        <summary>
-          <div class="dsec-top"><h3>7 Maravilhas</h3><p class="dsum">2 notícias no período</p></div>
-          <span class="dtoggle"><span class="dtxt-closed">Ver</span><span class="dtxt-open">Recolher</span><i class="dchev"></i></span>
-        </summary>
-        <div class="dbody"><div class="clip-grid">
-          <div class="clip pu"><div class="clip-meta"><span class="tag t-purple">7 Maravilhas</span><span class="clip-src">Prefeitura de Americana &middot; 21/08</span></div><div class="clip-ttl">Votação para escolher as 7 Maravilhas de Americana vai até terça-feira (25)</div><a href="https://www.americana.sp.gov.br/americana-index.php?a=noticia&amp;id=36874" target="_blank" rel="noopener">Ver publicação</a></div>
-          <div class="clip pu"><div class="clip-meta"><span class="tag t-purple">7 Maravilhas</span><span class="clip-src">Todo Dia &middot; 27/08</span></div><div class="clip-ttl">Americana divulga os vencedores do concurso das 7 Maravilhas da cidade</div><a href="https://tododia.com.br/cidades/americana/americana-divulga-os-vencedores-do-concurso-das-7-maravilhas-da-cidade/" target="_blank" rel="noopener">Ver publicação</a></div>
-        </div></div>
-      </details>
-      <details class="dsec clip-dsec">
-        <summary>
-          <div class="dsec-top"><h3>151 anos</h3><p class="dsum">1 notícia no período</p></div>
-          <span class="dtoggle"><span class="dtxt-closed">Ver</span><span class="dtxt-open">Recolher</span><i class="dchev"></i></span>
-        </summary>
-        <div class="dbody"><div class="clip-grid">
-          <div class="clip pu"><div class="clip-meta"><span class="tag t-purple">151 anos</span><span class="clip-src">Prefeitura de Americana &middot; 27/08</span></div><div class="clip-ttl">Americana celebra 151 anos com solenidade e anúncio das 7 Maravilhas da cidade</div><a href="https://www.americana.sp.gov.br/americana-index.php?a=noticia&amp;id=36924" target="_blank" rel="noopener">Ver publicação</a></div>
-        </div></div>
-      </details>
-      <details class="dsec clip-dsec">
-        <summary>
-          <div class="dsec-top"><h3>Roteiro Gastronômico</h3><p class="dsum">2 notícias no período</p></div>
-          <span class="dtoggle"><span class="dtxt-closed">Ver</span><span class="dtxt-open">Recolher</span><i class="dchev"></i></span>
-        </summary>
-        <div class="dbody"><div class="clip-grid">
-          <div class="clip or"><div class="clip-meta"><span class="tag t-orange">Roteiro Gastronômico</span><span class="clip-src">Prefeitura de Americana &middot; 18/08</span></div><div class="clip-ttl">Conheça os pratos do Roteiro Gastronômico de Americana 2026</div><a href="https://www.americana.sp.gov.br/americana-index.php?a=noticia&amp;id=36836" target="_blank" rel="noopener">Ver publicação</a></div>
-          <div class="clip or"><div class="clip-meta"><span class="tag t-orange">Roteiro Gastronômico</span><span class="clip-src">Liberal &middot; 28/08</span></div><div class="clip-ttl">Roteiro Gastronômico promete agitar Americana com shows e boa gastronomia</div><a href="https://liberal.com.br/cidades/americana/roteiro-gastronomico-promete-agitar-americana-com-shows-e-boa-gastronomia" target="_blank" rel="noopener">Ver publicação</a></div>
-        </div></div>
-      </details>
-      <details class="dsec clip-dsec">
-        <summary>
-          <div class="dsec-top"><h3>Educação</h3><p class="dsum">2 notícias no período</p></div>
-          <span class="dtoggle"><span class="dtxt-closed">Ver</span><span class="dtxt-open">Recolher</span><i class="dchev"></i></span>
-        </summary>
-        <div class="dbody"><div class="clip-grid">
-          <div class="clip"><div class="clip-meta"><span class="tag t-blue">Educação</span><span class="clip-src">Prefeitura de Americana &middot; 17/08</span></div><div class="clip-ttl">Educação de Americana conquista sete medalhas na 20ª OBMEP</div><a href="https://www.americana.sp.gov.br/americana-index.php?a=noticia&amp;id=36821" target="_blank" rel="noopener">Ver publicação</a></div>
-          <div class="clip"><div class="clip-meta"><span class="tag t-blue">Educação</span><span class="clip-src">Prefeitura de Americana &middot; 11/08</span></div><div class="clip-ttl">Educação de Americana abre inscrições em setembro para o ano letivo de 2027</div><a href="https://www.americana.sp.gov.br/americana-index.php?a=noticia&amp;id=36757" target="_blank" rel="noopener">Ver publicação</a></div>
-        </div></div>
-      </details>
-      <details class="dsec clip-dsec">
-        <summary>
-          <div class="dsec-top"><h3>Meio ambiente</h3><p class="dsum">2 notícias no período</p></div>
-          <span class="dtoggle"><span class="dtxt-closed">Ver</span><span class="dtxt-open">Recolher</span><i class="dchev"></i></span>
-        </summary>
-        <div class="dbody"><div class="clip-grid">
-          <div class="clip tl"><div class="clip-meta"><span class="tag t-teal">Meio ambiente</span><span class="clip-src">Prefeitura de Americana &middot; 14/08</span></div><div class="clip-ttl">Prefeitura conclui primeira etapa da requalificação ambiental do Bosque dos Ipês</div><a href="https://www.americana.sp.gov.br/americana-index.php?a=noticia&amp;id=36803" target="_blank" rel="noopener">Ver publicação</a></div>
-          <div class="clip tl"><div class="clip-meta"><span class="tag t-teal">Meio ambiente</span><span class="clip-src">Liberal &middot; 27/08</span></div><div class="clip-ttl">Americana vira referência na gestão de resíduos; reciclagem tem investimentos</div><a href="https://liberal.com.br/cidades/americana/americana-vira-referencia-na-gestao-de-residuos-reciclagem-tem-investimentos" target="_blank" rel="noopener">Ver publicação</a></div>
-        </div></div>
-      </details>
-      <details class="dsec clip-dsec">
-        <summary>
-          <div class="dsec-top"><h3>Segurança</h3><p class="dsum">1 notícia no período</p></div>
-          <span class="dtoggle"><span class="dtxt-closed">Ver</span><span class="dtxt-open">Recolher</span><i class="dchev"></i></span>
-        </summary>
-        <div class="dbody"><div class="clip-grid">
-          <div class="clip or"><div class="clip-meta"><span class="tag t-orange">Segurança</span><span class="clip-src">Prefeitura de Americana &middot; 21/08</span></div><div class="clip-ttl">GAMA investe em novo drone e cão-robô para reforçar o combate ao crime</div><a href="https://www.americana.sp.gov.br/americana-index.php?a=noticia&amp;id=36868" target="_blank" rel="noopener">Ver publicação</a></div>
-        </div></div>
-      </details>
-      <details class="dsec clip-dsec">
-        <summary>
-          <div class="dsec-top"><h3>Esporte</h3><p class="dsum">1 notícia no período</p></div>
-          <span class="dtoggle"><span class="dtxt-closed">Ver</span><span class="dtxt-open">Recolher</span><i class="dchev"></i></span>
-        </summary>
-        <div class="dbody"><div class="clip-grid">
-          <div class="clip or"><div class="clip-meta"><span class="tag t-orange">Esporte</span><span class="clip-src">Prefeitura de Americana &middot; 12/08</span></div><div class="clip-ttl">Judocas de Americana sobem ao pódio na final estadual dos Jogos Escolares</div><a href="https://www.americana.sp.gov.br/americana-index.php?a=noticia&amp;id=36768" target="_blank" rel="noopener">Ver publicação</a></div>
-        </div></div>
-      </details>
-    </div>
-
-    <p class="lead fade-in">A seleção acima traz 16 das 77 publicações do período, uma amostra por tema. O levantamento cobriu o canal oficial de notícias da Prefeitura e os veículos regionais Liberal e Todo Dia. Não foram encontradas publicações sobre Americana no período em outros veículos consultados, e nenhuma publicação entrou nesta lista sem que título, data e link fossem conferidos na página de origem.</p>
-
-    <div class="ib pu fade-in">
-      <div class="ib-lbl">Leitura da clipagem</div>
-      <div class="ib-txt">A agenda pública de agosto foi dominada por obra em andamento. Só o programa Asfalto Novo rendeu registro quase diário, sempre com o mesmo formato: qual bairro entrou, qual etapa avançou, qual rua ficou pronta. Esse é um tipo de pauta que se sustenta sozinho na imprensa local, porque cada trecho novo é notícia por si. O contraponto está nas pautas de agenda única, como o Roteiro Gastronômico e o aniversário da cidade, que geram muito volume concentrado em poucos dias e dependem de aviso prévio para chegar à população a tempo.</div>
-    </div>
+    <p class="tbl-note">Estão reproduzidas acima as publicações com título, data e link conferidos um a um na página de origem, nos veículos Liberal e Todo Dia.</p>
   </div>
-</div>
-
-<!-- ═══ 8 · MÍDIA PAGA E AGENDA ESPONTÂNEA ═══ -->
-<section class="sec" id="cruzamento">
-  <span class="eyebrow eyebrow-p">Análise Qualitativa</span>
-  <h2 class="h1 fade-in">Mídia paga e agenda espontânea</h2>
-  <p class="sub fade-in">Cruzamento entre as pautas que a campanha veiculou e o que a cidade efetivamente noticiou no mesmo período.</p>
-
-  <p class="lead fade-in">O ciclo de agosto tem uma característica rara: praticamente tudo que entrou na mídia paga também estava acontecendo na cidade. Não houve pauta veiculada sem lastro na agenda pública, e isso muda a leitura de todos os números anteriores. Quando a campanha falou de asfalto, havia obra na rua; quando falou das 7 Maravilhas, a votação estava aberta; quando falou do Roteiro Gastronômico, a estrutura já estava sendo montada. A mídia paga funcionou como amplificação de fato consumado, não como anúncio de intenção.</p>
 
   <div class="g3 fade-in" style="margin-top:26px">
-    <div class="rec-card" style="border-top:3px solid var(--teal)">
-      <span class="tag t-teal">Convergência mais forte</span>
-      <div class="rec-ttl">Infraestrutura falou pelos dois canais ao mesmo tempo</div>
-      <div class="rec-txt">Foi o tema com mais publicações do período, 18 no total, e também a maior peça paga do ciclo, com 120.430 impressões. Enquanto a imprensa registrava o Asfalto Novo avançando pelo Cariobinha, São Manoel, São Vito e Avenida Paulista, o vídeo mostrava as equipes trabalhando de dia e de noite. Mensagem paga e agenda espontânea contaram a mesma história na mesma semana, o que costuma ser o cenário mais favorável para fixar uma percepção.</div>
-    </div>
     <div class="rec-card" style="border-top:3px solid var(--purple)">
       <span class="tag t-purple">Sincronia de calendário</span>
       <div class="rec-ttl">7 Maravilhas rodou exatamente na janela da votação</div>
-      <div class="rec-txt">A peça que mais gerou conversa esteve no ar no mesmo período em que a votação seguia aberta, encerrada em 25 de agosto, e os vencedores foram anunciados em 27, junto da solenidade de 151 anos da cidade. Foi o único caso do mês em que a mídia paga participou de um processo em andamento, e não da divulgação de algo já concluído: os 219 comentários somados nas versões analisadas da peça são o reflexo direto disso.</div>
-    </div>
-    <div class="rec-card" style="border-top:3px solid var(--p)">
-      <span class="tag t-blue">Volume nos dois lados</span>
-      <div class="rec-ttl">Saúde teve agenda densa e peça de grande alcance</div>
-      <div class="rec-txt">Foram 13 publicações no período, entre obras das novas UBS do Jardim da Balsa 2 e da Jacyra, mutirões de atendimento e o Banco de Sangue do Hospital Municipal entrando em fase de pintura. A peça paga, o carrossel Americana Vem Avançando na Saúde, entregou 84.381 impressões na cópia líder. O tema teve presença garantida, ainda que a reação pública à peça tenha ficado baixa.</div>
+      <div class="rec-txt">A peça que mais gerou conversa esteve no ar no mesmo período em que a votação seguia aberta, encerrada em 25 de agosto, e os vencedores foram anunciados em 27, junto da solenidade de 151 anos da cidade, com registro na imprensa local. Foi o único caso do mês em que a mídia paga participou de um processo em andamento, e não da divulgação de algo já concluído.</div>
     </div>
     <div class="rec-card" style="border-top:3px solid var(--orange)">
       <span class="tag t-orange">Eco garantido</span>
       <div class="rec-ttl">Roteiro Gastronômico foi construído em etapas nos dois canais</div>
-      <div class="rec-txt">Dez publicações acompanharam o evento desde a definição dos estabelecimentos até a véspera da abertura, e a campanha manteve duas versões da peça no ar, uma a partir de 05 e outra a partir de 21 de agosto. O desenho em duas fases acompanhou o ritmo da própria agenda, o que é o comportamento adequado para pauta de evento com data marcada.</div>
-    </div>
-    <div class="rec-card" style="border-top:3px solid var(--tm)">
-      <span class="tag t-gray">Descompasso do ciclo</span>
-      <div class="rec-ttl">Esporte teve agenda cheia e público mais específico</div>
-      <div class="rec-txt">O tema rendeu sete publicações no período, entre pódio no judô, medalhas na ginástica, obras do campo society do Mário Covas e convocação de atleta para a seleção. Em mídia paga, a resposta do público foi mais contida que nas demais áreas. É a leitura mais instrutiva do cruzamento: uma agenda ativa não se converte automaticamente em consumo do conteúdo em formato de anúncio, e isso ajuda a calibrar o formato certo para a pauta.</div>
+      <div class="rec-txt">A campanha manteve duas versões da peça no ar, uma a partir de 05 e outra a partir de 21 de agosto, e a imprensa entrou na véspera da abertura. O desenho em duas fases acompanhou o ritmo da própria agenda, o que é o comportamento adequado para pauta de evento com data marcada.</div>
     </div>
     <div class="rec-card" style="border-top:3px solid var(--teal)">
-      <span class="tag t-teal">Só na agenda espontânea</span>
-      <div class="rec-ttl">Pautas de serviço circularam sem apoio de mídia</div>
-      <div class="rec-txt">Alguns dos assuntos de maior utilidade prática do mês não tiveram peça correspondente: a confirmação de óbito por febre maculosa, a campanha de multivacinação com Dia D no fim de semana, o mutirão de castrações do CCZ e a abertura das inscrições escolares para 2027. São informações de serviço com procura espontânea da população, e chegaram apenas pelos canais próprios e pela imprensa.</div>
+      <span class="tag t-teal">Convergência de tema</span>
+      <div class="rec-ttl">Meio ambiente apareceu nos dois lados na mesma semana</div>
+      <div class="rec-txt">Enquanto a campanha mantinha no ar a peça institucional da área, o Liberal tratou a gestão de resíduos da cidade como referência regional. É o tipo de coincidência que reforça a mensagem sem custo adicional, porque a pauta paga e a pauta editorial dizem a mesma coisa na mesma semana.</div>
+    </div>
+    <div class="rec-card" style="border-top:3px solid var(--p)">
+      <span class="tag t-blue">Alcance construído pela campanha</span>
+      <div class="rec-ttl">Infraestrutura e saúde apoiaram-se na veiculação</div>
+      <div class="rec-txt">As duas pautas de maior volume do ciclo, Feliz de Verdade na Infra e Americana Vem Avançando na Saúde, são temas contínuos, sem um marco único de data. A exposição dessas frentes foi construída principalmente pela veiculação e pelos canais próprios da Prefeitura, o que dá a elas um peso maior dentro do plano.</div>
+    </div>
+    <div class="rec-card" style="border-top:3px solid var(--tm)">
+      <span class="tag t-gray">Concentração no fim do mês</span>
+      <div class="rec-ttl">A imprensa entrou na última semana</div>
+      <div class="rec-txt">Os registros da clipagem se concentram na virada de 27 para 28 de agosto, na esteira do aniversário da cidade. A janela em que a campanha manteve as pautas de identidade e de gastronomia no ar coincidiu com a semana de maior atenção da imprensa local, e as duas coisas se somaram.</div>
+    </div>
+    <div class="rec-card" style="border-top:3px solid var(--teal)">
+      <span class="tag t-teal">Aprendizado de calendário</span>
+      <div class="rec-ttl">Pauta com data marcada rende nos dois canais</div>
+      <div class="rec-txt">Os três temas que apareceram na imprensa independente têm uma data no meio: o aniversário, o resultado de um concurso e a abertura de um evento. Sugerimos usar esse padrão no próximo calendário, ancorando as pautas de maior investimento em marcos com data, para que a veiculação e a repercussão espontânea aconteçam na mesma janela.</div>
     </div>
   </div>
 
-  <div class="ib fade-in">
-    <div class="ib-lbl">Síntese do cruzamento</div>
-    <div class="ib-txt">O ciclo mostrou que a mídia paga rende mais quando entra em cima de algo que está acontecendo, e rende ainda mais quando entra em algo que a população pode influenciar, como foi o caso da votação das 7 Maravilhas. Também deixou claro que agenda pública e apetite do público são coisas diferentes: esporte reuniu sete registros na agenda da cidade e a menor entrega paga do ciclo. Para o calendário seguinte, isso sugere olhar menos para quantas ações existem em cada área e mais para quais delas a cidade quer acompanhar.</div>
-  </div>
-</section>
-
-<!-- ═══ 10 · RECOMENDAÇÕES ═══ -->
-<section class="sec" id="futuro">
-  <span class="eyebrow eyebrow-p">Pensando no Futuro</span>
-  <h2 class="h1 fade-in">Pensando no futuro</h2>
-  <p class="sub fade-in">Encaminhamentos que a leitura de agosto sugere para o trabalho de comunicação da Prefeitura.</p>
-
-  <div class="g2 fade-in" style="margin-top:28px">
-    <div class="rec-card">
-      <span class="tag t-blue">Formato</span>
-      <div class="rec-ttl">Padronizar os vídeos de mídia entre 15 e 45 segundos</div>
-      <div class="rec-txt">As peças do bloco institucional têm de 1min41 a 1min50, e a atenção média ficou entre 9 e 11 segundos. A versão longa segue ótima para os canais próprios; para mídia, sugerimos uma versão curta com a mensagem principal resolvida logo no começo.</div>
-    </div>
-    <div class="rec-card">
-      <span class="tag t-teal">Abertura</span>
-      <div class="rec-ttl">Resolver a mensagem nos primeiros segundos</div>
-      <div class="rec-txt">A tarja com a pergunta, em 7 Maravilhas, acompanha o vídeo inteiro e foi o que mais prendeu no ciclo. Sugerimos abrir sempre pela cena ou pela pergunta, deixando a assinatura para o fechamento.</div>
-    </div>
-    <div class="rec-card">
-      <span class="tag t-purple">Chamada para ação</span>
-      <div class="rec-ttl">Subir a instrução prática para o começo da peça</div>
-      <div class="rec-txt">Em 7 Maravilhas, o passo a passo da votação aparece já na segunda metade do vídeo. Quando a peça pede uma ação da população, sugerimos trazer o como fazer logo depois do gancho e deixar o detalhamento para o texto do post.</div>
-    </div>
-    <div class="rec-card">
-      <span class="tag t-teal">Medida por função</span>
-      <div class="rec-ttl">Medir cada pauta pela régua que cabe a ela</div>
-      <div class="rec-txt">Pauta de pergunta mobiliza resposta; pauta de serviço informa e é recebida em silêncio. As duas são necessárias e cumprem funções diferentes. Sugerimos definir, já no plano, o que cada peça deve produzir, para que a leitura do ciclo seguinte compare cada uma com o próprio objetivo.</div>
-    </div>
-    <div class="rec-card">
-      <span class="tag t-blue">Da conversa à adesão</span>
-      <div class="rec-ttl">Transformar quem comenta em quem participa</div>
-      <div class="rec-txt">Em 7 Maravilhas, a cidade respondeu à pergunta nos comentários, e o passo a passo da votação ficava depois da janela de atenção. Sugerimos, nas próximas pautas participativas, colocar a instrução logo após o gancho e usar a legenda e os canais próprios para repetir o caminho da participação.</div>
-    </div>
-    <div class="rec-card">
-      <span class="tag t-orange">Peças de serviço</span>
-      <div class="rec-ttl">Dar rosto às pautas de dados</div>
-      <div class="rec-txt">O carrossel de Saúde focou mais em entregar volume, e cumpriu bem esse papel. Para as próximas, sugerimos abrir com uma cena ou uma pessoa atendida antes dos números, assim a informação chega junto de um motivo para parar a rolagem.</div>
-    </div>
-
+  <div class="ib pu fade-in">
+    <div class="ib-lbl">Leitura do cruzamento</div>
+    <div class="ib-txt">Com o recorte da imprensa independente, agosto mostra dois movimentos distintos. Nas pautas com data marcada, a campanha e a imprensa contaram a mesma história na mesma semana, e a mídia paga funcionou como amplificação de fato consumado. Nas pautas de obra e de serviço, que correm o mês inteiro sem um marco único, a exposição se apoiou sobretudo na veiculação. Para o calendário seguinte, isso sugere tratar os dois casos com pesos diferentes: os temas com data ganham eco, os temas contínuos precisam do plano para chegar à cidade.</div>
   </div>
 </section>
 
-<!-- ═══ 9 · DIAGNÓSTICO ═══ -->
+<!-- ═══ 8 · DIAGNÓSTICO FINAL E ENCAMINHAMENTOS ═══ -->
 <div class="diag" id="diagnostico">
   <div class="diag-in">
     <span class="eyebrow eyebrow-wh">Diagnóstico Final</span>
     <h2 class="h1 fade-in" style="color:#fff">O que o Ciclo Revelou</h2>
-    <p class="sub fade-in" style="color:rgba(255,255,255,.62)">Cinco linhas contratadas cumpridas, dez pautas no ar e um retrato bastante claro de quais temas a cidade acompanha em silêncio e quais ela responde.</p>
+    <p class="sub fade-in" style="color:rgba(255,255,255,.62)">Dez pautas no ar entre 05 e 28 de agosto, todas as linhas contratadas cumpridas e um retrato bastante claro de quais temas a cidade acompanha em silêncio e quais ela responde.</p>
 
     <div class="dc-grid fade-in">
-      <div class="dc"><div class="dc-acc t"></div><div class="dc-n">01</div><div class="dc-m">554.109</div><div class="dc-ttl">Contas únicas alcançadas</div><div class="dc-txt">Contas únicas, já sem duplicidade entre as linhas, com frequência média de 1,35. A verba trabalhou para abrir público novo em vez de repetir a mensagem sobre quem já tinha visto.</div></div>
-      <div class="dc"><div class="dc-acc b"></div><div class="dc-n">02</div><div class="dc-m">24 dias</div><div class="dc-ttl">Veiculação sem interrupção</div><div class="dc-txt">Entrega registrada em todos os dias de 05 a 28 de agosto, fins de semana incluídos, com média de 31.202 impressões por dia e nenhum intervalo em branco na curva.</div></div>
-      <div class="dc"><div class="dc-acc p"></div><div class="dc-n">03</div><div class="dc-m">5 linhas</div><div class="dc-ttl">Todas as frentes contratadas cumpridas</div><div class="dc-txt">Impressões, engajamento, as duas linhas de visualização e YouTube fecharam o ciclo com o volume contratado entregue, cada uma conferida contra a própria meta.</div></div>
-      <div class="dc"><div class="dc-acc t"></div><div class="dc-n">04</div><div class="dc-m">117.341</div><div class="dc-ttl">Impressões no público de 65 anos ou mais</div><div class="dc-txt">O formato de vídeo com apresentador alcançou de verdade a faixa mais velha da cidade, um público que campanhas de vídeo curto costumam não atingir.</div></div>
-      <div class="dc"><div class="dc-acc b"></div><div class="dc-n">05</div><div class="dc-m">120.430</div><div class="dc-ttl">A pauta de infraestrutura liderou o volume</div><div class="dc-txt">Feliz de Verdade na Infra foi a maior peça do mês e a que mais abriu alcance novo, mostrando obra em andamento em vez de anunciar intenção.</div></div>
-      <div class="dc"><div class="dc-acc p"></div><div class="dc-n">06</div><div class="dc-m">219</div><div class="dc-ttl">Comentários na pauta de identidade da cidade</div><div class="dc-txt">Dos 231 comentários do mês, 219 estão nas versões analisadas de 7 Maravilhas, e com um volume de mídia muito menor que o das peças de serviço. É o melhor desempenho do ciclo em resposta por volume investido.</div></div>
+      <div class="dc"><div class="dc-acc t"></div><div class="dc-n">01</div><div class="dc-m">117.341</div><div class="dc-ttl">Impressões entregues ao público de 65 anos ou mais</div><div class="dc-txt">É o número de exibições que chegaram à faixa mais velha da cidade, mais que as faixas de 35 a 44 e de 45 a 54 somadas. O formato de vídeo com apresentador alcançou de verdade esse público, que campanhas de vídeo curto costumam não atingir.</div></div>
+      <div class="dc"><div class="dc-acc b"></div><div class="dc-n">02</div><div class="dc-m">120.430</div><div class="dc-ttl">Impressões da peça de infraestrutura, a maior do ciclo</div><div class="dc-txt">É o volume de exibições de Feliz de Verdade na Infra, a peça que mais rodou e a que mais abriu alcance novo no mês, mostrando obra em andamento em vez de anunciar intenção.</div></div>
+      <div class="dc"><div class="dc-acc p"></div><div class="dc-n">03</div><div class="dc-m">222</div><div class="dc-ttl">Comentários na pauta de identidade da cidade</div><div class="dc-txt">É o número de comentários escritos em 7 Maravilhas, de um total de 231 no mês inteiro. A peça recebeu um volume de mídia bem menor que o das pautas de serviço e ainda assim concentrou quase toda a conversa do ciclo.</div></div>
+    </div>
+
+    <div style="margin-top:52px;padding-top:38px;border-top:1px solid rgba(255,255,255,.14)">
+      <span class="eyebrow eyebrow-wh">Pensando no Futuro</span>
+      <h3 style="font-size:clamp(1.4rem,2.6vw,2rem);font-weight:800;color:#fff;letter-spacing:-.02em;line-height:1.15;margin-bottom:10px">Encaminhamentos para os próximos ciclos</h3>
+      <p class="sub fade-in" style="color:rgba(255,255,255,.62);margin-bottom:8px">O que a leitura de agosto sugere para o trabalho de comunicação da Prefeitura.</p>
+
+      <div class="dc-grid fade-in">
+        <div class="dc"><div class="dc-acc b"></div><span class="tag t-blue">Formato</span><div class="dc-ttl" style="margin-top:11px">Padronizar os vídeos de mídia entre 15 e 45 segundos</div><div class="dc-txt">As peças do bloco institucional têm de 1min41 a 1min50, e o tempo médio assistido ficou entre 9 e 11 segundos. A versão longa segue ótima para os canais próprios; para mídia, sugerimos uma versão curta com a mensagem principal resolvida logo no começo.</div></div>
+        <div class="dc"><div class="dc-acc t"></div><span class="tag t-teal">Abertura</span><div class="dc-ttl" style="margin-top:11px">Resolver a mensagem nos primeiros segundos</div><div class="dc-txt">A tarja com a pergunta, em 7 Maravilhas, acompanha o vídeo inteiro e foi o que mais prendeu no ciclo. Sugerimos abrir sempre pela cena ou pela pergunta, deixando a assinatura para o fechamento.</div></div>
+        <div class="dc"><div class="dc-acc p"></div><span class="tag t-purple">Chamada para ação</span><div class="dc-ttl" style="margin-top:11px">Subir a instrução prática para o começo da peça</div><div class="dc-txt">Em 7 Maravilhas, o passo a passo da votação aparece já na segunda metade do vídeo. Quando a peça pede uma ação da população, sugerimos trazer o como fazer logo depois do gancho e deixar o detalhamento para o texto do post.</div></div>
+        <div class="dc"><div class="dc-acc b"></div><span class="tag t-blue">Da conversa à adesão</span><div class="dc-ttl" style="margin-top:11px">Transformar quem comenta em quem participa</div><div class="dc-txt">Em 7 Maravilhas, a cidade respondeu à pergunta nos comentários, e o passo a passo da votação ficava depois da janela de atenção. Sugerimos, nas próximas pautas participativas, colocar a instrução logo após o gancho e usar a legenda e os canais próprios para repetir o caminho da participação.</div></div>
+        <div class="dc"><div class="dc-acc t"></div><span class="tag t-orange">Peças de serviço</span><div class="dc-ttl" style="margin-top:11px">Dar rosto às pautas de dados</div><div class="dc-txt">O carrossel de Saúde focou mais em entregar volume, e cumpriu bem esse papel. Para as próximas, sugerimos abrir com uma cena ou uma pessoa atendida antes dos números, assim a informação chega junto de um motivo para parar a rolagem.</div></div>
+        <div class="dc"><div class="dc-acc p"></div><span class="tag t-purple">Calendário</span><div class="dc-ttl" style="margin-top:11px">Ancorar as pautas de maior peso em datas marcadas</div><div class="dc-txt">Os temas que apareceram na imprensa independente em agosto têm todos uma data no meio: o aniversário da cidade, o resultado de um concurso e a abertura de um evento. Sugerimos usar esse padrão no próximo calendário, para que a veiculação e a repercussão espontânea aconteçam na mesma janela.</div></div>
+      </div>
     </div>
 
     <div style="margin-top:34px;padding:22px 26px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:16px">
       <div style="font-size:.63rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#7fe9d8;margin-bottom:8px">Síntese do ciclo</div>
-      <div style="font-size:.95rem;color:rgba(255,255,255,.84);line-height:1.75">Agosto separou com clareza duas coisas que costumam ser lidas juntas: volume e eficiência. As peças de serviço abriram o maior alcance do ciclo e foram recebidas em silêncio; 7 Maravilhas recebeu uma fração dessa mídia e concentrou praticamente toda a conversa do mês, o que a torna a peça de melhor desempenho do ciclo em resposta obtida por volume investido. O que fez a diferença foi o gancho: a pergunta vem numa tarja fixa, presente do primeiro ao último segundo, e chega mesmo a quem vê poucos segundos e sem som. Vale registrar, ainda, que conversa alta não é o mesmo que adesão: as pessoas responderam à pergunta nos comentários, mas o passo a passo da votação está na segunda metade de um vídeo cuja atenção média ficou entre 9 e 11 segundos. Quando a peça pede uma ação, a instrução precisa caber na janela em que o público realmente está assistindo.</div>
+      <div style="font-size:.95rem;color:rgba(255,255,255,.84);line-height:1.75">Agosto separou com clareza duas coisas que costumam ser lidas juntas: volume e eficiência. As peças de serviço abriram o maior alcance do ciclo e foram recebidas em silêncio; 7 Maravilhas recebeu uma fração dessa mídia e concentrou praticamente toda a conversa do mês, o que a torna a peça de melhor desempenho do ciclo em resposta obtida por volume investido. O que fez a diferença foi o gancho: a pergunta vem numa tarja fixa, presente do primeiro ao último segundo, e chega mesmo a quem vê poucos segundos e sem som. Vale registrar, ainda, que conversa alta não é o mesmo que adesão: as pessoas responderam à pergunta nos comentários, mas o passo a passo da votação está na segunda metade de um vídeo cujo tempo médio assistido ficou entre 9 e 11 segundos. Quando a peça pede uma ação, a instrução precisa caber na janela em que o público realmente está assistindo.</div>
     </div>
   </div>
 </div>
@@ -1162,7 +1019,7 @@
     <div class="src-col"><h4>Metas contratadas</h4><p>Metas por linha conforme contratado com a Prefeitura para o ciclo de agosto, conferidas uma a uma contra a entrega apurada na plataforma.</p></div>
     <div class="src-col"><h4>Perfil de público</h4><p>Recorte de impressões por idade e por gênero extraído da própria plataforma de mídia. A soma por faixa fica em 748.768 impressões, pequena diferença para o total da conta por causa de registros sem faixa apurada.</p></div>
     <div class="src-col"><h4>Análise de criativos</h4><p>Peças vistas diretamente, vídeo por vídeo e cartão por cartão, com leitura dos comentários públicos de cada publicação. A análise é qualitativa e acompanha os números de entrega de cada peça.</p></div>
-    <div class="src-col"><h4>Agenda da cidade</h4><p>Clipagem de publicações sobre Americana e a Prefeitura no período, com título, data, veículo e link de cada registro reproduzidos como publicados na fonte original.</p></div>
+    <div class="src-col"><h4>Agenda da cidade</h4><p>Clipagem dos veículos independentes Liberal e Todo Dia no período, com título, data, veículo e link de cada registro reproduzidos como publicados na fonte original. As publicações do canal oficial da Prefeitura ficaram fora deste recorte.</p></div>
   </div>
   <p class="src-disc">Nenhum número deste relatório foi estimado. Cada dado é rastreável à sua fonte original, plataforma de mídia ou publicação de imprensa, e foi conferido antes da publicação. As leituras qualitativas de criativo estão sempre identificadas como tal e separadas dos números apurados.</p>
 </section>
@@ -1205,12 +1062,6 @@ new Chart(document.getElementById('chartIdade'),{type:'bar',
     plugins:{legend:{position:'bottom',labels:{font:{size:11,weight:'500'},color:'#444',padding:12,boxWidth:12}},tooltip:{...TIP,callbacks:{label:c=>' '+c.dataset.label+': '+BR(c.parsed.x)}}},
     scales:{x:{stacked:true,grid:{color:'rgba(0,0,0,.04)'},border:{display:false},ticks:{callback:v=>v>=1000?Math.round(v/1000)+'K':v,font:{size:10},color:'#555'}},y:{stacked:true,grid:{display:false},border:{display:false},ticks:{font:{size:11,weight:'600'},color:'#333'}}}}});
 
-new Chart(document.getElementById('chartClip'),{type:'bar',
-  data:{labels:['Infraestrutura','Saúde','Roteiro Gastronômico','151 anos e 7 Maravilhas','Meio ambiente','Esporte','Educação','Segurança'],
-    datasets:[{data:[18,13,10,10,8,7,6,5],backgroundColor:['#1A3CFF','#17A697','#C44A00','#7B2FBE','rgba(23,166,151,.65)','rgba(0,0,0,.28)','rgba(26,60,255,.62)','rgba(196,74,0,.6)'],borderRadius:5,borderSkipped:false}]},
-  options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,animation:false,
-    plugins:{legend:{display:false},tooltip:{...TIP,callbacks:{label:c=>' '+c.parsed.x+(c.parsed.x===1?' publicação':' publicações')}}},
-    scales:{x:{grid:{color:'rgba(0,0,0,.04)'},border:{display:false},ticks:{stepSize:2,font:{size:10},color:'#555'}},y:{grid:{display:false},border:{display:false},ticks:{font:{size:10.5,weight:'600'},color:'#333'}}}}});
 
 new Chart(document.getElementById('chartGenero'),{type:'doughnut',
   data:{labels:['Feminino','Masculino','Não informado'],
