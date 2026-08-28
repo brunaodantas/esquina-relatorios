@@ -158,6 +158,25 @@ body{font-family:var(--font);background:#333;color:var(--t1);-webkit-font-smooth
 .dc-ttl{font-size:13px;font-weight:700;color:var(--t1);margin-bottom:4px}
 .dc-txt{font-size:11px;color:var(--t2);line-height:1.45}
 
+/* ── PLATAFORMAS ── */
+.plat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:16px;flex:1}
+.plat-box{background:var(--surface);border:1px solid var(--border);border-radius:14px;box-shadow:var(--sh);padding:16px 18px;display:flex;flex-direction:column}
+.plat-ttl{font-size:15px;font-weight:800;margin-bottom:2px}
+.plat-sub{font-size:11px;color:var(--tm);text-transform:uppercase;letter-spacing:.06em;font-weight:700;margin-bottom:6px}
+.plat-note{font-size:11px;color:var(--tm);line-height:1.45;margin-top:auto;padding-top:10px}
+
+/* ── CONTEXTO ── */
+.ctx-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px;flex:1;align-items:start}
+.ctx-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;box-shadow:var(--sh);padding:18px 22px}
+.ctx-ttl{font-size:15px;font-weight:700;margin-bottom:8px}
+.ctx-txt{font-size:12.5px;color:var(--t2);line-height:1.55}
+
+/* ── FONTES ── */
+.src-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:18px}
+.src-col h4{font-size:13px;font-weight:800;margin-bottom:6px}
+.src-col p{font-size:11.5px;color:var(--t2);line-height:1.5}
+.src-disc{font-size:11.5px;color:var(--tm);line-height:1.6;margin-top:20px;padding-top:14px;border-top:1px solid var(--border)}
+
 /* ── CONTRACAPA ── */
 .back{background:linear-gradient(160deg,#EEF1FF,#F4F6FF 50%,#EBF7F5)}
 .back .slide-in{align-items:center;justify-content:center;text-align:center}
@@ -187,11 +206,11 @@ body{font-family:var(--font);background:#333;color:var(--t1);-webkit-font-smooth
       <div class="cover-badge"><span class="dot"></span>Prefeitura de Hortolândia · Prestação de Contas · Fechamento de ciclo</div>
     </div>
     <h1 class="cover-title">Temas Diversos<br/><span class="acc">Agosto 2026</span></h1>
-    <p class="cover-desc">Sete pautas da cidade em Meta Ads, TikTok e YouTube. Veiculação de 01 a 27 de agosto de 2026 · Praça Hortolândia/SP.</p>
+    <p class="cover-desc">Sete pautas da cidade em Meta Ads, TikTok e YouTube: Planeta Rock, Semana Cultural, Segurança, Segurança nos Bairros, Agosto Lilás, a nova data do show de Diogo Nogueira e o programa de asfalto. Veiculação de 01 a 27 de agosto de 2026 · Praça Hortolândia/SP.</p>
     <div class="cover-pills">
       <div class="cpill"><div class="v">1,77M</div><div class="l">Impressões</div></div>
       <div class="cpill"><div class="v">53K</div><div class="l">Engajamentos</div></div>
-      <div class="cpill"><div class="v">168,9K</div><div class="l">Visualizações de vídeo</div></div>
+      <div class="cpill"><div class="v">136,2K</div><div class="l">Visualizações de vídeo</div></div>
       <div class="cpill"><div class="v">R$40K</div><div class="l">Valor do plano</div></div>
     </div>
     <div class="cover-foot"><span class="dot"></span>Meta Ads · TikTok · YouTube</div>
@@ -202,8 +221,9 @@ body{font-family:var(--font);background:#333;color:var(--t1);-webkit-font-smooth
 <section class="slide enc">
   <div class="slide-in">
     <div class="eyebrow">Ciclo encerrado</div>
-    <h2 class="enc-hl">Ciclo encerrado com metas superadas.</h2>
-    <p class="enc-story">Todas as sete metas contratadas para agosto foram atingidas e superadas, sem exceção. Segurança foi o tema que mais engajou o público, e a nova data do show de Diogo Nogueira foi o conteúdo que impactou mais pessoas.</p>
+    <h2 class="enc-hl">Em agosto, a campanha Temas Diversos levou sete pautas da cidade a mais de <span class="ht">1,76 milhão de exibições</span>, com <span class="hb">todo o plano contratado fechando acima do combinado</span>.</h2>
+    <p class="enc-story">Ao longo de agosto, a comunicação da Prefeitura acompanhou o calendário da cidade: o Planeta Rock e a Semana Cultural abriram o mês, a campanha de Segurança e o reforço nos bairros correram por praticamente todo o período, Agosto Lilás trouxe a conscientização sobre a Lei Maria da Penha, a nova data do show de Diogo Nogueira avisou o público sobre o reagendamento, e o programa de asfalto mostrou o andamento das obras.</p>
+    <p class="enc-story" style="margin-top:16px">A campanha foi encerrada de forma antecipada em 27 de agosto, com todas as entregas contratadas já cumpridas. Segurança foi o tema que mais engajou o público, e a nova data do show de Diogo Nogueira foi o conteúdo que impactou mais pessoas.</p>
   </div>
 </section>
 
@@ -281,7 +301,7 @@ body{font-family:var(--font);background:#333;color:var(--t1);-webkit-font-smooth
         <tr><td>META ADS TOTAL</td><td>1.660.459</td><td>53.025</td><td>60.049</td></tr>
       </tbody>
     </table>
-    <div class="ib"><div class="ib-l">Análise</div><div class="ib-t">O plano fechou acima do contratado em Meta Ads, TikTok e YouTube. A tabela completa está disponível na versão HTML deste relatório.</div></div>
+    <div class="ib"><div class="ib-l">Como ler a tabela</div><div class="ib-t">A distribuição acima é informativa: a meta contratada é do plano inteiro, não de cada tema. Segurança concentra o maior volume nas três métricas, resultado direto de ter recebido 37,5% do plano e de ter corrido por quase todo o mês. TikTok e YouTube não têm entrega própria por tema, entram só no consolidado por plataforma.</div></div>
   </div>
 </section>
 
@@ -306,7 +326,7 @@ body{font-family:var(--font);background:#333;color:var(--t1);-webkit-font-smooth
         <div class="perf-body">
           <div class="perf-sub">Segurança · 3 vídeos</div>
           <div class="perf-title">Canil da Guarda Municipal</div>
-          <div class="perf-txt">O vídeo do Canil da Guarda Municipal teve a maior impressão entre os três (194.390), com gancho emocional forte no cão em ação real. O vídeo da Guardiã Maria da Penha usa câmera corporal e pose de dupla protagonista, gancho mais institucional. O terceiro vídeo, de apresentação da GM, abre com a marca em tela cheia, gancho um pouco menos imediato.</div>
+          <div class="perf-txt">Segurança foi o tema com a maior fatia do plano e o maior volume em Meta Ads: 584.841 impressões somando as três peças. O vídeo do Canil da Guarda Municipal teve a maior impressão entre elas (194.390), com gancho emocional forte no cão farejando em ação real, busca, abordagem em área comercial e interação com criança em evento comunitário. O vídeo da Guardiã Maria da Penha usa ponto de vista de câmera corporal dentro da viatura e pose de dupla protagonista, gancho mais institucional, e conversa diretamente com a pauta do Agosto Lilás. O terceiro vídeo, de apresentação da GM, abre com a marca em tela cheia, gancho um pouco menos imediato. As três abrem de um jeito diferente, e é a abertura que explica a diferença entre elas.</div>
         </div>
       </div>
     </div>
@@ -322,20 +342,20 @@ body{font-family:var(--font);background:#333;color:var(--t1);-webkit-font-smooth
       <div class="tx-card">
         <div class="tx-card-ttl">Canil da Guarda Municipal</div>
         <div class="tx-card-fmt">194.390 impressões</div>
-        <div class="tx-block"><b>Funcionou</b><p>Protagonista não humano, raro no feed, gancho emocional forte.</p></div>
-        <div class="tx-block at"><b>Pode melhorar</b><p>Quase não mostra o rosto do condutor. Manter 15 a 45s, horizontal e vertical.</p></div>
+        <div class="tx-block"><b>Funcionou</b><p>Protagonista não humano, raro no feed, com gancho emocional forte e legenda embutida linha a linha. Se destaca num ambiente saturado de conteúdo institucional.</p></div>
+        <div class="tx-block at"><b>Pode melhorar</b><p>O rosto do condutor quase não aparece. Sugerimos dar mais espaço ao guarda humano ao lado do cão, e manter a peça entre 15 e 45 segundos, em versão horizontal e vertical.</p></div>
       </div>
       <div class="tx-card">
         <div class="tx-card-ttl">Guardiã Maria da Penha</div>
         <div class="tx-card-fmt">194.819 impressões</div>
-        <div class="tx-block"><b>Funcionou</b><p>Presença feminina forte, câmera corporal na viatura.</p></div>
-        <div class="tx-block at"><b>Pode melhorar</b><p>Gancho menos imediato que o do Canil da GM, que abre direto em ação.</p></div>
+        <div class="tx-block"><b>Funcionou</b><p>Presença feminina forte na linha de frente da segurança pública e ponto de vista de câmera corporal na viatura, no efeito de acompanhar o plantão. Reforça a mensagem de proteção à mulher.</p></div>
+        <div class="tx-block at"><b>Pode melhorar</b><p>Gancho menos imediato que o do Canil da GM, que abre direto em ação. Sugerimos aproximar a abertura de uma cena em movimento.</p></div>
       </div>
       <div class="tx-card">
         <div class="tx-card-ttl">Apresentação da Guarda Municipal</div>
         <div class="tx-card-fmt">195.632 impressões</div>
-        <div class="tx-block"><b>Funcionou</b><p>Reforça a marca da GM desde o início.</p></div>
-        <div class="tx-block at"><b>Pode melhorar</b><p>Gancho não tão forte quanto os outros dois. Manter 15 a 45s, horizontal e vertical.</p></div>
+        <div class="tx-block"><b>Funcionou</b><p>Funciona como vinheta de anúncio do tema, com a marca da GM em protagonismo desde o início. Apresenta a corporação para quem ainda não conhecia o trabalho dela na cidade.</p></div>
+        <div class="tx-block at"><b>Pode melhorar</b><p>Gancho não tão forte quanto o das outras duas, que abrem direto em cena. Sugerimos publicar as peças em sequência de vídeos no Meta Ads, e manter 15 a 45 segundos, horizontal e vertical.</p></div>
       </div>
     </div>
   </div>
@@ -350,9 +370,9 @@ body{font-family:var(--font);background:#333;color:var(--t1);-webkit-font-smooth
       <div class="perf-card">
         <div class="perf-media"><img src="assets/criativo-diogo-nogueira.jpg" alt="Nova data do show de Diogo Nogueira"/></div>
         <div class="perf-body">
-          <div class="perf-sub">283.860 impressões · meta de 230.000</div>
+          <div class="perf-sub">283.860 impressões · 8.185 engajamentos</div>
           <div class="perf-title">Nova Data Show Diogo Nogueira</div>
-          <div class="perf-txt">Foto do artista com o aviso do reagendamento pra 04/09. Maior impressão do ciclo mesmo estática. Uma animação leve ou contagem regressiva tende a reter mais atenção.</div>
+          <div class="perf-txt">O reagendamento do show exigia uma comunicação de utilidade pública: avisar, o mais rápido e para o maior número de pessoas possível, que a data tinha mudado. A peça traz a foto do artista com o texto anunciando a nova data, 04/09, e é a que mais impactou gente em todo o ciclo, mesmo sendo a única sem vídeo. O tema tinha o segundo maior percentual do plano, 15%, o que ajudou a levar o aviso longe. Sugerimos testar um formato com leve animação ou contagem regressiva, que tende a reter mais atenção que uma foto parada quando o assunto é aguardar a nova data.</div>
         </div>
       </div>
     </div>
@@ -367,21 +387,21 @@ body{font-family:var(--font);background:#333;color:var(--t1);-webkit-font-smooth
     <div class="tx-grid3">
       <div class="tx-card">
         <div class="tx-card-ttl">Asfalto · Infraestrutura</div>
-        <div class="tx-card-fmt">Vídeo, sem imagem disponível</div>
-        <div class="tx-block"><b>Funcionou</b><p>Plano aéreo de drone, o diferencial visual da peça.</p></div>
-        <div class="tx-block at"><b>Pode melhorar</b><p>Trazer alguém da comunidade em cena ao lado da equipe de obra.</p></div>
+        <div class="tx-card-fmt">Vídeo, sem imagem disponível · 192.664 impressões</div>
+        <div class="tx-block"><b>Funcionou</b><p>Boa variedade visual, alternando rolo compactador em ação, plano aéreo de drone e a equipe finalizando o serviço, com números fortes sobrepostos. O drone é o diferencial visual da peça, quebrando a monotonia de "obra na rua".</p></div>
+        <div class="tx-block at"><b>Pode melhorar</b><p>Sugerimos trazer alguém da comunidade em cena ao lado da equipe de obra, e manter 15 a 45 segundos, horizontal e vertical.</p></div>
       </div>
       <div class="tx-card">
         <div class="tx-card-ttl">Agosto Lilás</div>
-        <div class="tx-card-fmt">Vídeo, sem imagem disponível</div>
-        <div class="tx-block"><b>Funcionou</b><p>Alterna depoimento pessoal e fala institucional, conectado aos 20 anos da Lei Maria da Penha.</p></div>
-        <div class="tx-block at"><b>Pode melhorar</b><p>Para mais agilidade, abrir já em cena real, deixando o card de texto para reforçar a mensagem.</p></div>
+        <div class="tx-card-fmt">Vídeo, sem imagem disponível · 117.030 impressões</div>
+        <div class="tx-block"><b>Funcionou</b><p>Alterna um depoimento em tom pessoal, mulher sorrindo em ambiente acolhedor, com a fala institucional de uma guarda municipal explicando sinais de violência. O equilíbrio entre humano e informativo é o que o tema pede, conectado aos 20 anos da Lei Maria da Penha.</p></div>
+        <div class="tx-block at"><b>Pode melhorar</b><p>Sugerimos abrir já em cena real, deixando o card de texto com o título da campanha para reforçar a mensagem no meio ou no fim.</p></div>
       </div>
       <div class="tx-card">
         <div class="tx-card-ttl">Planeta Rock e Semana Cultural</div>
-        <div class="tx-card-fmt">Post de texto e link, cada tema com sua própria peça</div>
-        <div class="tx-block"><b>Funcionou</b><p>Bom aviso de agenda, verba pequena, evento de vida curta.</p></div>
-        <div class="tx-block at"><b>Pode melhorar</b><p>Vale testar vídeo curto de "prepare-se" no próximo ciclo.</p></div>
+        <div class="tx-card-fmt">Post de texto e link · 133.528 e 143.923 impressões</div>
+        <div class="tx-block"><b>Funcionou</b><p>Nos dois temas a peça de maior alcance foi um post de texto e link: contagem regressiva com data, local e entrada gratuita no Planeta Rock, programação completa e link pro site na Semana Cultural. Entregam o essencial em poucos segundos de leitura.</p></div>
+        <div class="tx-block at"><b>Pode melhorar</b><p>Sugerimos testar uma peça em vídeo curto de "prepare-se", com recorte da programação ou do line-up, entre 15 e 45 segundos, horizontal e vertical.</p></div>
       </div>
     </div>
   </div>
@@ -404,22 +424,118 @@ body{font-family:var(--font);background:#333;color:var(--t1);-webkit-font-smooth
   </div>
 </section>
 
-<!-- 15 · DIAGNÓSTICO -->
+
+<!-- POR PLATAFORMA -->
+<section class="slide">
+  <div class="slide-in">
+    <div class="eyebrow">Consolidação por plataforma</div>
+    <h2 class="s-h1">Meta Ads, YouTube e TikTok</h2>
+    <p class="s-sub">Cada plataforma cumpre um papel diferente no plano: o Meta Ads carrega o volume e o engajamento inteiro do ciclo, o YouTube foi contratado só para visualização de vídeo, e o TikTok entrou com impressão e visualização.</p>
+    <div class="plat-grid">
+      <div class="plat-box">
+        <div class="plat-ttl">Meta Ads</div>
+        <div class="plat-sub">Volume e engajamento</div>
+        <table class="dt">
+          <thead><tr><th>Métrica</th><th>Volume</th></tr></thead>
+          <tbody>
+            <tr><td>Impressões</td><td class="n">1.660.459</td></tr>
+            <tr><td>Alcance (conta)</td><td class="n">846.841</td></tr>
+            <tr><td>Frequência</td><td class="n">2,63</td></tr>
+            <tr><td>Cliques</td><td class="n">16.207</td></tr>
+            <tr><td>CTR</td><td class="n">0,73%</td></tr>
+            <tr><td>Engajamento</td><td class="n">53.025</td></tr>
+            <tr><td>Visualização</td><td class="n">60.049</td></tr>
+          </tbody>
+        </table>
+        <div class="plat-note">Alcance é o dado deduplicado da conta no período (Meta Insights), não a soma de campanhas.</div>
+      </div>
+      <div class="plat-box">
+        <div class="plat-ttl">YouTube</div>
+        <div class="plat-sub">Visualização de vídeo</div>
+        <table class="dt">
+          <thead><tr><th>Métrica</th><th>Volume</th></tr></thead>
+          <tbody>
+            <tr><td>Impressões</td><td class="n">50.808</td></tr>
+            <tr><td>Cliques</td><td class="n">193</td></tr>
+            <tr><td>Visualização</td><td class="n">42.852</td></tr>
+          </tbody>
+        </table>
+        <div class="plat-note">O YouTube foi contratado neste ciclo apenas com linha de visualização. As impressões entram como leitura de contexto.</div>
+      </div>
+      <div class="plat-box">
+        <div class="plat-ttl">TikTok</div>
+        <div class="plat-sub">Impressão e visualização</div>
+        <table class="dt">
+          <thead><tr><th>Métrica</th><th>Volume</th></tr></thead>
+          <tbody>
+            <tr><td>Impressões</td><td class="n">107.526</td></tr>
+            <tr><td>Visualização de vídeo</td><td class="n">33.338</td></tr>
+            <tr><td>Visualização de 6 segundos</td><td class="n">3.902</td></tr>
+            <tr><td>Visualização de 15 segundos</td><td class="n">1.977</td></tr>
+          </tbody>
+        </table>
+        <div class="plat-note">As leituras de 6 e 15 segundos mostram quanta gente permaneceu no vídeo além do primeiro impacto.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTEXTO NA CIDADE -->
+<section class="slide">
+  <div class="slide-in">
+    <div class="eyebrow">Contexto na cidade</div>
+    <h2 class="s-h1">O que Hortolândia noticiou em agosto</h2>
+    <p class="s-sub">Cruzando a mídia paga com o que foi noticiado sobre a cidade no período. Leitura factual, baseada só em notícias públicas do site oficial da Prefeitura.</p>
+    <div class="ctx-grid">
+      <div class="ctx-card">
+        <div class="ctx-ttl">Segurança</div>
+        <div class="ctx-txt">Em agosto, a Prefeitura buscou parceria com o Governo Federal para o programa Município Mais Seguro, retomou o projeto "Bem me quer, Paz se quer" da Guarda Municipal em seis escolas e promoveu treinamento de defesa pessoal para servidoras. A campanha paga reforçou essa mesma frente, mostrando o trabalho do canil e das guardas em campo.</div>
+      </div>
+      <div class="ctx-card">
+        <div class="ctx-ttl">Agosto Lilás</div>
+        <div class="ctx-txt">A cidade abriu o Agosto Lilás celebrando os 20 anos da Lei Maria da Penha, com rodas de conversa, palestras e uma caminhada em 30/08, o mesmo enquadramento usado na peça em vídeo da campanha.</div>
+      </div>
+      <div class="ctx-card">
+        <div class="ctx-ttl">Asfalto · Infraestrutura</div>
+        <div class="ctx-txt">O mutirão de recapeamento do Jardim Rosolém, com 11 vias e cerca de 49 mil m² de área recuperada, foi noticiado ao longo do mês, confirmando os mesmos números usados na peça da campanha.</div>
+      </div>
+    </div>
+    <div class="ib b"><div class="ib-l">Monitoramento</div><div class="ib-t">O relatório de monitoramento de redes sociais da E3 ainda não chegou. Quando chegar, vai complementar essa leitura com dado de percepção e será incorporado a este mesmo relatório numa atualização futura.</div></div>
+  </div>
+</section>
+
+<!-- DIAGNÓSTICO -->
 <section class="slide diag">
   <div class="slide-in">
     <div class="eyebrow wh">Diagnóstico final</div>
     <h2 class="s-h1">O que o ciclo revelou</h2>
     <div class="dc-grid">
-      <div class="dc"><div class="dc-acc b"></div><div class="dc-n">01</div><div class="dc-m">194.390 impressões</div><div class="dc-ttl">Canil da GM foi o vídeo-destaque de Segurança</div><div class="dc-txt">Entre os três vídeos de Segurança, o do Canil teve a maior impressão. O mês também trouxe a busca da Prefeitura por parceria com o Governo Federal para segurança pública.</div></div>
-      <div class="dc"><div class="dc-acc p"></div><div class="dc-n">02</div><div class="dc-m">Vídeo à frente do texto</div><div class="dc-ttl">Segurança e conscientização renderam mais em vídeo</div><div class="dc-txt">O formato vídeo superou os posts de texto e link em capacidade de prender a atenção.</div></div>
-      <div class="dc"><div class="dc-acc t"></div><div class="dc-n">03</div><div class="dc-m">Planeta Rock e Semana Cultural</div><div class="dc-ttl">Agenda de evento ainda depende de texto e link</div><div class="dc-txt">Peças de maior alcance foram texto e link, sem vídeo próprio, funcionaram como aviso.</div></div>
-      <div class="dc"><div class="dc-acc b"></div><div class="dc-n">04</div><div class="dc-m">283.860 impressões</div><div class="dc-ttl">Um aviso simples também foi longe</div><div class="dc-txt">A peça estática de Diogo Nogueira teve a maior impressão do ciclo, mesmo sem vídeo.</div></div>
-      <div class="dc"><div class="dc-acc p"></div><div class="dc-n">05</div><div class="dc-ttl" style="font-size:14px;margin-bottom:6px">Próximo ciclo</div><div class="dc-txt">Testar vídeo curto de "prepare-se" para temas de agenda; dar mais protagonismo ao guarda humano nas peças com o canil; aguardar o dado de monitoramento da E3 para complementar a leitura de percepção pública numa atualização futura.</div></div>
+      <div class="dc"><div class="dc-acc b"></div><div class="dc-n">01</div><div class="dc-m">194.390 impressões</div><div class="dc-ttl">Canil da GM foi o vídeo-destaque de Segurança</div><div class="dc-txt">Entre os três vídeos de Segurança, o do Canil teve a maior impressão. Abrir pelo cão farejando, protagonista pouco comum no feed, ajudou a chamar mais atenção. O mês também trouxe a busca da Prefeitura por parceria com o Governo Federal para o programa Município Mais Seguro.</div></div>
+      <div class="dc"><div class="dc-acc p"></div><div class="dc-n">02</div><div class="dc-m">Vídeo à frente do texto</div><div class="dc-ttl">Segurança e conscientização renderam mais em vídeo</div><div class="dc-txt">Nos temas de segurança e conscientização, o formato vídeo superou os posts de texto e link em capacidade de prender a atenção, mostrando ação real em vez de apenas anunciar a pauta.</div></div>
+      <div class="dc"><div class="dc-acc t"></div><div class="dc-n">03</div><div class="dc-m">Planeta Rock e Semana Cultural</div><div class="dc-ttl">Agenda de evento ainda depende de texto e link</div><div class="dc-txt">As peças de maior alcance foram texto e link, sem vídeo próprio. Funcionaram como aviso, mas não geraram a mesma conexão que os vídeos dos outros temas. Os dois tiveram janela curta, de oito dias.</div></div>
+      <div class="dc"><div class="dc-acc b"></div><div class="dc-n">04</div><div class="dc-m">283.860 impressões</div><div class="dc-ttl">Um aviso simples também foi longe</div><div class="dc-txt">A peça estática de Diogo Nogueira teve a maior impressão do ciclo, mesmo sem vídeo. Utilidade pública clara tem tração própria, independente do formato.</div></div>
+      <div class="dc"><div class="dc-acc p"></div><div class="dc-n">05</div><div class="dc-m">Três frentes</div><div class="dc-ttl">Recomendações</div><div class="dc-txt">Sugerimos testar uma peça em vídeo curto de "prepare-se", em contagem regressiva, para os temas de agenda de evento; sugerimos dar mais protagonismo ao guarda e ao condutor humano nas peças de segurança com animal; e seguimos aguardando o dado de monitoramento da E3 para complementar a leitura de percepção pública numa atualização futura deste relatório.</div></div>
     </div>
   </div>
 </section>
 
-<!-- 16 · CONTRACAPA -->
+
+<!-- FONTES E VERIFICAÇÃO -->
+<section class="slide">
+  <div class="slide-in">
+    <div class="eyebrow">Fontes e verificação</div>
+    <h2 class="s-h1">De onde vem cada número</h2>
+    <div class="src-grid">
+      <div class="src-col"><h4>Performance</h4><p>Dados de Meta Ads Manager, TikTok Ads Manager e YouTube Studio, granularidade por linha e por criativo, período de 01 a 27 de agosto de 2026.</p></div>
+      <div class="src-col"><h4>Metas de entrega</h4><p>Metas contratadas por linha e por plataforma, conforme planejamento e orientação do cliente, comparadas lado a lado com o entregue.</p></div>
+      <div class="src-col"><h4>Verba do plano</h4><p>Distribuição percentual do plano contratado entre os sete temas, conforme planejamento e orientação do cliente.</p></div>
+      <div class="src-col"><h4>Contexto local</h4><p>Notícias públicas do site oficial da Prefeitura de Hortolândia, período de agosto de 2026.</p></div>
+    </div>
+    <p class="src-disc">Os números de mídia vêm dos exports das plataformas; as metas e a distribuição de verba, do planejamento e orientação do cliente; o contexto de cidade, de notícias públicas. O alcance do Meta Ads é o dado deduplicado da conta no período, apurado no Meta Insights. A análise de criativos é qualitativa, baseada na observação direta das peças veiculadas.</p>
+  </div>
+</section>
+
+<!-- CONTRACAPA -->
 <section class="slide back">
   <div class="slide-in">
     <div class="back-logos"><img src="assets/logoPMH.png" alt="Prefeitura de Hortolândia"/><span class="sep"></span><img src="assets/logo-esquina.png" alt="Esquina Comunicação Online" style="height:40px;width:auto"/></div>
