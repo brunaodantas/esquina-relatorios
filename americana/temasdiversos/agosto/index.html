@@ -211,7 +211,7 @@
     .perf-rank.b{background:rgba(123,47,190,.10);color:var(--purple)}
     .perf-fmt{font-size:.58rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--tm);text-align:right}
     .perf-title{font-size:.95rem;font-weight:700;color:var(--t1);padding-bottom:12px;border-bottom:1px solid var(--border);margin-bottom:12px;line-height:1.25}
-    .perf-metrics{display:grid;grid-template-columns:1fr 1fr;gap:14px 10px}
+    .perf-metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(118px,1fr));gap:14px 10px}
     .perf-metric .v{font-size:1.2rem;font-weight:800;color:var(--t1);letter-spacing:-.02em;line-height:1.05}
     .perf-metric .l{font-size:.57rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--tm);margin-top:3px}
     .perf-note{font-size:.8rem;color:var(--t2);line-height:1.6;margin-top:12px;padding-top:12px;border-top:1px solid var(--border)}
@@ -382,6 +382,33 @@
     .rec-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:22px 24px;box-shadow:var(--sh);break-inside:avoid}
     .rec-ttl{font-weight:700;color:var(--t1);font-size:1rem;margin:11px 0 8px;line-height:1.3}
     .rec-txt{font-size:.86rem;color:var(--t2);line-height:1.7}
+
+    .abertura{padding-bottom:0}
+    .abertura .lead{font-size:1.06rem;color:var(--t2);max-width:82ch}
+    .rk-card>.tag{align-self:flex-start}
+    .rk-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:22px 24px;box-shadow:var(--sh);break-inside:avoid;display:flex;flex-direction:column}
+    .rk-total{font-weight:800;color:var(--t1);font-size:1.02rem;margin:11px 0 14px;letter-spacing:-.01em}
+    .rk-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+    .rk-list li{display:flex;gap:11px;align-items:flex-start;padding-bottom:10px;border-bottom:1px solid rgba(0,0,0,.05)}
+    .rk-list li:last-child{border-bottom:none;padding-bottom:0}
+    .rk-pos{flex:0 0 22px;height:22px;border-radius:6px;background:rgba(0,0,0,.05);color:var(--tm);font-size:.72rem;font-weight:800;display:flex;align-items:center;justify-content:center}
+    .rk-pos.on{background:var(--p);color:#fff}
+    .rk-body{display:flex;flex-direction:column;gap:2px}
+    .rk-name{font-size:.88rem;font-weight:700;color:var(--t1);line-height:1.3}
+    .rk-num{font-size:.78rem;color:var(--t2);line-height:1.5}
+    .rk-empty .rk-name{color:var(--tm);font-weight:600}
+    .rk-note{font-size:.8rem;color:var(--t2);line-height:1.65;margin-top:14px;padding-top:13px;border-top:1px solid var(--border)}
+    .hip-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:26px}
+    @media(max-width:900px){.hip-grid{grid-template-columns:1fr}}
+    .hip-card{background:#fff;border:1px solid var(--border);border-radius:var(--r);padding:22px 24px;box-shadow:var(--sh);break-inside:avoid}
+    .hip-ttl{font-weight:800;color:var(--t1);font-size:1.02rem;margin:11px 0 10px;line-height:1.32;letter-spacing:-.01em}
+    .hip-met{font-size:.63rem;font-weight:700;letter-spacing:.09em;color:var(--p);line-height:1.7;padding-bottom:12px;border-bottom:1px solid var(--border);margin-bottom:13px}
+    .hip-list{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:9px}
+    .hip-list li{font-size:.85rem;color:var(--t2);line-height:1.65}
+    .hip-list li b{color:var(--t1)}
+    .hip-fech{margin-top:15px;padding:13px 16px;background:rgba(26,60,255,.04);border-radius:10px;font-size:.83rem;color:var(--t2);line-height:1.65}
+    .hip-fech-lbl{display:block;font-size:.6rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--p);margin-bottom:5px}
+    .tbl-note{font-size:.78rem;color:var(--tm);line-height:1.6;margin-top:14px;max-width:88ch}
   </style>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
 </head>
@@ -414,6 +441,11 @@
       <div><div class="v">56.146</div><div class="k">Visualiza&ccedil;&otilde;es de v&iacute;deo</div></div>
     </div>
   </div>
+</section>
+
+<!-- ═══ 0 · ABERTURA ═══ -->
+<section class="sec abertura">
+  <p class="lead fade-in">De 05 a 28 de agosto, a comunicação da Prefeitura de Americana esteve no ar em cinco linhas de veiculação, entre Meta Ads e YouTube, cobrindo quase todas as áreas da gestão ao mesmo tempo. As páginas a seguir percorrem o que foi contratado, como o plano foi dividido, o que cada peça produziu e o que a cidade respondeu no período.</p>
 </section>
 
 <!-- ═══ 1 · ENTREGA DAS LINHAS CONTRATADAS ═══ -->
@@ -478,6 +510,230 @@
     <div class="ib-txt">R$18.000,00 é o investimento total contratado para o ciclo de agosto, distribuído entre as cinco linhas acima. A linha de visualização para público que já assistiu volta a falar com quem viu mais da metade dos vídeos, aprofundando a mensagem em quem já demonstrou interesse.</div>
   </div>
 </section>
+
+<!-- ═══ 5 · TOP 3 PEÇAS ═══ -->
+<div class="meta-wrap" id="pecas">
+  <div class="meta-in">
+    <span class="eyebrow eyebrow-p">Análise de Criativos</span>
+    <h2 class="h1 fade-in">O Que Funcionou e o Que Pode Melhorar</h2>
+    <p class="sub fade-in">As três peças que definiram o ciclo, vistas uma a uma, com o que funcionou, o ponto de atenção, a resposta do público e a leitura de audiência e posicionamento.</p>
+
+    <div class="regua fade-in">
+      <div class="regua-lbl">Critério de ordenação</div>
+      <div class="regua-txt">As peças estão ordenadas por <b>interação por mil impressões</b>, ou seja, quanta resposta cada uma obteve em relação ao volume de exibição que recebeu. É o mesmo cálculo aplicado às três, sobre a entrega somada de todas as versões de cada peça no período.</div>
+    </div>
+
+    <div class="perf-grid g1 fade-in">
+
+      <div class="perf-card wide">
+        <div class="perf-body">
+          <div class="perf-top">
+            <span class="perf-topleft"><span class="perf-pos">1</span><span class="perf-rank b">1º em interação por mil impressões</span></span>
+            <span class="perf-fmt">Vídeo &middot; Reels &middot; 1min41</span>
+          </div>
+          <div class="perf-title" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">7 Maravilhas <a class="perf-link" href="https://www.instagram.com/p/DbqgJ-VA08V/" target="_blank" rel="noopener">Ver a publicação &#8599;</a></div>
+          <div class="perf-metrics">
+            <div class="perf-metric"><div class="v">252.289</div><div class="l">Impressões da peça</div></div>
+            <div class="perf-metric"><div class="v">101.083</div><div class="l">Interações</div></div>
+            <div class="perf-metric"><div class="v">400,7</div><div class="l">Interações por mil impressões</div></div>
+            <div class="perf-metric"><div class="v">219</div><div class="l">Comentários</div></div>
+            <div class="perf-metric"><div class="v">0,87</div><div class="l">Comentários por mil impressões</div></div>
+          </div>
+          <div class="perf-note">
+            <div class="an-lbl">O que funcionou</div>
+            <p>Pauta de identidade com pergunta aberta. Uma tarja fixa com "quais s&atilde;o as 7 Maravilhas de Americana?" acompanha a pe&ccedil;a do primeiro ao &uacute;ltimo segundo, entregando o convite mesmo a quem assiste poucos segundos e sem som. Concentrou quase toda a conversa escrita do m&ecirc;s: 69 coment&aacute;rios e 125 rea&ccedil;&otilde;es s&oacute; na c&oacute;pia l&iacute;der, 219 coment&aacute;rios somando as vers&otilde;es analisadas. Foi tamb&eacute;m o menor esfor&ccedil;o de m&iacute;dia do ciclo por engajamento e por visualiza&ccedil;&atilde;o.</p>
+            <div class="an-lbl at">Ponto de aten&ccedil;&atilde;o</div>
+            <p>O v&iacute;deo &eacute; longo para o que precisa dizer. O tempo m&eacute;dio assistido ficou entre 9 e 11 segundos num v&iacute;deo de 1min41, e o tutorial de vota&ccedil;&atilde;o est&aacute; por volta da metade da pe&ccedil;a, longe do alcance de quem assiste esses primeiros segundos. Quem se interessou pela pergunta em geral n&atilde;o chega &agrave; instru&ccedil;&atilde;o de como votar. Sugerimos um corte de 15 a 30 segundos que v&aacute; direto da pergunta para a chamada de vota&ccedil;&atilde;o.</p>
+            <div class="an-lbl">Resposta do p&uacute;blico</div>
+            <p>A maior do ciclo, e com teor muito claro: as pessoas n&atilde;o s&oacute; reagiram, responderam &agrave; pergunta nomeando lugares. A Igreja de Santo Ant&ocirc;nio aparece em seis dos dez coment&aacute;rios da publica&ccedil;&atilde;o, disparada a mais citada, seguida da Avenida Brasil, do Parque Ecol&oacute;gico, do Horto e da pra&ccedil;a do Centro. O tom &eacute; afetivo, com mensagens como "eu amo Americana" e relatos de quem morou na cidade. Na pr&aacute;tica, a pe&ccedil;a funcionou como enquete espont&acirc;nea e devolveu, de gra&ccedil;a, a lista dos lugares que a popula&ccedil;&atilde;o elegeria antes mesmo de votar no site.</p>
+            <div class="an-lbl ac">Audi&ecirc;ncia e posicionamento</div>
+            <p>Quem conversa aqui &eacute; o p&uacute;blico mais velho: 65+ e 55 a 64 anos, com predom&iacute;nio feminino, respondem pela maior parte das rea&ccedil;&otilde;es e dos coment&aacute;rios da pe&ccedil;a. O desencontro est&aacute; no posicionamento. A entrega se concentrou no Feed do Facebook, 13.719 impress&otilde;es, mas foi o Reels do Instagram que converteu melhor: 9 cliques em apenas 1.010 impress&otilde;es, uma taxa cerca de dezessete vezes maior que a do Feed. O Reels recebeu menos de 5% da entrega desta pe&ccedil;a. Sugerimos redistribuir peso para Reels na pr&oacute;xima veicula&ccedil;&atilde;o desta pauta. Entrega praticamente toda em Android.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="perf-card wide">
+        <div class="perf-body">
+          <div class="perf-top">
+            <span class="perf-topleft"><span class="perf-pos">2</span><span class="perf-rank g">2º em interação por mil impressões</span></span>
+            <span class="perf-fmt">Vídeo &middot; Reels &middot; 1min50</span>
+          </div>
+          <div class="perf-title" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">Feliz de Verdade na Infra <a class="perf-link" href="https://www.facebook.com/prefeituraamericana/videos/4013281645632443/" target="_blank" rel="noopener">Ver a publicação &#8599;</a></div>
+          <div class="perf-metrics">
+            <div class="perf-metric"><div class="v">141.772</div><div class="l">Impressões da peça</div></div>
+            <div class="perf-metric"><div class="v">3.543</div><div class="l">Interações</div></div>
+            <div class="perf-metric"><div class="v">25,0</div><div class="l">Interações por mil impressões</div></div>
+            <div class="perf-metric"><div class="v">9</div><div class="l">Comentários</div></div>
+            <div class="perf-metric"><div class="v">0,06</div><div class="l">Comentários por mil impressões</div></div>
+          </div>
+          <div class="perf-note">
+            <div class="an-lbl">O que funcionou</div>
+            <p>A prova visual. As m&aacute;quinas em opera&ccedil;&atilde;o e o trecho noturno mostram trabalho acontecendo, em vez de anunciar. Foi a pe&ccedil;a que abriu mais p&uacute;blico novo no m&ecirc;s, 91.541 contas alcan&ccedil;adas, e o esfor&ccedil;o de m&iacute;dia por impress&atilde;o e por alcance foi o mais baixo do ciclo: nenhuma outra pe&ccedil;a comprou tanto p&uacute;blico por t&atilde;o pouco.</p>
+            <div class="an-lbl at">Ponto de aten&ccedil;&atilde;o</div>
+            <p>A curva de reten&ccedil;&atilde;o mostra que quase ningu&eacute;m chega aos n&uacute;meros. De 117.838 reprodu&ccedil;&otilde;es, apenas 92 alcan&ccedil;aram um quarto do v&iacute;deo e o tempo m&eacute;dio assistido ficou abaixo de um segundo. A pe&ccedil;a entrega presen&ccedil;a de marca, n&atilde;o mensagem assistida, e os dados de investimento s&oacute; aparecem aos dezoito segundos. Sugerimos uma vers&atilde;o de 15 a 45 segundos que abra pelo n&uacute;mero, com as cenas de obra logo atr&aacute;s.</p>
+            <div class="an-lbl">Resposta do p&uacute;blico</div>
+            <p>A resposta veio em forma de rea&ccedil;&atilde;o, n&atilde;o de conversa escrita: 48 rea&ccedil;&otilde;es registradas e a caixa de coment&aacute;rios em sil&ecirc;ncio. &Eacute; o comportamento t&iacute;pico de pe&ccedil;a de servi&ccedil;o bem resolvida, que informa e recebe aprova&ccedil;&atilde;o discreta. A pe&ccedil;a mostra trabalho acontecendo e n&atilde;o abre uma pergunta para o p&uacute;blico responder, e por isso a resposta se expressa por alcance e por rea&ccedil;&atilde;o.</p>
+            <div class="an-lbl ac">Audi&ecirc;ncia e posicionamento</div>
+            <p>V&iacute;deo vertical rodando em ambiente vertical: 92.262 impress&otilde;es em Instagram Stories e 26.823 em Reels, contra pouco mais de cinquenta no Facebook. Formato e posicionamento est&atilde;o alinhados, e &eacute; de Stories que vem quase todo o clique, 176 dos 177. A resposta se concentra no p&uacute;blico de 18 a 24 anos, que recebeu metade da entrega e concentrou a maior parte das rea&ccedil;&otilde;es. Entrega quase toda em celular, com Android &agrave; frente do iPhone. Sugerimos manter esta pe&ccedil;a como pe&ccedil;a de Stories e Reels, sem tentar adapt&aacute;-la para Feed.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="perf-card wide">
+        <div class="perf-body">
+          <div class="perf-top">
+            <span class="perf-topleft"><span class="perf-pos">3</span><span class="perf-rank s">3º em interação por mil impressões</span></span>
+            <span class="perf-fmt">Carrossel &middot; Feed</span>
+          </div>
+          <div class="perf-title" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">Americana Vem Avançando na Saúde <a class="perf-link" href="https://www.facebook.com/182277488497907/posts/1483770003774682" target="_blank" rel="noopener">Ver a publicação &#8599;</a></div>
+          <div class="perf-metrics">
+            <div class="perf-metric"><div class="v">91.463</div><div class="l">Impressões da peça</div></div>
+            <div class="perf-metric"><div class="v">108</div><div class="l">Interações</div></div>
+            <div class="perf-metric"><div class="v">1,2</div><div class="l">Interações por mil impressões</div></div>
+            <div class="perf-metric"><div class="v">0</div><div class="l">Comentários</div></div>
+            <div class="perf-metric"><div class="v">0,00</div><div class="l">Comentários por mil impressões</div></div>
+          </div>
+          <div class="perf-note">
+            <div class="an-lbl">O que funcionou</div>
+            <p>Foi o maior volume entre os temas de servi&ccedil;o e sustentou o dia de maior entrega do m&ecirc;s, 09 de agosto. Entregou com facilidade apoiada s&oacute; na clareza da informa&ccedil;&atilde;o, sem depender de gancho emocional, e com esfor&ccedil;o de m&iacute;dia baixo por impress&atilde;o.</p>
+            <div class="an-lbl at">Ponto de aten&ccedil;&atilde;o</div>
+            <p>A dist&acirc;ncia entre exibi&ccedil;&atilde;o e resposta &eacute; a maior do ciclo: 84.381 impress&otilde;es na c&oacute;pia l&iacute;der para 2 rea&ccedil;&otilde;es e 1 curtida. Muita gente viu, quase ningu&eacute;m respondeu, o que torna alto o esfor&ccedil;o por intera&ccedil;&atilde;o obtida. Sugerimos abrir o carrossel com uma cena real de atendimento antes dos cart&otilde;es de dados.</p>
+            <div class="an-lbl">Resposta do p&uacute;blico</div>
+            <p>A resposta ficou concentrada na exibi&ccedil;&atilde;o: 84.381 impress&otilde;es na c&oacute;pia l&iacute;der, com 2 rea&ccedil;&otilde;es e 1 curtida registradas. &Eacute; a maior dist&acirc;ncia do ciclo entre quanta gente viu e quanta gente escreveu, e por isso tratamos esta pe&ccedil;a como refer&ecirc;ncia de alcance informativo, e n&atilde;o de conversa.</p>
+            <div class="an-lbl ac">Audi&ecirc;ncia e posicionamento</div>
+            <p>Aqui est&aacute; o principal descompasso do ciclo: a pe&ccedil;a &eacute; um carrossel feito para Feed, mas 86% da entrega aconteceu em Facebook Stories, 72.279 das 84.381 impress&otilde;es, e todos os 91 cliques vieram de Stories. O Feed, para onde a pe&ccedil;a foi desenhada, entregou 12.102 impress&otilde;es e nenhum clique. O p&uacute;blico est&aacute; consumindo esse conte&uacute;do em tela cheia vertical, num formato que foi montado para tela quadrada. Sugerimos produzir uma vers&atilde;o vertical 9:16 nativa desta pauta, com um cart&atilde;o por tela, em vez de adaptar o carrossel de Feed. A audi&ecirc;ncia &eacute; ampla e majoritariamente feminina entre 25 e 54 anos, e a entrega &eacute; quase toda em Android.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="ib fade-in">
+      <div class="ib-lbl">O que as três peças, juntas, ensinam</div>
+      <div class="ib-txt">Volume e conversa vêm de peças diferentes. Infra e Saúde abriram alcance com facilidade e receberam uma resposta silenciosa; 7 Maravilhas entregou um volume muito menor e concentrou quase toda a conversa escrita do mês. Um calendário equilibrado precisa das duas coisas: peças que informam a cidade inteira e peças que fazem a cidade falar.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 5B · O QUE GEROU RESPOSTA ═══ -->
+<section class="sec" id="resposta">
+  <span class="eyebrow eyebrow-p">Rankings de Conteúdo</span>
+  <h2 class="h1 fade-in">O que gerou resposta</h2>
+  <p class="sub fade-in">Top 3 de seguidores, comentários e compartilhamentos, com o número absoluto e a taxa por mil impressões de cada entrada.</p>
+
+  <div class="regua fade-in">
+    <div class="regua-lbl">A régua deste ranking</div>
+    <div class="regua-txt">Só entra no ranking a peça com <b>no mínimo 20.000 impressões</b> e <b>no mínimo 5 ocorrências</b> da métrica analisada. O piso existe para que a ordenação não eleve um número pequeno demais para significar alguma coisa. É uma régua declarada, aplicada igual para as três métricas e para todas as peças do ciclo.</div>
+  </div>
+
+  <div class="g3 fade-in" style="margin-top:24px">
+
+    <div class="rk-card">
+      <span class="tag t-blue">Top 3 · Seguidores</span>
+      <div class="rk-total">7 seguidores no ciclo</div>
+      <ol class="rk-list">
+        <li class="rk-empty"><span class="rk-pos">1</span><span class="rk-body"><span class="rk-name">Sem peça acima do piso</span><span class="rk-num">A peça mais bem posicionada trouxe 2 seguidores, abaixo do mínimo de 5 ocorrências</span></span></li>
+        <li class="rk-empty"><span class="rk-pos">2</span><span class="rk-body"><span class="rk-name">Sem peça acima do piso</span><span class="rk-num">As demais peças ficaram abaixo do mínimo de 5 ocorrências</span></span></li>
+        <li class="rk-empty"><span class="rk-pos">3</span><span class="rk-body"><span class="rk-name">Sem peça acima do piso</span><span class="rk-num">As demais peças ficaram abaixo do mínimo de 5 ocorrências</span></span></li>
+      </ol>
+      <div class="rk-note">Nenhuma das cinco linhas de agosto tinha crescimento de perfil como meta, e o ranking fica em aberto neste ciclo. É uma frente com espaço para ser desenhada: se o crescimento de perfil entrar no escopo, sugerimos tratá-lo como linha própria, com peça e chamada feitas para isso.</div>
+    </div>
+
+    <div class="rk-card">
+      <span class="tag t-purple">Top 3 · Comentários</span>
+      <div class="rk-total">231 comentários no ciclo</div>
+      <ol class="rk-list">
+        <li><span class="rk-pos on">1</span><span class="rk-body"><span class="rk-name">7 Maravilhas</span><span class="rk-num"><b>219 comentários</b> · 0,87 por mil impressões · 252.289 impressões</span></span></li>
+        <li class="rk-empty"><span class="rk-pos">2</span><span class="rk-body"><span class="rk-name">Sem peça acima do piso</span><span class="rk-num">As demais peças ficaram abaixo do mínimo de 5 ocorrências</span></span></li>
+        <li class="rk-empty"><span class="rk-pos">3</span><span class="rk-body"><span class="rk-name">Sem peça acima do piso</span><span class="rk-num">As demais peças ficaram abaixo do mínimo de 5 ocorrências</span></span></li>
+      </ol>
+      <div class="rk-note">A conversa escrita do mês se concentrou em uma única pauta, e essa é a informação mais útil do quadro: a cidade responde quando é chamada a opinar sobre si mesma. Sugerimos manter ao menos uma pauta de pergunta por ciclo no calendário.</div>
+    </div>
+
+    <div class="rk-card">
+      <span class="tag t-teal">Top 3 · Compartilhamentos</span>
+      <div class="rk-total">51 compartilhamentos no ciclo</div>
+      <ol class="rk-list">
+        <li><span class="rk-pos on">1</span><span class="rk-body"><span class="rk-name">7 Maravilhas</span><span class="rk-num"><b>51 compartilhamentos</b> · 0,20 por mil impressões · 252.289 impressões</span></span></li>
+        <li class="rk-empty"><span class="rk-pos">2</span><span class="rk-body"><span class="rk-name">Sem peça acima do piso</span><span class="rk-num">As demais peças ficaram abaixo do mínimo de 5 ocorrências</span></span></li>
+        <li class="rk-empty"><span class="rk-pos">3</span><span class="rk-body"><span class="rk-name">Sem peça acima do piso</span><span class="rk-num">As demais peças ficaram abaixo do mínimo de 5 ocorrências</span></span></li>
+      </ol>
+      <div class="rk-note">O compartilhamento acompanhou a mesma pauta dos comentários, o que reforça a leitura: conteúdo de identidade circula por conta própria, sem precisar de mídia para se espalhar.</div>
+    </div>
+
+  </div>
+
+  <div class="ib fade-in">
+    <div class="ib-lbl">O que o piso ensina para o próximo plano</div>
+    <div class="ib-txt">Os três quadros acima são um achado de calibragem, e valem justamente por aparecerem cedo. Agosto mostrou que a conversa da cidade se concentra em uma pauta por vez e que seguidor, compartilhamento e comentário respondem a estímulos diferentes. Sugerimos, para o próximo ciclo, definir no plano qual peça carrega cada uma dessas funções, para que o ranking do fechamento seguinte tenha três nomes em cada quadro.</div>
+  </div>
+</section>
+
+<!-- ═══ 5C · HIPÓTESES ═══ -->
+<div class="meta-wrap" id="hipoteses">
+  <div class="meta-in">
+    <span class="eyebrow eyebrow-p">Hipóteses</span>
+    <h2 class="h1 fade-in">O que separou as peças</h2>
+    <p class="sub fade-in">Quatro leituras que os números e os comentários sustentam, com o teste correspondente para o próximo ciclo.</p>
+
+    <div class="hip-grid fade-in">
+
+      <div class="hip-card">
+        <span class="tag t-purple">Hipótese 1</span>
+        <div class="hip-ttl">A pergunta fixa na tela chega mesmo a quem vê poucos segundos</div>
+        <div class="hip-met">400,7 INTERAÇÕES POR MIL · 25,0 NA SEGUNDA COLOCADA · TARJA PRESENTE DO PRIMEIRO AO ÚLTIMO SEGUNDO</div>
+        <ol class="hip-list">
+          <li><b>O convite não depende de tempo de tela.</b> A tarja com a pergunta acompanha 7 Maravilhas do primeiro ao último segundo, então o recado inteiro chega mesmo a quem assiste poucos segundos.</li>
+          <li><b>O convite não depende de som.</b> Como a pergunta está escrita na tela, ela funciona na rolagem silenciosa, que é como a maior parte do público consome vídeo no feed.</li>
+          <li><b>A distância é grande.</b> São 400,7 interações por mil impressões contra 25,0 da segunda colocada do ciclo.</li>
+        </ol>
+        <div class="hip-fech"><span class="hip-fech-lbl">O que isso indica</span>Elemento fixo em tela funciona como o próprio recado da peça, e não como apoio do que é dito no áudio.</div>
+      </div>
+
+      <div class="hip-card">
+        <span class="tag t-teal">Hipótese 2</span>
+        <div class="hip-ttl">Pergunta sobre a identidade da cidade vira enquete espontânea</div>
+        <div class="hip-met">219 COMENTÁRIOS · 0,87 POR MIL · 6 DE 10 COMENTÁRIOS CITAM A IGREJA DE SANTO ANTÔNIO</div>
+        <ol class="hip-list">
+          <li><b>A resposta veio com endereço.</b> As pessoas não só reagiram: responderam à pergunta nomeando lugares da cidade.</li>
+          <li><b>A lista se repete.</b> Depois da Igreja de Santo Antônio aparecem a Avenida Brasil, o Parque Ecológico, o Horto e a praça do Centro.</li>
+          <li><b>O resultado tem uso prático.</b> A peça devolveu a lista dos lugares que a população elegeria antes mesmo da votação no site.</li>
+        </ol>
+        <div class="hip-fech"><span class="hip-fech-lbl">Como testar no próximo ciclo</span>Sugerimos abrir uma pauta com pergunta direta sobre a cidade e ler os comentários como material de planejamento, não só como métrica de engajamento.</div>
+      </div>
+
+      <div class="hip-card">
+        <span class="tag t-blue">Hipótese 3</span>
+        <div class="hip-ttl">Presença e atenção são entregas diferentes</div>
+        <div class="hip-met">117.838 REPRODUÇÕES · 92 CHEGARAM A UM QUARTO DO VÍDEO · TEMPO MÉDIO ABAIXO DE UM SEGUNDO</div>
+        <ol class="hip-list">
+          <li><b>A peça comprou presença.</b> Feliz de Verdade na Infra abriu o maior volume de público novo do ciclo e fixou percepção de obra em andamento.</li>
+          <li><b>A atenção sustentada ficou noutra faixa.</b> De 117.838 reproduções, 92 chegaram a um quarto do vídeo, com tempo médio abaixo de um segundo.</li>
+          <li><b>A mensagem precisa caber na janela real.</b> Os dados de investimento aparecem só aos dezoito segundos da peça.</li>
+        </ol>
+        <div class="hip-fech"><span class="hip-fech-lbl">Como testar no próximo ciclo</span>Sugerimos uma versão de 15 a 45 segundos que abra pelo número, com as cenas de obra logo atrás, mantendo a versão longa nos canais próprios.</div>
+      </div>
+
+      <div class="hip-card">
+        <span class="tag t-orange">Hipótese 4</span>
+        <div class="hip-ttl">Pauta de serviço informa bem e é recebida em silêncio</div>
+        <div class="hip-met">84.381 IMPRESSÕES NA CÓPIA LÍDER · 2 REAÇÕES · 1,2 INTERAÇÃO POR MIL NA PEÇA</div>
+        <ol class="hip-list">
+          <li><b>A informação chegou a muita gente.</b> Americana Vem Avançando na Saúde sustentou o dia de maior entrega do mês, em 09 de agosto.</li>
+          <li><b>O formato não abre espaço para resposta.</b> Não há pergunta nem escolha, então o público recebe e segue.</li>
+          <li><b>A régua tem que ser outra.</b> Cobrar conversa de uma peça de serviço é pedir algo que ela não foi feita para produzir.</li>
+        </ol>
+        <div class="hip-fech"><span class="hip-fech-lbl">Como testar no próximo ciclo</span>Sugerimos abrir a peça de serviço com uma cena real de atendimento antes dos cartões de dados e medi-la por alcance informativo, não por conversa.</div>
+      </div>
+
+    </div>
+
+    <div class="ib pu fade-in">
+      <div class="ib-lbl">A hipótese central</div>
+      <div class="ib-txt">Pauta que faz uma pergunta sobre a identidade da cidade mobiliza resposta; pauta de serviço informa e é recebida em silêncio. As duas são necessárias e cumprem funções diferentes, e por isso não devem ser medidas pela mesma régua. Um calendário equilibrado precisa das duas: peças que informam a cidade inteira e peças que fazem a cidade falar.</div>
+    </div>
+  </div>
+</div>
 
 <!-- ═══ 4 · PAUTAS EM VEICULAÇÃO ═══ -->
 <section class="sec" id="pautas">
@@ -568,167 +824,42 @@
   </div>
 </section>
 
-<!-- ═══ 5 · TOP 3 PEÇAS ═══ -->
-<div class="meta-wrap" id="pecas">
-  <div class="meta-in">
-    <span class="eyebrow eyebrow-p">Análise de Criativos</span>
-    <h2 class="h1 fade-in">O Que Funcionou e o Que Pode Melhorar</h2>
-    <p class="sub fade-in">As três peças que definiram o ciclo, em ordem de desempenho geral: quanta resposta cada uma obteve em relação ao volume de mídia que recebeu. Da primeira à terceira, cada peça é vista uma a uma, com o que funcionou, o ponto de atenção, a resposta do público e o comportamento de audiência.</p>
+<!-- ═══ 4B · POR PLATAFORMA ═══ -->
+<section class="sec" id="plataforma">
+  <span class="eyebrow eyebrow-t">Por Plataforma</span>
+  <h2 class="h1 fade-in">Entrega Plataforma a Plataforma</h2>
+  <p class="sub fade-in">O que cada plataforma registrou no período de 05 a 28 de agosto, apurado direto na fonte de cada uma.</p>
 
-    <div class="perf-grid g1 fade-in">
-
-      <div class="perf-card wide">
-        <div class="perf-body">
-          <div class="perf-top">
-            <span class="perf-topleft"><span class="perf-pos">1</span><span class="perf-rank b">Melhor desempenho do ciclo</span></span>
-            <span class="perf-fmt">Vídeo &middot; Reels &middot; 1min41</span>
-          </div>
-          <div class="perf-title" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">7 Maravilhas <a class="perf-link" href="https://www.instagram.com/p/DbqgJ-VA08V/" target="_blank" rel="noopener">Ver a publicação &#8599;</a></div>
-          <div class="perf-metrics">
-            <div class="perf-metric"><div class="v">24.844</div><div class="l">Impressões da cópia líder</div></div>
-            <div class="perf-metric"><div class="v">69</div><div class="l">Comentários na cópia líder</div></div>
-            <div class="perf-metric"><div class="v">125</div><div class="l">Reações na cópia líder</div></div>
-            <div class="perf-metric"><div class="v">219</div><div class="l">Comentários somando as versões analisadas</div></div>
-          </div>
-          <div class="perf-note">
-            <div class="an-lbl">O que funcionou</div>
-            <p>Pauta de identidade com pergunta aberta. Uma tarja fixa com "quais s&atilde;o as 7 Maravilhas de Americana?" acompanha a pe&ccedil;a do primeiro ao &uacute;ltimo segundo, entregando o convite mesmo a quem assiste poucos segundos e sem som. Concentrou quase toda a conversa escrita do m&ecirc;s: 69 coment&aacute;rios e 125 rea&ccedil;&otilde;es s&oacute; na c&oacute;pia l&iacute;der, 219 coment&aacute;rios somando as vers&otilde;es analisadas. Foi tamb&eacute;m o menor esfor&ccedil;o de m&iacute;dia do ciclo por engajamento e por visualiza&ccedil;&atilde;o.</p>
-            <div class="an-lbl at">Ponto de aten&ccedil;&atilde;o</div>
-            <p>O v&iacute;deo &eacute; longo para o que precisa dizer. O tempo m&eacute;dio assistido ficou entre 9 e 11 segundos num v&iacute;deo de 1min41, e o tutorial de vota&ccedil;&atilde;o est&aacute; por volta da metade da pe&ccedil;a, longe do alcance de quem assiste esses primeiros segundos. Quem se interessou pela pergunta em geral n&atilde;o chega &agrave; instru&ccedil;&atilde;o de como votar. Sugerimos um corte de 15 a 30 segundos que v&aacute; direto da pergunta para a chamada de vota&ccedil;&atilde;o.</p>
-            <div class="an-lbl">Resposta do p&uacute;blico</div>
-            <p>A maior do ciclo, e com teor muito claro: as pessoas n&atilde;o s&oacute; reagiram, responderam &agrave; pergunta nomeando lugares. A Igreja de Santo Ant&ocirc;nio aparece em seis dos dez coment&aacute;rios da publica&ccedil;&atilde;o, disparada a mais citada, seguida da Avenida Brasil, do Parque Ecol&oacute;gico, do Horto e da pra&ccedil;a do Centro. O tom &eacute; afetivo, com mensagens como "eu amo Americana" e relatos de quem morou na cidade. Na pr&aacute;tica, a pe&ccedil;a funcionou como enquete espont&acirc;nea e devolveu, de gra&ccedil;a, a lista dos lugares que a popula&ccedil;&atilde;o elegeria antes mesmo de votar no site.</p>
-            <div class="an-lbl ac">Audi&ecirc;ncia, posicionamento e dispositivo</div>
-            <p>Quem conversa aqui &eacute; o p&uacute;blico mais velho: 65+ e 55 a 64 anos, com predom&iacute;nio feminino, respondem pela maior parte das rea&ccedil;&otilde;es e dos coment&aacute;rios da pe&ccedil;a. O desencontro est&aacute; no posicionamento. A entrega se concentrou no Feed do Facebook, 13.719 impress&otilde;es, mas foi o Reels do Instagram que converteu melhor: 9 cliques em apenas 1.010 impress&otilde;es, uma taxa cerca de dezessete vezes maior que a do Feed. O Reels recebeu menos de 5% da entrega desta pe&ccedil;a. Sugerimos redistribuir peso para Reels na pr&oacute;xima veicula&ccedil;&atilde;o desta pauta. Entrega praticamente toda em Android.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="perf-card wide">
-        <div class="perf-body">
-          <div class="perf-top">
-            <span class="perf-topleft"><span class="perf-pos">2</span><span class="perf-rank g">Maior entrega do ciclo</span></span>
-            <span class="perf-fmt">Vídeo &middot; Reels &middot; 1min50</span>
-          </div>
-          <div class="perf-title" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">Feliz de Verdade na Infra <a class="perf-link" href="https://www.facebook.com/prefeituraamericana/videos/4013281645632443/" target="_blank" rel="noopener">Ver a publicação &#8599;</a></div>
-          <div class="perf-metrics">
-            <div class="perf-metric"><div class="v">120.430</div><div class="l">Impressões</div></div>
-            <div class="perf-metric"><div class="v">91.541</div><div class="l">Contas alcançadas</div></div>
-            <div class="perf-metric"><div class="v">699</div><div class="l">ThruPlays</div></div>
-            <div class="perf-metric"><div class="v">48</div><div class="l">Reações</div></div>
-          </div>
-          <div class="perf-note">
-            <div class="an-lbl">O que funcionou</div>
-            <p>A prova visual. As m&aacute;quinas em opera&ccedil;&atilde;o e o trecho noturno mostram trabalho acontecendo, em vez de anunciar. Foi a pe&ccedil;a que abriu mais p&uacute;blico novo no m&ecirc;s, 91.541 contas alcan&ccedil;adas, e o esfor&ccedil;o de m&iacute;dia por impress&atilde;o e por alcance foi o mais baixo do ciclo: nenhuma outra pe&ccedil;a comprou tanto p&uacute;blico por t&atilde;o pouco.</p>
-            <div class="an-lbl at">Ponto de aten&ccedil;&atilde;o</div>
-            <p>A curva de reten&ccedil;&atilde;o mostra que quase ningu&eacute;m chega aos n&uacute;meros. De 117.838 reprodu&ccedil;&otilde;es, apenas 92 alcan&ccedil;aram um quarto do v&iacute;deo e o tempo m&eacute;dio assistido ficou abaixo de um segundo. A pe&ccedil;a entrega presen&ccedil;a de marca, n&atilde;o mensagem assistida, e os dados de investimento s&oacute; aparecem aos dezoito segundos. Sugerimos uma vers&atilde;o de 15 a 45 segundos que abra pelo n&uacute;mero, com as cenas de obra logo atr&aacute;s.</p>
-            <div class="an-lbl">Resposta do p&uacute;blico</div>
-            <p>A resposta veio em forma de rea&ccedil;&atilde;o, n&atilde;o de conversa escrita: 48 rea&ccedil;&otilde;es registradas e a caixa de coment&aacute;rios em sil&ecirc;ncio. &Eacute; o comportamento t&iacute;pico de pe&ccedil;a de servi&ccedil;o bem resolvida, que informa e recebe aprova&ccedil;&atilde;o discreta. A pe&ccedil;a mostra trabalho acontecendo e n&atilde;o abre uma pergunta para o p&uacute;blico responder, e por isso a resposta se expressa por alcance e por rea&ccedil;&atilde;o.</p>
-            <div class="an-lbl ac">Audi&ecirc;ncia, posicionamento e dispositivo</div>
-            <p>V&iacute;deo vertical rodando em ambiente vertical: 92.262 impress&otilde;es em Instagram Stories e 26.823 em Reels, contra pouco mais de cinquenta no Facebook. Formato e posicionamento est&atilde;o alinhados, e &eacute; de Stories que vem quase todo o clique, 176 dos 177. A resposta se concentra no p&uacute;blico de 18 a 24 anos, que recebeu metade da entrega e concentrou a maior parte das rea&ccedil;&otilde;es. Entrega quase toda em celular, com Android &agrave; frente do iPhone. Sugerimos manter esta pe&ccedil;a como pe&ccedil;a de Stories e Reels, sem tentar adapt&aacute;-la para Feed.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="perf-card wide">
-        <div class="perf-body">
-          <div class="perf-top">
-            <span class="perf-topleft"><span class="perf-pos">3</span><span class="perf-rank s">Segunda maior entrega</span></span>
-            <span class="perf-fmt">Carrossel &middot; Feed</span>
-          </div>
-          <div class="perf-title" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">Americana Vem Avançando na Saúde <a class="perf-link" href="https://www.facebook.com/182277488497907/posts/1483770003774682" target="_blank" rel="noopener">Ver a publicação &#8599;</a></div>
-          <div class="perf-metrics">
-            <div class="perf-metric"><div class="v">84.381</div><div class="l">Impressões da cópia líder</div></div>
-            <div class="perf-metric"><div class="v">2</div><div class="l">Reações na cópia líder</div></div>
-            <div class="perf-metric"><div class="v">1</div><div class="l">Curtida na cópia líder</div></div>
-            <div class="perf-metric"><div class="v">09/08</div><div class="l">Entrada no ar</div></div>
-          </div>
-          <div class="perf-note">
-            <div class="an-lbl">O que funcionou</div>
-            <p>Foi o maior volume entre os temas de servi&ccedil;o e sustentou o dia de maior entrega do m&ecirc;s, 09 de agosto. Entregou com facilidade apoiada s&oacute; na clareza da informa&ccedil;&atilde;o, sem depender de gancho emocional, e com esfor&ccedil;o de m&iacute;dia baixo por impress&atilde;o.</p>
-            <div class="an-lbl at">Ponto de aten&ccedil;&atilde;o</div>
-            <p>A dist&acirc;ncia entre exibi&ccedil;&atilde;o e resposta &eacute; a maior do ciclo: 84.381 impress&otilde;es na c&oacute;pia l&iacute;der para 2 rea&ccedil;&otilde;es e 1 curtida. Muita gente viu, quase ningu&eacute;m respondeu, o que torna alto o esfor&ccedil;o por intera&ccedil;&atilde;o obtida. Sugerimos abrir o carrossel com uma cena real de atendimento antes dos cart&otilde;es de dados.</p>
-            <div class="an-lbl">Resposta do p&uacute;blico</div>
-            <p>A resposta ficou concentrada na exibi&ccedil;&atilde;o: 84.381 impress&otilde;es na c&oacute;pia l&iacute;der, com 2 rea&ccedil;&otilde;es e 1 curtida registradas. &Eacute; a maior dist&acirc;ncia do ciclo entre quanta gente viu e quanta gente escreveu, e por isso tratamos esta pe&ccedil;a como refer&ecirc;ncia de alcance informativo, e n&atilde;o de conversa.</p>
-            <div class="an-lbl ac">Audi&ecirc;ncia, posicionamento e dispositivo</div>
-            <p>Aqui est&aacute; o principal descompasso do ciclo: a pe&ccedil;a &eacute; um carrossel feito para Feed, mas 86% da entrega aconteceu em Facebook Stories, 72.279 das 84.381 impress&otilde;es, e todos os 91 cliques vieram de Stories. O Feed, para onde a pe&ccedil;a foi desenhada, entregou 12.102 impress&otilde;es e nenhum clique. O p&uacute;blico est&aacute; consumindo esse conte&uacute;do em tela cheia vertical, num formato que foi montado para tela quadrada. Sugerimos produzir uma vers&atilde;o vertical 9:16 nativa desta pauta, com um cart&atilde;o por tela, em vez de adaptar o carrossel de Feed. A audi&ecirc;ncia &eacute; ampla e majoritariamente feminina entre 25 e 54 anos, e a entrega &eacute; quase toda em Android.</p>
-          </div>
-        </div>
-      </div>
-
+  <div class="split fade-in" style="margin-top:26px">
+    <div class="chart-box">
+      <div class="dt-title">Meta Ads</div>
+      <table class="xtbl">
+        <thead><tr><th>Métrica</th><th>Volume</th></tr></thead>
+        <tbody>
+          <tr><td>Impressões</td><td>748.846</td></tr>
+          <tr><td>Alcance (conta)</td><td>554.109</td></tr>
+          <tr><td>Frequência</td><td>1,35</td></tr>
+          <tr><td>Cliques</td><td>3.659</td></tr>
+          <tr><td>CTR</td><td>0,49%</td></tr>
+          <tr><td>Engajamento</td><td>13.920</td></tr>
+          <tr><td>Visualização de vídeo</td><td>36.003</td></tr>
+        </tbody>
+      </table>
     </div>
-
-    <div class="ib fade-in">
-      <div class="ib-lbl">O que as três peças, juntas, ensinam</div>
-      <div class="ib-txt">Volume e conversa vêm de peças diferentes. Infra e Saúde abriram alcance com facilidade e receberam uma resposta silenciosa; 7 Maravilhas entregou um volume muito menor e concentrou quase toda a conversa escrita do mês. Um calendário equilibrado precisa das duas coisas: peças que informam a cidade inteira e peças que fazem a cidade falar.</div>
-    </div>
-
-    <div class="sep-block fade-in">
-      <span class="eyebrow eyebrow-p" style="margin-top:0">Leitura comparada</span>
-      <h3 class="sep-h">O que separou as peças</h3>
-      <p class="lead">7 Maravilhas recebeu uma fração da mídia das outras duas e concentrou praticamente toda a conversa do mês. Infra e Saúde fizeram o caminho oposto: abriram muito alcance e foram recebidas em silêncio. Abaixo, as hipóteses que a leitura das peças e dos comentários sustenta.</p>
-      <div class="sep-grid">
-        <div class="sep-card">
-          <span class="tag t-purple">Hipótese 1</span>
-          <div class="sep-ttl">A pergunta viaja mesmo sem som e sem tempo</div>
-          <div class="sep-txt">A tarja de 7 Maravilhas carrega a pergunta do primeiro ao último segundo. Quem vê poucos segundos, sem áudio, no meio da rolagem, ainda assim recebe o convite inteiro. As outras duas peças precisam de tempo de tela para entregar a mensagem: em Infra, os dados de investimento só aparecem aos dezoito segundos.</div>
-        </div>
-        <div class="sep-card">
-          <span class="tag t-teal">Hipótese 2</span>
-          <div class="sep-ttl">Pergunta sobre a cidade vira enquete espontânea</div>
-          <div class="sep-txt">Os comentários mostram gente respondendo com nomes de lugares. A Igreja de Santo Antônio aparece em seis dos dez comentários da publicação, seguida da Avenida Brasil, do Parque Ecológico, do Horto e da praça do Centro. A peça não pediu opinião sobre a Prefeitura: pediu que a pessoa dissesse qual é a Americana dela, e é uma pergunta que qualquer morador sabe responder.</div>
-        </div>
-        <div class="sep-card">
-          <span class="tag t-blue">Hipótese 3</span>
-          <div class="sep-ttl">Presença e atenção são compras diferentes</div>
-          <div class="sep-txt">Infra registrou 117.838 reproduções, das quais 92 chegaram a um quarto do vídeo, com tempo médio abaixo de um segundo. O que a peça comprou foi presença de marca, não atenção sustentada. É um resultado válido para fixar percepção, desde que a mensagem principal esteja resolvida logo nos primeiros segundos.</div>
-        </div>
-        <div class="sep-card">
-          <span class="tag t-orange">Hipótese 4</span>
-          <div class="sep-ttl">Pauta de serviço informa bem e é recebida em silêncio</div>
-          <div class="sep-txt">Saúde levou 84.381 impressões na cópia líder para 2 reações. A informação chegou a muita gente e cumpriu o papel de comunicar avanço de serviço, mas o formato não abre espaço para o público dizer algo de volta. Não há pergunta, não há escolha, não há nada a acrescentar.</div>
-        </div>
-      </div>
-      <div class="ib pu">
-        <div class="ib-lbl">A hipótese central</div>
-        <div class="ib-txt">Pauta que faz uma pergunta sobre a identidade da cidade mobiliza resposta; pauta de serviço informa e é recebida em silêncio. As duas são necessárias e cumprem funções diferentes, e por isso não devem ser medidas pela mesma régua. Cobrar conversa de uma peça de serviço é pedir algo que ela não foi feita para produzir, assim como cobrar alcance máximo de uma peça de pergunta seria desperdiçar o que ela tem de melhor.</div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ═══ 5B · O QUE GEROU RESPOSTA ═══ -->
-<section class="sec" id="resposta">
-  <span class="eyebrow eyebrow-p">Rankings de Conteúdo</span>
-  <h2 class="h1 fade-in">O que gerou resposta</h2>
-  <p class="sub fade-in">Leitura das peças por resposta obtida, com um piso de corte declarado antes de qualquer ordenação.</p>
-
-  <div class="regua fade-in">
-    <div class="regua-lbl">A régua deste ranking</div>
-    <div class="regua-txt">Só entram no ranking peças com <b>no mínimo 20.000 impressões</b> e <b>no mínimo 5 ocorrências da métrica</b> analisada. O piso existe para que o ranking não premie uma peça que registrou um seguidor barato dentro de um volume pequeno demais para significar alguma coisa. É uma régua declarada, aplicada igual para todas as peças e para as três métricas.</div>
-  </div>
-
-  <div class="g3 fade-in" style="margin-top:24px">
-    <div class="rec-card" style="border-top:3px solid var(--purple)">
-      <span class="tag t-purple">Comentários</span>
-      <div class="rec-ttl">231 no mês, uma peça atravessa a régua</div>
-      <div class="rec-txt">O ciclo registrou 231 comentários no total, e praticamente todos estão em 7 Maravilhas: 219 nas cópias analisadas. É a única peça que passa do piso de impressões e de ocorrências ao mesmo tempo, então não há um pódio de três para montar aqui. O que existe é uma peça que carregou a conversa do mês inteiro, e essa é a informação que interessa.</div>
-    </div>
-    <div class="rec-card" style="border-top:3px solid var(--teal)">
-      <span class="tag t-teal">Compartilhamentos</span>
-      <div class="rec-ttl">51 no mês, mesma peça na frente</div>
-      <div class="rec-txt">Foram 51 compartilhamentos no ciclo, também concentrados em 7 Maravilhas. Vale o mesmo raciocínio dos comentários: uma única peça atravessa a régua, e ordenar um segundo e um terceiro lugar abaixo do piso daria a três números pequenos uma importância que eles não têm. A leitura útil é que a pauta de identidade é a que faz a peça circular por conta própria.</div>
-    </div>
-    <div class="rec-card" style="border-top:3px solid var(--p)">
-      <span class="tag t-blue">Seguidores</span>
-      <div class="rec-ttl">7 no mês, frente sem volume para ranking</div>
-      <div class="rec-txt">O ganho de seguidores somou 7 no ciclo, e a peça mais bem posicionada trouxe 2, abaixo do piso de 5 ocorrências. Nenhuma peça atravessa a régua, então esta frente fica registrada sem ranking neste ciclo. Faz sentido: nenhuma das cinco linhas de agosto tinha crescimento de perfil como meta, e o seguidor apareceu como efeito lateral da veiculação.</div>
+    <div class="chart-box">
+      <div class="dt-title">YouTube</div>
+      <table class="xtbl">
+        <thead><tr><th>Métrica</th><th>Volume</th></tr></thead>
+        <tbody>
+          <tr><td>Meta</td><td>18.000</td></tr>
+          <tr><td>Entregue</td><td>20.143</td></tr>
+        </tbody>
+      </table>
+      <p class="tbl-note">As visualizações de vídeo das duas plataformas somam as 56.146 registradas no ciclo: 36.003 no Meta Ads e 20.143 no YouTube.</p>
     </div>
   </div>
 
-  <div class="ib fade-in">
-    <div class="ib-lbl">O que o piso ensina para o próximo plano</div>
-    <div class="ib-txt">O achado aqui é de calibragem, e é útil justamente por aparecer cedo. Agosto mostrou que a conversa da cidade se concentra em uma pauta por vez, e que crescimento de perfil precisa ser desenhado como objetivo se for para acontecer em escala mensurável, com peça e chamada próprias. Sugerimos, para o próximo ciclo, manter ao menos uma pauta de pergunta no calendário, que é o formato que comprovadamente faz a cidade responder, e, caso o crescimento de perfil entre no escopo, tratá-lo como frente própria em vez de esperá-lo como consequência.</div>
-  </div>
+  <p class="tbl-note fade-in" style="margin-top:18px">O alcance informado é o dado deduplicado da conta, nunca a soma das linhas de veiculação. A mesma pessoa costuma ser exposta a mais de uma linha no mesmo período e é contada uma única vez no total da conta.</p>
 </section>
 
 <!-- ═══ 6 · PÚBLICO ═══ -->
@@ -959,29 +1090,6 @@
   </div>
 </section>
 
-<!-- ═══ 9 · DIAGNÓSTICO ═══ -->
-<div class="diag" id="diagnostico">
-  <div class="diag-in">
-    <span class="eyebrow eyebrow-wh">Diagnóstico Final</span>
-    <h2 class="h1 fade-in" style="color:#fff">O que o Ciclo Revelou</h2>
-    <p class="sub fade-in" style="color:rgba(255,255,255,.62)">Cinco linhas contratadas cumpridas, dez pautas no ar e um retrato bastante claro de quais temas a cidade acompanha em silêncio e quais ela responde.</p>
-
-    <div class="dc-grid fade-in">
-      <div class="dc"><div class="dc-acc t"></div><div class="dc-n">01</div><div class="dc-m">554.109</div><div class="dc-ttl">Contas únicas alcançadas</div><div class="dc-txt">Contas únicas, já sem duplicidade entre as linhas, com frequência média de 1,35. A verba trabalhou para abrir público novo em vez de repetir a mensagem sobre quem já tinha visto.</div></div>
-      <div class="dc"><div class="dc-acc b"></div><div class="dc-n">02</div><div class="dc-m">24 dias</div><div class="dc-ttl">Veiculação sem interrupção</div><div class="dc-txt">Entrega registrada em todos os dias de 05 a 28 de agosto, fins de semana incluídos, com média de 31.202 impressões por dia e nenhum intervalo em branco na curva.</div></div>
-      <div class="dc"><div class="dc-acc p"></div><div class="dc-n">03</div><div class="dc-m">5 linhas</div><div class="dc-ttl">Todas as frentes contratadas cumpridas</div><div class="dc-txt">Impressões, engajamento, as duas linhas de visualização e YouTube fecharam o ciclo com o volume contratado entregue, cada uma conferida contra a própria meta.</div></div>
-      <div class="dc"><div class="dc-acc t"></div><div class="dc-n">04</div><div class="dc-m">117.341</div><div class="dc-ttl">Impressões no público de 65 anos ou mais</div><div class="dc-txt">O formato de vídeo com apresentador alcançou de verdade a faixa mais velha da cidade, um público que campanhas de vídeo curto costumam não atingir.</div></div>
-      <div class="dc"><div class="dc-acc b"></div><div class="dc-n">05</div><div class="dc-m">120.430</div><div class="dc-ttl">A pauta de infraestrutura liderou o volume</div><div class="dc-txt">Feliz de Verdade na Infra foi a maior peça do mês e a que mais abriu alcance novo, mostrando obra em andamento em vez de anunciar intenção.</div></div>
-      <div class="dc"><div class="dc-acc p"></div><div class="dc-n">06</div><div class="dc-m">219</div><div class="dc-ttl">Comentários na pauta de identidade da cidade</div><div class="dc-txt">Dos 231 comentários do mês, 219 estão nas versões analisadas de 7 Maravilhas, e com um volume de mídia muito menor que o das peças de serviço. É o melhor desempenho do ciclo em resposta por volume investido.</div></div>
-    </div>
-
-    <div style="margin-top:34px;padding:22px 26px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:16px">
-      <div style="font-size:.63rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#7fe9d8;margin-bottom:8px">Síntese do ciclo</div>
-      <div style="font-size:.95rem;color:rgba(255,255,255,.84);line-height:1.75">Agosto separou com clareza duas coisas que costumam ser lidas juntas: volume e eficiência. As peças de serviço abriram o maior alcance do ciclo e foram recebidas em silêncio; 7 Maravilhas recebeu uma fração dessa mídia e concentrou praticamente toda a conversa do mês, o que a torna a peça de melhor desempenho do ciclo em resposta obtida por volume investido. O que fez a diferença foi o gancho: a pergunta vem numa tarja fixa, presente do primeiro ao último segundo, e chega mesmo a quem vê poucos segundos e sem som. Vale registrar, ainda, que conversa alta não é o mesmo que adesão: as pessoas responderam à pergunta nos comentários, mas o passo a passo da votação está na segunda metade de um vídeo cuja atenção média ficou entre 9 e 11 segundos. Quando a peça pede uma ação, a instrução precisa caber na janela em que o público realmente está assistindo.</div>
-    </div>
-  </div>
-</div>
-
 <!-- ═══ 10 · RECOMENDAÇÕES ═══ -->
 <section class="sec" id="futuro">
   <span class="eyebrow eyebrow-p">Pensando no Futuro</span>
@@ -1022,6 +1130,29 @@
 
   </div>
 </section>
+
+<!-- ═══ 9 · DIAGNÓSTICO ═══ -->
+<div class="diag" id="diagnostico">
+  <div class="diag-in">
+    <span class="eyebrow eyebrow-wh">Diagnóstico Final</span>
+    <h2 class="h1 fade-in" style="color:#fff">O que o Ciclo Revelou</h2>
+    <p class="sub fade-in" style="color:rgba(255,255,255,.62)">Cinco linhas contratadas cumpridas, dez pautas no ar e um retrato bastante claro de quais temas a cidade acompanha em silêncio e quais ela responde.</p>
+
+    <div class="dc-grid fade-in">
+      <div class="dc"><div class="dc-acc t"></div><div class="dc-n">01</div><div class="dc-m">554.109</div><div class="dc-ttl">Contas únicas alcançadas</div><div class="dc-txt">Contas únicas, já sem duplicidade entre as linhas, com frequência média de 1,35. A verba trabalhou para abrir público novo em vez de repetir a mensagem sobre quem já tinha visto.</div></div>
+      <div class="dc"><div class="dc-acc b"></div><div class="dc-n">02</div><div class="dc-m">24 dias</div><div class="dc-ttl">Veiculação sem interrupção</div><div class="dc-txt">Entrega registrada em todos os dias de 05 a 28 de agosto, fins de semana incluídos, com média de 31.202 impressões por dia e nenhum intervalo em branco na curva.</div></div>
+      <div class="dc"><div class="dc-acc p"></div><div class="dc-n">03</div><div class="dc-m">5 linhas</div><div class="dc-ttl">Todas as frentes contratadas cumpridas</div><div class="dc-txt">Impressões, engajamento, as duas linhas de visualização e YouTube fecharam o ciclo com o volume contratado entregue, cada uma conferida contra a própria meta.</div></div>
+      <div class="dc"><div class="dc-acc t"></div><div class="dc-n">04</div><div class="dc-m">117.341</div><div class="dc-ttl">Impressões no público de 65 anos ou mais</div><div class="dc-txt">O formato de vídeo com apresentador alcançou de verdade a faixa mais velha da cidade, um público que campanhas de vídeo curto costumam não atingir.</div></div>
+      <div class="dc"><div class="dc-acc b"></div><div class="dc-n">05</div><div class="dc-m">120.430</div><div class="dc-ttl">A pauta de infraestrutura liderou o volume</div><div class="dc-txt">Feliz de Verdade na Infra foi a maior peça do mês e a que mais abriu alcance novo, mostrando obra em andamento em vez de anunciar intenção.</div></div>
+      <div class="dc"><div class="dc-acc p"></div><div class="dc-n">06</div><div class="dc-m">219</div><div class="dc-ttl">Comentários na pauta de identidade da cidade</div><div class="dc-txt">Dos 231 comentários do mês, 219 estão nas versões analisadas de 7 Maravilhas, e com um volume de mídia muito menor que o das peças de serviço. É o melhor desempenho do ciclo em resposta por volume investido.</div></div>
+    </div>
+
+    <div style="margin-top:34px;padding:22px 26px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:16px">
+      <div style="font-size:.63rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#7fe9d8;margin-bottom:8px">Síntese do ciclo</div>
+      <div style="font-size:.95rem;color:rgba(255,255,255,.84);line-height:1.75">Agosto separou com clareza duas coisas que costumam ser lidas juntas: volume e eficiência. As peças de serviço abriram o maior alcance do ciclo e foram recebidas em silêncio; 7 Maravilhas recebeu uma fração dessa mídia e concentrou praticamente toda a conversa do mês, o que a torna a peça de melhor desempenho do ciclo em resposta obtida por volume investido. O que fez a diferença foi o gancho: a pergunta vem numa tarja fixa, presente do primeiro ao último segundo, e chega mesmo a quem vê poucos segundos e sem som. Vale registrar, ainda, que conversa alta não é o mesmo que adesão: as pessoas responderam à pergunta nos comentários, mas o passo a passo da votação está na segunda metade de um vídeo cuja atenção média ficou entre 9 e 11 segundos. Quando a peça pede uma ação, a instrução precisa caber na janela em que o público realmente está assistindo.</div>
+    </div>
+  </div>
+</div>
 
 <!-- ═══ 11 · FONTES ═══ -->
 <section class="sources fade-in">
