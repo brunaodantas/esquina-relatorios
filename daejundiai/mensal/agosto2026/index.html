@@ -79,7 +79,7 @@
     .eyebrow-p{color:var(--p)}.eyebrow-t{color:var(--teal)}.eyebrow-pu{color:var(--purple)}
     .eyebrow-wh{color:rgba(255,255,255,.5)}.eyebrow-wh::before{background:rgba(255,255,255,.3)}
     .h1{font-size:clamp(1.8rem,4vw,3rem);font-weight:700;line-height:1.1;margin-bottom:14px;letter-spacing:-.02em}
-    .sub{font-size:1.05rem;color:var(--t2);max-width:640px;line-height:1.7}
+    .sub{font-size:1.05rem;color:var(--t2);max-width:100%;line-height:1.7}
 
     /* ══ HERO ══ */
     .hero{position:relative;overflow:hidden;background:linear-gradient(100deg,rgba(6,6,48,.95) 0%,rgba(10,10,92,.9) 36%,rgba(13,27,110,.66) 66%,rgba(26,60,255,.4) 100%),url('assets/hero-sede-dae.jpg');background-size:cover;background-position:center 50%;color:#fff;padding:calc(56px + 56px) 0 64px}
@@ -100,9 +100,9 @@
     .enc{background:linear-gradient(160deg,#EEF1FF 0%,#F4F6FF 40%,#EBF7F5 100%);border-top:1px solid rgba(26,60,255,.10);border-bottom:1px solid rgba(23,166,151,.12);padding:80px 24px;position:relative;overflow:hidden}
     .enc::before{content:'';position:absolute;top:-100px;right:-100px;width:350px;height:350px;border-radius:50%;background:radial-gradient(circle,rgba(26,60,255,.07) 0%,transparent 70%);z-index:0}
     .enc-in{max-width:1200px;margin:0 auto;position:relative;z-index:1}
-    .enc-hl{font-size:clamp(1.6rem,3.5vw,2.6rem);font-weight:800;line-height:1.25;letter-spacing:-.025em;color:var(--t1);margin-bottom:20px;max-width:900px}
+    .enc-hl{font-size:clamp(1.6rem,3.5vw,2.6rem);font-weight:800;line-height:1.25;letter-spacing:-.025em;color:var(--t1);margin-bottom:20px;max-width:100%}
     .enc-hl .hb{color:var(--p)}.enc-hl .ht{color:var(--teal)}
-    .enc-story{font-size:1.05rem;color:var(--t2);line-height:1.85;max-width:760px}
+    .enc-story{font-size:1.05rem;color:var(--t2);line-height:1.85;max-width:100%}
     .enc-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:48px}
     .ec{background:#fff;border:1px solid rgba(26,60,255,.10);border-radius:20px;padding:28px 24px;box-shadow:0 2px 12px rgba(26,60,255,.06),0 8px 32px rgba(0,0,0,.04);transition:all .3s;position:relative;overflow:hidden;text-align:center;break-inside:avoid}
     .ec::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
@@ -344,7 +344,7 @@
     .cbox-sm{position:relative;height:250px}
     .g3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
     @media(max-width:900px){.g3{grid-template-columns:1fr}}
-    .lead{font-size:.97rem;color:var(--t2);line-height:1.8;max-width:78ch;margin-top:16px}
+    .lead{font-size:.97rem;color:var(--t2);line-height:1.8;max-width:100%;margin-top:16px}
     .lead + .lead{margin-top:14px}
     .lead b{color:var(--t1);font-weight:700}
     .tag{display:inline-block;font-size:.6rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:100px}
@@ -391,7 +391,7 @@
     .rec-txt{font-size:.86rem;color:var(--t2);line-height:1.7}
 
     .abertura{padding-bottom:0}
-    .abertura .lead{font-size:1.06rem;color:var(--t2);max-width:82ch}
+    .abertura .lead{font-size:1.06rem;color:var(--t2);max-width:100%}
     .rk-card>.tag{align-self:flex-start}
     .rk-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:22px 24px;box-shadow:var(--sh);break-inside:avoid;display:flex;flex-direction:column}
     .rk-total{font-weight:800;color:var(--t1);font-size:1.02rem;margin:11px 0 14px;letter-spacing:-.01em}
@@ -415,7 +415,7 @@
     .hip-list li b{color:var(--t1)}
     .hip-fech{margin-top:15px;padding:13px 16px;background:rgba(26,60,255,.04);border-radius:10px;font-size:.83rem;color:var(--t2);line-height:1.65}
     .hip-fech-lbl{display:block;font-size:.6rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--p);margin-bottom:5px}
-    .tbl-note{font-size:.78rem;color:var(--tm);line-height:1.6;margin-top:14px;max-width:88ch}
+    .tbl-note{font-size:.78rem;color:var(--tm);line-height:1.6;margin-top:14px;max-width:100%}
 
     /* ══ FAIXA DE TÍTULO COM ESTRELA ══ */
     .hdr-band{background:linear-gradient(100deg,#060630 0%,#0A0A5C 40%,#1A3CFF 100%);color:#fff}
@@ -425,7 +425,7 @@
     .hdr-body{flex:1}
     .hdr-eyebrow{font-size:.68rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:10px}
     .hdr-ttl{font-size:clamp(1.7rem,3.6vw,2.6rem);font-weight:800;letter-spacing:-.02em;line-height:1.1;color:#fff;margin-bottom:12px}
-    .hdr-sub{font-size:.95rem;color:rgba(255,255,255,.6);line-height:1.7;max-width:660px}
+    .hdr-sub{font-size:.95rem;color:rgba(255,255,255,.6);line-height:1.7;max-width:100%}
     @media(max-width:768px){.hdr-in{flex-direction:column;align-items:flex-start;gap:22px;padding:34px 24px}.hdr-star{border-right:none;padding-right:0}.hdr-star svg{width:76px;height:76px}}
     /* ══ THUMB DE CRIATIVO SEM IMAGEM ══ */
   </style>
@@ -454,10 +454,10 @@
     <h1 class="htitle">Presta&ccedil;&atilde;o de<br/>Contas</h1>
     <p class="hsub">Campanha Temas Diversos &middot; Agosto 2026<br/>DAE Jundiaí</p>
     <div class="hero-kpis">
-      <div><div class="v">419.269</div><div class="k">Impress&otilde;es entregues</div></div>
+      <div><div class="v">419.323</div><div class="k">Impress&otilde;es entregues</div></div>
       <div><div class="v">150.271</div><div class="k">Contas alcan&ccedil;adas</div></div>
-      <div><div class="v">79.069</div><div class="k">Engajamentos</div></div>
-      <div><div class="v">12.209</div><div class="k">Visualiza&ccedil;&otilde;es de v&iacute;deo</div></div>
+      <div><div class="v">79.085</div><div class="k">Engajamentos</div></div>
+      <div><div class="v">12.214</div><div class="k">Visualiza&ccedil;&otilde;es de v&iacute;deo</div></div>
     </div>
   </div>
 </section>
@@ -468,24 +468,24 @@
     <span class="eyebrow eyebrow-t">Ciclo encerrado</span>
     <h2 class="enc-hl fade-in">Em agosto, a DAE levou seis pautas de água e saneamento a <span class="ht">mais de 419 mil exibições</span>, com <span class="hb">as quatro linhas contratadas fechando acima do combinado</span>.</h2>
     <p class="enc-story fade-in">O calendário de agosto tratou do que o morador vive todo dia: o vazamento que ninguém enxerga e aparece na conta, a água que a rotina consome sem que se perceba, a obra que atrapalha o trânsito hoje para resolver o esgoto amanhã, e a equipe que sai para atender quando alguém liga. A veiculação correu de 07 a 28 de agosto, em Meta Ads.</p>
-    <p class="enc-story fade-in" style="margin-top:16px">A peça com moradores falando na rua foi a que mais prendeu atenção e sustentou quase toda a meta de vídeo. Já a obra da Avenida da Uva, com um nono das exibições da peça de maior circulação, foi a que mais trouxe gente para perto do perfil: liderou em novos seguidores e teve a melhor taxa de compartilhamento do ciclo.</p>
+    <p class="enc-story fade-in" style="margin-top:16px">A peça com moradores falando na rua foi a que mais prendeu atenção e sustentou quase toda a meta de vídeo. Já a obra da Avenida da Uva, com pouco mais de um décimo das exibições da peça de maior circulação, foi a que mais trouxe gente para perto do perfil: liderou em novos seguidores e teve a melhor taxa de compartilhamento do ciclo.</p>
 
     <div class="enc-cards fade-in">
       <div class="ec">
         <span class="ec-icon">&#128202;</span>
-        <div class="ec-num">419.269</div>
+        <div class="ec-num">419.323</div>
         <div class="ec-lbl">impressões entregues</div>
         <div class="ec-ctx">Meta Ads</div>
       </div>
       <div class="ec">
         <span class="ec-icon">&#127919;</span>
-        <div class="ec-num">79.069</div>
+        <div class="ec-num">79.085</div>
         <div class="ec-lbl">engajamentos</div>
         <div class="ec-ctx">Meta Ads</div>
       </div>
       <div class="ec">
         <span class="ec-icon">&#127916;</span>
-        <div class="ec-num">12.209</div>
+        <div class="ec-num">12.214</div>
         <div class="ec-lbl">visualizações de vídeo</div>
         <div class="ec-ctx">Meta Ads</div>
       </div>
@@ -508,16 +508,16 @@
 
     <div class="mm-stats fade-in">
       <div class="mm-side">
-        <div class="mm-sv">79.069</div>
+        <div class="mm-sv">79.085</div>
         <div class="mm-sk">Engajamentos</div>
       </div>
       <div class="mm-center">
-        <div class="mm-pct">419.269</div>
+        <div class="mm-pct">419.323</div>
         <div class="mm-pl">Impressões entregues</div>
         <div class="mm-fin">&#9733; Ciclo encerrado em 28/08</div>
       </div>
       <div class="mm-side end">
-        <div class="mm-sv">12.209</div>
+        <div class="mm-sv">12.214</div>
         <div class="mm-sk">Visualizações de vídeo</div>
       </div>
     </div>
@@ -534,29 +534,25 @@
       <table class="xtbl">
         <thead><tr><th>Linha de veiculação</th><th>Meta</th><th>Entregue</th></tr></thead>
         <tbody>
-          <tr><td>Meta Ads &middot; Impressões</td><td>250.000</td><td>299.669</td></tr>
+          <tr><td>Meta Ads &middot; Impressões</td><td>250.000</td><td>299.703</td></tr>
           <tr><td>Meta Ads &middot; Engajamento</td><td>10.000</td><td>13.020</td></tr>
-          <tr><td>Meta Ads &middot; Visualização de vídeo</td><td>10.000</td><td>12.209</td></tr>
+          <tr><td>Meta Ads &middot; Visualização de vídeo</td><td>10.000</td><td>12.214</td></tr>
           <tr><td>Meta Ads &middot; Cliques no link</td><td>1.000</td><td>1.234</td></tr>
         </tbody>
       </table>
     </div>
 
-    <p class="lead fade-in">Cada linha do plano mede uma coisa diferente: a de impressões conta volume de exibição, a de engajamento conta interação com a publicação, a de visualização conta tempo de vídeo assistido e a de cliques conta quem saiu do anúncio para ver mais. Por isso as quatro não se somam em um número único: elas contam coisas diferentes e são conferidas uma a uma contra o que foi contratado.</p>
-    <p class="lead fade-in">A conta como um todo, somando as quatro campanhas que rodaram no período, registrou <b>419.269 impressões</b>. Esse total é maior que a linha de impressões porque as linhas de engajamento, de vídeo e de cliques também geram exibição enquanto cumprem a própria meta.</p>
+    <p class="lead fade-in">As linhas possuem objetivos diferentes: impressões busca volume de exibição, engajamento busca interação com a publicação, visualização busca tempo de vídeo assistido e cliques busca quem sai do anúncio para ver mais. Como cada uma persegue um objetivo próprio, as quatro são conferidas uma a uma contra o que foi contratado.</p>
+    <p class="lead fade-in">Somadas, as peças de Meta Ads registraram <b>419.323 impressões</b>. O número é maior que a linha de impressões porque as linhas de engajamento, de vídeo e de cliques também aparecem na tela do morador enquanto cumprem a própria meta.</p>
 
     <div class="mini-row fade-in">
       <div class="mini"><span class="mini-v">24,4%</span><span class="mini-l">Taxa de engajamento</span><span class="mini-x">Sobre as 53.304 impressões da linha de engajamento</span></div>
-      <div class="mini"><span class="mini-v">29,2%</span><span class="mini-l">Taxa de visualização</span><span class="mini-x">Sobre as 41.803 impressões da linha de vídeo</span></div>
+      <div class="mini"><span class="mini-v">29,2%</span><span class="mini-l">Taxa de visualização</span><span class="mini-x">Sobre as 41.822 impressões da linha de vídeo</span></div>
       <div class="mini"><span class="mini-v">1.193</span><span class="mini-l">Visitas ao perfil</span><span class="mini-x">Ganho além do contratado, na linha de cliques</span></div>
       <div class="mini"><span class="mini-v">1,99</span><span class="mini-l">Frequência</span><span class="mini-x">Exibições por pessoa na linha de cobertura</span></div>
     </div>
-    <p class="lead fade-in">As duas taxas acima são leituras internas de cada linha, calculadas sobre a própria entrega daquela frente e não sobre o total da conta. A de visualização, 29,2%, mostra que quase três em cada dez exibições de vídeo viraram tempo assistido de fato. Já a visita ao perfil não era meta de nenhuma das quatro linhas: ela aparece aqui como ganho adicional da entrega.</p>
+    <p class="lead fade-in">Cada taxa é calculada sobre a entrega da própria linha. A de visualização, 29,2%, mostra que quase três em cada dez exibições de vídeo viraram tempo assistido. A visita ao perfil não era meta de nenhuma das quatro linhas e aparece aqui como ganho adicional.</p>
 
-    <div class="ib tl fade-in">
-      <div class="ib-lbl">Como ler o alcance</div>
-      <div class="ib-txt">As 150.271 contas alcançadas vêm do consolidado das campanhas do ciclo, sem duplicidade. O alcance de cada linha isolada nunca deve ser somado, porque a mesma pessoa costuma aparecer em mais de uma frente de veiculação.</div>
-    </div>
   </div>
 </div>
 
@@ -616,16 +612,16 @@
           <div class="perf-media"><img src="assets/vert-uva.jpg" alt="Obra na Avenida da Uva"/></div>
           <div class="perf-body">
             <div class="perf-metrics">
-              <div class="perf-metric"><div class="v">23.500</div><div class="l">Impressões da peça</div></div>
-              <div class="perf-metric"><div class="v">10.162</div><div class="l">Interações</div></div>
+              <div class="perf-metric"><div class="v">25.117</div><div class="l">Impressões da peça</div></div>
+              <div class="perf-metric"><div class="v">10.861</div><div class="l">Interações</div></div>
               <div class="perf-metric"><div class="v">432</div><div class="l">Interações por mil impressões</div></div>
-              <div class="perf-metric"><div class="v">962</div><div class="l">Cliques no link</div></div>
+              <div class="perf-metric"><div class="v">1.046</div><div class="l">Cliques no link</div></div>
               <div class="perf-metric"><div class="v">39</div><div class="l">Novos seguidores</div></div>
             </div>
-            <div class="perf-ins "><div class="l">O que funcionou</div><div class="x">O gancho é hiperlocal: fala de uma avenida com nome, não de um problema geral, e quem passa por ali se reconhece na primeira frase. O técnico aparece no canteiro desde o início, a obra é mostrada de verdade e o vídeo termina explicando quantas famílias serão beneficiadas. Com esforço de mídia bem menor que o das peças de cobertura, foi a que mais converteu atenção em ação.</div></div>
-            <div class="perf-ins at"><div class="l">Ponto de atenção</div><div class="x">O aviso de rota alternativa, que é a informação mais prática da peça, aparece na segunda metade do vídeo. Para as próximas peças de obra, vale testar uma versão que já abra por esse aviso, porque é o que interessa a quem passa pela avenida todo dia.</div></div>
-            <div class="perf-ins rp"><div class="l">Resposta do público</div><div class="x">Liderou em novos seguidores e teve a melhor taxa de compartilhamento do ciclo, 0,34 por mil impressões. Nos comentários da publicação, a maioria é de apoio à obra, e dois trazem ressalvas de morador: a expectativa de que o asfalto seja devolvido sem buracos e uma crítica ao adensamento da região. São pontos de acompanhamento de obra, não de comunicação.</div></div>
-            <div class="perf-ins ap"><div class="l">Audiência e posicionamento</div><div class="x">Quem respondeu aqui foi principalmente o público masculino acima de 45 anos, morador fixo da região. O melhor lugar da peça foi o Stories do Facebook, onde quase um quinto de quem viu assistiu até o fim, bem acima do Feed. O Reels do Instagram, que é onde um vídeo vertical costuma render, recebeu pouca entrega. Sugerimos uma versão pensada para Stories e mais peso em Reels na próxima veiculação desta pauta.</div></div>
+            <div class="perf-ins "><div class="l">O que funcionou</div><div class="x">A peça fala de uma avenida com nome, e quem passa por ali se reconhece na primeira frase. O técnico aparece no canteiro desde o começo, a obra é mostrada de verdade e o vídeo termina dizendo quantas famílias serão beneficiadas. Com bem menos exibição que as peças de cobertura, foi a que mais trouxe gente para perto do perfil.</div></div>
+            <div class="perf-ins at"><div class="l">Ponto de atenção</div><div class="x">O aviso de rota alternativa é a informação mais prática da peça e aparece na segunda metade do vídeo. Nas próximas peças de obra, vale testar uma versão que abra por esse aviso, que é o que interessa a quem passa pela avenida todo dia.</div></div>
+            <div class="perf-ins rp"><div class="l">Resposta do público</div><div class="x">Liderou em novos seguidores e teve a melhor taxa de compartilhamento do mês, 0,32 por mil exibições. Nos comentários da publicação, a maioria apoia a obra. Dois trazem ressalvas de morador: a expectativa de que o asfalto volte sem buracos e uma crítica ao adensamento da região. São dois pontos para acompanhar junto da obra.</div></div>
+            <div class="perf-ins ap"><div class="l">Audiência e posicionamento</div><div class="x">Quem respondeu foi principalmente o público masculino acima de 45 anos, morador fixo da região. O melhor lugar da peça foi o Stories do Facebook, onde quase um quinto de quem viu assistiu até o fim, bem acima do Feed. O Reels do Instagram recebeu pouca exibição, e é lá que o vídeo vertical costuma render. Sugerimos uma versão feita para os Stories e mais peso no Reels na próxima vez que esta pauta rodar.</div></div>
           </div>
         </div>
       </div>
@@ -640,16 +636,16 @@
           <div class="perf-media"><img src="assets/vert-oquesabem.jpg" alt="Moradores entrevistados na rua"/></div>
           <div class="perf-body">
             <div class="perf-metrics">
-              <div class="perf-metric"><div class="v">99.671</div><div class="l">Impressões da peça</div></div>
-              <div class="perf-metric"><div class="v">31.294</div><div class="l">Interações</div></div>
+              <div class="perf-metric"><div class="v">99.693</div><div class="l">Impressões da peça</div></div>
+              <div class="perf-metric"><div class="v">31.302</div><div class="l">Interações</div></div>
               <div class="perf-metric"><div class="v">314</div><div class="l">Interações por mil impressões</div></div>
-              <div class="perf-metric"><div class="v">11.882</div><div class="l">Visualizações</div></div>
+              <div class="perf-metric"><div class="v">11.888</div><div class="l">Visualizações</div></div>
               <div class="perf-metric"><div class="v">37</div><div class="l">Novos seguidores</div></div>
             </div>
-            <div class="perf-ins "><div class="l">O que funcionou</div><div class="x">Recebeu o maior esforço de mídia entre as peças do mês e devolveu em atenção: foi a mais assistida do ciclo, com atenção média acima de 14 segundos, muito além das demais, e sozinha respondeu por quase toda a meta de visualização de vídeo. Quem fala é o morador, identificado com nome na tela, e isso dá credibilidade que peça institucional com narração não alcança.</div></div>
-            <div class="perf-ins at"><div class="l">Ponto de atenção</div><div class="x">O vídeo tem 56 segundos e entrega o essencial no primeiro terço. Nas linhas de cobertura ampla a proporção de gente que chega ao fim cai bastante, então vale testar uma versão mais curta para esse uso, mantendo a original onde ela já funciona.</div></div>
-            <div class="perf-ins rp"><div class="l">Resposta do público</div><div class="x">Concentrou o maior volume de conversa do ciclo: 29 compartilhamentos, 14 comentários e 1.518 reações, os três maiores números entre as peças. Lemos os comentários um a um na publicação: dos 12 no Instagram, 11 são favoráveis, com elogios ao serviço e ao próprio vídeo, incluindo quem disse ter descoberto ali que a DAE também cuida do esgoto. Há um comentário crítico, com um relato individual de atendimento não concluído, que já foi repassado à DAE.</div></div>
-            <div class="perf-ins ap"><div class="l">Audiência e posicionamento</div><div class="x">Quem conversa aqui é o público mais velho: acima de 55 anos responde por quase toda a interação da peça, com destaque para 65 ou mais. Reels e Stories do Facebook foram os lugares em que a peça mais prendeu atenção, e o Reels do Instagram quase não recebeu entrega, apesar de ser onde o formato vertical costuma render. Sugerimos mais peso em Reels e Stories do Instagram e uma versão curta, de 15 a 20 segundos, com dois depoimentos e a assinatura.</div></div>
+            <div class="perf-ins "><div class="l">O que funcionou</div><div class="x">Foi a peça mais assistida do mês, com tempo médio acima de 14 segundos, muito além das demais, e sozinha cumpriu quase toda a meta de visualização de vídeo. Quem fala é o morador, identificado com nome na tela, e isso dá à peça uma credibilidade que a narração institucional dificilmente teria.</div></div>
+            <div class="perf-ins at"><div class="l">Ponto de atenção</div><div class="x">O vídeo tem 56 segundos e entrega o essencial no primeiro terço. Nas linhas de alcance amplo, a proporção de gente que chega ao fim cai bastante. Vale testar uma versão mais curta para esse uso e manter a original onde ela já funciona.</div></div>
+            <div class="perf-ins rp"><div class="l">Resposta do público</div><div class="x">Concentrou o maior volume de conversa do mês: 29 compartilhamentos, 14 comentários e 1.518 reações, os três maiores números entre as peças. Lendo os comentários da publicação, 11 dos 12 no Instagram são favoráveis, com elogios ao serviço e ao próprio vídeo, incluindo quem disse ter descoberto ali que a DAE também cuida do esgoto. Um comentário traz um relato individual de atendimento não concluído.</div></div>
+            <div class="perf-ins ap"><div class="l">Audiência e posicionamento</div><div class="x">Quem conversa aqui é o público mais velho: acima de 55 anos responde por quase toda a interação da peça, com destaque para 65 ou mais. O Reels e os Stories do Facebook foram os lugares em que a peça mais prendeu atenção. O Reels do Instagram quase não recebeu exibição, e é lá que o formato vertical costuma render. Sugerimos mais peso no Reels e nos Stories do Instagram, com uma versão curta de 15 a 20 segundos com dois depoimentos e a assinatura.</div></div>
           </div>
         </div>
       </div>
@@ -664,16 +660,16 @@
           <div class="perf-media"><img src="assets/vert-vazamento.jpg" alt="Apresentador mostrando sinais de vazamento"/></div>
           <div class="perf-body">
             <div class="perf-metrics">
-              <div class="perf-metric"><div class="v">215.502</div><div class="l">Impressões da peça</div></div>
-              <div class="perf-metric"><div class="v">30.498</div><div class="l">Interações</div></div>
-              <div class="perf-metric"><div class="v">142</div><div class="l">Interações por mil impressões</div></div>
+              <div class="perf-metric"><div class="v">213.917</div><div class="l">Impressões da peça</div></div>
+              <div class="perf-metric"><div class="v">29.807</div><div class="l">Interações</div></div>
+              <div class="perf-metric"><div class="v">139</div><div class="l">Interações por mil impressões</div></div>
               <div class="perf-metric"><div class="v">13</div><div class="l">Compartilhamentos</div></div>
-              <div class="perf-metric"><div class="v">888</div><div class="l">Reações</div></div>
+              <div class="perf-metric"><div class="v">880</div><div class="l">Reações</div></div>
             </div>
-            <div class="perf-ins "><div class="l">O que funcionou</div><div class="x">Foi a peça que mais circulou pela cidade, presente nas duas linhas de cobertura e responsável pela maior fatia do esforço de mídia do ciclo. O conteúdo é utilidade prática pura: a caixa d'água que perde mais de três mil litros por dia, o teste da tinta no vaso sanitário e a leitura do hidrômetro, tudo em legenda grande e legível no celular sem som.</div></div>
-            <div class="perf-ins at"><div class="l">Ponto de atenção</div><div class="x">A peça leva alguns segundos até chegar ao primeiro dado forte, e a proporção de gente que assistiu até o fim ficou entre as mais baixas do mês, apesar do volume enorme. Para as próximas dessa linha, vale testar uma abertura que comece pelo número dos três mil litros por dia.</div></div>
-            <div class="perf-ins rp"><div class="l">Resposta do público</div><div class="x">Trouxe 13 compartilhamentos, 10 comentários e 888 reações, volume alto em números absolutos e baixo em proporção ao alcance: 0,06 compartilhamento por mil, contra 0,34 da peça da obra. Nos sete comentários da publicação, cinco são favoráveis e reconhecem a utilidade da orientação. Dois trazem ressalva: o mesmo relato de chamado não atendido que aparece em outras peças e um lembrete de que consertar vazamento dentro de casa tem custo, o que sugere espaço para falar de apoio e orientação a quem não consegue arcar com o reparo.</div></div>
-            <div class="perf-ins ap"><div class="l">Audiência e posicionamento</div><div class="x">O público que interagiu é o mesmo das demais peças, acima de 55 anos, quase todo em celular Android. O desencontro está no lugar da entrega: ela se concentrou no Feed, onde cerca de 1% de quem viu chegou ao fim, enquanto nos poucos milhares de impressões que caíram em Reels e Stories essa proporção passou de 20%. A peça é vertical e rende onde o formato vertical vive. Sugerimos redistribuir peso para Reels e Stories na próxima veiculação desta pauta.</div></div>
+            <div class="perf-ins "><div class="l">O que funcionou</div><div class="x">Foi a peça que mais circulou pela cidade, presente nas duas linhas de alcance. O conteúdo é utilidade prática: a caixa d'água que perde mais de três mil litros por dia, o teste da tinta no vaso sanitário e a leitura do hidrômetro, tudo em legenda grande e legível no celular sem som.</div></div>
+            <div class="perf-ins at"><div class="l">Ponto de atenção</div><div class="x">A peça leva alguns segundos até chegar ao primeiro dado forte. Vale testar, nas próximas dessa linha, uma abertura que comece pelo número dos três mil litros por dia.</div></div>
+            <div class="perf-ins rp"><div class="l">Resposta do público</div><div class="x">Trouxe 13 compartilhamentos, 10 comentários e 880 reações, números altos em volume e baixos em proporção ao alcance: 0,06 compartilhamento por mil exibições, contra 0,32 da peça da obra. Nos sete comentários da publicação, cinco são favoráveis e reconhecem a utilidade da orientação. Dois trazem ressalva: o mesmo relato de chamado não atendido que aparece em outras peças e um lembrete de que consertar vazamento dentro de casa tem custo. Isso abre espaço para uma peça sobre apoio e orientação a quem não consegue arcar com o reparo.</div></div>
+            <div class="perf-ins ap"><div class="l">Audiência e posicionamento</div><div class="x">O público que interagiu é o mesmo das demais peças, acima de 55 anos, quase todo em celular Android. A exibição se concentrou no Feed, onde cerca de 1% de quem viu chegou ao fim, enquanto nos poucos milhares de exibições que caíram no Reels e nos Stories essa proporção passou de 20%. A peça é vertical e rende mais nesses lugares. Sugerimos levar mais peso para lá na próxima vez que esta pauta rodar.</div></div>
           </div>
         </div>
       </div>
@@ -682,7 +678,7 @@
 
     <div class="ib fade-in">
       <div class="ib-lbl">O que as três peças, juntas, ensinam</div>
-      <div class="ib-txt">Volume e vínculo vêm de peças diferentes. A peça de vazamento abriu circulação com facilidade e recebeu uma resposta discreta em proporção ao que alcançou; a obra da Avenida da Uva entregou um volume muito menor e concentrou a melhor resposta por pessoa alcançada, em seguidor e em compartilhamento. Um calendário equilibrado precisa das duas coisas: peças que informam a cidade inteira e peças que criam vínculo de bairro.</div>
+      <div class="ib-txt">Volume e proximidade vieram de peças diferentes. A peça de vazamento circulou com facilidade e teve resposta discreta em proporção ao que alcançou. A obra da Avenida da Uva teve volume muito menor e concentrou a melhor resposta por pessoa alcançada, em seguidor e em compartilhamento. Um calendário equilibrado precisa das duas coisas: peças que informam a cidade inteira e peças que falam com o bairro.</div>
     </div>
   </div>
 </div>
@@ -704,35 +700,49 @@
       <span class="tag t-blue">Top 3 &middot; Novos seguidores</span>
       <div class="rk-total">90 novos seguidores no ciclo</div>
       <ol class="rk-list">
-        <li><span class="rk-pos on">1</span><span class="rk-body"><span class="rk-name">Avenida da Uva</span><span class="rk-num"><b>39 seguidores</b> &middot; 1,66 por mil impressões &middot; 23.500 impressões</span></span></li>
-        <li><span class="rk-pos on">2</span><span class="rk-body"><span class="rk-name">O que sabem sobre a DAE</span><span class="rk-num"><b>37 seguidores</b> &middot; 0,37 por mil impressões &middot; 99.671 impressões</span></span></li>
-        <li><span class="rk-pos on">3</span><span class="rk-body"><span class="rk-name">Sinais de vazamento</span><span class="rk-num"><b>13 seguidores</b> &middot; 0,06 por mil impressões &middot; 215.502 impressões</span></span></li>
+        <li><span class="rk-pos on">1</span><span class="rk-body"><span class="rk-name">Avenida da Uva</span><span class="rk-num"><b>39 seguidores</b> &middot; 1,55 por mil impressões &middot; 25.117 impressões</span></span></li>
+        <li><span class="rk-pos on">2</span><span class="rk-body"><span class="rk-name">O que sabem sobre a DAE</span><span class="rk-num"><b>37 seguidores</b> &middot; 0,37 por mil impressões &middot; 99.693 impressões</span></span></li>
+        <li><span class="rk-pos on">3</span><span class="rk-body"><span class="rk-name">Sinais de vazamento</span><span class="rk-num"><b>13 seguidores</b> &middot; 0,06 por mil impressões &middot; 213.917 impressões</span></span></li>
       </ol>
-      <div class="rk-note">Conteúdo local traz mais gente para perto do perfil que conteúdo de circulação ampla. A peça de obra fez isso com um nono das exibições da líder de volume.</div>
+      <div class="rk-note">Conteúdo local traz mais gente para perto do perfil que conteúdo de circulação ampla. A peça de obra fez isso com pouco mais de um décimo das exibições da peça de maior volume.</div>
     </div>
 
     <div class="rk-card">
       <span class="tag t-purple">Top 3 &middot; Comentários</span>
       <div class="rk-total">33 comentários no ciclo</div>
       <ol class="rk-list">
-        <li><span class="rk-pos on">1</span><span class="rk-body"><span class="rk-name">O que sabem sobre a DAE</span><span class="rk-num"><b>14 comentários</b> &middot; 0,14 por mil impressões &middot; 99.671 impressões</span></span></li>
-        <li><span class="rk-pos on">2</span><span class="rk-body"><span class="rk-name">Sinais de vazamento</span><span class="rk-num"><b>10 comentários</b> &middot; 0,05 por mil impressões &middot; 215.502 impressões</span></span></li>
+        <li><span class="rk-pos on">1</span><span class="rk-body"><span class="rk-name">O que sabem sobre a DAE</span><span class="rk-num"><b>14 comentários</b> &middot; 0,14 por mil impressões &middot; 99.693 impressões</span></span></li>
+        <li><span class="rk-pos on">2</span><span class="rk-body"><span class="rk-name">Sinais de vazamento</span><span class="rk-num"><b>10 comentários</b> &middot; 0,05 por mil impressões &middot; 213.917 impressões</span></span></li>
         <li><span class="rk-pos on">3</span><span class="rk-body"><span class="rk-name">Quanta água você usa por dia</span><span class="rk-num"><b>5 comentários</b> &middot; 0,11 por mil impressões &middot; 45.633 impressões</span></span></li>
       </ol>
-      <div class="rk-note">Comentário mede volume de conversa, não concordância. Lemos os comentários um a um: a recepção do ciclo é majoritariamente favorável.</div>
+      <div class="rk-note">Comentário mede volume de conversa. Lendo todos, a recepção do ciclo foi majoritariamente favorável.</div>
     </div>
 
     <div class="rk-card">
       <span class="tag t-teal">Top 3 &middot; Compartilhamentos</span>
       <div class="rk-total">57 compartilhamentos no ciclo</div>
       <ol class="rk-list">
-        <li><span class="rk-pos on">1</span><span class="rk-body"><span class="rk-name">O que sabem sobre a DAE</span><span class="rk-num"><b>29 compartilhamentos</b> &middot; 0,29 por mil impressões &middot; 99.671 impressões</span></span></li>
-        <li><span class="rk-pos on">2</span><span class="rk-body"><span class="rk-name">Sinais de vazamento</span><span class="rk-num"><b>13 compartilhamentos</b> &middot; 0,06 por mil impressões &middot; 215.502 impressões</span></span></li>
-        <li><span class="rk-pos on">3</span><span class="rk-body"><span class="rk-name">Avenida da Uva</span><span class="rk-num"><b>8 compartilhamentos</b> &middot; 0,34 por mil impressões, a melhor taxa do ciclo</span></span></li>
+        <li><span class="rk-pos on">1</span><span class="rk-body"><span class="rk-name">O que sabem sobre a DAE</span><span class="rk-num"><b>29 compartilhamentos</b> &middot; 0,29 por mil impressões &middot; 99.693 impressões</span></span></li>
+        <li><span class="rk-pos on">2</span><span class="rk-body"><span class="rk-name">Sinais de vazamento</span><span class="rk-num"><b>13 compartilhamentos</b> &middot; 0,06 por mil impressões &middot; 213.917 impressões</span></span></li>
+        <li><span class="rk-pos on">3</span><span class="rk-body"><span class="rk-name">Avenida da Uva</span><span class="rk-num"><b>8 compartilhamentos</b> &middot; 0,32 por mil impressões, a melhor taxa do ciclo &middot; 25.117 impressões</span></span></li>
       </ol>
-      <div class="rk-note">O vox pop lidera em volume absoluto, mas a obra é a mais repassada em proporção: conteúdo de bairro circula de vizinho para vizinho.</div>
+      <div class="rk-note">A peça com moradores lidera em número de compartilhamentos, e a obra é a mais repassada em proporção ao que alcançou. Conteúdo de bairro circula de vizinho para vizinho.</div>
     </div>
 
+  </div>
+
+  <div class="chart-box fade-in" style="margin-top:26px">
+    <div class="dt-title">Quanta exibição cada seguidor e cada compartilhamento custou</div>
+    <table class="dt">
+      <thead><tr><th>Pe&ccedil;a</th><th>Exibi&ccedil;&otilde;es por novo seguidor</th><th>Exibi&ccedil;&otilde;es por compartilhamento</th></tr></thead>
+      <tbody>
+        <tr><td>Avenida da Uva</td><td>644</td><td>3.140</td></tr>
+        <tr><td>O que sabem sobre a DAE</td><td>2.694</td><td>3.438</td></tr>
+        <tr><td>Quanta &aacute;gua voc&ecirc; usa</td><td></td><td>7.606</td></tr>
+        <tr><td>Sinais de vazamento</td><td>16.455</td><td>16.455</td></tr>
+      </tbody>
+    </table>
+    <div class="rk-note" style="margin-top:14px">Mesma r&eacute;gua dos quadros acima: entram apenas as pe&ccedil;as com no m&iacute;nimo 20.000 exibi&ccedil;&otilde;es e no m&iacute;nimo 5 ocorr&ecirc;ncias da m&eacute;trica. A pe&ccedil;a da obra precisou de cerca de 640 exibi&ccedil;&otilde;es para ganhar um seguidor, contra 16.455 da pe&ccedil;a de maior circula&ccedil;&atilde;o. A c&eacute;lula vazia indica pe&ccedil;a que ficou abaixo do piso naquela m&eacute;trica.</div>
   </div>
 
   <div class="ib fade-in">
@@ -755,7 +765,7 @@
       <div class="pauta-body">
         <span class="tag t-blue">Consumo consciente</span>
         <div class="pauta-ttl">Sinais de vazamento dentro de casa</div><a class="perf-link" style="margin:6px 0 8px" href="https://www.facebook.com/permalink.php?story_fbid=992578693804639&id=607561639448619" target="_blank" rel="noopener">Ver a publica&ccedil;&atilde;o &#8599;</a>
-        <div class="pauta-txt">A peça de maior volume do ciclo, com 215.502 impressões, mais da metade de tudo que a campanha entregou em agosto. Ensina a identificar vazamento pelo hidrômetro, pelo vaso sanitário e pela caixa d'água.</div>
+        <div class="pauta-txt">A peça de maior volume do ciclo, com 213.917 impressões, mais da metade de tudo que a campanha entregou em agosto. Ensina a identificar vazamento pelo hidrômetro, pelo vaso sanitário e pela caixa d'água.</div>
       </div>
     </div>
 
@@ -764,7 +774,7 @@
       <div class="pauta-body">
         <span class="tag t-purple">Relação com a cidade</span>
         <div class="pauta-ttl">O que sabem sobre a DAE Jundiaí</div><a class="perf-link" style="margin:6px 0 8px" href="https://www.facebook.com/permalink.php?story_fbid=1850482099697184&id=607561639448619" target="_blank" rel="noopener">Ver a publica&ccedil;&atilde;o &#8599;</a>
-        <div class="pauta-txt">A pauta que mais conversou com o público. Vox pop nas ruas do centro, com 99.671 impressões e a maior atenção média do mês. Concentrou o maior volume de comentários, compartilhamentos e reações do ciclo.</div>
+        <div class="pauta-txt">A pauta que mais conversou com o público. Moradores entrevistados nas ruas do centro, com 99.693 impressões e a maior atenção média do mês. Concentrou o maior volume de comentários, compartilhamentos e reações do ciclo.</div>
       </div>
     </div>
 
@@ -782,7 +792,7 @@
       <div class="pauta-body">
         <span class="tag t-teal">Obras de saneamento</span>
         <div class="pauta-ttl">O que está acontecendo na Avenida da Uva</div><a class="perf-link" style="margin:6px 0 8px" href="https://www.facebook.com/permalink.php?story_fbid=1361426705770389&id=607561639448619" target="_blank" rel="noopener">Ver a publica&ccedil;&atilde;o &#8599;</a>
-        <div class="pauta-txt">Obra de rede de esgoto dos bairros Poste e Traviú, explicada no canteiro por um técnico da DAE. Com 23.500 impressões, foi a peça mais eficiente do ciclo em seguidores e em compartilhamento por pessoa alcançada.</div>
+        <div class="pauta-txt">Obra de rede de esgoto dos bairros Poste e Traviú, explicada no canteiro por um técnico da DAE. Com 25.117 impressões, foi a peça mais eficiente do ciclo em seguidores e em compartilhamento por pessoa alcançada.</div>
       </div>
     </div>
 
@@ -847,7 +857,7 @@
 
   <div class="ib tl fade-in" style="margin-top:20px">
     <div class="ib-lbl">Leitura por plataforma</div>
-    <div class="ib-txt">As duas plataformas circularam volumes parecidos de impressões e responderam de formas muito diferentes: o Facebook concentrou mais de quatro quintos das interações e seis vezes mais visualizações de vídeo. Isso tem relação direta com o público que a campanha alcança, majoritariamente acima dos 45 anos, e com o lugar em que as peças caíram: no Instagram a entrega foi quase toda em Feed, e o Reels, que é onde o vídeo vertical rende, ficou de fora. Sugerimos corrigir essa distribuição no próximo ciclo, e não reduzir a presença no Instagram.</div>
+    <div class="ib-txt">As duas plataformas circularam volumes parecidos de impressões e responderam de formas muito diferentes: o Facebook concentrou mais de quatro quintos das interações e seis vezes mais visualizações de vídeo. Isso tem relação direta com o público que a campanha alcança, majoritariamente acima dos 45 anos, e com o lugar em que as peças caíram: no Instagram a entrega foi quase toda em Feed, e o Reels, que é onde o vídeo vertical rende, ficou de fora. Sugerimos ajustar essa distribuição no próximo ciclo, mantendo a presença no Instagram.</div>
   </div>
 </section>
 
@@ -865,7 +875,7 @@
     <div class="chart-box">
       <div class="dt-title">Impressões por gênero</div>
       <div class="cbox-sm"><canvas id="chartGenero"></canvas></div>
-      <p style="font-size:.78rem;color:var(--tm);line-height:1.6;margin-top:14px">Uma parcela pequena da entrega chega sem gênero declarado no perfil. Esse grupo aparece separado e não é redistribuído entre os outros dois.</p>
+      <p style="font-size:.78rem;color:var(--tm);line-height:1.6;margin-top:14px">Uma parcela pequena da entrega chega sem gênero declarado no perfil. Esse grupo aparece separado na leitura.</p>
     </div>
   </div>
 
@@ -947,10 +957,10 @@
     <p class="sub fade-in" style="color:rgba(255,255,255,.62)">Seis peças no ar entre 07 e 28 de agosto, as quatro linhas contratadas cumpridas e um retrato claro de quais pautas a cidade acompanha em silêncio e quais fazem o morador se aproximar.</p>
 
     <div class="dc-grid fade-in">
-      <div class="dc"><div class="dc-acc t"></div><div class="dc-n">01</div><div class="dc-m">4 de 4</div><div class="dc-ttl">Linhas contratadas entregues acima do combinado</div><div class="dc-txt">As quatro linhas do plano encerraram acima do volume contratado, com o ritmo ajustado ao longo do mês para chegar lá sem sobra e sem corrida no fim. A linha de cobertura passou da meta três dias antes do prazo.</div></div>
-      <div class="dc"><div class="dc-acc b"></div><div class="dc-n">02</div><div class="dc-m">1,66</div><div class="dc-ttl">Novos seguidores a cada mil pessoas que viram a peça da obra</div><div class="dc-txt">É a melhor marca do ciclo e chega a ser vinte e sete vezes a da peça que mais circulou, que fez 0,06. Conteúdo que fala de uma rua com nome cria vínculo que conteúdo geral não cria, mesmo alcançando bem menos gente.</div></div>
-      <div class="dc"><div class="dc-acc p"></div><div class="dc-n">03</div><div class="dc-m">14 s</div><div class="dc-ttl">Tempo médio assistido da peça com moradores na rua</div><div class="dc-txt">Muito acima das demais peças do mês, que ficaram na casa de poucos segundos. Foi ela que sustentou quase toda a meta de visualização de vídeo do ciclo, e também a que mais gerou conversa escrita.</div></div>
-      <div class="dc"><div class="dc-acc b"></div><div class="dc-n">04</div><div class="dc-m">1.193</div><div class="dc-ttl">Visitas ao perfil da DAE, um ganho além do contratado</div><div class="dc-txt">São pessoas que saíram do anúncio e foram até o perfil, onde estão os canais de atendimento e o restante do conteúdo. Não entra no cálculo de nenhuma meta, mas é onde a conversa com o morador continua.</div></div>
+      <div class="dc"><div class="dc-acc t"></div><div class="dc-n">01</div><div class="dc-m">4 de 4</div><div class="dc-ttl">Linhas contratadas entregues acima do combinado</div><div class="dc-txt">As quatro linhas do plano encerraram acima do volume contratado. A linha de cobertura passou da meta três dias antes do prazo.</div></div>
+      <div class="dc"><div class="dc-acc b"></div><div class="dc-n">02</div><div class="dc-m">1,55</div><div class="dc-ttl">Novos seguidores a cada mil pessoas que viram a peça da obra</div><div class="dc-txt">É a melhor marca do ciclo, contra 0,06 da peça que mais circulou. A peça fala de uma rua com nome, e isso aproxima o morador mesmo alcançando bem menos gente.</div></div>
+      <div class="dc"><div class="dc-acc p"></div><div class="dc-n">03</div><div class="dc-m">14 s</div><div class="dc-ttl">Tempo médio assistido da peça com moradores na rua</div><div class="dc-txt">Muito acima das demais peças do mês. Foi ela que sustentou quase toda a meta de visualização de vídeo, e também a que mais gerou conversa escrita.</div></div>
+      <div class="dc"><div class="dc-acc b"></div><div class="dc-n">04</div><div class="dc-m">1.193</div><div class="dc-ttl">Visitas ao perfil da DAE, um ganho além do contratado</div><div class="dc-txt">São pessoas que saíram do anúncio e foram até o perfil, onde estão os canais de atendimento e o restante do conteúdo. É onde a conversa com o morador continua.</div></div>
       <div class="dc"><div class="dc-acc t"></div><div class="dc-n">05</div><div class="dc-m">Pauta</div><div class="dc-ttl">A conta de água segue como assunto em aberto</div><div class="dc-txt">É o assunto de maior procura espontânea do morador. Com o alerta de calor e baixa umidade abrindo setembro, sugerimos começar o ciclo por conta de água, orientação de reparo e hidratação.</div></div>
     </div>
 
