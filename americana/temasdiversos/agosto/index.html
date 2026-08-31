@@ -195,10 +195,12 @@
     .perf-grid{display:grid;gap:20px;margin-top:22px}
     .perf-grid.g1{grid-template-columns:1fr}
     .perf-grid.g2{grid-template-columns:repeat(2,1fr)}
-    .perf-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;box-shadow:var(--sh);break-inside:avoid;display:flex;flex-direction:column}
-    .perf-card.wide{flex-direction:row}
-    .perf-card.wide
-    .perf-body{padding:16px 18px;display:flex;flex-direction:column;flex:1}
+    .perf-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);box-shadow:var(--sh);break-inside:avoid;padding:20px 22px}
+    .perf-split{display:grid;grid-template-columns:264px 1fr;gap:22px;align-items:start;margin-top:16px}
+    .perf-media{border-radius:14px;overflow:hidden;background:#111;box-shadow:0 10px 30px rgba(10,10,92,.14);aspect-ratio:9/16}
+    .perf-media img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
+    @media(max-width:900px){.perf-split{grid-template-columns:1fr}.perf-media{aspect-ratio:16/9}}
+    .perf-body{display:flex;flex-direction:column;flex:1}
     .perf-top{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:10px;flex-wrap:wrap}
     .perf-topleft{display:inline-flex;align-items:center}
     .perf-pos{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:var(--p);color:#fff;font-size:.82rem;font-weight:800;flex-shrink:0;margin-right:8px}
@@ -208,9 +210,17 @@
     .perf-rank.b{background:rgba(123,47,190,.10);color:var(--purple)}
     .perf-fmt{font-size:.58rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--tm);text-align:right}
     .perf-title{font-size:.95rem;font-weight:700;color:var(--t1);padding-bottom:12px;border-bottom:1px solid var(--border);margin-bottom:12px;line-height:1.25}
-    .perf-metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(118px,1fr));gap:14px 10px}
-    .perf-metric .v{font-size:1.2rem;font-weight:800;color:var(--t1);letter-spacing:-.02em;line-height:1.05}
-    .perf-metric .l{font-size:.57rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--tm);margin-top:3px}
+    .perf-metrics{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+    .perf-metric{background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:12px 13px}
+    .perf-metric .v{font-size:1.22rem;font-weight:800;color:var(--t1);letter-spacing:-.02em;line-height:1.1}
+    .perf-metric .l{font-size:.63rem;font-weight:600;color:var(--tm);margin-top:5px;line-height:1.3}
+    @media(max-width:600px){.perf-metrics{grid-template-columns:repeat(2,1fr)}}
+    .perf-ins{background:var(--bg);border:1px solid var(--border);border-left:4px solid var(--teal);border-radius:12px;padding:11px 16px;margin-top:10px}
+    .perf-ins .l{font-size:.66rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);margin-bottom:5px}
+    .perf-ins .x{font-size:.83rem;color:var(--t2);line-height:1.6}
+    .perf-ins.at{border-left-color:var(--orange)}.perf-ins.at .l{color:#B4690E}
+    .perf-ins.rp{border-left-color:var(--purple)}.perf-ins.rp .l{color:var(--purple)}
+    .perf-ins.ap{border-left-color:var(--p)}.perf-ins.ap .l{color:var(--p)}
     .perf-note{font-size:.8rem;color:var(--t2);line-height:1.6;margin-top:12px;padding-top:12px;border-top:1px solid var(--border)}
     .perf-note p{margin:0 0 14px}
     .perf-note p:last-child{margin-bottom:0}
@@ -599,12 +609,14 @@
     <div class="perf-grid g1 fade-in">
 
       <div class="perf-card">
-        <div class="perf-body">
           <div class="perf-top">
             <span class="perf-topleft"><span class="perf-pos">1</span><span class="perf-rank b">1º em interação por mil impressões</span></span>
             <span class="perf-fmt">Vídeo &middot; Reels &middot; 1min41</span>
           </div>
           <div class="perf-title" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">7 Maravilhas <a class="perf-link" href="https://www.instagram.com/p/DbqgJ-VA08V/" target="_blank" rel="noopener">Ver a publicação &#8599;</a></div>
+          <div class="perf-split">
+            <div class="perf-media"><img src="assets/capa-maravilhas.jpg" alt="7 Maravilhas de Americana"/></div>
+            <div class="perf-body">
           <div class="perf-metrics">
             <div class="perf-metric"><div class="v">252.289</div><div class="l">Impressões da peça</div></div>
             <div class="perf-metric"><div class="v">907</div><div class="l">Interações</div></div>
@@ -612,26 +624,23 @@
             <div class="perf-metric"><div class="v">222</div><div class="l">Comentários</div></div>
             <div class="perf-metric"><div class="v">0,88</div><div class="l">Comentários por mil impressões</div></div>
           </div>
-          <div class="perf-note">
-            <div class="an-lbl">O que funcionou</div>
-            <p>Pauta de identidade com pergunta aberta. Uma tarja fixa com "quais s&atilde;o as 7 Maravilhas de Americana?" acompanha a pe&ccedil;a do primeiro ao &uacute;ltimo segundo, entregando o convite mesmo a quem assiste poucos segundos e sem som. Concentrou quase toda a conversa escrita do m&ecirc;s: 222 dos 231 coment&aacute;rios e 635 das 787 rea&ccedil;&otilde;es.</p>
-            <div class="an-lbl at">Ponto de aten&ccedil;&atilde;o</div>
-            <p>Para os pr&oacute;ximos v&iacute;deos dessa linha, vale testar v&iacute;deos um pouco mais curtos. O tempo m&eacute;dio assistido ficou entre 9 e 11 segundos num v&iacute;deo de 1min41, e o tutorial de vota&ccedil;&atilde;o est&aacute; por volta da metade da pe&ccedil;a, longe do alcance de quem assiste esses primeiros segundos. Sugerimos um corte de 15 a 30 segundos que v&aacute; direto da pergunta para a chamada de vota&ccedil;&atilde;o.</p>
-            <div class="an-lbl">Resposta do p&uacute;blico</div>
-            <p>A maior do ciclo, e com teor muito claro: as pessoas n&atilde;o s&oacute; reagiram, responderam &agrave; pergunta nomeando lugares. A Igreja de Santo Ant&ocirc;nio aparece em seis dos dez coment&aacute;rios da publica&ccedil;&atilde;o, seguida da Avenida Brasil, do Parque Ecol&oacute;gico, do Horto e da pra&ccedil;a do Centro. O tom &eacute; afetivo, com mensagens como "eu amo Americana" e relatos de quem morou na cidade. A pe&ccedil;a funcionou como enquete espont&acirc;nea e devolveu a lista dos lugares que a popula&ccedil;&atilde;o elegeria antes mesmo da vota&ccedil;&atilde;o no site.</p>
-            <div class="an-lbl ac">Audi&ecirc;ncia e posicionamento</div>
-            <p>Quem conversa aqui &eacute; o p&uacute;blico mais velho: 65+ e 55 a 64 anos, com predom&iacute;nio feminino, respondem pela maior parte das rea&ccedil;&otilde;es e dos coment&aacute;rios da pe&ccedil;a. A entrega se concentrou no Feed do Facebook, 13.719 impress&otilde;es, mas foi o Reels do Instagram que converteu melhor: 9 cliques em apenas 1.010 impress&otilde;es, uma taxa cerca de dezessete vezes maior que a do Feed.</p>
+            <div class="perf-ins "><div class="l">O que funcionou</div><div class="x">Pauta de identidade com pergunta aberta. Uma tarja fixa com "quais s&atilde;o as 7 Maravilhas de Americana?" acompanha a pe&ccedil;a do primeiro ao &uacute;ltimo segundo, entregando o convite mesmo a quem assiste poucos segundos e sem som. Concentrou quase toda a conversa escrita do m&ecirc;s: 222 dos 231 coment&aacute;rios e 635 das 787 rea&ccedil;&otilde;es.</div></div>
+            <div class="perf-ins at"><div class="l">Ponto de aten&ccedil;&atilde;o</div><div class="x">Para os pr&oacute;ximos v&iacute;deos dessa linha, vale testar v&iacute;deos um pouco mais curtos. O tempo m&eacute;dio assistido ficou entre 9 e 11 segundos num v&iacute;deo de 1min41, e o tutorial de vota&ccedil;&atilde;o est&aacute; por volta da metade da pe&ccedil;a, longe do alcance de quem assiste esses primeiros segundos. Sugerimos um corte de 15 a 30 segundos que v&aacute; direto da pergunta para a chamada de vota&ccedil;&atilde;o.</div></div>
+            <div class="perf-ins rp"><div class="l">Resposta do p&uacute;blico</div><div class="x">A maior do ciclo, e com teor muito claro: as pessoas n&atilde;o s&oacute; reagiram, responderam &agrave; pergunta nomeando lugares. A Igreja de Santo Ant&ocirc;nio aparece em seis dos dez coment&aacute;rios da publica&ccedil;&atilde;o, seguida da Avenida Brasil, do Parque Ecol&oacute;gico, do Horto e da pra&ccedil;a do Centro. O tom &eacute; afetivo, com mensagens como "eu amo Americana" e relatos de quem morou na cidade. A pe&ccedil;a funcionou como enquete espont&acirc;nea e devolveu a lista dos lugares que a popula&ccedil;&atilde;o elegeria antes mesmo da vota&ccedil;&atilde;o no site.</div></div>
+            <div class="perf-ins ap"><div class="l">Audi&ecirc;ncia e posicionamento</div><div class="x">Quem conversa aqui &eacute; o p&uacute;blico mais velho: 65+ e 55 a 64 anos, com predom&iacute;nio feminino, respondem pela maior parte das rea&ccedil;&otilde;es e dos coment&aacute;rios da pe&ccedil;a. A entrega se concentrou no Feed do Facebook, 13.719 impress&otilde;es, mas foi o Reels do Instagram que converteu melhor: 9 cliques em apenas 1.010 impress&otilde;es, uma taxa cerca de dezessete vezes maior que a do Feed.</div></div>
+            </div>
           </div>
-        </div>
       </div>
 
       <div class="perf-card">
-        <div class="perf-body">
           <div class="perf-top">
             <span class="perf-topleft"><span class="perf-pos">2</span><span class="perf-rank g">2º em interação por mil impressões</span></span>
             <span class="perf-fmt">Vídeo &middot; Reels &middot; 1min50</span>
           </div>
           <div class="perf-title" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">Feliz de Verdade na Infra <a class="perf-link" href="https://www.facebook.com/prefeituraamericana/videos/4013281645632443/" target="_blank" rel="noopener">Ver a publicação &#8599;</a></div>
+          <div class="perf-split">
+            <div class="perf-media"><img src="assets/post-1.jpg" alt="Feliz de Verdade na Infra"/></div>
+            <div class="perf-body">
           <div class="perf-metrics">
             <div class="perf-metric"><div class="v">141.772</div><div class="l">Impressões da peça</div></div>
             <div class="perf-metric"><div class="v">134</div><div class="l">Interações</div></div>
@@ -639,26 +648,23 @@
             <div class="perf-metric"><div class="v">9</div><div class="l">Comentários</div></div>
             <div class="perf-metric"><div class="v">0,06</div><div class="l">Comentários por mil impressões</div></div>
           </div>
-          <div class="perf-note">
-            <div class="an-lbl">O que funcionou</div>
-            <p>A prova visual. As m&aacute;quinas em opera&ccedil;&atilde;o e o trecho noturno mostram trabalho acontecendo, em vez de anunciar. Foi a pe&ccedil;a que abriu mais p&uacute;blico novo no m&ecirc;s, com 91.541 contas alcan&ccedil;adas.</p>
-            <div class="an-lbl at">Ponto de aten&ccedil;&atilde;o</div>
-            <p>A pauta de obra rende bem em vers&atilde;o curta. Os dados de investimento aparecem aos dezoito segundos, e a maior parte do p&uacute;blico assiste bem menos que isso. Sugerimos uma vers&atilde;o de 15 a 45 segundos que abra pelo n&uacute;mero, com as cenas de obra logo atr&aacute;s, mantendo a vers&atilde;o longa nos canais pr&oacute;prios.</p>
-            <div class="an-lbl">Resposta do p&uacute;blico</div>
-            <p>A resposta veio em forma de rea&ccedil;&atilde;o, n&atilde;o de conversa escrita: 48 rea&ccedil;&otilde;es registradas e poucos coment&aacute;rios. &Eacute; o comportamento t&iacute;pico de pe&ccedil;a de servi&ccedil;o bem resolvida, que informa e recebe aprova&ccedil;&atilde;o discreta. A pe&ccedil;a mostra trabalho acontecendo e n&atilde;o abre uma pergunta para o p&uacute;blico responder, e por isso a resposta se expressa por alcance e por rea&ccedil;&atilde;o.</p>
-            <div class="an-lbl ac">Audi&ecirc;ncia e posicionamento</div>
-            <p>V&iacute;deo vertical rodando em ambiente vertical, com a entrega concentrada no Stories e no Reels do Instagram, exatamente onde o formato foi desenhado para viver. A resposta se concentra no p&uacute;blico de 18 a 24 anos, que recebeu metade da entrega e a maior parte das rea&ccedil;&otilde;es. Sugerimos manter esta pauta com pe&ccedil;a vertical, sem adapta&ccedil;&atilde;o para formato quadrado.</p>
+            <div class="perf-ins "><div class="l">O que funcionou</div><div class="x">A prova visual. As m&aacute;quinas em opera&ccedil;&atilde;o e o trecho noturno mostram trabalho acontecendo, em vez de anunciar. Foi a pe&ccedil;a que abriu mais p&uacute;blico novo no m&ecirc;s, com 91.541 contas alcan&ccedil;adas.</div></div>
+            <div class="perf-ins at"><div class="l">Ponto de aten&ccedil;&atilde;o</div><div class="x">A pauta de obra rende bem em vers&atilde;o curta. Os dados de investimento aparecem aos dezoito segundos, e a maior parte do p&uacute;blico assiste bem menos que isso. Sugerimos uma vers&atilde;o de 15 a 45 segundos que abra pelo n&uacute;mero, com as cenas de obra logo atr&aacute;s, mantendo a vers&atilde;o longa nos canais pr&oacute;prios.</div></div>
+            <div class="perf-ins rp"><div class="l">Resposta do p&uacute;blico</div><div class="x">A resposta veio em forma de rea&ccedil;&atilde;o, n&atilde;o de conversa escrita: 48 rea&ccedil;&otilde;es registradas e poucos coment&aacute;rios. &Eacute; o comportamento t&iacute;pico de pe&ccedil;a de servi&ccedil;o bem resolvida, que informa e recebe aprova&ccedil;&atilde;o discreta. A pe&ccedil;a mostra trabalho acontecendo e n&atilde;o abre uma pergunta para o p&uacute;blico responder, e por isso a resposta se expressa por alcance e por rea&ccedil;&atilde;o.</div></div>
+            <div class="perf-ins ap"><div class="l">Audi&ecirc;ncia e posicionamento</div><div class="x">V&iacute;deo vertical rodando em ambiente vertical, com a entrega concentrada no Stories e no Reels do Instagram, exatamente onde o formato foi desenhado para viver. A resposta se concentra no p&uacute;blico de 18 a 24 anos, que recebeu metade da entrega e a maior parte das rea&ccedil;&otilde;es. Sugerimos manter esta pauta com pe&ccedil;a vertical, sem adapta&ccedil;&atilde;o para formato quadrado.</div></div>
+            </div>
           </div>
-        </div>
       </div>
 
       <div class="perf-card">
-        <div class="perf-body">
           <div class="perf-top">
             <span class="perf-topleft"><span class="perf-pos">3</span><span class="perf-rank s">3º em interação por mil impressões</span></span>
             <span class="perf-fmt">Carrossel &middot; Feed</span>
           </div>
           <div class="perf-title" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">Americana Vem Avançando na Saúde <a class="perf-link" href="https://www.facebook.com/182277488497907/posts/1483770003774682" target="_blank" rel="noopener">Ver a publicação &#8599;</a></div>
+          <div class="perf-split">
+            <div class="perf-media"><img src="assets/capa-saude.jpg" alt="Americana Vem Avançando na Saúde"/></div>
+            <div class="perf-body">
           <div class="perf-metrics">
             <div class="perf-metric"><div class="v">91.463</div><div class="l">Impressões da peça</div></div>
             <div class="perf-metric"><div class="v">3</div><div class="l">Interações</div></div>
@@ -666,17 +672,12 @@
             <div class="perf-metric"><div class="v">0</div><div class="l">Comentários</div></div>
             <div class="perf-metric"><div class="v">0,00</div><div class="l">Comentários por mil impressões</div></div>
           </div>
-          <div class="perf-note">
-            <div class="an-lbl">O que funcionou</div>
-            <p>Foi o maior volume entre os temas de servi&ccedil;o e sustentou o dia de maior entrega do m&ecirc;s, 09 de agosto. Entregou com facilidade apoiada s&oacute; na clareza da informa&ccedil;&atilde;o, sem depender de gancho emocional.</p>
-            <div class="an-lbl at">Ponto de aten&ccedil;&atilde;o</div>
-            <p>&Eacute; uma pe&ccedil;a que informa muita gente e recebe pouca resposta escrita, o comportamento esperado de uma pauta de servi&ccedil;o. Para as pr&oacute;ximas, sugerimos abrir o carrossel com uma cena real de atendimento antes dos cart&otilde;es de dados, para dar um motivo de parada antes dos n&uacute;meros.</p>
-            <div class="an-lbl">Resposta do p&uacute;blico</div>
-            <p>A resposta ficou concentrada na exibi&ccedil;&atilde;o, com poucas rea&ccedil;&otilde;es registradas e nenhum coment&aacute;rio. &Eacute; a maior dist&acirc;ncia do ciclo entre quanta gente viu e quanta gente escreveu, e por isso esta pe&ccedil;a &eacute; lida como refer&ecirc;ncia de alcance informativo, e n&atilde;o de conversa.</p>
-            <div class="an-lbl ac">Audi&ecirc;ncia e posicionamento</div>
-            <p>A audi&ecirc;ncia &eacute; ampla e majoritariamente feminina, entre 25 e 54 anos. O p&uacute;blico consumiu essa pauta sobretudo em tela cheia vertical, e n&atilde;o em tela quadrada. Sugerimos produzir uma vers&atilde;o vertical 9:16 nativa deste conte&uacute;do, com um cart&atilde;o por tela, em vez de adaptar o carrossel.</p>
+            <div class="perf-ins "><div class="l">O que funcionou</div><div class="x">Foi o maior volume entre os temas de servi&ccedil;o e sustentou o dia de maior entrega do m&ecirc;s, 09 de agosto. Entregou com facilidade apoiada s&oacute; na clareza da informa&ccedil;&atilde;o, sem depender de gancho emocional.</div></div>
+            <div class="perf-ins at"><div class="l">Ponto de aten&ccedil;&atilde;o</div><div class="x">&Eacute; uma pe&ccedil;a que informa muita gente e recebe pouca resposta escrita, o comportamento esperado de uma pauta de servi&ccedil;o. Para as pr&oacute;ximas, sugerimos abrir o carrossel com uma cena real de atendimento antes dos cart&otilde;es de dados, para dar um motivo de parada antes dos n&uacute;meros.</div></div>
+            <div class="perf-ins rp"><div class="l">Resposta do p&uacute;blico</div><div class="x">A resposta ficou concentrada na exibi&ccedil;&atilde;o, com poucas rea&ccedil;&otilde;es registradas e nenhum coment&aacute;rio. &Eacute; a maior dist&acirc;ncia do ciclo entre quanta gente viu e quanta gente escreveu, e por isso esta pe&ccedil;a &eacute; lida como refer&ecirc;ncia de alcance informativo, e n&atilde;o de conversa.</div></div>
+            <div class="perf-ins ap"><div class="l">Audi&ecirc;ncia e posicionamento</div><div class="x">A audi&ecirc;ncia &eacute; ampla e majoritariamente feminina, entre 25 e 54 anos. O p&uacute;blico consumiu essa pauta sobretudo em tela cheia vertical, e n&atilde;o em tela quadrada. Sugerimos produzir uma vers&atilde;o vertical 9:16 nativa deste conte&uacute;do, com um cart&atilde;o por tela, em vez de adaptar o carrossel.</div></div>
+            </div>
           </div>
-        </div>
       </div>
 
     </div>
