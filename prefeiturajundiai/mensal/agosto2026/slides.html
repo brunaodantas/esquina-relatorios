@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Prefeitura de Jundiaí · Agosto 2026 · Slides</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue:#1A3CFF; --navy:#0A0A5C; --teal:#17A697; --purple:#7B2FBE;
+    --orange:#C44A00; --warn:#CC8800; --green:#1DB954;
+    --bg:#F4F6FF; --ink:#0A0A5C; --muted:#6a6a80;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',sans-serif;background:#333;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .slide{width:1280px;height:720px;overflow:hidden;position:relative;background:var(--bg);margin:0 auto}
+  .pad{position:absolute;inset:0;padding:52px 72px;display:flex;flex-direction:column}
+  .dark{background:linear-gradient(135deg,#0A0A5C 0%,#12208f 55%,#1A3CFF 120%);color:#fff}
+  .eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);margin-bottom:12px;display:flex;align-items:center;gap:10px}
+  .eyebrow::before{content:"";width:26px;height:2px;background:var(--teal);display:inline-block}
+  .dark .eyebrow{color:#7fe9d8}
+  .dark .eyebrow::before{background:#7fe9d8}
+  h1{font-size:3.4rem;font-weight:800;line-height:1.04;letter-spacing:-.02em}
+  h2{font-size:2.5rem;font-weight:800;color:var(--ink);line-height:1.05;letter-spacing:-.02em}
+  .dark h2{color:#fff}
+  .sub{font-size:1.02rem;color:var(--muted);margin-top:14px;max-width:920px;line-height:1.5}
+  .dark .sub{color:rgba(255,255,255,.8)}
+  .grow{flex:1}
+  .card{background:#fff;border:1px solid rgba(10,10,92,.07);border-radius:16px;padding:22px 24px;box-shadow:0 8px 24px rgba(10,10,92,.05)}
+  .grid{display:grid;gap:18px}
+  .kpi-lbl{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .kpi-val{font-size:2.1rem;font-weight:800;color:var(--ink);line-height:1.1;margin-top:6px}
+  .kpi-sub{font-size:.8rem;color:var(--muted);margin-top:6px}
+  .tag{display:inline-block;font-size:.62rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:20px;margin-top:8px}
+  .t-blue{background:rgba(26,60,255,.1);color:var(--blue)}
+  .t-teal{background:rgba(23,166,151,.12);color:var(--teal)}
+  .t-purple{background:rgba(123,47,190,.12);color:var(--purple)}
+  .t-orange{background:rgba(196,74,0,.1);color:var(--orange)}
+  table{width:100%;border-collapse:collapse;font-size:.92rem}
+  th{font-size:.66rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:10px 12px;border-bottom:2px solid rgba(10,10,92,.1);text-align:right}
+  th:first-child{text-align:left}
+  td{padding:10px 12px;border-bottom:1px solid rgba(10,10,92,.06);color:#333;text-align:right}
+  td:first-child{text-align:left}
+  tr.tot td{background:rgba(26,60,255,.04);font-weight:700;color:var(--ink);border-bottom:none}
+  .ins{margin-top:16px;background:#fff;border:1px solid rgba(10,10,92,.07);border-left:4px solid var(--teal);border-radius:12px;padding:16px 20px}
+  .ins .l{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);margin-bottom:6px}
+  .ins .x{font-size:.88rem;color:#3a3a4a;line-height:1.5}
+  .ins.purple{border-left-color:var(--purple)} .ins.purple .l{color:var(--purple)}
+  .ins.blue{border-left-color:var(--blue)} .ins.blue .l{color:var(--blue)}
+  .ins.orange{border-left-color:var(--orange)} .ins.orange .l{color:var(--orange)}
+  .ins.teal{border-left-color:var(--teal)} .ins.teal .l{color:var(--teal)}
+  .dc{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:24px;position:relative;overflow:hidden}
+  .dc .num{font-size:.72rem;font-weight:700;color:rgba(255,255,255,.45);letter-spacing:.1em}
+  .dc .m{font-size:1.55rem;font-weight:800;margin:8px 0 6px;color:#fff}
+  .dc .t{font-size:.92rem;font-weight:700;color:#fff;margin-bottom:8px;line-height:1.25}
+  .dc .x{font-size:.76rem;color:rgba(255,255,255,.78);line-height:1.4}
+  .dc .acc{position:absolute;top:0;left:0;width:4px;height:100%}
+  .logo-e{height:26px}
+  .cc{background:#fff;border:1px solid rgba(10,10,92,.07);border-radius:12px;padding:14px 16px;box-shadow:0 6px 18px rgba(10,10,92,.04)}
+  .cc .cn{font-weight:700;color:var(--ink);font-size:.86rem;margin-bottom:1px}
+  .cc .ct{font-size:.6rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#9a9ab0;margin-bottom:8px}
+  .cc .cf{font-size:.74rem;color:#333;margin-bottom:6px;line-height:1.35}
+  .cc .cf b{color:var(--teal)}
+  .cc .cm{font-size:.74rem;color:#333;line-height:1.35}
+  .cc .cm b{color:var(--orange)}
+  .clip{background:#fff;border:1px solid rgba(10,10,92,.07);border-left:3px solid var(--blue);border-radius:0 10px 10px 0;padding:11px 14px;box-shadow:0 4px 14px rgba(10,10,92,.04)}
+  .clip.tl{border-left-color:var(--teal)}.clip.pu{border-left-color:var(--purple)}.clip.or{border-left-color:var(--orange)}
+  .clip .cs{font-size:.56rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#9a9ab0;margin-bottom:4px}
+  .clip .ch{font-size:.78rem;font-weight:700;color:var(--ink);line-height:1.3}
+  .rec{background:#fff;border:1px solid rgba(10,10,92,.07);border-radius:12px;padding:14px 16px;box-shadow:0 6px 18px rgba(10,10,92,.04)}
+  .rec .rt{font-size:.84rem;font-weight:700;color:var(--ink);line-height:1.25;margin:6px 0 5px}
+  .rec .rx{font-size:.72rem;color:#444;line-height:1.4}
+  .cbox{position:relative;height:300px}
+  .met5{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+  .met5 .card{padding:12px 13px}
+  .met5 .mv{font-size:1.3rem;font-weight:800;color:var(--ink);line-height:1.1}
+  .met5 .ml{font-size:.66rem;color:var(--muted);margin-top:5px;line-height:1.3}
+  .hipc{background:#fff;border:1px solid rgba(10,10,92,.07);border-radius:16px;padding:26px 28px;box-shadow:0 8px 24px rgba(10,10,92,.05)}
+  .hipc .ht{font-size:1.18rem;font-weight:800;color:var(--ink);line-height:1.28;margin:12px 0 11px;letter-spacing:-.01em}
+  .hipc .hm{font-size:.67rem;font-weight:700;letter-spacing:.07em;color:var(--blue);line-height:1.6;padding-bottom:12px;border-bottom:1px solid rgba(10,10,92,.08);margin-bottom:13px}
+  .hipc ol{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:9px}
+  .hipc li{font-size:.87rem;color:#444;line-height:1.5}
+  .hipc li b{color:var(--ink)}
+  .hipc .hf{margin-top:16px;padding:14px 16px;background:rgba(26,60,255,.045);border-radius:10px;font-size:.85rem;color:#444;line-height:1.5}
+  .hipc .hf .hl{display:block;font-size:.62rem;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--blue);margin-bottom:5px}
+  .rkc{background:#fff;border:1px solid rgba(10,10,92,.07);border-radius:14px;padding:18px 20px;box-shadow:0 6px 18px rgba(10,10,92,.04);display:flex;flex-direction:column}
+  .rkc .rtot{font-weight:800;color:var(--ink);font-size:.94rem;margin:9px 0 12px}
+  .rkc ol{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+  .rkc li{display:flex;gap:9px;align-items:flex-start;padding-bottom:8px;border-bottom:1px solid rgba(10,10,92,.06)}
+  .rkc li:last-child{border-bottom:none;padding-bottom:0}
+  .rkc .pos{flex:0 0 20px;height:20px;border-radius:5px;background:rgba(10,10,92,.06);color:var(--muted);font-size:.66rem;font-weight:800;display:flex;align-items:center;justify-content:center}
+  .rkc .pos.on{background:var(--blue);color:#fff}
+  .rkc li>span:last-child{display:flex;flex-direction:column;gap:1px}
+  .rkc>.tag{align-self:flex-start}
+  .rkc .nm{font-size:.85rem;font-weight:700;color:var(--ink);line-height:1.25}
+  .rkc .nx{font-size:.76rem;color:#555;line-height:1.4;margin-top:1px}
+  .rkc .off .nm{color:#9a9ab0;font-weight:600}
+  .rkc .rnote{font-size:.76rem;color:#555;line-height:1.45;margin-top:11px;padding-top:10px;border-top:1px solid rgba(10,10,92,.07)}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+<!-- 01 CAPA -->
+<div class="slide">
+  <div class="pad dark" style="justify-content:space-between;background:linear-gradient(115deg, rgba(6,6,48,.92) 0%, rgba(10,10,92,.82) 40%, rgba(13,27,110,.66) 70%, rgba(26,60,255,.45) 100%), url('assets/hero-jundiai.jpg'); background-size:cover; background-position:center 55%;">
+    <div style="display:flex;align-items:center;justify-content:space-between">
+      <img src="assets/logo-esquina-branca.png" class="logo-e" style="height:26px" alt="Esquina">
+      <span style="font-size:.8rem;font-weight:600;color:rgba(255,255,255,.7)">Prestação de Contas · Fechamento de Ciclo</span>
+    </div>
+    <div>
+      <img src="assets/logo-pmj.png" alt="Prefeitura de Jundiaí" style="height:70px;width:auto;background:#fff;border-radius:12px;padding:10px 16px;box-shadow:0 6px 22px rgba(0,0,0,.28);margin-bottom:26px">
+      <div class="eyebrow">Meta Ads e YouTube · 04 a 31 de agosto de 2026</div>
+      <h1>Prestação de<br>Contas</h1>
+      <div style="font-size:1.25rem;font-weight:600;margin-top:14px;opacity:.9">Campanha Temas Diversos · Agosto 2026</div>
+      <div style="font-size:1.1rem;font-weight:600;margin-top:4px;opacity:.85">Prefeitura de Jundiaí</div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:18px;max-width:900px">
+      <div><div style="font-size:2rem;font-weight:800">355.143</div><div style="font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;opacity:.75;margin-top:4px">Impressões</div></div>
+      <div><div style="font-size:2rem;font-weight:800;color:#7fe9d8">76.645</div><div style="font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;opacity:.75;margin-top:4px">Contas alcançadas</div></div>
+      <div><div style="font-size:2rem;font-weight:800">75.810</div><div style="font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;opacity:.75;margin-top:4px">Engajamentos</div></div>
+      <div><div style="font-size:2rem;font-weight:800">29.047</div><div style="font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;opacity:.75;margin-top:4px">Visualizações de vídeo</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- RESUMO -->
+<div class="slide">
+  <div class="pad" style="justify-content:center;background:linear-gradient(160deg,#EEF1FF 0%,#F4F6FF 40%,#EBF7F5 100%)">
+    <div class="eyebrow">Ciclo encerrado</div>
+    <h2 style="max-width:1080px;font-size:2.15rem;line-height:1.22">Em agosto, a campanha Temas Diversos levou as pautas da cidade a <span style="color:var(--teal)">mais de 355 mil exibições</span>, com <span style="color:var(--blue)">as quatro linhas contratadas fechando acima do combinado</span>.</h2>
+    <p class="sub" style="max-width:1080px;line-height:1.55;margin-top:18px">O calendário colocou no ar as frentes em andamento: segurança pública, com videomonitoramento e reconhecimento facial; a revitalização do Parque Botânico do Jardim das Tulipas; manutenção e limpeza urbana; saúde, com novas unidades e ampliação de especialidades; educação; e o atendimento itinerante do Prefeitura na Área. A veiculação correu de 04 a 31 de agosto, em Meta Ads e YouTube.</p>
+    <p class="sub" style="max-width:1080px;line-height:1.55;margin-top:10px">A peça de segurança foi a mais assistida e a mais compartilhada do ciclo. A revitalização do Parque Botânico concentrou o maior volume de comentários.</p>
+    <div class="grid" style="grid-template-columns:repeat(4,1fr);gap:16px;margin-top:30px">
+      <div class="card" style="text-align:center;padding:18px 16px;border-top:3px solid var(--blue)"><div style="font-size:1.7rem;font-weight:800;color:var(--blue);line-height:1.1">355.143</div><div style="font-size:.78rem;font-weight:700;color:var(--ink);margin-top:6px">impressões entregues</div><div style="font-size:.7rem;color:var(--muted);margin-top:3px">Meta Ads</div></div>
+      <div class="card" style="text-align:center;padding:18px 16px;border-top:3px solid var(--teal)"><div style="font-size:1.7rem;font-weight:800;color:var(--teal);line-height:1.1">75.810</div><div style="font-size:.78rem;font-weight:700;color:var(--ink);margin-top:6px">engajamentos</div><div style="font-size:.7rem;color:var(--muted);margin-top:3px">Meta Ads</div></div>
+      <div class="card" style="text-align:center;padding:18px 16px;border-top:3px solid var(--purple)"><div style="font-size:1.7rem;font-weight:800;color:var(--purple);line-height:1.1">29.047</div><div style="font-size:.78rem;font-weight:700;color:var(--ink);margin-top:6px">visualizações de vídeo</div><div style="font-size:.7rem;color:var(--muted);margin-top:3px">Meta Ads + YouTube</div></div>
+      <div class="card" style="text-align:center;padding:18px 16px;border-top:3px solid var(--blue)"><div style="font-size:1.7rem;font-weight:800;color:var(--blue);line-height:1.1">R$10.000,00</div><div style="font-size:.78rem;font-weight:700;color:var(--ink);margin-top:6px">valor do plano</div><div style="font-size:.7rem;color:var(--muted);margin-top:3px">Investimento total contratado no ciclo</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ENTREGA -->
+<div class="slide">
+  <div class="pad">
+    <div class="eyebrow">Metas de Entrega</div>
+    <h2>Entrega Fechou Acima do Contratado</h2>
+    <p class="sub">Quatro linhas de veiculação em agosto, entre Meta Ads e YouTube, todas cumpridas dentro do período de 04 a 31 de agosto.</p>
+    <div class="grow" style="display:grid;grid-template-columns:1.25fr 1fr;gap:22px;margin-top:22px;align-items:start">
+      <div class="card" style="padding:8px 14px">
+        <table>
+          <thead><tr><th>Linha de veiculação</th><th>Meta</th><th>Entregue</th></tr></thead>
+          <tbody>
+            <tr><td>Meta Ads · Impressões</td><td>250.000</td><td>278.470</td></tr>
+            <tr><td>Meta Ads · Visualização de vídeo</td><td>12.000</td><td>16.579</td></tr>
+            <tr><td>Meta Ads · Engajamento</td><td>6.000</td><td>11.908</td></tr>
+            <tr><td>YouTube · Visualização</td><td>12.000</td><td>12.468</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <div class="card" style="padding:18px 20px">
+          <div style="display:grid;grid-template-columns:1fr 1.35fr 1fr;align-items:end;gap:10px;text-align:center">
+            <div><div style="font-size:1.25rem;font-weight:800;color:var(--teal);line-height:1">75.810</div><div style="font-size:.6rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:5px">Engajamentos</div></div>
+            <div><div style="font-size:2.15rem;font-weight:800;color:var(--teal);line-height:1;letter-spacing:-.03em">355.143</div><div style="font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:5px">Impressões entregues</div><div style="font-size:.62rem;font-weight:700;color:var(--teal);margin-top:4px">&#9733; Ciclo encerrado em 31/08</div></div>
+            <div><div style="font-size:1.25rem;font-weight:800;color:var(--teal);line-height:1">29.047</div><div style="font-size:.6rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:5px">Visualizações de vídeo</div></div>
+          </div>
+          <div style="height:6px;border-radius:100px;background:linear-gradient(90deg,var(--blue),var(--teal));margin-top:16px"></div>
+          <div style="display:flex;justify-content:space-between;font-size:.66rem;color:var(--muted);margin-top:7px"><span>04 Ago &middot; Início do ciclo</span><span style="color:var(--teal);font-weight:700">31 Ago &middot; Encerramento</span></div>
+        </div>
+        <div class="ins blue"><div class="l">Leitura do ciclo</div><div class="x">A linha de engajamento praticamente dobrou a meta, com 11.908 interações contra 6.000 previstas, e a de vídeo fechou com mais de um terço a mais que o combinado.</div></div>
+      </div>
+    </div>
+    <div class="grid" style="grid-template-columns:repeat(4,1fr);gap:14px;margin-top:4px">
+      <div class="card" style="padding:14px 18px"><div class="kpi-lbl">Taxa de engajamento</div><div class="kpi-val" style="font-size:1.5rem">62,7%</div><div class="kpi-sub">Sobre a linha de engajamento</div></div>
+      <div class="card" style="padding:14px 18px"><div class="kpi-lbl">Taxa de visualização</div><div class="kpi-val" style="font-size:1.5rem">28,7%</div><div class="kpi-sub">Sobre a linha de vídeo</div></div>
+      <div class="card" style="padding:14px 18px"><div class="kpi-lbl">Cliques</div><div class="kpi-val" style="font-size:1.5rem">514</div><div class="kpi-sub">Efeito secundário: não era meta</div></div>
+      <div class="card" style="padding:14px 18px"><div class="kpi-lbl">Frequência</div><div class="kpi-val" style="font-size:1.5rem">3,63</div><div class="kpi-sub">Exibições por pessoa na cobertura</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- VERBA -->
+<div class="slide">
+  <div class="pad">
+    <div class="eyebrow">Verba do Plano</div>
+    <h2>Como o Investimento Foi Dividido</h2>
+    <p class="sub">Distribuição do plano contratado entre as quatro linhas de veiculação, conforme planejamento e orientação do cliente.</p>
+    <div class="card" style="margin-top:20px;padding:6px 10px">
+      <table>
+        <thead><tr><th>Linha</th><th>% do plano</th><th>Valor</th><th>Meta contratada</th></tr></thead>
+        <tbody>
+          <tr><td>Meta Ads &middot; Impressões</td><td>25%</td><td>R$2.500,00</td><td>250.000</td></tr>
+          <tr><td>Meta Ads &middot; Visualização de vídeo</td><td>30%</td><td>R$3.000,00</td><td>12.000</td></tr>
+          <tr><td>Meta Ads &middot; Engajamento</td><td>15%</td><td>R$1.500,00</td><td>6.000</td></tr>
+          <tr><td>YouTube &middot; Visualização</td><td>30%</td><td>R$3.000,00</td><td>12.000</td></tr>
+          <tr class="tot"><td>Total</td><td>100%</td><td>R$10.000,00</td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="ins blue" style="margin-top:14px"><div class="l">Valor do plano</div><div class="x">R$10.000,00 é o investimento total contratado para o ciclo de agosto. As linhas de vídeo, somando Meta Ads e YouTube, concentram 60% do plano, coerente com um calendário construído sobre peças de vídeo longas.</div></div>
+  </div>
+</div>
+
+<!-- ABERTURA CRIATIVOS -->
+<div class="slide">
+  <div style="position:absolute;inset:0;background:linear-gradient(100deg,#060630 0%,#0A0A5C 40%,#1A3CFF 100%);display:flex;align-items:center;gap:56px;padding:0 90px">
+    <div style="flex:0 0 auto;padding-right:56px;border-right:1px solid rgba(255,255,255,.16);line-height:0">
+      <svg viewBox="0 0 100 100" style="width:230px;height:230px;display:block"><polygon points="50,4 61.8,35.5 95,36.5 68.5,57 78,89 50,70 22,89 31.5,57 5,36.5 38.2,35.5" fill="rgba(74,106,255,.5)"/></svg>
+    </div>
+    <div style="flex:1">
+      <div style="font-size:.78rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:14px">Análise de Criativos</div>
+      <div style="font-size:2.8rem;font-weight:800;color:#fff;letter-spacing:-.02em;line-height:1.08;margin-bottom:18px">O Que Funcionou e o Que Pode Melhorar</div>
+      <div style="font-size:1.02rem;color:rgba(255,255,255,.6);line-height:1.65;max-width:680px">As três peças que definiram o ciclo, vistas uma a uma, com o que funcionou, o ponto de atenção, a resposta do público e a leitura de audiência e posicionamento. A ordenação é por interação por mil impressões.</div>
+    </div>
+  </div>
+</div>
+<!-- PEÇA 1 -->
+<div class="slide">
+  <div class="pad">
+    <div class="eyebrow">Análise de Criativos · 1º em interação por mil impressões</div>
+    <h2>Segurança, o flagra do monitoramento</h2>
+    <p class="sub">Vídeo · Reels · 1min14 · peças ordenadas por interação por mil impressões</p>
+    <div class="grow" style="display:grid;grid-template-columns:272px 1fr;gap:24px;margin-top:18px;align-items:start">
+      <div style="border-radius:14px;overflow:hidden;box-shadow:0 10px 30px rgba(10,10,92,.14);background:#111;height:452px">
+        <img src="assets/vert-seguranca.jpg" alt="Central de monitoramento" style="width:100%;height:100%;object-fit:cover;object-position:center center;display:block" onerror="this.style.display='none'">
+      </div>
+      <div>
+        <div class="met5"><div class="card"><div class="mv">86.618</div><div class="ml">Impressões da peça</div></div><div class="card"><div class="mv">36.986</div><div class="ml">Interações</div></div><div class="card"><div class="mv">427</div><div class="ml">Interações por mil</div></div><div class="card"><div class="mv">17.026</div><div class="ml">Vídeos assistidos</div></div><div class="card"><div class="mv">82</div><div class="ml">Compartilhamentos</div></div></div>
+        <div class="ins teal" style="margin-top:12px;padding:10px 15px"><div class="l">O que funcionou</div><div class="x" style="font-size:.79rem">A peça abre com um caso real: a câmera do capacete da patrulha, a imagem do monitoramento identificando o veículo e a abordagem sendo feita. Transforma videomonitoramento e reconhecimento facial em algo que a pessoa vê acontecer. Foi a mais assistida do ciclo, com tempo médio de 18 segundos, e a mais compartilhada.</div></div>
+        <div class="ins orange" style="margin-top:10px;padding:10px 15px"><div class="l">Ponto de atenção</div><div class="x" style="font-size:.79rem">O vídeo tem 1min14 e o desfecho do caso aparece na segunda metade. Para as próximas peças dessa linha, vale testar uma versão de 20 a 30 segundos que vá direto do flagra ao resultado da abordagem, mantendo a longa nos canais próprios.</div></div>
+        <div class="ins purple" style="margin-top:10px;padding:10px 15px"><div class="l">Resposta do público</div><div class="x" style="font-size:.79rem">Lemos os comentários um a um: são dez, todos favoráveis, com muitos "parabéns Jundiaí" e reconhecimento do trabalho da Guarda. Dois trazem um pedido, não uma crítica: que as câmeras cheguem também às vilas e aos bairros mais afastados.</div></div>
+        <div class="ins blue" style="margin-top:10px;padding:10px 15px"><div class="l">Audiência e posicionamento</div><div class="x" style="font-size:.79rem">Rodou nas três linhas e teve o melhor desempenho no Facebook, onde o vídeo longo é mais tolerado. No Instagram a entrega se concentrou em Feed, e não em Reels, onde um vídeo vertical de mais de um minuto rende melhor. Sugerimos mais peso em Reels do Instagram e uma versão curta para Stories.</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PEÇA 2 -->
+<div class="slide">
+  <div class="pad">
+    <div class="eyebrow">Análise de Criativos · 2º em interação por mil impressões</div>
+    <h2>Revitalização do Parque Botânico</h2>
+    <p class="sub">Vídeo · Reels · 1min07 · peças ordenadas por interação por mil impressões</p>
+    <div class="grow" style="display:grid;grid-template-columns:272px 1fr;gap:24px;margin-top:18px;align-items:start">
+      <div style="border-radius:14px;overflow:hidden;box-shadow:0 10px 30px rgba(10,10,92,.14);background:#111;height:452px">
+        <img src="assets/vert-revitalizacao.jpg" alt="Parque Botânico do Jardim das Tulipas" style="width:100%;height:100%;object-fit:cover;object-position:center center;display:block" onerror="this.style.display='none'">
+      </div>
+      <div>
+        <div class="met5"><div class="card"><div class="mv">72.524</div><div class="ml">Impressões da peça</div></div><div class="card"><div class="mv">22.801</div><div class="ml">Interações</div></div><div class="card"><div class="mv">314</div><div class="ml">Interações por mil</div></div><div class="card"><div class="mv">28</div><div class="ml">Comentários</div></div><div class="card"><div class="mv">27</div><div class="ml">Compartilhamentos</div></div></div>
+        <div class="ins teal" style="margin-top:12px;padding:10px 15px"><div class="l">O que funcionou</div><div class="x" style="font-size:.79rem">Mostra a obra em vez de anunciá-la: os quiosques novos, as mesas sendo lixadas, o desassoreamento do lago e os aparelhos de ginástica instalados. É um lugar que o morador reconhece, e cada etapa aparece com o nome do serviço na tela. Concentrou 28 dos 58 comentários do mês.</div></div>
+        <div class="ins orange" style="margin-top:10px;padding:10px 15px"><div class="l">Ponto de atenção</div><div class="x" style="font-size:.79rem">São 1min07 mostrando muitas frentes ao mesmo tempo, e a informação de quando o parque estará pronto não aparece. Para as próximas peças de obra, sugerimos fechar com o prazo ou com a etapa seguinte, que é a primeira pergunta de quem assiste.</div></div>
+        <div class="ins purple" style="margin-top:10px;padding:10px 15px"><div class="l">Resposta do público</div><div class="x" style="font-size:.79rem">A conversa é positiva e afetiva: "tá ficando lindo", "parabéns". As pessoas comentam sobre o parque como lugar que frequentam, não sobre a obra como notícia. É pauta com vínculo, e sugere acompanhar a entrega final com uma nova peça no mesmo formato.</div></div>
+        <div class="ins blue" style="margin-top:10px;padding:10px 15px"><div class="l">Audiência e posicionamento</div><div class="x" style="font-size:.79rem">Melhor desempenho de vídeo assistido na linha de visualização, com 7,9%. O público que respondeu se concentra acima dos 45 anos, faixa que usa o parque com mais frequência. Sugerimos manter peça vertical e alcance fechado na região do Jardim das Tulipas e bairros vizinhos.</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PEÇA 3 -->
+<div class="slide">
+  <div class="pad">
+    <div class="eyebrow">Análise de Criativos · 3º em interação por mil impressões</div>
+    <h2>Proteger, a manutenção que mantém a cidade de pé</h2>
+    <p class="sub">Vídeo · Reels · 1min16 · peças ordenadas por interação por mil impressões</p>
+    <div class="grow" style="display:grid;grid-template-columns:272px 1fr;gap:24px;margin-top:18px;align-items:start">
+      <div style="border-radius:14px;overflow:hidden;box-shadow:0 10px 30px rgba(10,10,92,.14);background:#111;height:452px">
+        <img src="assets/vert-proteger.jpg" alt="Equipes de manutenção urbana" style="width:100%;height:100%;object-fit:cover;object-position:center center;display:block" onerror="this.style.display='none'">
+      </div>
+      <div>
+        <div class="met5"><div class="card"><div class="mv">34.371</div><div class="ml">Impressões da peça</div></div><div class="card"><div class="mv">3.051</div><div class="ml">Interações</div></div><div class="card"><div class="mv">89</div><div class="ml">Interações por mil</div></div><div class="card"><div class="mv">300</div><div class="ml">Vídeos assistidos</div></div><div class="card"><div class="mv">24</div><div class="ml">Cliques no link</div></div></div>
+        <div class="ins teal" style="margin-top:12px;padding:10px 15px"><div class="l">O que funcionou</div><div class="x" style="font-size:.79rem">É a peça que mostra o trabalho invisível: limpeza de boca de lobo, poda, lavagem de via, roçada e áreas verdes já recuperadas. Aparece gente uniformizada em ação do primeiro ao último segundo, o que dá concretude a um serviço que o morador só percebe quando falta.</div></div>
+        <div class="ins orange" style="margin-top:10px;padding:10px 15px"><div class="l">Ponto de atenção</div><div class="x" style="font-size:.79rem">São 1min16 apresentando muitas frentes em sequência, sem um número ou marco que ancore a memória. Para as próximas, sugerimos abrir com um dado de volume, quantas bocas de lobo limpas ou quantos quilômetros roçados no mês, usando as imagens como prova.</div></div>
+        <div class="ins purple" style="margin-top:10px;padding:10px 15px"><div class="l">Resposta do público</div><div class="x" style="font-size:.79rem">Não registrou comentários no período e teve um compartilhamento. É o comportamento esperado de peça de serviço bem resolvida: informa, é aceita e não abre uma pergunta. A resposta se expressa por exibição e por clique, não por conversa escrita.</div></div>
+        <div class="ins blue" style="margin-top:10px;padding:10px 15px"><div class="l">Audiência e posicionamento</div><div class="x" style="font-size:.79rem">Menor proporção de vídeo assistido entre as três, 0,9%, com entrega concentrada em Feed. Como o formato é vertical e o conteúdo é uma sequência de cenas curtas, tende a render mais em Reels e Stories, onde a tela cheia sustenta a atenção.</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- RANKINGS -->
+<div class="slide">
+  <div class="pad">
+    <div class="eyebrow">Rankings de Conteúdo</div>
+    <h2>O que gerou resposta</h2>
+    <p class="sub">Top 3 de vídeo assistido, comentários e compartilhamentos, com o número absoluto e a taxa de cada entrada.</p>
+    <div class="ins purple" style="margin-top:14px;padding:12px 16px"><div class="l">A régua deste ranking</div><div class="x" style="font-size:.82rem">Só entra no ranking a peça com <b>no mínimo 20.000 impressões</b> e <b>no mínimo 5 ocorrências</b> da métrica analisada. É uma régua declarada, aplicada igual para as três métricas e para todas as peças do ciclo.</div></div>
+    <div class="grow grid" style="grid-template-columns:repeat(3,1fr);gap:16px;margin-top:14px">
+      <div class="rkc"><span class="tag t-blue" style="margin-top:0">Top 3 · Maior taxa de vídeo assistido</span><div class="rtot">Vídeo assistido até o fim, ou por pelo menos 15 segundos</div><ol><li><span class="pos on">1</span><span><span class="nm">Segurança</span><span class="nx"><b>17.026 vídeos assistidos</b> · 19,7% de taxa · 86.618 impressões</span></span></li><li><span class="pos on">2</span><span><span class="nm">Revitalização do Parque Botânico</span><span class="nx"><b>5.705 vídeos assistidos</b> · 7,9% de taxa · 72.524 impressões</span></span></li><li><span class="pos on">3</span><span><span class="nm">Segurança V2</span><span class="nx"><b>397 vídeos assistidos</b> · 1,1% de taxa · 36.319 impressões</span></span></li></ol><div class="rnote">A peça com um caso real prendeu quase um quinto de quem a recebeu; a versão institucional da mesma pauta ficou em 1,1%. O formato da história pesa mais que o tema.</div></div>
+      <div class="rkc"><span class="tag t-purple" style="margin-top:0">Top 3 · Comentários</span><div class="rtot">58 comentários no ciclo</div><ol><li><span class="pos on">1</span><span><span class="nm">Revitalização do Parque Botânico</span><span class="nx"><b>28 comentários</b> · 0,39 por mil · 72.524 impressões</span></span></li><li><span class="pos on">2</span><span><span class="nm">Segurança</span><span class="nx"><b>23 comentários</b> · 0,27 por mil · 86.618 impressões</span></span></li><li class="off"><span class="pos">3</span><span><span class="nm">Sem peça acima do piso</span><span class="nx">As demais ficaram abaixo do mínimo de 5 ocorrências</span></span></li></ol><div class="rnote">A conversa escrita se concentrou em duas pautas: um lugar que o morador frequenta e um serviço que ele vê funcionando.</div></div>
+      <div class="rkc"><span class="tag t-teal" style="margin-top:0">Top 3 · Compartilhamentos</span><div class="rtot">118 compartilhamentos no ciclo</div><ol><li><span class="pos on">1</span><span><span class="nm">Segurança</span><span class="nx"><b>82 compartilhamentos</b> · 0,95 por mil · 86.618 impressões</span></span></li><li><span class="pos on">2</span><span><span class="nm">Revitalização do Parque Botânico</span><span class="nx"><b>27 compartilhamentos</b> · 0,37 por mil · 72.524 impressões</span></span></li><li><span class="pos on">3</span><span><span class="nm">Segurança V2</span><span class="nx"><b>5 compartilhamentos</b> · 0,14 por mil · 36.319 impressões</span></span></li></ol><div class="rnote">Segurança respondeu por sete de cada dez compartilhamentos do mês. Conteúdo que mostra um caso resolvido é o que o morador quer mostrar para outro.</div></div>
+    </div>
+  </div>
+</div>
+<!-- CONTEÚDO VEICULADO -->
+<div class="slide">
+  <div class="pad">
+    <div class="eyebrow">Conteúdo Veiculado</div>
+    <h2>Pautas em veiculação</h2>
+    <p class="sub">Onze peças no ar ao longo do mês, cobrindo segurança, meio ambiente e parques, manutenção urbana, saúde, educação, utilidade pública e atendimento itinerante.</p>
+    <div class="grow" style="margin-top:20px">
+      <div class="grid" style="grid-template-columns:repeat(3,1fr);gap:14px">
+        <div class="card" style="padding:16px 18px"><span class="tag t-blue" style="margin-top:0">Segurança</span><div style="font-weight:700;color:var(--ink);font-size:.92rem;margin:8px 0 5px">Segurança, o flagra do monitoramento</div><div style="font-size:.76rem;color:#444;line-height:1.4">86.618 impressões, a maior peça do ciclo e a de maior resposta. Caso real de identificação e abordagem.</div></div>
+        <div class="card" style="padding:16px 18px"><span class="tag t-teal" style="margin-top:0">Meio ambiente e parques</span><div style="font-weight:700;color:var(--ink);font-size:.92rem;margin:8px 0 5px">Revitalização do Parque Botânico</div><div style="font-size:.76rem;color:#444;line-height:1.4">72.524 impressões e 28 dos 58 comentários do mês. Quiosques novos, desassoreamento do lago e ginástica.</div></div>
+        <div class="card" style="padding:16px 18px"><span class="tag t-purple" style="margin-top:0">Atendimento</span><div style="font-weight:700;color:var(--ink);font-size:.92rem;margin:8px 0 5px">Prefeitura na Área no Jardim Tarumã</div><div style="font-size:.76rem;color:#444;line-height:1.4">63.261 impressões. Peça de imagem chamando o morador para o atendimento itinerante de 29 de agosto.</div></div>
+        <div class="card" style="padding:16px 18px"><span class="tag t-blue" style="margin-top:0">Segurança</span><div style="font-weight:700;color:var(--ink);font-size:.92rem;margin:8px 0 5px">Projeto Sentinela e novos uniformes</div><div style="font-size:.76rem;color:#444;line-height:1.4">36.319 impressões. As 15 novas torres, o videomonitoramento 24 horas e 1,5 mil conjuntos de uniforme.</div></div>
+        <div class="card" style="padding:16px 18px"><span class="tag t-orange" style="margin-top:0">Manutenção urbana</span><div style="font-weight:700;color:var(--ink);font-size:.92rem;margin:8px 0 5px">Proteger</div><div style="font-size:.76rem;color:#444;line-height:1.4">34.371 impressões. Limpeza de boca de lobo, poda, lavagem de via, roçada e áreas verdes recuperadas.</div></div>
+        <div class="card" style="padding:16px 18px"><span class="tag t-teal" style="margin-top:0">Bloco institucional</span><div style="font-weight:700;color:var(--ink);font-size:.92rem;margin:8px 0 5px">Saúde, Educação e Utilidade Pública</div><div style="font-size:.76rem;color:#444;line-height:1.4">Saúde em três versões, com 20.374 impressões somadas: 12 novas UBSs, novo AMED e farmácia de alto custo.</div></div>
+      </div>
+      <div class="ins purple"><div class="l">O que a distribuição das pautas mostrou</div><div class="x">Segurança e parques concentraram 44% de toda a exibição do mês e praticamente toda a resposta do público. A peça de atendimento itinerante entregou volume alto sem gerar interação, o que é esperado de um cartão de convocação com data marcada.</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- POR PLATAFORMA -->
+<div class="slide">
+  <div class="pad">
+    <div class="eyebrow">Por Plataforma</div>
+    <h2>Entrega Plataforma a Plataforma</h2>
+    <p class="sub">O que cada plataforma registrou no período de 04 a 31 de agosto, apurado direto na fonte de cada uma.</p>
+    <div class="grow grid" style="grid-template-columns:1fr 1fr;gap:22px;margin-top:20px;align-items:start">
+      <div class="card">
+        <div style="font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:10px">Meta Ads</div>
+        <table>
+          <thead><tr><th>Métrica</th><th>Volume</th></tr></thead>
+          <tbody>
+            <tr><td>Impressões</td><td>355.143</td></tr>
+            <tr><td>Alcance da linha de cobertura</td><td>76.645</td></tr>
+            <tr><td>Frequência</td><td>3,63</td></tr>
+            <tr><td>Cliques</td><td>514</td></tr>
+            <tr><td>Engajamento</td><td>75.810</td></tr>
+            <tr><td>Visualização de vídeo</td><td>16.579</td></tr>
+          </tbody>
+        </table>
+        <div style="font-size:.78rem;color:var(--muted);line-height:1.5;margin-top:14px">Facebook 165.314 impressões, Instagram 189.831. O Facebook concentrou 73% das interações e três vezes mais vídeo assistido.</div>
+      </div>
+      <div class="card">
+        <div style="font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);margin-bottom:10px">YouTube</div>
+        <table>
+          <thead><tr><th>Métrica</th><th>Meta</th><th>Entregue</th></tr></thead>
+          <tbody>
+            <tr><td>Visualizações</td><td>12.000</td><td>12.468</td></tr>
+          </tbody>
+        </table>
+        <div style="font-size:.78rem;color:var(--muted);line-height:1.5;margin-top:14px">As visualizações das duas plataformas somam as 29.047 do ciclo: 16.579 no Meta Ads e 12.468 no YouTube.</div>
+      </div>
+    </div>
+    <div class="ins blue" style="padding:12px 16px"><div class="l">Leitura por plataforma</div><div class="x" style="font-size:.82rem">O Instagram recebeu mais exibição e o Facebook devolveu mais resposta. No Instagram a veiculação se concentrou em Feed, e não em Reels, onde vídeo vertical longo rende; no Facebook, o vídeo de mais de um minuto é mais tolerado e o público que interage é mais velho.</div></div>
+  </div>
+</div>
+
+<!-- PÚBLICO -->
+<div class="slide">
+  <div class="pad">
+    <div class="eyebrow">Perfil do Público</div>
+    <h2>Quem foi alcançado</h2>
+    <p class="sub">Distribuição das impressões por faixa de idade e por gênero, apurada na plataforma.</p>
+    <div class="grow" style="margin-top:18px">
+      <div class="card" style="padding:8px 14px">
+        <table>
+          <thead><tr><th>Faixa</th><th>Feminino</th><th>Masculino</th><th>Não informado</th><th>Total</th></tr></thead>
+          <tbody>
+            <tr><td>18 a 24</td><td>42.675</td><td>37.438</td><td>315</td><td>80.428</td></tr>
+            <tr><td>25 a 34</td><td>35.153</td><td>37.845</td><td>159</td><td>73.157</td></tr>
+            <tr><td>35 a 44</td><td>25.607</td><td>27.323</td><td>155</td><td>53.085</td></tr>
+            <tr><td>45 a 54</td><td>26.239</td><td>24.764</td><td>108</td><td>51.111</td></tr>
+            <tr><td>55 a 64</td><td>30.202</td><td>21.162</td><td>65</td><td>51.429</td></tr>
+            <tr><td>65 ou mais</td><td>30.364</td><td>15.503</td><td>40</td><td>45.907</td></tr>
+            <tr class="tot"><td>Total</td><td>190.240</td><td>164.035</td><td>842</td><td>355.117</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="ins blue"><div class="l">Como usar esse retrato</div><div class="x">A exibição alcançou a cidade inteira, com peso nos mais jovens, mas a resposta veio sobretudo do público acima dos 45 anos, que é quem comenta e compartilha as peças de serviço. A campanha está informando uma faixa e conversando com outra. Se uma pauta precisa de resposta do público jovem, o formato precisa mudar junto.</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTEXTO -->
+<div class="slide">
+  <div class="pad">
+    <div class="eyebrow">Contexto na Cidade</div>
+    <h2>Mídia paga e agenda da imprensa</h2>
+    <p class="sub">Cruzamento entre as pautas que a campanha veiculou e o que a imprensa independente de Jundiaí noticiou no mesmo período.</p>
+    <div class="grow" style="margin-top:18px">
+      <div class="grid" style="grid-template-columns:repeat(3,1fr);gap:14px">
+        <div class="card" style="padding:16px 18px"><span class="tag t-blue" style="margin-top:0">Eco direto</span><div style="font-weight:700;color:var(--ink);font-size:.92rem;margin:8px 0 5px">Segurança nos dois canais</div><div style="font-size:.76rem;color:#444;line-height:1.4">A peça do videomonitoramento estava no ar quando a imprensa noticiou a conclusão das 15 torres do Projeto Sentinela. As duas coisas se somaram na mesma janela.</div></div>
+        <div class="card" style="padding:16px 18px"><span class="tag t-purple" style="margin-top:0">Sem cobertura em mídia</span><div style="font-weight:700;color:var(--ink);font-size:.92rem;margin:8px 0 5px">Fibra óptica e data centers</div><div style="font-size:.76rem;color:#444;line-height:1.4">Os dois maiores assuntos de infraestrutura e economia do mês não tiveram peça. É conteúdo que fala com o público mais jovem, que recebeu exibição e respondeu pouco.</div></div>
+        <div class="card" style="padding:16px 18px"><span class="tag t-teal" style="margin-top:0">O que isso sugere</span><div style="font-weight:700;color:var(--ink);font-size:.92rem;margin:8px 0 5px">Parque entregue rende os dois</div><div style="font-size:.76rem;color:#444;line-height:1.4">A revitalização foi a pauta de maior conversa e não apareceu na imprensa, porque ainda está em obra. Sugerimos peça para a entrega final.</div></div>
+      </div>
+      <div class="grid" style="grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px">
+        <div class="card" style="padding:14px 16px"><div style="font-size:.68rem;font-weight:700;color:var(--blue);margin-bottom:4px">Jornal de Jundiaí · 28/08</div><div style="font-size:.8rem;font-weight:700;color:var(--ink);line-height:1.35">GM conclui instalação de 15 novas torres de vigilância em Jundiaí</div></div>
+        <div class="card" style="padding:14px 16px"><div style="font-size:.68rem;font-weight:700;color:var(--blue);margin-bottom:4px">Tribuna de Jundiaí · 27/08</div><div style="font-size:.8rem;font-weight:700;color:var(--ink);line-height:1.35">O que Jundiaí tem que gigantes dos data centers procuram</div></div>
+        <div class="card" style="padding:14px 16px"><div style="font-size:.68rem;font-weight:700;color:var(--blue);margin-bottom:4px">JR Jornal da Região · 14/08</div><div style="font-size:.8rem;font-weight:700;color:var(--ink);line-height:1.35">Ministro Alexandre Padilha visita o Hospital São Vicente, em Jundiaí</div></div>
+      </div>
+      <div class="ins purple"><div class="l">Leitura do cruzamento</div><div class="x">A campanha e a imprensa se encontraram em segurança, e essa é a pauta que fechou o ciclo com a melhor resposta em atenção e circulação. Nas outras frentes, a exposição dependeu quase inteiramente da veiculação.</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- DIAGNÓSTICO -->
+<div class="slide">
+  <div class="pad dark">
+    <div class="eyebrow">Diagnóstico Final</div>
+    <h2>O que o Ciclo Revelou</h2>
+    <p class="sub">Onze peças no ar entre 04 e 31 de agosto, as quatro linhas contratadas cumpridas e um retrato claro de quais pautas a cidade acompanha em silêncio e quais fazem o morador responder.</p>
+    <div class="grow" style="margin-top:22px">
+      <div class="grid" style="grid-template-columns:repeat(3,1fr);gap:16px">
+        <div class="dc" style="padding:20px 22px"><div class="acc" style="background:var(--teal)"></div><div class="num">01</div><div class="m">4 de 4</div><div class="t">Linhas contratadas entregues acima do combinado</div><div class="x">A de engajamento praticamente dobrou a meta, com 11.908 interações contra 6.000 previstas.</div></div>
+        <div class="dc" style="padding:20px 22px"><div class="acc" style="background:var(--blue)"></div><div class="num">02</div><div class="m">19,7%</div><div class="t">Proporção de quem assistiu a peça de segurança até o fim</div><div class="x">Melhor marca do ciclo. A versão institucional da mesma pauta, sem o caso real, ficou em 1,1%. O formato da história pesou mais que o tema.</div></div>
+        <div class="dc" style="padding:20px 22px"><div class="acc" style="background:var(--purple)"></div><div class="num">03</div><div class="m">82</div><div class="t">Compartilhamentos da peça de segurança, de 118 no mês</div><div class="x">Sete de cada dez repasses do ciclo saíram de uma única peça. Conteúdo que mostra um caso resolvido é o que o morador quer mostrar para outro.</div></div>
+      </div>
+      <div style="margin-top:20px;padding:16px 22px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:12px">
+        <div style="font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#7fe9d8;margin-bottom:6px">Síntese do ciclo</div>
+        <div style="font-size:.85rem;color:rgba(255,255,255,.85);line-height:1.55">Agosto mostrou que o formato da história decide o resultado mais que o tema. As duas peças de segurança falam do mesmo assunto e tiveram desempenhos muito distantes: a que mostra um caso real prendeu quase um quinto de quem a recebeu e concentrou sete de cada dez compartilhamentos do mês; a versão institucional ficou em 1,1% de vídeo assistido. A pauta do Parque Botânico confirma por outro caminho: é um lugar que o morador frequenta, e foi a que mais gerou conversa, em tom afetivo. A recepção foi favorável em todas as peças lidas, e os únicos pedidos foram para ampliar o alcance do que já está sendo feito.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PENSANDO NO FUTURO -->
+<div class="slide">
+  <div class="pad dark">
+    <div class="eyebrow">Pensando no Futuro</div>
+    <h2>Encaminhamentos para os próximos ciclos</h2>
+    <p class="sub">O que a leitura de agosto sugere para o trabalho de comunicação da Prefeitura.</p>
+    <div class="grow" style="margin-top:20px">
+      <div class="grid" style="grid-template-columns:repeat(3,1fr);gap:14px">
+        <div class="dc" style="padding:16px 18px"><div class="acc" style="background:var(--blue)"></div><div class="t">Construir a peça de serviço em torno de um caso</div><div class="x">A diferença entre 19,7% e 1,1% de vídeo assistido saiu do formato da história, não do tema. Sugerimos abrir as peças de serviço por uma situação concreta.</div></div>
+        <div class="dc" style="padding:16px 18px"><div class="acc" style="background:var(--teal)"></div><div class="t">Cortar versões de 20 a 30 segundos</div><div class="x">As peças têm entre 1min02 e 1min16, e o desfecho aparece na segunda metade. A longa segue ótima para os canais próprios; para mídia, uma versão curta com o essencial no começo.</div></div>
+        <div class="dc" style="padding:16px 18px"><div class="acc" style="background:var(--purple)"></div><div class="t">Levar o vídeo vertical para Reels e Stories</div><div class="x">O Instagram recebeu mais exibição que o Facebook e devolveu menos resposta, porque a entrega ficou em Feed. Sugerimos priorizar Reels e Stories.</div></div>
+        <div class="dc" style="padding:16px 18px"><div class="acc" style="background:var(--orange)"></div><div class="t">Fechar o alcance nas peças de bairro</div><div class="x">A revitalização do Parque Botânico é pauta de região e foi a que mais gerou conversa. Sugerimos rodar peças de equipamento público com alcance fechado no bairro atendido.</div></div>
+        <div class="dc" style="padding:16px 18px"><div class="acc" style="background:var(--purple)"></div><div class="t">Planejar a peça para a entrega do parque</div><div class="x">A obra rendeu conversa ainda em andamento. Na entrega final, o tema tende a render nos dois canais, com eco na imprensa. Sugerimos reservar peça e verba para esse marco.</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FONTES -->
+<div class="slide">
+  <div class="pad">
+    <div class="eyebrow">&#10003; Fontes e Verificação</div>
+    <h2>De onde vêm os dados deste relatório</h2>
+    <div class="grow" style="margin-top:22px">
+      <div class="grid" style="grid-template-columns:repeat(3,1fr);gap:16px">
+        <div class="card"><div style="font-weight:800;color:var(--ink);margin-bottom:8px;font-size:.92rem">Performance de mídia</div><div style="font-size:.8rem;color:var(--muted);line-height:1.5">API do Meta Ads e Google Ads para a campanha de YouTube, com granularidade por campanha, por anúncio, por posicionamento e por tipo de interação, de 04 a 31 de agosto de 2026.</div></div>
+        <div class="card"><div style="font-weight:800;color:var(--ink);margin-bottom:8px;font-size:.92rem">Metas contratadas</div><div style="font-size:.8rem;color:var(--muted);line-height:1.5">Metas por linha conforme planejamento e orientação do cliente para o ciclo de agosto, conferidas uma a uma contra a entrega apurada na plataforma.</div></div>
+        <div class="card"><div style="font-weight:800;color:var(--ink);margin-bottom:8px;font-size:.92rem">Perfil de público</div><div style="font-size:.8rem;color:var(--muted);line-height:1.5">Recorte de impressões por idade e por gênero extraído da plataforma. A soma por faixa fica em 355.117 impressões, pequena diferença por registros sem faixa apurada.</div></div>
+        <div class="card"><div style="font-weight:800;color:var(--ink);margin-bottom:8px;font-size:.92rem">Análise de criativos</div><div style="font-size:.8rem;color:var(--muted);line-height:1.5">Todos os vídeos veiculados foram baixados e assistidos integralmente, e os comentários de cada publicação foram lidos um a um antes da análise.</div></div>
+        <div class="card"><div style="font-weight:800;color:var(--ink);margin-bottom:8px;font-size:.92rem">Agenda da cidade</div><div style="font-size:.8rem;color:var(--muted);line-height:1.5">Clipagem dos veículos independentes Tribuna de Jundiaí, Jornal de Jundiaí, JR Jornal da Região e Jundiaí Agora, com título, data e link conferidos na fonte original.</div></div>
+      </div>
+      <div class="ins"><div class="x" style="font-style:italic">Nenhum número deste relatório foi estimado. Cada dado é rastreável à sua fonte original, plataforma de mídia ou publicação de imprensa, e foi conferido antes da publicação.</div></div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
