@@ -184,12 +184,14 @@
   .tp b { display:block; font-size:0.62rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--g6); margin-bottom:6px; }
   .tp p { font-size:0.88rem; color:var(--g2); line-height:1.62; margin:0; }
   .sec-bar { width:34px; height:4px; border-radius:100px; background:linear-gradient(90deg,var(--blue),var(--purple)); margin-bottom:var(--s2); }
+  .cr-res { font-size:0.88rem; color:var(--g2); line-height:1.6; margin-top:var(--s3); }
+  .cr > summary .cr-toggle { margin-top:var(--s3); }
   .crit { font-size:0.8rem; color:var(--g6); line-height:1.6; margin-bottom:var(--s4); }
   @media(max-width:600px){ .cr-split { flex-direction:column; } .cr-thumb { flex:none; width:100%; max-width:340px; } }
   .apd { margin-bottom:var(--s3); padding-bottom:var(--s3); border-bottom:1px solid rgba(10,10,92,0.08); }
   .apd b { display:block; font-size:0.62rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--g6); margin-bottom:var(--s2); }
   .apd p { font-size:0.86rem; color:var(--g2); line-height:1.65; margin:0; }
-  .hc-s.up { color:var(--ok); font-weight:600; }
+  .hc-s.up { color:var(--g4); }
   .hc-s.down { color:var(--g6); }
   .acao { margin-top:var(--s3); padding-top:var(--s3); border-top:1px solid rgba(10,10,92,0.08); }
   .acao b { display:block; font-size:0.62rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--blue); margin-bottom:var(--s2); }
@@ -269,14 +271,14 @@
 
   <div class="eb" style="margin-top:var(--s6);margin-bottom:var(--s3)">Essa semana em números</div>
   <div class="hero-cards" style="margin-top:0">
-    <div class="hc"><div class="hc-t">Impressões</div><div class="hc-v">1.301.911</div><div class="hc-s up">+2,9% · consolidado das linhas contratadas</div></div>
+    <div class="hc"><div class="hc-t">Impressões</div><div class="hc-v">1.301.911</div><div class="hc-s">+2,9% · consolidado das linhas contratadas</div></div>
     <div class="hc"><div class="hc-t">Interações</div><div class="hc-v">1.052</div><div class="hc-s">1.128 na semana anterior · reações, comentários, compartilhamentos e salvamentos no Meta</div></div>
     <div class="hc"><div class="hc-t">Visualizações</div><div class="hc-v">262.854</div><div class="hc-s">-2,5% · consolidado das linhas contratadas</div></div>
     <div class="hc"><div class="hc-t">Taxa de interação</div><div class="hc-v">0,18%</div><div class="hc-s">0,21% na semana anterior · no Meta</div></div>
     <div class="hc"><div class="hc-t">CTR</div><div class="hc-v">0,31%</div><div class="hc-s">0,32% na semana anterior · consolidado</div></div>
     <div class="hc"><div class="hc-t">Taxa de visualização</div><div class="hc-v">20,19%</div><div class="hc-s">21,32% na semana anterior · consolidado</div></div>
-    <div class="hc accent"><div class="hc-t">Gasto até agora</div><div class="hc-v">81,8%</div><div class="hc-s">do cronograma do flight, dia 27 de 33</div></div>
-    <div class="hc accent"><div class="hc-t">A gastar</div><div class="hc-v">18,2%</div><div class="hc-s">dentro do valor alocado</div></div>
+    <div class="hc"><div class="hc-t">Entregue até o momento</div><div class="hc-v">98,9%</div><div class="hc-s">4.964.152 de 5.020.000 impressões contratadas no flight</div></div>
+    <div class="hc"><div class="hc-t">A entregar</div><div class="hc-v">1,1%</div><div class="hc-s">55.848 impressões até o fechamento em 07/09</div></div>
   </div>
 </header>
 
@@ -286,7 +288,7 @@
       <div class="dsec-top">
         <div class="sn">01</div>
         <h2>Entrega do plano</h2>
-        <p class="dsum"><b>4.964.152</b> de <b>5.020.000</b> impressões contratadas no flight · <b>98,9%</b><br>As quatro linhas seguem no ritmo esperado até o fechamento em 07/09</p>
+        <p class="dsum"><b>4.964.152</b> de <b>5.020.000</b> impressões contratadas no flight<br>As quatro linhas seguem no ritmo esperado até o fechamento em 07/09</p>
       </div>
     </div>
     <div class="dbody">
@@ -341,24 +343,6 @@
         </table>
         </div>
       </div>
-      <h3 style="font-size:0.98rem;font-weight:800;margin-top:var(--s5);margin-bottom:var(--s3)">Detalhamento por linha</h3>
-      <div class="card tbl-card">
-        <div class="tw">
-        <table>
-          <thead>
-            <tr><th>Linha</th><th class="n">Impressões</th><th>Resultado</th><th class="n">26/08 a 01/09</th></tr>
-          </thead>
-          <tbody>
-            <tr><td rowspan="2"><strong>Meta Ads</strong></td><td rowspan="2" class="n">600.981</td><td>Alcance da linha de impressões <span style="color:var(--g6);font-weight:500">dado deduplicado, não soma com as outras linhas</span></td><td class="n">209.066</td></tr>
-            <tr><td>Thruplay / visualizações <span style="color:var(--g6);font-weight:500">(campanha de Engajamento)</span></td><td class="n">17.430</td></tr>
-            <tr><td><strong>Rede de Display</strong></td><td class="n">166.442</td><td>Cliques</td><td class="n">150</td></tr>
-            <tr><td><strong>YouTube</strong></td><td class="n">300.052</td><td>Visualizações</td><td class="n">14.067</td></tr>
-            <tr><td><strong>TikTok</strong></td><td class="n">234.436</td><td>Visualizações</td><td class="n">231.285</td></tr>
-            <tr><td><strong>Meta Ads · Visitas ao Perfil</strong> <em>bônus</em></td><td class="n">119.819</td><td>Cliques no link</td><td class="n">2.930</td></tr>
-          </tbody>
-        </table>
-        </div>
-      </div>
       <div class="ins">
         <b>Leitura</b>
         <p>A semana entregou <strong>185.987 impressões por dia</strong>, um pouco acima da semana anterior. O Meta Ads cresceu puxado pela linha de Alcance, enquanto o Display recuou depois de uma semana forte; TikTok e YouTube seguem estáveis.</p>
@@ -373,122 +357,126 @@
   <div class="sn">03</div>
   <div class="sec-bar"></div>
   <h2>Peças em destaque</h2>
-  <p class="sl">Uma leitura peça a peça das cinco que mais responderam na semana, uma por canal.</p>
+  <p class="sl">As cinco peças que mais responderam na semana, uma por canal.</p>
   <p class="crit">A ordem compara a resposta de cada peça com o tamanho da audiência que ela teve, sempre na métrica da própria linha. No Meta entram as duas primeiras por interação a cada mil pessoas que viram, somando comentários, compartilhamentos e salvamentos, com piso de 20.000 exibições. No YouTube entra a de melhor taxa de visualização, na Rede de Display a de melhor taxa de clique e no TikTok a de maior volume e melhor taxa de clique. Um tema não se repete entre canais.</p>
   <div class="creatives">
 
-    <div class="cr">
-      <div class="cr-split">
-        <div class="cr-thumb"><img src="assets/peca-campinas-sao-muitas.jpg" alt="Peça Campinas são muitas, Vila Industrial"/></div>
-        <div class="cr-main">
-          <div class="cr-h">
-            <div class="cr-rank">
-              <span class="rk-pos top">1º</span>
-              <div class="cr-title-row">
-                <span class="cr-t">Campinas são muitas · Vila Industrial</span>
-                <a class="cr-link-inline" href="https://www.facebook.com/259066967468437/posts/1555532539947971" target="_blank" rel="noopener">Ver a publicação no Facebook ↗</a>
-              </div>
-            </div>
-            <span class="bd o">Peça que mais gerou resposta na semana</span>
+    <details class="cr">
+      <summary>
+        <div class="cr-h">
+          <div class="cr-rank">
+            <span class="rk-pos top">1º</span>
+            <div class="cr-title-row"><span class="cr-t">Campinas são muitas · Vila Industrial</span><a class="cr-link-inline" href="https://www.facebook.com/259066967468437/posts/1555532539947971" target="_blank" rel="noopener">Ver a publicação no Facebook ↗</a></div>
           </div>
-          <div class="ms"><div><b>41.791</b><span>Impressões</span></div><div><b>23</b><span>Comentários</span></div><div><b>46</b><span>Compartilhamentos</span></div><div><b>8</b><span>Salvamentos</span></div><div><b>1,84</b><span>Interações a cada mil que viram</span></div></div>
-          <div class="cr-b cr-body"><div class="tp"><b>O que funcionou</b><p>O vídeo abre o passeio pelos bairros tradicionais da cidade pela Vila Industrial, com moradores contando a história do lugar em depoimento aberto. Foi a peça que mais gerou resposta a cada mil pessoas que viram, e o compartilhamento puxou esse resultado: 46 compartilhamentos em 41.791 exibições, marca bem acima das outras peças da semana. O esforço de mídia para gerar cada compartilhamento foi o mais baixo de todas as peças no ar.</p></div><div class="tp"><b>Ponto de atenção</b><p>O tempo médio assistido ficou em 12 segundos num vídeo de 1min28, e cerca de um em cada dez que viram passou do primeiro quarto. O trecho com os moradores falando, que é o que move o compartilhamento, começa depois da abertura histórica. Para as próximas peças da série, vale testar um corte de 30 a 45 segundos que comece por um depoimento e deixe a história do bairro para o desdobramento.</p></div><div class="tp"><b>Resposta do público</b><p>Lendo os comentários da publicação, quase todos são relatos pessoais de quem morou ou trabalhou na Vila Industrial, com nome de rua, de curtume e de fábrica. Uma moradora escreveu: &ldquo;Nasci e morei na Vila Industrial por 26 anos, saudades&rdquo;. Outra contou que viveu 40 anos no bairro e voltou a morar lá. Aparecem também lembranças de familiares que trabalhavam como maquinista na ferrovia. A conversa é afetiva do começo ao fim, sem reclamação de serviço.</p></div><div class="tp"><b>Audiência e posicionamento</b><p>A peça é um vídeo vertical de tela cheia e a entrega acompanhou o formato, concentrada nos espaços verticais do Instagram e do Facebook. Sugerimos manter a série com um bairro por peça e produzir também uma versão curta para abrir a sequência, já que o formato de depoimento de morador é o que faz a peça circular de uma pessoa para outra.</p></div></div>
+          <span class="bd o">Peça que mais gerou resposta na semana</span>
+        </div>
+        <div class="ms"><div><b>41.791</b><span>Impressões</span></div><div><b>23</b><span>Comentários</span></div><div><b>46</b><span>Compartilhamentos</span></div><div><b>8</b><span>Salvamentos</span></div><div><b>1,84</b><span>Interações a cada mil que viram</span></div></div>
+        <p class="cr-res">Foi a peça mais compartilhada da semana, com 46 compartilhamentos em 41.791 exibições.</p>
+        <span class="cr-toggle"><span class="dtxt-closed">Ver análise completa</span><span class="dtxt-open">Recolher</span><i class="dchev"></i></span>
+      </summary>
+      <div class="cr-b cr-body">
+        <div class="cr-split">
+          <div class="cr-thumb"><img src="assets/peca-campinas-sao-muitas.jpg" alt="Peça Campinas são muitas, Vila Industrial"/></div>
+          <div class="cr-main"><div class="tp"><b>O que funcionou</b><p>O passeio pelos bairros tradicionais começa pela Vila Industrial, com moradores contando a história do lugar. Os 46 compartilhamentos são a melhor marca da semana, e o esforço de mídia para gerar cada um foi o mais baixo entre as peças no ar.</p></div><div class="tp"><b>Ponto de atenção</b><p>O tempo médio assistido foi de 12 segundos num vídeo de 1min28, e os depoimentos começam depois da abertura histórica. Vale testar um corte de 30 a 45 segundos que abra por um morador.</p></div><div class="tp"><b>Resposta do público</b><p>Lendo os comentários da publicação, são relatos pessoais de quem morou no bairro, com nome de rua, de curtume e de fábrica. Uma moradora escreveu: &ldquo;Nasci e morei na Vila Industrial por 26 anos, saudades&rdquo;. Não há reclamação de serviço.</p></div><div class="tp"><b>Audiência e posicionamento</b><p>Vídeo vertical de tela cheia, entregue nos espaços verticais do Instagram e do Facebook. Sugerimos seguir a série com um bairro por peça.</p></div></div>
         </div>
       </div>
-    </div>
+    </details>
 
-    <div class="cr">
-      <div class="cr-split">
-        <div class="cr-thumb"><img src="assets/peca-obras-brt.jpg" alt="Peça Obras do BRT"/></div>
-        <div class="cr-main">
-          <div class="cr-h">
-            <div class="cr-rank">
-              <span class="rk-pos top">2º</span>
-              <div class="cr-title-row">
-                <span class="cr-t">Obras do BRT</span>
-                <a class="cr-link-inline" href="https://www.facebook.com/259066967468437/videos/4523574741299758" target="_blank" rel="noopener">Ver a publicação no Facebook ↗</a>
-              </div>
-            </div>
-            <span class="bd w">Peça mais comentada da semana</span>
+    <details class="cr">
+      <summary>
+        <div class="cr-h">
+          <div class="cr-rank">
+            <span class="rk-pos top">2º</span>
+            <div class="cr-title-row"><span class="cr-t">Obras do BRT</span><a class="cr-link-inline" href="https://www.facebook.com/259066967468437/videos/4523574741299758" target="_blank" rel="noopener">Ver a publicação no Facebook ↗</a></div>
           </div>
-          <div class="ms"><div><b>80.064</b><span>Impressões</span></div><div><b>93</b><span>Comentários</span></div><div><b>11</b><span>Compartilhamentos</span></div><div><b>5</b><span>Salvamentos</span></div><div><b>1,36</b><span>Interações a cada mil que viram</span></div></div>
-          <div class="cr-b cr-body"><div class="tp"><b>O que funcionou</b><p>O vídeo é um passeio em primeira pessoa pela Avenida Moraes Sales, com o repórter narrando a substituição do asfalto por pavimento de concreto e cortes para as máquinas e a equipe em obra. É a peça mais comentada da semana, com 93 comentários, e a de melhor retenção entre as do Meta: um em cada quatro que viram passou do primeiro quarto e um em cada dez foi até o fim, num vídeo de 28 segundos. O tema entra no primeiro segundo e a peça funciona sem som, com legenda em tela.</p></div><div class="tp"><b>Ponto de atenção</b><p>O vídeo explica o que está sendo feito, mas não explica por que o concreto foi escolhido no lugar do asfalto, e é justamente aí que a conversa se abre. Para as próximas peças de obra viária, vale testar um trecho curto com essa explicação, incluindo a durabilidade da via e o motivo técnico da troca, ainda nos primeiros segundos.</p></div><div class="tp"><b>Resposta do público</b><p>Lendo os comentários da publicação, boa parte questiona a necessidade da obra e o uso do recurso, com falas como &ldquo;se asfalto foi refeito a pouco tempo qual era a necessidade de fazer isso agora&rdquo;. Outro grupo aproveita a peça para cobrar asfalto nos bairros: &ldquo;Tá precisando em vários ruas e avenidas em campinas o asfalto cheio de buracos&rdquo;. Aparece também a cobrança pelo prazo do BRT em si, e algumas menções ao calendário eleitoral. Sugerimos preparar uma peça de resposta que mostre a pavimentação em andamento fora da região central.</p></div><div class="tp"><b>Audiência e posicionamento</b><p>Vídeo vertical de tela cheia, entregue nos espaços verticais do Instagram e do Facebook, o que combina com o formato. Sugerimos seguir com o mesmo formato de passeio em primeira pessoa em outro ponto da obra, e usar a próxima peça para tratar de uma via de bairro, tema que apareceu sozinho na conversa desta.</p></div></div>
+          <span class="bd w">Peça mais comentada da semana</span>
+        </div>
+        <div class="ms"><div><b>80.064</b><span>Impressões</span></div><div><b>93</b><span>Comentários</span></div><div><b>11</b><span>Compartilhamentos</span></div><div><b>5</b><span>Salvamentos</span></div><div><b>1,36</b><span>Interações a cada mil que viram</span></div></div>
+        <p class="cr-res">Teve 93 comentários e a melhor retenção entre as peças do Meta na semana.</p>
+        <span class="cr-toggle"><span class="dtxt-closed">Ver análise completa</span><span class="dtxt-open">Recolher</span><i class="dchev"></i></span>
+      </summary>
+      <div class="cr-b cr-body">
+        <div class="cr-split">
+          <div class="cr-thumb"><img src="assets/peca-obras-brt.jpg" alt="Peça Obras do BRT"/></div>
+          <div class="cr-main"><div class="tp"><b>O que funcionou</b><p>O passeio em primeira pessoa pela Avenida Moraes Sales mostra a troca do asfalto por pavimento de concreto em imagem. Um em cada quatro que viram passou do primeiro quarto e um em cada dez chegou ao fim, em 28 segundos. A peça funciona sem som, com legenda em tela.</p></div><div class="tp"><b>Ponto de atenção</b><p>O vídeo mostra a obra, mas não diz por que o concreto foi escolhido, e é aí que a conversa se abre. Vale abrir as próximas peças de obra viária com essa explicação.</p></div><div class="tp"><b>Resposta do público</b><p>Lendo os comentários da publicação, boa parte questiona a necessidade da obra e o uso do recurso: &ldquo;se asfalto foi refeito a pouco tempo qual era a necessidade de fazer isso agora&rdquo;. Outro grupo cobra asfalto nos bairros. Sugerimos uma peça que mostre a pavimentação em andamento fora da região central.</p></div><div class="tp"><b>Audiência e posicionamento</b><p>Vídeo vertical de tela cheia nos espaços verticais do Instagram e do Facebook. Sugerimos repetir o formato em outro ponto da obra.</p></div></div>
         </div>
       </div>
-    </div>
+    </details>
 
-    <div class="cr">
-      <div class="cr-split">
-        <div class="cr-thumb"><img src="assets/peca-ecoponto.jpg" alt="Peça Ecoponto"/></div>
-        <div class="cr-main">
-          <div class="cr-h">
-            <div class="cr-rank">
-              <span class="rk-pos">3º</span>
-              <div class="cr-title-row">
-                <span class="cr-t">Ecoponto · descarte de entulho e poda</span>
-                <a class="cr-link-inline" href="https://youtube.com/shorts/hHsLyo1xzfA" target="_blank" rel="noopener">Ver a peça no YouTube ↗</a>
-              </div>
-            </div>
-            <span class="bd w">Melhor taxa de visualização no YouTube</span>
+    <details class="cr">
+      <summary>
+        <div class="cr-h">
+          <div class="cr-rank">
+            <span class="rk-pos">3º</span>
+            <div class="cr-title-row"><span class="cr-t">Ecoponto · descarte de entulho e poda</span><a class="cr-link-inline" href="https://youtube.com/shorts/hHsLyo1xzfA" target="_blank" rel="noopener">Ver a peça no YouTube ↗</a></div>
           </div>
-          <div class="ms"><div><b>9.484</b><span>Impressões</span></div><div><b>892</b><span>Visualizações</span></div><div><b>9,41%</b><span>Taxa de visualização</span></div><div><b>14</b><span>Cliques</span></div></div>
-          <div class="cr-b cr-body"><div class="tp"><b>O que funcionou</b><p>A peça mostra como funciona o Ecoponto na prática: o apresentador chega ao local, um servidor explica o que pode ser entregue, e a sequência acompanha moradores descartando poda, móvel velho e material reciclável, até o caminhão da coleta. Foi a peça de melhor taxa de visualização do YouTube na semana, com 892 visualizações em 9.484 exibições. É conteúdo de serviço com endereço de uso imediato para quem tem entulho em casa.</p></div><div class="tp"><b>Ponto de atenção</b><p>O vídeo tem 58 segundos e a informação prática, o que pode e o que não pode ser levado, aparece distribuída ao longo da peça. Para as próximas dessa linha, vale testar uma versão de 20 a 30 segundos que já abra com a lista do que é aceito, deixando a visita ao Ecoponto como o desdobramento.</p></div><div class="tp"><b>Resposta do público</b><p>A peça circulou como anúncio em vídeo e não abriu conversa: o vídeo não tem comentários no YouTube. O sinal de resposta aqui é o comportamento de quem assistiu, e ele é favorável: cerca de um em cada dez que viram completaram uma visualização, a melhor marca do canal na semana, num tema que costuma prender menos que agenda cultural.</p></div><div class="tp"><b>Audiência e posicionamento</b><p>A peça é vertical de tela cheia e roda em espaço vertical no YouTube, o que combina com o formato. A resolução do arquivo no ar é menor que a das outras peças da semana, o que reduz a nitidez em telas maiores. Sugerimos subir a versão em resolução cheia e reaproveitar a mesma peça na linha de vídeo do Instagram, onde o tema de serviço vem respondendo bem.</p></div></div>
+          <span class="bd w">Melhor taxa de visualização no YouTube</span>
+        </div>
+        <div class="ms"><div><b>9.484</b><span>Impressões</span></div><div><b>892</b><span>Visualizações</span></div><div><b>9,41%</b><span>Taxa de visualização</span></div><div><b>14</b><span>Cliques</span></div></div>
+        <p class="cr-res">Foi a peça de melhor taxa de visualização do YouTube na semana.</p>
+        <span class="cr-toggle"><span class="dtxt-closed">Ver análise completa</span><span class="dtxt-open">Recolher</span><i class="dchev"></i></span>
+      </summary>
+      <div class="cr-b cr-body">
+        <div class="cr-split">
+          <div class="cr-thumb"><img src="assets/peca-ecoponto.jpg" alt="Peça Ecoponto"/></div>
+          <div class="cr-main"><div class="tp"><b>O que funcionou</b><p>A peça mostra o Ecoponto em uso: um servidor explica o que pode ser entregue e moradores aparecem descartando poda e móvel velho. É serviço de uso imediato para quem tem entulho em casa.</p></div><div class="tp"><b>Ponto de atenção</b><p>São 58 segundos, com a lista do que é aceito distribuída ao longo da peça. Vale uma versão de 20 a 30 segundos que abra por essa lista.</p></div><div class="tp"><b>Resposta do público</b><p>O vídeo não tem comentários no YouTube, então a leitura vem do comportamento: cerca de um em cada dez que viram completou uma visualização, a melhor marca do canal na semana.</p></div><div class="tp"><b>Audiência e posicionamento</b><p>Vertical de tela cheia, no espaço vertical do YouTube. O arquivo no ar está em resolução menor que as outras peças da semana. Sugerimos subir a versão em resolução cheia.</p></div></div>
         </div>
       </div>
-    </div>
+    </details>
 
-    <div class="cr">
-      <div class="cr-split">
-        <div class="cr-thumb"><img src="assets/peca-ciw-display.gif" alt="Peça Campinas Innovation Week em banner"/></div>
-        <div class="cr-main">
-          <div class="cr-h">
-            <div class="cr-rank">
-              <span class="rk-pos">4º</span>
-              <div class="cr-title-row">
-                <span class="cr-t">Campinas Innovation Week</span>
-                
-              </div>
-            </div>
-            <span class="bd g">Melhor taxa de clique no Display</span>
+    <details class="cr">
+      <summary>
+        <div class="cr-h">
+          <div class="cr-rank">
+            <span class="rk-pos">4º</span>
+            <div class="cr-title-row"><span class="cr-t">Campinas Innovation Week</span></div>
           </div>
-          <div class="ms"><div><b>77.403</b><span>Impressões</span></div><div><b>80</b><span>Cliques</span></div><div><b>0,103%</b><span>Taxa de clique</span></div><div><b>5</b><span>Formatos no ar</span></div></div>
-          <div class="cr-b cr-body"><div class="tp"><b>O que funcionou</b><p>O conjunto de banners do Campinas Innovation Week foi o de melhor taxa de clique da Rede de Display na semana, à frente dos outros dois temas no ar. A peça é direta: nome do evento, data de 14 a 18 de setembro e local no Prédio do Relógio, no Pátio Ferroviário. Em formato de banner, com pouco espaço e sem som, essa objetividade é o que sustenta o clique.</p></div><div class="tp"><b>Ponto de atenção</b><p>A taxa de clique varia bastante entre os cinco formatos: os verticais e quadrados respondem melhor que os horizontais largos. Para as próximas campanhas de evento, vale concentrar a produção nos formatos que aparecem ao lado do conteúdo, e não nas faixas no topo da página.</p></div><div class="tp"><b>Resposta do público</b><p>Banner não tem espaço de comentário, então a leitura de resposta vem do clique. Com 80 cliques em 77.403 exibições, a peça superou as outras duas em cartaz na mesma linha, o que indica interesse real pela data do evento e não só exposição da marca.</p></div><div class="tp"><b>Audiência e posicionamento</b><p>A peça roda em sites e aplicativos parceiros, com cinco formatos no ar para cobrir os espaços disponíveis. Sugerimos manter o conjunto até a semana do evento e produzir uma variação com contagem regressiva de dias, que costuma sustentar o clique na reta final de agenda.</p></div></div>
+          <span class="bd g">Melhor taxa de clique no Display</span>
+        </div>
+        <div class="ms"><div><b>77.403</b><span>Impressões</span></div><div><b>80</b><span>Cliques</span></div><div><b>0,103%</b><span>Taxa de clique</span></div><div><b>5</b><span>Formatos no ar</span></div></div>
+        <p class="cr-res">Ficou à frente dos outros dois temas em cartaz na Rede de Display.</p>
+        <span class="cr-toggle"><span class="dtxt-closed">Ver análise completa</span><span class="dtxt-open">Recolher</span><i class="dchev"></i></span>
+      </summary>
+      <div class="cr-b cr-body">
+        <div class="cr-split">
+          <div class="cr-thumb"><img src="assets/peca-ciw-display.gif" alt="Peça Campinas Innovation Week em banner"/></div>
+          <div class="cr-main"><div class="tp"><b>O que funcionou</b><p>O banner traz nome do evento, data de 14 a 18 de setembro e local no Prédio do Relógio. Sem som e com pouco espaço em tela, é essa objetividade que sustenta o clique.</p></div><div class="tp"><b>Ponto de atenção</b><p>Os formatos verticais e quadrados respondem melhor que as faixas horizontais largas. Vale concentrar a produção neles.</p></div><div class="tp"><b>Resposta do público</b><p>Banner não tem espaço de comentário. Os 80 cliques em 77.403 exibições ficaram acima dos outros dois temas da mesma linha, o que indica interesse pela data do evento.</p></div><div class="tp"><b>Audiência e posicionamento</b><p>A peça roda em sites e aplicativos parceiros, com cinco formatos no ar. Sugerimos manter o conjunto até a semana do evento e testar uma variação com contagem regressiva.</p></div></div>
         </div>
       </div>
-    </div>
+    </details>
 
-    <div class="cr">
-      <div class="cr-split">
-        <div class="cr-thumb"><img src="assets/peca-praca-morumbi.jpg" alt="Peça Praça do Jardim Morumbi"/></div>
-        <div class="cr-main">
-          <div class="cr-h">
-            <div class="cr-rank">
-              <span class="rk-pos">5º</span>
-              <div class="cr-title-row">
-                <span class="cr-t">Praça do Jardim Morumbi</span>
-                <a class="cr-link-inline" href="https://www.tiktok.com/@prefcampinas/video/7677190368034655509" target="_blank" rel="noopener">Ver a peça no TikTok ↗</a>
-              </div>
-            </div>
-            <span class="bd g">Maior volume no TikTok</span>
+    <details class="cr">
+      <summary>
+        <div class="cr-h">
+          <div class="cr-rank">
+            <span class="rk-pos">5º</span>
+            <div class="cr-title-row"><span class="cr-t">Praça do Jardim Morumbi</span><a class="cr-link-inline" href="https://www.tiktok.com/@prefcampinas/video/7677190368034655509" target="_blank" rel="noopener">Ver a peça no TikTok ↗</a></div>
           </div>
-          <div class="ms"><div><b>50.392</b><span>Impressões</span></div><div><b>49.797</b><span>Visualizações</span></div><div><b>75</b><span>Cliques</span></div><div><b>0,149%</b><span>Taxa de clique</span></div></div>
-          <div class="cr-b cr-body"><div class="tp"><b>O que funcionou</b><p>A peça abre com imagem aérea da praça Alfredo Castro Donaire e o título do que aconteceu no Jardim Morumbi, e segue com moradores mostrando o que passou a existir ali: pista de caminhada, campo de areia, quadra, parquinho e iluminação. Foi a peça de maior volume e de melhor taxa de clique do TikTok na semana, com 50.392 exibições. O esforço de mídia para gerar cada visualização foi baixo, em linha com as outras peças do canal.</p></div><div class="tp"><b>Ponto de atenção</b><p>O vídeo tem 57 segundos e a lista completa do que a praça ganhou aparece perto do fim. Para as próximas entregas de obra, vale testar uma versão de 20 a 30 segundos que já abra com o depoimento do morador e mostre o equipamento em uso nos primeiros segundos.</p></div><div class="tp"><b>Resposta do público</b><p>A peça circulou como anúncio e a leitura de resposta vem do comportamento: praticamente todas as exibições viraram visualização, e a taxa de clique foi a mais alta do canal na semana. Os moradores que aparecem no vídeo falam do uso diário do espaço, com crianças no parquinho e caminhada no fim da tarde, que é o mesmo tipo de uso que a peça mostra em imagem.</p></div><div class="tp"><b>Audiência e posicionamento</b><p>Vídeo vertical de tela cheia, formato nativo do canal, entregue para público adulto em toda a cidade. Sugerimos repetir o modelo com um equipamento por peça e depoimento de quem usa, que é o formato de melhor resposta do canal, e levar essa mesma peça para a linha de vídeo do Instagram.</p></div></div>
+          <span class="bd g">Maior volume no TikTok</span>
+        </div>
+        <div class="ms"><div><b>50.392</b><span>Impressões</span></div><div><b>49.797</b><span>Visualizações</span></div><div><b>75</b><span>Cliques</span></div><div><b>0,149%</b><span>Taxa de clique</span></div></div>
+        <p class="cr-res">Somou o maior volume e a melhor taxa de clique do TikTok na semana.</p>
+        <span class="cr-toggle"><span class="dtxt-closed">Ver análise completa</span><span class="dtxt-open">Recolher</span><i class="dchev"></i></span>
+      </summary>
+      <div class="cr-b cr-body">
+        <div class="cr-split">
+          <div class="cr-thumb"><img src="assets/peca-praca-morumbi.jpg" alt="Peça Praça do Jardim Morumbi"/></div>
+          <div class="cr-main"><div class="tp"><b>O que funcionou</b><p>A peça abre com imagem aérea da praça Alfredo Castro Donaire e segue com moradores mostrando pista de caminhada, quadra, parquinho e iluminação. Praticamente todas as exibições viraram visualização.</p></div><div class="tp"><b>Ponto de atenção</b><p>São 57 segundos, e a lista do que a praça ganhou aparece perto do fim. Vale uma versão de 20 a 30 segundos que abra pelo equipamento em uso.</p></div><div class="tp"><b>Resposta do público</b><p>A peça circulou como anúncio, então a leitura vem do comportamento: a taxa de clique foi a mais alta do canal na semana. Os moradores que aparecem falam do uso diário do espaço.</p></div><div class="tp"><b>Audiência e posicionamento</b><p>Formato nativo do canal, vertical de tela cheia, para público adulto em toda a cidade. Sugerimos um equipamento por peça, com depoimento de quem usa.</p></div></div>
         </div>
       </div>
-    </div>
+    </details>
   </div>
 </section>
 
 <section class="wrap">
-  <details class="dsec">
-    <summary>
+  <div class="dsec">
+    <div class="dsec-head">
       <div class="dsec-top">
         <div class="sn">04</div>
         <h2>Visitas ao Perfil <span style="font-weight:600;color:var(--g4);font-size:0.7em;text-transform:none;letter-spacing:0">bônus, fora do total</span></h2>
         <p class="dsum"><b>119.819</b> impressões e <b>2.930</b> cliques no link na semana, bônus fora do total contratado</p>
       </div>
-      <span class="dtoggle"><span class="dtxt-closed">Ver detalhes</span><span class="dtxt-open">Recolher</span><i class="dchev"></i></span>
-    </summary>
+    </div>
     <div class="dbody">
       <p class="sl">A campanha de Visitas ao Perfil tem entrega própria e não soma no total das linhas contratadas.</p>
       <div class="card">
@@ -503,7 +491,7 @@
         <p>A linha soma 119.819 impressões e 2.930 cliques no link nesta semana, com taxa de clique de 2,44%, próxima dos 2,57% da semana anterior, mesmo com menos volume. Ela também respondeu por 202 dos novos seguidores do Instagram no período.</p>
       </div>
     </div>
-  </details>
+  </div>
 </section>
 
 <section class="wrap">
