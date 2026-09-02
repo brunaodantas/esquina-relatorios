@@ -26,10 +26,10 @@ async def main():
         await page.wait_for_timeout(1200)
         blocks = await page.evaluate("""
           (() => {
-            const SEL = 'nav, .hero-intro, header .eb, header .hc, section .sn, section h2, section .sl, section .card, section .ins, section h3, details.cr, .common';
+            const SEL = 'nav, .hero-intro, header .eb, header .hc, section .sn, section h2, section .sl, section .card, section .ins, section h3, .cr, .common';
             const out = [];
             document.querySelectorAll(SEL).forEach(e => {
-              if (e.closest('details.cr') && !e.matches('details.cr')) return;
+              if (e.closest('.cr') && !e.matches('.cr')) return;
               if (e.closest('.common') && !e.matches('.common')) return;
               const r = e.getBoundingClientRect();
               if (r.height < 2) return;
