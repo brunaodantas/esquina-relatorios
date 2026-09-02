@@ -34,7 +34,7 @@
   .eb { display:inline-flex; align-items:center; gap:var(--s2); font-size:0.7rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:var(--blue); margin-bottom:var(--s3); }
   .eb::before { content:''; width:22px; height:2px; background:var(--blue); }
   h1 { font-size:clamp(2rem,4.6vw,3rem); font-weight:800; letter-spacing:-0.025em; line-height:1.08; text-wrap:balance; margin-bottom:var(--s3); }
-  .lead { color:var(--g4); font-size:1.02rem; max-width:60ch; }
+  .lead { color:var(--g4); font-size:1.02rem; }
 
   .hero-cards { display:grid; grid-template-columns:repeat(4,1fr); gap:var(--s3); margin-top:var(--s6); }
   .hc { background:var(--white); border:1px solid var(--line); border-radius:var(--r2); padding:var(--s4); display:flex; flex-direction:column; gap:var(--s1); min-height:126px; justify-content:space-between; }
@@ -49,10 +49,10 @@
   section { padding:var(--s8) 0; border-top:1px solid var(--line); }
   .sn { font-size:0.66rem; font-weight:700; color:var(--g6); letter-spacing:0.14em; text-transform:uppercase; margin-bottom:var(--s1); }
   h2 { font-size:1.55rem; font-weight:800; letter-spacing:-0.015em; margin-bottom:var(--s2); text-wrap:balance; }
-  .sl { color:var(--g4); font-size:0.95rem; max-width:70ch; margin-bottom:var(--s5); }
-  .txt { font-size:0.95rem; color:var(--g2); line-height:1.75; max-width:72ch; }
+  .sl { color:var(--g4); font-size:0.95rem; margin-bottom:var(--s5); }
+  .txt { font-size:0.95rem; color:var(--g2); line-height:1.75; }
   .txt + .ins { margin-top:var(--s5); }
-  .common .txt { color:rgba(255,255,255,0.85); max-width:76ch; }
+  .common .txt { color:rgba(255,255,255,0.85); }
 
   .card { background:var(--white); border:1px solid var(--line); border-radius:var(--r3); padding:var(--s5); }
   .verba-top { display:grid; grid-template-columns:repeat(4,1fr); gap:var(--s4); margin-bottom:var(--s5); }
@@ -60,7 +60,7 @@
   .vt .v { font-size:1.9rem; font-weight:800; font-variant-numeric:tabular-nums; letter-spacing:-0.025em; }
   .vt .l { font-size:0.7rem; color:var(--g6); text-transform:uppercase; letter-spacing:0.08em; font-weight:700; margin-top:2px; }
   .vt .n { font-size:0.78rem; color:var(--g4); margin-top:var(--s1); }
-  .vt.free .v { color:var(--ok); }
+  .vt.free .v { color:var(--t1); }
   .vt.avail .v { color:var(--blue); }
   .bar { height:12px; border-radius:100px; background:rgba(10,10,92,0.08); overflow:hidden; display:flex; }
   .bar i { display:block; height:100%; }
@@ -230,7 +230,7 @@
   details.dsec > summary { list-style:none; cursor:pointer; display:flex; align-items:flex-start; justify-content:space-between; gap:var(--s4); }
   details.dsec > summary::-webkit-details-marker { display:none; }
   .dsec-top h2 { margin-bottom:var(--s2); }
-  .dsum { color:var(--g4); font-size:0.95rem; max-width:64ch; }
+  .dsum { color:var(--g4); font-size:0.95rem; }
   .dsum b { color:var(--ink); font-variant-numeric:tabular-nums; }
   .dtoggle { flex:0 0 auto; display:inline-flex; align-items:center; gap:8px; font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--blue); white-space:nowrap; margin-top:6px; }
   .dchev { width:8px; height:8px; border-right:2px solid var(--blue); border-bottom:2px solid var(--blue); transform:rotate(45deg); transition:transform .2s ease; }
@@ -295,7 +295,7 @@
       <div class="card">
         <div class="verba-top">
           <div class="vt"><div class="v">5.020.000</div><div class="l">Contratado no flight</div><div class="n">nas quatro linhas</div></div>
-          <div class="vt"><div class="v">4.964.152</div><div class="l">Entregue até agora</div><div class="n">Meta, Display, YouTube e TikTok</div></div>
+          <div class="vt"><div class="v">4.964.152</div><div class="l">Entregue até o momento</div><div class="n">Meta, Display, YouTube e TikTok</div></div>
           <div class="vt avail"><div class="v">55.848</div><div class="l">A entregar</div><div class="n">até 07/09</div></div>
           <div class="vt free"><div class="v">27 de 33</div><div class="l">Dia do flight</div><div class="n">6 dias pela frente</div></div>
         </div>
@@ -346,7 +346,6 @@
       <div class="ins">
         <b>Leitura</b>
         <p>A semana entregou <strong>185.987 impressões por dia</strong>, um pouco acima da semana anterior. O Meta Ads cresceu puxado pela linha de Alcance, enquanto o Display recuou depois de uma semana forte; TikTok e YouTube seguem estáveis.</p>
-        <p>As linhas possuem objetivos diferentes: a de impressões busca volume de exibição e a de engajamento busca interação com a publicação. É por isso que quase toda a resposta da semana, 973 das 1.052 interações, veio da linha de engajamento, que responde por menos de um quinto das exibições.</p>
         <p>O esforço de mídia para conseguir um novo seguidor e para gerar uma visita ao perfil ficou estável em relação à semana anterior, dentro do padrão do ciclo.</p>
       </div>
     </div>
