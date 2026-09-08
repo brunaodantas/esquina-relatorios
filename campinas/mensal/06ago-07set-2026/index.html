@@ -575,7 +575,7 @@
           <span class="perf-topleft"><span class="perf-pos">1</span><span class="perf-rank b">1&ordm; em intera&ccedil;&atilde;o por mil exibi&ccedil;&otilde;es</span></span>
           <span class="perf-fmt">V&iacute;deo &middot; Reels &middot; 1min28</span>
         </div>
-        <div class="perf-title" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">Campinas s&atilde;o muitas, a Vila Industrial <a class="perf-link" href="https://www.instagram.com/p/Db55CykMf9F/" target="_blank" rel="noopener">Ver a publica&ccedil;&atilde;o &#8599;</a></div>
+        <div class="perf-title" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">Campinas s&atilde;o muitas, a Vila Industrial <a class="perf-link" href="https://www.instagram.com/p/Dbx0HdfOIhi/" target="_blank" rel="noopener">Ver a publica&ccedil;&atilde;o &#8599;</a></div>
         <div class="perf-split">
           <div class="perf-media"><img src="assets/peca-campinas-sao-muitas.jpg" alt="Passeio pela Vila Industrial, em Campinas"/></div>
           <div class="perf-body">
@@ -810,6 +810,11 @@
     <div>O n&uacute;mero &eacute; <strong>do perfil, n&atilde;o da campanha</strong>: soma quem chegou pela m&iacute;dia paga e quem chegou pelo conte&uacute;do org&acirc;nico, no ciclo em que a s&eacute;rie sobre os bairros e a multivacina&ccedil;&atilde;o estiveram no ar.</div>
   </div>
   <div class="chart-box fade-in" style="margin-top:26px">
+    <div class="dt-title">Novos seguidores por dia</div>
+    <div style="height:280px;margin-top:14px"><canvas id="chartSeguidores"></canvas></div>
+    <p class="tbl-note">S&eacute;rie di&aacute;ria do Meta Business Suite, de 6 de agosto a 6 de setembro de 2026. O pico do primeiro dia acompanha a estreia da s&eacute;rie sobre os bairros; o segundo, em 30 de agosto, coincide com a reta final da multivacina&ccedil;&atilde;o.</p>
+  </div>
+  <div class="chart-box fade-in" style="margin-top:26px">
     <div class="dt-title">Quantas exibi&ccedil;&otilde;es at&eacute; ganhar um seguidor</div>
     <table class="xtbl">
       <thead><tr><th>Pe&ccedil;a</th><th>Exibi&ccedil;&otilde;es no ciclo</th><th>Exibi&ccedil;&otilde;es por novo seguidor</th></tr></thead>
@@ -923,6 +928,14 @@ new Chart(document.getElementById('chartGenero'),{type:'doughnut',
     datasets:[{data:[1317818,1321082,6818],backgroundColor:['#9C27B0','#1A3CFF','#17A697'],borderColor:'#fff',borderWidth:4}]},
   options:{responsive:true,maintainAspectRatio:false,animation:false,cutout:'62%',
     plugins:{legend:{position:'bottom',labels:{font:{size:11,weight:'500'},color:'#444',padding:10,boxWidth:12}},tooltip:{...TIP,callbacks:{label:c=>{const t=c.dataset.data.reduce((a,b)=>a+b,0);return ' '+BR(c.parsed)+' ('+(c.parsed/t*100).toFixed(1)+'%)';}}}}}});
+new Chart(document.getElementById('chartSeguidores'),{type:'line',
+  data:{labels:["6 ago", "7 ago", "8 ago", "9 ago", "10 ago", "11 ago", "12 ago", "13 ago", "14 ago", "15 ago", "16 ago", "17 ago", "18 ago", "19 ago", "20 ago", "21 ago", "22 ago", "23 ago", "24 ago", "25 ago", "26 ago", "27 ago", "28 ago", "29 ago", "30 ago", "31 ago", "1 set", "2 set", "3 set", "4 set", "5 set", "6 set"],
+    datasets:[{data:[948, 239, 154, 142, 139, 124, 102, 138, 124, 118, 148, 149, 146, 124, 142, 133, 155, 151, 150, 172, 146, 140, 156, 127, 257, 194, 144, 113, 119, 109, 100, 108],borderColor:'#9C27B0',borderWidth:2,tension:.4,fill:true,pointRadius:3,pointBackgroundColor:'#9C27B0',
+      backgroundColor:(c)=>{const a=c.chart.ctx.createLinearGradient(0,0,0,280);a.addColorStop(0,'rgba(156,39,176,.22)');a.addColorStop(1,'rgba(156,39,176,0)');return a;}}]},
+  options:{responsive:true,maintainAspectRatio:false,animation:false,
+    plugins:{legend:{display:false},tooltip:{...TIP,callbacks:{label:c=>' '+BR(c.parsed.y)+' novos seguidores'}}},
+    scales:{x:{grid:{display:false},border:{display:false},ticks:{color:'#888',font:{size:11,weight:'600'},maxRotation:0,autoSkip:true,maxTicksLimit:8}},
+      y:{beginAtZero:true,grid:{color:'rgba(0,0,0,.05)',drawTicks:false},border:{display:false},ticks:{color:'#AAA',font:{size:11},padding:6,callback:v=>BR(v)}}}}});
 </script>
 </body>
 </html>

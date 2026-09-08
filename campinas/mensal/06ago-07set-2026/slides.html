@@ -431,8 +431,13 @@
     <div class="eyebrow">Crescimento do perfil</div>
     <h2>O Instagram ganhou 5.411 seguidores no ciclo</h2>
     <p class="sub">Crescimento de 47,3% sobre o ciclo anterior, apurado no Meta Business Suite.</p>
-    <div class="ins teal" style="margin-top:18px"><div class="l">O que o número é</div><div class="x">É do perfil, não da campanha: soma quem chegou pela mídia paga e quem chegou pelo conteúdo orgânico, no ciclo em que a série sobre os bairros e a multivacinação estiveram no ar.</div></div>
-    <div class="card" style="margin-top:18px">
+    <div class="grid" style="grid-template-columns:1fr 1fr;gap:20px;margin-top:16px;flex:1;min-height:0">
+    <div class="card" style="display:flex;flex-direction:column">
+      <div style="font-size:.86rem;font-weight:700;color:var(--ink);margin-bottom:6px">Novos seguidores por dia</div>
+      <div style="flex:1;min-height:0;position:relative"><canvas id="cSeg"></canvas></div>
+      <div style="font-size:.68rem;color:var(--muted);line-height:1.4;margin-top:8px">Série diária do Meta Business Suite, 6 de agosto a 6 de setembro. O pico do primeiro dia acompanha a estreia da série sobre os bairros.</div>
+    </div>
+    <div class="card" style="display:flex;flex-direction:column">
       <div style="font-size:.86rem;font-weight:700;color:var(--ink);margin-bottom:8px">Quantas exibições até ganhar um seguidor</div>
       <table>
         <thead><tr><th>Peça</th><th>Exibições no ciclo</th><th>Exibições por novo seguidor</th></tr></thead>
@@ -445,10 +450,10 @@
           <tr><td>Campinas Innovation Week</td><td>583.506</td><td>53.046</td></tr>
         </tbody>
       </table>
-      <div style="font-size:.72rem;color:var(--muted);line-height:1.45;margin-top:10px">Entram apenas as peças com no mínimo 20.000 exibições e no mínimo 5 novos seguidores no período. São os seguidores atribuídos à mídia paga, medidos peça a peça, e por isso não somam o total acima, que inclui o orgânico.</div>
+      <div style="font-size:.68rem;color:var(--muted);line-height:1.45;margin-top:auto;padding-top:8px">Régua de 20.000 exibições e 5 novos seguidores. São os seguidores da mídia paga, medidos peça a peça, e por isso não somam o total acima, que inclui o orgânico.</div>
     </div>
-    <div class="grow"></div>
-    <div style="font-size:.8rem;color:#444;line-height:1.55">A peça feita para pedir seguida precisou de 410 exibições por seguidor, cerca de trinta vezes menos que a melhor peça de conteúdo. Entre as pautas, serviço próximo aproxima mais do que agenda: dengue trouxe um seguidor a cada 12 mil exibições, contra 53 mil do evento. Seguidor não é meta contratada aqui, entra como leitura de vínculo.</div>
+    </div>
+    <div style="font-size:.78rem;color:#444;line-height:1.5;margin-top:14px">A peça feita para pedir seguida precisou de 410 exibições por seguidor, cerca de trinta vezes menos que a melhor peça de conteúdo. Entre as pautas, serviço próximo aproxima mais do que agenda: dengue trouxe um seguidor a cada 12 mil exibições, contra 53 mil do evento. Seguidor não é meta contratada aqui, entra como leitura de vínculo.</div>
   </div>
 </div>
 
@@ -547,6 +552,14 @@ new Chart(document.getElementById('cGenero'),{type:'doughnut',
     datasets:[{data:[1317818,1321082,6818],backgroundColor:['#9C27B0','#1A3CFF','#17A697'],borderColor:'#fff',borderWidth:4}]},
   options:{responsive:true,maintainAspectRatio:false,animation:false,cutout:'62%',
     plugins:{legend:{position:'bottom',labels:{font:{size:10},color:'#444',padding:9,boxWidth:10}},tooltip:TIP}}});
+new Chart(document.getElementById('cSeg'),{type:'line',
+  data:{labels:["6 ago", "7 ago", "8 ago", "9 ago", "10 ago", "11 ago", "12 ago", "13 ago", "14 ago", "15 ago", "16 ago", "17 ago", "18 ago", "19 ago", "20 ago", "21 ago", "22 ago", "23 ago", "24 ago", "25 ago", "26 ago", "27 ago", "28 ago", "29 ago", "30 ago", "31 ago", "1 set", "2 set", "3 set", "4 set", "5 set", "6 set"],
+    datasets:[{data:[948, 239, 154, 142, 139, 124, 102, 138, 124, 118, 148, 149, 146, 124, 142, 133, 155, 151, 150, 172, 146, 140, 156, 127, 257, 194, 144, 113, 119, 109, 100, 108],borderColor:'#9C27B0',borderWidth:2,tension:.4,fill:true,pointRadius:2,pointBackgroundColor:'#9C27B0',
+      backgroundColor:(c)=>{const a=c.chart.ctx.createLinearGradient(0,0,0,240);a.addColorStop(0,'rgba(156,39,176,.22)');a.addColorStop(1,'rgba(156,39,176,0)');return a;}}]},
+  options:{responsive:true,maintainAspectRatio:false,animation:false,
+    plugins:{legend:{display:false},tooltip:TIP},
+    scales:{x:{grid:{display:false},border:{display:false},ticks:{color:'#888',font:{size:10,weight:'600'},maxRotation:0,autoSkip:true,maxTicksLimit:6}},
+      y:{beginAtZero:true,grid:{color:'rgba(0,0,0,.05)',drawTicks:false},border:{display:false},ticks:{color:'#AAA',font:{size:10},padding:5,callback:v=>BR(v)}}}}});
 </script>
 </body>
 </html>
