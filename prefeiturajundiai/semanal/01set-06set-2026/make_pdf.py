@@ -13,7 +13,7 @@ from playwright.async_api import async_playwright
 
 BASE = Path(__file__).parent
 SRC = BASE / "index.html"
-PDF_OUT = BASE / "boletim-prefeitura-jundiai-01a07set2026.pdf"
+PDF_OUT = BASE / "boletim-prefeitura-jundiai-01a06set2026.pdf"
 W, SCALE, RES = 720, 2, 192          # 1440/192*72 = 540pt de largura
 PAGE_RATIO = 960 / 540               # pagina vertical 9:16
 
