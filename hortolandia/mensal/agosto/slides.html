@@ -131,7 +131,18 @@ body{font-family:var(--font);background:#333;color:var(--t1);-webkit-font-smooth
 .tx-grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px;flex:1}
 .creatives{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px;flex:1;align-items:start}
 .creatives.g2{grid-template-columns:1fr 1fr}
+.creatives.g1{grid-template-columns:1fr}
 .cr{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px 18px;box-shadow:var(--sh);display:flex;flex-direction:column}
+.cr-split{display:flex;gap:14px;align-items:flex-start;margin-top:10px}
+.cr-thumb{flex:0 0 118px;width:118px;border-radius:8px;overflow:hidden;border:1px solid var(--border);background:#EEF1FF}
+.cr-thumb img{display:block;width:100%;height:auto}
+.cr-main{flex:1;min-width:0}
+.sec-bar{width:46px;height:4px;border-radius:100px;background:var(--p);margin-bottom:10px}
+.cv-tbl{width:100%;border-collapse:collapse;margin-top:14px;font-size:13px}
+.cv-tbl thead th{padding:9px 12px;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.10em;color:var(--tm);border-bottom:2px solid var(--border);text-align:left}
+.cv-tbl tbody tr{border-bottom:1px solid rgba(0,0,0,.05)}
+.cv-tbl td{padding:9px 12px;color:var(--t2)}
+.cv-tbl td:first-child{font-weight:600;color:var(--t1)}
 .cr-h{margin-bottom:2px}
 .cr-title-row{display:flex;flex-direction:column;gap:1px}
 .cr-t{font-size:15px;font-weight:800;letter-spacing:-.01em;color:var(--t1);line-height:1.2}
@@ -183,7 +194,7 @@ body{font-family:var(--font);background:#333;color:var(--t1);-webkit-font-smooth
 .diag::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 82% 18%,rgba(23,166,151,.14),transparent 60%)}
 .diag .slide-in{z-index:1}
 .diag .s-h1{color:#fff}
-.dc-grid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:repeat(3,1fr);gap:14px 20px;margin-top:16px;flex:1}
+.dc-grid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:repeat(2,1fr);gap:14px 20px;margin-top:16px;flex:1}
 .dc{background:rgba(255,255,255,.96);border-radius:14px;padding:14px 20px;position:relative;overflow:hidden}
 .dc-acc{position:absolute;top:0;left:0;right:0;height:3px}
 .dc-acc.t{background:linear-gradient(90deg,var(--teal),#1EC4B2)}
@@ -206,6 +217,12 @@ body{font-family:var(--font);background:#333;color:var(--t1);-webkit-font-smooth
 .ctx-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;box-shadow:var(--sh);padding:18px 22px}
 .ctx-ttl{font-size:15px;font-weight:700;margin-bottom:8px}
 .ctx-txt{font-size:12.5px;color:var(--t2);line-height:1.55}
+.ctx-grid.g4{grid-template-columns:repeat(4,1fr);gap:14px}
+.ctx-grid.g4 .ctx-card{padding:16px 18px}
+.ctx-cnt{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--teal);margin:-4px 0 10px}
+.ctx-list{display:flex;flex-direction:column;gap:10px}
+.ctx-fmt{font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--tm);margin-bottom:2px}
+.ctx-list p{font-size:11.5px;color:var(--t2);line-height:1.5;margin:0}
 
 /* ── FONTES ── */
 .src-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:18px}
@@ -259,7 +276,7 @@ body{font-family:var(--font);background:#333;color:var(--t1);-webkit-font-smooth
     <div class="eyebrow">Ciclo encerrado</div>
     <h2 class="enc-hl">Em agosto, a campanha Temas Diversos levou sete pautas da cidade a mais de <span class="ht">1,76 milhão de exibições</span>, com <span class="hb">todo o plano contratado fechando acima do combinado</span>.</h2>
     <p class="enc-story">Ao longo de agosto, a comunicação da Prefeitura acompanhou o calendário da cidade: o Planeta Rock e a Semana Cultural abriram o mês, a campanha de Segurança e o reforço nos bairros correram por praticamente todo o período, Agosto Lilás trouxe a conscientização sobre a Lei Maria da Penha, a nova data do show de Diogo Nogueira avisou o público sobre o reagendamento, e o programa de asfalto mostrou o andamento das obras.</p>
-    <p class="enc-story" style="margin-top:16px">A campanha foi encerrada de forma antecipada em 27 de agosto, com todas as entregas contratadas já cumpridas. Segurança foi o tema que mais engajou o público, e a nova data do show de Diogo Nogueira foi o conteúdo que impactou mais pessoas.</p>
+    <p class="enc-story" style="margin-top:16px">O ciclo foi encerrado em 27 de agosto, com todas as entregas contratadas cumpridas. Segurança foi o tema que mais engajou o público, e a nova data do show de Diogo Nogueira foi uma das peças que impactou mais pessoas.</p>
   </div>
 </section>
 
@@ -275,7 +292,7 @@ body{font-family:var(--font);background:#333;color:var(--t1);-webkit-font-smooth
         <tr><td>Meta Ads · Impressões</td><td class="n">1.000.000</td><td class="n">1.660.459</td></tr>
         <tr><td>Meta Ads · Engajamento</td><td class="n">20.000</td><td class="n">53.025</td></tr>
         <tr><td>Meta Ads · Visualização</td><td class="n">25.600</td><td class="n">34.610</td></tr>
-        <tr><td>Meta Ads · Visualização Retargeting</td><td class="n">15.000</td><td class="n">25.439</td></tr>
+        <tr><td>Meta Ads · Visualização, remarketing de vídeo</td><td class="n">15.000</td><td class="n">25.439</td></tr>
         <tr><td>YouTube · Visualização</td><td class="n">40.000</td><td class="n">42.852</td></tr>
         <tr><td>TikTok · Impressões</td><td class="n">100.000</td><td class="n">107.526</td></tr>
         <tr><td>TikTok · Visualização</td><td class="n">10.000</td><td class="n">33.338</td></tr>
@@ -323,7 +340,7 @@ body{font-family:var(--font);background:#333;color:var(--t1);-webkit-font-smooth
         <tr><td>META ADS TOTAL</td><td>1.660.459</td><td>53.025</td><td>60.049</td></tr>
       </tbody>
     </table>
-    <div class="ib"><div class="ib-l">Como ler a tabela</div><div class="ib-t">A distribuição acima é informativa: a meta contratada é do plano inteiro, não de cada tema. Segurança concentra o maior volume nas três métricas, por ter corrido com três peças ao longo de quase todo o mês. TikTok e YouTube não têm entrega própria por tema, entram só no consolidado por plataforma.</div></div>
+    <div class="ib"><div class="ib-l">Como ler a tabela</div><div class="ib-t">A meta contratada é do plano inteiro, por isso a leitura aqui é de distribuição. Segurança concentra o maior volume nas três métricas, com três peças ao longo de quase todo o mês. TikTok e YouTube aparecem apenas no consolidado por plataforma.</div></div>
   </div>
 </section>
 
@@ -334,14 +351,38 @@ body{font-family:var(--font);background:#333;color:var(--t1);-webkit-font-smooth
     <div class="div-line"></div>
     <div class="div-counter">Análise de Criativos</div>
     <div class="div-name">As Peças de Agosto, da Melhor para a Pior</div>
-    <div class="div-desc">Uma peça por bloco, em ordem de desempenho. O critério é a interação por mil impressões, somando comentários, compartilhamentos, salvamentos e novos seguidores, e não o volume bruto de entrega.</div>
+    <div class="div-desc">As peças que mais geraram resposta em agosto, uma por bloco. A ordem compara comentários, compartilhamentos e salvamentos com o número de pessoas que viram cada peça.</div>
   </div>
 </section>
 
-<!-- CRIATIVOS · 1º e 2º -->
+<!-- CONTEÚDO VEICULADO -->
 <section class="slide">
   <div class="slide-in">
-    <div class="eyebrow">Ranking das peças · 1º e 2º</div>
+    <div class="eyebrow">Conteúdo veiculado</div>
+    <div class="sec-bar"></div>
+    <h2 class="s-h1">As oito peças que rodaram no ciclo</h2>
+    <p class="s-sub">Todo o conteúdo veiculado em agosto, com o formato de cada peça.</p>
+    <table class="cv-tbl">
+      <thead><tr><th>Peça</th><th>Formato</th></tr></thead>
+      <tbody>
+        <tr><td>Nova Data Show Diogo Nogueira</td><td>Imagem</td></tr>
+        <tr><td>Planeta Rock</td><td>Vídeo</td></tr>
+        <tr><td>Semana Cultural</td><td>Vídeo</td></tr>
+        <tr><td>Segurança · Guardiã Maria da Penha</td><td>Vídeo</td></tr>
+        <tr><td>Segurança · Canil da Guarda Municipal</td><td>Vídeo</td></tr>
+        <tr><td>Segurança · Apresentação da Guarda Municipal</td><td>Vídeo</td></tr>
+        <tr><td>Agosto Lilás</td><td>Vídeo</td></tr>
+        <tr><td>Asfalto · Infraestrutura</td><td>Vídeo</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- CRIATIVOS · 1ª e 2ª -->
+<section class="slide">
+  <div class="slide-in">
+    <div class="eyebrow">As peças que mais geraram resposta · 1ª e 2ª</div>
+    <div class="sec-bar"></div>
     <h2 class="s-h1">Nova Data Show Diogo Nogueira e Planeta Rock</h2>
     <div class="creatives g2">
       <div class="cr">
@@ -356,14 +397,19 @@ body{font-family:var(--font);background:#333;color:var(--t1);-webkit-font-smooth
           <div><b>503.635</b><span>Impressões</span></div>
           <div><b>842</b><span>Comentários</span></div>
           <div><b>409</b><span>Compartilh.</span></div>
-          <div><b>34</b><span>Seguidores</span></div>
-          <div><b>2,71</b><span>Interações por mil</span></div>
+          <div><b>80</b><span>Salvamentos</span></div>
+          <div><b>2,64</b><span>Interações a cada mil</span></div>
         </div>
-        <div class="cr-b cr-body">
-          <div class="tp"><b>O que funcionou</b><p>O aviso de reagendamento chegou rápido e longe, que é o que importa numa comunicação de utilidade pública com data marcada. Maior entrega e maior taxa de interação do ciclo: 1,67 comentário e 0,81 compartilhamento por mil exibições.</p></div>
-          <div class="tp"><b>Ponto de atenção</b><p>Boa parte da conversa não foi favorável. O criativo puxou uma pauta que não está no evento, e sim na imagem pública do artista: entre os comentários mais reagidos aparecem críticas e ironias, inclusive sobre uso de recurso público. O número alto não deve ser lido como adesão ao show.</p></div>
-          <div class="tp"><b>Resposta do público</b><p>Mulheres responderam por cerca de 63% das interações e a faixa de 18 a 34 anos por cerca de 57%. Sugerimos tratar peça de show como comunicação de aviso, acompanhando alcance e não engajamento, com moderação de comentários prevista desde a subida.</p></div>
-          <div class="tp"><b>Audiência e posicionamento</b><p>Cerca de 75% da entrega saiu em vertical de tela cheia: Stories do Facebook (28%), Reels do Instagram (27%) e Stories do Instagram (20%). Sugerimos produzir a versão 9:16 do aviso, com a data em destaque no primeiro quadro.</p></div>
+        <div class="cr-split">
+          <div class="cr-thumb"><img src="assets/criativo-diogo-nogueira.jpg" alt="Peça Nova Data Show Diogo Nogueira"/></div>
+          <div class="cr-main">
+        <div class="cr-b cr-body" style="margin-top:0;padding-top:0;border-top:none">
+          <div class="tp"><b>O que funcionou</b><p>O show da 3ª Festa do Dia dos Pais, marcado para 07 de agosto, foi adiado por causa das chuvas. A peça circulou de 13 a 27 de agosto para comunicar a nova data, 04 de setembro, e cumpriu esse papel: mais de 500 mil exibições e a maior resposta do ciclo, 1,67 comentário e 0,81 compartilhamento a cada mil que viram.</p></div>
+          <div class="tp"><b>Ponto de atenção</b><p>Parte da conversa tratou da imagem pública do artista, assunto que está fora da peça. Lendo os comentários da publicação, entre os mais reagidos aparecem críticas e ironias, com menções ao uso de recurso público.</p></div>
+          <div class="tp"><b>Resposta do público</b><p>O volume de comentários acompanha a natureza do aviso: utilidade pública sobre a remarcação de um evento gratuito. Mulheres responderam por 64,1% das interações e o público de 45 anos ou mais, por 63,2%. Sugerimos prever moderação de comentários desde o primeiro dia nas peças de show com artista de perfil público marcado.</p></div>
+          <div class="tp"><b>Audiência e posicionamento</b><p>Feed do Facebook 21,1%, Stories do Facebook 20,2%, Reels do Instagram 16,2%, Feed do Instagram 14,4% e Stories do Instagram 11,6%: os espaços de tela cheia vertical somaram 64,4%. Sugerimos produzir também a versão vertical 9:16 do aviso.</p></div>
+        </div>
+          </div>
         </div>
       </div>
       <div class="cr">
@@ -375,175 +421,59 @@ body{font-family:var(--font);background:#333;color:var(--t1);-webkit-font-smooth
           </div>
         </div>
         <div class="ms">
-          <div><b>165.067</b><span>Impressões</span></div>
+          <div><b>165.592</b><span>Impressões</span></div>
+          <div><b>1</b><span>Comentário</span></div>
           <div><b>68</b><span>Compartilh.</span></div>
-          <div><b>2</b><span>Seguidores</span></div>
-          <div><b>0,45</b><span>Interações por mil</span></div>
+          <div><b>3</b><span>Salvamentos</span></div>
+          <div><b>0,43</b><span>Interações a cada mil</span></div>
         </div>
-        <div class="cr-b cr-body">
-          <div class="tp"><b>O que funcionou</b><p>Menor entrega entre as peças de agenda e a segunda melhor taxa do ciclo, puxada pelo compartilhamento: 0,41 por mil, cerca de seis vezes a dos vídeos de Segurança. Data, local e entrada gratuita mediante doação de alimento dão ao público tudo para marcar outra pessoa.</p></div>
-          <div class="tp"><b>Ponto de atenção</b><p>O compartilhamento não virou seguidor nem salvamento: 2 novos seguidores e 3 salvamentos. A peça circula entre amigos, mas não traz o público para o perfil da Prefeitura.</p></div>
-          <div class="tp"><b>Resposta do público</b><p>É a peça de público mais jovem do ciclo: de 18 a 24 anos respondeu por cerca de 64% das interações. Homens responderam por cerca de 56% do engajamento.</p></div>
-          <div class="tp"><b>Audiência e posicionamento</b><p>Cerca de 84% da entrega saiu em Reels (62%) e Stories (22%) do Instagram. Sugerimos produzir a peça em vídeo 9:16 com recorte do line-up, entre 15 e 45 segundos, formato nativo do Reels.</p></div>
+        <div class="cr-split">
+          <div class="cr-thumb" style="flex:0 0 210px;width:210px"><img src="assets/criativo-planeta-rock.jpg" alt="Peça Planeta Rock"/></div>
+          <div class="cr-main">
+        <div class="cr-b cr-body" style="margin-top:0;padding-top:0;border-top:none">
+          <div class="tp"><b>O que funcionou</b><p>Apareceu para menos gente que as outras peças de agenda e ainda assim foi a segunda que mais gerou resposta, puxada pelo compartilhamento: 0,41 a cada mil pessoas que viram. Data, local e entrada gratuita mediante doação de alimento dão ao público tudo para marcar outra pessoa.</p></div>
+          <div class="tp"><b>Ponto de atenção</b><p>A peça teve 1 comentário e 3 salvamentos no período. Vale testar um convite para seguir o perfil dentro da própria peça.</p></div>
+          <div class="tp"><b>Resposta do público</b><p>É a peça que apareceu para o público mais jovem do ciclo: a faixa de 18 a 24 anos concentrou 60,1% das exibições. Entre quem interagiu, essa faixa responde por 21,7%, e homens por 66,7%.</p></div>
+          <div class="tp"><b>Audiência e posicionamento</b><p>Reels do Instagram 62,2%, Stories do Instagram 19,1% e Feed do Instagram 18,1%. O Facebook ficou em 0,6%. Sugerimos uma versão vertical 9:16 da peça, entre 15 e 45 segundos, com recorte do line-up.</p></div>
+        </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CRIATIVOS · 3º e 4º -->
+<!-- CRIATIVOS · 3ª -->
 <section class="slide">
   <div class="slide-in">
-    <div class="eyebrow">Ranking das peças · 3º e 4º</div>
-    <h2 class="s-h1">Guardiã Maria da Penha e Semana Cultural</h2>
-    <div class="creatives g2">
+    <div class="eyebrow">As peças que mais geraram resposta · 3ª</div>
+    <div class="sec-bar"></div>
+    <h2 class="s-h1">Segurança · Guardiã Maria da Penha</h2>
+    <div class="creatives g1">
       <div class="cr">
         <div class="cr-h">
           <span class="rk-pos">3º</span>
           <div class="cr-title-row">
             <span class="cr-t">Segurança · Guardiã Maria da Penha</span>
-            <span class="cr-link-inline">Publicação no Facebook</span>
           </div>
         </div>
         <div class="ms">
-          <div><b>552.004</b><span>Impressões</span></div>
-          <div><b>41</b><span>Comentários</span></div>
-          <div><b>32</b><span>Compartilh.</span></div>
-          <div><b>26</b><span>Seguidores</span></div>
-          <div><b>0,21</b><span>Interações por mil</span></div>
+          <div><b>278.873</b><span>Impressões</span></div>
+          <div><b>22</b><span>Comentários</span></div>
+          <div><b>22</b><span>Compartilh.</span></div>
+          <div><b>11</b><span>Salvamentos</span></div>
+          <div><b>0,20</b><span>Interações a cada mil</span></div>
         </div>
-        <div class="cr-b cr-body">
-          <div class="tp"><b>O que funcionou</b><p>Maior entrega do ciclo, por ter rodado na frente principal de Segurança e no reforço nos bairros, e ainda assim a melhor taxa entre os vídeos institucionais. Conversa com a pauta do Agosto Lilás, que corria no mesmo período: foi a peça de Segurança com maior participação feminina na entrega, cerca de 59%.</p></div>
-          <div class="tp"><b>Ponto de atenção</b><p>Foi a peça de Segurança que menos levou o público a clicar no link. A peça informa que o programa existe, mas não deixa claro o caminho de quem precisa acionar a Guardiã.</p></div>
-          <div class="tp"><b>Resposta do público</b><p>Segunda melhor peça do ciclo em novos seguidores, 26, e a melhor entre as institucionais em salvamento. A resposta veio concentrada de 18 a 34 anos, cerca de 71% das interações.</p></div>
-          <div class="tp"><b>Audiência e posicionamento</b><p>Cerca de 84% da entrega saiu em Stories e Reels do Instagram, com o Stories sozinho em 52%. Sugerimos tratar o vertical de tela cheia como formato principal e reforçar a entrega no Feed do Facebook, onde está o público de mais idade.</p></div>
+        <div class="cr-split">
+          <div class="cr-thumb" style="flex:0 0 210px;width:210px"><img src="assets/criativo-guardia-maria-da-penha.jpg" alt="Peça Segurança, Guardiã Maria da Penha"/></div>
+          <div class="cr-main">
+        <div class="cr-b cr-body" style="margin-top:0;padding-top:0;border-top:none">
+          <div class="tp"><b>O que funcionou</b><p>É um vídeo institucional sobre o trabalho da Guarda Municipal na proteção à mulher, rodando ao lado do Agosto Lilás no calendário do plano. Terceira peça em resposta proporcional do ciclo, com 22 comentários, 22 compartilhamentos e 11 salvamentos.</p></div>
+          <div class="tp"><b>Ponto de atenção</b><p>O vídeo tem 1min53, mais longo que o recomendado para reter atenção do início ao fim. Vale testar um corte de 15 a 45 segundos que vá direto ao trabalho da Guardiã, sem a introdução institucional.</p></div>
+          <div class="tp"><b>Resposta do público</b><p>A entrega foi levemente masculina, 51,6%. Entre quem interagiu, a base é pequena e a faixa de 25 a 34 anos lidera com 29,1%, com 25 a 44 anos concentrando 56,4% das respostas.</p></div>
+          <div class="tp"><b>Audiência e posicionamento</b><p>O Stories do Instagram levou 42,1% das exibições, o Reels do Instagram 31,3% e o Feed do Instagram 21,5%. O Instagram concentrou quase toda a entrega desta peça. Sugerimos produzir a próxima peça desta frente já pensando em vertical nativo para Stories e Reels, formato que já domina a entrega.</p></div>
         </div>
-      </div>
-      <div class="cr">
-        <div class="cr-h">
-          <span class="rk-pos">4º</span>
-          <div class="cr-title-row">
-            <span class="cr-t">Semana Cultural</span>
-            <span class="cr-link-inline">Publicação no Facebook</span>
           </div>
-        </div>
-        <div class="ms">
-          <div><b>171.970</b><span>Impressões</span></div>
-          <div><b>24</b><span>Compartilh.</span></div>
-          <div><b>7</b><span>Seguidores</span></div>
-          <div><b>0,21</b><span>Interações por mil</span></div>
-        </div>
-        <div class="cr-b cr-body">
-          <div class="tp"><b>O que funcionou</b><p>Empatada na prática com a Guardiã em taxa de interação, com apenas oito dias de janela. Como aviso de agenda cumpriu o papel: o que acontece, quando e onde, com link para o site da Prefeitura. Terceira peça do ciclo em novos seguidores.</p></div>
-          <div class="tp"><b>Ponto de atenção</b><p>Nenhum comentário no período. A peça informa a programação inteira de uma vez, e uma agenda longa em bloco dá pouco motivo para alguém parar e responder.</p></div>
-          <div class="tp"><b>Resposta do público</b><p>Resposta bastante jovem: de 18 a 24 anos respondeu por cerca de 56% das interações, e de 25 a 34 anos por mais 28%.</p></div>
-          <div class="tp"><b>Audiência e posicionamento</b><p>Cerca de 90% da entrega saiu em Reels (56%) e Stories (35%) do Instagram. Sugerimos produzir a peça em vídeo 9:16, entre 15 e 45 segundos, com um recorte da programação.</p></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CRIATIVOS · 5º e 6º -->
-<section class="slide">
-  <div class="slide-in">
-    <div class="eyebrow">Ranking das peças · 5º e 6º</div>
-    <h2 class="s-h1">Canil da GM e Apresentação da Guarda Municipal</h2>
-    <div class="creatives g2">
-      <div class="cr">
-        <div class="cr-h">
-          <span class="rk-pos">5º</span>
-          <div class="cr-title-row">
-            <span class="cr-t">Segurança · Canil da Guarda Municipal</span>
-            <span class="cr-link-inline">Publicação no Facebook</span>
-          </div>
-        </div>
-        <div class="ms">
-          <div><b>250.239</b><span>Impressões</span></div>
-          <div><b>16</b><span>Comentários</span></div>
-          <div><b>16</b><span>Compartilh.</span></div>
-          <div><b>4</b><span>Seguidores</span></div>
-          <div><b>0,16</b><span>Interações por mil</span></div>
-        </div>
-        <div class="cr-b cr-body">
-          <div class="tp"><b>O que funcionou</b><p>Leitura mais ampla do tema entre faixas de idade: o público de 45 anos ou mais respondeu por cerca de 37% das interações, proporção que nenhuma outra peça de Segurança alcançou. Melhor taxa de comentário entre as institucionais, 0,06 por mil.</p></div>
-          <div class="tp"><b>Ponto de atenção</b><p>O protagonismo fica quase todo no cão, e o guarda condutor aparece pouco. É a dupla que sustenta a história do Canil, e o lado humano é o que costuma puxar comentário e reação.</p></div>
-          <div class="tp"><b>Resposta do público</b><p>A reação veio mais em interação leve, curtida e clique, do que em conversa: pouquíssimos salvamentos e 4 novos seguidores para o volume entregue.</p></div>
-          <div class="tp"><b>Audiência e posicionamento</b><p>Cerca de 68% da entrega saiu em Reels e Stories do Instagram, e é a única peça de Segurança com participação relevante do Feed do Facebook, 15%. Sugerimos produzir em 9:16 como versão principal e manter uma versão de Feed para o Facebook.</p></div>
-        </div>
-      </div>
-      <div class="cr">
-        <div class="cr-h">
-          <span class="rk-pos">6º</span>
-          <div class="cr-title-row">
-            <span class="cr-t">Segurança · Apresentação da Guarda Municipal</span>
-            <span class="cr-link-inline">Publicação no Facebook</span>
-          </div>
-        </div>
-        <div class="ms">
-          <div><b>250.019</b><span>Impressões</span></div>
-          <div><b>15</b><span>Comentários</span></div>
-          <div><b>14</b><span>Compartilh.</span></div>
-          <div><b>6</b><span>Seguidores</span></div>
-          <div><b>0,15</b><span>Interações por mil</span></div>
-        </div>
-        <div class="cr-b cr-body">
-          <div class="tp"><b>O que funcionou</b><p>Maior volume de cliques no link entre as peças de Segurança, o que indica que a apresentação da série cumpriu o papel de porta de entrada. Entrega e taxa praticamente idênticas às do Canil.</p></div>
-          <div class="tp"><b>Ponto de atenção</b><p>Por ser peça de apresentação, abre pela identidade institucional e não por uma cena. O público de mais idade participou pouco: 55 anos ou mais respondeu por cerca de 5% das interações, contra 37% no Canil.</p></div>
-          <div class="tp"><b>Resposta do público</b><p>Homens responderam por cerca de 63% do engajamento, mesmo com a entrega equilibrada. A reação se concentrou de 18 a 34 anos, cerca de dois terços do total.</p></div>
-          <div class="tp"><b>Audiência e posicionamento</b><p>Cerca de 86% da entrega saiu em Stories e Reels do Instagram. Sendo peça de abertura de série, sugerimos produzi-la em 9:16 e com duração entre 15 e 45 segundos.</p></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CRIATIVOS · 7º e 8º -->
-<section class="slide">
-  <div class="slide-in">
-    <div class="eyebrow">Ranking das peças · 7º e 8º</div>
-    <h2 class="s-h1">Agosto Lilás e Asfalto</h2>
-    <div class="creatives g2">
-      <div class="cr">
-        <div class="cr-h">
-          <span class="rk-pos">7º</span>
-          <div class="cr-title-row">
-            <span class="cr-t">Agosto Lilás</span>
-            <span class="cr-link-inline">Publicação no Facebook</span>
-          </div>
-        </div>
-        <div class="ms">
-          <div><b>142.499</b><span>Impressões</span></div>
-          <div><b>5</b><span>Comentários</span></div>
-          <div><b>6</b><span>Compartilh.</span></div>
-          <div><b>0,08</b><span>Interações por mil</span></div>
-        </div>
-        <div class="cr-b cr-body">
-          <div class="tp"><b>O que funcionou</b><p>Alcançou o público que a pauta pede: mulheres responderam por cerca de 56% da entrega e por 56% do engajamento, a maior participação feminina do ciclo. A alternância entre depoimento pessoal e fala institucional equilibra o humano e o informativo.</p></div>
-          <div class="tp"><b>Ponto de atenção</b><p>Única peça de vídeo do ciclo sem cliques no link e sem nenhum novo seguidor no período. Num tema que oferece rede de proteção, faltou um caminho claro para quem viu e precisa de ajuda.</p></div>
-          <div class="tp"><b>Resposta do público</b><p>A resposta veio das faixas mais jovens, de 18 a 34 anos, cerca de 61% das interações. O público de 45 anos ou mais participou pouco, cerca de 22%.</p></div>
-          <div class="tp"><b>Audiência e posicionamento</b><p>Metade da entrega saiu em Stories do Instagram, com Feed do Instagram em 24%, o maior share de Feed entre as peças de vídeo. Sugerimos duas versões: uma vertical para o Stories e uma de Feed com o canal de ajuda visível em texto.</p></div>
-        </div>
-      </div>
-      <div class="cr">
-        <div class="cr-h">
-          <span class="rk-pos">8º</span>
-          <div class="cr-title-row">
-            <span class="cr-t">Asfalto · Infraestrutura</span>
-            <span class="cr-link-inline">Publicação no Facebook</span>
-          </div>
-        </div>
-        <div class="ms">
-          <div><b>192.675</b><span>Impressões</span></div>
-          <div><b>2</b><span>Compartilh.</span></div>
-          <div><b>3</b><span>Seguidores</span></div>
-          <div><b>0,03</b><span>Interações por mil</span></div>
-        </div>
-        <div class="cr-b cr-body">
-          <div class="tp"><b>O que funcionou</b><p>Em sete dias de janela, alcançou volume comparável ao de peças que correram o mês inteiro, o que indica que obra na rua encontra público na cidade. Maior volume de cliques no link entre as peças de vídeo, e o plano aéreo de drone dá a dimensão do serviço.</p></div>
-          <div class="tp"><b>Ponto de atenção</b><p>Menor taxa de interação do ciclo: 2 compartilhamentos, nenhum comentário e nenhum salvamento. A peça mostra o serviço e o número, mas não mostra quem usa a via depois de pronta.</p></div>
-          <div class="tp"><b>Resposta do público</b><p>É a peça de resposta mais madura do ciclo: 55 anos ou mais respondeu por cerca de 18% das interações, a maior proporção entre todas as peças.</p></div>
-          <div class="tp"><b>Audiência e posicionamento</b><p>Cerca de 82% da entrega saiu em Stories (46%) e Reels (36%) do Instagram. Sugerimos produzir a peça em 9:16 como versão principal e abrir com o morador em cena ao lado da equipe de obra.</p></div>
         </div>
       </div>
     </div>
@@ -553,76 +483,34 @@ body{font-family:var(--font);background:#333;color:var(--t1);-webkit-font-smooth
 <!-- RANKINGS DE CONTEÚDO -->
 <section class="slide">
   <div class="slide-in">
-    <div class="eyebrow">Rankings de conteúdo</div>
-    <h2 class="s-h1">Seguidores, comentários e compartilhamentos</h2>
-    <div class="regua"><span><b>Régua de corte:</b> só entra no ranking a peça que teve pelo menos 20.000 impressões de entrega e pelo menos 5 ocorrências da métrica em questão. A régua evita premiar uma peça que teve entrega mínima e registrou uma ou duas interações soltas.</span></div>
+    <div class="eyebrow">O que gerou resposta</div>
+    <div class="sec-bar"></div>
+    <h2 class="s-h1">Comentários, compartilhamentos e vídeo assistido até o fim</h2>
+    <div class="regua"><span><b>Critério de corte:</b> entram no quadro as peças que apareceram para pelo menos 20 mil pessoas e tiveram ao menos 5 registros da métrica em questão. O quadro de vídeo assistido até o fim considera apenas as peças em vídeo.</span></div>
     <div class="rk-grid">
-      <div class="rk-card">
-        <div class="rk-card-ttl">Seguidores</div>
-        <div class="rk-card-sub">Novos seguidores no período</div>
-        <div class="rk-row"><span class="rk-n">1º</span><div class="rk-info"><div class="rk-name">Nova Data Show Diogo Nogueira</div><div class="rk-rate">0,068 por mil impressões</div></div><span class="rk-val">34</span></div>
-        <div class="rk-row"><span class="rk-n">2º</span><div class="rk-info"><div class="rk-name">Guardiã Maria da Penha</div><div class="rk-rate">0,047 por mil impressões</div></div><span class="rk-val">26</span></div>
-        <div class="rk-row"><span class="rk-n">3º</span><div class="rk-info"><div class="rk-name">Semana Cultural</div><div class="rk-rate">0,041 por mil impressões</div></div><span class="rk-val">7</span></div>
-      </div>
       <div class="rk-card">
         <div class="rk-card-ttl">Comentários</div>
         <div class="rk-card-sub">Conversa aberta pela peça</div>
-        <div class="rk-row"><span class="rk-n">1º</span><div class="rk-info"><div class="rk-name">Nova Data Show Diogo Nogueira</div><div class="rk-rate">1,672 por mil impressões</div></div><span class="rk-val">842</span></div>
-        <div class="rk-row"><span class="rk-n">2º</span><div class="rk-info"><div class="rk-name">Guardiã Maria da Penha</div><div class="rk-rate">0,074 por mil impressões</div></div><span class="rk-val">41</span></div>
-        <div class="rk-row"><span class="rk-n">3º</span><div class="rk-info"><div class="rk-name">Canil da Guarda Municipal</div><div class="rk-rate">0,064 por mil impressões</div></div><span class="rk-val">16</span></div>
+        <div class="rk-row"><span class="rk-n">1º</span><div class="rk-info"><div class="rk-name">Nova Data Show Diogo Nogueira</div><div class="rk-rate">1,672 a cada mil que viram</div></div><span class="rk-val">842</span></div>
+        <div class="rk-row"><span class="rk-n">2º</span><div class="rk-info"><div class="rk-name">Canil da Guarda Municipal</div><div class="rk-rate">0,067 a cada mil que viram</div></div><span class="rk-val">35</span></div>
+        <div class="rk-row"><span class="rk-n">3º</span><div class="rk-info"><div class="rk-name">Guardiã Maria da Penha</div><div class="rk-rate">0,079 a cada mil que viram</div></div><span class="rk-val">22</span></div>
       </div>
       <div class="rk-card">
         <div class="rk-card-ttl">Compartilhamentos</div>
         <div class="rk-card-sub">Peça repassada adiante</div>
-        <div class="rk-row"><span class="rk-n">1º</span><div class="rk-info"><div class="rk-name">Nova Data Show Diogo Nogueira</div><div class="rk-rate">0,812 por mil impressões</div></div><span class="rk-val">409</span></div>
-        <div class="rk-row"><span class="rk-n">2º</span><div class="rk-info"><div class="rk-name">Planeta Rock</div><div class="rk-rate">0,412 por mil impressões</div></div><span class="rk-val">68</span></div>
-        <div class="rk-row"><span class="rk-n">3º</span><div class="rk-info"><div class="rk-name">Guardiã Maria da Penha</div><div class="rk-rate">0,058 por mil impressões</div></div><span class="rk-val">32</span></div>
+        <div class="rk-row"><span class="rk-n">1º</span><div class="rk-info"><div class="rk-name">Nova Data Show Diogo Nogueira</div><div class="rk-rate">0,812 a cada mil que viram</div></div><span class="rk-val">409</span></div>
+        <div class="rk-row"><span class="rk-n">2º</span><div class="rk-info"><div class="rk-name">Planeta Rock</div><div class="rk-rate">0,411 a cada mil que viram</div></div><span class="rk-val">68</span></div>
+        <div class="rk-row"><span class="rk-n">3º</span><div class="rk-info"><div class="rk-name">Canil da Guarda Municipal</div><div class="rk-rate">0,065 a cada mil que viram</div></div><span class="rk-val">34</span></div>
+      </div>
+      <div class="rk-card">
+        <div class="rk-card-ttl">Vídeo assistido até o fim</div>
+        <div class="rk-card-sub">Quem viu o vídeo inteiro</div>
+        <div class="rk-row"><span class="rk-n">1º</span><div class="rk-info"><div class="rk-name">Canil da Guarda Municipal</div><div class="rk-rate">0,35% de quem viu assistiu até o fim</div></div><span class="rk-val">1.820</span></div>
+        <div class="rk-row"><span class="rk-n">2º</span><div class="rk-info"><div class="rk-name">Apresentação da Guarda Municipal</div><div class="rk-rate">0,34% de quem viu assistiu até o fim</div></div><span class="rk-val">838</span></div>
+        <div class="rk-row"><span class="rk-n">3º</span><div class="rk-info"><div class="rk-name">Guardiã Maria da Penha</div><div class="rk-rate">0,16% de quem viu assistiu até o fim</div></div><span class="rk-val">453</span></div>
       </div>
     </div>
-    <div class="ib"><div class="ib-l">O que os rankings mostram</div><div class="ib-t">Volume bruto e eficiência apontam para peças diferentes. O Planeta Rock, com a menor entrega entre as peças de agenda, tem taxa de compartilhamento cerca de seis vezes maior que a dos vídeos de Segurança. A Guardiã Maria da Penha aparece nos três rankings, o que a torna a peça institucional mais completa do ciclo.</div></div>
-  </div>
-</section>
-
-<!-- HIPÓTESES · 1 -->
-<section class="slide">
-  <div class="slide-in">
-    <div class="eyebrow">Hipóteses</div>
-    <h2 class="s-h1">Hipóteses sobre o que separou as peças</h2>
-    <div class="hyp-grid">
-      <div class="hyp">
-        <div class="hyp-ttl">Os três vídeos de Segurança terminam praticamente empatados</div>
-        <div class="hyp-mx">Interações por mil · Guardiã 0,21 · Canil 0,16 · Apresentação 0,15 · 552.004 e 250.239 impressões</div>
-        <div class="hyp-it"><b>1. A entrega achatou a diferença.</b> A Guardiã recebeu 2,2 vezes mais exibições que as outras duas peças, por ter rodado em duas frentes de campanha. Volume alto empurra a taxa para baixo, e mesmo assim ela ficou na frente.</div>
-        <div class="hyp-it"><b>2. As três abrem pelo mesmo lugar.</b> Identidade institucional, uniforme e viatura aparecem nos primeiros segundos das três. Sem um gancho distinto na abertura, o público reage do mesmo jeito às três.</div>
-        <div class="hyp-it"><b>3. O tema pede consulta, não conversa.</b> Segurança é assunto que a população guarda para quando precisa. Isso aparece no salvamento da Guardiã, 18, o maior entre as institucionais, e no comentário baixo de todas as três.</div>
-        <div class="hyp-foot"><b>Como testar em setembro</b>Subir duas aberturas diferentes do mesmo vídeo, uma pela cena e outra pela identidade institucional, com a mesma verba e a mesma janela, e comparar comentário e salvamento por mil.</div>
-      </div>
-      <div class="hyp">
-        <div class="hyp-ttl">Planeta Rock é seis vezes mais compartilhado por impressão</div>
-        <div class="hyp-mx">Compartilhamento por mil · Planeta Rock 0,412 · Canil 0,064 · Guardiã 0,058 · Apresentação 0,056 · 68 compartilhamentos em 8 dias</div>
-        <div class="hyp-it"><b>1. Informação de serviço completa.</b> Data, local, horário e a condição de entrada, um quilo de alimento, estão todos na peça. Quem compartilha não precisa explicar nada por escrito.</div>
-        <div class="hyp-it"><b>2. Prazo curto cria urgência.</b> A contagem regressiva coloca uma data limite visível. Peça com prazo é repassada agora, enquanto peça institucional pode ser vista depois.</div>
-        <div class="hyp-it"><b>3. Motivo pronto para marcar alguém.</b> Show de graça é convite. O compartilhamento funciona como combinação entre amigos, comportamento que uma peça de serviço público não costuma provocar.</div>
-        <div class="hyp-foot"><b>O que isso indica</b>Nas próximas peças de agenda, sugerimos deixar data, local e condição de entrada legíveis no primeiro quadro e manter a contagem regressiva.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- HIPÓTESES · 2 -->
-<section class="slide">
-  <div class="slide-in">
-    <div class="eyebrow">Hipóteses</div>
-    <h2 class="s-h1">O engajamento do show de Diogo Nogueira não foi todo favorável</h2>
-    <div class="hyp-grid g1">
-      <div class="hyp">
-        <div class="hyp-mx">503.635 impressões · 842 comentários · 1,672 comentário por mil · 409 compartilhamentos · 34 seguidores</div>
-        <div class="hyp-it"><b>1. O número alto tem origem na atração, não no evento.</b> A peça é um aviso simples de mudança de data, sem conteúdo que provoque debate. Ainda assim, gerou dez vezes mais comentários que todas as outras sete peças somadas. O que puxou a conversa foi a imagem pública do artista, uma pauta que não estava na comunicação.</div>
-        <div class="hyp-it"><b>2. A conversa mais visível é crítica.</b> Entre os comentários que mais receberam reações aparecem manifestações irônicas e críticas, incluindo questionamentos sobre o uso de recurso público na contratação e menções de teor eleitoral. É um volume de conversa que existe apesar da peça, e não por causa dela.</div>
-        <div class="hyp-it"><b>3. Alcance e adesão são coisas diferentes.</b> O aviso cumpriu o objetivo, que era informar a nova data para o maior número de pessoas. Ler os 842 comentários como aprovação do evento seria um erro, e a mesma peça avaliada por seguidores ganhos, 34, mostra um resultado bem mais modesto.</div>
-        <div class="hyp-foot"><b>Como tratar em setembro</b>Sugerimos avaliar, antes de subir peça de show com artista de perfil público marcado, o quanto a atração tende a dividir a opinião, acompanhar a peça por alcance e não por engajamento, e prever moderação de comentários desde o primeiro dia de veiculação.</div>
-      </div>
-    </div>
+    <div class="ib"><div class="ib-l">O que os rankings mostram</div><div class="ib-t">Volume e resposta apontam para peças diferentes. O Planeta Rock apareceu para menos gente que as outras peças de agenda e foi várias vezes mais compartilhado que os vídeos de Segurança em relação à audiência. Entre os vídeos institucionais, o Canil da Guarda Municipal é o mais assistido até o fim.</div></div>
   </div>
 </section>
 
@@ -658,15 +546,15 @@ body{font-family:var(--font);background:#333;color:var(--t1);-webkit-font-smooth
           <thead><tr><th>Métrica</th><th>Volume</th></tr></thead>
           <tbody>
             <tr><td>Impressões</td><td class="n">1.660.459</td></tr>
-            <tr><td>Alcance (conta)</td><td class="n">846.841</td></tr>
-            <tr><td>Frequência</td><td class="n">2,63</td></tr>
+            <tr><td>Alcance</td><td class="n">846.841</td></tr>
+            <tr><td>Vezes que cada pessoa viu, em média</td><td class="n">2,63</td></tr>
             <tr><td>Cliques</td><td class="n">16.207</td></tr>
-            <tr><td>CTR</td><td class="n">0,73%</td></tr>
+            <tr><td>Taxa de cliques</td><td class="n">0,73%</td></tr>
             <tr><td>Engajamento</td><td class="n">53.025</td></tr>
             <tr><td>Visualização</td><td class="n">60.049</td></tr>
           </tbody>
         </table>
-        <div class="plat-note">Alcance é o dado deduplicado da conta no período (Meta Insights), não a soma de campanhas.</div>
+        <div class="plat-note">O alcance é o número de pessoas diferentes que viram alguma peça no período. Cada pessoa viu uma peça da campanha 2,6 vezes, em média.</div>
       </div>
       <div class="plat-box">
         <div class="plat-ttl">YouTube</div>
@@ -703,22 +591,74 @@ body{font-family:var(--font);background:#333;color:var(--t1);-webkit-font-smooth
 <section class="slide">
   <div class="slide-in">
     <div class="eyebrow">Contexto na cidade</div>
-    <h2 class="s-h1">O que Hortolândia noticiou em agosto</h2>
-    <p class="s-sub">Cruzamento de dados de mídia paga com o que foi noticiado publicamente sobre a cidade no período.</p>
-    <div class="ctx-grid">
+    <div class="sec-bar"></div>
+    <h2 class="s-h1">O que a imprensa da região noticiou em agosto</h2>
+    <p class="s-sub">Onze matérias no período tratam dos temas do ciclo, com distribuição desigual: Planeta Rock e o show de Diogo Nogueira somaram quatro cada, o Agosto Lilás teve duas e o asfalto, uma. A frente de Segurança, que recebeu a maior fatia do plano, não teve cobertura confirmada: ali a campanha foi o canal principal de informação sobre o trabalho da Guarda Municipal. A Semana Cultural aparece como contexto dentro da cobertura do Planeta Rock.</p>
+    <div class="ctx-grid g4">
       <div class="ctx-card">
-        <div class="ctx-ttl">Segurança</div>
-        <div class="ctx-txt">Em agosto, a Prefeitura buscou parceria com o Governo Federal para o programa Município Mais Seguro, retomou o projeto "Bem me quer, Paz se quer" da Guarda Municipal em seis escolas e promoveu treinamento de defesa pessoal para servidoras. A campanha paga reforçou essa mesma frente, mostrando o trabalho do canil e das guardas em campo.</div>
+        <div class="ctx-ttl">Planeta Rock e Semana Cultural</div>
+        <div class="ctx-cnt">4 matérias</div>
+        <div class="ctx-list">
+          <div><div class="ctx-fmt">Todo Dia · 02/08/2026</div><p>“Festival Planeta Rock reúne CPM 22, Supla, Rodox e Oficina G3 em Hortolândia”: a 12ª edição, em 08 e 09 de agosto, com entrada gratuita.</p></div>
+          <div><div class="ctx-fmt">Portal Hortolândia · 05/08/2026</div><p>“Festival Planeta Rock traz shows gratuitos de CPM 22, Oficina G3, Supla e Rodox para Hortolândia”.</p></div>
+          <div><div class="ctx-fmt">Campinas.com.br · 08/08/2026</div><p>“‘12º Festival Planeta Rock’ em Hortolândia traz CPM 22, Supla, Rodox, Ronaldo e Os Impedidos e outras atrações”.</p></div>
+          <div><div class="ctx-fmt">Portal Hortolândia · 10/08/2026</div><p>“Planeta Rock reúne 17 mil pessoas em dois dias de shows em Hortolândia”: balanço de público.</p></div>
+        </div>
+      </div>
+      <div class="ctx-card">
+        <div class="ctx-ttl">Show de Diogo Nogueira</div>
+        <div class="ctx-cnt">4 matérias</div>
+        <div class="ctx-list">
+          <div><div class="ctx-fmt">Portal Hortolândia · 04/08/2026</div><p>“Diogo Nogueira faz show gratuito em Hortolândia na celebração do Dia dos Pais”: anúncio do show de 07 de agosto, às 19h.</p></div>
+          <div><div class="ctx-fmt">Campinas.com.br · 07/08/2026</div><p>“Diogo Nogueira se apresenta em show gratuito na ‘3ª Festa do Dia dos Pais’ em Hortolândia”: divulgação na data original.</p></div>
+          <div><div class="ctx-fmt">Portal Hortolândia · 07/08/2026</div><p>“Show de Diogo Nogueira é adiado em Hortolândia devido às chuvas”.</p></div>
+          <div><div class="ctx-fmt">Portal Hortolândia · 20/08/2026</div><p>“Show de Diogo Nogueira em Hortolândia dia 04 de setembro”: nova data confirmada, às 19h, o mesmo aviso da peça.</p></div>
+        </div>
       </div>
       <div class="ctx-card">
         <div class="ctx-ttl">Agosto Lilás</div>
-        <div class="ctx-txt">A cidade abriu o Agosto Lilás celebrando os 20 anos da Lei Maria da Penha, com rodas de conversa, palestras e uma caminhada em 30/08, o mesmo enquadramento usado na peça em vídeo da campanha.</div>
+        <div class="ctx-cnt">2 matérias</div>
+        <div class="ctx-list">
+          <div><div class="ctx-fmt">Portal Hortolândia · 03/08/2026</div><p>“Confira programação do Agosto Lilás com palestras e eventos gratuitos em Hortolândia”: palestras sobre proteção à mulher, uma delas sobre os 20 anos da Lei Maria da Penha, o mesmo enquadramento da peça.</p></div>
+          <div><div class="ctx-fmt">Portal Hortolândia · 19/08/2026</div><p>“Prefeitura fará ação ‘O CRAS é Nosso’ no Jardim Adelaide”: ação de 22 de agosto dentro da programação.</p></div>
+        </div>
       </div>
       <div class="ctx-card">
-        <div class="ctx-ttl">Asfalto · Infraestrutura</div>
-        <div class="ctx-txt">O mutirão de recapeamento do Jardim Rosolém, com 11 vias e cerca de 49 mil m² de área recuperada, foi noticiado ao longo do mês, confirmando os mesmos números usados na peça da campanha.</div>
+        <div class="ctx-ttl">Asfalto e infraestrutura</div>
+        <div class="ctx-cnt">1 matéria</div>
+        <div class="ctx-list">
+          <div><div class="ctx-fmt">Portal Hortolândia · 04/08/2026</div><p>“Obras de recape avançam no Jardim Rosolém e vão recuperar 11 ruas em Hortolândia”: fresagem para recuperar cerca de 49,1 mil metros quadrados em 11 ruas, com previsão de um mês, os mesmos números da peça.</p></div>
+        </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- MONITORAMENTO -->
+<section class="slide">
+  <div class="slide-in">
+    <div class="eyebrow">Monitoramento de redes</div>
+    <div class="sec-bar"></div>
+    <h2 class="s-h1">O que os perfis da Prefeitura registraram em agosto</h2>
+    <p class="s-sub">Cruzamento entre a entrega desta campanha e o relatório mensal de monitoramento de redes sociais de agosto de 2026, produzido pela E3 Comunicação Integrada. São duas leituras independentes do mesmo mês e os números de uma não se somam aos da outra.</p>
+    <table class="dt" style="margin-top:16px">
+      <thead><tr><th>Perfil</th><th>Seguidores</th><th>Novos no mês</th><th>Pessoas alcançadas</th><th>Visualizações</th></tr></thead>
+      <tbody>
+        <tr><td>Instagram</td><td class="n">66.726</td><td class="n">1.800</td><td class="n">720.000</td><td class="n">2.900.000</td></tr>
+        <tr><td>Facebook</td><td class="n">49.984</td><td class="n">148</td><td class="n">649.000</td><td class="n">1.600.000</td></tr>
+        <tr><td>TikTok</td><td class="n">4.905</td><td class="n">238</td><td class="n">&mdash;</td><td class="n">197.000</td></tr>
+      </tbody>
+    </table>
+    <table class="dt" style="margin-top:16px">
+      <thead><tr><th>Tema</th><th>Impressões na campanha</th><th>O que o monitoramento registrou</th></tr></thead>
+      <tbody>
+        <tr><td>Semana Cultural</td><td class="n">143.923</td><td>Publicação nº 1 do TikTok no mês, 47 mil visualizações</td></tr>
+        <tr><td>Segurança e Segurança nos bairros</td><td class="n">789.454</td><td>Sem entrada no ranking orgânico e sem cobertura de imprensa</td></tr>
+        <tr><td>Nova data do show e Planeta Rock</td><td class="n">417.388</td><td>Cultura concentra as menções negativas do mês</td></tr>
+        <tr><td>Dia dos Pais</td><td class="n">Sem linha no plano</td><td>Publicação nº 1 do Instagram e do Facebook, 160 mil e 262 mil visualizações</td></tr>
+      </tbody>
+    </table>
+    <p class="s-sub" style="margin-top:14px">Foram 691 menções classificadas no mês: 65% positivas, 22% negativas e 12% neutras, concentradas em Cultura e na autoria da pista de skate. Cultura é a frente de melhor desempenho de mídia do ciclo, o que mostra que entrega e recepção pública são medidas diferentes. Sugerimos manter as pautas de serviço na mídia paga, deixando as datas afetivas para o orgânico, que já as entrega sem investimento.</p>
   </div>
 </section>
 
@@ -728,11 +668,10 @@ body{font-family:var(--font);background:#333;color:var(--t1);-webkit-font-smooth
     <div class="eyebrow wh">Diagnóstico final</div>
     <h2 class="s-h1">O que o ciclo revelou</h2>
     <div class="dc-grid">
-      <div class="dc"><div class="dc-acc b"></div><div class="dc-n">01</div><div class="dc-m">2,71 contra 0,03</div><div class="dc-ttl">Eficiência e volume apontam para peças diferentes</div><div class="dc-txt">Medida por interação a cada mil exibições, a distância entre a peça mais eficiente do ciclo e a menos eficiente é de cerca de cem vezes, e a ordem não é a mesma do volume entregue. Uma peça pequena que mobiliza vale mais como referência do que uma grande que apenas foi exibida.</div></div>
-      <div class="dc"><div class="dc-acc t"></div><div class="dc-n">02</div><div class="dc-m">26 seguidores</div><div class="dc-ttl">A Guardiã foi a peça institucional mais completa</div><div class="dc-txt">Única peça de agosto presente nos três rankings de conteúdo, e a que mais foi salva para consulta depois. O tema de proteção à mulher, somado ao Agosto Lilás no mesmo período, encontrou público disposto a guardar a informação.</div></div>
-      <div class="dc"><div class="dc-acc p"></div><div class="dc-n">03</div><div class="dc-m">0,412 por mil</div><div class="dc-ttl">Agenda com informação completa é repassada adiante</div><div class="dc-txt">O Planeta Rock teve a menor entrega entre as peças de agenda e a maior taxa de compartilhamento depois do aviso do show. Data, local, horário e condição de entrada visíveis, com prazo curto, dão ao público tudo para marcar outra pessoa.</div></div>
-      <div class="dc"><div class="dc-acc b"></div><div class="dc-n">04</div><div class="dc-m">842 comentários</div><div class="dc-ttl">Conversa em volume alto não é o mesmo que adesão</div><div class="dc-txt">O aviso da nova data do show informou muita gente em pouco tempo, mas a conversa foi puxada pela imagem pública da atração, com críticas e ironias entre os comentários mais reagidos. Sugerimos acompanhar esse tipo de peça por alcance, e não por engajamento.</div></div>
-      <div class="dc"><div class="dc-acc p"></div><div class="dc-n">05</div><div class="dc-m">Três frentes</div><div class="dc-ttl">Recomendações</div><div class="dc-txt">Sugerimos abrir as peças de segurança pela cena, com o guarda e o condutor em quadro ao lado do cão; levar para as peças de agenda o conjunto que fez o Planeta Rock circular, informação de serviço completa no primeiro quadro e prazo visível; e prever moderação de comentários desde o primeiro dia nas peças de show com artista de perfil público marcado.</div></div>
+      <div class="dc"><div class="dc-acc t"></div><div class="dc-n">01</div><div class="dc-m">1.820 pessoas até o fim</div><div class="dc-ttl">O vídeo do Canil foi o mais assistido até o fim</div><div class="dc-txt">0,35% de quem viu o vídeo do Canil assistiu até o fim, a melhor marca do ciclo, em uma peça de 1min51. A resposta veio do público de 45 anos ou mais, 67,1% das interações. Sugerimos repetir a cena com o cão e o condutor nas próximas peças institucionais.</div></div>
+      <div class="dc"><div class="dc-acc p"></div><div class="dc-n">02</div><div class="dc-m">0,411 compartilhamento a cada mil</div><div class="dc-ttl">Agenda com informação completa é repassada adiante</div><div class="dc-txt">O Planeta Rock apareceu para menos gente que as outras peças de agenda e foi a mais compartilhada do ciclo em relação à audiência, atrás só do aviso do show. Data, local, horário e condição de entrada visíveis, com prazo curto, dão ao público tudo para marcar outra pessoa.</div></div>
+      <div class="dc"><div class="dc-acc b"></div><div class="dc-n">03</div><div class="dc-m">842 comentários na publicação</div><div class="dc-ttl">Volume de conversa e adesão são coisas diferentes</div><div class="dc-txt">O aviso da nova data do show informou muita gente em pouco tempo. A conversa veio da imagem pública da atração, com críticas e ironias entre os comentários mais reagidos. Sugerimos acompanhar esse tipo de peça pelo alcance.</div></div>
+      <div class="dc"><div class="dc-acc p"></div><div class="dc-n">04</div><div class="dc-m">Três frentes de trabalho</div><div class="dc-ttl">Recomendações</div><div class="dc-txt">Sugerimos abrir as peças de segurança pela cena, com o guarda e o condutor em quadro ao lado do cão. Sugerimos levar para as peças de agenda o conjunto que fez o Planeta Rock circular: informação de serviço completa no primeiro quadro e prazo visível. E sugerimos prever moderação de comentários desde o primeiro dia nas peças de show com artista de perfil público marcado.</div></div>
     </div>
   </div>
 </section>
@@ -744,12 +683,12 @@ body{font-family:var(--font);background:#333;color:var(--t1);-webkit-font-smooth
     <div class="eyebrow">Fontes e verificação</div>
     <h2 class="s-h1">De onde vem cada número</h2>
     <div class="src-grid">
-      <div class="src-col"><h4>Performance</h4><p>Dados de Meta Ads Manager, TikTok Ads Manager e YouTube Studio, granularidade por linha e por criativo, período de 01 a 27 de agosto de 2026.</p></div>
+      <div class="src-col"><h4>Performance</h4><p>Dados de Meta Ads Manager, TikTok Ads Manager e YouTube Studio, com detalhamento por linha e por peça, período de 01 a 27 de agosto de 2026.</p></div>
       <div class="src-col"><h4>Metas de entrega</h4><p>Metas contratadas por linha e por plataforma, conforme planejamento e orientação do cliente, comparadas lado a lado com o entregue.</p></div>
       <div class="src-col"><h4>Verba do plano</h4><p>Distribuição percentual do plano contratado entre os sete temas, conforme planejamento e orientação do cliente.</p></div>
-      <div class="src-col"><h4>Contexto local</h4><p>Notícias públicas do site oficial da Prefeitura de Hortolândia, período de agosto de 2026.</p></div>
+      <div class="src-col"><h4>Contexto local</h4><p>Onze notícias de veículos de imprensa da região, Portal Hortolândia, Todo Dia e Campinas.com.br, publicadas em agosto de 2026.</p></div>
     </div>
-    <p class="src-disc">Os números de mídia vêm dos exports das plataformas; as metas e a distribuição de verba, do planejamento e orientação do cliente; o contexto de cidade, de notícias públicas. O alcance do Meta Ads é o dado deduplicado da conta no período, apurado no Meta Insights. A análise de criativos é qualitativa, baseada na observação direta das peças veiculadas.</p>
+    <p class="src-disc">Os números de mídia vêm dos relatórios das plataformas; as metas e a distribuição de verba, do planejamento e orientação do cliente; o contexto de cidade, de notícias de imprensa com fonte linkada. O alcance do Meta Ads é o número de pessoas diferentes atingidas no período, apurado no Meta Insights. A análise de peças é qualitativa, baseada na observação direta dos criativos veiculados.</p>
   </div>
 </section>
 
