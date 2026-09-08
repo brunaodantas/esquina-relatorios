@@ -384,6 +384,10 @@
     .xtbl tr.tot td{background:rgba(26,60,255,.04);font-weight:700;color:var(--t1)}
     .dt tr.tot td{background:rgba(26,60,255,.05);font-weight:800;color:var(--t1);border-top:2px solid var(--border);border-bottom:none}
     .split{display:grid;grid-template-columns:1.1fr 1fr;gap:22px;align-items:start;margin-top:26px}
+    .plat-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:stretch;margin-top:26px}
+    .plat-grid .chart-box{display:flex;flex-direction:column}
+    .plat-grid .tbl-note{margin-top:auto;padding-top:14px}
+    @media(max-width:768px){.plat-grid{grid-template-columns:1fr}}
     @media(max-width:900px){.split{grid-template-columns:1fr}}
     .plat-bar{display:flex;height:16px;border-radius:100px;overflow:hidden;margin-bottom:12px}
     .rec-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:22px 24px;box-shadow:var(--sh);break-inside:avoid}
@@ -667,7 +671,7 @@
   <p class="sub fade-in">O que a campanha levou ao ar no ciclo, e o volume que cada pauta recebeu no Meta.</p>
   <div class="chart-box fade-in" style="margin-top:26px">
     <table class="dt">
-      <thead><tr><th>Pauta</th><th>Formato</th><th>Exibi&ccedil;&otilde;es no Meta</th></tr></thead>
+      <thead><tr><th>Pe&ccedil;a</th><th>Formato</th><th>Exibi&ccedil;&otilde;es no Meta</th></tr></thead>
       <tbody>
         <tr><td>Multivacina&ccedil;&atilde;o nas escolas</td><td>Cartela</td><td>1.118.137</td></tr>
         <tr><td>Campinas Innovation Week</td><td>Cartela e v&iacute;deo</td><td>580.086</td></tr>
@@ -685,7 +689,7 @@
   <span class="eyebrow eyebrow-t">Por Plataforma</span>
   <h2 class="h1 fade-in">Entrega Plataforma a Plataforma</h2>
   <p class="sub fade-in">O que cada plataforma registrou no ciclo, pela métrica que cabe a ela.</p>
-  <div class="split fade-in" style="margin-top:26px">
+  <div class="plat-grid fade-in">
     <div class="chart-box">
       <div class="dt-title">Meta Ads</div>
       <table class="xtbl">
@@ -712,8 +716,6 @@
       </table>
       <p class="tbl-note">A Rede de Display leva a mensagem a sites e aplicativos parceiros do Google, fora das redes sociais.</p>
     </div>
-  </div>
-  <div class="split fade-in" style="margin-top:22px">
     <div class="chart-box">
       <div class="dt-title">YouTube</div>
       <table class="xtbl">
@@ -783,10 +785,11 @@
     <div>O n&uacute;mero &eacute; <strong>do perfil, n&atilde;o da campanha</strong>: soma quem chegou pela m&iacute;dia paga e quem chegou pelo conte&uacute;do org&acirc;nico, no ciclo em que a s&eacute;rie sobre os bairros e a multivacina&ccedil;&atilde;o estiveram no ar.</div>
   </div>
   <div class="chart-box fade-in" style="margin-top:26px">
-    <div class="dt-title">Quanta exibi&ccedil;&atilde;o cada novo seguidor custou, pauta a pauta</div>
+    <div class="dt-title">Quantas exibi&ccedil;&otilde;es at&eacute; ganhar um seguidor</div>
     <table class="xtbl">
-      <thead><tr><th>Pauta</th><th>Exibi&ccedil;&otilde;es no ciclo</th><th>Exibi&ccedil;&otilde;es por novo seguidor</th></tr></thead>
+      <thead><tr><th>Pe&ccedil;a</th><th>Exibi&ccedil;&otilde;es no ciclo</th><th>Exibi&ccedil;&otilde;es por novo seguidor</th></tr></thead>
       <tbody>
+        <tr><td>Segue a Gente</td><td>410.448</td><td>410</td></tr>
         <tr><td>Dengue</td><td>84.087</td><td>12.012</td></tr>
         <tr><td>Campinas s&atilde;o muitas</td><td>273.070</td><td>24.825</td></tr>
         <tr><td>Obras do BRT</td><td>195.871</td><td>27.982</td></tr>
@@ -794,9 +797,9 @@
         <tr><td>Campinas Innovation Week</td><td>583.506</td><td>53.046</td></tr>
       </tbody>
     </table>
-    <p class="tbl-note">Entram apenas as pautas com no m&iacute;nimo 20.000 exibi&ccedil;&otilde;es e no m&iacute;nimo 5 novos seguidores no per&iacute;odo, a mesma r&eacute;gua usada nos demais quadros. S&atilde;o os seguidores atribu&iacute;dos &agrave; m&iacute;dia paga, medidos pe&ccedil;a a pe&ccedil;a, e por isso n&atilde;o somam o total acima.</p>
+    <p class="tbl-note">Entram apenas as pe&ccedil;as com no m&iacute;nimo 20.000 exibi&ccedil;&otilde;es e no m&iacute;nimo 5 novos seguidores no per&iacute;odo, a mesma r&eacute;gua usada nos demais quadros. S&atilde;o os seguidores atribu&iacute;dos &agrave; m&iacute;dia paga, medidos pe&ccedil;a a pe&ccedil;a, e por isso n&atilde;o somam o total acima, que inclui o org&acirc;nico.</p>
   </div>
-  <p class="lead fade-in">Pauta de servi&ccedil;o aproxima mais do que pauta de agenda: dengue precisou de 12 mil exibi&ccedil;&otilde;es para trazer um seguidor, contra 53 mil do evento. Seguidor n&atilde;o &eacute; meta contratada aqui, entra como leitura de v&iacute;nculo.</p>
+  <p class="lead fade-in">A pe&ccedil;a feita para pedir seguida precisou de 410 exibi&ccedil;&otilde;es por seguidor, cerca de trinta vezes menos que a melhor pe&ccedil;a de conte&uacute;do. Entre as pautas, servi&ccedil;o pr&oacute;ximo aproxima mais do que agenda: dengue trouxe um seguidor a cada 12 mil exibi&ccedil;&otilde;es, contra 53 mil do evento. Seguidor n&atilde;o &eacute; meta contratada aqui, entra como leitura de v&iacute;nculo.</p>
 </section>
 
 <section class="sec" id="imprensa">
@@ -812,8 +815,8 @@
   <p class="tbl-note fade-in" style="margin-top:14px">Fontes consultadas: <a href="https://www.acidadeon.com/campinas/cotidiano/multivacinacao-em-60-escolas-comeca-nesta-terca-veja-como-funciona/" target="_blank" rel="noopener">ACidade ON Campinas, multivacina&ccedil;&atilde;o em 60 escolas</a>; <a href="https://correio.rac.com.br/saude/dia-d-da-multivacinac-o-acontece-no-proximo-sabado-1.1843909" target="_blank" rel="noopener">Correio Popular, Dia D da multivacina&ccedil;&atilde;o</a>; <a href="https://www.correiodamanha.com.br/nacional/sao-paulo/campinas/2026/08/311823-campinas-innovation-week-2026-e-divulgado-na-unicamp.html" target="_blank" rel="noopener">Correio da Manh&atilde;, Innovation Week divulgado na Unicamp</a>; <a href="https://acicampinas.com.br/campinas-innovation-week-2026-abre-inscricoes-para-edicao-que-acontece-em-setembro/" target="_blank" rel="noopener">ACIC Campinas, inscri&ccedil;&otilde;es abertas</a>; <a href="https://www.acidadeon.com/campinas/bairros/vila-industrial-saiba-o-que-ha-alem-do-tunel-de-pedestres-de-campinas/" target="_blank" rel="noopener">ACidade ON Campinas, Vila Industrial</a>. Publica&ccedil;&otilde;es do canal oficial da Prefeitura ficaram fora deste recorte.</p>
 </section>
 
-<div class="meta-wrap" id="diagnostico">
-  <div class="meta-in">
+<div class="diag" id="diagnostico">
+  <div class="diag-in">
     <span class="eyebrow eyebrow-wh">Diagn&oacute;stico</span>
     <h2 class="h1 fade-in" style="color:#fff">O que o Ciclo Revelou</h2>
     <p class="sub fade-in" style="color:rgba(255,255,255,.62)">Cinco leituras que o ciclo deixou, cada uma sustentada por comparação entre as peças.</p>
@@ -871,6 +874,7 @@
     <span class="footer-chip">TikTok</span>
   </div>
 </footer>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
 <script>
 document.documentElement.classList.add('js');
 const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');obs.unobserve(x.target);}}),{threshold:.12});

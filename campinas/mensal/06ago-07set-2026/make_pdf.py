@@ -25,7 +25,7 @@ async def main():
                           "document.querySelectorAll('.fade-in').forEach(e=>e.classList.add('visible'))")
         await pg.wait_for_timeout(1200)
         bounds = await pg.evaluate(
-            "[...document.querySelectorAll('section,.meta-wrap,footer')]"
+            "[...document.querySelectorAll('section,.meta-wrap,.diag,footer')]"
             ".map(e=>Math.round(e.getBoundingClientRect().bottom+scrollY))")
         await pg.screenshot(path=str(BASE / "_full.png"), full_page=True)
         await b.close()
