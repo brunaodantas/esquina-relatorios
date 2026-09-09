@@ -9,7 +9,7 @@
   <style>
     /* ══ TOKENS ══ */
     :root{
-      --p:#1A3CFF;--navy:#0A0A5C;--teal:#17A697;--purple:#7B2FBE;--tiktok:#111;
+      --p:#1A3CFF;--navy:#0A0A5C;--teal:#17A697;--purple:#7B2FBE;--orange:#C44A00;--tiktok:#111;
       --bg:#F4F6FF;--surface:#fff;--border:rgba(0,0,0,.08);
       --t1:#111;--t2:#555;--tm:#888;
       --font:'Inter',-apple-system,sans-serif;
@@ -358,6 +358,46 @@
       .dsec{display:block;break-inside:avoid}
       @page{size:A4;margin:12mm}
     }
+  
+    /* Criativo showcase, copiado do modelo mensal da PMJ */
+    .perf-grid.g1{grid-template-columns:1fr}
+    .perf-grid.g2{grid-template-columns:repeat(2,1fr)}
+    .perf-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);box-shadow:var(--sh);break-inside:avoid;padding:20px 22px}
+    .perf-split{display:grid;grid-template-columns:264px 1fr;gap:22px;align-items:start;margin-top:16px}
+    .perf-media{border-radius:14px;overflow:hidden;background:#111;box-shadow:0 10px 30px rgba(10,10,92,.14);aspect-ratio:9/16}
+    .perf-media img{width:100%;height:100%;object-fit:cover;object-position:center center;display:block}
+    .perf-body{display:flex;flex-direction:column;flex:1}
+    .perf-top{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:10px;flex-wrap:wrap}
+    .perf-topleft{display:inline-flex;align-items:center}
+    .perf-pos{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:var(--p);color:#fff;font-size:.82rem;font-weight:800;flex-shrink:0;margin-right:8px}
+    .perf-rank{font-size:.58rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:3px 9px;border-radius:100px;white-space:nowrap}
+    .perf-rank.g{background:rgba(23,166,151,.12);color:var(--teal)}
+    .perf-rank.s{background:rgba(26,60,255,.08);color:var(--p)}
+    .perf-rank.b{background:rgba(123,47,190,.10);color:var(--purple)}
+    .perf-fmt{font-size:.58rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--tm);text-align:right}
+    .perf-title{font-size:.95rem;font-weight:700;color:var(--t1);padding-bottom:12px;border-bottom:1px solid var(--border);margin-bottom:12px;line-height:1.25}
+    .perf-metrics{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+    .perf-metric{background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:12px 13px}
+    .perf-metric .v{font-size:1.22rem;font-weight:800;color:var(--t1);letter-spacing:-.02em;line-height:1.1}
+    .perf-metric .l{font-size:.63rem;font-weight:600;color:var(--tm);margin-top:5px;line-height:1.3}
+    .perf-ins{background:var(--bg);border:1px solid var(--border);border-left:4px solid var(--teal);border-radius:12px;padding:11px 16px;margin-top:10px}
+    .perf-ins .l{font-size:.66rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);margin-bottom:5px}
+    .perf-ins .x{font-size:.83rem;color:var(--t2);line-height:1.6}
+    .perf-ins.at{border-left-color:var(--orange)}
+    .perf-ins.at .l{color:#B4690E}
+    .perf-ins.rp{border-left-color:var(--purple)}
+    .perf-ins.rp .l{color:var(--purple)}
+    .perf-ins.ap{border-left-color:var(--p)}
+    .perf-ins.ap .l{color:var(--p)}
+    .perf-note{font-size:.8rem;color:var(--t2);line-height:1.6;margin-top:12px;padding-top:12px;border-top:1px solid var(--border)}
+    .perf-note p{margin:0 0 14px}
+    .perf-note p:last-child{margin-bottom:0}
+    .perf-link{display:inline-flex;align-items:center;gap:5px;font-size:.7rem;font-weight:700;color:var(--p);text-decoration:none;border:1px solid rgba(26,60,255,.22);border-radius:100px;padding:4px 12px;transition:all .2s;white-space:nowrap}
+    .perf-link:hover{background:rgba(26,60,255,.06)}
+    .perf-card.wide{flex-direction:column}
+    .perf-grid.g2{grid-template-columns:1fr}
+    @media(max-width:900px){.perf-split{grid-template-columns:1fr}.perf-media{aspect-ratio:16/9}}
+    @media(max-width:600px){.perf-metrics{grid-template-columns:repeat(2,1fr)}}
   </style>
 </head><body>
 
@@ -593,104 +633,85 @@
       <p class="dtext" style="margin-top:0">A ordem compara a resposta de cada peça com o tamanho da audiência que ela teve. Somamos comentários, compartilhamentos e salvamentos, e olhamos quantas pessoas viram a peça. Assim uma peça que apareceu para pouca gente e mobilizou muito fica à frente de outra que só foi mais exibida. A análise a seguir detalha as três primeiras.</p>
       <p class="dtext">As impressões de cada peça somam toda a veiculação do criativo no período: uma peça que apareceu na frente principal de Segurança e também no reforço nos bairros entra aqui como uma peça só.</p>
 
-      <div class="creatives">
+      <div class="perf-grid g1 fade-in">
 
-        <div class="cr">
-          <div class="cr-split">
-          <div class="cr-thumb"><img src="assets/criativo-diogo-nogueira.jpg" alt="Peça Nova Data Show Diogo Nogueira"/></div>
-          <div class="cr-main">
-          <div class="cr-h">
-            <div class="cr-rank">
-              <span class="rk-pos top">1º</span>
-              <div class="cr-title-row">
-                <span class="cr-t">Nova Data Show Diogo Nogueira</span>
-                <a class="cr-link-inline" href="https://www.facebook.com/permalink.php?story_fbid=1488210866675417&amp;id=360632640709196" target="_blank" rel="noopener">Ver a publicação no Facebook ↗</a>
-              </div>
+      <div class="perf-card">
+        <div class="perf-top">
+          <span class="perf-topleft"><span class="perf-pos">1</span><span class="perf-rank b">1º em resposta por mil que viram</span></span>
+          <span class="perf-fmt">Peça que mais gerou resposta no ciclo</span>
+        </div>
+        <div class="perf-title" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">Nova Data Show Diogo Nogueira <a class="perf-link" href="https://www.facebook.com/permalink.php?story_fbid=1488210866675417&amp;id=360632640709196" target="_blank" rel="noopener">Ver a publicação no Facebook ↗</a></div>
+        <div class="perf-split">
+          <div class="perf-media"><img src="assets/criativo-diogo-nogueira.jpg" alt="Peça Nova Data Show Diogo Nogueira"/></div>
+          <div class="perf-body">
+            <div class="perf-metrics">
+              <div class="perf-metric"><div class="v">503.635</div><div class="l">Impressões</div></div>
+              <div class="perf-metric"><div class="v">842</div><div class="l">Comentários</div></div>
+              <div class="perf-metric"><div class="v">409</div><div class="l">Compartilhamentos</div></div>
+              <div class="perf-metric"><div class="v">80</div><div class="l">Salvamentos</div></div>
+              <div class="perf-metric"><div class="v">2,64</div><div class="l">Interações a cada mil que viram</div></div>
             </div>
-            <span class="bd o">Peça que mais gerou resposta no ciclo</span>
-          </div>
-          <div class="ms">
-            <div><b>503.635</b><span>Impressões</span></div>
-            <div><b>842</b><span>Comentários</span></div>
-            <div><b>409</b><span>Compartilhamentos</span></div>
-            <div><b>80</b><span>Salvamentos</span></div>
-            <div><b>2,64</b><span>Interações a cada mil que viram</span></div>
-          </div>
-          <div class="cr-b cr-body">
-            <div class="tp"><b>O que funcionou</b><p>O show da 3ª Festa do Dia dos Pais estava marcado para 07 de agosto e foi adiado por causa das chuvas. A peça circulou de 13 a 27 de agosto para comunicar a nova data, 04 de setembro, e cumpriu exatamente esse papel: chegou rápido e longe, com mais de 500 mil exibições, e foi a que mais gerou resposta no ciclo, com 1,67 comentário e 0,81 compartilhamento a cada mil pessoas que viram, muito acima das outras peças de agosto.</p></div>
-            <div class="tp"><b>Ponto de atenção</b><p>Parte da conversa tratou da imagem pública do artista, assunto que está fora da peça. Lendo os comentários da publicação, entre os mais reagidos aparecem críticas e ironias, com menções ao uso de recurso público e de teor eleitoral.</p></div>
-            <div class="tp"><b>Resposta do público</b><p>O volume de comentários acompanha a natureza do aviso: uma comunicação de utilidade pública sobre a remarcação de um evento gratuito, com público já mobilizado pela data anterior. Mulheres responderam por 64,1% das interações. Quem interagiu foi o público de mais idade: 45 anos ou mais somou 63,2% das interações, com 28,2% na faixa de 65 anos ou mais. Sugerimos prever moderação de comentários desde o primeiro dia nas peças de show com artista de perfil público marcado.</p></div>
-            <div class="tp"><b>Audiência e posicionamento</b><p>As exibições se espalharam entre o Feed do Facebook (21,1%), o Stories do Facebook (20,2%), o Reels do Instagram (16,2%), o Feed do Instagram (14,4%) e o Stories do Instagram (11,6%). Somados, os espaços de tela cheia vertical levaram 64,4%. A peça é uma imagem estática pensada para o Feed. Sugerimos produzir também a versão vertical 9:16 do aviso, com a data em destaque no primeiro quadro.</p></div>
-          </div>
-          </div>
+            <div class="perf-ins "><div class="l">O que funcionou</div><div class="x">O show da 3ª Festa do Dia dos Pais estava marcado para 07 de agosto e foi adiado por causa das chuvas. A peça circulou de 13 a 27 de agosto para comunicar a nova data, 04 de setembro, e cumpriu exatamente esse papel: chegou rápido e longe, com mais de 500 mil exibições, e foi a que mais gerou resposta no ciclo, com 1,67 comentário e 0,81 compartilhamento a cada mil pessoas que viram, muito acima das outras peças de agosto.</div></div>
+            <div class="perf-ins at"><div class="l">Ponto de atenção</div><div class="x">Parte da conversa tratou da imagem pública do artista, assunto que está fora da peça. Lendo os comentários da publicação, entre os mais reagidos aparecem críticas e ironias, com menções ao uso de recurso público e de teor eleitoral.<br><b>Sugerimos:</b> prever moderação de comentários desde o primeiro dia nas peças de show com artista de perfil público, evitando que a conversa sobre o artista tome o lugar do aviso da nova data.</div></div>
+            <div class="perf-ins rp"><div class="l">Resposta do público</div><div class="x">O volume de comentários acompanha a natureza do aviso: uma comunicação de utilidade pública sobre a remarcação de um evento gratuito, com público já mobilizado pela data anterior. Mulheres responderam por 64,1% das interações. Quem interagiu foi o público de mais idade: 45 anos ou mais somou 63,2% das interações, com 28,2% na faixa de 65 anos ou mais.</div></div>
+            <div class="perf-ins ap"><div class="l">Audiência e posicionamento</div><div class="x">As exibições se espalharam entre o Feed do Facebook (21,1%), o Stories do Facebook (20,2%), o Reels do Instagram (16,2%), o Feed do Instagram (14,4%) e o Stories do Instagram (11,6%). Somados, os espaços de tela cheia vertical levaram 64,4%. A peça é uma imagem estática pensada para o Feed. Sugerimos produzir também a versão vertical 9:16 do aviso, com a data em destaque no primeiro quadro.</div></div>
           </div>
         </div>
+      </div>
 
-        <div class="cr">
-          <div class="cr-split">
-          <div class="cr-thumb"><img src="assets/criativo-planeta-rock.jpg" alt="Peça Planeta Rock"/></div>
-          <div class="cr-main">
-          <div class="cr-h">
-            <div class="cr-rank">
-              <span class="rk-pos top">2º</span>
-              <div class="cr-title-row">
-                <span class="cr-t">Planeta Rock</span>
-                <a class="cr-link-inline" href="https://www.facebook.com/permalink.php?story_fbid=1478127677683736&amp;id=360632640709196" target="_blank" rel="noopener">Ver a publicação no Facebook ↗</a>
-              </div>
+      <div class="perf-card">
+        <div class="perf-top">
+          <span class="perf-topleft"><span class="perf-pos">2</span><span class="perf-rank s">2º em resposta por mil que viram</span></span>
+          <span class="perf-fmt">Peça mais compartilhada em relação à audiência</span>
+        </div>
+        <div class="perf-title" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">Planeta Rock <a class="perf-link" href="https://www.facebook.com/permalink.php?story_fbid=1478127677683736&amp;id=360632640709196" target="_blank" rel="noopener">Ver a publicação no Facebook ↗</a></div>
+        <div class="perf-split">
+          <div class="perf-media"><img src="assets/criativo-planeta-rock.jpg" alt="Peça Planeta Rock"/></div>
+          <div class="perf-body">
+            <div class="perf-metrics">
+              <div class="perf-metric"><div class="v">165.592</div><div class="l">Impressões</div></div>
+              <div class="perf-metric"><div class="v">1</div><div class="l">Comentário</div></div>
+              <div class="perf-metric"><div class="v">68</div><div class="l">Compartilhamentos</div></div>
+              <div class="perf-metric"><div class="v">3</div><div class="l">Salvamentos</div></div>
+              <div class="perf-metric"><div class="v">0,43</div><div class="l">Interações a cada mil que viram</div></div>
             </div>
-            <span class="bd w">Peça mais compartilhada em relação à audiência</span>
-          </div>
-          <div class="ms">
-            <div><b>165.592</b><span>Impressões</span></div>
-            <div><b>1</b><span>Comentário</span></div>
-            <div><b>68</b><span>Compartilhamentos</span></div>
-            <div><b>3</b><span>Salvamentos</span></div>
-            <div><b>0,43</b><span>Interações a cada mil que viram</span></div>
-          </div>
-          <div class="cr-b cr-body">
-            <div class="tp"><b>O que funcionou</b><p>Apareceu para menos gente que as outras peças de agenda e ainda assim foi a segunda que mais gerou resposta no ciclo, puxada pelo compartilhamento: 0,41 a cada mil pessoas que viram. A contagem regressiva traz data, local e a entrada gratuita mediante doação de alimento, tudo o que alguém precisa para marcar outra pessoa no post.</p></div>
-            <div class="tp"><b>Ponto de atenção</b><p>A peça teve 1 comentário e 3 salvamentos no período. Vale testar um convite para seguir o perfil dentro da própria peça, que é onde a agenda seguinte aparece.</p></div>
-            <div class="tp"><b>Resposta do público</b><p>É a peça que apareceu para o público mais jovem do ciclo: a faixa de 18 a 24 anos concentrou 60,1% das exibições. Entre quem interagiu, a faixa de 18 a 24 anos responde por 21,7%, e homens por 66,7%.</p></div>
-            <div class="tp"><b>Audiência e posicionamento</b><p>O Reels do Instagram levou 62,2% das exibições, o Stories do Instagram 19,1% e o Feed do Instagram 18,1%. O Facebook ficou em 0,6%. O Reels sozinho levou quase dois terços das exibições. Sugerimos uma versão vertical 9:16 da peça, entre 15 e 45 segundos, com recorte do line-up.</p></div>
-          </div>
-          </div>
+            <div class="perf-ins "><div class="l">O que funcionou</div><div class="x">Apareceu para menos gente que as outras peças de agenda e ainda assim foi a segunda que mais gerou resposta no ciclo, puxada pelo compartilhamento: 0,41 a cada mil pessoas que viram. A contagem regressiva traz data, local e a entrada gratuita mediante doação de alimento, tudo o que alguém precisa para marcar outra pessoa no post.</div></div>
+            <div class="perf-ins at"><div class="l">Ponto de atenção</div><div class="x">A peça teve 1 comentário e 3 salvamentos no período, sinal de que ela circula entre amigos sem trazer o morador para o perfil.<br><b>Sugerimos:</b> incluir o convite para seguir o perfil dentro da própria peça, evitando que o compartilhamento termine sem virar audiência para a agenda seguinte.</div></div>
+            <div class="perf-ins rp"><div class="l">Resposta do público</div><div class="x">É a peça que apareceu para o público mais jovem do ciclo: a faixa de 18 a 24 anos concentrou 60,1% das exibições. Entre quem interagiu, a faixa de 18 a 24 anos responde por 21,7%, e homens por 66,7%.</div></div>
+            <div class="perf-ins ap"><div class="l">Audiência e posicionamento</div><div class="x">O Reels do Instagram levou 62,2% das exibições, o Stories do Instagram 19,1% e o Feed do Instagram 18,1%. O Facebook ficou em 0,6%. O Reels sozinho levou quase dois terços das exibições. Sugerimos uma versão vertical 9:16 da peça, entre 15 e 45 segundos, com recorte do line-up.</div></div>
           </div>
         </div>
-        <div class="cr">
-          <div class="cr-split">
-          <div class="cr-thumb"><img src="assets/criativo-guardia-maria-da-penha.jpg" alt="Peça Segurança, Guardiã Maria da Penha"/></div>
-          <div class="cr-main">
-          <div class="cr-h">
-            <div class="cr-rank">
-              <span class="rk-pos">3º</span>
-              <div class="cr-title-row">
-                <span class="cr-t">Segurança · Guardiã Maria da Penha</span>
-              </div>
+      </div>
+
+      <div class="perf-card">
+        <div class="perf-top">
+          <span class="perf-topleft"><span class="perf-pos">3</span><span class="perf-rank g">3º em resposta por mil que viram</span></span>
+          <span class="perf-fmt">Vídeo institucional de proteção à mulher</span>
+        </div>
+        <div class="perf-title" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">Segurança · Guardiã Maria da Penha</div>
+        <div class="perf-split">
+          <div class="perf-media"><img src="assets/criativo-guardia-maria-da-penha.jpg" alt="Peça Segurança, Guardiã Maria da Penha"/></div>
+          <div class="perf-body">
+            <div class="perf-metrics">
+              <div class="perf-metric"><div class="v">278.873</div><div class="l">Impressões</div></div>
+              <div class="perf-metric"><div class="v">22</div><div class="l">Comentários</div></div>
+              <div class="perf-metric"><div class="v">22</div><div class="l">Compartilhamentos</div></div>
+              <div class="perf-metric"><div class="v">11</div><div class="l">Salvamentos</div></div>
+              <div class="perf-metric"><div class="v">0,20</div><div class="l">Interações a cada mil que viram</div></div>
             </div>
-            <span class="bd w">Vídeo institucional de proteção à mulher</span>
-          </div>
-          <div class="ms">
-            <div><b>278.873</b><span>Impressões</span></div>
-            <div><b>22</b><span>Comentários</span></div>
-            <div><b>22</b><span>Compartilhamentos</span></div>
-            <div><b>11</b><span>Salvamentos</span></div>
-            <div><b>0,20</b><span>Interações a cada mil que viram</span></div>
-          </div>
-          <div class="cr-b cr-body">
-            <div class="tp"><b>O que funcionou</b><p>É um vídeo institucional sobre o trabalho da Guarda Municipal na proteção à mulher, rodando ao lado do Agosto Lilás no calendário do plano. Terceira peça em resposta proporcional do ciclo, com 22 comentários, 22 compartilhamentos e 11 salvamentos.</p></div>
-            <div class="tp"><b>Ponto de atenção</b><p>O vídeo tem 1min53, mais longo que o recomendado para reter atenção do início ao fim. Vale testar um corte de 15 a 45 segundos que vá direto ao trabalho da Guardiã, sem a introdução institucional.</p></div>
-            <div class="tp"><b>Resposta do público</b><p>A entrega foi levemente masculina, 51,6%. Entre quem interagiu, a base é pequena e a faixa de 25 a 34 anos lidera com 29,1%, com 25 a 44 anos concentrando 56,4% das respostas.</p></div>
-            <div class="tp"><b>Audiência e posicionamento</b><p>O Stories do Instagram levou 42,1% das exibições, o Reels do Instagram 31,3% e o Feed do Instagram 21,5%. O Instagram concentrou quase toda a entrega desta peça. Sugerimos produzir a próxima peça desta frente já pensando em vertical nativo para Stories e Reels, formato que já domina a entrega.</p></div>
-          </div>
-          </div>
+            <div class="perf-ins "><div class="l">O que funcionou</div><div class="x">É um vídeo institucional sobre o trabalho da Guarda Municipal na proteção à mulher, rodando ao lado do Agosto Lilás no calendário do plano. Terceira peça em resposta proporcional do ciclo, com 22 comentários, 22 compartilhamentos e 11 salvamentos.</div></div>
+            <div class="perf-ins at"><div class="l">Ponto de atenção</div><div class="x">O vídeo tem 1min53 e a apresentação institucional vem antes do trabalho da Guardiã, que é a parte que interessa a quem precisa do serviço.<br><b>Sugerimos:</b> abrir pela cena do atendimento e pelo telefone de contato, evitando gastar os primeiros segundos com a apresentação antes de chegar ao serviço.</div></div>
+            <div class="perf-ins rp"><div class="l">Resposta do público</div><div class="x">A entrega foi levemente masculina, 51,6%. Entre quem interagiu, a base é pequena e a faixa de 25 a 34 anos lidera com 29,1%, com 25 a 44 anos concentrando 56,4% das respostas.</div></div>
+            <div class="perf-ins ap"><div class="l">Audiência e posicionamento</div><div class="x">O Stories do Instagram levou 42,1% das exibições, o Reels do Instagram 31,3% e o Feed do Instagram 21,5%. O Instagram concentrou quase toda a entrega desta peça. Sugerimos produzir a próxima peça desta frente já pensando em vertical nativo para Stories e Reels, formato que já domina a entrega.</div></div>
           </div>
         </div>
+      </div>
 
       </div>
     </div>
   </div>
 
-  <!-- RANKINGS DE CONTEÚDO -->
+<!-- RANKINGS DE CONTEÚDO -->
   <div class="dsec">
     <div class="dsec-head">
       <div class="dsec-top">
