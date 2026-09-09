@@ -398,6 +398,28 @@
     .perf-grid.g2{grid-template-columns:1fr}
     @media(max-width:900px){.perf-split{grid-template-columns:1fr}.perf-media{aspect-ratio:16/9}}
     @media(max-width:600px){.perf-metrics{grid-template-columns:repeat(2,1fr)}}
+  
+    /* Percepção Pública, componente copiado do relatório de julho da Americana */
+    .pp{background:#fff;border-top:1px solid rgba(10,10,92,.06);border-bottom:1px solid rgba(10,10,92,.06);padding:56px 0}
+    .pp .wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+    .pp .eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);margin-bottom:12px;display:flex;align-items:center;gap:10px}
+    .pp .eyebrow::before{content:"";width:26px;height:2px;background:var(--teal);display:inline-block}
+    .pp h2{font-size:clamp(1.6rem,3.4vw,2.2rem);font-weight:800;letter-spacing:-.02em;color:var(--t1);line-height:1.15;margin:0}
+    .pp .sub{font-size:1.02rem;color:var(--tm);margin-top:14px;max-width:820px}
+    .pp .card{background:#fff;border:1px solid rgba(10,10,92,.07);border-radius:16px;padding:24px;box-shadow:0 8px 24px rgba(10,10,92,.05)}
+    .pp .grid{display:grid;gap:18px}
+    .pp .g2{grid-template-columns:repeat(2,1fr)}
+    .pp .g3{grid-template-columns:repeat(3,1fr)}
+    .pp .tag{display:inline-block;font-size:.62rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:20px}
+    .pp .t-blue{background:rgba(26,60,255,.1);color:var(--p)}
+    .pp .t-teal{background:rgba(23,166,151,.12);color:var(--teal)}
+    .pp .t-purple{background:rgba(123,47,190,.12);color:var(--purple)}
+    .pp .t-orange{background:rgba(196,74,0,.1);color:var(--orange)}
+    .pp .ins{margin-top:20px;background:#fff;border:1px solid rgba(10,10,92,.07);border-left:4px solid var(--teal);border-radius:12px;padding:18px 22px}
+    .pp .ins .l{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);margin-bottom:6px}
+    .pp .ins .x{font-size:.92rem;color:#3a3a4a}
+    .pp .chart-box{position:relative;height:340px}
+    @media(max-width:900px){.pp .g2,.pp .g3{grid-template-columns:1fr}}
   </style>
 </head><body>
 
@@ -961,66 +983,39 @@
   </div>
 </div>
 
-<!-- MONITORAMENTO DE REDES -->
-<div class="ch-body" id="monitoramento" style="padding-top:0">
-  <div class="dsec">
-    <div class="dsec-head">
-      <div class="dsec-top">
-        <div class="sec-bar"></div>
-        <h2>Monitoramento de redes em agosto</h2>
-        <p class="dsum">O que os perfis da Prefeitura registraram no mês, e <b>onde isso se encontra com a campanha</b></p>
+<!-- PERCEPÇÃO PÚBLICA -->
+<section class="pp" id="monitoramento">
+  <div class="wrap">
+    <div class="eyebrow">Percepção Pública</div>
+    <h2>O que as redes sociais mostraram em agosto</h2>
+    <p class="sub">Relatório de Redes Sociais de agosto/2026 (E3 Comunicação Integrada), cerca de 691 menções e comentários classificados nas redes oficiais da Prefeitura.</p>
+    <div class="grid g2" style="margin-top:26px;align-items:start">
+      <div class="card"><div style="font-weight:700;color:var(--t1)">Sentimento monitorado</div><div style="font-size:.82rem;color:var(--tm);margin-bottom:10px">Julho: 16% negativas · Agosto: 22% negativas</div><div class="chart-box"><canvas id="chartSentimentoAgoHorto"></canvas></div></div>
+      <div class="grid" style="gap:16px">
+        <div class="card"><div style="font-weight:700;color:var(--t1);margin-bottom:12px">Distribuição de agosto</div>
+          <div style="display:flex;height:18px;border-radius:100px;overflow:hidden;margin-bottom:12px"><div style="width:65%;background:#1DB954"></div><div style="width:22%;background:#CC3333"></div><div style="width:12%;background:#CC8800"></div></div>
+          <div style="display:flex;justify-content:space-between;font-size:.85rem"><span><strong style="color:#1DB954">65%</strong> positivas</span><span><strong style="color:#CC3333">22%</strong> negativas</span><span><strong style="color:#CC8800">12%</strong> neutras</span></div>
+          <div style="font-size:.82rem;color:var(--tm);margin-top:10px">Negativas concentradas em Cultura e no tema Como é agora. Base orgânica (posts, stories e comentários), sem relação direta com a mídia paga.</div>
+        </div>
+        <div class="card"><span class="tag t-blue">Post que mais engajou</span><div style="font-weight:700;color:var(--t1);margin:10px 0 6px;font-size:1.05rem">Dia dos Pais, show do Diogo Nogueira</div><div style="font-size:.9rem;color:#444">160 mil visualizações no Instagram e 262 mil no Facebook, o conteúdo de maior repercussão orgânica do mês nas duas redes. No TikTok, a Semana Cultural lidera com 47 mil.</div></div>
       </div>
     </div>
-    <div class="dbody">
-      <p class="dtext" style="margin-top:0">Cruzamento entre a entrega desta campanha e o relatório mensal de monitoramento de redes sociais de agosto de 2026, produzido pela E3 Comunicação Integrada. São duas leituras independentes do mesmo mês: uma mede a mídia contratada, a outra mede o comportamento orgânico dos perfis institucionais e o sentimento dos comentários. Os números de uma não se somam aos da outra.</p>
-
-      <div class="chart-box" style="margin-top:20px">
-        <div class="dt-title">O mês nos perfis da Prefeitura</div>
-        <table class="dt">
-          <thead><tr><th>Perfil</th><th>Seguidores</th><th>Novos no mês</th><th>Pessoas alcançadas</th><th>Visualizações</th></tr></thead>
-          <tbody>
-            <tr><td>Instagram</td><td class="n">66.726</td><td class="n">1.800</td><td class="n">720.000</td><td class="n">2.900.000</td></tr>
-            <tr><td>Facebook</td><td class="n">49.984</td><td class="n">148</td><td class="n">649.000</td><td class="n">1.600.000</td></tr>
-            <tr><td>TikTok</td><td class="n">4.905</td><td class="n">238</td><td class="n"></td><td class="n">197.000</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <p class="dtext">A Semana Cultural é onde as duas leituras se encontram. A peça teve 143.923 impressões no Meta Ads e o vídeo do tema é a publicação de maior repercussão do TikTok da Prefeitura no mês, com 47 mil visualizações.</p>
-
-      <p class="dtext">O maior pico orgânico do mês não veio da campanha. A publicação de Dia dos Pais lidera o ranking do Instagram, com 160 mil visualizações, e o do Facebook, com 262 mil, sem nenhuma linha de mídia por trás.</p>
-
-      <p class="dtext">Segurança faz o caminho oposto. Recebeu a maior fatia do plano, 789.454 impressões somando a frente principal e o reforço nos bairros, e não aparece no ranking orgânico do mês. Somando ao que a seção anterior mostrou sobre a ausência de cobertura de imprensa, foi a campanha que levou essa informação ao morador.</p>
-
-      <div class="chart-box" style="margin-top:20px">
-        <div class="dt-title">Onde as duas leituras se encontram</div>
-        <table class="dt">
-          <thead><tr><th>Tema</th><th>Impressões na campanha</th><th>O que o monitoramento registrou</th></tr></thead>
-          <tbody>
-            <tr><td>Semana Cultural</td><td class="n">143.923</td><td>Publicação nº 1 do TikTok no mês, 47 mil visualizações</td></tr>
-            <tr><td>Segurança e Segurança nos bairros</td><td class="n">789.454</td><td>Sem entrada no ranking orgânico e sem cobertura de imprensa</td></tr>
-            <tr><td>Nova data do show e Planeta Rock</td><td class="n">417.388</td><td>Cultura concentra as menções negativas do mês</td></tr>
-            <tr><td>Dia dos Pais</td><td class="n">Sem linha no plano</td><td>Publicação nº 1 do Instagram e do Facebook, 160 mil e 262 mil visualizações</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <p class="dtext">Foram 691 menções e comentários classificados no mês: 65% positivos, 22% negativos e 12% neutros. Os negativos se concentram em Cultura, com críticas à gratuidade e à curadoria dos shows, e em "Como é agora", com questionamentos sobre a autoria da pista de skate. Cultura é justamente a frente de melhor desempenho de mídia do ciclo, o que mostra que desempenho de entrega e recepção pública são duas medidas diferentes: o alcance funcionou, a discussão é de programação e de crédito da obra, não de veiculação.</p>
+    <div class="grid g3" style="margin-top:20px">
+      <div class="card" style="border-top:3px solid var(--teal)"><span class="tag t-teal">Convergência com a mídia paga</span><div style="font-weight:700;color:var(--t1);margin:10px 0 8px;font-size:1.05rem">Semana Cultural apareceu nos dois lados</div><div style="font-size:.9rem;color:#444">A pauta esteve no plano de mídia e é também a publicação de maior repercussão do TikTok da Prefeitura no mês. Circulou paga e espontânea na mesma janela.</div></div>
+      <div class="card" style="border-top:3px solid #CC3333"><span class="tag" style="background:rgba(204,51,51,.1);color:#CC3333">Ponto de atenção</span><div style="font-weight:700;color:var(--t1);margin:10px 0 8px;font-size:1.05rem">Cultura concentra as críticas do mês</div><div style="font-size:.9rem;color:#444">As menções desfavoráveis se concentram em Cultura, com questionamentos sobre a gratuidade e a curadoria dos shows, e no tema Como é agora, com a discussão sobre a autoria da pista de skate. É atrito de programação e de crédito de obra, não de divulgação.</div></div>
+      <div class="card" style="border-top:3px solid var(--purple)"><span class="tag t-purple">Só na mídia paga</span><div style="font-weight:700;color:var(--t1);margin:10px 0 8px;font-size:1.05rem">Segurança foi bem recebida</div><div style="font-size:.9rem;color:#444">Segurança foi o tema com maior presença no plano, somando a frente principal e o reforço nos bairros, e não aparece entre os temas de menções negativas do mês. A pauta que a campanha mais levou à cidade foi recebida sem atrito.</div></div>
     </div>
+    <div class="ins"><div class="l">O caso do show, leitura da mídia paga</div><div class="x">O post de Dia dos Pais, show do Diogo Nogueira, foi o de maior engajamento do mês. A maior parte da repercussão foi desfavorável, mas com um recorte importante: as críticas e ironias se concentraram sobretudo na imagem pública do artista e em seu posicionamento político, e não na realização do evento em si.<br><br>Vale considerar o momento. Em período eleitoral, é natural que assuntos não necessariamente políticos sejam politizados, e que isso puxe o tom dos comentários para baixo. Parte do saldo desfavorável de agosto se explica por esse efeito de contexto, e não por rejeição ao que a campanha comunicou.</div></div>
+    <div class="ins" style="border-left-color:#CC3333"><div class="l" style="color:#CC3333">Comentário real, monitoramento de agosto/2026</div><div class="x" style="font-style:italic">"Som absurdamente alto. Falta de respeito com a população, principalmente quem tem bebê em casa."</div></div>
   </div>
-
-  <div class="ib tl fade-in" style="margin-top:32px">
-    <div class="ib-lbl">Leitura do cruzamento</div>
-    <div class="ib-txt">Em agosto a campanha e os perfis próprios cobriram territórios diferentes. Data afetiva rendeu alcance sem verba, e a mídia paga sustentou as pautas de gestão, com Segurança em quase metade da entrega do Meta Ads. O recuo de 16% no alcance do Instagram e de 11% no do Facebook é medido contra julho, mês em que esses perfis subiram 136% e 246% sobre junho, então o patamar de agosto continua acima do de junho. Sugerimos manter as pautas de serviço na mídia paga, deixando as datas afetivas para o orgânico, que já as entrega sem investimento.</div>
-  </div>
-</div>
+</section>
 
 <!-- DIAGNÓSTICO -->
 <div class="diag" id="diagnostico">
   <div class="diag-in">
     <span class="eyebrow eyebrow-wh">Diagnóstico Final</span>
     <h2 class="h1 fade-in" style="color:#fff">O que o Ciclo Revelou</h2>
-    <p class="sub fade-in" style="color:rgba(255,255,255,.58)">Leitura qualitativa dos resultados de agosto: o que a campanha significou para a Prefeitura de Hortolândia e para a relação com a população.</p>
+    <p class="sub fade-in" style="color:rgba(255,255,255,.58)">Leitura qualitativa dos resultados de agosto: o que a campanha significou para a Prefeitura de Hortolândia e para a relação com a população. No monitoramento de redes, o mês fechou com maioria favorável, 65% das menções classificadas.</p>
     <div class="dc-grid fade-in">
       <div class="dc">
         <div class="dc-acc t"></div>
@@ -1041,7 +1036,7 @@
         <div class="dc-n">03</div>
         <div class="dc-m">842 comentários na publicação</div>
         <div class="dc-ttl">Volume de conversa e adesão são coisas diferentes</div>
-        <div class="dc-txt">O aviso da nova data do show cumpriu o objetivo de informar muita gente em pouco tempo. A conversa veio da imagem pública da atração: entre os comentários mais reagidos aparecem críticas e ironias, com menções ao uso de recurso público. Sugerimos acompanhar esse tipo de peça pelo alcance.</div>
+        <div class="dc-txt">O aviso da nova data do show cumpriu o objetivo de informar muita gente em pouco tempo. A conversa que veio junto tratou da imagem pública do artista e do momento eleitoral, não do evento nem da divulgação. Sugerimos acompanhar esse tipo de peça pelo alcance, e não pelo tom dos comentários.</div>
       </div>
       <div class="dc">
         <div class="dc-acc p"></div>
@@ -1128,6 +1123,12 @@ document.querySelectorAll('#mmFill,.bar-fill').forEach(el=>bObs.observe(el));
     });
   });
 })();
+
+if (document.getElementById('chartSentimentoAgoHorto')) {
+  new Chart(document.getElementById('chartSentimentoAgoHorto'),{type:'doughnut',
+    data:{labels:['Positivas','Negativas','Neutras'],datasets:[{data:[65,22,12],backgroundColor:['#1DB954','#CC3333','#CC8800'],borderColor:'#fff',borderWidth:3}]},
+    options:{responsive:true,maintainAspectRatio:false,cutout:'62%',plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>' '+c.parsed+'%'}}}}});
+}
 </script>
 </body>
 </html>

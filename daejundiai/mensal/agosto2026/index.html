@@ -428,6 +428,28 @@
     .hdr-sub{font-size:.95rem;color:rgba(255,255,255,.6);line-height:1.7;max-width:100%}
     @media(max-width:768px){.hdr-in{flex-direction:column;align-items:flex-start;gap:22px;padding:34px 24px}.hdr-star{border-right:none;padding-right:0}.hdr-star svg{width:76px;height:76px}}
     /* ══ THUMB DE CRIATIVO SEM IMAGEM ══ */
+  
+    /* Percepção Pública, componente copiado do relatório de julho da Americana */
+    .pp{background:#fff;border-top:1px solid rgba(10,10,92,.06);border-bottom:1px solid rgba(10,10,92,.06);padding:56px 0}
+    .pp .wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+    .pp .eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);margin-bottom:12px;display:flex;align-items:center;gap:10px}
+    .pp .eyebrow::before{content:"";width:26px;height:2px;background:var(--teal);display:inline-block}
+    .pp h2{font-size:clamp(1.6rem,3.4vw,2.2rem);font-weight:800;letter-spacing:-.02em;color:var(--t1);line-height:1.15;margin:0}
+    .pp .sub{font-size:1.02rem;color:var(--tm);margin-top:14px;max-width:820px}
+    .pp .card{background:#fff;border:1px solid rgba(10,10,92,.07);border-radius:16px;padding:24px;box-shadow:0 8px 24px rgba(10,10,92,.05)}
+    .pp .grid{display:grid;gap:18px}
+    .pp .g2{grid-template-columns:repeat(2,1fr)}
+    .pp .g3{grid-template-columns:repeat(3,1fr)}
+    .pp .tag{display:inline-block;font-size:.62rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:20px}
+    .pp .t-blue{background:rgba(26,60,255,.1);color:var(--p)}
+    .pp .t-teal{background:rgba(23,166,151,.12);color:var(--teal)}
+    .pp .t-purple{background:rgba(123,47,190,.12);color:var(--purple)}
+    .pp .t-orange{background:rgba(196,74,0,.1);color:var(--orange)}
+    .pp .ins{margin-top:20px;background:#fff;border:1px solid rgba(10,10,92,.07);border-left:4px solid var(--teal);border-radius:12px;padding:18px 22px}
+    .pp .ins .l{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);margin-bottom:6px}
+    .pp .ins .x{font-size:.92rem;color:#3a3a4a}
+    .pp .chart-box{position:relative;height:340px}
+    @media(max-width:900px){.pp .g2,.pp .g3{grid-template-columns:1fr}}
   </style>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
 </head>
@@ -949,43 +971,29 @@
   </div>
 </section>
 
-<!-- MONITORAMENTO DE REDES -->
-<section class="sec" id="monitoramento">
-  <span class="eyebrow eyebrow-t">Monitoramento de Redes</span>
-  <h2 class="h1 fade-in">Mídia paga e comportamento orgânico</h2>
-  <p class="sub fade-in" style="max-width:78ch">Cruzamento entre a entrega da campanha e o relatório mensal de monitoramento de redes sociais de agosto de 2026, produzido pela E3 Comunicação Integrada. São duas leituras independentes do mesmo mês: uma mede a mídia contratada, a outra mede o comportamento dos perfis institucionais e o sentimento dos comentários.</p>
-
-  <div class="mini-row fade-in">
-    <div class="mini"><span class="mini-v">136 mil</span><span class="mini-l">Alcance no Instagram</span><span class="mini-x">71% a mais que julho</span></div>
-    <div class="mini"><span class="mini-v">117 mil</span><span class="mini-l">Alcance no Facebook</span><span class="mini-x">228% a mais que julho</span></div>
-    <div class="mini"><span class="mini-v">321 mil</span><span class="mini-l">Visualizações no Instagram</span><span class="mini-x">Posts, stories e reels, 41% a mais que julho</span></div>
-    <div class="mini"><span class="mini-v">212</span><span class="mini-l">Menções monitoradas</span><span class="mini-x">91% classificadas como positivas</span></div>
-  </div>
-
-  <p class="lead fade-in">A peça que a campanha mais exibiu é a mesma que mais circulou sozinha. "Sinais de vazamento dentro de casa" aparece no monitoramento como a publicação de maior repercussão do Instagram no mês, com 109 mil visualizações, e foi também a de maior volume na mídia paga. O mês em que ela rodou é o mês em que os dois perfis cresceram em alcance sobre julho.</p>
-
-  <div class="chart-box fade-in" style="margin-top:26px">
-    <div class="dt-title">Onde as duas leituras se encontram</div>
-    <table class="xtbl">
-      <thead><tr><th>Frente</th><th>O que a campanha entregou</th><th>O que o monitoramento registrou</th></tr></thead>
-      <tbody>
-        <tr><td>Consumo consciente</td><td>213.917 impressões em "Sinais de vazamento"</td><td>Publicação nº 1 do Instagram no mês, 109 mil visualizações</td></tr>
-        <tr><td>Relação com a cidade</td><td>99.693 impressões e a maior atenção média do mês em "O que sabem sobre a DAE"</td><td>91% das 212 menções do mês classificadas como positivas</td></tr>
-        <tr><td>Obras de saneamento</td><td>25.117 impressões na Avenida da Uva, a melhor taxa de seguidor do ciclo</td><td>499 novos seguidores no Instagram no mês</td></tr>
-        <tr><td>Falta d'água e tarifa</td><td>Sem peça no plano de agosto</td><td>Concentra os 9% de menções negativas do mês</td></tr>
-      </tbody>
-    </table>
-    <p class="tbl-note">Seguidores têm duas bases que não se somam: 90 vieram atribuídos às peças da campanha e 499 é o total do perfil no Instagram, que inclui o orgânico.</p>
-  </div>
-
-  <div class="ib tl fade-in">
-    <div class="ib-lbl">Leitura do cruzamento</div>
-    <div class="ib-txt">O tema que a campanha levou para a cidade inteira foi o mesmo que a cidade mais viu e repassou por conta própria. A peça de obra, com um oitavo da exibição da peça líder, é a que mais converteu em seguidor na mídia, e o perfil fechou o mês com 499 novos seguidores. Consumo consciente entrega volume, obra entrega vínculo, e as duas coisas aparecem nas duas leituras.</div>
-  </div>
-
-  <div class="ib pu fade-in">
-    <div class="ib-lbl">Ponto de atenção</div>
-    <div class="ib-txt">Os 9% de menções negativas do mês tratam de falta d'água em bairros específicos, pressão da rede depois do novo reservatório e critério de cobrança por faixa de consumo. Nenhum desses assuntos tinha peça no plano de agosto: é repercussão sobre a operação do serviço, não sobre o conteúdo veiculado, e por isso não entra como indicador de performance de mídia. Sugerimos levar esses relatos ao atendimento da DAE para tratamento caso a caso, mantendo a leitura da campanha separada da leitura do serviço.</div>
+<!-- PERCEPÇÃO PÚBLICA -->
+<section class="pp" id="monitoramento">
+  <div class="wrap">
+    <div class="eyebrow">Percepção Pública</div>
+    <h2>O que as redes sociais mostraram em agosto</h2>
+    <p class="sub">Relatório de Redes Sociais de agosto/2026 (E3 Comunicação Integrada), cerca de 212 menções e comentários classificados nas redes oficiais da DAE.</p>
+    <div class="grid g2" style="margin-top:26px;align-items:start">
+      <div class="card"><div style="font-weight:700;color:var(--t1)">Sentimento monitorado</div><div style="font-size:.82rem;color:var(--tm);margin-bottom:10px">Julho: 90,2% positivo · Agosto: 91% positivo</div><div class="chart-box"><canvas id="chartSentimentoAgoDae"></canvas></div></div>
+      <div class="grid" style="gap:16px">
+        <div class="card"><div style="font-weight:700;color:var(--t1);margin-bottom:12px">Distribuição de agosto</div>
+          <div style="display:flex;height:18px;border-radius:100px;overflow:hidden;margin-bottom:12px"><div style="width:91%;background:#1DB954"></div><div style="width:9%;background:#CC3333"></div></div>
+          <div style="display:flex;justify-content:space-between;font-size:.85rem"><span><strong style="color:#1DB954">91%</strong> positivas</span><span><strong style="color:#CC3333">9%</strong> negativas</span></div>
+          <div style="font-size:.82rem;color:var(--tm);margin-top:10px">Negativas concentradas em falta d'água, pressão da rede e critério de cobrança. Base orgânica (posts, stories e comentários), sem relação direta com a mídia paga.</div>
+        </div>
+        <div class="card"><span class="tag t-blue">Post que mais engajou</span><div style="font-weight:700;color:var(--t1);margin:10px 0 6px;font-size:1.05rem">Sinais de vazamento</div><div style="font-size:.9rem;color:#444">109 mil visualizações no Instagram, o conteúdo de maior repercussão orgânica do mês. No Facebook, o post de Dia dos Pais lidera com 1,3 mil.</div></div>
+      </div>
+    </div>
+    <div class="grid g3" style="margin-top:20px">
+      <div class="card" style="border-top:3px solid var(--teal)"><span class="tag t-teal">Convergência com a mídia paga</span><div style="font-weight:700;color:var(--t1);margin:10px 0 8px;font-size:1.05rem">A peça mais veiculada é também a mais vista sozinha</div><div style="font-size:.9rem;color:#444">"Sinais de vazamento dentro de casa" foi a peça de maior presença no plano e é também a publicação de maior repercussão do Instagram no monitoramento. No mesmo mês, os dois perfis cresceram em alcance sobre julho.</div></div>
+      <div class="card" style="border-top:3px solid #CC3333"><span class="tag" style="background:rgba(204,51,51,.1);color:#CC3333">Ponto de atenção</span><div style="font-weight:700;color:var(--t1);margin:10px 0 8px;font-size:1.05rem">O atrito é sobre a operação, não sobre a comunicação</div><div style="font-size:.9rem;color:#444">As menções negativas do mês tratam de falta d'água em bairros específicos, pressão da rede depois do novo reservatório e critério de cobrança por faixa de consumo. Nenhum desses assuntos tinha peça no plano de agosto: é repercussão sobre o serviço, e entra como insumo para o atendimento da DAE.</div></div>
+      <div class="card" style="border-top:3px solid var(--purple)"><span class="tag t-purple">Só na mídia paga</span><div style="font-weight:700;color:var(--t1);margin:10px 0 8px;font-size:1.05rem">Obra é o que mais aproxima do perfil</div><div style="font-size:.9rem;color:#444">A peça da Avenida da Uva apareceu para muito menos gente que as peças de cobertura e ainda assim foi a que mais trouxe seguidor no ciclo. Conteúdo de obra com nome de rua faz o morador se reconhecer e ir atrás do perfil. Seguidor de campanha e seguidor de perfil são bases diferentes e não se somam.</div></div>
+    </div>
+    <div class="ins" style="border-left-color:#CC3333"><div class="l" style="color:#CC3333">Comentário real, monitoramento de agosto/2026</div><div class="x" style="font-style:italic">"Depois do novo reservatório do Jardim do lago só tivemos problemas. A pressão não é a mesma. Ajuda por favor"</div></div>
   </div>
 </section>
 
@@ -1019,7 +1027,7 @@
 
     <div style="margin-top:34px;padding:22px 26px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:16px">
       <div style="font-size:.63rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#7fe9d8;margin-bottom:8px">Síntese do ciclo</div>
-      <div style="font-size:.95rem;color:rgba(255,255,255,.84);line-height:1.75">Agosto separou com clareza duas coisas que costumam ser lidas juntas: volume e vínculo. A peça de vazamento abriu a maior circulação do ciclo e foi recebida de forma discreta em proporção ao que alcançou; a obra da Avenida da Uva recebeu uma fração dessa mídia e concentrou a melhor resposta por pessoa alcançada, liderando em novos seguidores e na taxa de compartilhamento. O que fez a diferença foi a especificidade: falar de uma rua com nome faz o morador se reconhecer na primeira frase. A conversa do mês foi majoritariamente favorável, com os comentários lidos um a um, e que o único ponto crítico recorrente é um relato individual de atendimento, já repassado à DAE.</div>
+      <div style="font-size:.95rem;color:rgba(255,255,255,.84);line-height:1.75">Agosto separou com clareza duas coisas que costumam ser lidas juntas: volume e vínculo. A peça de vazamento abriu a maior circulação do ciclo e foi recebida de forma discreta em proporção ao que alcançou; a obra da Avenida da Uva recebeu uma fração dessa mídia e concentrou a melhor resposta por pessoa alcançada, liderando em novos seguidores e na taxa de compartilhamento. O que fez a diferença foi a especificidade: falar de uma rua com nome faz o morador se reconhecer na primeira frase. A conversa do mês foi majoritariamente favorável, com os comentários lidos um a um. No monitoramento de redes, as menções desfavoráveis tratam de falta d'água, pressão e cobrança, assuntos de operação do serviço, e não do que a campanha comunicou.</div>
     </div>
   </div>
 </div>
@@ -1077,6 +1085,12 @@ new Chart(document.getElementById('chartGenero'),{type:'doughnut',
     datasets:[{data:[199389,218813,927],backgroundColor:['#C44A00','#1A3CFF','#17A697'],borderColor:'#fff',borderWidth:4}]},
   options:{responsive:true,maintainAspectRatio:false,animation:false,cutout:'62%',
     plugins:{legend:{position:'bottom',labels:{font:{size:11,weight:'500'},color:'#444',padding:10,boxWidth:12}},tooltip:{...TIP,callbacks:{label:c=>{const t=c.dataset.data.reduce((a,b)=>a+b,0);return ' '+BR(c.parsed)+' ('+(c.parsed/t*100).toFixed(1)+'%)';}}}}}});
+
+if (document.getElementById('chartSentimentoAgoDae')) {
+  new Chart(document.getElementById('chartSentimentoAgoDae'),{type:'doughnut',
+    data:{labels:['Positivas','Negativas'],datasets:[{data:[91,9],backgroundColor:['#1DB954','#CC3333'],borderColor:'#fff',borderWidth:3}]},
+    options:{responsive:true,maintainAspectRatio:false,cutout:'62%',plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>' '+c.parsed+'%'}}}}});
+}
 </script>
 </body>
 </html>
