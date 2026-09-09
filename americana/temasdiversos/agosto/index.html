@@ -428,6 +428,27 @@
     .hdr-sub{font-size:.95rem;color:rgba(255,255,255,.6);line-height:1.7;max-width:660px}
     @media(max-width:768px){.hdr-in{flex-direction:column;align-items:flex-start;gap:22px;padding:34px 24px}.hdr-star{border-right:none;padding-right:0}.hdr-star svg{width:76px;height:76px}}
     /* ══ THUMB DE CRIATIVO SEM IMAGEM ══ */
+  
+    .pp{background:#fff;border-top:1px solid rgba(10,10,92,.06);border-bottom:1px solid rgba(10,10,92,.06);padding:56px 0}
+    .pp .wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+    .pp .eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);margin-bottom:12px;display:flex;align-items:center;gap:10px}
+    .pp .eyebrow::before{content:"";width:26px;height:2px;background:var(--teal);display:inline-block}
+    .pp h2{font-size:clamp(1.6rem,3.4vw,2.2rem);font-weight:800;letter-spacing:-.02em;color:var(--t1);line-height:1.15;margin:0}
+    .pp .sub{font-size:1.02rem;color:var(--tm);margin-top:14px;max-width:820px}
+    .pp .card{background:#fff;border:1px solid rgba(10,10,92,.07);border-radius:16px;padding:24px;box-shadow:0 8px 24px rgba(10,10,92,.05)}
+    .pp .grid{display:grid;gap:18px}
+    .pp .g2{grid-template-columns:repeat(2,1fr)}
+    .pp .g3{grid-template-columns:repeat(3,1fr)}
+    .pp .tag{display:inline-block;font-size:.62rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:20px}
+    .pp .t-blue{background:rgba(26,60,255,.1);color:var(--p)}
+    .pp .t-teal{background:rgba(23,166,151,.12);color:var(--teal)}
+    .pp .t-purple{background:rgba(123,47,190,.12);color:var(--purple)}
+    .pp .ins{margin-top:20px;background:#fff;border:1px solid rgba(10,10,92,.07);border-left:4px solid var(--teal);border-radius:12px;padding:18px 22px}
+    .pp .ins .l{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);margin-bottom:6px}
+    .pp .ins .x{font-size:.92rem;color:#3a3a4a}
+    .pp .chart-box{position:relative;height:340px}
+    @media(max-width:900px){.pp .g2,.pp .g3{grid-template-columns:1fr}}
+
   </style>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
 </head>
@@ -969,6 +990,32 @@
   </div>
 </section>
 
+
+<section class="pp" id="monitoramento">
+  <div class="wrap">
+    <div class="eyebrow">Percepção Pública</div>
+    <h2>O que as redes sociais mostraram em agosto</h2>
+    <p class="sub">Relatório de Redes Sociais de agosto/2026 (E3 Comunicação Integrada), cerca de 2.230 menções e comentários classificados nas redes oficiais da Prefeitura.</p>
+    <div class="grid g2" style="margin-top:26px;align-items:start">
+      <div class="card"><div style="font-weight:700;color:var(--t1)">Sentimento monitorado</div><div style="font-size:.82rem;color:var(--tm);margin-bottom:10px">Junho: 67% positivo &middot; Julho: 62% positivo &middot; Agosto: 83% positivo</div><div class="chart-box"><canvas id="chartSentimentoAgoAme"></canvas></div></div>
+      <div class="grid" style="gap:16px">
+        <div class="card"><div style="font-weight:700;color:var(--t1);margin-bottom:12px">A melhor leitura do ano</div>
+          <div style="display:flex;height:18px;border-radius:100px;overflow:hidden;margin-bottom:12px"><div style="width:83%;background:#1DB954"></div><div style="width:11%;background:#CC3333"></div><div style="width:6%;background:#CC8800"></div></div>
+          <div style="display:flex;justify-content:space-between;font-size:.85rem"><span><strong style="color:#1DB954">83%</strong> positivas</span><span><strong style="color:#CC3333">11%</strong> negativas</span><span><strong style="color:#CC8800">6%</strong> neutras</span></div>
+          <div style="font-size:.82rem;color:var(--tm);margin-top:10px">A proporção favorável subiu vinte e um pontos sobre julho e as menções desfavoráveis caíram pela metade, no mês em que a campanha colocou quase todas as áreas da Prefeitura em circulação ao mesmo tempo.</div>
+        </div>
+        <div class="card"><span class="tag t-blue">Os dois posts que mais engajaram</span><div style="font-weight:700;color:var(--t1);margin:10px 0 6px;font-size:1.05rem">Infraestrutura no Instagram, Saúde no Facebook</div><div style="font-size:.9rem;color:#444">São exatamente as duas pautas que receberam o maior peso de mídia no ciclo. O que o plano priorizou foi também o que o público escolheu comentar, nas duas redes.</div></div>
+      </div>
+    </div>
+    <div class="grid g3" style="margin-top:20px">
+      <div class="card" style="border-top:3px solid var(--teal)"><span class="tag t-teal">Convergência com a mídia paga</span><div style="font-weight:700;color:var(--t1);margin:10px 0 8px;font-size:1.05rem">As três pautas do plano são as três do monitoramento</div><div style="font-size:.9rem;color:#444">Cultura, Saúde e Infraestrutura lideram o volume de conversa nas redes da Prefeitura, e são as mesmas três frentes que concentraram a entrega da campanha. A leitura de mídia e a leitura de percepção chegaram ao mesmo lugar por caminhos diferentes.</div></div>
+      <div class="card" style="border-top:3px solid #CC3333"><span class="tag" style="background:rgba(204,51,51,.1);color:#CC3333">Ponto de atenção</span><div style="font-weight:700;color:var(--t1);margin:10px 0 8px;font-size:1.05rem">Infraestrutura concentra o que sobra de crítica</div><div style="font-size:.9rem;color:#444">É a pauta de maior alcance do plano e também onde se concentram as menções desfavoráveis do mês. O teor é sempre o mesmo: o morador reconhece a obra e pede a rua dele. Sugerimos acompanhar o número da cidade com peças que mostrem trechos já entregues, nomeando o bairro.</div></div>
+      <div class="card" style="border-top:3px solid var(--purple)"><span class="tag t-purple">Só no perfil</span><div style="font-weight:700;color:var(--t1);margin:10px 0 8px;font-size:1.05rem">Cultura puxa mais da metade da conversa</div><div style="font-size:.9rem;color:#444">As 7 Maravilhas movimentaram o perfil muito além do peso que tiveram no plano, e é de Cultura que vem a maior parte das dúvidas do mês, sobre regras e curadoria. É pauta que rende sozinha e pede conteúdo de esclarecimento junto, não mais verba.</div></div>
+    </div>
+    <div class="ins" style="border-left-color:#CC3333"><div class="l" style="color:#CC3333">Comentário real, monitoramento de agosto/2026</div><div class="x" style="font-style:italic">"Gostaria de entender a lógica de escolha das ruas e avenidas que recebem o recapeamento. Em alguns bairros todas as ruas foram recapeadas, outros mais antigos sao ignorados."</div></div>
+  </div>
+</section>
+
 <!-- ═══ 8 · DIAGNÓSTICO FINAL E ENCAMINHAMENTOS ═══ -->
 <div class="diag" id="diagnostico">
   <div class="diag-in">
@@ -1011,6 +1058,7 @@
     <div class="src-col"><h4>Metas contratadas</h4><p>Metas por linha conforme contratado com a Prefeitura para o ciclo de agosto, conferidas uma a uma contra a entrega apurada na plataforma.</p></div>
     <div class="src-col"><h4>Perfil de público</h4><p>Recorte de impressões por idade e por gênero extraído da própria plataforma de mídia. A soma por faixa fica em 748.768 impressões, pequena diferença para o total da conta por causa de registros sem faixa apurada.</p></div>
     <div class="src-col"><h4>Análise de criativos</h4><p>Peças vistas diretamente, vídeo por vídeo e cartão por cartão, com leitura dos comentários públicos de cada publicação. A análise é qualitativa e acompanha os números de entrega de cada peça.</p></div>
+    <div class="src-col"><h4>Percepção pública</h4><p>Relatório de Redes Sociais de agosto/2026, produzido pela E3 Comunicação Integrada, com cerca de 2.230 menções e comentários classificados nas redes oficiais da Prefeitura entre 1º e 31 de agosto.</p></div>
     <div class="src-col"><h4>Agenda da cidade</h4><p>Clipagem dos veículos independentes Liberal e Todo Dia no período, com título, data, veículo e link de cada registro reproduzidos como publicados na fonte original. As publicações do canal oficial da Prefeitura ficaram fora deste recorte.</p></div>
   </div>
   <p class="src-disc">Nenhum número deste relatório foi estimado. Cada dado é rastreável à sua fonte original, plataforma de mídia ou publicação de imprensa, e foi conferido antes da publicação. As leituras qualitativas de criativo estão sempre identificadas como tal e separadas dos números apurados.</p>
@@ -1060,6 +1108,12 @@ new Chart(document.getElementById('chartGenero'),{type:'doughnut',
     datasets:[{data:[305882,218937,223949],backgroundColor:['#C44A00','#1A3CFF','#17A697'],borderColor:'#fff',borderWidth:4}]},
   options:{responsive:true,maintainAspectRatio:false,animation:false,cutout:'62%',
     plugins:{legend:{position:'bottom',labels:{font:{size:11,weight:'500'},color:'#444',padding:10,boxWidth:12}},tooltip:{...TIP,callbacks:{label:c=>{const t=c.dataset.data.reduce((a,b)=>a+b,0);return ' '+BR(c.parsed)+' ('+(c.parsed/t*100).toFixed(1)+'%)';}}}}}});
+
+if (document.getElementById('chartSentimentoAgoAme')) {
+  new Chart(document.getElementById('chartSentimentoAgoAme'),{type:'doughnut',
+    data:{labels:['Positivas','Negativas','Neutras'],datasets:[{data:[83,11,6],backgroundColor:['#1DB954','#CC3333','#CC8800'],borderColor:'#fff',borderWidth:3}]},
+    options:{responsive:true,maintainAspectRatio:false,cutout:'62%',plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>' '+c.parsed+'%'}}}}});
+}
 </script>
 </body>
 </html>
