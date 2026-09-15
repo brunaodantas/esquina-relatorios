@@ -266,6 +266,45 @@
 @media(max-width:600px){.perf-grid.g2{grid-template-columns:1fr}}
 .perf-split.no-media{grid-template-columns:1fr}
 .cr .perf-card{border:none;box-shadow:none;padding:0;background:transparent}
+
+  table.sortable thead th { cursor:pointer; user-select:none; white-space:nowrap; position:relative; transition:color .15s ease; }
+  table.sortable thead th:hover { color:var(--blue); }
+  table.sortable thead th::after { content:"\2195"; font-size:0.72em; opacity:.28; margin-left:6px; }
+  table.sortable thead th[data-dir="asc"]::after { content:"\2191"; opacity:1; color:var(--blue); }
+  table.sortable thead th[data-dir="desc"]::after { content:"\2193"; opacity:1; color:var(--blue); }
+  .sort-hint { font-size:0.74rem; color:var(--g4); margin-top:10px; }
+
+
+  .cxh { display:flex; align-items:baseline; justify-content:space-between; gap:var(--s3); flex-wrap:wrap; margin:var(--s6) 0 var(--s2); padding-bottom:var(--s3); border-bottom:2px solid var(--ink); }
+  .cxh h3 { font-size:1.1rem; font-weight:800; letter-spacing:-0.01em; margin:0; }
+  .cxh span { font-size:0.76rem; color:var(--g4); }
+  .cx { display:grid; grid-template-columns:1fr 1fr; gap:var(--s5) var(--s6); }
+  .cx-col > .cx-t { font-size:0.66rem; font-weight:800; text-transform:uppercase; letter-spacing:0.16em; margin:0 0 var(--s2); }
+  .cx-col.pos > .cx-t { color:#0a7a45; }
+  .cx-col.att > .cx-t { color:#9a3b00; }
+  .cx-item { display:grid; grid-template-columns:62px 1fr; gap:14px; align-items:start; padding:14px 0; border-bottom:1px solid var(--line); }
+  .cx-item:last-child { border-bottom:none; }
+  .cx-thumb { width:62px; aspect-ratio:1/1; border-radius:10px; overflow:hidden; background:#0d0d2b; display:flex; align-items:center; justify-content:center; }
+  .cx-thumb img { width:100%; height:100%; object-fit:cover; object-position:center; display:block; }
+  .cx-n { font-size:0.92rem; font-weight:800; letter-spacing:-0.01em; line-height:1.3; margin-bottom:7px; }
+  .cx-chips { display:flex; flex-wrap:wrap; gap:5px; margin-bottom:9px; }
+  .cx-chip { font-size:0.7rem; font-weight:600; padding:3px 9px; border-radius:999px; }
+  .cx-col.pos .cx-chip { color:#0a7a45; background:rgba(0,153,77,0.10); }
+  .cx-col.att .cx-chip { color:#9a3b00; background:rgba(196,74,0,0.09); }
+  .cx-act { display:inline-block; font-size:0.64rem; font-weight:800; text-transform:uppercase; letter-spacing:0.12em; padding:4px 11px; border-radius:5px; border:1px solid; }
+  .cx-col.pos .cx-act { color:#0a7a45; border-color:rgba(0,153,77,0.45); }
+  .cx-col.att .cx-act { color:#9a3b00; border-color:rgba(196,74,0,0.45); }
+  .cx-base { font-size:0.74rem; color:var(--g4); margin-top:var(--s4); padding-top:var(--s3); border-top:1px solid var(--line); }
+  @media (max-width:820px){ .cx { grid-template-columns:1fr; } }
+
+  .cxcard { margin-top:var(--s3) !important; background:var(--white); border:1px solid var(--line); border-radius:var(--r3); padding:var(--s5) var(--s5) var(--s4); box-shadow:0 1px 3px rgba(10,10,92,0.04), 0 8px 24px rgba(10,10,92,0.05); }
+  .cxcard .cxh { margin-top:0; }
+
+  .cx-top { display:flex; align-items:flex-start; justify-content:space-between; gap:10px; }
+  .cx-idx { font-size:1.35rem; font-weight:800; line-height:1; letter-spacing:-0.02em; text-align:right; white-space:nowrap; }
+  .cx-idx span { display:block; font-size:0.54rem; font-weight:700; text-transform:uppercase; letter-spacing:0.12em; color:var(--g4); margin-top:3px; }
+  .cx-col.pos .cx-idx { color:#0a7a45; }
+  .cx-col.att .cx-idx { color:#9a3b00; }
 </style>
 <nav class="nav">
   <div class="wrap nav-in">
@@ -279,15 +318,15 @@
   <div class="hero-intro">
   <div class="eb">Boletim semanal · 07 a 13 de setembro de 2026</div>
   <h1>Segunda semana do ciclo, ritmo mantido</h1>
-  <p class="lead">A campanha de WhatsApp segue como a peça mais eficiente da conta em interação, e a procura pelo canal cresceu de forma consistente ao longo da semana. Alcance e visualização mantiveram o ritmo do período anterior.</p>
+  <p class="lead">A campanha de WhatsApp segue como a peça mais eficiente da conta em engajamento, e a procura pelo canal cresceu de forma consistente ao longo da semana. Alcance e visualização mantiveram o ritmo do período anterior.</p>
   </div>
   <div class="hero-cards">
-    <div class="hc"><div class="hc-t">Exibições</div><div class="hc-v">66.161</div><div class="hc-s">em sete dias de veiculação</div></div>
-    <div class="hc"><div class="hc-t">Interações</div><div class="hc-v">18.825</div><div class="hc-s">curtidas, comentários e cliques</div></div>
+    <div class="hc"><div class="hc-t">Impressões</div><div class="hc-v">66.161</div><div class="hc-s">em sete dias de veiculação</div></div>
+    <div class="hc"><div class="hc-t">Engajamento</div><div class="hc-v">18.825</div><div class="hc-s">curtidas, comentários e cliques</div></div>
     <div class="hc"><div class="hc-t">Visualizações</div><div class="hc-v">5.578</div><div class="hc-s">pessoas que assistiram aos vídeos</div></div>
-    <div class="hc"><div class="hc-t">Taxa de engajamento</div><div class="hc-v">28,5%</div><div class="hc-s">interações sobre exibições</div></div>
+    <div class="hc"><div class="hc-t">Taxa de engajamento</div><div class="hc-v">28,5%</div><div class="hc-s">engajamento sobre impressões</div></div>
     <div class="hc"><div class="hc-t">Taxa de clique</div><div class="hc-v">6,5%</div><div class="hc-s" style="color:#00994D">na campanha de cliques</div></div>
-    <div class="hc"><div class="hc-t">Taxa de visualização</div><div class="hc-v">8,4%</div><div class="hc-s">visualizações sobre exibições</div></div>
+    <div class="hc"><div class="hc-t">Taxa de visualização</div><div class="hc-v">8,4%</div><div class="hc-s">visualizações sobre impressões</div></div>
     <div class="hc accent"><div class="hc-t">Gasto até agora</div><div class="hc-v">R$ 4.482,76</div><div class="hc-s">44,8% do plano, no ritmo do calendário</div></div>
     <div class="hc accent"><div class="hc-t">A gastar</div><div class="hc-v">R$ 5.517,24</div><div class="hc-s">dentro do valor alocado</div></div>
   </div>
@@ -328,7 +367,7 @@
       <div class="dsec-top">
         <div class="sn">02</div>
         <h2>O que entregamos</h2>
-        <p class="dsum"><b>66.161</b> exibições nesta semana, com <b>292</b> cliques para o canal no WhatsApp</p>
+        <p class="dsum"><b>66.161</b> impressões nesta semana, com <b>292</b> cliques para o canal no WhatsApp</p>
       </div>
     <div class="dbody">
   <div class="card" style="margin-top:var(--s5)">
@@ -337,19 +376,14 @@
       <thead>
         <tr><th>Linha</th><th>Métrica</th><th class="n">07 a 13/09</th><th class="n">01 a 06/09</th></tr>
       </thead>
-      <tbody>
-        <tr><td><strong>Meta Ads · Alcance</strong></td><td>exibições</td><td class="n">44.143</td><td class="n">41.280</td></tr>
-        <tr><td><strong>Meta Ads · Visualização</strong></td><td>visualizações</td><td class="n">2.987</td><td class="n">2.985</td></tr>
-        <tr><td><strong>Meta Ads · Engajamento</strong></td><td>interações</td><td class="n">3.751</td><td class="n">7.164</td></tr>
-        <tr><td><strong>Meta Ads · Cliques</strong></td><td>cliques no link</td><td class="n">292</td><td class="n">172</td></tr>
-      </tbody>
+      <tbody><tr><td><strong>Meta Ads · CPM</strong></td><td>Impressões</td><td class="n">44.143</td><td class="n">41.280</td></tr><tr><td><strong>Meta Ads · CPV</strong></td><td>Visualizações</td><td class="n">2.987</td><td class="n">2.985</td></tr><tr><td><strong>Meta Ads · CPE</strong></td><td>Engajamento</td><td class="n">3.751</td><td class="n">7.164</td></tr><tr><td><strong>Meta Ads · CPC</strong></td><td>Cliques no link</td><td class="n">292</td><td class="n">172</td></tr></tbody>
     </table>
   </div>
   </div>
   <div class="ins">
     <b>Leitura</b>
     <p>A semana manteve o ritmo de alcance e de visualização, e a procura pelo canal do WhatsApp cresceu de forma expressiva frente ao período anterior.</p>
-    <p>O alcance veio concentrado na linha de exibições, com a de cliques crescendo em paralelo ao longo da semana; as de engajamento e visualização circularam para públicos menores e mais afins ao tema.</p>
+    <p>O alcance veio concentrado na linha de impressões, com a de cliques crescendo em paralelo ao longo da semana; as de engajamento e visualização circularam para públicos menores e mais afins ao tema.</p>
     <p>O esforço de mídia para levar alguém ao canal está menor que no período anterior, e é onde a conta mais rende hoje. <b>Ação:</b> concentrar nas próximas peças a chamada para o canal, com o convite logo na abertura.</p>
   </div>
     </div>
@@ -379,7 +413,7 @@
           <div class="perf-split">
             <div class="perf-media"><img src="assets/peca-whatsapp.jpg" alt="Cena de rua da peça do canal no WhatsApp"/></div>
             <div class="perf-body">
-              <div class="perf-metrics"><div class="perf-metric"><div class="v">8.407</div><div class="l">Exibições da peça</div></div><div class="perf-metric"><div class="v">60,5%</div><div class="l">Interações sobre exibições</div></div><div class="perf-metric"><div class="v">23,2%</div><div class="l">Assistiram ao vídeo</div></div><div class="perf-metric"><div class="v">304</div><div class="l">Entradas no canal</div></div></div>
+              <div class="perf-metrics"><div class="perf-metric"><div class="v">8.407</div><div class="l">Impressões da peça</div></div><div class="perf-metric"><div class="v">60,5%</div><div class="l">Engajamento sobre impressões</div></div><div class="perf-metric"><div class="v">23,2%</div><div class="l">Assistiram ao vídeo</div></div><div class="perf-metric"><div class="v">304</div><div class="l">Entradas no canal</div></div></div>
               <div class="perf-ins "><div class="l">O que funcionou</div><div class="x">Segue sendo a peça mais eficiente da conta. Conta uma história em vez de dar um aviso: alguém em cena desde o primeiro segundo, legenda na tela e uma situação que o morador reconhece antes de o canal ser apresentado. É esse desenho que faz a peça prender mais que uma chamada direta.</div></div><div class="perf-ins rp"><div class="l">Resposta do público</div><div class="x">Maioria de elogio, como "Ótimas informações". Um comentário com 18 curtidas celebra a chegada de um canal oficial para combater desinformação, o mesmo ponto que apareceu na semana anterior.</div></div><div class="perf-ins ap"><div class="l">Audiência e posicionamento</div><div class="x">Segue circulando em Reels e Stories no Instagram e no feed do Facebook, para o público padrão da conta.</div></div>
             </div>
           </div>
@@ -400,8 +434,8 @@
           <div class="perf-split">
             <div class="perf-media"><img src="assets/peca-mobilidade.jpg" alt="Apresentador embaixo de um novo abrigo de ônibus"/></div>
             <div class="perf-body">
-              <div class="perf-metrics"><div class="perf-metric"><div class="v">10.058</div><div class="l">Exibições da peça</div></div><div class="perf-metric"><div class="v">44,5%</div><div class="l">Interações sobre exibições</div></div><div class="perf-metric"><div class="v">12,3%</div><div class="l">Assistiram ao vídeo</div></div><div class="perf-metric"><div class="v">4.475</div><div class="l">Interações</div></div></div>
-              <div class="perf-ins "><div class="l">O que funcionou</div><div class="x">É a peça de assunto mais próximo do dia a dia, com apresentador em cena e os bairros nomeados. Foi a mais exibida da semana e, mesmo circulando bastante, manteve uma das maiores proporções de interação da conta. Assunto de uso diário aguenta escala sem perder resposta, e é isso que ela mostra.</div></div><div class="perf-ins rp"><div class="l">Resposta do público</div><div class="x">Mesma linha da semana passada: pedidos pontuais de bairro e prazo, ao lado de elogios pela iniciativa.</div></div><div class="perf-ins ap"><div class="l">Audiência e posicionamento</div><div class="x">Público equilibrado entre faixas etárias, em Reels, Stories e feed. É a peça que alcança mais gente sem perder a qualidade da resposta, o que a torna a mais adequada para sustentar volume nas próximas semanas.</div></div>
+              <div class="perf-metrics"><div class="perf-metric"><div class="v">10.058</div><div class="l">Impressões da peça</div></div><div class="perf-metric"><div class="v">44,5%</div><div class="l">Engajamento sobre impressões</div></div><div class="perf-metric"><div class="v">12,3%</div><div class="l">Assistiram ao vídeo</div></div><div class="perf-metric"><div class="v">4.475</div><div class="l">Engajamento</div></div></div>
+              <div class="perf-ins "><div class="l">O que funcionou</div><div class="x">É a peça de assunto mais próximo do dia a dia, com apresentador em cena e os bairros nomeados. Foi a mais exibida da semana e, mesmo circulando bastante, manteve uma das maiores proporções de engajamento da conta. Assunto de uso diário aguenta escala sem perder resposta, e é isso que ela mostra.</div></div><div class="perf-ins rp"><div class="l">Resposta do público</div><div class="x">Mesma linha da semana passada: pedidos pontuais de bairro e prazo, ao lado de elogios pela iniciativa.</div></div><div class="perf-ins ap"><div class="l">Audiência e posicionamento</div><div class="x">Público equilibrado entre faixas etárias, em Reels, Stories e feed. É a peça que alcança mais gente sem perder a qualidade da resposta, o que a torna a mais adequada para sustentar volume nas próximas semanas.</div></div>
             </div>
           </div>
         </div>
@@ -421,8 +455,8 @@
           <div class="perf-split">
             <div class="perf-media"><img src="assets/peca-habitacao.jpg" alt="Moradora recebendo as chaves da casa nova"/></div>
             <div class="perf-body">
-              <div class="perf-metrics"><div class="perf-metric"><div class="v">6.861</div><div class="l">Exibições da peça</div></div><div class="perf-metric"><div class="v">43,2%</div><div class="l">Interações sobre exibições</div></div><div class="perf-metric"><div class="v">16,1%</div><div class="l">Assistiram ao vídeo</div></div><div class="perf-metric"><div class="v">2.965</div><div class="l">Interações</div></div></div>
-              <div class="perf-ins "><div class="l">O que funcionou</div><div class="x">A entrega das chaves e a presença das moradoras em cena seguem rendendo interação acima da média da conta. É uma pauta com desfecho visível, em que o morador vê a história terminar bem, e isso sustenta a atenção mesmo num vídeo longo.</div></div><div class="perf-ins rp"><div class="l">Resposta do público</div><div class="x">Segue recebendo comentários calorosos, no mesmo tom da semana anterior, com moradoras sendo chamadas pelo nome.</div></div><div class="perf-ins ap"><div class="l">Audiência e posicionamento</div><div class="x">Mesmo público da semana passada, concentrado nas faixas mais velhas, veiculando em Reels, Stories e feed.</div></div>
+              <div class="perf-metrics"><div class="perf-metric"><div class="v">6.861</div><div class="l">Impressões da peça</div></div><div class="perf-metric"><div class="v">43,2%</div><div class="l">Engajamento sobre impressões</div></div><div class="perf-metric"><div class="v">16,1%</div><div class="l">Assistiram ao vídeo</div></div><div class="perf-metric"><div class="v">2.965</div><div class="l">Engajamento</div></div></div>
+              <div class="perf-ins "><div class="l">O que funcionou</div><div class="x">A entrega das chaves e a presença das moradoras em cena seguem rendendo engajamento acima da média da conta. É uma pauta com desfecho visível, em que o morador vê a história terminar bem, e isso sustenta a atenção mesmo num vídeo longo.</div></div><div class="perf-ins rp"><div class="l">Resposta do público</div><div class="x">Segue recebendo comentários calorosos, no mesmo tom da semana anterior, com moradoras sendo chamadas pelo nome.</div></div><div class="perf-ins ap"><div class="l">Audiência e posicionamento</div><div class="x">Mesmo público da semana passada, concentrado nas faixas mais velhas, veiculando em Reels, Stories e feed.</div></div>
             </div>
           </div>
         </div>
@@ -434,14 +468,61 @@
   </div>
 </section>
 
+<section class="wrap">
+  <div class="dsec-open">
+      <div class="dsec-top">
+        <div class="sn">04</div>
+        <h2>Peças impulsionadas</h2>
+        <p class="dsum">As treze peças que rodaram na semana, com todas as veiculações de cada uma somadas.</p>
+      </div>
+    <div class="dbody">
+      <div class="cxcard">
+      <div class="cxh">
+        <h3>Veja o que pode fazer</h3>
+        <span>Comparação com a média da semana</span>
+      </div>
+      <div class="cx">
+        <div class="cx-col pos">
+          <div class="cx-t">Destaques positivos</div>
+          <div class="cx-item"><div class="cx-thumb"><img src="assets/peca-whatsapp.jpg" alt="Cena de rua da peça do canal no WhatsApp"/></div><div><div class="cx-top"><div class="cx-n">Campanha WhatsApp</div><div class="cx-idx">324<span>índice</span></div></div><div class="cx-chips"><span class="cx-chip">engajamento 2,1× a média</span><span class="cx-chip">visualização 2,7× a média</span></div><span class="cx-act">Manter</span></div></div><div class="cx-item"><div class="cx-thumb"><img src="assets/peca-mobilidade.jpg" alt="Apresentador embaixo de um novo abrigo de ônibus"/></div><div><div class="cx-top"><div class="cx-n">Os novos abrigos de ônibus</div><div class="cx-idx">119<span>índice</span></div></div><div class="cx-chips"><span class="cx-chip">engajamento 1,5× a média</span><span class="cx-chip">visualização 1,4× a média</span></div><span class="cx-act">Acelerar</span></div></div><div class="cx-item"><div class="cx-thumb"><img src="assets/peca-habitacao.jpg" alt="Entrega das casas do Recanto Novo"/></div><div><div class="cx-top"><div class="cx-n">Casas entregues no Jardim Tarumã</div><div class="cx-idx">128<span>índice</span></div></div><div class="cx-chips"><span class="cx-chip">engajamento 1,5× a média</span><span class="cx-chip">visualização 1,9× a média</span></div><span class="cx-act">Manter</span></div></div><div class="cx-item"><div class="cx-thumb"><img src="assets/cx-seguranca2.jpg" alt="Guarda Municipal no bairro Novo Horizonte"/></div><div><div class="cx-top"><div class="cx-n">Guarda Municipal no Novo Horizonte</div><div class="cx-idx">105<span>índice</span></div></div><div class="cx-chips"><span class="cx-chip">engajamento 1,3× a média</span><span class="cx-chip">visualização 1,1× a média</span></div><span class="cx-act">Acelerar</span></div></div>
+        </div>
+        <div class="cx-col att">
+          <div class="cx-t">Pontos de atenção</div>
+          <div class="cx-item"><div class="cx-thumb"><img src="assets/cx-seguranca1.jpg" alt="Formação dos novos guardas municipais"/></div><div><div class="cx-top"><div class="cx-n">Formação dos novos guardas</div><div class="cx-idx">50<span>índice</span></div></div><div class="cx-chips"><span class="cx-chip">engajamento 0,64× a média</span><span class="cx-chip">maior circulação da semana</span><span class="cx-chip">esforço de mídia alto para o retorno</span></div><span class="cx-act">Ajustar</span></div></div><div class="cx-item"><div class="cx-thumb"><img src="assets/cx-servicos.jpg" alt="Equipe fazendo recapeamento na Vila Rami"/></div><div><div class="cx-top"><div class="cx-n">Asfalto novo na Vila Rami</div><div class="cx-idx">19<span>índice</span></div></div><div class="cx-chips"><span class="cx-chip">engajamento 0,30× a média</span><span class="cx-chip">visualização 0,08× a média</span></div><span class="cx-act">Ajustar</span></div></div><div class="cx-item"><div class="cx-thumb"><img src="assets/cx-saude1.jpg" alt="Peça institucional sobre a saúde de Jundiaí"/></div><div><div class="cx-top"><div class="cx-n">Proteger e Cuidar, a saúde de Jundiaí</div><div class="cx-idx">17<span>índice</span></div></div><div class="cx-chips"><span class="cx-chip">engajamento 0,28× a média</span><span class="cx-chip">visualização 0,08× a média</span></div><span class="cx-act">Ajustar</span></div></div>
+        </div>
+      </div>
+      <p class="cx-base">O índice combina engajamento, visualização e clique sobre as impressões de cada peça. Os pesos vêm do plano do mês: engajamento 52%, visualização 27% e clique 21%. <b>100 é a média da semana</b>, então acima de 100 a peça rendeu mais que a média.</p>
+      </div>
+
+      <div class="tw">
+        <table class="sortable">
+          <thead><tr><th>Peça</th><th class="n">Índice</th><th class="n">Impressões</th><th class="n">Engajamento</th><th class="n">Taxa</th><th class="n">Visualizações</th><th class="n">Cliques no link</th></tr></thead>
+          <tbody><tr><td>Campanha WhatsApp</td><td class="n"><b>324</b></td><td class="n">9.279</td><td class="n">5.672</td><td class="n">61,1%</td><td class="n">2.156</td><td class="n">376</td></tr><tr><td>Habitação</td><td class="n"><b>128</b></td><td class="n">6.861</td><td class="n">2.965</td><td class="n">43,2%</td><td class="n">1.104</td><td class="n"></td></tr><tr><td>Mobilidade 3</td><td class="n"><b>119</b></td><td class="n">10.058</td><td class="n">4.475</td><td class="n">44,5%</td><td class="n">1.233</td><td class="n">3</td></tr><tr><td>Segurança 2</td><td class="n"><b>105</b></td><td class="n">1.930</td><td class="n">735</td><td class="n">38,1%</td><td class="n">190</td><td class="n">3</td></tr><tr><td>Resumo da Semana</td><td class="n"><b>77</b></td><td class="n">135</td><td class="n">30</td><td class="n">22,2%</td><td class="n">5</td><td class="n">1</td></tr><tr><td>Saúde 3</td><td class="n"><b>66</b></td><td class="n">2.378</td><td class="n">643</td><td class="n">27,0%</td><td class="n">119</td><td class="n">1</td></tr><tr><td>Mobilidade 2</td><td class="n"><b>58</b></td><td class="n">1.429</td><td class="n">311</td><td class="n">21,8%</td><td class="n">87</td><td class="n"></td></tr><tr><td>Segurança 1</td><td class="n"><b>50</b></td><td class="n">16.581</td><td class="n">3.057</td><td class="n">18,4%</td><td class="n">725</td><td class="n">17</td></tr><tr><td>Saúde 2</td><td class="n"><b>35</b></td><td class="n">666</td><td class="n">101</td><td class="n">15,2%</td><td class="n">17</td><td class="n"></td></tr><tr><td>Serviços Públicos</td><td class="n"><b>19</b></td><td class="n">7.641</td><td class="n">653</td><td class="n">8,5%</td><td class="n">55</td><td class="n">2</td></tr><tr><td>Mobilidade 1</td><td class="n"><b>18</b></td><td class="n">2.716</td><td class="n">184</td><td class="n">6,8%</td><td class="n">38</td><td class="n">1</td></tr><tr><td>Saúde 1</td><td class="n"><b>17</b></td><td class="n">7.091</td><td class="n">570</td><td class="n">8,0%</td><td class="n">50</td><td class="n"></td></tr><tr><td>Centro da Gente</td><td class="n"><b>16</b></td><td class="n">280</td><td class="n">20</td><td class="n">7,1%</td><td class="n">3</td><td class="n"></td></tr><tr><td><b>Total</b></td><td class="n"><b>100</b></td><td class="n"><b>67.045</b></td><td class="n"><b>19.416</b></td><td class="n"><b>29,0%</b></td><td class="n"><b>5.782</b></td><td class="n"><b>404</b></td></tr></tbody>
+        </table>
+      </div>
+      <p class="sort-hint">Clique no título de qualquer coluna para reordenar a tabela por aquela métrica.</p>
+
+
+
+
+
+
+      <div class="prose" style="margin-top:22px">
+        <p>As quatro peças de melhor índice têm a mesma característica: entregam algo pronto e com lugar definido. Um canal que o morador passa a usar, os novos abrigos de ônibus, as casas entregues no Jardim Tarumã, a Guarda atuando no Novo Horizonte. O público responde ao que é concreto e visível.</p>
+        <p>O índice mostra o que o volume esconde. Segurança 1 teve o segundo maior engajamento da semana em número absoluto, mas ficou em 50, porque precisou de 16.581 impressões para chegar lá. Segurança 2, do mesmo tema, fez 105 com um oitavo dessa entrega. Uma mostra a Guarda em um bairro com nome, a outra trata da formação de novos agentes, algo que ainda vai acontecer.</p>
+        <p>As peças de índice mais baixo tratam de compromisso e de investimento, em termos gerais. Saúde 1 fala da saúde em constante transformação. Mobilidade 1 fala em investir na frota e modernizar os terminais. São peças bem escritas, mas o assunto delas é uma ideia, não uma coisa que o morador possa ver. A leitura da semana é direta: conteúdo concreto rende mais do que conteúdo subjetivo. Sugerimos que toda peça abra pelo que já está no lugar, com o nome do bairro logo no primeiro quadro, e deixe o compromisso para o fim do texto.</p>
+      </div>
+    </div>
+  </div>
+</section>
 <section class="wrap common">
-  <div class="sn">04</div>
+  <div class="sn">05</div>
   <h2>Aprendizados da semana</h2>
   <p class="sl">O que a segunda semana confirmou.</p>
   <ul class="cl">
     <li><b>1</b><p><strong>A história vende o canal melhor que o aviso.</strong> A peça mais eficiente da semana não anuncia o canal no começo: mostra uma situação que o morador reconhece e só depois apresenta a solução. Sugerimos repetir essa estrutura nas próximas pautas e, nas peças curtas como essa, criar também uma versão de quinze segundos, para alcançar quem assiste de passagem.</p></li>
     <li><b>2</b><p><strong>O pedido rende mais quando chega cedo.</strong> Nas três peças em destaque o convite aparece depois da metade do vídeo, e é ali que a audiência já começou a sair. Sugerimos levar o pedido, seja entrar no canal ou procurar o serviço, para os primeiros quinze segundos.</p></li>
-    <li><b>3</b><p><strong>Assunto de uso diário aguenta escala sem perder resposta.</strong> A peça dos abrigos de ônibus foi a mais exibida da semana e, mesmo alcançando muita gente, manteve uma das maiores proporções de interação da conta. Normalmente a resposta cai quando a entrega cresce, e aqui não caiu, sinal de que a pauta interessa de verdade a quem usa o transporte. Sugerimos manter essa pauta como a principal sustentação de volume nas próximas semanas.</p></li>
+    <li><b>3</b><p><strong>Assunto de uso diário aguenta escala sem perder resposta.</strong> A peça dos abrigos de ônibus foi a mais exibida da semana e, mesmo alcançando muita gente, manteve uma das maiores proporções de engajamento da conta. Normalmente a resposta cai quando a entrega cresce, e aqui não caiu, sinal de que a pauta interessa de verdade a quem usa o transporte. Sugerimos manter essa pauta como a principal sustentação de volume nas próximas semanas.</p></li>
   </ul>
 </section>
 
@@ -450,5 +531,45 @@
   <p>Prefeitura de Jundiaí · Boletim semanal</p>
   <p>Fonte: Meta Ads, apurado em 14 de setembro de 2026</p>
 </footer>
+
+<script>
+(function(){
+  function num(t){
+    var v = t.replace(/\./g,"").replace(",",".").replace(/[^0-9.\-]/g,"");
+    return v === "" ? null : parseFloat(v);
+  }
+  document.querySelectorAll("table.sortable").forEach(function(tab){
+    var ths = tab.querySelectorAll("thead th");
+    ths.forEach(function(th, idx){
+      th.setAttribute("tabindex","0");
+      th.setAttribute("role","button");
+      function ordena(){
+        var dir = th.getAttribute("data-dir") === "desc" ? "asc" : "desc";
+        ths.forEach(function(o){ o.removeAttribute("data-dir"); });
+        th.setAttribute("data-dir", dir);
+        var tb = tab.tBodies[0];
+        var linhas = Array.prototype.slice.call(tb.rows);
+        var total = linhas.filter(function(r){ return /total/i.test(r.cells[0].textContent); });
+        var corpo = linhas.filter(function(r){ return total.indexOf(r) === -1; });
+        corpo.sort(function(a,b){
+          var x = a.cells[idx].textContent.trim(), y = b.cells[idx].textContent.trim();
+          var nx = num(x), ny = num(y);
+          var r;
+          if (nx !== null && ny !== null) { r = nx - ny; }
+          else if (nx !== null) { r = 1; }
+          else if (ny !== null) { r = -1; }
+          else { r = x.localeCompare(y, "pt-BR"); }
+          return dir === "asc" ? r : -r;
+        });
+        corpo.concat(total).forEach(function(r){ tb.appendChild(r); });
+      }
+      th.addEventListener("click", ordena);
+      th.addEventListener("keydown", function(e){
+        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); ordena(); }
+      });
+    });
+  });
+})();
+</script>
 </body>
 </html>
