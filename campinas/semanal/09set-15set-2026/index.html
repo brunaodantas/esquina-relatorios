@@ -229,11 +229,11 @@
 .perf-grid.g1{grid-template-columns:1fr}
 .perf-grid.g2{grid-template-columns:repeat(2,1fr)}
 .perf-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);box-shadow:var(--sh);break-inside:avoid;padding:20px 22px}
-.perf-split{display:grid;grid-template-columns:168px 1fr;gap:22px;align-items:start;margin-top:16px}
+.perf-split{display:grid;grid-template-columns:168px minmax(0,1fr);gap:22px;align-items:start;margin-top:16px}
 .perf-split > .perf-body:only-child{grid-column:1/-1}
 .perf-media{border-radius:12px;overflow:hidden;background:#0d0d2b;box-shadow:0 6px 18px rgba(10,10,92,.12);aspect-ratio:9/16;display:flex;align-items:center;justify-content:center}
 .perf-media img{width:100%;height:100%;object-fit:contain;object-position:center center;display:block;margin:auto}
-.perf-body{display:flex;flex-direction:column;flex:1}
+.perf-body{display:flex;flex-direction:column;flex:1;min-width:0}
 .perf-top{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:10px;flex-wrap:wrap}
 .perf-topleft{display:inline-flex;align-items:center}
 .perf-pos{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:var(--p);color:#fff;font-size:.82rem;font-weight:800;flex-shrink:0;margin-right:8px}
@@ -243,7 +243,7 @@
 .perf-rank.b{background:rgba(123,47,190,.10);color:var(--purple)}
 .perf-fmt{font-size:.58rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--tm);text-align:right}
 .perf-title{font-size:.95rem;font-weight:700;color:var(--t1);padding-bottom:12px;border-bottom:1px solid var(--border);margin-bottom:12px;line-height:1.25}
-.perf-metrics{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.perf-metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(118px,1fr));gap:10px}
 .perf-metric{background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:12px 13px}
 .perf-metric .v{font-size:1.22rem;font-weight:800;color:var(--t1);letter-spacing:-.02em;line-height:1.1}
 .perf-metric .l{font-size:.63rem;font-weight:600;color:var(--tm);margin-top:5px;line-height:1.3}
