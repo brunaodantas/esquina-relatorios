@@ -232,6 +232,9 @@
 .perf-split > .perf-body:only-child{grid-column:1/-1}
 .perf-media{border-radius:12px;overflow:hidden;background:#0d0d2b;box-shadow:0 6px 18px rgba(10,10,92,.12);aspect-ratio:9/16;display:flex;align-items:center;justify-content:center}
 .perf-media img{width:100%;height:100%;object-fit:contain;object-position:center center;display:block;margin:auto}
+.perf-media.sq{aspect-ratio:1/1;background:#f2f4fb}
+.perf-media.sq img{object-fit:cover}
+.perf-split.sq{grid-template-columns:220px 1fr}
 .perf-body{display:flex;flex-direction:column;flex:1}
 .perf-top{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:10px;flex-wrap:wrap}
 .perf-topleft{display:inline-flex;align-items:center}
@@ -338,8 +341,8 @@
       </div>
       <div class="cr-b cr-body">
         <div class="perf-card">
-          <div class="perf-split">
-            <div class="perf-media"><img src="assets/peca-concilia.jpg" alt="Peça do programa Concilia, de negociação de dívida da Prefeitura de Campinas"/></div>
+          <div class="perf-split sq">
+            <div class="perf-media sq"><img src="assets/peca-concilia.jpg" alt="Peça do programa Concilia, de negociação de dívida da Prefeitura de Campinas"/></div>
             <div class="perf-body">
               <div class="perf-metrics"><div class="perf-metric"><div class="v">25.456</div><div class="l">Exibições no Meta</div></div><div class="perf-metric"><div class="v">6.476</div><div class="l">Pessoas alcançadas</div></div><div class="perf-metric"><div class="v">1.611</div><div class="l">Visualizações</div></div><div class="perf-metric"><div class="v">86</div><div class="l">Cliques no link</div></div></div>
               <div class="perf-ins "><div class="l">O que funcionou</div><div class="x">A peça leva direto ao site do programa, e os dois primeiros dias já trouxeram 86 cliques no link dentro do Meta Ads, num alcance ainda pequeno. Para uma ação que depende de o cidadão entrar e negociar, clique é o indicador que importa, e ele apareceu desde o primeiro dia.</div></div>
