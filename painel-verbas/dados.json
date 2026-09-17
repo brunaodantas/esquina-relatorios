@@ -1,0 +1,79 @@
+{
+  "atualizado": "2026-09-17T19:40:00-03:00",
+  "periodo_nota": "Gasto real de plataforma. Campinas apurada de 08/09 (Temas Diversos) e 14/09 (Concilia). Demais de 01/09.",
+  "clientes": [
+    {
+      "nome": "Hortolândia",
+      "flight": "01 a 29 de setembro",
+      "plano": 40000,
+      "linhas": [
+        {"linha": "Meta Ads impressões", "plano": 8000, "gasto": 153.24},
+        {"linha": "Meta Ads engajamento", "plano": 14000, "gasto": 162.82},
+        {"linha": "Meta Ads visualização", "plano": 8000, "gasto": 120.29},
+        {"linha": "YouTube", "plano": 8000, "gasto": 635.41},
+        {"linha": "TikTok", "plano": 2000, "gasto": 0}
+      ]
+    },
+    {
+      "nome": "Americana",
+      "flight": "01 a 29 de setembro",
+      "plano": 10000,
+      "linhas": [
+        {"linha": "Meta Ads impressões", "plano": 1500, "gasto": 218.62},
+        {"linha": "Meta Ads engajamento", "plano": 3500, "gasto": 278.84},
+        {"linha": "Meta Ads visualização", "plano": 2000, "gasto": 204.96},
+        {"linha": "YouTube", "plano": 3000, "gasto": 201.79}
+      ]
+    },
+    {
+      "nome": "Prefeitura de Jundiaí",
+      "flight": "01 a 29 de setembro",
+      "plano": 10000,
+      "linhas": [
+        {"linha": "Meta Ads impressões", "plano": 1900, "gasto": 208.01},
+        {"linha": "Meta Ads engajamento", "plano": 4200, "gasto": 91.27},
+        {"linha": "Meta Ads visualização", "plano": 2200, "gasto": 111.53},
+        {"linha": "Meta Ads cliques", "plano": 1700, "gasto": 138.28}
+      ]
+    },
+    {
+      "nome": "DAE Jundiaí",
+      "flight": "07 a 29 de setembro",
+      "plano": 10000,
+      "linhas": [
+        {"linha": "Meta Ads impressões", "plano": 1300, "gasto": 108.15},
+        {"linha": "Meta Ads engajamento", "plano": 2900, "gasto": 250.68},
+        {"linha": "Meta Ads visualização", "plano": 2000, "gasto": 73.14},
+        {"linha": "Meta Ads cliques", "plano": 1800, "gasto": 121.61},
+        {"linha": "YouTube", "plano": 2000, "gasto": 34.64}
+      ]
+    },
+    {
+      "nome": "Campinas, Temas Diversos",
+      "flight": "08 de setembro a 04 de outubro",
+      "plano": null,
+      "linhas": [
+        {"linha": "Meta Ads alcance", "plano": null, "gasto": 1073.68},
+        {"linha": "Meta Ads engajamento", "plano": null, "gasto": 960.57},
+        {"linha": "Meta Ads visitas ao perfil", "plano": null, "gasto": 904.42},
+        {"linha": "YouTube In-Stream", "plano": null, "gasto": 843.86},
+        {"linha": "YouTube Sequencial", "plano": null, "gasto": 258.23},
+        {"linha": "Rede de Display", "plano": null, "gasto": 289.07},
+        {"linha": "TikTok", "plano": null, "gasto": 599.98}
+      ]
+    },
+    {
+      "nome": "Campinas, Concilia",
+      "flight": "14 a 30 de setembro",
+      "plano": null,
+      "linhas": [
+        {"linha": "Meta Ads visualização", "plano": null, "gasto": 567.91},
+        {"linha": "Meta Ads visualização remarketing", "plano": null, "gasto": 542.53},
+        {"linha": "Meta Ads engajamento", "plano": null, "gasto": 186.62},
+        {"linha": "Meta Ads alcance", "plano": null, "gasto": 16.86},
+        {"linha": "YouTube In-Stream", "plano": null, "gasto": 42.33},
+        {"linha": "YouTube Bumper", "plano": null, "gasto": 50.94}
+      ]
+    }
+  ]
+}

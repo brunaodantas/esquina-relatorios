@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Painel de Verbas, Prefeituras</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F6F7F9; --card:#FFFFFF; --ink:#12161C; --ink2:#5B6673; --line:#E4E8ED;
+  --accent:#1A3CFF; --ok:#0F9D58; --warn:#C77700; --bar:#EDF0F4;
+  font-size:16px; color-scheme:light;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;padding:0 16px 64px}
+.wrap{max-width:1080px;margin:0 auto}
+header{padding:48px 0 24px}
+h1{font-size:clamp(1.9rem,4.2vw,2.6rem);line-height:1.1;margin:0 0 8px;font-weight:700;letter-spacing:-.02em;text-wrap:balance}
+.sub{color:var(--ink2);font-size:.9rem;margin:0}
+.stamp{display:inline-block;margin-top:14px;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink2);background:var(--card);border:1px solid var(--line);border-radius:999px;padding:5px 12px}
+.totais{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:24px 0 8px}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;min-width:0}
+.kpi .l{font-size:.65rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink2);margin:0 0 6px}
+.kpi .v{font-size:1.75rem;font-weight:700;letter-spacing:-.02em;font-variant-numeric:tabular-nums;margin:0}
+.kpi .s{font-size:.74rem;color:var(--ink2);margin:4px 0 0}
+section{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 22px 8px;margin:18px 0}
+.head{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;justify-content:space-between;margin-bottom:6px}
+h2{font-size:1.15rem;margin:0;font-weight:600;letter-spacing:-.01em}
+.flight{font-size:.78rem;color:var(--ink2)}
+.tot{font-size:.82rem;color:var(--ink2);font-variant-numeric:tabular-nums}
+.tbl{width:100%;overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:.88rem}
+th{text-align:left;font-size:.65rem;letter-spacing:.07em;text-transform:uppercase;color:var(--ink2);font-weight:600;padding:10px 8px;border-bottom:1px solid var(--line)}
+td{padding:11px 8px;border-bottom:1px solid var(--line);vertical-align:middle}
+tr:last-child td{border-bottom:none}
+.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.pct{text-align:right;font-variant-numeric:tabular-nums;font-weight:600;white-space:nowrap}
+.barwrap{min-width:90px}
+.bar{height:6px;background:var(--bar);border-radius:99px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--accent);border-radius:99px}
+.na{color:var(--ink2)}
+footer{color:var(--ink2);font-size:.78rem;padding:24px 4px;line-height:1.6}
+@media (max-width:560px){
+  th:nth-child(4),td:nth-child(4){display:none}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>Painel de Verbas</h1>
+  <p class="sub">Prefeituras e autarquias, ciclo de setembro de 2026. Gasto real de plataforma contra o previsto no plano de mídia.</p>
+  <span class="stamp" id="stamp"></span>
+</header>
+<div class="totais" id="totais"></div>
+<div id="clientes"></div>
+<footer>
+  Valores em reais. O previsto no plano é preço de venda contratado, não custo de mídia, por isso o gasto de plataforma fica naturalmente abaixo.<br>
+  Campinas não tem verba distribuída por linha no plano, aparece só o gasto por linha.<br>
+  Fontes: Meta Marketing API, Google Ads API e painel do TikTok Ads. Esquina.
+</footer>
+</div>
+<script id="dados" type="application/json">
+{
+  "atualizado": "2026-09-17T19:40:00-03:00",
+  "periodo_nota": "Gasto real de plataforma. Campinas apurada de 08/09 (Temas Diversos) e 14/09 (Concilia). Demais de 01/09.",
+  "clientes": [
+    {
+      "nome": "Hortolândia",
+      "flight": "01 a 29 de setembro",
+      "plano": 40000,
+      "linhas": [
+        {"linha": "Meta Ads impressões", "plano": 8000, "gasto": 153.24},
+        {"linha": "Meta Ads engajamento", "plano": 14000, "gasto": 162.82},
+        {"linha": "Meta Ads visualização", "plano": 8000, "gasto": 120.29},
+        {"linha": "YouTube", "plano": 8000, "gasto": 635.41},
+        {"linha": "TikTok", "plano": 2000, "gasto": 0}
+      ]
+    },
+    {
+      "nome": "Americana",
+      "flight": "01 a 29 de setembro",
+      "plano": 10000,
+      "linhas": [
+        {"linha": "Meta Ads impressões", "plano": 1500, "gasto": 218.62},
+        {"linha": "Meta Ads engajamento", "plano": 3500, "gasto": 278.84},
+        {"linha": "Meta Ads visualização", "plano": 2000, "gasto": 204.96},
+        {"linha": "YouTube", "plano": 3000, "gasto": 201.79}
+      ]
+    },
+    {
+      "nome": "Prefeitura de Jundiaí",
+      "flight": "01 a 29 de setembro",
+      "plano": 10000,
+      "linhas": [
+        {"linha": "Meta Ads impressões", "plano": 1900, "gasto": 208.01},
+        {"linha": "Meta Ads engajamento", "plano": 4200, "gasto": 91.27},
+        {"linha": "Meta Ads visualização", "plano": 2200, "gasto": 111.53},
+        {"linha": "Meta Ads cliques", "plano": 1700, "gasto": 138.28}
+      ]
+    },
+    {
+      "nome": "DAE Jundiaí",
+      "flight": "07 a 29 de setembro",
+      "plano": 10000,
+      "linhas": [
+        {"linha": "Meta Ads impressões", "plano": 1300, "gasto": 108.15},
+        {"linha": "Meta Ads engajamento", "plano": 2900, "gasto": 250.68},
+        {"linha": "Meta Ads visualização", "plano": 2000, "gasto": 73.14},
+        {"linha": "Meta Ads cliques", "plano": 1800, "gasto": 121.61},
+        {"linha": "YouTube", "plano": 2000, "gasto": 34.64}
+      ]
+    },
+    {
+      "nome": "Campinas, Temas Diversos",
+      "flight": "08 de setembro a 04 de outubro",
+      "plano": null,
+      "linhas": [
+        {"linha": "Meta Ads alcance", "plano": null, "gasto": 1073.68},
+        {"linha": "Meta Ads engajamento", "plano": null, "gasto": 960.57},
+        {"linha": "Meta Ads visitas ao perfil", "plano": null, "gasto": 904.42},
+        {"linha": "YouTube In-Stream", "plano": null, "gasto": 843.86},
+        {"linha": "YouTube Sequencial", "plano": null, "gasto": 258.23},
+        {"linha": "Rede de Display", "plano": null, "gasto": 289.07},
+        {"linha": "TikTok", "plano": null, "gasto": 599.98}
+      ]
+    },
+    {
+      "nome": "Campinas, Concilia",
+      "flight": "14 a 30 de setembro",
+      "plano": null,
+      "linhas": [
+        {"linha": "Meta Ads visualização", "plano": null, "gasto": 567.91},
+        {"linha": "Meta Ads visualização remarketing", "plano": null, "gasto": 542.53},
+        {"linha": "Meta Ads engajamento", "plano": null, "gasto": 186.62},
+        {"linha": "Meta Ads alcance", "plano": null, "gasto": 16.86},
+        {"linha": "YouTube In-Stream", "plano": null, "gasto": 42.33},
+        {"linha": "YouTube Bumper", "plano": null, "gasto": 50.94}
+      ]
+    }
+  ]
+}
+
+</script>
+<script>
+const brl = v => v.toLocaleString('pt-BR',{style:'currency',currency:'BRL',minimumFractionDigits:2});
+const pct = v => v.toLocaleString('pt-BR',{minimumFractionDigits:1,maximumFractionDigits:1})+'%';
+
+(d=>{
+  const dt = new Date(d.atualizado);
+  document.getElementById('stamp').textContent =
+    'Atualizado em ' + dt.toLocaleDateString('pt-BR') + ' às ' + dt.toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'});
+
+  let planoTot=0, gastoTot=0, linhasTot=0;
+  d.clientes.forEach(c=>{
+    c.linhas.forEach(l=>{ if(l.plano) planoTot+=l.plano; gastoTot+=l.gasto; linhasTot++; });
+  });
+  document.getElementById('totais').innerHTML = `
+    <div class="kpi"><p class="l">Previsto no plano</p><p class="v">${brl(planoTot)}</p><p class="s">soma das linhas com verba definida</p></div>
+    <div class="kpi"><p class="l">Gasto até agora</p><p class="v">${brl(gastoTot)}</p><p class="s">todas as contas, Campinas inclusa</p></div>
+    <div class="kpi"><p class="l">Linhas no ar</p><p class="v">${linhasTot}</p><p class="s">em 6 frentes de campanha</p></div>`;
+
+  document.getElementById('clientes').innerHTML = d.clientes.map(c=>{
+    const somaPlano = c.linhas.reduce((a,l)=>a+(l.plano||0),0);
+    const somaGasto = c.linhas.reduce((a,l)=>a+l.gasto,0);
+    const rows = c.linhas.map(l=>{
+      const p = l.plano ? (l.gasto/l.plano*100) : null;
+      return `<tr>
+        <td>${l.linha}</td>
+        <td class="num">${l.plano?brl(l.plano):'<span class="na">—</span>'}</td>
+        <td class="num">${brl(l.gasto)}</td>
+        <td class="barwrap">${p!==null?`<div class="bar"><i style="width:${Math.min(p,100)}%"></i></div>`:''}</td>
+        <td class="pct">${p!==null?pct(p):'<span class="na">—</span>'}</td>
+      </tr>`;
+    }).join('');
+    const resumo = somaPlano
+      ? `${brl(somaGasto)} de ${brl(somaPlano)} · ${pct(somaGasto/somaPlano*100)}`
+      : `${brl(somaGasto)} gastos`;
+    return `<section>
+      <div class="head">
+        <div><h2>${c.nome}</h2><span class="flight">${c.flight}</span></div>
+        <span class="tot">${resumo}</span>
+      </div>
+      <div class="tbl"><table>
+        <thead><tr><th>Linha</th><th class="num">Plano</th><th class="num">Gasto</th><th></th><th class="pct">%</th></tr></thead>
+        <tbody>${rows}</tbody>
+      </table></div>
+    </section>`;
+  }).join('');
+})(JSON.parse(document.getElementById('dados').textContent));
+</script>
+</body>
+</html>
