@@ -27,6 +27,7 @@ async def main():
         browser = await p.chromium.launch()
         page = await browser.new_page(viewport={"width": W, "height": H}, device_scale_factor=SCALE)
         await page.goto(SLIDES_FILE.as_uri(), wait_until="networkidle")
+        await page.evaluate("document.querySelectorAll('details').forEach(d => d.open = true)")  # modelo onepage: sem isso, seção fechada some no PDF
         await page.wait_for_timeout(1500)  # deixa os charts renderizarem
         n = await page.locator(".slide").count()
         if n == 0:
