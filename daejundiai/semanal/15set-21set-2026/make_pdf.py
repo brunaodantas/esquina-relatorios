@@ -49,6 +49,14 @@ async def main():
         end = max(cand) if cand else limit
         pages.append((y, end)); y = end
 
+    # evita ultima pagina so com rodape: recua o corte anterior se tudo couber
+    if len(pages) >= 2 and (pages[-1][1] - pages[-1][0]) < page_h * 0.4:
+        ini_ant = pages[-2][0]
+        opts = [c for c in cuts if ini_ant < c < pages[-2][1] and (Hp - c) <= page_h]
+        if opts:
+            novo = min(opts)
+            pages[-2] = (ini_ant, novo); pages[-1] = (novo, Hp)
+
     imgs = []
     for a, bnd in pages:
         canvas = Image.new("RGB", (Wp, page_h), (255, 255, 255))
