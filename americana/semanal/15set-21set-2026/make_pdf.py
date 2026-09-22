@@ -7,7 +7,6 @@ em paginas nas fronteiras dos blocos. Nunca impressao do navegador.
 Dependencias: pip install playwright pillow && python -m playwright install chromium
 """
 import asyncio
-import re
 from pathlib import Path
 from PIL import Image
 from playwright.async_api import async_playwright
@@ -25,43 +24,36 @@ async def main():
         await pg.goto(SRC.as_uri(), wait_until="networkidle")
         await pg.evaluate("document.querySelectorAll('details').forEach(d=>d.open=true)")
         await pg.wait_for_timeout(900)
-        blocks = await pg.evaluate("""() => {
-          const sel = 'header.hero, .hc, .card, .ins, .prose > p, .perf-card, .perf-ins, .perf-metrics, .perf-top, .perf-title, .cx-item, .cxh, ul.cl > li, table, .dsec-top, footer.wrap p, h2, h3';
+        # fronteiras candidatas: fim de cada bloco de topo
+        bounds = await pg.evaluate("""() => {
+          const sel = 'header.hero, section.wrap, .creatives > .cr, footer.wrap, .card, .ins, ul.cl > li';
           return [...document.querySelectorAll(sel)].map(e => {
             const r = e.getBoundingClientRect();
-            return [r.top + window.scrollY, r.bottom + window.scrollY];
-          }).filter(b => b[1] > b[0]);
+            return r.bottom + window.scrollY;
+          });
         }""")
-        bg = await pg.evaluate("getComputedStyle(document.body).backgroundColor")
         total = await pg.evaluate("document.body.scrollHeight")
         await pg.screenshot(path=str(BASE / "_full.png"), full_page=True)
         await b.close()
 
-    m = re.findall(r'\d+', bg or '')
-    fill = tuple(int(x) for x in m[:3]) if len(m) >= 3 else (255, 255, 255)
     im = Image.open(BASE / "_full.png").convert("RGB")
     Wp, Hp = im.size
     page_h = int(Wp * PAGE_RATIO)
-    blocks = [(int(t * SCALE), int(bt * SCALE)) for t, bt in blocks]
-    tops = sorted({t for t, _ in blocks})
+    cuts = sorted({int(b * SCALE) for b in bounds if 0 < b * SCALE < Hp})
     pages, y = [], 0
     while y < Hp:
         limit = y + page_h
         if limit >= Hp:
             pages.append((y, Hp)); break
-        cand = [t for t in tops if y + page_h * 0.3 < t <= limit]
+        cand = [c for c in cuts if y + page_h * 0.45 < c <= limit]
         end = max(cand) if cand else limit
-        for t, bt in blocks:
-            if t < end < bt and t > y + page_h * 0.25:
-                end = min(end, t)
         pages.append((y, end)); y = end
 
     imgs = []
     for a, bnd in pages:
-        canvas = Image.new("RGB", (Wp, page_h), fill)
+        canvas = Image.new("RGB", (Wp, page_h), (255, 255, 255))
         canvas.paste(im.crop((0, a, Wp, bnd)), (0, 0))
         imgs.append(canvas)
-
     imgs[0].save(str(PDF_OUT), save_all=True, append_images=imgs[1:], resolution=RES)
     (BASE / "_full.png").unlink()
     print(f"PDF gerado: {PDF_OUT} · {len(imgs)} paginas · {PDF_OUT.stat().st_size/1048576:.1f} MB")
