@@ -195,7 +195,7 @@ const DATA = {
     ]
   },
   "agosto": {
-    "label": "Agosto", "novo": true,
+    "label": "Agosto", "novo": false,
     "periodos": [
       {
             "id":"ago-set-consolidado","tag":"Consolidado","tipo":"m","range":"06/08 a 07/09","ano":"2026","consolidado":true,
@@ -252,14 +252,40 @@ const DATA = {
         "href":"../semanal/0610-ago-2026/index.html"
       }
     ]
+  },
+  "setembro": {
+    "label": "Setembro", "novo": true,
+    "periodos": [
+      {
+        "id":"set-1622","tag":"Semanal","tipo":"r","range":"16 a 22/09","ano":"2026",
+        "titulo":"Boletim Semanal, Temas Diversos",
+        "desc":"A semana de maior entrega do ciclo, com 1,48 milhão de impressões e as quatro linhas crescendo sobre a semana anterior. O Combate ao racismo foi o conteúdo que mais conversou com o público e o que mais levou gente ao link.",
+        "chips":["meta","google","yt","tiktok"],
+        "href":"../semanal/16set-22set-2026/index.html"
+      },
+      {
+        "id":"set-concilia","tag":"Concilia","tipo":"r","range":"14 a 17/09","ano":"2026",
+        "titulo":"Boletim Semanal, Concilia",
+        "desc":"Primeiros dias da ação do programa de negociação de dívidas, em Meta Ads e YouTube.",
+        "chips":["meta","yt"],
+        "href":"../semanal/concilia-14set-15set-2026/index.html"
+      },
+      {
+        "id":"set-0915","tag":"Semanal","tipo":"r","range":"09 a 15/09","ano":"2026",
+        "titulo":"Boletim Semanal, Temas Diversos",
+        "desc":"Primeira semana cheia do novo ciclo, com alta em todas as frentes de vídeo. O Campinas Innovation Week foi o assunto que mais mobilizou o público.",
+        "chips":["meta","google","yt","tiktok"],
+        "href":"../semanal/09set-15set-2026/index.html"
+      }
+    ]
   }
 };
 
 const CHIP_LABEL = {meta:"Meta Ads",google:"Display",yt:"YouTube",tiktok:"TikTok",pdf:"PDF disponível"};
 const CHIP_CLASS = {meta:"chip-meta",google:"chip-google",yt:"chip-yt",tiktok:"chip-tiktok",pdf:"chip-pdf"};
-const MONTH_ORDER = ["junho","julho","agosto"];
+const MONTH_ORDER = ["junho","julho","agosto","setembro"];
 
-let activeMonth = "agosto";
+let activeMonth = "setembro";
 let activePeriodo = {};
 MONTH_ORDER.forEach(m => activePeriodo[m] = DATA[m].periodos[DATA[m].periodos.length-1].id);
 
