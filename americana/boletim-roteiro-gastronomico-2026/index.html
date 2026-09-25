@@ -95,6 +95,21 @@
   .perf-ins.ap { border-left-color:var(--p); }
   .perf-ins.ap .l { color:var(--p); }
 
+  .perf-split { display:grid; grid-template-columns:168px 1fr; gap:22px; align-items:start; }
+  .perf-media { border-radius:12px; overflow:hidden; background:#0d0d2b; box-shadow:0 6px 18px rgba(10,10,92,.12); aspect-ratio:1/1; position:relative; }
+  .perf-media img { width:100%; height:100%; object-fit:cover; display:block; }
+  .perf-body { display:flex; flex-direction:column; flex:1; min-width:0; }
+  .carousel { position:relative; width:100%; height:100%; }
+  .carousel img { position:absolute; inset:0; opacity:0; transition:opacity .35s ease; }
+  .carousel img.active { opacity:1; }
+  .carousel-arrow { position:absolute; top:50%; transform:translateY(-50%); width:26px; height:26px; border-radius:50%; border:none; background:rgba(0,0,0,.45); color:#fff; font-size:15px; line-height:1; cursor:pointer; display:flex; align-items:center; justify-content:center; z-index:2; }
+  .carousel-arrow.prev { left:6px; }
+  .carousel-arrow.next { right:6px; }
+  .carousel-dots { position:absolute; bottom:8px; left:50%; transform:translateX(-50%); display:flex; gap:5px; z-index:2; }
+  .carousel-dots span { width:5px; height:5px; border-radius:50%; background:rgba(255,255,255,.5); }
+  .carousel-dots span.active { background:#fff; }
+  @media (max-width:900px) { .perf-split { grid-template-columns:1fr; } .perf-media { max-width:240px; margin:0 auto; } }
+
   .common { background:linear-gradient(135deg,var(--navy),#1a1a8f); border-radius:var(--r3); padding:var(--s6) var(--s6); margin:var(--s6) auto; }
   .common .prose { display:flex; flex-direction:column; gap:var(--s4); margin-top:var(--s4); }
   .common .prose p { margin:0; padding-bottom:var(--s5); border-bottom:1px solid rgba(255,255,255,0.12); color:rgba(255,255,255,0.85); font-size:0.96rem; line-height:1.75; }
@@ -183,16 +198,34 @@
         <span class="perf-fmt">Carrossel</span>
       </div>
       <div class="perf-title" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">O convite completo do evento <a class="perf-link" href="https://www.facebook.com/182277488497907/posts/1491869806298035/" target="_blank" rel="noopener">Ver a publicação ↗</a></div>
-      <div class="perf-metrics">
-        <div class="perf-metric"><div class="v">27.975</div><div class="l">Impressões</div></div>
-        <div class="perf-metric"><div class="v">18.891</div><div class="l">Contas alcançadas</div></div>
-        <div class="perf-metric"><div class="v">28</div><div class="l">Interações</div></div>
-        <div class="perf-metric"><div class="v">25</div><div class="l">Cliques no link</div></div>
+      <div class="perf-split">
+        <div class="perf-media">
+          <div class="carousel" data-carousel>
+            <img class="active" src="assets/peca-roteiro-convite.jpg" alt="Slide 1 do carrossel do Roteiro Gastronômico, arte de divulgação"/>
+            <img src="assets/peca-roteiro-2.jpg" alt="Slide 2 do carrossel do Roteiro Gastronômico"/>
+            <img src="assets/peca-roteiro-3.jpg" alt="Slide 3 do carrossel do Roteiro Gastronômico"/>
+            <img src="assets/peca-roteiro-4.jpg" alt="Slide 4 do carrossel do Roteiro Gastronômico"/>
+            <img src="assets/peca-roteiro-5.jpg" alt="Slide 5 do carrossel do Roteiro Gastronômico"/>
+            <button class="carousel-arrow prev" type="button" aria-label="Slide anterior">‹</button>
+            <button class="carousel-arrow next" type="button" aria-label="Próximo slide">›</button>
+            <div class="carousel-dots">
+              <span class="active"></span><span></span><span></span><span></span><span></span>
+            </div>
+          </div>
+        </div>
+        <div class="perf-body">
+          <div class="perf-metrics">
+            <div class="perf-metric"><div class="v">27.975</div><div class="l">Impressões</div></div>
+            <div class="perf-metric"><div class="v">18.891</div><div class="l">Contas alcançadas</div></div>
+            <div class="perf-metric"><div class="v">28</div><div class="l">Interações</div></div>
+            <div class="perf-metric"><div class="v">25</div><div class="l">Cliques no link</div></div>
+          </div>
+          <div class="perf-ins"><div class="l">O que funcionou</div><div class="x">O carrossel traz a programação completa, o motivo solidário da entrada (1 litro de óleo para o Fundo Social) e os parceiros do evento, tudo na própria legenda, sem depender de clique para entender do que se trata.</div></div>
+          <div class="perf-ins at"><div class="l">Ponto de atenção</div><div class="x">A peça saiu 7 dias antes do evento (28 a 30/08). Sugerimos uma segunda leva de veiculação nos 2 a 3 dias que antecedem a data, pra pegar quem decide de última hora.</div></div>
+          <div class="perf-ins rp"><div class="l">Resposta do público</div><div class="x">Reações e compartilhamento registrados, sem comentários públicos até a apuração.</div></div>
+          <div class="perf-ins ap"><div class="l">Audiência e posicionamento</div><div class="x">Publicado originalmente no Instagram e replicado no Facebook, rodou em feed, stories e reels na cidade inteira.</div></div>
+        </div>
       </div>
-      <div class="perf-ins"><div class="l">O que funcionou</div><div class="x">O carrossel traz a programação completa, o motivo solidário da entrada (1 litro de óleo para o Fundo Social) e os parceiros do evento, tudo na própria legenda, sem depender de clique para entender do que se trata.</div></div>
-      <div class="perf-ins at"><div class="l">Ponto de atenção</div><div class="x">A peça saiu 7 dias antes do evento (28 a 30/08). Sugerimos uma segunda leva de veiculação nos 2 a 3 dias que antecedem a data, pra pegar quem decide de última hora.</div></div>
-      <div class="perf-ins rp"><div class="l">Resposta do público</div><div class="x">Reações e compartilhamento registrados, sem comentários públicos até a apuração.</div></div>
-      <div class="perf-ins ap"><div class="l">Audiência e posicionamento</div><div class="x">Publicado originalmente no Instagram e replicado no Facebook, rodou em feed, stories e reels na cidade inteira.</div></div>
     </div>
 
     <div class="cr">
@@ -201,16 +234,21 @@
         <span class="perf-fmt">Link</span>
       </div>
       <div class="perf-title" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">O link direto pra programação <a class="perf-link" href="https://www.facebook.com/182277488497907/posts/1490360286448987/" target="_blank" rel="noopener">Ver a publicação ↗</a></div>
-      <div class="perf-metrics">
-        <div class="perf-metric"><div class="v">17.975</div><div class="l">Impressões</div></div>
-        <div class="perf-metric"><div class="v">16.987</div><div class="l">Contas alcançadas</div></div>
-        <div class="perf-metric"><div class="v">9</div><div class="l">Interações</div></div>
-        <div class="perf-metric"><div class="v">8</div><div class="l">Cliques no link</div></div>
+      <div class="perf-split">
+        <div class="perf-media"><img src="assets/peca-roteiro-link.jpg" alt="Card de link do Roteiro Gastronômico, com o botão Saiba mais"/></div>
+        <div class="perf-body">
+          <div class="perf-metrics">
+            <div class="perf-metric"><div class="v">17.975</div><div class="l">Impressões</div></div>
+            <div class="perf-metric"><div class="v">16.987</div><div class="l">Contas alcançadas</div></div>
+            <div class="perf-metric"><div class="v">9</div><div class="l">Interações</div></div>
+            <div class="perf-metric"><div class="v">8</div><div class="l">Cliques no link</div></div>
+          </div>
+          <div class="perf-ins"><div class="l">O que funcionou</div><div class="x">Foi a primeira peça a entrar no ar, abrindo a divulgação do evento uma semana antes.</div></div>
+          <div class="perf-ins at"><div class="l">Ponto de atenção</div><div class="x">É um card de link ("Confira a programação · Saiba mais"), sem legenda própria contando o que é o evento. Quem não já sabia do Roteiro Gastronômico precisa clicar pra entender, o que explica a interação bem mais baixa que a do carrossel.</div></div>
+          <div class="perf-ins rp"><div class="l">Resposta do público</div><div class="x">Sem comentários públicos registrados.</div></div>
+          <div class="perf-ins ap"><div class="l">Audiência e posicionamento</div><div class="x">Mesma origem (Instagram replicado no Facebook), mesma cidade inteira como público.</div></div>
+        </div>
       </div>
-      <div class="perf-ins"><div class="l">O que funcionou</div><div class="x">Foi a primeira peça a entrar no ar, abrindo a divulgação do evento uma semana antes.</div></div>
-      <div class="perf-ins at"><div class="l">Ponto de atenção</div><div class="x">É um card de link ("Confira a programação · Saiba mais"), sem legenda própria contando o que é o evento. Quem não já sabia do Roteiro Gastronômico precisa clicar pra entender, o que explica a interação bem mais baixa que a do carrossel.</div></div>
-      <div class="perf-ins rp"><div class="l">Resposta do público</div><div class="x">Sem comentários públicos registrados.</div></div>
-      <div class="perf-ins ap"><div class="l">Audiência e posicionamento</div><div class="x">Mesma origem (Instagram replicado no Facebook), mesma cidade inteira como público.</div></div>
     </div>
 
   </div>
@@ -230,5 +268,22 @@
   <p>Fonte: Meta Ads, apurado em 25 de setembro de 2026</p>
 </footer>
 
+<script>
+document.querySelectorAll('[data-carousel]').forEach(function(car){
+  var imgs = car.querySelectorAll('img');
+  var dots = car.querySelectorAll('.carousel-dots span');
+  var i = 0;
+  function show(n){
+    imgs[i].classList.remove('active');
+    dots[i].classList.remove('active');
+    i = (n + imgs.length) % imgs.length;
+    imgs[i].classList.add('active');
+    dots[i].classList.add('active');
+  }
+  car.querySelector('.prev').addEventListener('click', function(){ show(i-1); });
+  car.querySelector('.next').addEventListener('click', function(){ show(i+1); });
+  dots.forEach(function(d, idx){ d.addEventListener('click', function(){ show(idx); }); });
+});
+</script>
 </body>
 </html>
