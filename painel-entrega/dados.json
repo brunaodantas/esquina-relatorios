@@ -1,70 +1,70 @@
 {
-  "updatedAt": "2026-09-27T23:35:00-03:00",
+  "updatedAt": "2026-09-27T23:50:00-03:00",
   "sections": {
     "concilia": [
-      {"linha": "Meta Visualização", "sub": "CPV", "meta": 20000, "entregue": 41452},
-      {"linha": "Meta Visualização Remarketing", "sub": "CPV RMKT", "meta": 16000, "entregue": 19377},
-      {"linha": "Meta Engajamento", "sub": "CPE", "meta": 20000, "entregue": 18424},
-      {"linha": "YouTube In Stream", "sub": "visualização real (TrueView)", "meta": 24000, "entregue": 24759},
-      {"linha": "YouTube Bumper", "sub": "bônus, fora da meta · impressões", "meta": 100000, "entregue": 89523, "kind": "bonus"}
+      {"linha": "Meta Visualização", "sub": "CPV", "meta": 20000, "entregue": 41452, "custo": 0.0456, "custoUnid": "/view"},
+      {"linha": "Meta Visualização Remarketing", "sub": "CPV RMKT", "meta": 16000, "entregue": 19377, "custo": 0.0995, "custoUnid": "/view"},
+      {"linha": "Meta Engajamento", "sub": "CPE", "meta": 20000, "entregue": 18424, "custo": 0.2254, "custoUnid": "/engaj."},
+      {"linha": "YouTube In Stream", "sub": "visualização real (TrueView)", "meta": 24000, "entregue": 24759, "custo": 0.0239, "custoUnid": "/view"},
+      {"linha": "YouTube Bumper", "sub": "bônus, fora da meta · impressões", "meta": 100000, "entregue": 89523, "kind": "bonus", "custo": 1.9275, "custoUnid": "/mil"}
     ],
     "seguranca": [
-      {"linha": "Meta Ads", "sub": "CPM · impressões", "meta": 1000000, "entregue": 26632},
-      {"linha": "Meta Ads", "sub": "CPE · engajamento", "meta": 28000, "entregue": 1030},
-      {"linha": "Display", "sub": "Google · CPM", "meta": 400000, "entregue": 23292},
-      {"linha": "Demand Gen", "sub": "Google · CPM", "meta": 400000, "entregue": 12053}
+      {"linha": "Meta Ads", "sub": "CPM · impressões", "meta": 1000000, "entregue": 26632, "custo": 2.4118, "custoUnid": "/mil"},
+      {"linha": "Meta Ads", "sub": "CPE · engajamento", "meta": 28000, "entregue": 1030, "custo": 0.0653, "custoUnid": "/engaj."},
+      {"linha": "Display", "sub": "Google · CPM", "meta": 400000, "entregue": 23292, "custo": 6.4585, "custoUnid": "/mil"},
+      {"linha": "Demand Gen", "sub": "Google · CPM", "meta": 400000, "entregue": 12053, "custo": 16.6066, "custoUnid": "/mil"}
     ],
     "temasCampinas": [
-      {"linha": "Display", "sub": "Google · CPM", "meta": 792000, "entregue": 558257},
-      {"linha": "YouTube", "sub": "In-Stream + Sequencial", "meta": 1210000, "entregue": 803468},
-      {"linha": "Meta Engajamento", "sub": "CPE", "meta": 484000, "entregue": 315172},
-      {"linha": "Meta Alcance", "sub": "CPM", "meta": 1936000, "entregue": 1064521},
-      {"linha": "Visitas ao Perfil", "sub": "gasto", "meta": 3000, "entregue": 1998.23, "money": true},
-      {"linha": "TikTok", "sub": "v1+v2+v3", "meta": 1100000, "entregue": 873794}
+      {"linha": "Display", "sub": "Google · CPM", "meta": 792000, "entregue": 558257, "custo": 1.34, "custoUnid": "/mil"},
+      {"linha": "YouTube", "sub": "In-Stream + Sequencial", "meta": 1210000, "entregue": 803468, "custo": 4.10, "custoUnid": "/mil"},
+      {"linha": "Meta Engajamento", "sub": "CPE", "meta": 484000, "entregue": 315172, "custo": 7.14, "custoUnid": "/mil"},
+      {"linha": "Meta Alcance", "sub": "CPM", "meta": 1936000, "entregue": 1064521, "custo": 2.27, "custoUnid": "/mil"},
+      {"linha": "Visitas ao Perfil", "sub": "gasto", "meta": 3000, "entregue": 1998.23, "money": true, "custo": 7.00, "custoUnid": "/mil"},
+      {"linha": "TikTok", "sub": "v1+v2+v3", "meta": 1100000, "entregue": 873794, "custo": 2.37, "custoUnid": "/mil"}
     ],
     "americana": [
-      {"linha": "CPM", "sub": "impressões", "meta": 150000, "entregue": 180100},
-      {"linha": "CPE", "sub": "engajamento", "meta": 14000, "entregue": 15661},
-      {"linha": "CPV", "sub": "visualização", "meta": 8000, "entregue": 9784},
-      {"linha": "YouTube", "sub": "visualização", "meta": 2000, "entregue": 12573}
+      {"linha": "CPM", "sub": "impressões", "meta": 150000, "entregue": 180100, "custo": 1.8522, "custoUnid": "/mil"},
+      {"linha": "CPE", "sub": "engajamento", "meta": 14000, "entregue": 15661, "custo": 0.0564, "custoUnid": "/engaj."},
+      {"linha": "CPV", "sub": "visualização", "meta": 8000, "entregue": 9784, "custo": 0.0308, "custoUnid": "/view"},
+      {"linha": "YouTube", "sub": "visualização", "meta": 2000, "entregue": 12573, "custo": 0.0159, "custoUnid": "/view"}
     ],
     "pmj": [
-      {"linha": "CPM", "sub": "impressões", "meta": 140000, "entregue": 209150},
-      {"linha": "CPV", "sub": "visualização", "meta": 10000, "entregue": 10581},
-      {"linha": "CPE", "sub": "engajamento", "meta": 20000, "entregue": 27123},
-      {"linha": "CPC", "sub": "cliques no link", "meta": 749, "entregue": 1716},
-      {"linha": "YouTube", "sub": "visualização", "meta": 2000, "entregue": 16420}
+      {"linha": "CPM", "sub": "impressões", "meta": 140000, "entregue": 209150, "custo": 2.0013, "custoUnid": "/mil"},
+      {"linha": "CPV", "sub": "visualização", "meta": 10000, "entregue": 10581, "custo": 0.0172, "custoUnid": "/view"},
+      {"linha": "CPE", "sub": "engajamento", "meta": 20000, "entregue": 27123, "custo": 0.0072, "custoUnid": "/engaj."},
+      {"linha": "CPC", "sub": "cliques no link", "meta": 749, "entregue": 1716, "custo": 0.0913, "custoUnid": "/clique"},
+      {"linha": "YouTube", "sub": "visualização", "meta": 2000, "entregue": 16420, "custo": 0.0325, "custoUnid": "/view"}
     ],
     "dae": [
-      {"linha": "CPM", "sub": "impressões", "meta": 130000, "entregue": 149344},
-      {"linha": "CPC", "sub": "cliques no link", "meta": 720, "entregue": 898},
-      {"linha": "CPE", "sub": "engajamento", "meta": 9667, "entregue": 12637},
-      {"linha": "CPV", "sub": "visualização", "meta": 10000, "entregue": 11787},
-      {"linha": "YouTube", "sub": "visualização", "meta": 10000, "entregue": 18398}
+      {"linha": "CPM", "sub": "impressões", "meta": 130000, "entregue": 149344, "custo": 2.0907, "custoUnid": "/mil"},
+      {"linha": "CPC", "sub": "cliques no link", "meta": 720, "entregue": 898, "custo": 0.4724, "custoUnid": "/clique"},
+      {"linha": "CPE", "sub": "engajamento", "meta": 9667, "entregue": 12637, "custo": 0.0452, "custoUnid": "/engaj."},
+      {"linha": "CPV", "sub": "visualização", "meta": 10000, "entregue": 11787, "custo": 0.0187, "custoUnid": "/view"},
+      {"linha": "YouTube", "sub": "visualização", "meta": 10000, "entregue": 18398, "custo": null, "custoUnid": ""}
     ],
     "sumarezinho": [
-      {"linha": "Impressões", "sub": "CPM", "meta": 80000, "entregue": 104403},
-      {"linha": "Engajamento", "sub": "CPE", "meta": 4000, "entregue": 4395},
-      {"linha": "Visualização", "sub": "CPV Meta", "meta": 4800, "entregue": 6501},
-      {"linha": "YouTube", "sub": "visualização", "meta": 12000, "entregue": 15056}
+      {"linha": "Impressões", "sub": "CPM", "meta": 80000, "entregue": 104403, "custo": 2.3116, "custoUnid": "/mil"},
+      {"linha": "Engajamento", "sub": "CPE", "meta": 4000, "entregue": 4395, "custo": 0.0566, "custoUnid": "/engaj."},
+      {"linha": "Visualização", "sub": "CPV Meta", "meta": 4800, "entregue": 6501, "custo": 0.0333, "custoUnid": "/view"},
+      {"linha": "YouTube", "sub": "visualização", "meta": 12000, "entregue": 15056, "custo": 0.1009, "custoUnid": "/view"}
     ],
     "operacaoGm": [
-      {"linha": "Impressões", "sub": "CPM", "meta": 250000, "entregue": 258627},
-      {"linha": "Engajamento", "sub": "CPE · verba R$170/dia", "meta": 18000, "entregue": 17378},
-      {"linha": "Visualização", "sub": "CPV Meta · verba R$150/dia", "meta": 14000, "entregue": 14035},
-      {"linha": "YouTube", "sub": "visualização · verba R$10/dia", "meta": 18000, "entregue": 22000}
+      {"linha": "Impressões", "sub": "CPM", "meta": 250000, "entregue": 258627, "custo": 2.3681, "custoUnid": "/mil"},
+      {"linha": "Engajamento", "sub": "CPE · verba R$170/dia", "meta": 18000, "entregue": 17378, "custo": 0.0675, "custoUnid": "/engaj."},
+      {"linha": "Visualização", "sub": "CPV Meta · verba R$150/dia", "meta": 14000, "entregue": 14035, "custo": 0.0883, "custoUnid": "/view"},
+      {"linha": "YouTube", "sub": "visualização · verba R$10/dia", "meta": 18000, "entregue": 22000, "custo": 0.1123, "custoUnid": "/view"}
     ],
     "spPorTodas": [
-      {"linha": "Impressões", "sub": "CPM", "meta": 200000, "entregue": 512624}
+      {"linha": "Impressões", "sub": "CPM", "meta": 200000, "entregue": 512624, "custo": 2.1259, "custoUnid": "/mil"}
     ],
     "saudeMental": [
-      {"linha": "Impressões", "sub": "CPM", "meta": 270000, "entregue": 435073},
-      {"linha": "Engajamento", "sub": "CPE", "meta": 10000, "entregue": 15409},
-      {"linha": "Visualização", "sub": "CPV Meta", "meta": 13200, "entregue": 19592},
-      {"linha": "YouTube", "sub": "visualização", "meta": 14000, "entregue": 17056}
+      {"linha": "Impressões", "sub": "CPM", "meta": 270000, "entregue": 435073, "custo": 2.5971, "custoUnid": "/mil"},
+      {"linha": "Engajamento", "sub": "CPE", "meta": 10000, "entregue": 15409, "custo": 0.0740, "custoUnid": "/engaj."},
+      {"linha": "Visualização", "sub": "CPV Meta", "meta": 13200, "entregue": 19592, "custo": 0.1090, "custoUnid": "/view"},
+      {"linha": "YouTube", "sub": "visualização", "meta": 14000, "entregue": 17056, "custo": 0.1328, "custoUnid": "/view"}
     ],
     "tiktokHor": [
-      {"linha": "Trend da Vovó", "sub": "visualização", "meta": 12000, "entregue": 13560}
+      {"linha": "Trend da Vovó", "sub": "visualização", "meta": 12000, "entregue": 13560, "custo": null, "custoUnid": ""}
     ]
   }
 }
