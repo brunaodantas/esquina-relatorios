@@ -145,12 +145,6 @@
   td.custo{color:var(--muted); font-size:.8rem}
   td.linha{font-weight:500}
   td.linha .sub{display:block; font-size:.72rem; color:var(--muted); font-weight:400; margin-top:1px}
-  .spark{
-    display:flex; align-items:flex-end; gap:1.5px; height:22px; margin-top:6px; width:140px;
-  }
-  .spark span{
-    flex:1; min-width:2px; background:var(--accent); opacity:.55; border-radius:1px 1px 0 0;
-  }
 
   .pct{display:inline-flex; align-items:center; gap:6px; font-weight:600}
   .bar{width:64px; height:6px; border-radius:999px; background:var(--surface-2); overflow:hidden; flex-shrink:0}
@@ -346,13 +340,6 @@ function entregueForPeriod(item, periodo){
   return sorted.slice(0, days).reduce((s,d)=>s+d.v, 0);
 }
 
-function sparkline(daily){
-  if(!daily || daily.length < 2) return '';
-  const max = Math.max(...daily.map(d=>d.v), 1);
-  const bars = daily.map(d => `<span style="height:${Math.max(6, d.v/max*100)}%" title="${d.date}: ${fmt(d.v)}"></span>`).join('');
-  return `<div class="spark">${bars}</div>`;
-}
-
 function row(item, periodo){
   const periodEntregue = entregueForPeriod(item, periodo || 'ciclo');
   const usingPeriodData = periodEntregue !== null;
@@ -370,7 +357,7 @@ function row(item, periodo){
   const noDailyNote = (!usingPeriodData && periodo && periodo !== 'ciclo')
     ? '<span class="sub" style="color:var(--muted)">sem histórico diário ainda, mostrando o ciclo completo</span>' : '';
   return `<tr>
-    <td class="linha">${item.linha}${item.sub ? `<span class="sub">${item.sub}</span>` : ''}${noDailyNote}${sparkline(item.daily)}</td>
+    <td class="linha">${item.linha}${item.sub ? `<span class="sub">${item.sub}</span>` : ''}${noDailyNote}</td>
     <td data-label="Métrica">${item.metrica || '—'}</td>
     <td class="num" data-label="Meta">${fmtFn(item.meta)}</td>
     <td class="num" data-label="Entregue">${fmtFn(entregueVal)}</td>
