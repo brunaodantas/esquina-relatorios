@@ -63,6 +63,15 @@
   }
   .theme-toggle:hover{color:var(--text); border-color:var(--accent)}
 
+  .month-wrap{display:inline-flex; align-items:center; margin:4px 0 16px}
+  .month-wrap select{
+    font:inherit; font-size:.82rem; font-weight:600; padding:8px 12px; border-radius:8px;
+    background:var(--surface); border:1px solid var(--border); color:var(--text); cursor:pointer;
+  }
+  .month-wrap .month-label{
+    font-size:.82rem; font-weight:600; padding:8px 12px; border-radius:8px;
+    background:var(--surface); border:1px solid var(--border); color:var(--text);
+  }
   .period-control{position:relative; display:inline-block; margin:4px 0 16px}
   .period-btn{
     display:inline-flex; align-items:center; gap:8px; padding:8px 14px; border-radius:8px;
@@ -136,6 +145,12 @@
   td.custo{color:var(--muted); font-size:.8rem}
   td.linha{font-weight:500}
   td.linha .sub{display:block; font-size:.72rem; color:var(--muted); font-weight:400; margin-top:1px}
+  .spark{
+    display:flex; align-items:flex-end; gap:1.5px; height:22px; margin-top:6px; width:140px;
+  }
+  .spark span{
+    flex:1; min-width:2px; background:var(--accent); opacity:.55; border-radius:1px 1px 0 0;
+  }
 
   .pct{display:inline-flex; align-items:center; gap:6px; font-weight:600}
   .bar{width:64px; height:6px; border-radius:999px; background:var(--surface-2); overflow:hidden; flex-shrink:0}
@@ -171,17 +186,20 @@
   <p class="updated" id="updated">carregando dados…</p>
 </header>
 
-<div class="period-control">
-  <button class="period-btn" id="period-btn" type="button">
-    <span id="period-label">Ciclo completo</span>
-    <span class="car">▾</span>
-  </button>
-  <div class="period-drop" id="period-drop">
-    <div class="period-opt" data-value="ciclo" data-on="1"><span>Ciclo completo</span><span class="chk">✓</span></div>
-    <div class="period-opt" data-value="hoje"><span>Hoje</span></div>
-    <div class="period-opt" data-value="7d"><span>Últimos 7 dias</span></div>
-    <div class="period-opt" data-value="30d"><span>Últimos 30 dias</span></div>
-    <div class="period-note">Entregue e custo mostrados são acumulados do ciclo. Corte por dia entra quando começarmos a guardar snapshot diário.</div>
+<div style="display:flex; gap:10px; flex-wrap:wrap; align-items:flex-start">
+  <span id="month-select-wrap" class="month-wrap"></span>
+  <div class="period-control">
+    <button class="period-btn" id="period-btn" type="button">
+      <span id="period-label">Ciclo completo</span>
+      <span class="car">▾</span>
+    </button>
+    <div class="period-drop" id="period-drop">
+      <div class="period-opt" data-value="ciclo" data-on="1"><span>Ciclo completo</span><span class="chk">✓</span></div>
+      <div class="period-opt" data-value="hoje"><span>Hoje</span></div>
+      <div class="period-opt" data-value="7d"><span>Últimos 7 dias</span></div>
+      <div class="period-opt" data-value="30d"><span>Últimos 30 dias</span></div>
+      <div class="period-note">Linhas sem gráfico ainda não têm histórico diário puxado — mostram sempre o ciclo completo até entrarem.</div>
+    </div>
   </div>
 </div>
 
@@ -318,8 +336,28 @@ const fmtR = n => 'R$' + Number(n).toLocaleString('pt-BR', {minimumFractionDigit
 
 function pctOf(item){ return (item.entregue / item.meta) * 100; }
 
-function row(item){
-  const pct = pctOf(item);
+// Sums an item's daily series for the selected window ('ciclo'|'hoje'|'7d'|'30d').
+// Returns null when the item has no daily series yet (falls back to cumulative).
+function entregueForPeriod(item, periodo){
+  if(!item.daily || !item.daily.length) return null;
+  if(periodo === 'ciclo') return item.daily.reduce((s,d)=>s+d.v, 0);
+  const days = periodo === 'hoje' ? 1 : (periodo === '7d' ? 7 : 30);
+  const sorted = [...item.daily].sort((a,b)=> a.date < b.date ? 1 : -1); // newest first
+  return sorted.slice(0, days).reduce((s,d)=>s+d.v, 0);
+}
+
+function sparkline(daily){
+  if(!daily || daily.length < 2) return '';
+  const max = Math.max(...daily.map(d=>d.v), 1);
+  const bars = daily.map(d => `<span style="height:${Math.max(6, d.v/max*100)}%" title="${d.date}: ${fmt(d.v)}"></span>`).join('');
+  return `<div class="spark">${bars}</div>`;
+}
+
+function row(item, periodo){
+  const periodEntregue = entregueForPeriod(item, periodo || 'ciclo');
+  const usingPeriodData = periodEntregue !== null;
+  const entregueVal = usingPeriodData ? periodEntregue : item.entregue;
+  const pct = (entregueVal / item.meta) * 100;
   const kind = item.kind || (pct >= 100 ? 'bateu' : 'falta');
   const pillLabel = kind === 'bonus' ? 'bônus' : (kind === 'bateu' ? 'bateu' : 'falta');
   const barColor = kind === 'bateu' ? 'var(--good)' : (kind === 'bonus' ? 'var(--muted)' : 'var(--accent)');
@@ -329,11 +367,13 @@ function row(item){
     ? '—'
     : 'R$' + Number(item.custo).toLocaleString('pt-BR', {minimumFractionDigits:2, maximumFractionDigits:4}) + (item.custoUnid || '');
   const gastoTxt = (item.gasto === null || item.gasto === undefined) ? '—' : fmtR(item.gasto);
+  const noDailyNote = (!usingPeriodData && periodo && periodo !== 'ciclo')
+    ? '<span class="sub" style="color:var(--muted)">sem histórico diário ainda, mostrando o ciclo completo</span>' : '';
   return `<tr>
-    <td class="linha">${item.linha}${item.sub ? `<span class="sub">${item.sub}</span>` : ''}</td>
+    <td class="linha">${item.linha}${item.sub ? `<span class="sub">${item.sub}</span>` : ''}${noDailyNote}${sparkline(item.daily)}</td>
     <td data-label="Métrica">${item.metrica || '—'}</td>
     <td class="num" data-label="Meta">${fmtFn(item.meta)}</td>
-    <td class="num" data-label="Entregue">${fmtFn(item.entregue)}</td>
+    <td class="num" data-label="Entregue">${fmtFn(entregueVal)}</td>
     <td class="num custo" data-label="Gasto">${gastoTxt}</td>
     <td class="num custo" data-label="Custo unit.">${custoTxt}</td>
     <td class="num" data-label="%">
@@ -360,18 +400,30 @@ const SECTION_MAP = {
   tiktokHor: 'tb-tiktok-hor',
 };
 
-function renderAll(dados){
+let ALL_DATA = null;      // full {mesKey: {label, updatedAt, sections}} payload
+let CURRENT_MONTH = null; // e.g. '2026-09'
+
+function currentPeriodo(){
+  try { return localStorage.getItem('painel-periodo') || 'ciclo'; } catch(e){ return 'ciclo'; }
+}
+
+function renderAll(){
+  const dados = ALL_DATA && ALL_DATA[CURRENT_MONTH];
   if(!dados || !dados.sections) return;
+  const periodo = currentPeriodo();
+
   for(const [key, elId] of Object.entries(SECTION_MAP)){
     const el = document.getElementById(elId);
     const items = dados.sections[key];
     if(!el || !items) continue;
-    el.innerHTML = items.map(row).join('');
+    el.innerHTML = items.map(item => row(item, periodo)).join('');
   }
 
   let bateu = 0, falta = 0, bonus = 0;
   Object.values(dados.sections).flat().forEach(item=>{
-    const pct = pctOf(item);
+    const periodEntregue = entregueForPeriod(item, periodo);
+    const entregueVal = periodEntregue !== null ? periodEntregue : item.entregue;
+    const pct = (entregueVal / item.meta) * 100;
     const kind = item.kind || (pct >= 100 ? 'bateu' : 'falta');
     if(kind === 'bonus') bonus++;
     else if(kind === 'bateu') bateu++;
@@ -392,11 +444,33 @@ function renderAll(dados){
 
 fetch('./dados.json?_=' + Date.now())
   .then(r => r.json())
-  .then(renderAll)
+  .then(data => {
+    ALL_DATA = data;
+    const meses = Object.keys(data).sort();
+    CURRENT_MONTH = meses[meses.length - 1]; // mês mais recente por padrão
+    setupMonthSelector(meses);
+    renderAll();
+  })
   .catch(err => {
     document.getElementById('updated').textContent = 'Não consegui carregar os dados agora.';
     console.error(err);
   });
+
+function setupMonthSelector(meses){
+  const wrap = document.getElementById('month-select-wrap');
+  if(!wrap) return;
+  if(meses.length <= 1){
+    wrap.innerHTML = `<span class="month-label">${ALL_DATA[CURRENT_MONTH].label || CURRENT_MONTH}</span>`;
+    return;
+  }
+  wrap.innerHTML = `<select id="month-select">${meses.map(m =>
+    `<option value="${m}" ${m===CURRENT_MONTH?'selected':''}>${ALL_DATA[m].label || m}</option>`
+  ).join('')}</select>`;
+  document.getElementById('month-select').addEventListener('change', (e)=>{
+    CURRENT_MONTH = e.target.value;
+    renderAll();
+  });
+}
 
 // ---------- period control (label only for now, see note) ----------
 (function(){
@@ -434,6 +508,7 @@ fetch('./dados.json?_=' + Date.now())
       });
       const chk = document.createElement('span'); chk.className='chk'; chk.textContent='✓'; opt.appendChild(chk);
       drop.classList.remove('open');
+      if(ALL_DATA) renderAll();
     });
   });
 })();
