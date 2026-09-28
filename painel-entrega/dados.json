@@ -1,7 +1,7 @@
 {
   "2026-09": {
     "label": "Setembro 2026",
-    "updatedAt": "2026-09-27T21:04:28-03:00",
+    "updatedAt": "2026-09-28T10:00:00-03:00",
     "sections": {
       "concilia": [
         {
@@ -112,10 +112,10 @@
           "linha": "Meta Engajamento",
           "sub": "CPE",
           "meta": 20000,
-          "entregue": 18424,
-          "custo": 0.2254,
+          "entregue": 24470,
+          "custo": 0.2112,
           "custoUnid": "/engaj.",
-          "gasto": 4152.77,
+          "gasto": 5167.04,
           "metrica": "Engajamento",
           "daily": [
             {
@@ -173,6 +173,10 @@
             {
               "date": "2026-09-27",
               "v": 462
+            },
+            {
+              "date": "2026-09-28",
+              "v": 5868
             }
           ]
         },
