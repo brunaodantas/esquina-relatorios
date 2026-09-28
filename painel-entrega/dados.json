@@ -1,7 +1,7 @@
 {
   "2026-09": {
     "label": "Setembro 2026",
-    "updatedAt": "2026-09-28T10:00:00-03:00",
+    "updatedAt": "2026-09-28T11:30:00-03:00",
     "sections": {
       "concilia": [
         {
@@ -184,21 +184,21 @@
           "linha": "YouTube In Stream",
           "sub": "visualização real (TrueView)",
           "meta": 24000,
-          "entregue": 24759,
-          "custo": 0.0239,
+          "entregue": 24960,
+          "custo": 0.0244,
           "custoUnid": "/view",
-          "gasto": 591.74,
+          "gasto": 610.07,
           "metrica": "Visualização"
         },
         {
           "linha": "YouTube Bumper",
           "sub": "bônus, fora da meta · impressões",
           "meta": 100000,
-          "entregue": 110751,
+          "entregue": 110807,
           "kind": "bonus",
-          "custo": 1.9275,
+          "custo": 1.9793,
           "custoUnid": "/mil",
-          "gasto": 172.56,
+          "gasto": 219.32,
           "metrica": "Impressões",
           "daily": [
             {
@@ -229,10 +229,10 @@
           "linha": "Meta Ads",
           "sub": "CPM · impressões",
           "meta": 1000000,
-          "entregue": 28660,
-          "custo": 2.4118,
+          "entregue": 40354,
+          "custo": 0.0024,
           "custoUnid": "/mil",
-          "gasto": 64.23,
+          "gasto": 97.13,
           "metrica": "Impressões",
           "daily": [
             {
@@ -253,10 +253,10 @@
           "linha": "Meta Ads",
           "sub": "CPE · engajamento",
           "meta": 28000,
-          "entregue": 1111,
-          "custo": 0.0653,
+          "entregue": 1681,
+          "custo": 0.0626,
           "custoUnid": "/engaj.",
-          "gasto": 67.26,
+          "gasto": 105.16,
           "metrica": "Engajamento",
           "daily": [
             {
@@ -277,10 +277,10 @@
           "linha": "Display",
           "sub": "Google · CPM",
           "meta": 400000,
-          "entregue": 26817,
-          "custo": 6.4585,
+          "entregue": 39012,
+          "custo": 0.0062,
           "custoUnid": "/mil",
-          "gasto": 150.43,
+          "gasto": 240.12,
           "metrica": "Impressões",
           "daily": [
             {
@@ -301,10 +301,10 @@
           "linha": "Demand Gen",
           "sub": "Google · CPM",
           "meta": 400000,
-          "entregue": 12678,
-          "custo": 16.6066,
+          "entregue": 14822,
+          "custo": 0.0268,
           "custoUnid": "/mil",
-          "gasto": 200.16,
+          "gasto": 396.72,
           "metrica": "Impressões",
           "daily": [
             {
@@ -327,10 +327,10 @@
           "linha": "Display",
           "sub": "Google · CPM",
           "meta": 792000,
-          "entregue": 558257,
-          "custo": 1.34,
+          "entregue": 780709,
+          "custo": 0.0014,
           "custoUnid": "/mil",
-          "gasto": 748.06,
+          "gasto": 1060.29,
           "metrica": "Impressões",
           "daily": [
             {
@@ -407,10 +407,10 @@
           "linha": "YouTube",
           "sub": "In-Stream + Sequencial",
           "meta": 1210000,
-          "entregue": 803468,
-          "custo": 4.1,
+          "entregue": 1216076,
+          "custo": 0.004,
           "custoUnid": "/mil",
-          "gasto": 3294.22,
+          "gasto": 4809.42,
           "metrica": "Impressões",
           "daily": [
             {
@@ -487,10 +487,10 @@
           "linha": "Meta Engajamento",
           "sub": "CPE",
           "meta": 484000,
-          "entregue": 315172,
-          "custo": 7.14,
+          "entregue": 343562,
+          "custo": 0.0071,
           "custoUnid": "/mil",
-          "gasto": 2250.33,
+          "gasto": 2453.49,
           "metrica": "Impressões",
           "daily": [
             {
@@ -579,10 +579,10 @@
           "linha": "Meta Alcance",
           "sub": "CPM",
           "meta": 1936000,
-          "entregue": 1064521,
-          "custo": 2.27,
+          "entregue": 1158883,
+          "custo": 0.0023,
           "custoUnid": "/mil",
-          "gasto": 2416.46,
+          "gasto": 2662.86,
           "metrica": "Impressões",
           "daily": [
             {
@@ -671,12 +671,12 @@
           "linha": "Visitas ao Perfil",
           "sub": "gasto",
           "meta": 3000,
-          "entregue": 1998.23,
+          "entregue": 2103.29,
           "money": true,
           "custo": 7.0,
           "custoUnid": "/mil",
           "metrica": "Gasto",
-          "gasto": 1998.23,
+          "gasto": 2103.29,
           "daily": [
             {
               "date": "2026-09-08",
@@ -859,9 +859,9 @@
           "sub": "impressões",
           "meta": 150000,
           "entregue": 180100,
-          "custo": 1.8522,
+          "custo": 0.0019,
           "custoUnid": "/mil",
-          "gasto": 333.58,
+          "gasto": 333.59,
           "metrica": "Impressões",
           "daily": [
             {
@@ -961,7 +961,7 @@
           "entregue": 15661,
           "custo": 0.0564,
           "custoUnid": "/engaj.",
-          "gasto": 883.28,
+          "gasto": 883.32,
           "metrica": "Engajamento",
           "daily": [
             {
@@ -1077,7 +1077,7 @@
           "entregue": 9784,
           "custo": 0.0308,
           "custoUnid": "/view",
-          "gasto": 301.35,
+          "gasto": 300.9,
           "metrica": "Visualização",
           "daily": [
             {
@@ -1194,10 +1194,10 @@
           "linha": "CPM",
           "sub": "impressões",
           "meta": 140000,
-          "entregue": 209150,
-          "custo": 2.0013,
+          "entregue": 211761,
+          "custo": 0.002,
           "custoUnid": "/mil",
-          "gasto": 418.57,
+          "gasto": 424.62,
           "metrica": "Impressões",
           "daily": [
             {
@@ -1306,10 +1306,10 @@
           "linha": "CPV",
           "sub": "visualização",
           "meta": 10000,
-          "entregue": 10581,
-          "custo": 0.0172,
+          "entregue": 10914,
+          "custo": 0.0175,
           "custoUnid": "/view",
-          "gasto": 181.99,
+          "gasto": 190.51,
           "metrica": "Visualização",
           "daily": [
             {
@@ -1406,10 +1406,10 @@
           "linha": "CPE",
           "sub": "engajamento",
           "meta": 20000,
-          "entregue": 27123,
+          "entregue": 27128,
           "custo": 0.0072,
           "custoUnid": "/engaj.",
-          "gasto": 195.29,
+          "gasto": 195.46,
           "metrica": "Engajamento",
           "daily": [
             {
@@ -1510,10 +1510,10 @@
           "linha": "CPC",
           "sub": "cliques no link",
           "meta": 749,
-          "entregue": 796,
+          "entregue": 1716,
           "custo": 0.0913,
           "custoUnid": "/clique",
-          "gasto": 156.67,
+          "gasto": 156.72,
           "metrica": "Cliques",
           "daily": [
             {
@@ -1595,9 +1595,9 @@
           "sub": "impressões",
           "meta": 130000,
           "entregue": 149344,
-          "custo": 2.0907,
+          "custo": 0.0021,
           "custoUnid": "/mil",
-          "gasto": 312.23,
+          "gasto": 312.24,
           "metrica": "Impressões",
           "daily": [
             {
@@ -1694,10 +1694,10 @@
           "linha": "CPC",
           "sub": "cliques no link",
           "meta": 720,
-          "entregue": 897,
+          "entregue": 898,
           "custo": 0.4724,
           "custoUnid": "/clique",
-          "gasto": 424.22,
+          "gasto": 424.18,
           "metrica": "Cliques",
           "daily": [
             {
@@ -1801,7 +1801,7 @@
           "entregue": 12637,
           "custo": 0.0452,
           "custoUnid": "/engaj.",
-          "gasto": 571.19,
+          "gasto": 571.35,
           "metrica": "Engajamento",
           "daily": [
             {
@@ -1898,10 +1898,10 @@
           "linha": "CPV",
           "sub": "visualização",
           "meta": 10000,
-          "entregue": 11541,
-          "custo": 0.0187,
+          "entregue": 11980,
+          "custo": 0.0188,
           "custoUnid": "/view",
-          "gasto": 220.42,
+          "gasto": 224.78,
           "metrica": "Visualização",
           "daily": [
             {
