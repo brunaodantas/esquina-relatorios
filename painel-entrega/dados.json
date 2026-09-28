@@ -1,7 +1,7 @@
 {
   "2026-09": {
     "label": "Setembro 2026",
-    "updatedAt": "2026-09-28T15:30:00-03:00",
+    "updatedAt": "2026-09-28T12:47:00-03:00",
     "sections": {
       "concilia": [
         {
@@ -334,6 +334,22 @@
             {
               "date": "2026-09-28",
               "v": 6125
+            }
+          ]
+        },
+        {
+          "linha": "YouTube",
+          "sub": "In-Stream · visualização",
+          "meta": 28000,
+          "entregue": 209,
+          "custo": 0.0483,
+          "custoUnid": "/view",
+          "gasto": 10.09,
+          "metrica": "Visualização",
+          "daily": [
+            {
+              "date": "2026-09-28",
+              "v": 209
             }
           ]
         }
