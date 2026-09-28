@@ -81,21 +81,48 @@
   .period-btn:hover{border-color:var(--accent)}
   .period-btn .car{font-size:.7rem; color:var(--muted)}
   .period-drop{
-    position:absolute; top:calc(100% + 8px); left:0; z-index:20;
+    position:fixed; z-index:20; max-width:calc(100vw - 32px);
     background:var(--surface); border:1px solid var(--border); border-radius:12px;
-    padding:6px; min-width:220px; box-shadow:0 8px 32px rgba(18,22,28,.16);
-    display:none; flex-direction:column;
+    box-shadow:0 8px 32px rgba(18,22,28,.16);
+    display:none; flex-direction:column; overflow:hidden;
   }
   .period-drop.open{display:flex}
-  .period-opt{
-    display:flex; align-items:center; justify-content:space-between; gap:10px;
-    padding:9px 12px; border-radius:7px; cursor:pointer; font-size:.82rem; color:var(--muted);
+  .period-panel{display:flex}
+  .period-col-left{
+    padding:14px 8px; min-width:190px; display:flex; flex-direction:column; gap:1px;
   }
-  .period-opt:hover{background:var(--surface-2); color:var(--text)}
-  .period-opt[data-on="1"]{background:var(--accent-soft); color:var(--accent); font-weight:600}
-  .period-opt .chk{font-size:.7rem}
+  .period-col-title{
+    font-size:.66rem; letter-spacing:.06em; text-transform:uppercase; color:var(--muted);
+    font-weight:600; padding:2px 10px 8px;
+  }
+  .period-radio{
+    display:flex; align-items:center; gap:9px; padding:8px 10px; border-radius:7px;
+    cursor:pointer; font-size:.84rem; color:var(--text);
+  }
+  .period-radio:hover{background:var(--surface-2)}
+  .period-radio input{accent-color:var(--accent); width:15px; height:15px; margin:0; flex-shrink:0}
+  .period-radio.checked{color:var(--accent); font-weight:600}
+  .period-col-right{
+    border-left:1px solid var(--border); padding:14px 16px; min-width:190px;
+    display:none; flex-direction:column; gap:12px; justify-content:center;
+  }
+  .period-col-right.show{display:flex}
+  .period-col-right label{display:flex; flex-direction:column; gap:5px; font-size:.74rem; color:var(--muted)}
+  .period-col-right input[type="date"]{
+    font:inherit; font-size:.82rem; padding:7px 9px; border-radius:7px;
+    background:var(--bg); border:1px solid var(--border); color:var(--text);
+  }
+  .period-actions{
+    display:flex; justify-content:flex-end; gap:8px; padding:10px 14px;
+    border-top:1px solid var(--border); background:var(--surface-2);
+  }
+  .period-actions button{
+    font:inherit; font-size:.8rem; font-weight:600; padding:7px 14px; border-radius:7px;
+    cursor:pointer; border:1px solid var(--border); background:var(--surface); color:var(--text);
+  }
+  .period-actions button.primary{background:var(--accent); color:#fff; border-color:var(--accent)}
   .period-note{
-    font-size:.72rem; color:var(--muted); padding:8px 12px 4px; border-top:1px dashed var(--border); margin-top:4px;
+    font-size:.7rem; color:var(--muted); padding:0 10px 8px; margin-top:2px;
   }
 
   .summary-bar{display:flex; gap:10px; flex-wrap:wrap; margin:20px 0 8px}
@@ -158,6 +185,9 @@
   footer{margin-top:40px; color:var(--muted); font-size:.75rem; text-align:center}
 
   @media (max-width:640px){
+    .period-panel{flex-direction:column}
+    .period-col-left, .period-col-right{min-width:0}
+    .period-col-right{border-left:none; border-top:1px solid var(--border)}
     table, thead, tbody, tr{display:block}
     thead{display:none}
     tr{border-bottom:1px solid var(--border); padding:10px 16px; display:grid; grid-template-columns:1fr auto; gap:4px 12px}
@@ -184,15 +214,31 @@
   <span id="month-select-wrap" class="month-wrap"></span>
   <div class="period-control">
     <button class="period-btn" id="period-btn" type="button">
-      <span id="period-label">Ciclo completo</span>
+      <span id="period-label">Este mês</span>
       <span class="car">▾</span>
     </button>
     <div class="period-drop" id="period-drop">
-      <div class="period-opt" data-value="ciclo" data-on="1"><span>Ciclo completo</span><span class="chk">✓</span></div>
-      <div class="period-opt" data-value="hoje"><span>Hoje</span></div>
-      <div class="period-opt" data-value="7d"><span>Últimos 7 dias</span></div>
-      <div class="period-opt" data-value="30d"><span>Últimos 30 dias</span></div>
-      <div class="period-note">Linhas sem histórico diário puxado ainda mostram sempre o ciclo completo, até entrarem.</div>
+      <div class="period-panel">
+        <div class="period-col-left">
+          <div class="period-col-title">Períodos</div>
+          <label class="period-radio"><input type="radio" name="period-type" value="custom"><span>Personalizado</span></label>
+          <label class="period-radio"><input type="radio" name="period-type" value="mes_atual" checked><span>Este mês</span></label>
+          <label class="period-radio"><input type="radio" name="period-type" value="mes_passado"><span>Mês passado</span></label>
+          <label class="period-radio"><input type="radio" name="period-type" value="7d"><span>Últimos 7 dias</span></label>
+          <label class="period-radio"><input type="radio" name="period-type" value="14d"><span>Últimos 14 dias</span></label>
+          <label class="period-radio"><input type="radio" name="period-type" value="30d"><span>Últimos 30 dias</span></label>
+          <label class="period-radio"><input type="radio" name="period-type" value="ano"><span>2026 (ano todo)</span></label>
+          <div class="period-note">Linhas sem histórico diário puxado ainda mostram sempre o mês inteiro, até entrarem.</div>
+        </div>
+        <div class="period-col-right" id="period-custom-fields">
+          <label>Data inicial<input type="date" id="period-since"></label>
+          <label>Data final<input type="date" id="period-until"></label>
+        </div>
+      </div>
+      <div class="period-actions">
+        <button type="button" id="period-cancel">Cancelar</button>
+        <button type="button" id="period-apply" class="primary">Aplicar</button>
+      </div>
     </div>
   </div>
 </div>
@@ -330,18 +376,43 @@ const fmtR = n => 'R$' + Number(n).toLocaleString('pt-BR', {minimumFractionDigit
 
 function pctOf(item){ return (item.entregue / item.meta) * 100; }
 
-// Sums an item's daily series for the selected window ('ciclo'|'hoje'|'7d'|'30d').
-// Returns null when the item has no daily series yet (falls back to cumulative).
-function entregueForPeriod(item, periodo){
-  if(!item.daily || !item.daily.length) return null;
-  if(periodo === 'ciclo') return item.daily.reduce((s,d)=>s+d.v, 0);
-  const days = periodo === 'hoje' ? 1 : (periodo === '7d' ? 7 : 30);
-  const sorted = [...item.daily].sort((a,b)=> a.date < b.date ? 1 : -1); // newest first
-  return sorted.slice(0, days).reduce((s,d)=>s+d.v, 0);
+// Converts a period object ({type, since?, until?}) into a concrete {since, until} date range (YYYY-MM-DD).
+// Returns null for an unrecognized type, meaning "no filter, sum everything".
+function periodRange(period){
+  const pad = n => String(n).padStart(2,'0');
+  const fmt = d => `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
+  const today = new Date();
+  const startOfMonth = (y,m) => new Date(y, m, 1);
+  const endOfMonth = (y,m) => new Date(y, m+1, 0);
+  switch(period && period.type){
+    case 'mes_atual':
+      return {since: fmt(startOfMonth(today.getFullYear(), today.getMonth())), until: fmt(today)};
+    case 'mes_passado':
+      return {since: fmt(startOfMonth(today.getFullYear(), today.getMonth()-1)), until: fmt(endOfMonth(today.getFullYear(), today.getMonth()-1))};
+    case '7d': { const s = new Date(today); s.setDate(s.getDate()-6); return {since: fmt(s), until: fmt(today)}; }
+    case '14d': { const s = new Date(today); s.setDate(s.getDate()-13); return {since: fmt(s), until: fmt(today)}; }
+    case '30d': { const s = new Date(today); s.setDate(s.getDate()-29); return {since: fmt(s), until: fmt(today)}; }
+    case 'ano':
+      return {since: `${today.getFullYear()}-01-01`, until: fmt(today)};
+    case 'custom':
+      if(period.since && period.until) return {since: period.since, until: period.until};
+      return null;
+    default:
+      return null;
+  }
 }
 
-function row(item, periodo){
-  const periodEntregue = entregueForPeriod(item, periodo || 'ciclo');
+// Sums an item's daily series inside the selected period.
+// Returns null when the item has no daily series yet (falls back to cumulative).
+function entregueForPeriod(item, period){
+  if(!item.daily || !item.daily.length) return null;
+  const range = periodRange(period);
+  if(!range) return item.daily.reduce((s,d)=>s+d.v, 0);
+  return item.daily.filter(d => d.date >= range.since && d.date <= range.until).reduce((s,d)=>s+d.v, 0);
+}
+
+function row(item, period){
+  const periodEntregue = entregueForPeriod(item, period);
   const usingPeriodData = periodEntregue !== null;
   const entregueVal = usingPeriodData ? periodEntregue : item.entregue;
   const pct = (entregueVal / item.meta) * 100;
@@ -354,8 +425,8 @@ function row(item, periodo){
     ? '—'
     : 'R$' + Number(item.custo).toLocaleString('pt-BR', {minimumFractionDigits:2, maximumFractionDigits:4}) + (item.custoUnid || '');
   const gastoTxt = (item.gasto === null || item.gasto === undefined) ? '—' : fmtR(item.gasto);
-  const noDailyNote = (!usingPeriodData && periodo && periodo !== 'ciclo')
-    ? '<span class="sub" style="color:var(--muted)">sem histórico diário ainda, mostrando o ciclo completo</span>' : '';
+  const noDailyNote = (!usingPeriodData && periodRange(period))
+    ? '<span class="sub" style="color:var(--muted)">sem histórico diário ainda, mostrando o mês inteiro</span>' : '';
   return `<tr>
     <td class="linha">${item.linha}${item.sub ? `<span class="sub">${item.sub}</span>` : ''}${noDailyNote}</td>
     <td data-label="Métrica">${item.metrica || '—'}</td>
@@ -391,7 +462,11 @@ let ALL_DATA = null;      // full {mesKey: {label, updatedAt, sections}} payload
 let CURRENT_MONTH = null; // e.g. '2026-09'
 
 function currentPeriodo(){
-  try { return localStorage.getItem('painel-periodo') || 'ciclo'; } catch(e){ return 'ciclo'; }
+  try {
+    const raw = localStorage.getItem('painel-periodo');
+    if(raw) return JSON.parse(raw);
+  } catch(e){}
+  return {type: 'mes_atual'};
 }
 
 function renderAll(){
@@ -459,44 +534,81 @@ function setupMonthSelector(meses){
   });
 }
 
-// ---------- period control (label only for now, see note) ----------
+// ---------- period control ----------
 (function(){
   const btn = document.getElementById('period-btn');
   const drop = document.getElementById('period-drop');
   const label = document.getElementById('period-label');
-  const LABELS = {ciclo:'Ciclo completo', hoje:'Hoje', '7d':'Últimos 7 dias', '30d':'Últimos 30 dias'};
+  const radios = document.querySelectorAll('input[name="period-type"]');
+  const customFields = document.getElementById('period-custom-fields');
+  const sinceInput = document.getElementById('period-since');
+  const untilInput = document.getElementById('period-until');
+  const cancelBtn = document.getElementById('period-cancel');
+  const applyBtn = document.getElementById('period-apply');
 
-  const saved = localStorage.getItem('painel-periodo') || 'ciclo';
-  label.textContent = LABELS[saved] || LABELS.ciclo;
-  drop.querySelectorAll('.period-opt').forEach(opt=>{
-    opt.dataset.on = (opt.dataset.value === saved) ? '1' : '0';
-    if(opt.dataset.on === '1' && !opt.querySelector('.chk')){
-      const chk = document.createElement('span'); chk.className='chk'; chk.textContent='✓'; opt.appendChild(chk);
-    } else if(opt.dataset.on !== '1'){
-      opt.querySelector('.chk')?.remove();
+  const LABELS = {
+    mes_atual:'Este mês', mes_passado:'Mês passado', '7d':'Últimos 7 dias',
+    '14d':'Últimos 14 dias', '30d':'Últimos 30 dias', ano:'2026', custom:'Personalizado',
+  };
+
+  let draft = currentPeriodo(); // working copy while the popover is open
+  let committed = draft;        // last applied selection
+
+  function applyDraftToForm(p){
+    radios.forEach(r => { r.checked = (r.value === p.type); r.closest('.period-radio').classList.toggle('checked', r.checked); });
+    customFields.classList.toggle('show', p.type === 'custom');
+    if(p.type === 'custom'){
+      sinceInput.value = p.since || '';
+      untilInput.value = p.until || '';
     }
-  });
+  }
+
+  function updateLabel(p){
+    label.textContent = LABELS[p.type] || LABELS.mes_atual;
+  }
+
+  applyDraftToForm(committed);
+  updateLabel(committed);
+
+  function positionDrop(){
+    const r = btn.getBoundingClientRect();
+    drop.style.top = (r.bottom + 8) + 'px';
+    const maxLeft = window.innerWidth - drop.offsetWidth - 16;
+    drop.style.left = Math.max(16, Math.min(r.left, maxLeft)) + 'px';
+  }
 
   btn.addEventListener('click', (e)=>{
     e.stopPropagation();
+    draft = committed;
+    applyDraftToForm(draft);
+    const willOpen = !drop.classList.contains('open');
     drop.classList.toggle('open');
+    if(willOpen) positionDrop();
   });
+  window.addEventListener('resize', ()=>{ if(drop.classList.contains('open')) positionDrop(); });
   document.addEventListener('click', ()=> drop.classList.remove('open'));
+  drop.addEventListener('click', (e)=> e.stopPropagation());
 
-  drop.querySelectorAll('.period-opt').forEach(opt=>{
-    opt.addEventListener('click', (e)=>{
-      e.stopPropagation();
-      const val = opt.dataset.value;
-      localStorage.setItem('painel-periodo', val);
-      label.textContent = LABELS[val] || LABELS.ciclo;
-      drop.querySelectorAll('.period-opt').forEach(o=>{
-        o.dataset.on = (o === opt) ? '1' : '0';
-        o.querySelector('.chk')?.remove();
-      });
-      const chk = document.createElement('span'); chk.className='chk'; chk.textContent='✓'; opt.appendChild(chk);
-      drop.classList.remove('open');
-      if(ALL_DATA) renderAll();
-    });
+  radios.forEach(r => r.addEventListener('change', ()=>{
+    draft = {type: r.value};
+    if(r.value === 'custom') draft = {type:'custom', since: sinceInput.value, until: untilInput.value};
+    applyDraftToForm(draft);
+  }));
+
+  [sinceInput, untilInput].forEach(inp => inp.addEventListener('change', ()=>{
+    draft = {type:'custom', since: sinceInput.value, until: untilInput.value};
+  }));
+
+  cancelBtn.addEventListener('click', ()=>{
+    drop.classList.remove('open');
+  });
+
+  applyBtn.addEventListener('click', ()=>{
+    committed = draft;
+    try { localStorage.setItem('painel-periodo', JSON.stringify(committed)); } catch(e){}
+    updateLabel(committed);
+    drop.classList.remove('open');
+    if(ALL_DATA) renderAll();
   });
 })();
 
