@@ -251,7 +251,8 @@
               "date": "2026-09-28",
               "v": 67615
             }
-          ]
+          ],
+          "verbaMeta": 0.2
         },
         {
           "linha": "Meta Ads",
@@ -279,7 +280,8 @@
               "date": "2026-09-28",
               "v": 1299
             }
-          ]
+          ],
+          "verbaMeta": 164.22
         },
         {
           "linha": "Display",
@@ -307,7 +309,8 @@
               "date": "2026-09-28",
               "v": 52586
             }
-          ]
+          ],
+          "verbaMeta": 0.09
         },
         {
           "linha": "Demand Gen",
@@ -335,7 +338,8 @@
               "date": "2026-09-28",
               "v": 12100
             }
-          ]
+          ],
+          "verbaMeta": 0.0
         },
         {
           "linha": "YouTube",
@@ -351,7 +355,8 @@
               "date": "2026-09-28",
               "v": 209
             }
-          ]
+          ],
+          "verbaMeta": 144.14
         }
       ],
       "temasCampinas": [
@@ -437,7 +442,8 @@
               "date": "2026-09-28",
               "v": 219292
             }
-          ]
+          ],
+          "verbaMeta": 0.0
         },
         {
           "linha": "YouTube",
@@ -521,7 +527,8 @@
               "date": "2026-09-28",
               "v": 403349
             }
-          ]
+          ],
+          "verbaMeta": 0.0
         },
         {
           "linha": "Meta Engajamento",
@@ -617,7 +624,8 @@
               "date": "2026-09-28",
               "v": 23623
             }
-          ]
+          ],
+          "verbaMeta": 0.25
         },
         {
           "linha": "Meta Alcance",
@@ -713,7 +721,8 @@
               "date": "2026-09-28",
               "v": 88451
             }
-          ]
+          ],
+          "verbaMeta": 0.45
         },
         {
           "linha": "Visitas ao Perfil",
@@ -806,7 +815,8 @@
               "date": "2026-09-27",
               "v": 58.75
             }
-          ]
+          ],
+          "verbaMeta": 1.57
         },
         {
           "linha": "TikTok",
@@ -898,7 +908,8 @@
               "date": "2026-09-27",
               "v": 44569
             }
-          ]
+          ],
+          "verbaMeta": 134.03
         }
       ],
       "americana": [
