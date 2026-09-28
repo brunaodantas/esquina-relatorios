@@ -1,7 +1,7 @@
 {
   "2026-09": {
     "label": "Setembro 2026",
-    "updatedAt": "2026-09-28T14:00:00-03:00",
+    "updatedAt": "2026-09-28T16:20:00-03:00",
     "sections": {
       "concilia": [
         {
@@ -229,10 +229,10 @@
           "linha": "Meta Ads",
           "sub": "CPM · impressões",
           "meta": 1000000,
-          "entregue": 42510,
-          "custo": 0.0024,
+          "entregue": 96275,
+          "custo": 0.0026,
           "custoUnid": "/mil",
-          "gasto": 102.22,
+          "gasto": 252.86,
           "metrica": "Impressões",
           "daily": [
             {
@@ -249,7 +249,7 @@
             },
             {
               "date": "2026-09-28",
-              "v": 13850
+              "v": 67615
             }
           ]
         },
@@ -257,10 +257,10 @@
           "linha": "Meta Ads",
           "sub": "CPE · engajamento",
           "meta": 32000,
-          "entregue": 1798,
-          "custo": 0.0621,
+          "entregue": 2410,
+          "custo": 0.0666,
           "custoUnid": "/engaj.",
-          "gasto": 111.7,
+          "gasto": 160.42,
           "metrica": "Engajamento",
           "daily": [
             {
@@ -277,7 +277,7 @@
             },
             {
               "date": "2026-09-28",
-              "v": 687
+              "v": 1299
             }
           ]
         },
@@ -285,10 +285,10 @@
           "linha": "Display",
           "sub": "Google · CPM",
           "meta": 275000,
-          "entregue": 74357,
+          "entregue": 79403,
           "custo": 0.0058,
           "custoUnid": "/mil",
-          "gasto": 429.73,
+          "gasto": 460.07,
           "metrica": "Impressões",
           "daily": [
             {
@@ -305,7 +305,7 @@
             },
             {
               "date": "2026-09-28",
-              "v": 47540
+              "v": 52586
             }
           ]
         },
@@ -313,10 +313,10 @@
           "linha": "Demand Gen",
           "sub": "Google · CPM",
           "meta": 24750,
-          "entregue": 18803,
-          "custo": 0.036,
+          "entregue": 24778,
+          "custo": 0.0358,
           "custoUnid": "/mil",
-          "gasto": 677.83,
+          "gasto": 886.09,
           "metrica": "Impressões",
           "daily": [
             {
@@ -333,7 +333,7 @@
             },
             {
               "date": "2026-09-28",
-              "v": 6125
+              "v": 12100
             }
           ]
         },
