@@ -1,7 +1,7 @@
 {
   "2026-09": {
     "label": "Setembro 2026",
-    "updatedAt": "2026-09-27T21:01:45-03:00",
+    "updatedAt": "2026-09-27T21:04:28-03:00",
     "sections": {
       "concilia": [
         {
@@ -190,12 +190,34 @@
           "linha": "YouTube Bumper",
           "sub": "bônus, fora da meta · impressões",
           "meta": 100000,
-          "entregue": 89523,
+          "entregue": 110751,
           "kind": "bonus",
           "custo": 1.9275,
           "custoUnid": "/mil",
           "gasto": 172.56,
-          "metrica": "Impressões"
+          "metrica": "Impressões",
+          "daily": [
+            {
+              "date": "2026-09-15",
+              "v": 4034
+            },
+            {
+              "date": "2026-09-16",
+              "v": 7148
+            },
+            {
+              "date": "2026-09-17",
+              "v": 13250
+            },
+            {
+              "date": "2026-09-18",
+              "v": 3624
+            },
+            {
+              "date": "2026-09-27",
+              "v": 82695
+            }
+          ]
         }
       ],
       "seguranca": [
@@ -203,7 +225,7 @@
           "linha": "Meta Ads",
           "sub": "CPM · impressões",
           "meta": 1000000,
-          "entregue": 26632,
+          "entregue": 28660,
           "custo": 2.4118,
           "custoUnid": "/mil",
           "gasto": 64.23,
@@ -227,7 +249,7 @@
           "linha": "Meta Ads",
           "sub": "CPE · engajamento",
           "meta": 28000,
-          "entregue": 1030,
+          "entregue": 1111,
           "custo": 0.0653,
           "custoUnid": "/engaj.",
           "gasto": 67.26,
@@ -251,21 +273,49 @@
           "linha": "Display",
           "sub": "Google · CPM",
           "meta": 400000,
-          "entregue": 23292,
+          "entregue": 26817,
           "custo": 6.4585,
           "custoUnid": "/mil",
           "gasto": 150.43,
-          "metrica": "Impressões"
+          "metrica": "Impressões",
+          "daily": [
+            {
+              "date": "2026-09-25",
+              "v": 3119
+            },
+            {
+              "date": "2026-09-26",
+              "v": 4699
+            },
+            {
+              "date": "2026-09-27",
+              "v": 18999
+            }
+          ]
         },
         {
           "linha": "Demand Gen",
           "sub": "Google · CPM",
           "meta": 400000,
-          "entregue": 12053,
+          "entregue": 12678,
           "custo": 16.6066,
           "custoUnid": "/mil",
           "gasto": 200.16,
-          "metrica": "Impressões"
+          "metrica": "Impressões",
+          "daily": [
+            {
+              "date": "2026-09-25",
+              "v": 2874
+            },
+            {
+              "date": "2026-09-26",
+              "v": 4868
+            },
+            {
+              "date": "2026-09-27",
+              "v": 4936
+            }
+          ]
         }
       ],
       "temasCampinas": [
