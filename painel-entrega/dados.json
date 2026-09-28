@@ -1,7 +1,7 @@
 {
   "2026-09": {
     "label": "Setembro 2026",
-    "updatedAt": "2026-09-28T13:00:00-03:00",
+    "updatedAt": "2026-09-28T14:00:00-03:00",
     "sections": {
       "concilia": [
         {
@@ -256,7 +256,7 @@
         {
           "linha": "Meta Ads",
           "sub": "CPE · engajamento",
-          "meta": 28000,
+          "meta": 32000,
           "entregue": 1798,
           "custo": 0.0621,
           "custoUnid": "/engaj.",
@@ -284,7 +284,7 @@
         {
           "linha": "Display",
           "sub": "Google · CPM",
-          "meta": 400000,
+          "meta": 275000,
           "entregue": 74357,
           "custo": 0.0058,
           "custoUnid": "/mil",
@@ -312,7 +312,7 @@
         {
           "linha": "Demand Gen",
           "sub": "Google · CPM",
-          "meta": 400000,
+          "meta": 24750,
           "entregue": 18803,
           "custo": 0.036,
           "custoUnid": "/mil",
@@ -340,7 +340,7 @@
         {
           "linha": "YouTube",
           "sub": "In-Stream · visualização",
-          "meta": 28000,
+          "meta": 36020,
           "entregue": 209,
           "custo": 0.0483,
           "custoUnid": "/view",
