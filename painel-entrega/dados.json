@@ -1,7 +1,7 @@
 {
   "2026-09": {
     "label": "Setembro 2026",
-    "updatedAt": "2026-09-28T22:09:00-03:00",
+    "updatedAt": "2026-09-28T22:26:00-03:00",
     "sections": {
       "concilia": [
         {
@@ -192,21 +192,21 @@
           "linha": "YouTube In Stream",
           "sub": "visualização real (TrueView)",
           "meta": 24000,
-          "entregue": 24960,
-          "custo": 0.0244,
+          "entregue": 34988,
+          "custo": 0.0196,
           "custoUnid": "/view",
-          "gasto": 610.07,
+          "gasto": 684.82,
           "metrica": "Visualização"
         },
         {
           "linha": "YouTube Bumper",
           "sub": "bônus, fora da meta · impressões",
           "meta": 100000,
-          "entregue": 110811,
+          "entregue": 111012,
           "kind": "bonus",
-          "custo": 1.9793,
+          "custo": 0.002,
           "custoUnid": "/mil",
-          "gasto": 219.32,
+          "gasto": 219.86,
           "metrica": "Impressões",
           "daily": [
             {
@@ -231,7 +231,7 @@
             },
             {
               "date": "2026-09-28",
-              "v": 60
+              "v": 261
             }
           ]
         }
@@ -299,10 +299,10 @@
           "linha": "Display",
           "sub": "Google · CPM",
           "meta": 275000,
-          "entregue": 79403,
+          "entregue": 79393,
           "custo": 0.0058,
           "custoUnid": "/mil",
-          "gasto": 460.07,
+          "gasto": 460.05,
           "metrica": "Impressões",
           "daily": [
             {
@@ -319,19 +319,19 @@
             },
             {
               "date": "2026-09-28",
-              "v": 52586
+              "v": 52576
             }
           ],
-          "verbaMeta": 94.44
+          "verbaMeta": 94.46
         },
         {
           "linha": "Demand Gen",
           "sub": "Google · CPM",
           "meta": 24750,
-          "entregue": 24778,
-          "custo": 0.0358,
+          "entregue": 25976,
+          "custo": 0.0351,
           "custoUnid": "/mil",
-          "gasto": 886.09,
+          "gasto": 911.86,
           "metrica": "Impressões",
           "daily": [
             {
@@ -348,7 +348,7 @@
             },
             {
               "date": "2026-09-28",
-              "v": 12100
+              "v": 13298
             }
           ],
           "verbaMeta": 0.0
@@ -376,10 +376,10 @@
           "linha": "Display",
           "sub": "Google · CPM",
           "meta": 792000,
-          "entregue": 780709,
+          "entregue": 861226,
           "custo": 0.0014,
           "custoUnid": "/mil",
-          "gasto": 1060.29,
+          "gasto": 1170.97,
           "metrica": "Impressões",
           "daily": [
             {
@@ -452,19 +452,19 @@
             },
             {
               "date": "2026-09-28",
-              "v": 219292
+              "v": 299809
             }
           ],
-          "verbaMeta": 3.83
+          "verbaMeta": 0.0
         },
         {
           "linha": "YouTube",
           "sub": "In-Stream + Sequencial",
           "meta": 1210000,
-          "entregue": 1216076,
-          "custo": 0.004,
+          "entregue": 1343101,
+          "custo": 0.0039,
           "custoUnid": "/mil",
-          "gasto": 4809.42,
+          "gasto": 5291.85,
           "metrica": "Impressões",
           "daily": [
             {
@@ -537,7 +537,7 @@
             },
             {
               "date": "2026-09-28",
-              "v": 403349
+              "v": 530374
             }
           ],
           "verbaMeta": 0.0
@@ -1273,10 +1273,10 @@
           "linha": "YouTube",
           "sub": "visualização",
           "meta": 2000,
-          "entregue": 12587,
-          "custo": 0.0159,
+          "entregue": 12869,
+          "custo": 0.0162,
           "custoUnid": "/view",
-          "gasto": 199.91,
+          "gasto": 208.83,
           "metrica": "Visualização"
         }
       ],
@@ -1689,10 +1689,10 @@
           "linha": "YouTube",
           "sub": "visualização",
           "meta": 2000,
-          "entregue": 16420,
-          "custo": 0.0325,
+          "entregue": 16441,
+          "custo": 0.0326,
           "custoUnid": "/view",
-          "gasto": 533.65,
+          "gasto": 535.59,
           "metrica": "Visualização"
         }
       ],
@@ -2695,10 +2695,10 @@
           "linha": "YouTube",
           "sub": "visualização",
           "meta": 14000,
-          "entregue": 17050,
-          "custo": 0.1328,
+          "entregue": 17128,
+          "custo": 0.1326,
           "custoUnid": "/view",
-          "gasto": 2265.04,
+          "gasto": 2270.48,
           "metrica": "Visualização"
         }
       ],
