@@ -1,7 +1,7 @@
 {
   "2026-09": {
     "label": "Setembro 2026",
-    "updatedAt": "2026-09-28T21:45:00-03:00",
+    "updatedAt": "2026-09-28T22:09:00-03:00",
     "sections": {
       "concilia": [
         {
@@ -241,10 +241,10 @@
           "linha": "Meta Ads",
           "sub": "CPM · impressões",
           "meta": 1000000,
-          "entregue": 106413,
+          "entregue": 106441,
           "custo": 0.0026,
           "custoUnid": "/mil",
-          "gasto": 281.96,
+          "gasto": 282.03,
           "metrica": "Impressões",
           "daily": [
             {
@@ -261,19 +261,19 @@
             },
             {
               "date": "2026-09-28",
-              "v": 77753
+              "v": 77781
             }
           ],
-          "verbaMeta": 197.31
+          "verbaMeta": 197.3
         },
         {
           "linha": "Meta Ads",
           "sub": "CPE · engajamento",
           "meta": 32000,
-          "entregue": 2410,
-          "custo": 0.0666,
+          "entregue": 3719,
+          "custo": 0.0675,
           "custoUnid": "/engaj.",
-          "gasto": 160.42,
+          "gasto": 251.16,
           "metrica": "Engajamento",
           "daily": [
             {
@@ -290,10 +290,10 @@
             },
             {
               "date": "2026-09-28",
-              "v": 1299
+              "v": 2608
             }
           ],
-          "verbaMeta": 164.14
+          "verbaMeta": 159.16
         },
         {
           "linha": "Display",
@@ -546,10 +546,10 @@
           "linha": "Meta Engajamento",
           "sub": "CPE",
           "meta": 484000,
-          "entregue": 343562,
-          "custo": 0.0071,
+          "entregue": 368346,
+          "custo": 0.0072,
           "custoUnid": "/mil",
-          "gasto": 2453.49,
+          "gasto": 2635.65,
           "metrica": "Impressões",
           "daily": [
             {
@@ -634,19 +634,19 @@
             },
             {
               "date": "2026-09-28",
-              "v": 23623
+              "v": 48407
             }
           ],
-          "verbaMeta": 250.73
+          "verbaMeta": 206.89
         },
         {
           "linha": "Meta Alcance",
           "sub": "CPM",
           "meta": 1936000,
-          "entregue": 1158883,
+          "entregue": 1266471,
           "custo": 0.0023,
           "custoUnid": "/mil",
-          "gasto": 2662.86,
+          "gasto": 2932.02,
           "metrica": "Impressões",
           "daily": [
             {
@@ -731,21 +731,21 @@
             },
             {
               "date": "2026-09-28",
-              "v": 88451
+              "v": 196039
             }
           ],
-          "verbaMeta": 446.41
+          "verbaMeta": 387.51
         },
         {
           "linha": "Visitas ao Perfil",
           "sub": "gasto",
           "meta": 3000,
-          "entregue": 2103.29,
+          "entregue": 2228.64,
           "money": true,
-          "custo": 7.0,
+          "custo": 1.0,
           "custoUnid": "/mil",
           "metrica": "Gasto",
-          "gasto": 2103.29,
+          "gasto": 2228.64,
           "daily": [
             {
               "date": "2026-09-08",
@@ -826,18 +826,22 @@
             {
               "date": "2026-09-27",
               "v": 58.75
+            },
+            {
+              "date": "2026-09-28",
+              "v": 214.67999999999984
             }
           ],
-          "verbaMeta": 224.18
+          "verbaMeta": 192.84
         },
         {
           "linha": "TikTok",
           "sub": "v1+v2+v3",
           "meta": 1100000,
-          "entregue": 873794,
-          "custo": 2.37,
+          "entregue": 950116,
+          "custo": 0.0023,
           "custoUnid": "/mil",
-          "gasto": 2070.89,
+          "gasto": 2140.36,
           "metrica": "Impressões",
           "daily": [
             {
@@ -919,9 +923,13 @@
             {
               "date": "2026-09-27",
               "v": 44569
+            },
+            {
+              "date": "2026-09-28",
+              "v": 69674
             }
           ],
-          "verbaMeta": 134.03
+          "verbaMeta": 84.41
         }
       ],
       "americana": [
