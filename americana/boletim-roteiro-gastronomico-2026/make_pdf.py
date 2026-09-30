@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
 """
-Gera o PDF vertical (540x960 pt) do boletim a partir do index.html.
-Metodo: screenshot da pagina inteira (Playwright, 2x, details abertos) e corte
-em paginas nas fronteiras dos blocos. Nunca impressao do navegador.
+Gera o PDF de slides 16:9 (960x540 pt) a partir de um slides.html.
+Copie este arquivo para a MESMA pasta do slides.html e rode:  python make_pdf.py
 
-Dependencias: pip install playwright pillow && python -m playwright install chromium
+Método: screenshot de cada .slide (Playwright, 2x) montado em PDF (Pillow).
+NÃO usa impressão do navegador (que corta e vira A4).
+
+Dependências (uma vez): pip install playwright pillow && python -m playwright install chromium
 """
 import asyncio
 from pathlib import Path
@@ -12,51 +14,35 @@ from PIL import Image
 from playwright.async_api import async_playwright
 
 BASE = Path(__file__).parent
-SRC = BASE / "index.html"
+SLIDES_FILE = BASE / "slides.html"
+SLIDES_DIR = Path("/private/tmp/claude-501/slides_png_rg")
 PDF_OUT = BASE / "boletim-americana-roteiro-gastronomico-2026.pdf"
-W, SCALE, RES = 720, 2, 192          # 1440/192*72 = 540pt de largura
-PAGE_RATIO = 960 / 540               # pagina vertical 9:16
+W, H, SCALE, RES = 1280, 720, 2, 192  # 2560/192*72 = 960pt · 1440/192*72 = 540pt
 
 async def main():
+    if not SLIDES_FILE.exists():
+        raise SystemExit(f"Nao encontrei {SLIDES_FILE}. Coloque este make_pdf.py na mesma pasta do slides.html.")
+    SLIDES_DIR.mkdir(exist_ok=True)
     async with async_playwright() as p:
-        b = await p.chromium.launch()
-        pg = await b.new_page(viewport={"width": W, "height": 1280}, device_scale_factor=SCALE)
-        await pg.goto(SRC.as_uri(), wait_until="networkidle")
-        await pg.add_style_tag(content=".chip-pdf{display:none!important}")
-        await pg.evaluate("document.querySelectorAll('details').forEach(d=>d.open=true)")
-        await pg.wait_for_timeout(900)
-        # fronteiras candidatas: fim de cada bloco de topo
-        bounds = await pg.evaluate("""() => {
-          const sel = 'header.hero, section.wrap, .creatives > .cr, footer.wrap, .perf-ins, .verba-top, .tw, .org-row';
-          return [...document.querySelectorAll(sel)].map(e => {
-            const r = e.getBoundingClientRect();
-            return r.bottom + window.scrollY;
-          });
-        }""")
-        total = await pg.evaluate("document.body.scrollHeight")
-        await pg.screenshot(path=str(BASE / "_full.png"), full_page=True)
-        await b.close()
-
-    im = Image.open(BASE / "_full.png").convert("RGB")
-    Wp, Hp = im.size
-    page_h = int(Wp * PAGE_RATIO)
-    cuts = sorted({int(b * SCALE) for b in bounds if 0 < b * SCALE < Hp})
-    pages, y = [], 0
-    while y < Hp:
-        limit = y + page_h
-        if limit >= Hp:
-            pages.append((y, Hp)); break
-        cand = [c for c in cuts if y + page_h * 0.45 < c <= limit]
-        end = max(cand) if cand else limit
-        pages.append((y, end)); y = end
-
-    imgs = []
-    for a, bnd in pages:
-        canvas = Image.new("RGB", (Wp, page_h), (255, 255, 255))
-        canvas.paste(im.crop((0, a, Wp, bnd)), (0, 0))
-        imgs.append(canvas)
+        browser = await p.chromium.launch()
+        page = await browser.new_page(viewport={"width": W, "height": H}, device_scale_factor=SCALE)
+        await page.goto(SLIDES_FILE.as_uri(), wait_until="networkidle")
+        await page.evaluate("document.querySelectorAll('details').forEach(d => d.open = true)")  # modelo onepage: sem isso, seção fechada some no PDF
+        await page.wait_for_timeout(1500)  # deixa os charts renderizarem
+        n = await page.locator(".slide").count()
+        if n == 0:
+            raise SystemExit("Nenhum elemento .slide encontrado no slides.html.")
+        print(f"Encontrados {n} slides.")
+        paths = []
+        for i in range(n):
+            out = SLIDES_DIR / f"slide_{i+1:02d}.png"
+            await page.locator(".slide").nth(i).scroll_into_view_if_needed()
+            await page.locator(".slide").nth(i).screenshot(path=str(out), scale="device")
+            paths.append(out)
+            print(f"  [{i+1}/{n}] {out.name}")
+        await browser.close()
+    imgs = [Image.open(p).convert("RGB") for p in paths]
     imgs[0].save(str(PDF_OUT), save_all=True, append_images=imgs[1:], resolution=RES)
-    (BASE / "_full.png").unlink()
-    print(f"PDF gerado: {PDF_OUT} · {len(imgs)} paginas · {PDF_OUT.stat().st_size/1048576:.1f} MB")
+    print(f"\nPDF gerado: {PDF_OUT}  ({PDF_OUT.stat().st_size/1_048_576:.1f} MB)")
 
 asyncio.run(main())
