@@ -1246,7 +1246,7 @@ const DADOS = {
   slide("s-dark", "Encerramento", `<div class="slide-grid" style="text-align:center"><div class="col-span-10">
     <h2 class="anim d1 enc-nome" style="font-size:clamp(30px,4vw,60px)">${esc(D.encerramento[0])}<em class="blk">${esc(D.encerramento[1])}</em></h2>
     <p class="serif anim d2 mt-sm" style="color:var(--gray-200)">${esc(D.mes.charAt(0).toUpperCase() + D.mes.split(" ")[0].slice(1))} - ${esc(D.mes.split(" ").pop())}</p>
-    <div class="anim d3" style="display:flex;justify-content:center;align-items:center;margin-top:44px"><img src="${AS.esquina}" alt="Esquina" style="height:28px;width:auto"></div>
+    <div class="anim d3" style="display:flex;justify-content:center;align-items:center;gap:40px;margin-top:44px;flex-wrap:wrap"><img src="${AS.esquina}" alt="Esquina" style="height:28px;width:auto"><img src="${AS.horto || AS.cliente}" alt="${esc(D.cliente)}" style="height:46px;width:auto"></div>
   </div></div>`, "background:radial-gradient(80% 60% at 50% 100%,rgba(55,0,255,.24),transparent 60%),var(--black)");
 
   document.getElementById("deck").innerHTML = out.join("\n");
