@@ -173,6 +173,10 @@
 .vbslide .tbl th{color:var(--gray-400)!important;font-weight:600;letter-spacing:2px;text-transform:uppercase;border:none!important;border-bottom:1px solid rgba(255,255,255,.22)!important}
 .vbslide .tbl td{color:var(--white)!important;border:none!important;border-bottom:1px solid rgba(255,255,255,.08)!important}
 .vbslide .tbl td:first-child{font-weight:700}
+.vbslide .tbl td:first-child{white-space:normal!important;min-width:120px}
+.vbslide .tbl th{white-space:normal!important}
+@media (max-width:1100px){.vbslide .tbl th,.vbslide .tbl td{padding-left:8px!important;padding-right:8px!important;letter-spacing:.5px}}
+.vbslide .tblwrap::-webkit-scrollbar,.vbslide .vb-tab::-webkit-scrollbar{height:6px;background:transparent}.vbslide .tblwrap::-webkit-scrollbar-thumb,.vbslide .vb-tab::-webkit-scrollbar-thumb{background:rgba(255,255,255,.25);border-radius:3px}
 .vbslide .tbl tr.total td{font-weight:800;border-top:1px solid rgba(255,255,255,.35)!important;border-bottom:none!important}
 .an-g{display:grid;grid-template-columns:1fr 1fr;gap:var(--gutter);margin-top:12px}
 .an-g.an-one{grid-template-columns:1fr 1fr}
@@ -1170,6 +1174,7 @@ const DADOS = {
 
   /* 6 · ENTREGA POR TEMA · gráficos (revisão 30/09/2026) */
   {
+    const UN = D.temasUnidade || "tema";
     const PAL = ["#010066", "#024BD7", "#6612C5", "#EA5B0C", "#F2803A", "#9D6BE8", "#5B8EF0", "#3D3DA0"];  /* 4 cores do documento; a partir do 5º tema, outros tons delas (Bruno, 30/09) */
     const num = x => { const n = parseInt(String(x).replace(/\./g, ""), 10); return isNaN(n) ? 0 : n; };
     const f = n => n.toLocaleString("pt-BR");
@@ -1181,11 +1186,11 @@ const DADOS = {
     let acc = 0; const stops = ord.map(k => { const a = acc / tot * 360; acc += T[k].imp; return `${col[k]} ${a.toFixed(2)}deg ${(acc / tot * 360).toFixed(2)}deg`; }).join(",");
     const barras = (lab, key) => { const L = ord.filter(k => T[k][key] > 0).sort((a, b) => T[b][key] - T[a][key]); if (!L.length) return ""; const mx = T[L[0]][key];
       return `<div class="tm-bl"><p class="tm-h">${lab}</p>${L.map(k => `<div class="tm-r"><span class="tm-n">${k}</span><span class="tm-t"><span style="width:${Math.max(T[k][key] / mx * 100, 1.5).toFixed(1)}%;background:${col[k]}"></span></span><b>${f(T[k][key])}</b></div>`).join("")}</div>`; };
-    slide("s-dark s-media tmslide", "As campanhas do mês", grid(head(tag(["Entrega por tema · ", MED, " · " + D.periodo]), D.temasTitulo[0], D.temasTitulo[1]) + `
+    slide("s-dark s-media tmslide", "As campanhas do mês", grid(head(tag(["Entrega por " + UN + " · ", MED, " · " + D.periodo]), D.temasTitulo[0], D.temasTitulo[1]) + `
       <div class="col-span-10 tm-g${ord.length > 6 ? " tm-many" : ""} anim d2">
-        <div class="tm-l"><p class="tm-h">Impressões</p><p class="tm-big">${f(tot)}</p><p class="tm-pill">em ${ord.length} temas · ${esc(D.plataformasTexto)}</p>
+        <div class="tm-l"><p class="tm-h">Impressões</p><p class="tm-big">${f(tot)}</p><p class="tm-pill">em ${ord.length} ${UN}s · ${esc(D.plataformasTexto)}</p>
           <div class="tm-dl"><div class="tm-donut" style="background:conic-gradient(${stops})"></div><div class="tm-leg">${ord.filter(k => T[k].imp > 0).map(k => `<p><i style="background:${col[k]}"></i><b>${f(T[k].imp)}</b> ${k}</p>`).join("")}</div></div></div>
-        <div class="tm-rg">${barras("Engajamentos por tema", "eng")}${barras("Visualizações por tema", "vis")}</div>
+        <div class="tm-rg">${barras("Engajamentos por " + UN, "eng")}${barras("Visualizações por " + UN, "vis")}</div>
       </div>` + foot(D.temasRodape)));
   }
 
@@ -1225,7 +1230,7 @@ const DADOS = {
       slide("s-light s-media anslide", "As campanhas do mês", grid(head(tag(["Análise de conteúdo · ", MED, " · Meta Ads · " + pos + " de " + n]), t[0], t[1]) + `
         <div class="col-span-10 an-g${ch.length === 1 ? " an-one" : ""} anim d2">${ch.map((p, i) => `<div class="an-c">
           <div class="an-top"><div class="an-th"><img src="${p.capa}" alt="Capa: ${esc(p.nome)}">${p.link ? `<a class="an-go" href="${esc(p.link)}" target="_blank" rel="noopener">Abrir post ↗</a>` : ""}</div>
-            <div class="an-b"><div class="an-bd"><span class="an-rk">${k + i + 1}º</span><span class="an-ch">${esc(p.plataforma)}</span>${p.formato ? `<span class="an-ch">${esc(p.formato)}</span>` : ""}<span class="an-ix">Índice ${esc(p.indice)}</span></div>
+            <div class="an-b"><div class="an-bd"><span class="an-rk">${k + i + 1}º</span><span class="an-ch">${esc(p.plataforma)}</span>${p.formato ? `<span class="an-ch">${esc(p.formato)}</span>` : ""}${p.indice ? `<span class="an-ix">Índice ${esc(p.indice)}</span>` : ""}</div>
               <p class="an-n">${esc(p.nome)}</p>
               <div class="an-m">${p.metricas.map(m => `<div><b>${esc(m[0])}</b><span>${esc(m[1])}</span></div>`).join("")}</div></div></div>
           <div class="an-in"><p class="an-il">Insight</p><p>${esc(p.insight)}</p></div></div>`).join("")}</div>` + foot(A.rodape)));
