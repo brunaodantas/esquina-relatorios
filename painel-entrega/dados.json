@@ -1,7 +1,7 @@
 {
   "2026-09": {
     "label": "Setembro 2026",
-    "updatedAt": "2026-09-30T13:54:00-03:00",
+    "updatedAt": "2026-09-30T14:08:00-03:00",
     "sections": {
       "concilia": [
         {
@@ -405,6 +405,23 @@
             }
           ],
           "verbaMeta": 172.89
+        },
+        {
+          "linha": "Push",
+          "sub": "AdHow · disparos",
+          "meta": 12500,
+          "entregue": 533,
+          "custo": 0.2,
+          "custoUnid": "/disparo",
+          "gasto": 106.6,
+          "metrica": "Disparos",
+          "verbaMeta": 170.96,
+          "daily": [
+            {
+              "date": "2026-09-29",
+              "v": 533
+            }
+          ]
         }
       ],
       "temasCampinas": [
