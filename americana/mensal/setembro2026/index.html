@@ -898,8 +898,10 @@ h1 em.blk,h2 em.blk{display:block;margin-top:6px;font-size:.94em;line-height:1.0
 @media (min-width:901px) and (max-height:860px){.aud{gap:4px}.aud-r{gap:0 10px}}
 @media (min-width:901px) and (max-height:740px){.aud{gap:2px}.aud-n{line-height:1.15}}
 </style>
+<style id="pdf-btn-css">#pdf-btn{position:fixed;top:14px;right:18px;z-index:9999;display:inline-flex;align-items:center;gap:8px;background:#3700ff;color:#fff;font-family:"DM Sans",system-ui,sans-serif;font-weight:700;font-size:15px;letter-spacing:.5px;padding:9px 16px;border-radius:999px;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,.25)}#pdf-btn:hover{background:#2400b8}@media print{#pdf-btn{display:none}}</style>
 </head>
 <body>
+<a id="pdf-btn" href="relatorio-americana-setembro2026.pdf" target="_blank" rel="noopener" download>Baixar PDF ↓</a>
 <div id="bar"></div>
 <nav id="dots" aria-label="Navegação de telas"></nav>
 <div id="chap">Abertura</div>
@@ -1055,7 +1057,7 @@ const DADOS = {
 
   /* Tela 11 · Diagnóstico do ciclo (segue a ordem do ranking) */
   diagnostico: [
-    { titulo: "01 · ENTREGA · QUATRO LINHAS ACIMA DA META", lead: "O plano fechou com todas as linhas acima do contratado.", texto: "A visualização no Meta Ads foi a linha que mais passou da meta, puxada pelos vídeos de obra: mostrar a obra em movimento segura o público até o fim. O YouTube também fechou acima do plano com o trailer." },
+    { titulo: "01 · ENTREGA · QUATRO LINHAS ACIMA DA META", lead: "O plano fechou com todas as linhas acima do contratado.", texto: "As peças performaram bem em Meta Ads e YouTube, e as otimizações feitas ao longo do mês levaram a esse resultado. Os vídeos de obra se destacaram: mostrar a obra em movimento segura o público até o fim." },
     { titulo: "02 · VIADUTO CENTENÁRIO · A OBRA ACONTECENDO", lead: "Mostrar a obra acontecendo gerou mais conversa do que anunciar a obra.", texto: "O vídeo com repórter no local mostrou a primeira etapa da reforma e explicou o que vem depois. Ver a obra em andamento, com alguém explicando de perto, deu ao público motivo para comentar e repassar." },
     { titulo: "03 · REFORMA DO VIADUTO · O AVISO DA OBRA", lead: "O aviso da obra levou a informação a muita gente.", texto: "Obra em via importante muda a rotina de quem passa por ali, então o aviso é informação útil. O carrossel deixou claro o que ia acontecer e levou a informação a muita gente." },
     { titulo: "04 · CINEMA DE AMERICANA · O TRAILER", lead: "O trailer do Asfalto Novo levou o programa ao maior número de pessoas.", texto: "A linguagem de cinema transforma uma obra de asfalto em algo curioso de assistir: o trailer chama a atenção nos primeiros segundos e segura o público até o fim, e por isso foi a peça que mais circulou." },
