@@ -152,23 +152,23 @@
 @media (max-width:900px){.ixg{grid-template-columns:1fr;gap:24px}}
 /* ===== CSS: REVISÃO 30/09/2026 ===== */
 .tm-g{display:grid;grid-template-columns:5fr 6fr;gap:0 56px;margin-top:10px;align-items:start}
-.tm-h{font-family:var(--sans);font-weight:600;font-size:15px;letter-spacing:3px;text-transform:uppercase;color:var(--gray-600);margin:0 0 8px}
-.tm-big{font-family:var(--sans);font-weight:800;font-size:clamp(40px,4.4vw,64px);line-height:1;letter-spacing:-2px;color:var(--accent-deep);margin:0}
-.tm-pill{display:inline-block;font-family:var(--sans);font-weight:600;font-size:15px;letter-spacing:1.5px;text-transform:uppercase;border:1px solid var(--gray-400);border-radius:999px;padding:6px 14px;margin:12px 0 14px;color:var(--gray-800)}
+.tm-h{font-family:var(--sans);font-weight:600;font-size:15px;letter-spacing:3px;text-transform:uppercase;color:var(--gray-400);margin:0 0 8px}
+.tm-big{font-family:var(--sans);font-weight:800;font-size:clamp(40px,4.4vw,64px);line-height:1;letter-spacing:-2px;color:var(--accent-on-dark);margin:0}
+.tm-pill{display:inline-block;font-family:var(--sans);font-weight:600;font-size:15px;letter-spacing:1.5px;text-transform:uppercase;border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:6px 14px;margin:12px 0 14px;color:var(--white)}
 .tm-dl{display:grid;grid-template-columns:150px 1fr;gap:22px;align-items:center}
-.tm-donut{width:150px;height:150px;border-radius:50%;-webkit-mask:radial-gradient(circle,transparent 44%,#000 45%);mask:radial-gradient(circle,transparent 44%,#000 45%)}
-.tm-leg p{margin:0 0 5px;font-family:var(--sans);font-size:15px;line-height:1.25;color:var(--gray-800)}
+.tm-donut{width:150px;height:150px;border-radius:50%}
+.tm-leg p{margin:0 0 5px;font-family:var(--sans);font-size:15px;line-height:1.25;color:var(--gray-200)}
 .tm-leg i{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:8px;vertical-align:0}
-.tm-leg b{font-weight:800;color:var(--black);margin-right:4px}
+.tm-leg b{font-weight:800;color:var(--white);margin-right:4px}
 .tm-bl{margin-bottom:18px}
 .tm-r{display:grid;grid-template-columns:minmax(120px,210px) 1fr auto;gap:12px;align-items:center;margin:0 0 7px}
-.tm-n{font-family:var(--sans);font-size:15px;color:var(--gray-800);text-align:right;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tm-n{font-family:var(--sans);font-size:15px;color:var(--gray-200);text-align:right;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .tm-g .tm-r{grid-template-columns:minmax(120px,240px) 1fr auto}
 .tm-many .tm-r{margin-bottom:2px}.tm-many .tm-bl{margin-bottom:8px}.tm-many .tm-h{margin-bottom:4px}.tm-many .tm-t{height:8px}.tm-many .tm-leg p{margin-bottom:1px}
-.tm-t{height:10px;border-radius:5px;background:var(--gray-100);overflow:hidden}.tm-t span{display:block;height:100%;border-radius:5px}
-.tm-r b{font-family:var(--sans);font-weight:800;font-size:15px;min-width:64px;text-align:right}
+.tm-t{height:10px;border-radius:5px;background:rgba(255,255,255,.08);overflow:hidden}.tm-t span{display:block;height:100%;border-radius:5px}
+.tm-r b{font-family:var(--sans);font-weight:800;font-size:15px;min-width:64px;text-align:right;color:var(--white)}
 @media (min-width:901px) and (max-height:780px){.tm-big{font-size:clamp(36px,3.6vw,52px)}.tm-pill{margin:8px 0 10px}.tm-donut{width:120px;height:120px}.tm-dl{grid-template-columns:120px 1fr}.tm-leg p{margin-bottom:2px}.tm-bl{margin-bottom:10px}.tm-r{margin-bottom:4px}}
-@media (max-width:900px){.tm-g{grid-template-columns:1fr;gap:24px}.tm-r{grid-template-columns:110px 1fr auto}}
+@media (max-width:900px){.tm-g{grid-template-columns:1fr;gap:24px}.tm-r,.tm-g .tm-r{grid-template-columns:110px 1fr auto}}
 .vbslide .tblwrap,.vbslide .tbl,.vbslide .tbl thead,.vbslide .tbl tbody,.vbslide .tbl tr,.vbslide .tbl th,.vbslide .tbl td{background:transparent!important;box-shadow:none!important}
 .vbslide .tblwrap{border:none!important}
 .vbslide .tbl th{color:var(--gray-400)!important;font-weight:600;letter-spacing:2px;text-transform:uppercase;border:none!important;border-bottom:1px solid rgba(255,255,255,.22)!important}
@@ -1140,7 +1140,7 @@ const DADOS = {
 
   /* 6 · ENTREGA POR TEMA · gráficos (revisão 30/09/2026) */
   {
-    const PAL = ["#010066", "#024BD7", "#6612C5", "#EA5B0C", "#4F4FA8", "#5B8EF0", "#9B5BE0", "#F2935A", "#8A8A85"];
+    const PAL = ["#010066", "#024BD7", "#6612C5", "#EA5B0C"];
     const num = x => { const n = parseInt(String(x).replace(/\./g, ""), 10); return isNaN(n) ? 0 : n; };
     const f = n => n.toLocaleString("pt-BR");
     const T = {}, ord = [];
@@ -1151,7 +1151,7 @@ const DADOS = {
     let acc = 0; const stops = ord.map(k => { const a = acc / tot * 360; acc += T[k].imp; return `${col[k]} ${a.toFixed(2)}deg ${(acc / tot * 360).toFixed(2)}deg`; }).join(",");
     const barras = (lab, key) => { const L = ord.filter(k => T[k][key] > 0).sort((a, b) => T[b][key] - T[a][key]); if (!L.length) return ""; const mx = T[L[0]][key];
       return `<div class="tm-bl"><p class="tm-h">${lab}</p>${L.map(k => `<div class="tm-r"><span class="tm-n">${k}</span><span class="tm-t"><span style="width:${Math.max(T[k][key] / mx * 100, 1.5).toFixed(1)}%;background:${col[k]}"></span></span><b>${f(T[k][key])}</b></div>`).join("")}</div>`; };
-    slide("s-light s-media tmslide", "As campanhas do mês", grid(head(tag(["Entrega por tema · ", MED, " · " + D.periodo]), D.temasTitulo[0], D.temasTitulo[1]) + `
+    slide("s-dark s-media tmslide", "As campanhas do mês", grid(head(tag(["Entrega por tema · ", MED, " · " + D.periodo]), D.temasTitulo[0], D.temasTitulo[1]) + `
       <div class="col-span-10 tm-g${ord.length > 6 ? " tm-many" : ""} anim d2">
         <div class="tm-l"><p class="tm-h">Impressões</p><p class="tm-big">${f(tot)}</p><p class="tm-pill">em ${ord.length} temas · ${esc(D.plataformasTexto)}</p>
           <div class="tm-dl"><div class="tm-donut" style="background:conic-gradient(${stops})"></div><div class="tm-leg">${ord.filter(k => T[k].imp > 0).map(k => `<p><i style="background:${col[k]}"></i><b>${f(T[k].imp)}</b> ${k}</p>`).join("")}</div></div></div>
