@@ -22,6 +22,7 @@ async def main():
         b = await p.chromium.launch()
         pg = await b.new_page(viewport={"width": W, "height": 1280}, device_scale_factor=SCALE)
         await pg.goto(SRC.as_uri(), wait_until="networkidle")
+        await pg.add_style_tag(content=".chip-pdf{display:none!important}")
         await pg.evaluate("document.querySelectorAll('details').forEach(d=>d.open=true)")
         await pg.wait_for_timeout(900)
         # fronteiras candidatas: fim de cada bloco de topo
