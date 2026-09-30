@@ -1,7 +1,7 @@
 {
   "2026-09": {
     "label": "Setembro 2026",
-    "updatedAt": "2026-09-30T14:08:00-03:00",
+    "updatedAt": "2026-09-30T19:18:00-03:00",
     "sections": {
       "concilia": [
         {
@@ -241,10 +241,10 @@
           "linha": "Meta Ads",
           "sub": "CPM · impressões",
           "meta": 1000000,
-          "entregue": 106779,
+          "entregue": 107178,
           "custo": 0.0027,
           "custoUnid": "/mil",
-          "gasto": 283.01,
+          "gasto": 284.14,
           "metrica": "Impressões",
           "daily": [
             {
@@ -269,19 +269,19 @@
             },
             {
               "date": "2026-09-30",
-              "v": 90
+              "v": 489
             }
           ],
-          "verbaMeta": 236.74
+          "verbaMeta": 236.7
         },
         {
           "linha": "Meta Ads",
           "sub": "CPE · engajamento",
           "meta": 32000,
-          "entregue": 3735,
-          "custo": 0.0675,
+          "entregue": 3745,
+          "custo": 0.0676,
           "custoUnid": "/engaj.",
-          "gasto": 252.05,
+          "gasto": 253.06,
           "metrica": "Engajamento",
           "daily": [
             {
@@ -306,19 +306,19 @@
             },
             {
               "date": "2026-09-30",
-              "v": 1
+              "v": 11
             }
           ],
-          "verbaMeta": 190.74
+          "verbaMeta": 190.93
         },
         {
           "linha": "Display",
           "sub": "Google · CPM",
           "meta": 275000,
-          "entregue": 131218,
+          "entregue": 132409,
           "custo": 0.0058,
           "custoUnid": "/mil",
-          "gasto": 765.51,
+          "gasto": 774.21,
           "metrica": "Impressões",
           "daily": [
             {
@@ -343,10 +343,10 @@
             },
             {
               "date": "2026-09-30",
-              "v": 39089
+              "v": 40280
             }
           ],
-          "verbaMeta": 83.88
+          "verbaMeta": 83.37
         },
         {
           "linha": "Demand Gen",
@@ -389,10 +389,10 @@
           "linha": "YouTube",
           "sub": "In-Stream · visualização",
           "meta": 36020,
-          "entregue": 209,
-          "custo": 0.0483,
+          "entregue": 216,
+          "custo": 0.056,
           "custoUnid": "/view",
-          "gasto": 10.09,
+          "gasto": 12.09,
           "metrica": "Visualização",
           "daily": [
             {
@@ -401,10 +401,10 @@
             },
             {
               "date": "2026-09-30",
-              "v": 0
+              "v": 7
             }
           ],
-          "verbaMeta": 172.89
+          "verbaMeta": 200.4
         },
         {
           "linha": "Push",
@@ -415,7 +415,7 @@
           "custoUnid": "/disparo",
           "gasto": 106.6,
           "metrica": "Disparos",
-          "verbaMeta": 170.96,
+          "verbaMeta": 239.34,
           "daily": [
             {
               "date": "2026-09-29",
@@ -429,10 +429,10 @@
           "linha": "Display",
           "sub": "Google · CPM",
           "meta": 792000,
-          "entregue": 788501,
+          "entregue": 814948,
           "custo": 0.0014,
           "custoUnid": "/mil",
-          "gasto": 1072.52,
+          "gasto": 1109.19,
           "metrica": "Impressões",
           "daily": [
             {
@@ -513,19 +513,19 @@
             },
             {
               "date": "2026-09-30",
-              "v": 104197
+              "v": 130644
             }
           ],
-          "verbaMeta": 2.38
+          "verbaMeta": 0.0
         },
         {
           "linha": "YouTube",
           "sub": "In-Stream + Sequencial",
           "meta": 1210000,
-          "entregue": 1147635,
+          "entregue": 1175227,
           "custo": 0.004,
           "custoUnid": "/mil",
-          "gasto": 4569.27,
+          "gasto": 4711.36,
           "metrica": "Impressões",
           "daily": [
             {
@@ -606,19 +606,19 @@
             },
             {
               "date": "2026-09-30",
-              "v": 125311
+              "v": 152903
             }
           ],
-          "verbaMeta": 124.15
+          "verbaMeta": 69.7
         },
         {
           "linha": "Meta Engajamento",
           "sub": "CPE",
           "meta": 484000,
-          "entregue": 407608,
+          "entregue": 411233,
           "custo": 0.0072,
           "custoUnid": "/mil",
-          "gasto": 2920.2,
+          "gasto": 2957.1,
           "metrica": "Impressões",
           "daily": [
             {
@@ -711,19 +711,19 @@
             },
             {
               "date": "2026-09-30",
-              "v": 27096
+              "v": 30721
             }
           ],
-          "verbaMeta": 273.65
+          "verbaMeta": 261.63
         },
         {
           "linha": "Meta Alcance",
           "sub": "CPM",
           "meta": 1936000,
-          "entregue": 1394054,
+          "entregue": 1424532,
           "custo": 0.0024,
           "custoUnid": "/mil",
-          "gasto": 3279.45,
+          "gasto": 3380.41,
           "metrica": "Impressões",
           "daily": [
             {
@@ -816,21 +816,21 @@
             },
             {
               "date": "2026-09-30",
-              "v": 105524
+              "v": 136002
             }
           ],
-          "verbaMeta": 637.45
+          "verbaMeta": 606.86
         },
         {
           "linha": "Visitas ao Perfil",
           "sub": "gasto",
           "meta": 3000,
-          "entregue": 2435.94,
+          "entregue": 2449.67,
           "money": true,
           "custo": 1.0,
           "custoUnid": "/mil",
           "metrica": "Gasto",
-          "gasto": 2435.94,
+          "gasto": 2449.67,
           "daily": [
             {
               "date": "2026-09-08",
@@ -922,19 +922,19 @@
             },
             {
               "date": "2026-09-30",
-              "v": 180.82999999999993
+              "v": 194.55999999999995
             }
           ],
-          "verbaMeta": 282.03
+          "verbaMeta": 275.16
         },
         {
           "linha": "TikTok",
           "sub": "v1+v2+v3",
           "meta": 1100000,
-          "entregue": 1032201,
+          "entregue": 1049889,
           "custo": 0.0023,
           "custoUnid": "/mil",
-          "gasto": 2339.61,
+          "gasto": 2387.11,
           "metrica": "Impressões",
           "daily": [
             {
@@ -1027,10 +1027,10 @@
             },
             {
               "date": "2026-09-30",
-              "v": 65114
+              "v": 82802
             }
           ],
-          "verbaMeta": 76.84
+          "verbaMeta": 56.97
         }
       ],
       "americana": [
