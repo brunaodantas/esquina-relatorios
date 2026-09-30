@@ -108,6 +108,17 @@
   .org-n .v { font-size:1.45rem; font-weight:800; color:var(--p); letter-spacing:-.02em; line-height:1.1; font-variant-numeric:tabular-nums; }
   .org-n .l { font-size:.6rem; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--tm); margin-top:3px; }
   @media (max-width:640px) { .org-row { grid-template-columns:64px 1fr; } .org-thumb, .org-thumb img { width:64px; height:64px; } .org-nums { grid-column:1 / -1; justify-content:flex-start; text-align:left; } }
+  .og-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:20px; }
+  .og-card { background:var(--white); border:1px solid var(--line); border-radius:var(--r2); box-shadow:0 1px 3px rgba(10,10,92,0.04), 0 8px 24px rgba(10,10,92,0.05); overflow:hidden; display:flex; flex-direction:column; }
+  .og-img { width:100%; height:auto; display:block; background:#0d0d2b; }
+  .og-meta { padding:14px 14px 16px; display:flex; flex-direction:column; gap:6px; flex:1; }
+  .og-k { font-size:.58rem; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--tm); }
+  .og-t { font-size:1rem; font-weight:800; color:var(--t1); line-height:1.3; }
+  .og-nums { display:flex; gap:18px; margin:4px 0 6px; }
+  .og-n .v { font-size:1.3rem; font-weight:800; color:var(--p); letter-spacing:-.02em; line-height:1.1; font-variant-numeric:tabular-nums; }
+  .og-n .l { font-size:.56rem; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--tm); margin-top:2px; }
+  .og-meta .perf-link { align-self:flex-start; margin-top:auto; }
+  @media (max-width:900px) { .og-grid { grid-template-columns:repeat(2,1fr); } }
   .perf-split { display:grid; grid-template-columns:270px 1fr; gap:24px; align-items:start; }
   .perf-media { border-radius:12px; overflow:hidden; background:#0d0d2b; box-shadow:0 6px 18px rgba(10,10,92,.12); width:270px; height:360px; aspect-ratio:3/4; position:relative; }
   .perf-media img { width:100%; height:100%; object-fit:cover; display:block; }
@@ -272,66 +283,78 @@
   <div class="sn">04</div>
   <h2>Peças orgânicas</h2>
   <p class="dsum">Publicações no Instagram da Prefeitura de Americana durante a campanha, com o alcance e as interações de cada uma. Nove publicações trazem alcance e interações e somaram <b>10.817 interações</b>. Nas 3 publicações das barracas participantes, o Instagram mostra apenas as curtidas e os comentários públicos.</p>
-  <div class="org-list">
-      <div class="org-row">
-        <div class="org-thumb"><img src="assets/org-DbrHZUqsHPt.jpg" alt="Miniatura da publicação Anúncio do evento e das atrações"/></div>
-        <div class="org-info"><div class="org-k">Instagram · 05 de agosto</div><div class="org-t">Anúncio do evento e das atrações</div><a class="perf-link" href="https://www.instagram.com/p/DbrHZUqsHPt/" target="_blank" rel="noopener">Ver a publicação ↗</a></div>
-        <div class="org-nums"><div class="org-n"><div class="v">43.400</div><div class="l">Alcance</div></div><div class="org-n"><div class="v">4.452</div><div class="l">Interações</div></div></div>
+  <div class="og-grid">
+      <div class="og-card">
+        <img class="og-img" src="assets/orgfull-DbrHZUqsHPt.jpg" alt="Arte da publicação: Anúncio do evento e das atrações"/>
+        <div class="og-meta"><div class="og-t">Postagem 05/08</div>
+        <div class="og-nums"><div class="og-n"><div class="v">43.400</div><div class="l">Alcance</div></div><div class="og-n"><div class="v">4.452</div><div class="l">Interações</div></div></div>
+        <a class="perf-link" href="https://www.instagram.com/p/DbrHZUqsHPt/" target="_blank" rel="noopener">Ver a publicação ↗</a></div>
       </div>
-      <div class="org-row">
-        <div class="org-thumb"><img src="assets/org-Db6Mhn4lWoV.jpg" alt="Miniatura da publicação Agenda de atrações do Roteiro"/></div>
-        <div class="org-info"><div class="org-k">Instagram · 11 de agosto</div><div class="org-t">Agenda de atrações do Roteiro</div><a class="perf-link" href="https://www.instagram.com/p/Db6Mhn4lWoV/" target="_blank" rel="noopener">Ver a publicação ↗</a></div>
-        <div class="org-nums"><div class="org-n"><div class="v">19.344</div><div class="l">Alcance</div></div><div class="org-n"><div class="v">2.501</div><div class="l">Interações</div></div></div>
+      <div class="og-card">
+        <img class="og-img" src="assets/orgfull-Db6Mhn4lWoV.jpg" alt="Arte da publicação: Agenda de atrações"/>
+        <div class="og-meta"><div class="og-t">Postagem 11/08</div>
+        <div class="og-nums"><div class="og-n"><div class="v">19.344</div><div class="l">Alcance</div></div><div class="og-n"><div class="v">2.501</div><div class="l">Interações</div></div></div>
+        <a class="perf-link" href="https://www.instagram.com/p/Db6Mhn4lWoV/" target="_blank" rel="noopener">Ver a publicação ↗</a></div>
       </div>
-      <div class="org-row">
-        <div class="org-thumb"><img src="assets/org-DcTg_7ylaKx.jpg" alt="Miniatura da publicação Tá chegando a hora do Roteiro"/></div>
-        <div class="org-info"><div class="org-k">Instagram · 21 de agosto</div><div class="org-t">Tá chegando a hora do Roteiro</div><a class="perf-link" href="https://www.instagram.com/p/DcTg_7ylaKx/" target="_blank" rel="noopener">Ver a publicação ↗</a></div>
-        <div class="org-nums"><div class="org-n"><div class="v">15.400</div><div class="l">Alcance</div></div><div class="org-n"><div class="v">1.703</div><div class="l">Interações</div></div></div>
+      <div class="og-card">
+        <img class="og-img" src="assets/orgfull-DcTg_7ylaKx.jpg" alt="Arte da publicação: Tá chegando a hora"/>
+        <div class="og-meta"><div class="og-t">Postagem 21/08</div>
+        <div class="og-nums"><div class="og-n"><div class="v">15.400</div><div class="l">Alcance</div></div><div class="og-n"><div class="v">1.703</div><div class="l">Interações</div></div></div>
+        <a class="perf-link" href="https://www.instagram.com/p/DcTg_7ylaKx/" target="_blank" rel="noopener">Ver a publicação ↗</a></div>
       </div>
-      <div class="org-row">
-        <div class="org-thumb"><img src="assets/org-DcT3zMzlSG-.jpg" alt="Miniatura da publicação A Suzano no Roteiro Gastronômico"/></div>
-        <div class="org-info"><div class="org-k">Instagram · 21 de agosto</div><div class="org-t">A Suzano no Roteiro Gastronômico</div><a class="perf-link" href="https://www.instagram.com/p/DcT3zMzlSG-/" target="_blank" rel="noopener">Ver a publicação ↗</a></div>
-        <div class="org-nums"><div class="org-n"><div class="v">1.280</div><div class="l">Alcance</div></div><div class="org-n"><div class="v">29</div><div class="l">Interações</div></div></div>
+      <div class="og-card">
+        <img class="og-img" src="assets/orgfull-DcT3zMzlSG-.jpg" alt="Arte da publicação: A Suzano no Roteiro"/>
+        <div class="og-meta"><div class="og-t">Postagem 21/08</div><div class="og-k" style="text-transform:none;letter-spacing:0;font-size:.74rem;font-weight:600">Perfil marcado - @suzano_oficial</div>
+        <div class="og-nums"><div class="og-n"><div class="v">1.280</div><div class="l">Alcance</div></div><div class="og-n"><div class="v">29</div><div class="l">Interações</div></div></div>
+        <a class="perf-link" href="https://www.instagram.com/p/DcT3zMzlSG-/" target="_blank" rel="noopener">Ver a publicação ↗</a></div>
       </div>
-      <div class="org-row">
-        <div class="org-thumb"><img src="assets/org-DcT9aTblXjr.jpg" alt="Miniatura da publicação Seleção de estabelecimentos participantes"/></div>
-        <div class="org-info"><div class="org-k">Instagram · 21 de agosto</div><div class="org-t">Seleção de estabelecimentos participantes, com @acarajesabordabahia</div><a class="perf-link" href="https://www.instagram.com/p/DcT9aTblXjr/" target="_blank" rel="noopener">Ver a publicação ↗</a></div>
-        <div class="org-nums"><div class="org-n"><div class="v">8.549</div><div class="l">Alcance</div></div><div class="org-n"><div class="v">464</div><div class="l">Interações</div></div></div>
+      <div class="og-card">
+        <img class="og-img" src="assets/orgfull-DcT9aTblXjr.jpg" alt="Arte da publicação: Estabelecimentos · @acarajesabordabahia"/>
+        <div class="og-meta"><div class="og-t">Postagem 21/08</div><div class="og-k" style="text-transform:none;letter-spacing:0;font-size:.74rem;font-weight:600">Perfil marcado - @acarajesabordabahia</div>
+        <div class="og-nums"><div class="og-n"><div class="v">8.549</div><div class="l">Alcance</div></div><div class="og-n"><div class="v">464</div><div class="l">Interações</div></div></div>
+        <a class="perf-link" href="https://www.instagram.com/p/DcT9aTblXjr/" target="_blank" rel="noopener">Ver a publicação ↗</a></div>
       </div>
-      <div class="org-row">
-        <div class="org-thumb"><img src="assets/org-DcWLz7kFRn_.jpg" alt="Miniatura da publicação Seleção de estabelecimentos participantes, com @dulcesonhos"/></div>
-        <div class="org-info"><div class="org-k">Instagram · 22 de agosto</div><div class="org-t">Seleção de estabelecimentos participantes, com @dulcesonhos</div><a class="perf-link" href="https://www.instagram.com/p/DcWLz7kFRn_/" target="_blank" rel="noopener">Ver a publicação ↗</a></div>
-        <div class="org-nums"><div class="org-n"><div class="v">159</div><div class="l">Curtidas</div></div><div class="org-n"><div class="v">12</div><div class="l">Comentários</div></div></div>
+      <div class="og-card">
+        <img class="og-img" src="assets/orgfull-DcWLz7kFRn_.jpg" alt="Arte da publicação: Estabelecimentos · @dulcesonhos"/>
+        <div class="og-meta"><div class="og-t">Postagem 22/08</div><div class="og-k" style="text-transform:none;letter-spacing:0;font-size:.74rem;font-weight:600">Perfil marcado - @dulcesonhos</div>
+        <div class="og-nums"><div class="og-n"><div class="v">159</div><div class="l">Curtidas</div></div><div class="og-n"><div class="v">12</div><div class="l">Comentários</div></div></div>
+        <a class="perf-link" href="https://www.instagram.com/p/DcWLz7kFRn_/" target="_blank" rel="noopener">Ver a publicação ↗</a></div>
       </div>
-      <div class="org-row">
-        <div class="org-thumb"><img src="assets/org-DcYwn_-lbrt.jpg" alt="Miniatura da publicação Seleção de estabelecimentos participantes, com @kipastel_patio330"/></div>
-        <div class="org-info"><div class="org-k">Instagram · 23 de agosto</div><div class="org-t">Seleção de estabelecimentos participantes, com @kipastel_patio330</div><a class="perf-link" href="https://www.instagram.com/p/DcYwn_-lbrt/" target="_blank" rel="noopener">Ver a publicação ↗</a></div>
-        <div class="org-nums"><div class="org-n"><div class="v">140</div><div class="l">Curtidas</div></div><div class="org-n"><div class="v">7</div><div class="l">Comentários</div></div></div>
+      <div class="og-card">
+        <img class="og-img" src="assets/orgfull-DcYwn_-lbrt.jpg" alt="Arte da publicação: Estabelecimentos · @kipastel_patio330"/>
+        <div class="og-meta"><div class="og-t">Postagem 23/08</div><div class="og-k" style="text-transform:none;letter-spacing:0;font-size:.74rem;font-weight:600">Perfil marcado - @kipastel_patio330</div>
+        <div class="og-nums"><div class="og-n"><div class="v">140</div><div class="l">Curtidas</div></div><div class="og-n"><div class="v">7</div><div class="l">Comentários</div></div></div>
+        <a class="perf-link" href="https://www.instagram.com/p/DcYwn_-lbrt/" target="_blank" rel="noopener">Ver a publicação ↗</a></div>
       </div>
-      <div class="org-row">
-        <div class="org-thumb"><img src="assets/org-DcbVd-0FVvY.jpg" alt="Miniatura da publicação Seleção de estabelecimentos participantes, com @pasconittachurros"/></div>
-        <div class="org-info"><div class="org-k">Instagram · 24 de agosto</div><div class="org-t">Seleção de estabelecimentos participantes, com @pasconittachurros</div><a class="perf-link" href="https://www.instagram.com/p/DcbVd-0FVvY/" target="_blank" rel="noopener">Ver a publicação ↗</a></div>
-        <div class="org-nums"><div class="org-n"><div class="v">213</div><div class="l">Curtidas</div></div><div class="org-n"><div class="v">3</div><div class="l">Comentários</div></div></div>
+      <div class="og-card">
+        <img class="og-img" src="assets/orgfull-DcbVd-0FVvY.jpg" alt="Arte da publicação: Estabelecimentos · @pasconittachurros"/>
+        <div class="og-meta"><div class="og-t">Postagem 24/08</div><div class="og-k" style="text-transform:none;letter-spacing:0;font-size:.74rem;font-weight:600">Perfil marcado - @pasconittachurros</div>
+        <div class="og-nums"><div class="og-n"><div class="v">213</div><div class="l">Curtidas</div></div><div class="og-n"><div class="v">3</div><div class="l">Comentários</div></div></div>
+        <a class="perf-link" href="https://www.instagram.com/p/DcbVd-0FVvY/" target="_blank" rel="noopener">Ver a publicação ↗</a></div>
       </div>
-      <div class="org-row">
-        <div class="org-thumb"><img src="assets/org-DclaKKiM7iW.jpg" alt="Miniatura da publicação Vai começar o Roteiro: Zeca Baleiro e Elba Ramalho"/></div>
-        <div class="org-info"><div class="org-k">Instagram · 28 de agosto</div><div class="org-t">Vai começar o Roteiro: Zeca Baleiro e Elba Ramalho</div><a class="perf-link" href="https://www.instagram.com/p/DclaKKiM7iW/" target="_blank" rel="noopener">Ver a publicação ↗</a></div>
-        <div class="org-nums"><div class="org-n"><div class="v">9.494</div><div class="l">Alcance</div></div><div class="org-n"><div class="v">355</div><div class="l">Interações</div></div></div>
+      <div class="og-card">
+        <img class="og-img" src="assets/orgfull-DclaKKiM7iW.jpg" alt="Arte da publicação: Vai começar o Roteiro"/>
+        <div class="og-meta"><div class="og-t">Postagem 28/08</div>
+        <div class="og-nums"><div class="og-n"><div class="v">9.494</div><div class="l">Alcance</div></div><div class="og-n"><div class="v">355</div><div class="l">Interações</div></div></div>
+        <a class="perf-link" href="https://www.instagram.com/p/DclaKKiM7iW/" target="_blank" rel="noopener">Ver a publicação ↗</a></div>
       </div>
-      <div class="org-row">
-        <div class="org-thumb"><img src="assets/org-Dcn_gtwMa_g.jpg" alt="Miniatura da publicação Hoje tem mais Roteiro: Edson & Hudson"/></div>
-        <div class="org-info"><div class="org-k">Instagram · 29 de agosto</div><div class="org-t">Hoje tem mais Roteiro: Edson & Hudson</div><a class="perf-link" href="https://www.instagram.com/p/Dcn_gtwMa_g/" target="_blank" rel="noopener">Ver a publicação ↗</a></div>
-        <div class="org-nums"><div class="org-n"><div class="v">15.663</div><div class="l">Alcance</div></div><div class="org-n"><div class="v">475</div><div class="l">Interações</div></div></div>
+      <div class="og-card">
+        <img class="og-img" src="assets/orgfull-Dcn_gtwMa_g.jpg" alt="Arte da publicação: Hoje tem mais Roteiro"/>
+        <div class="og-meta"><div class="og-t">Postagem 29/08</div>
+        <div class="og-nums"><div class="og-n"><div class="v">15.663</div><div class="l">Alcance</div></div><div class="og-n"><div class="v">475</div><div class="l">Interações</div></div></div>
+        <a class="perf-link" href="https://www.instagram.com/p/Dcn_gtwMa_g/" target="_blank" rel="noopener">Ver a publicação ↗</a></div>
       </div>
-      <div class="org-row">
-        <div class="org-thumb"><img src="assets/org-DcpKXA6mY16.jpg" alt="Miniatura da publicação Os 10 finalistas do Concurso Gastronômico"/></div>
-        <div class="org-info"><div class="org-k">Instagram · 29 de agosto</div><div class="org-t">Os 10 finalistas do Concurso Gastronômico</div><a class="perf-link" href="https://www.instagram.com/p/DcpKXA6mY16/" target="_blank" rel="noopener">Ver a publicação ↗</a></div>
-        <div class="org-nums"><div class="org-n"><div class="v">13.766</div><div class="l">Alcance</div></div><div class="org-n"><div class="v">509</div><div class="l">Interações</div></div></div>
+      <div class="og-card">
+        <img class="og-img" src="assets/orgfull-DcpKXA6mY16.jpg" alt="Arte da publicação: Os 10 finalistas"/>
+        <div class="og-meta"><div class="og-t">Postagem 29/08</div>
+        <div class="og-nums"><div class="og-n"><div class="v">13.766</div><div class="l">Alcance</div></div><div class="og-n"><div class="v">509</div><div class="l">Interações</div></div></div>
+        <a class="perf-link" href="https://www.instagram.com/p/DcpKXA6mY16/" target="_blank" rel="noopener">Ver a publicação ↗</a></div>
       </div>
-      <div class="org-row">
-        <div class="org-thumb"><img src="assets/org-DcrGHMmsGW0.jpg" alt="Miniatura da publicação Encerramento: Turma do Pagode, Samba d'Aninha e Bateria VOA"/></div>
-        <div class="org-info"><div class="org-k">Instagram · 30 de agosto</div><div class="org-t">Encerramento: Turma do Pagode, Samba d'Aninha e Bateria VOA</div><a class="perf-link" href="https://www.instagram.com/p/DcrGHMmsGW0/" target="_blank" rel="noopener">Ver a publicação ↗</a></div>
-        <div class="org-nums"><div class="org-n"><div class="v">9.978</div><div class="l">Alcance</div></div><div class="org-n"><div class="v">329</div><div class="l">Interações</div></div></div>
+      <div class="og-card">
+        <img class="og-img" src="assets/orgfull-DcrGHMmsGW0.jpg" alt="Arte da publicação: Encerramento do Roteiro"/>
+        <div class="og-meta"><div class="og-t">Postagem 30/08</div>
+        <div class="og-nums"><div class="og-n"><div class="v">9.978</div><div class="l">Alcance</div></div><div class="og-n"><div class="v">329</div><div class="l">Interações</div></div></div>
+        <a class="perf-link" href="https://www.instagram.com/p/DcrGHMmsGW0/" target="_blank" rel="noopener">Ver a publicação ↗</a></div>
       </div>
   </div>
 </section>
