@@ -211,11 +211,15 @@
 @media (min-width:901px) and (max-height:780px){.md-r{grid-template-columns:68px 1fr auto;padding-bottom:10px}.md-th{width:68px}.md-g{gap:10px}.md-one .md-r{grid-template-columns:150px 1fr auto}.md-one .md-th{width:150px}}
 @media (max-width:900px){.md-r,.md-one .md-r{grid-template-columns:72px 1fr;gap:14px}.md-th,.md-one .md-th{width:72px}.md-v{grid-column:1/-1;text-align:left}}
 .rc-g{display:grid;grid-template-columns:1fr 2fr;gap:var(--gutter)}
+.rc-dg{border-top:1px solid var(--black);padding-top:10px}
+.rc-di{padding:7px 0;border-bottom:1px solid var(--gray-200)}.rc-di:last-child{border-bottom:none}
+.rc-dt{font-family:var(--sans);font-weight:700;font-size:15px;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent-deep);margin:0 0 2px;line-height:1.25}
+.rc-rg{display:flex;flex-direction:column;gap:var(--gutter)}
 .rc-l{display:grid;grid-template-columns:1fr 1fr;gap:var(--gutter)}
-.rcslide .card{padding:16px 18px}
+.rcslide .card{padding:12px 16px}
 .rc-p{border-left:3px solid var(--accent)!important}
-.rc-pt{font-family:var(--sans);font-weight:800;font-size:20px;line-height:1.2;margin:4px 0 8px;color:var(--accent-deep)}
-.rc-tx{font-size:15px!important;line-height:1.45;margin:0}
+.rc-tx{font-size:15px!important;line-height:1.4;margin:0}
+@media (min-width:901px) and (max-height:780px){.rc-di{padding:4px 0}.rcslide .card{padding:10px 14px}.rc-tx{line-height:1.33}}
 @media (max-width:900px){.rc-g,.rc-l{grid-template-columns:1fr}}
 </style>
 <style>
@@ -1695,17 +1699,14 @@ const DADOS = {
     </div>
     <p class="p-block anim d5" style="grid-column:1/-1;margin-top:6px;font-size:16px">${esc(D.publico.leitura)}</p>` + foot(D.publico.rodape, "margin-top:10px")));
 
-  /* 11 · DIAGNÓSTICO */
-  slide("s-dark", "Leituras e próximo ciclo", grid(head("Diagnóstico do ciclo", "Cinco achados", "resumem o mês") + `
-    <div class="modgrid mt-sm" style="grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:var(--gutter)">
-      ${D.diagnostico.map((c, i) => `<div class="card anim d${i + 2}"${i === 4 ? ' style="grid-column:1/-1"' : ""}><p class="num">${esc(c.titulo)}</p><p style="font-size:16px"><b>${esc(c.lead)}</b> ${esc(c.texto)}</p></div>`).join("")}
-    </div>`));
-
-  /* 12 · RECOMENDAÇÕES PARA O PRÓXIMO MÊS · tela única, fundo neutro (revisão 30/09/2026) */
-  slide("s-light rcslide", "Recomendações", grid(head("Recomendações para " + D.proximoMes, "Movimentos que saem prontos", "do ciclo de " + D.mes.split(" ")[0]) + `
+  /* 11-12 · RECOMENDAÇÕES PARA O PRÓXIMO MÊS · diagnóstico, prioridade e recomendações numa tela, fundo neutro (revisão 30/09/2026) */
+  slide("s-light rcslide", "Recomendações", grid(head("Recomendações para " + D.proximoMes, "Do diagnóstico", "aos movimentos de " + D.proximoMes) + `
     <div class="rc-g mt-xs anim d2" style="grid-column:1/-1">
-      <div class="card rc-p"><p class="num">Prioridade</p><p class="rc-pt">${esc(D.prioridade.titulo[0])} ${esc(D.prioridade.titulo[1])}</p><p class="rc-tx">${esc(D.prioridade.texto)}</p></div>
-      <div class="rc-l">${D.recomendacoes.map(c => `<div class="card"><p class="num">${esc(c.titulo)}</p><p class="rc-tx">${esc(c.texto)}</p></div>`).join("")}</div>
+      <div class="rc-dg"><p class="num">Diagnóstico do ciclo</p>${D.diagnostico.map(c => `<div class="rc-di"><p class="rc-dt">${esc(c.titulo)}</p><p class="rc-tx">${esc(c.lead)}</p></div>`).join("")}</div>
+      <div class="rc-rg">
+        <div class="card rc-p"><p class="num">Prioridade · ${esc(D.prioridade.titulo[0])} ${esc(D.prioridade.titulo[1])}</p><p class="rc-tx">${esc(D.prioridade.texto)}</p></div>
+        <div class="rc-l">${D.recomendacoes.map(c => `<div class="card"><p class="num">${esc(c.titulo)}</p><p class="rc-tx">${esc(c.texto)}</p></div>`).join("")}</div>
+      </div>
     </div>`));
 
   /* 15 · NOTAS DE LEITURA */
