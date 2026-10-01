@@ -165,6 +165,7 @@
 .tm-leg p{margin:0 0 5px;font-family:var(--sans);font-size:15px;line-height:1.25;color:var(--gray-200)}
 .tm-leg i{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:8px;vertical-align:0}
 .tm-leg b{font-weight:800;color:var(--white);margin-right:4px}
+.tm-bonus{font-family:var(--sans);font-weight:600;font-size:15px;color:var(--gray-200);margin:14px 0 0;padding:8px 12px;border:1px dashed rgba(255,255,255,.3);border-radius:6px;display:inline-block}
 .tm-bl{margin-bottom:18px}
 .tm-r{display:grid;grid-template-columns:minmax(120px,210px) 1fr auto;gap:12px;align-items:center;margin:0 0 7px}
 .tm-n{font-family:var(--sans);font-size:15px;color:var(--gray-200);text-align:right;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -943,7 +944,7 @@ const DADOS = {
  "sobre": {
   "p1": "Este relatório reúne os resultados da <span class=\"hl\">ação Concilia</span>, o programa de negociação de dívidas da Prefeitura de Campinas, veiculada em <span class=\"hl\">Meta Ads e YouTube</span> de <span class=\"hl\">14 a 30 de setembro</span>.",
   "p2": "A ação convidou quem tem IPTU atrasado ou nome na dívida ativa a regularizar a situação com desconto e parcelamento. Foram consideradas todas as linhas do plano e todas as peças veiculadas, com impressões, visualizações de vídeo, engajamentos, cliques no link, comentários, salvamentos e novos seguidores apurados nos gerenciadores de anúncio.",
-  "p3": "A ação foi encerrada com <span class=\"hl\">as quatro entregas contratadas acima da meta</span>. A finalidade do documento é subsidiar a tomada de decisões, com uma comunicação pública eficiente, transparente e <span class=\"hl\">orientada por dados</span>.",
+  "p3": "A veiculação foi encerrada com <span class=\"hl\">as quatro entregas contratadas acima da meta</span>. A finalidade do documento é subsidiar a tomada de decisões, com uma comunicação pública eficiente, transparente e <span class=\"hl\">orientada por dados</span>.",
   "rodape": "Todos os números vêm dos painéis das plataformas de anúncio, por linha e por criativo, no período de 14 a 30/09."
  },
  "plataformas": [
@@ -1027,6 +1028,10 @@ const DADOS = {
    [
     "Cliques no link",
     "2.732"
+   ],
+   [
+    "Impressões bônus · bumper no YouTube",
+    "+111.005"
    ]
   ],
   "nota": "Soma das linhas do plano de Meta Ads e YouTube de 14 a 30 de setembro. Alcance e frequência não se somam entre plataformas e aparecem só nas notas de leitura."
@@ -1064,6 +1069,7 @@ const DADOS = {
   }
  ],
  "temasUnidade": "linha",
+ "temasBonus": "+111.005 impressões bônus no formato bumper do YouTube, fora do total",
  "temasTitulo": [
   "O engajamento no Meta Ads concentrou",
   "a maior parte das impressões"
@@ -1447,7 +1453,7 @@ const DADOS = {
     slide("s-dark s-media tmslide", "As campanhas do mês", grid(head(tag(["Entrega por " + UN + " · ", MED, " · " + D.periodo]), D.temasTitulo[0], D.temasTitulo[1]) + `
       <div class="col-span-10 tm-g${ord.length > 6 ? " tm-many" : ""} anim d2">
         <div class="tm-l"><p class="tm-h">Impressões</p><p class="tm-big">${f(tot)}</p><p class="tm-pill">em ${ord.length} ${UN}s · ${esc(D.plataformasTexto)}</p>
-          <div class="tm-dl"><div class="tm-donut" style="background:conic-gradient(${stops})"></div><div class="tm-leg">${ord.filter(k => T[k].imp > 0).map(k => `<p><i style="background:${col[k]}"></i><b>${f(T[k].imp)}</b> ${k}</p>`).join("")}</div></div></div>
+          <div class="tm-dl"><div class="tm-donut" style="background:conic-gradient(${stops})"></div><div class="tm-leg">${ord.filter(k => T[k].imp > 0).map(k => `<p><i style="background:${col[k]}"></i><b>${f(T[k].imp)}</b> ${k}</p>`).join("")}</div></div>${D.temasBonus ? `<p class="tm-bonus">${esc(D.temasBonus)}</p>` : ""}</div>
         <div class="tm-rg">${barras("Engajamentos por " + UN, "eng")}${barras("Visualizações por " + UN, "vis")}</div>
       </div>` + foot(D.temasRodape)));
   }
