@@ -235,6 +235,35 @@
 .rc-tx{font-size:15px!important;line-height:1.4;margin:0}
 @media (min-width:901px) and (max-height:780px){.rc-di{padding:4px 0}.rcslide .card{padding:10px 14px}.rc-tx{line-height:1.33}}
 @media (max-width:900px){.rc-g,.rc-g2,.rc-l{grid-template-columns:1fr}}
+/* ===== CSS: REVISÃO 01/10/2026 (Julia) ===== */
+.track .fb{background:#e9f958!important;box-shadow:inset 0 0 0 1px rgba(10,10,10,.10)}
+.capa-camp{color:var(--white)!important;margin-top:6px!important}
+.tm-g{align-items:stretch!important}
+.tm-l,.tm-bl{border:1px solid rgba(255,255,255,.16);border-radius:10px;padding:18px 22px;background:rgba(255,255,255,.02)}
+.tm-rg{display:flex;flex-direction:column;gap:16px}
+.tm-rg .tm-bl{margin:0!important}.tm-rg .tm-bl:last-child{flex:1}
+.tm-many .tm-l,.tm-many .tm-bl{padding:12px 18px}
+@media (min-width:901px) and (max-height:780px){.tm-l,.tm-bl{padding:12px 18px}.tm-rg{gap:10px}}
+.pg-g{display:grid;grid-template-columns:7fr 5fr;gap:var(--gutter);grid-column:1/-1;margin-top:var(--space-xs)}
+.pg-c{background:#fff;border:1px solid var(--gray-200);border-radius:10px;padding:18px 22px;display:flex;flex-direction:column}
+.pg-hd{display:flex;justify-content:space-between;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:12px}
+.pg-h{font-family:var(--inter);font-weight:600;font-size:15px;letter-spacing:2px;text-transform:uppercase;color:var(--gray-600);margin:0}
+.pg-lg{display:flex;gap:16px;font-family:var(--inter);font-size:15px;color:var(--gray-800)}
+.pg-lg i{display:inline-block;width:12px;height:12px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+.pg-ch{display:flex;align-items:flex-end;gap:10px;flex:1;min-height:200px;border-bottom:1px solid var(--gray-200);padding-top:8px}
+.pg-gr{flex:1;display:flex;align-items:flex-end;justify-content:center;gap:5px;height:100%}
+.pg-b{flex:1;max-width:44px;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;height:100%}
+.pg-b b{font-family:var(--inter);font-weight:600;font-size:15px;color:var(--gray-800);margin-bottom:4px;white-space:nowrap}
+.pg-b span{display:block;width:100%;border-radius:3px 3px 0 0}
+.pg-x{display:flex;gap:10px;margin-top:6px}.pg-x p{flex:1;text-align:center;margin:0;font-family:var(--inter);font-size:15px;color:var(--gray-600)}
+.pg-r{margin-bottom:12px}.pg-r:last-child{margin-bottom:0}
+.pg-rt{display:flex;justify-content:space-between;gap:10px;font-family:var(--sans);font-size:15px;margin-bottom:5px}
+.pg-rt b{font-weight:700;color:var(--black)}.pg-rt span{color:var(--gray-600)}
+.pg-sb{display:flex;height:14px;border-radius:3px;overflow:hidden;background:var(--gray-100)}
+.pg-sb span{display:block;height:100%}
+.pg-rp{display:flex;justify-content:space-between;gap:8px;font-family:var(--inter);font-size:15px;color:var(--gray-600);margin-top:4px}
+@media (min-width:901px) and (max-height:800px){.pg-ch{min-height:160px}.pg-c{padding:12px 18px}.pg-r{margin-bottom:5px}.pg-rt{margin-bottom:3px}.pg-rp{margin-top:2px}.pg-hd{margin-bottom:4px}.pg-sb{height:11px}.pg-g{margin-top:6px}}
+@media (max-width:900px){.pg-g{grid-template-columns:1fr}.pg-ch{min-height:200px;gap:4px}.pg-gr{gap:2px}.pg-b b{font-size:15px;writing-mode:vertical-rl;transform:rotate(180deg)}}
 </style>
 <style>
 /* ===== CSS: TOKENS ===== */
@@ -939,6 +968,7 @@ const DADOS = {
  "periodo": "14 a 30/09",
  "periodoLongo": "14 a 30 de setembro de 2026",
  "campanha": "Concilia",
+ "campanhaCapa": "Campanha Concilia",
  "plataformasTexto": "Meta Ads e YouTube",
  "assinatura": "Esquina Comunicação Online",
  "sobre": {
@@ -1071,8 +1101,8 @@ const DADOS = {
  "temasUnidade": "linha",
  "temasBonus": "+111.005 impressões bônus no formato bumper do YouTube, fora do total",
  "temasTitulo": [
-  "O engajamento no Meta Ads concentrou",
-  "a maior parte das impressões"
+  "As quatro linhas somaram",
+  "780 mil impressões no período"
  ],
  "temas": [
   [
@@ -1212,8 +1242,8 @@ const DADOS = {
  ],
  "pecasRodape": "",
  "publicoTitulo": [
-  "O público de 65 anos ou mais",
-  "recebeu um quarto das impressões"
+  "No Meta Ads, quem tem 55 anos ou mais",
+  "fez seis em cada dez visualizações"
  ],
  "publico": {
   "genero": [
@@ -1282,8 +1312,76 @@ const DADOS = {
     8
    ]
   ],
-  "leitura": "No Meta Ads, mulheres e a faixa de 65 anos ou mais lideraram; no YouTube, a de 25 a 34 anos. O programa fala com quem cuida do imóvel e das contas da casa.",
-  "rodape": "Impressões de Meta Ads e YouTube de 14 a 30/09. Demais posicionamentos do Meta Ads: vídeo in-stream do Facebook 8%, feed do Facebook 5% e outros 2%."
+  "idadeGenero": {
+   "titulo": "Visualizações no Meta Ads por idade, em mil",
+   "faixas": [
+    "18 a 24",
+    "25 a 34",
+    "35 a 44",
+    "45 a 54",
+    "55 a 64",
+    "65+"
+   ],
+   "mulheres": [
+    1196,
+    4732,
+    4017,
+    4026,
+    8358,
+    13504
+   ],
+   "homens": [
+    977,
+    2856,
+    2250,
+    3274,
+    7328,
+    8193
+   ]
+  },
+  "porGenero": {
+   "titulo": "Por gênero",
+   "sub": "participação no período",
+   "linhas": [
+    {
+     "nome": "Impressões · Meta Ads",
+     "total": "737.464",
+     "m": 55.37,
+     "h": 44.26,
+     "ni": 0.37
+    },
+    {
+     "nome": "Engajamentos · Meta Ads",
+     "total": "25.030",
+     "m": 60.37,
+     "h": 39.35,
+     "ni": 0.28
+    },
+    {
+     "nome": "Visualizações · Meta Ads",
+     "total": "60.832",
+     "m": 58.91,
+     "h": 40.9,
+     "ni": 0.2
+    },
+    {
+     "nome": "Impressões · YouTube",
+     "total": "43.377",
+     "m": 40.64,
+     "h": 47.7,
+     "ni": 11.66
+    },
+    {
+     "nome": "Visualizações · YouTube",
+     "total": "38.600",
+     "m": 40.96,
+     "h": 47.92,
+     "ni": 11.12
+    }
+   ]
+  },
+  "leitura": "No Meta Ads, as mulheres fizeram 59% das visualizações e assistiram mais em todas as faixas de idade. No YouTube, os homens foram 48% do público. O programa fala com quem cuida do imóvel e das contas da casa.",
+  "rodape": "Meta Ads e YouTube, de 14 a 30/09. Visualização é ThruPlay no Meta Ads e TrueView no YouTube. Impressões do YouTube sem o formato bumper."
  },
  "diagnostico": [
   {
@@ -1388,11 +1486,11 @@ const DADOS = {
     <div style="grid-column:1/9">
       <p class="tag anim">Mídia · ${esc(D.mesCurto)}</p>
       <h1 class="anim d1" style="font-size:clamp(40px,5.6vw,84px)">Relatório mensal<em class="blk">de mídia</em></h1>
-      <p class="serif anim d2 mt-sm" style="color:var(--gray-200)">${esc(D.cliente)} · ${esc(D.periodoLongo)}</p>
+      <p class="serif anim d2 mt-sm" style="color:var(--accent-on-dark)">${esc(D.cliente)} · ${esc(D.periodoLongo)}</p>${(D.campanhaCapa || D.campanha) ? `<p class="serif anim d2 capa-camp">${esc(D.campanhaCapa || D.campanha)}</p>` : ""}
     </div>
     <div style="grid-column:1/-1;display:flex;justify-content:space-between;align-items:flex-end;margin-top:var(--space-lg);flex-wrap:wrap;gap:14px">
-      <div class="anim d3" style="display:flex;align-items:center;gap:14px"><img src="${AS.esquina}" alt="Esquina" style="height:26px;width:auto;display:block"><p class="small" style="margin:0">${esc(D.assinatura)}</p></div>
-      <img class="anim d3" src="${AS.horto}" alt="${esc(D.cliente)}" style="height:48px;width:auto;display:block">
+      <div class="anim d3" style="display:flex;align-items:center;gap:14px"><img src="${AS.esquina}" alt="Esquina" style="height:26px;width:auto;display:block"></div>
+      <img class="anim d3" src="${AS.horto}" alt="${esc(D.cliente)}" style="height:67px;width:auto;display:block">
     </div></div>`, "background:radial-gradient(90% 70% at 80% 10%,rgba(55,0,255,.30),transparent 55%),radial-gradient(70% 60% at 10% 90%,rgba(55,0,255,.12),transparent 60%),var(--black)");
 
   /* 2 · SOBRE */
@@ -1432,14 +1530,14 @@ const DADOS = {
   slide("s-light s-media", "O período", grid(head(tag(["Meta contratada e entrega · ", { t: "mídia", cls: "w-med" }, " · " + D.periodo]), D.metasTitulo[0], D.metasTitulo[1]) + `
     <p class="lede anim d2 mt-xs" style="max-width:none;grid-column:1/-1">${esc(D.metasLede)}</p>
     <div class="col-span-10 anim d3">
-      <div class="legend"><span><b style="background:var(--accent);border:1px solid var(--accent-edge)"></b>entregue até a meta</span><span><b style="background:var(--black)"></b>acima da meta</span><span>traço vertical marca os 100%</span><span>escala até 200%: a barra com quebra passa do limite</span></div>
+      <div class="legend"><span><b style="background:var(--accent);border:1px solid var(--accent-edge)"></b>entregue até a meta</span><span><b style="background:#e9f958;box-shadow:inset 0 0 0 1px rgba(10,10,10,.18)"></b>acima da meta</span><span>traço vertical marca os 100%</span><span>escala até 200%: a barra com quebra passa do limite</span></div>
       ${D.metas.map(m => { const pct = m.entregue / m.meta * 100; const pb = Math.min(pct, CAP); const tick = 100 / scale * 100; return `<div class="goal"><p class="g-label">${esc(m.linha)}<span>meta ${fmt(m.meta)} · entregue ${fmt(m.entregue)}</span></p><div class="track"><span class="tick" style="left:${tick.toFixed(2)}%"><i>100%</i></span><span class="fill${pct > CAP ? " brk" : ""}" data-w="${(pb / scale * 100).toFixed(2)}"><span class="fa" style="width:${(Math.min(pb, 100) / pb * 100).toFixed(2)}%"></span><span class="fb" style="width:${(Math.max(pb - 100, 0) / pb * 100).toFixed(2)}%"></span></span></div><p class="g-pct">${pct.toFixed(1).replace(".", ",")}%</p></div>`; }).join("")}${D.metasBonus ? `<div class="goal goal-bn"><p class="g-label">${esc(D.metasBonus[0])}<span>${esc(D.metasBonus[1])}</span></p><div class="track bn-track"><span class="bn-tag">bônus</span></div><p class="g-pct">${esc(D.metasBonus[2])}</p></div>` : ""}
     </div>`));
 
-  /* 6 · ENTREGA POR TEMA · gráficos (revisão 30/09/2026) */
+  /* 6 · ENTREGA POR TEMA · gráficos (revisão 30/09/2026; rosa e três caixas em 01/10/2026) */
   {
     const UN = D.temasUnidade || "tema";
-    const PAL = ["#010066", "#024BD7", "#6612C5", "#EA5B0C", "#F2803A", "#9D6BE8", "#5B8EF0", "#3D3DA0"];  /* 4 cores do documento; a partir do 5º tema, outros tons delas (Bruno, 30/09) */
+    const PAL = ["#d431a1", "#024BD7", "#6612C5", "#EA5B0C", "#F2803A", "#9D6BE8", "#5B8EF0", "#3D3DA0"];  /* 4 cores do documento; a partir do 5º tema, outros tons delas (Bruno, 30/09) */
     const num = x => { const n = parseInt(String(x).replace(/\./g, ""), 10); return isNaN(n) ? 0 : n; };
     const f = n => n.toLocaleString("pt-BR");
     const T = {}, ord = [];
@@ -1511,6 +1609,25 @@ const DADOS = {
         <div class="md-v"><b>${esc(p.views)}</b><span>visualizações</span>${p.bonus ? `<i class="md-bn">${esc(p.bonus)}</i>` : ""}</div></div>`).join("")}</div>` + foot(md.rodape)));
   });
 
+    /* 10 · PÚBLICO · gráficos qualitativos (revisão 01/10/2026, modelo da Julia) */
+  if (D.publico.idadeGenero && D.publico.porGenero) {
+    const P = D.publico, IG = P.idadeGenero, PG = P.porGenero, CM = "#EA5B0C", CH = "#6612C5", CN = "#b8b8b2";
+    const mx = Math.max(...IG.mulheres, ...IG.homens);
+    const k = n => (n / 1000).toFixed(1).replace(".", ",");
+    const bar = (n, c) => `<div class="pg-b"><b>${k(n)}</b><span style="height:${Math.max(n / mx * 82, 1).toFixed(1)}%;background:${c}"></span></div>`;
+    const pc = x => x > 0 && x < 1 ? "<1%" : Math.round(x) + "%";
+    slide("s-light s-media", "Público", grid(head(tag(["Público · ", MED, " · " + D.periodo]), D.publicoTitulo[0], D.publicoTitulo[1], true) + `
+    <div class="pg-g">
+      <div class="pg-c anim d2"><div class="pg-hd"><p class="pg-h">${esc(IG.titulo)}</p><div class="pg-lg"><span><i style="background:${CM}"></i>Mulheres</span><span><i style="background:${CH}"></i>Homens</span></div></div>
+        <div class="pg-ch">${IG.faixas.map((f, i) => `<div class="pg-gr">${bar(IG.mulheres[i], CM)}${bar(IG.homens[i], CH)}</div>`).join("")}</div>
+        <div class="pg-x">${IG.faixas.map(f => `<p>${esc(f)}</p>`).join("")}</div></div>
+      <div class="pg-c anim d3"><div class="pg-hd"><p class="pg-h">${esc(PG.titulo)}</p><span class="pg-lg">${esc(PG.sub)}</span></div>
+        ${PG.linhas.map(l => `<div class="pg-r"><div class="pg-rt"><b>${esc(l.nome)}</b><span>${esc(l.total)}</span></div>
+          <div class="pg-sb"><span style="width:${l.m}%;background:${CM}"></span><span style="width:${l.h}%;background:${CH}"></span><span style="width:${l.ni}%;background:${CN}"></span></div>
+          <div class="pg-rp"><span>${pc(l.m)} mulheres</span>${l.ni >= 1 ? `<span>${pc(l.ni)} não informado</span>` : ""}<span>${pc(l.h)} homens</span></div></div>`).join("")}</div>
+    </div>
+    <p class="p-block anim d5" style="grid-column:1/-1;margin-top:10px;font-size:16px">${esc(P.leitura)}</p>` + foot(P.rodape, "margin-top:8px")));
+  } else {
   /* 10 · PÚBLICO */
   const bars = (arr, cls) => arr.map(a => `<div class="aud-r"><span class="aud-n">${esc(a[0])}</span><span class="aud-t"><span class="aud-b" style="width:${a[1]}%"></span></span><b class="aud-v">${a[1]}%</b></div>`).join("");
   slide("s-light s-media", "Público", grid(head(tag(["Público · ", MED, " · " + D.periodo]), D.publicoTitulo[0], D.publicoTitulo[1], true) + `
@@ -1520,6 +1637,7 @@ const DADOS = {
       <div class="card anim d4"><p class="num">POSICIONAMENTOS</p><div class="aud">${bars(D.publico.posicionamentos)}</div></div>
     </div>
     <p class="p-block anim d5" style="grid-column:1/-1;margin-top:6px;font-size:16px">${esc(D.publico.leitura)}</p>` + foot(D.publico.rodape, "margin-top:10px")));
+  }
 
   /* 11 · DIAGNÓSTICO */
   slide("s-dark", "Leituras e próximo ciclo", grid(head("Diagnóstico do ciclo", "Cinco achados", "resumem o mês") + `
