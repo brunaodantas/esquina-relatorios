@@ -1306,30 +1306,35 @@ const DADOS = {
    "texto": "As peças falam de um problema real, como sair da dívida com a Prefeitura, e por isso geraram visualizações e engajamento: quem tem IPTU atrasado quer saber como resolver. A resposta veio em cliques no link, sem críticas nos comentários."
   }
  ],
+ "recsTag": "Recomendações para próximas campanhas",
+ "recsTitulo": [
+  "Aprendizados para campanhas",
+  "de temas semelhantes"
+ ],
  "prioridade": {
-  "tag": "Prioridade para outubro",
+  "tag": "Prioridade para próximas campanhas",
   "titulo": [
    "Vídeo vertical",
    "com a pergunta de abertura"
   ],
-  "texto": "O Reels de 15 segundos carregou a ação porque abre com uma pergunta em que o morador se reconhece. Sugerimos partir desse formato nas próximas ações de serviço da Prefeitura, com a pergunta no primeiro quadro."
+  "texto": "O Reels de 15 segundos carregou a ação porque abre com uma pergunta em que o morador se reconhece. Em futuras campanhas sobre dívida, regularização ou serviços da Prefeitura, sugerimos partir desse formato, com a pergunta no primeiro quadro."
  },
  "recomendacoes": [
   {
    "titulo": "/01 · ENDEREÇO DO SITE NO FIM",
-   "texto": "O vídeo apresenta o problema e o desconto, e o caminho até o site fica na legenda. Sugerimos versões com o endereço escrito no quadro final, para quem assiste sem abrir a legenda."
+   "texto": "O caminho até o site ficou na legenda. Em campanhas de temas semelhantes, sugerimos vídeos com o endereço escrito no quadro final, para quem assiste sem abrir a legenda."
   },
   {
    "titulo": "/02 · IMAGEM E VÍDEO JUNTOS",
-   "texto": "A imagem explica a regra e o vídeo chama a atenção, e cada um atende um tipo de pessoa. Sugerimos manter os dois formatos no ar nas próximas ações de serviço."
+   "texto": "A imagem explica a regra e o vídeo chama a atenção, e cada um atende um tipo de pessoa. Sugerimos repetir essa dupla de formatos nas próximas campanhas sobre dívida e serviços."
   },
   {
    "titulo": "/03 · FALAR DE NOVO COM QUEM JÁ VIU",
-   "texto": "Voltar a quem já assistiu ao vídeo reforça a mensagem para quem ainda está decidindo. Sugerimos manter o remarketing, com uma peça que avance para o passo seguinte, como a simulação no site."
+   "texto": "Voltar a quem já assistiu ao vídeo reforça a mensagem para quem ainda está decidindo. Em campanhas semelhantes, sugerimos manter o remarketing, com uma peça que avance para o passo seguinte, como a simulação no site."
   },
   {
    "titulo": "/04 · YOUTUBE CURTO",
-   "texto": "O vídeo curto foi assistido até o fim por quase todos. Sugerimos manter versões curtas no YouTube, com o endereço do site escrito no fim."
+   "texto": "O vídeo curto foi assistido até o fim por quase todos. Sugerimos versões curtas no YouTube nas próximas campanhas de serviço, com o endereço do site escrito no fim."
   }
  ],
  "notas": [
@@ -1517,7 +1522,7 @@ const DADOS = {
     </div>`));
 
   /* 12 · RECOMENDAÇÕES PARA O PRÓXIMO MÊS · prioridade e recomendações numa tela, fundo neutro (revisão 30/09/2026) */
-  slide("s-light rcslide", "Recomendações", grid(head("Recomendações para " + D.proximoMes, "Movimentos que saem prontos", "do ciclo de " + D.mes.split(" ")[0]) + `
+  slide("s-light rcslide", "Recomendações", grid(head(D.recsTag || ("Recomendações para " + D.proximoMes), (D.recsTitulo || ["Movimentos que saem prontos", "do ciclo de " + D.mes.split(" ")[0]])[0], (D.recsTitulo || ["Movimentos que saem prontos", "do ciclo de " + D.mes.split(" ")[0]])[1]) + `
     <div class="rc-g2 mt-xs anim d2" style="grid-column:1/-1">
       <div class="card rc-p"><p class="num">Prioridade</p><p class="rc-pt">${esc(D.prioridade.titulo[0])} ${esc(D.prioridade.titulo[1])}</p><p class="rc-tx">${esc(D.prioridade.texto)}</p></div>
       <div class="rc-l">${D.recomendacoes.map(c => `<div class="card"><p class="num">${esc(c.titulo)}</p><p class="rc-tx">${esc(c.texto)}</p></div>`).join("")}</div>
