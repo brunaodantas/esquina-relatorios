@@ -936,9 +936,24 @@ h1 em.blk,h2 em.blk{display:block;margin-top:6px;font-size:.94em;line-height:1.0
 @media (max-width:1420px){.vbslide .vb-num{grid-column:1/-1!important;flex-direction:row!important;align-items:baseline;gap:18px!important}.vbslide .vb-tab{grid-column:1/-1!important;margin-top:12px}}
 </style>
 <style id="pdf-btn-css">#pdf-btn{position:fixed;top:14px;right:18px;z-index:9999;display:inline-flex;align-items:center;gap:8px;background:#3700ff;color:#fff;font-family:"DM Sans",system-ui,sans-serif;font-weight:700;font-size:15px;letter-spacing:.5px;padding:9px 16px;border-radius:999px;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,.25)}#pdf-btn:hover{background:#2400b8}@media print{#pdf-btn{display:none}}</style>
+<style id="google-display-section">
+.gd-metrics{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:24px}
+.gd-metric{border-top:1px solid rgba(255,255,255,.25);padding-top:20px}
+.gd-metric b{display:block;font-size:clamp(30px,3.4vw,48px);letter-spacing:-1.5px;color:var(--accent-on-dark);line-height:1.1}
+.gd-metric span{display:block;font-size:15px;margin-top:12px;color:var(--gray-200)}
+.gd-note{grid-column:1/-1;border-top:1px solid var(--gray-200);padding-top:16px;font-size:16px;line-height:1.5;margin-top:8px}
+.gd-banners{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.gd-banner{display:grid;grid-template-columns:180px 1fr;gap:20px;align-items:center}
+.gd-banner img{display:block;width:180px;height:150px;object-fit:contain}
+.gd-banner h3{font-size:18px;line-height:1.3;margin-bottom:12px}
+.gd-banner p{font-size:15px;line-height:1.6;color:var(--gray-600)}
+.gd-banner a{display:inline-block;font-size:14px;margin-top:10px;color:var(--accent-deep)}
+@media(max-width:900px){.gd-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.gd-banners{grid-template-columns:1fr}.gd-banner{grid-template-columns:150px 1fr}.gd-banner img{width:150px;height:125px}}
+@media(max-width:480px){.gd-metric b{font-size:30px}.gd-banner{grid-template-columns:1fr}.gd-banner img{width:min(100%,336px);height:auto}.gd-banners{gap:24px}}
+</style>
 </head>
 <body>
-<a id="pdf-btn" href="relatorio-campinas-concilia-setembro2026.pdf" target="_blank" rel="noopener" download>Baixar PDF ↓</a>
+<a id="pdf-btn" href="relatorio-campinas-concilia-setembro2026.pdf" target="_blank" rel="noopener" download>PDF · Meta e YouTube ↓</a>
 <div id="bar"></div>
 <nav id="dots" aria-label="Navegação de telas"></nav>
 <div id="chap">Abertura</div>
@@ -1485,8 +1500,8 @@ const DADOS = {
       <p class="serif anim d2 mt-sm" style="color:var(--accent-on-dark)">${esc(D.cliente)} · ${esc(D.periodoLongo)}</p>${(D.campanhaCapa || D.campanha) ? `<p class="serif anim d2 capa-camp">${esc(D.campanhaCapa || D.campanha)}</p>` : ""}
     </div>
     <div style="grid-column:1/-1;display:flex;justify-content:space-between;align-items:flex-end;margin-top:var(--space-lg);flex-wrap:wrap;gap:14px">
-      <div class="anim d3" style="display:flex;align-items:center;gap:14px"><img src="${AS.esquina}" alt="Esquina" style="height:26px;width:auto;display:block"></div>
-      <img class="anim d3" src="${AS.horto}" alt="${esc(D.cliente)}" style="height:67px;width:auto;display:block">
+      <div class="anim d3" style="display:flex;align-items:center;gap:14px"><img src="${AS.esquina}" alt="Esquina" style="height:31.2px;width:auto;display:block"></div>
+      <img class="anim d3" src="${AS.horto}" alt="${esc(D.cliente)}" style="height:80.4px;width:auto;display:block">
     </div></div>`, "background:radial-gradient(90% 70% at 80% 10%,rgba(55,0,255,.30),transparent 55%),radial-gradient(70% 60% at 10% 90%,rgba(55,0,255,.12),transparent 60%),var(--black)");
 
   /* 2 · SOBRE */
@@ -1653,6 +1668,31 @@ const DADOS = {
     <div class="modgrid mt-sm" style="grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:var(--gutter)">
       ${D.notas.map((c, i) => `<div class="card anim d${i + 2}"${i === D.notas.length - 1 ? ' style="grid-column:1/-1"' : ""}><p class="num">${esc(c.titulo)}</p><p style="font-size:15px">${esc(c.texto)}</p></div>`).join("")}
     </div>`));
+
+  /* Google Display: complemento da campanha Temas Diversos */
+  slide("s-dark s-media gd-slide", "Google Display", grid(head("Google Display · 20/08 a 02/10/2026", "Concilia no Google", "resultados dos banners") + `
+    <p class="lede anim d2" style="grid-column:1/-1;max-width:70ch">Os banners do Concilia levaram a divulgação do programa a sites e aplicativos da Rede de Display do Google.</p>
+    <div class="gd-metrics anim d3">
+      <div class="gd-metric"><b>803.332</b><span>Impressões</span></div>
+      <div class="gd-metric"><b>642</b><span>Cliques no link</span></div>
+      <div class="gd-metric"><b>0,08%</b><span>Taxa de clique</span></div>
+    </div>
+    <p class="p-block anim d4" style="grid-column:1/-1;margin-top:18px;font-size:17px">Duas artes em cinco formatos de banner. O celular respondeu por 521 dos 642 cliques no link.</p>
+    ` + foot("Fonte: Google Ads. Resultados dos banners do Concilia de 20 de agosto a 2 de outubro de 2026, apurados em 7 de outubro de 2026.")));
+
+  slide("s-light s-media gd-slide", "Google Display", grid(head("Google Display · peças veiculadas", "Os banners", "do Concilia") + `
+    <div class="gd-banners anim d2">
+      <figure class="gd-banner">
+        <img src="assets/google-concilia-arte-1.png" alt="Print do banner Concilia: Tem dívida com a Prefeitura? O Concilia Campinas pode ajudar você a negociar." width="336" height="280">
+        <figcaption><h3>As condições da negociação</h3><p>567.265 impressões<br>445 cliques no link<br>0,08% de taxa de clique</p><a href="assets/google-concilia-arte-1.gif" target="_blank" rel="noopener">Ver banner animado ↗</a></figcaption>
+      </figure>
+      <figure class="gd-banner">
+        <img src="assets/google-concilia-arte-2.png" alt="Print do banner Concilia: IPTU atrasado? Nome na dívida ativa?" width="336" height="280">
+        <figcaption><h3>A pergunta do IPTU atrasado</h3><p>236.067 impressões<br>197 cliques no link<br>0,08% de taxa de clique</p><a href="assets/google-concilia-arte-2.gif" target="_blank" rel="noopener">Ver banner animado ↗</a></figcaption>
+      </figure>
+    </div>
+    <p class="gd-note anim d3"><strong>Observação:</strong> esses banners do Concilia veicularam na campanha de Temas Diversos, na Rede de Display do Google, de 20/08 a 02/10/2026. Os resultados desta seção correspondem a essa veiculação e são apresentados separadamente dos totais da campanha própria do Concilia, de 14 a 30/09.</p>
+    ` + foot("Prints do formato 336×280. Resultados por arte somados nos cinco formatos: 300×600, 336×280, 300×250, 320×100 e 728×90.")));
 
   /* 16 · ENCERRAMENTO (revisão 30/09/2026) */
   slide("s-dark", "Encerramento", `<div class="slide-grid" style="text-align:center"><div class="col-span-10">
