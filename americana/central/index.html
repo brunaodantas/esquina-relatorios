@@ -8,7 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
-    --blue:#1A3CFF; --navy:#0A0A5C; --teal:#17A697; --purple:#7B2FBE; --orange:#C44A00;
+    --blue:#1A3CFF; --navy:#0A0A5C; --teal:#17A697; --purple:#9C27B0; --orange:#00994D;
     --bg:#F4F6FF; --ink:#0A0A5C; --muted:#6a6a80; --line:rgba(10,10,92,.10);
   }
   *{margin:0;padding:0;box-sizing:border-box}
@@ -16,52 +16,82 @@
   .wrap{max-width:1060px;margin:0 auto;padding:0 28px}
   nav{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.93);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
   nav .in{max-width:1060px;margin:0 auto;padding:0 28px;height:64px;display:flex;align-items:center;gap:16px}
-  nav img{height:26px}
+  nav img{height:32px;border-radius:6px}
   nav .div{width:1px;height:22px;background:var(--line)}
   nav .cliente{font-weight:700;color:var(--ink);font-size:.92rem}
   nav .cliente span{display:block;font-size:.72rem;font-weight:500;color:var(--muted)}
 
   .hero{background:linear-gradient(135deg,#060630,#0A0A5C 48%,#0D1B6E 76%,#1A3CFF);color:#fff;padding:70px 0 64px}
-  .hero-logo{height:44px;background:#fff;border-radius:9px;padding:7px 11px;display:inline-block;margin-bottom:34px}
+  .hero-logo{height:52px;background:#fff;border-radius:9px;padding:6px 9px;display:inline-block;margin-bottom:34px}
   .badge{display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);color:#fff;font-size:.7rem;font-weight:700;padding:7px 14px;border-radius:20px;letter-spacing:.05em;text-transform:uppercase}
   h1{font-size:2.6rem;font-weight:800;letter-spacing:-.03em;line-height:1.1;margin:20px 0 14px}
   .hero p{color:rgba(255,255,255,.78);font-size:1rem;line-height:1.65;max-width:680px}
 
   section{padding:56px 0 12px}
   section:last-of-type{padding-bottom:70px}
-  .sec-h{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:22px}
-  .eyebrow{display:inline-block;font-size:.68rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin-bottom:8px}
-  .eyebrow.t{color:var(--teal)}
-  h2{font-size:1.6rem;font-weight:800;letter-spacing:-.025em;color:var(--ink)}
-  .count{font-size:.78rem;font-weight:600;color:var(--muted);white-space:nowrap;padding-bottom:4px}
 
-  .list{display:flex;flex-direction:column;gap:14px}
-  .item{
-    background:#fff;border:1px solid var(--line);border-radius:15px;padding:22px 26px;
-    box-shadow:0 2px 12px rgba(10,10,92,.06);display:flex;align-items:center;gap:24px;
-    text-decoration:none;color:inherit;transition:transform .18s,box-shadow .18s,border-color .18s;
-    position:relative;overflow:hidden
+  /* MONTH TABS */
+  .tabs{display:flex;align-items:center;gap:28px;border-bottom:1px solid var(--line);margin-bottom:26px}
+  .tab{display:flex;align-items:center;gap:8px;background:none;border:none;cursor:pointer;padding:0 0 14px;font-family:inherit;font-size:.92rem;font-weight:700;color:var(--muted);position:relative;transition:color .15s}
+  .tab .dot{width:7px;height:7px;border-radius:50%;background:var(--muted)}
+  .tab .novo{font-size:.6rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;background:rgba(23,166,151,.12);color:var(--teal);padding:2px 8px;border-radius:20px}
+  .tab.active{color:var(--blue)}
+  .tab.active .dot{background:var(--blue)}
+  .tab.active::after{content:'';position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--blue)}
+  .tab:hover{color:var(--ink)}
+
+  /* PERIOD PILLS */
+  .pills{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px}
+  .pill{display:flex;align-items:center;gap:7px;background:#fff;border:1px solid var(--line);border-radius:100px;padding:9px 18px;font-size:.82rem;font-weight:700;color:var(--ink);cursor:pointer;transition:.15s;font-family:inherit}
+  .pill .dot{width:6px;height:6px;border-radius:50%;background:var(--muted)}
+  .pill:hover{border-color:rgba(26,60,255,.3)}
+  .pill.active{background:var(--blue);border-color:var(--blue);color:#fff}
+  .pill.active .dot{background:#fff}
+  .pill.consolidado{border:1.5px dashed var(--orange);color:var(--orange)}
+  .pill.consolidado .dot{background:var(--orange)}
+  .pill.consolidado.active{background:var(--orange);border-color:var(--orange);border-style:solid;color:#fff}
+  .pill.consolidado.active .dot{background:#fff}
+
+  /* REPORT PANEL */
+  #panel-slot{display:flex;flex-direction:column;gap:16px}
+  .panel{
+    background:#fff;border:1px solid var(--line);border-radius:16px;padding:28px 30px;
+    box-shadow:0 2px 14px rgba(10,10,92,.06);display:flex;align-items:center;gap:26px;
+    position:relative;overflow:hidden;text-decoration:none;color:inherit
   }
-  .item::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--blue)}
-  .item.m::before{background:var(--purple)}
-  .item.r::before{background:var(--teal)}
-  .item:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(10,10,92,.12);border-color:rgba(26,60,255,.25)}
-  .item-date{flex:0 0 auto;width:96px;text-align:center;border-right:1px solid var(--line);padding-right:20px}
-  .item-tag{font-size:.62rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--blue)}
-  .item-range{font-size:.98rem;font-weight:800;color:var(--ink);margin-top:4px}
-  .item-year{font-size:.72rem;color:var(--muted);margin-top:2px}
-  .item-body{flex:1}
-  .item-body h3{font-size:1.02rem;font-weight:800;color:var(--ink);margin-bottom:5px}
-  .item-body p{font-size:.86rem;color:var(--muted);line-height:1.5}
-  .chips{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+  .panel::before{content:'';position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--blue)}
+  .panel.m::before{background:var(--purple)}
+  .panel.r::before{background:var(--teal)}
+  .panel.e::before{background:var(--orange)}
+  .panel-date{flex:0 0 auto;width:110px;text-align:center;border-right:1px solid var(--line);padding-right:22px}
+  .panel-tag{font-size:.64rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--blue)}
+  .panel.m .panel-tag{color:var(--purple)}
+  .panel.r .panel-tag{color:var(--teal)}
+  .panel.e .panel-tag{color:var(--orange)}
+  .panel-range{font-size:.98rem;font-weight:800;color:var(--ink);margin-top:5px}
+  .panel-year{font-size:.74rem;color:var(--muted);margin-top:2px}
+  .panel-body{flex:1}
+  .panel-body h3{font-size:1.12rem;font-weight:800;color:var(--ink);margin-bottom:6px}
+  .panel-body p{font-size:.88rem;color:var(--muted);line-height:1.55}
+  .chips{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
   .chip{font-size:.66rem;font-weight:700;letter-spacing:.03em;text-transform:uppercase;padding:4px 10px;border-radius:20px}
-  .chip-meta{background:rgba(123,47,190,.1);color:var(--purple)}
-  .chip-google{background:rgba(26,60,255,.09);color:var(--blue)}
-  .chip-spotify{background:rgba(29,185,84,.1);color:#1DB954}
+  .chip-meta{background:rgba(156,39,176,.1);color:var(--purple)}
+  .chip-google{background:rgba(0,153,77,.1);color:var(--orange)}
+  .chip-yt{background:rgba(204,0,0,.1);color:#CC0000}
+  .chip-tiktok{background:rgba(17,17,17,.08);color:#111}
   .chip-pdf{background:rgba(26,60,255,.09);color:var(--blue)}
-  .item-go{flex:0 0 auto;color:var(--blue);font-weight:800;font-size:1.15rem}
+  .chip-spotify{background:rgba(30,215,96,.14);color:#0B6B34}
+  .chip-redes{background:rgba(23,166,151,.12);color:#0B5F57}
+  .hero-logo{display:block;width:auto;max-width:220px;object-fit:contain}
+  nav img{width:auto;max-width:150px;object-fit:contain}
+  .panel-go{flex:0 0 auto;display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;text-decoration:none;font-weight:700;font-size:.86rem;padding:11px 20px;border-radius:11px;transition:.15s}
+  .panel-go:hover{background:var(--navy)}
+  .panel-go:focus-visible{outline:2px solid var(--navy);outline-offset:3px}
+  .panel-acoes{flex:0 0 auto;display:flex;flex-direction:column;gap:9px}
+  .panel-go.alt{background:#fff;color:var(--blue);border:1px solid var(--blue)}
+  .panel-go.alt:hover{background:rgba(26,60,255,.08);color:var(--blue)}
 
-  .note{margin-top:30px;background:linear-gradient(135deg,rgba(26,60,255,.045),rgba(23,166,151,.045));border:1px solid rgba(26,60,255,.14);border-left:4px solid var(--blue);border-radius:13px;padding:20px 24px}
+  .note{margin-top:30px;background:linear-gradient(135deg,rgba(26,60,255,.045),rgba(23,166,151,.045));border:1px solid rgba(26,60,255,.14);border-radius:13px;padding:20px 24px}
   .note-t{font-size:.66rem;font-weight:800;text-transform:uppercase;letter-spacing:.09em;color:var(--blue);margin-bottom:7px}
   .note p{font-size:.88rem;color:#3a3a4a;line-height:1.65}
 
@@ -71,9 +101,11 @@
 
   @media(max-width:820px){
     h1{font-size:1.9rem}
-    .item{flex-direction:column;align-items:flex-start;gap:14px}
-    .sec-h{flex-direction:column;align-items:flex-start}
-    .item-date{border-right:none;width:auto;text-align:left;padding-right:0}
+    .tabs{gap:20px;overflow-x:auto}
+    .panel{flex-direction:column;align-items:flex-start;gap:14px}
+    .panel-date{border-right:none;width:auto;text-align:left;padding-right:0}
+    .panel-acoes{flex-direction:row;width:100%}
+    .panel-go{flex:1;justify-content:center}
   }
 </style>
 </head>
@@ -81,7 +113,7 @@
 
 <nav>
   <div class="in">
-    <img src="../temasdiversos/julho/assets/logo-americana-oficial.png" alt="Prefeitura de Americana" onerror="this.style.display='none'">
+    <img src="../temasdiversos/julho/assets/logo-americana-oficial.png" alt="Prefeitura de Americana">
     <div class="div"></div>
     <div class="cliente">Prefeitura de Americana<span>Central de relatórios</span></div>
   </div>
@@ -89,200 +121,301 @@
 
 <section class="hero" style="padding-top:52px">
   <div class="wrap">
-    <img src="../temasdiversos/julho/assets/logo-americana-oficial.png" class="hero-logo" alt="Prefeitura de Americana" onerror="this.style.display='none'">
-    <span class="badge">Meta Ads &middot; Google Ads &middot; Spotify &middot; 2026</span>
+    <img src="../temasdiversos/julho/assets/logo-americana-oficial.png" class="hero-logo" alt="Prefeitura de Americana">
+    <span class="badge">Meta Ads &middot; Google Ads &middot; YouTube &middot; Spotify &middot; 2026</span>
     <h1>Central de relatórios</h1>
-    <p>Todos os relatórios de performance da Prefeitura de Americana reunidos em um só lugar, do mais recente para o mais antigo.</p>
+    <p>Todos os relatórios de performance da Prefeitura de Americana reunidos em um só lugar, organizados por mês, do mais recente para o mais antigo.</p>
   </div>
 </section>
 
 <section>
   <div class="wrap">
-    <div class="sec-h">
-      <div>
-        <span class="eyebrow t">Acompanhamento em curso</span>
-        <h2>Relatórios semanais</h2>
-      </div>
-      <div class="count">6 relatórios disponíveis</div>
-    </div>
-    <div class="list">
-      <a class="item" href="../semanal/15set-21set-2026/index.html">
-            <div class="item-date">
-              <div class="item-tag">Boletim</div>
-              <div class="item-range">15/09 a 21/09</div>
-              <div class="item-year">Atualizado toda terça</div>
-            </div>
-            <div class="item-body">
-              <h3>A obra do Viaduto Centenário virou a peça da semana</h3>
-              <p>A reforma do viaduto entrou em vídeo e virou a peça que mais gerou conversa do ciclo, com o Regulariza ISS estreando na segunda.</p>
-              <div class="chips">
-                <span class="chip chip-meta">Meta Ads</span>
-                <span class="chip chip-google">YouTube</span>
-                <span class="chip chip-pdf">PDF disponível</span></div>
-            </div>
-          </a>
-      <a class="item" href="../semanal/08set-14set-2026/index.html">
-            <div class="item-date">
-              <div class="item-tag">Boletim</div>
-              <div class="item-range">08/09 a 14/09</div>
-              <div class="item-year">Atualizado toda terça</div>
-            </div>
-            <div class="item-body">
-              <h3>O trailer de cinema foi o conteúdo da semana</h3>
-              <p>A peça que transforma o recapeamento em trailer de cinema concentrou a conversa e as visualizações. O mini hospital do Zanaga foi a pauta de serviço que mais circulou, e o YouTube seguiu entregando vídeo a um esforço baixo.</p>
-            </div>
-          </a>
-      <a class="item" href="../semanal/01set-07set-2026/index.html">
-            <div class="item-date">
-              <div class="item-tag">Boletim</div>
-              <div class="item-range">01/09 a 07/09</div>
-              <div class="item-year">Atualizado toda terça</div>
-            </div>
-            <div class="item-body">
-              <h3>O ciclo de setembro entrou no ar</h3>
-              <p>Primeira semana do novo ciclo. O trailer do Asfalto Novo puxou a entrega e a conversa, e no YouTube mais da metade de quem viu o vídeo assistiu até o fim.</p>
-            </div>
-          </a>
-          <a class="item" href="../semanal/18ago-24ago-2026/index.html">
-        <div class="item-date">
-          <div class="item-tag">Boletim</div>
-          <div class="item-range">18/08 a 24/08</div>
-          <div class="item-year">2026</div>
-        </div>
-        <div class="item-body">
-          <h3>Última semana cheia do ciclo mantém as quatro linhas ativas, com CTR e engajamento em alta</h3>
-          <p>Boletim de encerramento do flight de Temas Diversos (ciclo termina em 28/08), com Feliz de verdade na Infra liderando taxa de engajamento e de visualização, e o concurso 7 Maravilhas com o melhor CTR da semana.</p>
-          <div class="chips">
-            <span class="chip chip-meta">Meta Ads</span>
 
-            <span class="chip chip-pdf">PDF disponível</span></div>
-        </div>
-        <div class="item-go">&#8594;</div>
-      </a>
-      <a class="item" href="../semanal/11ago-17ago-2026/index.html">
-        <div class="item-date">
-          <div class="item-tag">Boletim</div>
-          <div class="item-range">11/08 a 17/08</div>
-          <div class="item-year">2026</div>
-        </div>
-        <div class="item-body">
-          <h3>Concurso 7 Maravilhas lidera taxa de visualização, engajamento e CTR ao mesmo tempo</h3>
-          <p>Terceira semana do flight de Temas Diversos, com o vídeo do concurso 7 Maravilhas de Americana concentrando quase toda a interação de vídeo da conta e o carrossel institucional de Saúde com a segunda melhor taxa de clique.</p>
-          <div class="chips">
-            <span class="chip chip-meta">Meta Ads</span>
-
-            <span class="chip chip-pdf">PDF disponível</span></div>
-        </div>
-        <div class="item-go">&#8594;</div>
-      </a>
-      <a class="item" href="../semanal/10ago-16ago-2026/index.html">
-        <div class="item-date">
-          <div class="item-tag">Boletim</div>
-          <div class="item-range">10/08 a 16/08</div>
-          <div class="item-year">2026</div>
-        </div>
-        <div class="item-body">
-          <h3>Vídeo institucional confirma a melhor retenção da conta</h3>
-          <p>Segunda semana do flight de Temas Diversos, com o vídeo do concurso 7 Maravilhas de Americana como peça de maior retenção e um novo carrossel institucional sobre Saúde em leitura.</p>
-          <div class="chips">
-            <span class="chip chip-meta">Meta Ads</span>
-          
-            <span class="chip chip-pdf">PDF disponível</span></div>
-        </div>
-        <div class="item-go">&#8594;</div>
-      </a>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <div class="sec-h">
-      <div>
-        <span class="eyebrow">Consolidado</span>
-        <h2>Relatórios mensais</h2>
-      </div>
-      <div class="count">4 relatórios disponíveis</div>
-    </div>
-    <div class="list">
-      <a class="item m" href="../temasdiversos/agosto/index.html">
-        <div class="item-date">
-          <div class="item-tag">Mensal</div>
-          <div class="item-range">Agosto</div>
-          <div class="item-year">2026</div>
-        </div>
-        <div class="item-body">
-          <h3>Temas Diversos, consolidado de agosto</h3>
-          <p>Meta Ads, 744.542 impressões e as quatro linhas contratadas (CPM, CPE, CPV e CPV Retargeting) acima da meta. Inclui análise dos criativos do flight.</p>
-          <div class="chips">
-            <span class="chip chip-meta">Meta Ads</span>
-            <span class="chip chip-pdf">PDF disponível</span>
-          </div>
-        </div>
-        <div class="item-go">&#8594;</div>
-      </a>
-      <a class="item m" href="../temasdiversos/julho/index.html">
-        <div class="item-date">
-          <div class="item-tag">Mensal</div>
-          <div class="item-range">Julho</div>
-          <div class="item-year">2026</div>
-        </div>
-        <div class="item-body">
-          <h3>Temas Diversos, consolidado de julho</h3>
-          <p>Meta Ads, 1.048.149 impressões entregues. Inclui cruzamento com a repercussão na imprensa e com o relatório de monitoramento de redes sociais do mês.</p>
-          <div class="chips">
-            <span class="chip chip-meta">Meta Ads</span>
-            <span class="chip chip-pdf">PDF disponível</span>
-          </div>
-        </div>
-        <div class="item-go">&#8594;</div>
-      </a>
-      <a class="item m" href="../temasdiversos/04junho-04julho/index.html">
-        <div class="item-date">
-          <div class="item-tag">Mensal</div>
-          <div class="item-range">04/06 a 04/07</div>
-          <div class="item-year">2026</div>
-        </div>
-        <div class="item-body">
-          <h3>Temas Diversos, Rock Day e pautas institucionais</h3>
-          <p>Meta contratada de 1.000.000 de impressões superada, com Rock Day e outros temas institucionais dentro da mesma meta. Inclui leitura de percepção pública.</p>
-          <div class="chips">
-            <span class="chip chip-meta">Meta Ads</span>
-            <span class="chip chip-pdf">PDF disponível</span>
-          </div>
-        </div>
-        <div class="item-go">&#8594;</div>
-      </a>
-      <a class="item r" href="../rockday/04junho-04julho/index.html">
-        <div class="item-date">
-          <div class="item-tag">Mensal</div>
-          <div class="item-range">04/06 a 04/07</div>
-          <div class="item-year">2026</div>
-        </div>
-        <div class="item-body">
-          <h3>Rock Day, Google Display, YouTube e Spotify</h3>
-          <p>Todas as metas contratadas superadas nos três canais. Inclui a confirmação do Rock Day como conteúdo de maior repercussão orgânica do mês.</p>
-          <div class="chips">
-            <span class="chip chip-google">Google Ads</span>
-            <span class="chip chip-spotify">Spotify</span>
-            <span class="chip chip-pdf">PDF disponível</span>
-          </div>
-        </div>
-        <div class="item-go">&#8594;</div>
-      </a>
-    </div>
+    <div class="tabs" id="tabs"></div>
+    <div id="panel-slot"></div>
 
     <div class="note">
       <div class="note-t">Como esta central funciona</div>
-      <p>Cada relatório novo entra no topo da sua seção e os anteriores permanecem acessíveis. Os relatórios mensais consolidam cada ciclo de campanha contratado.</p>
+      <p>Os relatórios estão agrupados por mês, do mais recente para o mais antigo. Cada mês reúne os boletins semanais do período e os relatórios mensais do ciclo. Clique no mês para ver os períodos disponíveis, e no período para abrir o relatório.</p>
     </div>
+
   </div>
 </section>
 
 <footer>
-  <img src="../temasdiversos/julho/assets/logo-esquina-branca.png" alt="Esquina" onerror="this.style.display='none'">
+  <img src="assets/logo-esquina-branco.png" alt="Esquina">
   <p>Central de Relatórios, Esquina Comunicação Online<br>Prefeitura de Americana</p>
 </footer>
+
+<script>
+const DATA = {
+  "junho": {
+    "label": "Junho",
+    "novo": false,
+    "periodos": [
+      {
+        "id": "junho-0",
+        "tag": "Consolidado",
+        "tipo": "m",
+        "range": "04/06 a 04/07",
+        "ano": "2026",
+        "titulo": "Relatório Mensal, Temas Diversos e Rock Day",
+        "desc": "Meta contratada de 1.000.000 de impressões superada, com Rock Day e outros temas institucionais dentro da mesma meta. Inclui leitura de percepção pública.",
+        "chips": [
+          "meta",
+          "pdf"
+        ],
+        "href": "../temasdiversos/04junho-04julho/index.html",
+        "consolidado": true,
+        "pdf": "../temasdiversos/04junho-04julho/relatorio-americana-temasdiversos.pdf"
+      },
+      {
+        "id": "junho-1",
+        "tag": "Especial",
+        "tipo": "e",
+        "range": "04/06 a 04/07",
+        "ano": "2026",
+        "titulo": "Rock Day",
+        "desc": "Todas as metas contratadas superadas nos três canais. Inclui a confirmação do Rock Day como conteúdo de maior repercussão orgânica do mês.",
+        "chips": [
+          "gads",
+          "spotify",
+          "pdf"
+        ],
+        "href": "../rockday/04junho-04julho/index.html",
+        "pdf": "../rockday/04junho-04julho/relatorio-americana-rockday-only.pdf"
+      }
+    ]
+  },
+  "julho": {
+    "label": "Julho",
+    "novo": false,
+    "periodos": [
+      {
+        "id": "julho-0",
+        "tag": "Consolidado",
+        "tipo": "m",
+        "range": "Julho",
+        "ano": "2026",
+        "titulo": "Relatório Mensal, Temas Diversos",
+        "desc": "Meta Ads, 1.048.149 impressões entregues. Inclui cruzamento com a repercussão na imprensa e com o relatório de monitoramento de redes sociais do mês.",
+        "chips": [
+          "meta",
+          "pdf"
+        ],
+        "href": "../temasdiversos/julho/index.html",
+        "consolidado": true,
+        "pdf": "../temasdiversos/julho/relatorio-americana-temasdiversos-jul2026.pdf"
+      }
+    ]
+  },
+  "agosto": {
+    "label": "Agosto",
+    "novo": false,
+    "periodos": [
+      {
+        "id": "agosto-0",
+        "tag": "Consolidado",
+        "tipo": "m",
+        "range": "Agosto",
+        "ano": "2026",
+        "titulo": "Relatório Mensal, Temas Diversos",
+        "desc": "Meta Ads, 744.542 impressões e as quatro linhas contratadas acima da meta. Inclui análise dos criativos do flight.",
+        "chips": [
+          "meta",
+          "pdf"
+        ],
+        "href": "../temasdiversos/agosto/index.html",
+        "consolidado": true,
+        "pdf": "../temasdiversos/agosto/relatorio-americana-temasdiversos-ago2026.pdf"
+      },
+      {
+        "id": "agosto-1",
+        "tag": "Semanal",
+        "tipo": "r",
+        "range": "18 a 24/08",
+        "ano": "2026",
+        "titulo": "Boletim Semanal, Temas Diversos",
+        "desc": "Última semana cheia do ciclo mantém as quatro linhas ativas, com taxa de clique e engajamento em alta. Boletim de encerramento do flight de Temas Diversos (ciclo termina em 28/08), com Feliz de verdade na Infra liderando taxa de engajamento e de visualização, e o concurso 7 Maravilhas com o melhor taxa de clique da semana.",
+        "chips": [
+          "meta",
+          "pdf"
+        ],
+        "href": "../semanal/18ago-24ago-2026/index.html",
+        "pdf": "../semanal/18ago-24ago-2026/boletim-americana-18ago-24ago.pdf"
+      },
+      {
+        "id": "agosto-2",
+        "tag": "Semanal",
+        "tipo": "r",
+        "range": "11 a 17/08",
+        "ano": "2026",
+        "titulo": "Boletim Semanal, Temas Diversos",
+        "desc": "Concurso 7 Maravilhas lidera taxa de visualização, engajamento e taxa de clique ao mesmo tempo. Terceira semana do flight de Temas Diversos, com o vídeo do concurso 7 Maravilhas de Americana concentrando quase toda a interação de vídeo da conta e o carrossel institucional de Saúde com a segunda melhor taxa de clique.",
+        "chips": [
+          "meta",
+          "pdf"
+        ],
+        "href": "../semanal/11ago-17ago-2026/index.html",
+        "pdf": "../semanal/11ago-17ago-2026/boletim-americana-11ago-17ago-2026.pdf"
+      },
+      {
+        "id": "agosto-3",
+        "tag": "Semanal",
+        "tipo": "r",
+        "range": "10 a 16/08",
+        "ano": "2026",
+        "titulo": "Boletim Semanal, Temas Diversos",
+        "desc": "Vídeo institucional confirma a melhor retenção da conta. Segunda semana do flight de Temas Diversos, com o vídeo do concurso 7 Maravilhas de Americana como peça de maior retenção e um novo carrossel institucional sobre Saúde em leitura.",
+        "chips": [
+          "meta",
+          "pdf"
+        ],
+        "href": "../semanal/10ago-16ago-2026/index.html",
+        "pdf": "../semanal/10ago-16ago-2026/boletim-americana-10ago-16ago-2026.pdf"
+      }
+    ]
+  },
+  "setembro": {
+    "label": "Setembro",
+    "novo": true,
+    "periodos": [
+      {
+        "id": "setembro-0",
+        "tag": "Unificado",
+        "tipo": "m",
+        "range": "01 a 30/09",
+        "ano": "2026",
+        "titulo": "Relatório Unificado, Redes e Mídia",
+        "desc": "As redes institucionais da Prefeitura, no Instagram e no Facebook, e a campanha de mídia de setembro em um só documento, com os conteúdos de maior interação, o sentimento das menções e o cruzamento entre o orgânico e a mídia.",
+        "chips": [
+          "redes",
+          "meta",
+          "yt",
+          "pdf"
+        ],
+        "href": "../mensal/unificado-setembro2026/index.html",
+        "pdf": "../mensal/unificado-setembro2026/relatorio-americana-unificado-setembro2026.pdf"
+      },
+      {
+        "id": "setembro-1",
+        "tag": "Consolidado",
+        "tipo": "m",
+        "range": "01 a 29/09",
+        "ano": "2026",
+        "titulo": "Relatório Mensal de Mídia, Temas Diversos",
+        "desc": "Fechamento do ciclo com 214,6 mil impressões e 22,7 mil visualizações de vídeo em Meta Ads e YouTube, com as quatro linhas do plano acima do contratado.",
+        "chips": [
+          "meta",
+          "yt",
+          "pdf"
+        ],
+        "href": "../mensal/setembro2026/index.html",
+        "consolidado": true,
+        "pdf": "../mensal/setembro2026/relatorio-americana-setembro2026.pdf"
+      },
+      {
+        "id": "setembro-2",
+        "tag": "Semanal",
+        "tipo": "r",
+        "range": "15 a 21/09",
+        "ano": "2026",
+        "titulo": "Boletim Semanal, Temas Diversos",
+        "desc": "A obra do Viaduto Centenário virou a peça da semana. A reforma do viaduto entrou em vídeo e virou a peça que mais gerou conversa do ciclo, com o Regulariza ISS estreando na segunda.",
+        "chips": [
+          "meta",
+          "yt",
+          "pdf"
+        ],
+        "href": "../semanal/15set-21set-2026/index.html",
+        "pdf": "../semanal/15set-21set-2026/boletim-americana-15a21set2026.pdf"
+      },
+      {
+        "id": "setembro-3",
+        "tag": "Semanal",
+        "tipo": "r",
+        "range": "08 a 14/09",
+        "ano": "2026",
+        "titulo": "Boletim Semanal, Temas Diversos",
+        "desc": "O trailer de cinema foi o conteúdo da semana. A peça que transforma o recapeamento em trailer de cinema concentrou a conversa e as visualizações. O mini hospital do Zanaga foi a pauta de serviço que mais circulou, e o YouTube seguiu entregando vídeo a um esforço baixo.",
+        "chips": [
+          "meta",
+          "yt",
+          "pdf"
+        ],
+        "href": "../semanal/08set-14set-2026/index.html",
+        "pdf": "../semanal/08set-14set-2026/boletim-americana-08a14set2026.pdf"
+      },
+      {
+        "id": "setembro-4",
+        "tag": "Semanal",
+        "tipo": "r",
+        "range": "01 a 07/09",
+        "ano": "2026",
+        "titulo": "Boletim Semanal, Temas Diversos",
+        "desc": "Primeira semana do novo ciclo. O trailer do Asfalto Novo puxou a entrega e a conversa, e no YouTube mais da metade de quem viu o vídeo assistiu até o fim.",
+        "chips": [
+          "meta",
+          "yt",
+          "pdf"
+        ],
+        "href": "../semanal/01set-07set-2026/index.html",
+        "pdf": "../semanal/01set-07set-2026/boletim-americana-01a07set2026.pdf"
+      }
+    ]
+  }
+};
+
+const CHIP_LABEL = {redes:"Redes institucionais",meta:"Meta Ads",google:"Display",gads:"Google Ads",yt:"YouTube",tiktok:"TikTok",spotify:"Spotify",pdf:"PDF disponível"};
+const CHIP_CLASS = {redes:"chip-redes",meta:"chip-meta",google:"chip-google",gads:"chip-google",yt:"chip-yt",tiktok:"chip-tiktok",spotify:"chip-spotify",pdf:"chip-pdf"};
+const MONTH_ORDER = ["junho", "julho", "agosto", "setembro"];
+
+let activeMonth = "setembro";
+let activePeriodo = {};
+MONTH_ORDER.forEach(m => activePeriodo[m] = DATA[m].periodos[DATA[m].periodos.length-1].id);
+
+function renderTabs(){
+  const el = document.getElementById('tabs');
+  el.innerHTML = MONTH_ORDER.map(m => {
+    const d = DATA[m];
+    return `<button class="tab${m===activeMonth?' active':''}" data-month="${m}">
+      <span class="dot"></span>${d.label.toUpperCase()}
+      ${d.novo?'<span class="novo">Novo</span>':''}
+    </button>`;
+  }).join('');
+  el.querySelectorAll('.tab').forEach(btn=>btn.addEventListener('click',()=>{
+    activeMonth = btn.dataset.month;
+    renderTabs(); renderPanel();
+  }));
+}
+
+function renderPanel(){
+  const periodos = DATA[activeMonth].periodos;
+  document.getElementById('panel-slot').innerHTML = periodos.map(p => {
+    const chips = p.chips.map(c=>`<span class="chip ${CHIP_CLASS[c]}">${CHIP_LABEL[c]}</span>`).join('');
+    const acoes = [
+      `<a class="panel-go" href="${p.href}">Abrir relatório &#8594;</a>`,
+      p.pdf ? `<a class="panel-go alt" href="${p.pdf}" download>Baixar PDF</a>` : ''
+    ].join('');
+    return `
+    <div class="panel ${p.tipo}">
+      <div class="panel-date">
+        <div class="panel-tag">${p.consolidado ? 'Consolidado' : p.tag}</div>
+        <div class="panel-range">${p.range}</div>
+        <div class="panel-year">${p.ano}</div>
+      </div>
+      <div class="panel-body">
+        <h3>${p.titulo}</h3>
+        <p>${p.desc}</p>
+        <div class="chips">${chips}</div>
+      </div>
+      <div class="panel-acoes">${acoes}</div>
+    </div>`;
+  }).join('');
+}
+
+renderTabs(); renderPanel();
+</script>
 
 </body>
 </html>
