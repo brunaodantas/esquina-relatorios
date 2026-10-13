@@ -281,7 +281,7 @@ const DATA = {
   },
   "setembro": {
     "label": "Setembro",
-    "novo": true,
+    "novo": false,
     "periodos": [
       {
         "id": "setembro-0",
@@ -352,14 +352,50 @@ const DATA = {
         "pdf": "../semanal/07set-13set-2026/boletim-hortolandia-07a13set2026.pdf"
       }
     ]
+  },
+  "outubro": {
+    "label": "Outubro",
+    "novo": true,
+    "periodos": [
+      {
+        "id": "outubro-05out-11out-2026",
+        "tag": "Boletim semanal",
+        "tipo": "r",
+        "range": "05 a 11/10",
+        "ano": "2026",
+        "titulo": "Boletim Semanal, Layout do mensal",
+        "desc": "Comércio Local, Prestação de Contas, Giro Feirão de Emprego e Serviços. Resultados da semana em Meta Ads.",
+        "chips": [
+          "meta",
+          "pdf"
+        ],
+        "href": "../semanal/05out-11out-2026/",
+        "pdf": "../semanal/05out-11out/boletim-hortolandia-05a11out2026.pdf"
+      },
+      {
+        "id": "outubro-05out-11out",
+        "tag": "Boletim semanal",
+        "tipo": "r",
+        "range": "05 a 11/10",
+        "ano": "2026",
+        "titulo": "Boletim Semanal, Modelo semanal",
+        "desc": "Comércio Local, Prestação de Contas, Giro Feirão de Emprego e Serviços. Resultados da semana em Meta Ads.",
+        "chips": [
+          "meta",
+          "pdf"
+        ],
+        "href": "../semanal/05out-11out/",
+        "pdf": "../semanal/05out-11out/boletim-hortolandia-05a11out2026.pdf"
+      }
+    ]
   }
 };
 
 const CHIP_LABEL = {redes:"Redes institucionais",meta:"Meta Ads",google:"Display",gads:"Google Ads",yt:"YouTube",tiktok:"TikTok",spotify:"Spotify",pdf:"PDF disponível"};
 const CHIP_CLASS = {redes:"chip-redes",meta:"chip-meta",google:"chip-google",gads:"chip-google",yt:"chip-yt",tiktok:"chip-tiktok",spotify:"chip-spotify",pdf:"chip-pdf"};
-const MONTH_ORDER = ["junho", "julho", "agosto", "setembro"];
+const MONTH_ORDER = ["junho", "julho", "agosto", "setembro", "outubro"];
 
-let activeMonth = "setembro";
+let activeMonth = "outubro";
 let activePeriodo = {};
 MONTH_ORDER.forEach(m => activePeriodo[m] = DATA[m].periodos[DATA[m].periodos.length-1].id);
 
