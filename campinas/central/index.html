@@ -254,7 +254,7 @@ const DATA = {
     ]
   },
   "setembro": {
-    "label": "Setembro", "novo": true,
+    "label": "Setembro", "novo": false,
     "periodos": [
       {
         "id":"set-out-consolidado","tag":"Consolidado","tipo":"m","range":"08/09 a 07/10","ano":"2026","consolidado":true,
@@ -301,14 +301,35 @@ const DATA = {
         "href":"../semanal/09set-15set-2026/index.html"
       }
     ]
+  },
+  "outubro": {
+    "label": "Outubro", "novo": true,
+    "periodos": [
+      {
+        "id":"out-0713-temas","tag":"Semanal","tipo":"r","range":"07 a 13/10","ano":"2026",
+        "titulo":"Boletim Semanal, Temas Diversos",
+        "desc":"Primeira semana do novo ciclo de Temas Diversos, com 1,82 milhão de impressões e 359 mil visualizações em Meta Ads, Display, YouTube e TikTok. Combate ao racismo, Refis ISS e Coleta seletiva foram os conteúdos em destaque.",
+        "chips":["meta","google","yt","tiktok","pdf"],
+        "href":"../semanal/07out-13out-2026-temas-diversos/index.html",
+        "pdf":"../semanal/07out-13out-2026-temas-diversos/boletim-campinas-temas-diversos-07a13out2026.pdf"
+      },
+      {
+        "id":"out-0513-infancia","tag":"Semanal","tipo":"r","range":"05 a 13/10","ano":"2026",
+        "titulo":"Boletim, Infância em Primeiro Lugar",
+        "desc":"Primeiro período da campanha Infância em Primeiro Lugar, com 717 mil impressões e 166 mil visualizações em Meta Ads, YouTube, Display e TikTok. O vídeo de 30 segundos e os cards do Espaço Taquaralzinho e do Mário Gattinho abrem a campanha.",
+        "chips":["meta","google","yt","tiktok","pdf"],
+        "href":"../semanal/05out-13out-2026-infancia/index.html",
+        "pdf":"../semanal/05out-13out-2026-infancia/boletim-campinas-infancia-05a13out2026.pdf"
+      }
+    ]
   }
 };
 
 const CHIP_LABEL = {meta:"Meta Ads",google:"Display",yt:"YouTube",tiktok:"TikTok",pdf:"PDF disponível"};
 const CHIP_CLASS = {meta:"chip-meta",google:"chip-google",yt:"chip-yt",tiktok:"chip-tiktok",pdf:"chip-pdf"};
-const MONTH_ORDER = ["junho","julho","agosto","setembro"];
+const MONTH_ORDER = ["junho","julho","agosto","setembro","outubro"];
 
-let activeMonth = "setembro";
+let activeMonth = "outubro";
 let activePeriodo = {};
 MONTH_ORDER.forEach(m => activePeriodo[m] = DATA[m].periodos[DATA[m].periodos.length-1].id);
 
