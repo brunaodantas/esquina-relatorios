@@ -243,6 +243,19 @@ const DATA = {
     "novo": true,
     "periodos": [
       {
+        "id": "setembro-estudo-redes-jan-set-2026",
+        "tag": "Estudo",
+        "tipo": "m",
+        "range": "jan a set",
+        "ano": "2026",
+        "titulo": "Evolução das redes sociais do DAE",
+        "desc": "Estudo dos perfis institucionais do DAE no Instagram e no Facebook, de janeiro a setembro, com evolução de seguidores, distribuição, interações e conteúdos de destaque.",
+        "chips": ["redes", "pdf"],
+        "href": "../estudo/redes-jan-set-2026/index.html",
+        "pdf": "../estudo/redes-jan-set-2026/dae-redes-jan-set-2026.pdf",
+        "pptx": "../estudo/redes-jan-set-2026/dae-redes-jan-set-2026.pptx"
+      },
+      {
         "id": "setembro-0",
         "tag": "Unificado",
         "tipo": "m",
@@ -341,7 +354,8 @@ function renderPanel(){
     const chips = p.chips.map(c=>`<span class="chip ${CHIP_CLASS[c]}">${CHIP_LABEL[c]}</span>`).join('');
     const acoes = [
       `<a class="panel-go" href="${p.href}">Abrir relatório &#8594;</a>`,
-      p.pdf ? `<a class="panel-go alt" href="${p.pdf}" download>Baixar PDF</a>` : ''
+      p.pdf ? `<a class="panel-go alt" href="${p.pdf}" download>Baixar PDF</a>` : '',
+      p.pptx ? `<a class="panel-go alt" href="${p.pptx}" download>Baixar PowerPoint</a>` : ''
     ].join('');
     return `
     <div class="panel ${p.tipo}">
