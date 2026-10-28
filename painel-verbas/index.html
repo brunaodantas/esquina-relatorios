@@ -43,7 +43,7 @@ h1{font-size:clamp(1.9rem,4.2vw,2.5rem);margin:0 0 8px;font-weight:700;letter-sp
 .totais{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:16px 0 6px}
 .kpi{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:15px 18px;min-width:0}
 .kpi .l{font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink2);margin:0 0 6px}
-.kpi .v{font-size:1.6rem;font-weight:700;letter-spacing:-.02em;font-variant-numeric:tabular-nums;margin:0}
+.kpi .v{font-size:clamp(1.2rem,2.1vw,1.6rem);font-weight:700;letter-spacing:-.02em;font-variant-numeric:tabular-nums;margin:0}
 .kpi .s{font-size:.72rem;color:var(--ink2);margin:4px 0 0}
 .painel{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin:16px 0}
 table.top{width:100%;border-collapse:collapse;font-size:.88rem}
@@ -85,7 +85,7 @@ table.camp td{padding:6px 8px;border-top:1px solid var(--line)}
 .clh .nome{font-size:1.05rem}
 .clh .tot{font-weight:700;font-variant-numeric:tabular-nums}
 .pwrap{overflow-x:auto}
-table.pl{width:100%;min-width:640px;border-collapse:collapse;font-size:.86rem}
+table.pl{width:100%;min-width:720px;border-collapse:collapse;font-size:.86rem}
 table.pl th{text-align:left;font-size:.6rem;letter-spacing:.07em;text-transform:uppercase;color:var(--ink2);font-weight:600;padding:10px 12px;border-bottom:1px solid var(--line)}
 table.pl th.num,table.pl td.num{text-align:right}
 table.pl tr.pr>td{padding:11px 12px;border-bottom:1px solid var(--line);cursor:pointer;font-variant-numeric:tabular-nums}
@@ -141,7 +141,7 @@ footer{color:var(--ink2);font-size:.76rem;padding:22px 4px;line-height:1.6}
 <footer><span id="notaPeriodo"></span><div id="rodape"></div></footer>
 </div>
 <script id="dados" type="application/json">{
-  "atualizado": "2026-10-28T16:53:12-03:00",
+  "atualizado": "2026-10-28T17:05:39-03:00",
   "nota": "Gasto real de plataforma, por mês de calendário. Setembro fechado de 01 a 30/09. Outubro de 01 a 28/10, com o dia 28 acumulado até a hora da leitura (16h30). De 20 a 26/10 o Meta não entregou nas contas de Hortolândia, Campinas e Bragança (o log de Hortolândia mostra 41 mudanças de status feitas pelo Meta e 55 pelo Bruno em 20/10): o zero é pausa, não falha de dados. Campinas Temas Diversos no Meta está ativo e sem gasto em 27 e 28/10. Americana, Jundiaí e DAE não veicularam em outubro. Bragança Paulista e Campinas não têm plano por linha.",
   "meses": [
     {
@@ -1413,7 +1413,7 @@ footer{color:var(--ink2);font-size:.76rem;padding:22px 4px;line-height:1.6}
             },
             {
               "n": "YouTube, video views",
-              "p": "Google",
+              "p": "YouTube",
               "g": 328.24
             },
             {
@@ -1435,7 +1435,7 @@ footer{color:var(--ink2);font-size:.76rem;padding:22px 4px;line-height:1.6}
             },
             {
               "n": "YouTube, video views",
-              "p": "Google",
+              "p": "YouTube",
               "g": 3631.43
             },
             {
@@ -1467,7 +1467,7 @@ footer{color:var(--ink2);font-size:.76rem;padding:22px 4px;line-height:1.6}
             },
             {
               "n": "YouTube, video views",
-              "p": "Google",
+              "p": "YouTube",
               "g": 6552.22
             },
             {
@@ -1509,12 +1509,12 @@ footer{color:var(--ink2);font-size:.76rem;padding:22px 4px;line-height:1.6}
             },
             {
               "n": "YouTube #Sequencial, Temas Diversos",
-              "p": "Google",
+              "p": "YouTube",
               "g": 2401.1
             },
             {
               "n": "YouTube #In Stream, Temas Diversos",
-              "p": "Google",
+              "p": "YouTube",
               "g": 3615.3
             },
             {
@@ -1551,7 +1551,7 @@ footer{color:var(--ink2);font-size:.76rem;padding:22px 4px;line-height:1.6}
             },
             {
               "n": "Google, YouTube",
-              "p": "Google",
+              "p": "YouTube",
               "g": 1384.55
             },
             {
@@ -1583,12 +1583,12 @@ footer{color:var(--ink2);font-size:.76rem;padding:22px 4px;line-height:1.6}
             },
             {
               "n": "YouTube #Sequencial, Temas Diversos",
-              "p": "Google",
+              "p": "YouTube",
               "g": 2733.76
             },
             {
               "n": "YouTube #In Stream, Temas Diversos",
-              "p": "Google",
+              "p": "YouTube",
               "g": 1951.19
             },
             {
@@ -1605,26 +1605,55 @@ footer{color:var(--ink2);font-size:.76rem;padding:22px 4px;line-height:1.6}
         },
         {
           "programa": "Temas Diversos",
-          "periodo": "06/05 a 05/06",
-          "fonte": "Planilha de controle",
+          "periodo": "06/05 a 04/06",
+          "fonte": "API das plataformas",
           "campanhas": [
             {
-              "n": "Meta, total da conta na janela",
+              "n": "Temas Diversos, CPE",
               "p": "Meta",
-              "g": 9259.3
+              "g": 3187.65
             },
             {
-              "n": "Google, total da conta na janela",
+              "n": "Temas Diversos, visitas ao perfil",
+              "p": "Meta",
+              "g": 3247.35
+            },
+            {
+              "n": "Temas Diversos, alcance sequencial",
+              "p": "Meta",
+              "g": 464.38
+            },
+            {
+              "n": "Temas Diversos, alcance",
+              "p": "Meta",
+              "g": 2359.92
+            },
+            {
+              "n": "Rede de Display, Temas Diversos",
               "p": "Google",
-              "g": 5332.33
+              "g": 999.18
             },
             {
-              "n": "TikTok, Temas Diversos",
+              "n": "Rede de Display, Temas Diversos 2",
+              "p": "Google",
+              "g": 125.24
+            },
+            {
+              "n": "YouTube #In Stream, Temas Diversos",
+              "p": "YouTube",
+              "g": 1875.41
+            },
+            {
+              "n": "YouTube #Sequencial, Temas Diversos",
+              "p": "YouTube",
+              "g": 2332.05
+            },
+            {
+              "n": "TikTok 06.05 a 04.06 Temas Diversos",
               "p": "TikTok",
-              "g": 45.18
+              "g": 775.06
             }
-          ],
-          "nota": "Meta e Google vêm como total da conta na janela, sem separar por campanha."
+          ]
         },
         {
           "programa": "Temas Diversos",
@@ -1653,13 +1682,18 @@ footer{color:var(--ink2);font-size:.76rem;padding:22px 4px;line-height:1.6}
             },
             {
               "n": "YouTube In-Stream Temas Diversos",
-              "p": "Google",
+              "p": "YouTube",
               "g": 2381.07
             },
             {
               "n": "YouTube Sequencial Temas Diversos",
-              "p": "Google",
+              "p": "YouTube",
               "g": 2804.97
+            },
+            {
+              "n": "Campanha cancelada 11",
+              "p": "Google",
+              "g": 0.39
             },
             {
               "n": "TikTok 08.06 a 07.07 Temas Diversos",
@@ -1669,29 +1703,24 @@ footer{color:var(--ink2);font-size:.76rem;padding:22px 4px;line-height:1.6}
           ]
         },
         {
-          "programa": "Campinas 252 Anos (a confirmar se entra em Temas Diversos)",
-          "periodo": "08/06 a 06/07",
+          "programa": "Campinas 252 Anos",
+          "periodo": "29/06 a 14/07",
           "fonte": "API das plataformas",
           "campanhas": [
             {
               "n": "Campinas 252 Anos, alcance",
               "p": "Meta",
-              "g": 794.57
+              "g": 1546.16
             },
             {
               "n": "YouTube 252 Anos de Campinas",
-              "p": "Google",
-              "g": 1322.62
-            },
-            {
-              "n": "Campanha cancelada 11",
-              "p": "Google",
-              "g": 0.39
+              "p": "YouTube",
+              "g": 3329.37
             },
             {
               "n": "TikTok 29.06 a 14.07 252 Anos",
               "p": "TikTok",
-              "g": 479.77
+              "g": 1447.95
             }
           ]
         },
@@ -1722,40 +1751,18 @@ footer{color:var(--ink2);font-size:.76rem;padding:22px 4px;line-height:1.6}
             },
             {
               "n": "YouTube In-Stream Temas Diversos",
-              "p": "Google",
+              "p": "YouTube",
               "g": 2518.84
             },
             {
               "n": "YouTube Sequencial Temas Diversos",
-              "p": "Google",
+              "p": "YouTube",
               "g": 1839.67
             },
             {
               "n": "TikTok 07.07 a 05.08 Temas Diversos",
               "p": "TikTok",
               "g": 1678.02
-            }
-          ]
-        },
-        {
-          "programa": "Campinas 252 Anos (a confirmar se entra em Temas Diversos)",
-          "periodo": "07/07 a 05/08",
-          "fonte": "API das plataformas",
-          "campanhas": [
-            {
-              "n": "Campinas 252 Anos, alcance",
-              "p": "Meta",
-              "g": 751.59
-            },
-            {
-              "n": "YouTube 252 Anos de Campinas",
-              "p": "Google",
-              "g": 2006.75
-            },
-            {
-              "n": "TikTok 252 Anos",
-              "p": "TikTok",
-              "g": 968.18
             }
           ]
         },
@@ -1786,12 +1793,12 @@ footer{color:var(--ink2);font-size:.76rem;padding:22px 4px;line-height:1.6}
             },
             {
               "n": "YouTube In-Stream Temas Diversos",
-              "p": "Google",
+              "p": "YouTube",
               "g": 4146.88
             },
             {
               "n": "YouTube Sequencial Temas Diversos",
-              "p": "Google",
+              "p": "YouTube",
               "g": 1337.87
             },
             {
@@ -1828,12 +1835,12 @@ footer{color:var(--ink2);font-size:.76rem;padding:22px 4px;line-height:1.6}
             },
             {
               "n": "YouTube In-Stream Temas Diversos",
-              "p": "Google",
+              "p": "YouTube",
               "g": 4377.4
             },
             {
               "n": "YouTube Sequencial Temas Diversos",
-              "p": "Google",
+              "p": "YouTube",
               "g": 925.1
             },
             {
@@ -1900,22 +1907,22 @@ footer{color:var(--ink2);font-size:.76rem;padding:22px 4px;line-height:1.6}
             },
             {
               "n": "YouTube In-Stream Concilia",
-              "p": "Google",
+              "p": "YouTube",
               "g": 350.0
             },
             {
               "n": "YouTube Bumper Concilia",
-              "p": "Google",
+              "p": "YouTube",
               "g": 180.56
             },
             {
               "n": "YouTube In-Stream Concilia v3",
-              "p": "Google",
+              "p": "YouTube",
               "g": 334.74
             },
             {
               "n": "YouTube Bumper Concilia v3",
-              "p": "Google",
+              "p": "YouTube",
               "g": 39.3
             },
             {
@@ -1962,7 +1969,7 @@ footer{color:var(--ink2);font-size:.76rem;padding:22px 4px;line-height:1.6}
             },
             {
               "n": "CPV YouTube In-Stream",
-              "p": "Google",
+              "p": "YouTube",
               "g": 2318.13
             }
           ]
@@ -1984,7 +1991,7 @@ footer{color:var(--ink2);font-size:.76rem;padding:22px 4px;line-height:1.6}
             },
             {
               "n": "YouTube",
-              "p": "Google",
+              "p": "YouTube",
               "g": 2404.55
             },
             {
@@ -2016,12 +2023,12 @@ footer{color:var(--ink2);font-size:.76rem;padding:22px 4px;line-height:1.6}
             },
             {
               "n": "YouTube In-Stream NEW",
-              "p": "Google",
+              "p": "YouTube",
               "g": 3622.45
             },
             {
               "n": "YouTube Sequencial NEW",
-              "p": "Google",
+              "p": "YouTube",
               "g": 963.52
             },
             {
@@ -2041,12 +2048,12 @@ footer{color:var(--ink2);font-size:.76rem;padding:22px 4px;line-height:1.6}
             },
             {
               "n": "YouTube In-Stream antiga",
-              "p": "Google",
+              "p": "YouTube",
               "g": 15.08
             },
             {
               "n": "YouTube Sequencial antiga",
-              "p": "Google",
+              "p": "YouTube",
               "g": 0.58
             },
             {
@@ -2078,6 +2085,11 @@ footer{color:var(--ink2);font-size:.76rem;padding:22px 4px;line-height:1.6}
               "n": "IPTU, CPM 700 mil",
               "p": "Meta",
               "g": 2471.38
+            },
+            {
+              "n": "Display Prefeitura Hortolândia, IPTU 2026 [2ª versão] (fev e mar)",
+              "p": "Google",
+              "g": 832.46
             },
             {
               "n": "Mês das Mulheres, CPV",
@@ -2118,7 +2130,7 @@ footer{color:var(--ink2);font-size:.76rem;padding:22px 4px;line-height:1.6}
             },
             {
               "n": "YouTube Educação Forte",
-              "p": "Google",
+              "p": "YouTube",
               "g": 394.0
             }
           ],
@@ -2178,7 +2190,7 @@ footer{color:var(--ink2);font-size:.76rem;padding:22px 4px;line-height:1.6}
             },
             {
               "n": "YouTube Viaduto (vai até 19/05)",
-              "p": "Google",
+              "p": "YouTube",
               "g": 2337.12
             }
           ],
@@ -2201,7 +2213,7 @@ footer{color:var(--ink2);font-size:.76rem;padding:22px 4px;line-height:1.6}
             },
             {
               "n": "Campanha Saúde YouTube",
-              "p": "Google",
+              "p": "YouTube",
               "g": 1001.07
             },
             {
@@ -2246,7 +2258,7 @@ footer{color:var(--ink2);font-size:.76rem;padding:22px 4px;line-height:1.6}
             },
             {
               "n": "Aniversário CPV YouTube 2",
-              "p": "Google",
+              "p": "YouTube",
               "g": 2859.19
             },
             {
@@ -2287,11 +2299,6 @@ footer{color:var(--ink2);font-size:.76rem;padding:22px 4px;line-height:1.6}
               "g": 1213.44
             },
             {
-              "n": "Display IPTU 2026, 2ª versão",
-              "p": "Google",
-              "g": 832.46
-            },
-            {
               "n": "Fun Fest, TikTok",
               "p": "TikTok",
               "g": 107.02
@@ -2310,7 +2317,7 @@ footer{color:var(--ink2);font-size:.76rem;padding:22px 4px;line-height:1.6}
           "campanhas": [
             {
               "n": "Rede de Atendimento, YouTube",
-              "p": "Google",
+              "p": "YouTube",
               "g": 814.13
             },
             {
@@ -2390,7 +2397,7 @@ footer{color:var(--ink2);font-size:.76rem;padding:22px 4px;line-height:1.6}
         {
           "programa": "Campanhas de agosto",
           "periodo": "01/08 a 28/08",
-          "fonte": "Planilha de controle",
+          "fonte": "Planilha de controle e API das plataformas",
           "campanhas": [
             {
               "n": "Planeta Rock",
@@ -2433,9 +2440,19 @@ footer{color:var(--ink2);font-size:.76rem;padding:22px 4px;line-height:1.6}
               "g": 449.47
             },
             {
-              "n": "Agosto Lilás",
-              "p": "Google",
-              "g": 252.71
+              "n": "YouTube Agosto Lilás Shorts",
+              "p": "YouTube",
+              "g": 691.82
+            },
+            {
+              "n": "YouTube Agosto Lilás Shorts #2",
+              "p": "YouTube",
+              "g": 3995.01
+            },
+            {
+              "n": "CPM 01 a 27 de agosto, orçamento de campanha",
+              "p": "TikTok",
+              "g": 315.31
             },
             {
               "n": "Nova data Show Diogo Nogueira",
@@ -2486,7 +2503,7 @@ footer{color:var(--ink2);font-size:.76rem;padding:22px 4px;line-height:1.6}
             },
             {
               "n": "YouTube CPV",
-              "p": "Google",
+              "p": "YouTube",
               "g": 2468.91
             }
           ]
@@ -2528,12 +2545,12 @@ footer{color:var(--ink2);font-size:.76rem;padding:22px 4px;line-height:1.6}
             },
             {
               "n": "YouTube CPV",
-              "p": "Google",
+              "p": "YouTube",
               "g": 1494.72
             },
             {
               "n": "YouTube CPV v2",
-              "p": "Google",
+              "p": "YouTube",
               "g": 32.54
             }
           ]
@@ -2607,7 +2624,7 @@ footer{color:var(--ink2);font-size:.76rem;padding:22px 4px;line-height:1.6}
             },
             {
               "n": "YouTube Saúde Mental",
-              "p": "Google",
+              "p": "YouTube",
               "g": 2268.44
             }
           ]
@@ -2914,12 +2931,12 @@ footer{color:var(--ink2);font-size:.76rem;padding:22px 4px;line-height:1.6}
             },
             {
               "n": "Rock Day, Bumper",
-              "p": "Google",
+              "p": "YouTube",
               "g": 247.24
             },
             {
               "n": "Rock Day, YouTube Outras Cidades",
-              "p": "Google",
+              "p": "YouTube",
               "g": 51.24
             },
             {
@@ -2929,12 +2946,12 @@ footer{color:var(--ink2);font-size:.76rem;padding:22px 4px;line-height:1.6}
             },
             {
               "n": "Rock Day, Bumper V2",
-              "p": "Google",
+              "p": "YouTube",
               "g": 1.57
             },
             {
               "n": "Rock Day, YouTube Americana",
-              "p": "Google",
+              "p": "YouTube",
               "g": 71.44
             },
             {
@@ -2943,6 +2960,24 @@ footer{color:var(--ink2);font-size:.76rem;padding:22px 4px;line-height:1.6}
               "g": 499.69
             }
           ]
+        },
+        {
+          "programa": "Rock Day, campanhas canceladas",
+          "periodo": "01/08 a 31/08",
+          "fonte": "API das plataformas",
+          "campanhas": [
+            {
+              "n": "CANCELADA (anúncios Rock Day, YouTube)",
+              "p": "YouTube",
+              "g": 105.62
+            },
+            {
+              "n": "CANCELADA 2 (anúncios Rock Day, YouTube)",
+              "p": "YouTube",
+              "g": 20.69
+            }
+          ],
+          "nota": "Campanhas renomeadas para CANCELADA; os anúncios são do Rock Day de Americana."
         },
         {
           "programa": "Temas Diversos (PP 5594)",
@@ -3010,8 +3045,8 @@ footer{color:var(--ink2);font-size:.76rem;padding:22px 4px;line-height:1.6}
             },
             {
               "n": "Aniversário, YouTube Americana",
-              "p": "Google",
-              "g": 5.68
+              "p": "YouTube",
+              "g": 378.77
             }
           ]
         },
@@ -3067,12 +3102,12 @@ footer{color:var(--ink2);font-size:.76rem;padding:22px 4px;line-height:1.6}
             },
             {
               "n": "YouTube Setembro Americana",
-              "p": "Google",
+              "p": "YouTube",
               "g": 208.84
             },
             {
               "n": "Aniversário, YouTube Americana (a confirmar programa)",
-              "p": "Google",
+              "p": "YouTube",
               "g": 101.65
             }
           ]
@@ -3113,6 +3148,28 @@ footer{color:var(--ink2);font-size:.76rem;padding:22px 4px;line-height:1.6}
               "n": "[BP] Engajamento",
               "p": "Meta",
               "g": 0.02
+            }
+          ]
+        },
+        {
+          "programa": "Contínuas [BP]",
+          "periodo": "01/08 a 31/08",
+          "fonte": "API das plataformas",
+          "campanhas": [
+            {
+              "n": "[BP] Reconhecimento",
+              "p": "Meta",
+              "g": 3845.57
+            },
+            {
+              "n": "[BP] Engajamento",
+              "p": "Meta",
+              "g": 5968.71
+            },
+            {
+              "n": "[BP] Visitas ao Perfil",
+              "p": "Meta",
+              "g": 2448.24
             }
           ]
         },
@@ -3262,7 +3319,7 @@ footer{color:var(--ink2);font-size:.76rem;padding:22px 4px;line-height:1.6}
             },
             {
               "n": "YouTube DAE Temas Diversos",
-              "p": "Google",
+              "p": "YouTube",
               "g": 316.05
             }
           ],
@@ -3295,7 +3352,7 @@ footer{color:var(--ink2);font-size:.76rem;padding:22px 4px;line-height:1.6}
             },
             {
               "n": "YouTube Prefeitura de Jundiaí Temas Diversos",
-              "p": "Google",
+              "p": "YouTube",
               "g": 174.0
             }
           ]
@@ -3372,7 +3429,7 @@ footer{color:var(--ink2);font-size:.76rem;padding:22px 4px;line-height:1.6}
             },
             {
               "n": "YouTube Setembro",
-              "p": "Google",
+              "p": "YouTube",
               "g": 535.53
             }
           ],
@@ -3381,7 +3438,7 @@ footer{color:var(--ink2);font-size:.76rem;padding:22px 4px;line-height:1.6}
       ]
     }
   ],
-  "nota_periodo": "Cada linha é um programa em um período, e ao abrir aparece o gasto de cada campanha. De dezembro a maio os valores vêm da planilha de controle (Esquina, Gastos, Controle de mídia); de junho a outubro vêm direto das APIs do Meta, Google e TikTok, até 28/10 (dia 28 parcial). As linhas de uma mesma prefeitura não se repetem entre si: cada campanha entra uma vez só. Bragança Paulista e Campinas não têm plano por linha. Em Hortolândia falta o levantamento de 17/06 a 19/07, e a planilha não tem Meta de Campinas antes de dezembro."
+  "nota_periodo": "O painel espelha o que as plataformas mostram em cada período da campanha, como no Gerenciador: cada linha é um programa e período, e ao abrir aparece o gasto de cada campanha, inclusive as canceladas e renomeadas. De dezembro a maio os valores vêm da planilha de controle (Esquina, Gastos, Controle de mídia); de junho a outubro vêm direto das APIs do Meta, Google e TikTok, até 28/10 (dia 28 parcial). Cada campanha entra uma vez só. Em Hortolândia não houve veiculação de 17/06 a 19/07. Bragança Paulista e Campinas não têm plano por linha."
 }</script>
 <script>
 const D = JSON.parse(document.getElementById('dados').textContent);
@@ -3501,13 +3558,13 @@ function render(){
 
 let vista='periodo', clienteSel='Todas';
 const abertosP = new Set();
-const PLAT=['Meta','Google','TikTok','Outras'];
+const PLAT=['Meta','Google','YouTube','TikTok','Outras'];
 const somaPlat = (cs,p)=>cs.filter(k=>k.p===p).reduce((a,k)=>a+k.g,0);
 const somaL = l=>l.campanhas.reduce((a,k)=>a+k.g,0);
 function renderPeriodo(){
   const P=D.periodos;
   const lista = clienteSel==='Todas'?P:P.filter(c=>c.nome===clienteSel||c.cliente===clienteSel);
-  let tot={Meta:0,Google:0,TikTok:0,Outras:0},geral=0,nl=0;
+  let tot={Meta:0,Google:0,YouTube:0,TikTok:0,Outras:0},geral=0,nl=0;
   lista.forEach(c=>c.linhas.forEach(l=>{nl++;PLAT.forEach(p=>{tot[p]+=somaPlat(l.campanhas,p);});geral+=somaL(l);}));
   document.getElementById('plabel').textContent='';
   document.getElementById('dica').textContent='Clique numa linha para ver o gasto de cada campanha';
@@ -3515,6 +3572,7 @@ function renderPeriodo(){
     <div class="kpi"><p class="l">Gasto nas linhas</p><p class="v">${brl(geral)}</p><p class="s">${nl} programas e períodos</p></div>
     <div class="kpi"><p class="l">Meta Ads</p><p class="v">${brl(tot.Meta)}</p></div>
     <div class="kpi"><p class="l">Google Ads</p><p class="v">${brl(tot.Google)}</p></div>
+    <div class="kpi"><p class="l">YouTube</p><p class="v">${brl(tot.YouTube)}</p></div>
     <div class="kpi"><p class="l">TikTok</p><p class="v">${brl(tot.TikTok)}</p>${tot.Outras?`<p class="s">mais ${brl(tot.Outras)} em outras mídias</p>`:''}</div>`;
   const chips='<div class="chips">'+['Todas',...P.map(c=>c.cliente)].map(n=>`<button class="chip" data-c="${n}" data-on="${n===clienteSel?1:0}">${n}</button>`).join('')+'</div>';
   const secs=lista.map(c=>{
@@ -3523,13 +3581,13 @@ function renderPeriodo(){
       const key=c.cliente+'|'+i, open=abertosP.has(key);
       const t=somaL(l);
       const cell=p=>{const v=somaPlat(l.campanhas,p);return `<td class="num">${v?brl(v):'<span class="na"></span>'}</td>`;};
-      const det=open?`<tr class="dt"><td colspan="5"><div class="dtin">${l.nota?`<p class="nt">${l.nota}</p>`:''}
+      const det=open?`<tr class="dt"><td colspan="6"><div class="dtin">${l.nota?`<p class="nt">${l.nota}</p>`:''}
         ${l.campanhas.length?`<table class="camp"><thead><tr><th>Campanha</th><th>Plataforma</th><th class="num">Gasto</th></tr></thead><tbody>${l.campanhas.map(k=>`<tr><td>${k.n}</td><td class="plat">${k.p}</td><td class="num">${brl(k.g)}</td></tr>`).join('')}</tbody></table>`:'<p class="nt">Sem campanhas com gasto.</p>'}
         <p class="ft">Fonte: ${l.fonte}</p></div></td></tr>`:'';
-      return `<tr class="pr" data-k="${key}" data-open="${open?1:0}"><td class="pp"><span class="car2">▶</span>${l.programa}<small>${l.periodo}</small></td>${cell('Meta')}${cell('Google')}${cell('TikTok')}<td class="num"><b>${brl(t)}</b></td></tr>${det}`;
+      return `<tr class="pr" data-k="${key}" data-open="${open?1:0}"><td class="pp"><span class="car2">▶</span>${l.programa}<small>${l.periodo}</small></td>${cell('Meta')}${cell('Google')}${cell('YouTube')}${cell('TikTok')}<td class="num"><b>${brl(t)}</b></td></tr>${det}`;
     }).join('');
     return `<section class="cl"><div class="clh"><span class="nome"><b>${c.cliente}</b></span><span class="tot">${brl(ct)}</span></div>
-      <div class="pwrap"><table class="pl"><thead><tr><th>Programa e período</th><th class="num">Meta Ads</th><th class="num">Google Ads</th><th class="num">TikTok</th><th class="num">Total</th></tr></thead><tbody>${rows}</tbody></table></div></section>`;
+      <div class="pwrap"><table class="pl"><thead><tr><th>Programa e período</th><th class="num">Meta Ads</th><th class="num">Google Ads</th><th class="num">YouTube</th><th class="num">TikTok</th><th class="num">Total</th></tr></thead><tbody>${rows}</tbody></table></div></section>`;
   }).join('');
   document.getElementById('painel').className='';
   document.getElementById('painel').innerHTML=chips+secs;
