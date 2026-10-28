@@ -113,13 +113,18 @@ footer{color:var(--ink2);font-size:.76rem;padding:22px 4px;line-height:1.6}
 <footer id="rodape"></footer>
 </div>
 <script id="dados" type="application/json">{
-  "atualizado": "2026-10-05T09:30:00-03:00",
-  "nota": "Gasto real de plataforma. Plano é o valor contratado de venda por linha. Dados fechados até 30/09 para os flights de setembro de Hortolândia, Americana, Jundiaí e DAE, sem campanha no ar em outubro. Campinas atualizada até 04/10, com a previsão pelas diárias até o término de cada campanha. Campinas não tem plano distribuído por linha.",
+  "atualizado": "2026-10-28T16:31:50-03:00",
+  "nota": "Gasto real de plataforma, por mês de calendário. Setembro fechado de 01 a 30/09. Outubro de 01 a 28/10, com o dia 28 acumulado até a hora da leitura (16h30). De 20 a 26/10 o Meta não entregou nas contas de Hortolândia, Campinas e Bragança (o log de Hortolândia mostra 41 mudanças de status feitas pelo Meta e 55 pelo Bruno em 20/10): o zero é pausa, não falha de dados. Campinas Temas Diversos no Meta está ativo e sem gasto em 27 e 28/10. Americana, Jundiaí e DAE não veicularam em outubro. Bragança Paulista e Campinas não têm plano por linha.",
   "meses": [
+    {
+      "id": "2026-10",
+      "nome": "Outubro de 2026",
+      "aberto": true
+    },
     {
       "id": "2026-09",
       "nome": "Setembro de 2026",
-      "aberto": true
+      "aberto": false
     },
     {
       "id": "2026-08",
@@ -172,7 +177,8 @@ footer{color:var(--ink2);font-size:.76rem;padding:22px 4px;line-height:1.6}
       "2026-06": 8422.22,
       "2026-07": 12722.96,
       "2026-08": 8803.12,
-      "2026-09": 20748.52
+      "2026-09": 20748.52,
+      "2026-10": 16505.13
     },
     "Hortolândia": {
       "2026-02": 1110.74,
@@ -182,7 +188,8 @@ footer{color:var(--ink2);font-size:.76rem;padding:22px 4px;line-height:1.6}
       "2026-06": 3134.06,
       "2026-07": 13199.23,
       "2026-08": 6586.0,
-      "2026-09": 9964.13
+      "2026-09": 9964.13,
+      "2026-10": 7455.74
     },
     "Prefeitura de Jundiaí": {
       "2026-03": 1117.88,
@@ -208,6 +215,10 @@ footer{color:var(--ink2);font-size:.76rem;padding:22px 4px;line-height:1.6}
       "2026-07": 340.37,
       "2026-08": 1354.37,
       "2026-09": 1532.68
+    },
+    "Bragança Paulista": {
+      "2026-09": 16631.96,
+      "2026-10": 3685.08
     }
   },
   "detalhe": {
@@ -377,8 +388,8 @@ footer{color:var(--ink2);font-size:.76rem;padding:22px 4px;line-height:1.6}
             "campanhas": [
               {
                 "nome": "Setembro - CPV - Total - 18 a 29 - Trend da Vovó",
-                "gasto": 205.15,
-                "previsao": 205.15
+                "gasto": 204.75,
+                "previsao": 204.75
               }
             ]
           }
@@ -666,80 +677,74 @@ footer{color:var(--ink2);font-size:.76rem;padding:22px 4px;line-height:1.6}
         "linhas": [
           {
             "linha": "Temas Diversos · Meta Ads alcance",
-            "plano": null,
             "campanhas": [
               {
-                "nome": "CPM - Setembro - 08 a 04/10 - Diário",
-                "gasto": 5525.77,
-                "previsao": 6725.77
+                "nome": "CPM - Outubro - 2026 - 08/10 a 08/11 - Diário - Temas Diversos (campanha reaproveitada, gasto de 08 a 30/09)",
+                "gasto": 4423.09,
+                "previsao": 4423.09
               }
             ]
           },
           {
             "linha": "Temas Diversos · Meta Ads engajamento",
-            "plano": null,
             "campanhas": [
               {
-                "nome": "CPE - Setembro - 08 a 04/10 - Diário",
-                "gasto": 4248.33,
-                "previsao": 4683.33
+                "nome": "CPE - Temas Diversos - Diário",
+                "gasto": 3671.65,
+                "previsao": 3671.65
               }
             ]
           },
           {
             "linha": "Temas Diversos · Meta Ads visitas ao perfil",
-            "plano": null,
             "campanhas": [
               {
-                "nome": "Visitas ao Perfil - Setembro - 08 a 04/10 - Diário",
-                "gasto": 3309.46,
-                "previsao": 4409.46
+                "nome": "Visitas ao Perfil - Temas Diversos - Diário",
+                "gasto": 3028.29,
+                "previsao": 3028.29
               }
             ]
           },
           {
             "linha": "Temas Diversos · YouTube",
-            "plano": null,
             "campanhas": [
               {
-                "nome": "YOUTUBE #IN STREAM - PMC - TEMAS DIVERSOS",
-                "gasto": 5062.76,
-                "previsao": 5092.76
+                "nome": "YOUTUBE #IN STREAM - PMC - TEMAS DIVERSOS 01.2026",
+                "gasto": 4843.12,
+                "previsao": 4843.12
               },
               {
-                "nome": "YOUTUBE #SEQUENCIAL - PMC - TEMAS DIVERSOS",
-                "gasto": 1070.23,
-                "previsao": 1146.43
+                "nome": "YOUTUBE #SEQUENCIAL - PMC - TEMAS DIVERSOS 01.2026",
+                "gasto": 961.69,
+                "previsao": 961.69
               }
             ]
           },
           {
             "linha": "Temas Diversos · Rede de Display",
-            "plano": null,
             "campanhas": [
               {
                 "nome": "REDE DE DISPLAY - PMC - TEMAS DIVERSOS",
-                "gasto": 1374.61,
-                "previsao": 1404.61
+                "gasto": 1294.13,
+                "previsao": 1294.13
               }
             ]
           },
           {
             "linha": "Temas Diversos · TikTok",
-            "plano": null,
             "campanhas": [
               {
                 "nome": "08.09 a 07.10 - PMC - TEMAS DIVERSOS",
-                "gasto": 1399.73,
-                "previsao": 1399.73
+                "gasto": 1380.47,
+                "previsao": 1380.47
               },
               {
                 "nome": "08.09 a 07.10 - PMC - TEMAS DIVERSOS v3",
-                "gasto": 1100.32,
-                "previsao": 1100.32
+                "gasto": 1050.23,
+                "previsao": 1050.23
               },
               {
-                "nome": "06.08 a 07.09 - PMC - TEMAS DIVERSOS, encerrada",
+                "nome": "06.08 a 07.09 - PMC - TEMAS DIVERSOS",
                 "gasto": 329.94,
                 "previsao": 329.94
               },
@@ -752,63 +757,59 @@ footer{color:var(--ink2);font-size:.76rem;padding:22px 4px;line-height:1.6}
           },
           {
             "linha": "Concilia · Meta Ads visualização",
-            "plano": null,
             "campanhas": [
               {
-                "nome": "CPV - Setembro - 14 a 30 - Orçamento Total",
-                "gasto": 549.92,
-                "previsao": 549.92
-              },
-              {
-                "nome": "CPV - Setembro - 14 a 30 - Orçamento Diário",
+                "nome": "CPV - Setembro 2026 - 14 a 30 - Concilia - Orçamento Diário",
                 "gasto": 1339.54,
                 "previsao": 1339.54
+              },
+              {
+                "nome": "CPV - Setembro 2026 - 14 a 30 - Concilia - Orçamento Total",
+                "gasto": 549.92,
+                "previsao": 549.92
               }
             ]
           },
           {
             "linha": "Concilia · Meta Ads visualização remarketing",
-            "plano": null,
             "campanhas": [
               {
-                "nome": "CPV RMKT - Setembro - 14 a 30 - Orçamento Total",
-                "gasto": 569.0,
-                "previsao": 569.0
-              },
-              {
-                "nome": "CPV RMKT - Setembro - 14 a 30 - Orçamento Diário",
+                "nome": "CPV RMKT - Setembro 2026 - 14 a 30 - Concilia - Orçamento Diário",
                 "gasto": 1359.07,
                 "previsao": 1359.07
+              },
+              {
+                "nome": "CPV RMKT - Setembro 2026 - 14 a 30 - Concilia - Orçamento Total",
+                "gasto": 569.0,
+                "previsao": 569.0
               }
             ]
           },
           {
             "linha": "Concilia · Meta Ads engajamento",
-            "plano": null,
             "campanhas": [
               {
-                "nome": "CPE - Setembro - 14 a 30 - Orçamento Total",
-                "gasto": 1006.61,
-                "previsao": 1006.61
-              },
-              {
-                "nome": "CPE - Setembro - 14 a 30 - Orçamento Diário",
+                "nome": "CPE - Setembro 2026 - 14 a 30 - Concilia - Orçamento Diário",
                 "gasto": 4216.74,
                 "previsao": 4216.74
+              },
+              {
+                "nome": "CPE - Setembro 2026 - 14 a 30 - Concilia - Orçamento Total",
+                "gasto": 1006.61,
+                "previsao": 1006.61
               }
             ]
           },
           {
             "linha": "Concilia · Meta Ads alcance",
-            "plano": null,
             "campanhas": [
               {
-                "nome": "CPM - Setembro - 14 a 30 - Orçamento Total, pausada",
+                "nome": "CPM - Setembro 2026 - 14 a 30 - Concilia - Orçamento Total",
                 "gasto": 6.28,
                 "previsao": 6.28
               },
               {
-                "nome": "CPM RMKT - Setembro - 14 a 30 - Orçamento Total, pausada",
+                "nome": "CPM RMKT - Setembro 2026 - 14 a 30 - Concilia - Orçamento Total",
                 "gasto": 10.58,
                 "previsao": 10.58
               }
@@ -816,30 +817,29 @@ footer{color:var(--ink2);font-size:.76rem;padding:22px 4px;line-height:1.6}
           },
           {
             "linha": "Concilia · YouTube",
-            "plano": null,
             "campanhas": [
               {
-                "nome": "YOUTUBE IN STREAM - CONCILIA, pausada",
-                "gasto": 350.0,
-                "previsao": 350.0
-              },
-              {
-                "nome": "YOUTUBE IN STREAM - CONCILIA v3, pausada",
-                "gasto": 334.74,
-                "previsao": 334.74
-              },
-              {
-                "nome": "YOUTUBE BUMPER - CONCILIA, pausada",
+                "nome": "YOUTUBE BUMPER - CONCILIA",
                 "gasto": 180.56,
                 "previsao": 180.56
               },
               {
-                "nome": "YOUTUBE BUMPER - CONCILIA v3, pausada",
+                "nome": "YOUTUBE BUMPER - CONCILIA v3",
                 "gasto": 39.3,
                 "previsao": 39.3
               },
               {
-                "nome": "Campanhas de teste canceladas, pausadas",
+                "nome": "YOUTUBE IN STREAM - CONCILIA",
+                "gasto": 350.0,
+                "previsao": 350.0
+              },
+              {
+                "nome": "YOUTUBE IN STREAM - CONCILIA v3",
+                "gasto": 334.74,
+                "previsao": 334.74
+              },
+              {
+                "nome": "campanhas canceladas (3)",
                 "gasto": 5.62,
                 "previsao": 5.62
               }
@@ -847,73 +847,528 @@ footer{color:var(--ink2);font-size:.76rem;padding:22px 4px;line-height:1.6}
           },
           {
             "linha": "Segurança Viária · Meta Ads alcance",
-            "plano": null,
             "campanhas": [
               {
-                "nome": "CPM - Setembro 2026 - 25/09 a 14/10 - Orçamento Diário",
+                "nome": "CPM - Setembro 2026 - 25/09 a 14/10 - Segurança Viária - Orçamento Diário",
                 "gasto": 284.2,
-                "previsao": 2884.2
+                "previsao": 284.2
               },
               {
-                "nome": "CPM - Setembro 2026 - 25/09 a 14/10 - ABO Diário",
-                "gasto": 135.91,
-                "previsao": 1062.91
+                "nome": "CPM - Setembro 2026 - 25/09 a 13/10 - Segurança Viária - ABO Diário",
+                "gasto": 18.75,
+                "previsao": 18.75
               }
             ]
           },
           {
             "linha": "Segurança Viária · Meta Ads engajamento",
-            "plano": null,
             "campanhas": [
               {
-                "nome": "CPE - Setembro 2026 - 25/09 a 14/10 - Orçamento Diário",
+                "nome": "CPE - Setembro 2026 - 25/09 a 14/10 - Segurança Viária - Orçamento Diário",
                 "gasto": 253.07,
-                "previsao": 2593.07
+                "previsao": 253.07
               },
               {
-                "nome": "CPE - Setembro 2026 - 25/09 a 14/10 - ABO Diário",
-                "gasto": 78.49,
-                "previsao": 816.49
+                "nome": "CPE - Setembro 2026 - 25/09 a 13/10 - Segurança Viária - ABO Diário",
+                "gasto": 11.73,
+                "previsao": 11.73
               }
             ]
           },
           {
             "linha": "Segurança Viária · YouTube",
-            "plano": null,
             "campanhas": [
               {
-                "nome": "YOUTUBE #IN STREAM - PMC - SEGURANÇA VIÁRIA",
-                "gasto": 932.73,
-                "previsao": 2932.73
+                "nome": "CPV - Setembro - 2026 - 25/09 a 14/10 - Diário - Segurança Viária - YouTube In-Stream",
+                "gasto": 88.04,
+                "previsao": 88.04
               }
             ]
           },
           {
             "linha": "Segurança Viária · Rede de Display",
-            "plano": null,
             "campanhas": [
               {
-                "nome": "REDE DE DISPLAY - PMC - SEGURANÇA VIÁRIA",
-                "gasto": 1030.01,
-                "previsao": 1650.01
+                "nome": "CPM - Setembro - 2026 - 25/09 a 13/10 - Diário - Segurança Viária - Rede de Display",
+                "gasto": 774.23,
+                "previsao": 774.23
               }
             ]
           },
           {
             "linha": "Segurança Viária · Demand Gen",
-            "plano": null,
             "campanhas": [
               {
-                "nome": "DEMAND GEN - PMC - SEGURANÇA VIÁRIA, pausada",
+                "nome": "DEMAND GEN - PMC - SEGURANÇA VIÁRIA",
                 "gasto": 912.23,
                 "previsao": 912.23
               }
             ]
           }
         ]
+      },
+      {
+        "cliente": "Bragança Paulista",
+        "flight": "01 a 30 de setembro",
+        "plano": null,
+        "linhas": [
+          {
+            "linha": "Meta Ads reconhecimento",
+            "campanhas": [
+              {
+                "nome": "[BP] [RECONHECIMENTO]",
+                "gasto": 775.24,
+                "previsao": 775.24
+              }
+            ]
+          },
+          {
+            "linha": "Meta Ads engajamento",
+            "campanhas": [
+              {
+                "nome": "[BP] [ENGAJAMENTO]",
+                "gasto": 10253.85,
+                "previsao": 10253.85
+              }
+            ]
+          },
+          {
+            "linha": "Meta Ads visitas ao perfil",
+            "campanhas": [
+              {
+                "nome": "[BP] [VISITAS AO PERFIL]",
+                "gasto": 5602.87,
+                "previsao": 5602.87
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "2026-10": [
+      {
+        "cliente": "Hortolândia",
+        "flight": "06 a 29 de outubro",
+        "plano": 30000,
+        "linhas": [
+          {
+            "linha": "Meta Ads impressões",
+            "plano": 13823.54,
+            "campanhas": [
+              {
+                "nome": "3 - Outubro - CPM - Diário - 07 a 29 - Giro Feirão de Emprego",
+                "gasto": 191.58,
+                "previsao": 247.59
+              },
+              {
+                "nome": "5 - Outubro - CPM - Total - 26 a 29 - Câncer de Mama",
+                "gasto": 103.63,
+                "previsao": 103.63
+              },
+              {
+                "nome": "5 - Outubro - CPM - Diário - 26 a 29 - Câncer de Mama",
+                "gasto": 139.84,
+                "previsao": 139.84
+              },
+              {
+                "nome": "3 - Outubro - CPM - Total - 16 a 29 - Negocia",
+                "gasto": 304.77,
+                "previsao": 304.77
+              },
+              {
+                "nome": "3 - Outubro - CPM - Diário - 16 a 29 - Negocia",
+                "gasto": 231.64,
+                "previsao": 231.64
+              },
+              {
+                "nome": "4 - Outubro - CPM - Total - 09 a 29 - Serviços",
+                "gasto": 318.07,
+                "previsao": 318.07
+              },
+              {
+                "nome": "4 - Outubro - CPM - Diário - 09 a 29 - Serviços",
+                "gasto": 134.21,
+                "previsao": 134.21
+              },
+              {
+                "nome": "3 - Outubro - CPM - Total - 07 a 29 - Giro Feirão de Emprego",
+                "gasto": 432.75,
+                "previsao": 432.75
+              },
+              {
+                "nome": "2 - Outubro - CPM - Diário - 06 a 29 - Prestação de Contas",
+                "gasto": 320.64,
+                "previsao": 320.64
+              },
+              {
+                "nome": "2 - Outubro - CPM - Total - 06 a 29 - Prestação de Contas",
+                "gasto": 172.53,
+                "previsao": 172.53
+              },
+              {
+                "nome": "1 - Outubro - CPM - Diário - 06 a 22 - Comércio Local Dia das Crianças",
+                "gasto": 324.06,
+                "previsao": 324.06
+              },
+              {
+                "nome": "1 - Outubro - CPM - Total - 06 a 22 - Comércio Local Dia das Crianças",
+                "gasto": 148.25,
+                "previsao": 148.25
+              }
+            ]
+          },
+          {
+            "linha": "Meta Ads engajamento",
+            "plano": 7337.18,
+            "campanhas": [
+              {
+                "nome": "3 - Outubro - CPE - Diário - 07 a 29 - Giro Feirão de Emprego",
+                "gasto": 124.83,
+                "previsao": 190.65
+              },
+              {
+                "nome": "3 - Outubro - CPE - Total - 16 a 29 - Negocia",
+                "gasto": 348.66,
+                "previsao": 348.66
+              },
+              {
+                "nome": "3 - Outubro - CPE - Diário - 16 a 29 - Negocia",
+                "gasto": 249.55,
+                "previsao": 249.55
+              },
+              {
+                "nome": "4 - Outubro - CPE - Total - 09 a 29 - Serviços",
+                "gasto": 240.96,
+                "previsao": 240.96
+              },
+              {
+                "nome": "4 - Outubro - CPE - Diário - 09 a 29 - Serviços",
+                "gasto": 98.1,
+                "previsao": 98.1
+              },
+              {
+                "nome": "1 - Outubro - CPE - Diário - 06 a 22 - Comércio Local Dia das Crianças",
+                "gasto": 202.3,
+                "previsao": 202.3
+              },
+              {
+                "nome": "2 - Outubro - CPE - Diário - 06 a 29 - Prestação de Contas",
+                "gasto": 203.63,
+                "previsao": 203.63
+              },
+              {
+                "nome": "3 - Outubro - CPE - Total - 07 a 29 - Giro Feirão de Emprego",
+                "gasto": 835.93,
+                "previsao": 835.93
+              },
+              {
+                "nome": "2 - Outubro - CPE - Total - 06 a 29 - Prestação de Contas",
+                "gasto": 18.21,
+                "previsao": 18.21
+              },
+              {
+                "nome": "1 - Outubro - CPE - Total - 06 a 22 - Comércio Local Dia das Crianças",
+                "gasto": 149.63,
+                "previsao": 149.63
+              }
+            ]
+          },
+          {
+            "linha": "Meta Ads visualização",
+            "plano": 7827.73,
+            "campanhas": [
+              {
+                "nome": "5 - Outubro - CPV - Diário - 26 a 29 - Câncer de Mama",
+                "gasto": 168.43,
+                "previsao": 168.43
+              },
+              {
+                "nome": "5 - Outubro - CPV - Total - 26 a 29 - Câncer de Mama",
+                "gasto": 74.87,
+                "previsao": 74.87
+              },
+              {
+                "nome": "3 - Outubro - CPV - Total - 16 a 29 - Negocia",
+                "gasto": 472.8,
+                "previsao": 472.8
+              },
+              {
+                "nome": "3 - Outubro - CPV - Diário - 16 a 29 - Negocia",
+                "gasto": 365.17,
+                "previsao": 365.17
+              },
+              {
+                "nome": "4 - Outubro - CPV - Diário - 07 a 29 - Serviços",
+                "gasto": 221.13,
+                "previsao": 221.13
+              },
+              {
+                "nome": "4 - Outubro - CPV - Total - 07 a 29 - Serviços",
+                "gasto": 263.18,
+                "previsao": 263.18
+              },
+              {
+                "nome": "2 - Outubro - CPV - Diário - 06 a 29 - Prestação de Contas",
+                "gasto": 213.99,
+                "previsao": 213.99
+              },
+              {
+                "nome": "2 - Outubro - CPV - Total - 06 a 29 - Prestação de Contas",
+                "gasto": 86.43,
+                "previsao": 86.43
+              },
+              {
+                "nome": "1 - Outubro - CPV - Diário - 06 a 22 - Comércio Local Dia das Crianças",
+                "gasto": 213.53,
+                "previsao": 213.53
+              },
+              {
+                "nome": "1 - Outubro - CPV - Total - 06 a 22 - Comércio Local Dia das Crianças",
+                "gasto": 82.44,
+                "previsao": 82.44
+              }
+            ]
+          },
+          {
+            "linha": "TikTok",
+            "plano": 1011.55,
+            "campanhas": [
+              {
+                "nome": "Outubro - CPV - Total - 26 a 29 - Câncer de Mama",
+                "gasto": 32.67,
+                "previsao": 52.67
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "cliente": "Campinas",
+        "flight": "Temas Diversos 08/10 a 08/11 · Infância em Primeiro Lugar 05 a 28/10 · Segurança Viária 25/09 a 14/10",
+        "plano": null,
+        "linhas": [
+          {
+            "linha": "Temas Diversos · Meta Ads alcance",
+            "campanhas": [
+              {
+                "nome": "CPM - Outubro - 2026 - 08/10 a 08/11 - Diário - Temas Diversos",
+                "gasto": 2941.31,
+                "previsao": 2941.31
+              }
+            ]
+          },
+          {
+            "linha": "Temas Diversos · Meta Ads engajamento",
+            "campanhas": [
+              {
+                "nome": "CPE - Outubro - 2026 - 08/10 a 08/11 - Diário - Temas Diversos",
+                "gasto": 1931.88,
+                "previsao": 1931.88
+              }
+            ]
+          },
+          {
+            "linha": "Temas Diversos · Meta Ads visitas ao perfil",
+            "campanhas": [
+              {
+                "nome": "Visitas ao Perfil - Outubro - 2026 - 08/10 a 08/11 - Diário - Temas Diversos",
+                "gasto": 2304.16,
+                "previsao": 2304.16
+              }
+            ]
+          },
+          {
+            "linha": "Temas Diversos · YouTube",
+            "campanhas": [
+              {
+                "nome": "YouTube In-Stream - CPM - Diário - Temas Diversos",
+                "gasto": 3620.6,
+                "previsao": 4474.4
+              },
+              {
+                "nome": "YouTube Sequencial - CPM - Diário - Temas Diversos",
+                "gasto": 962.87,
+                "previsao": 1138.58
+              },
+              {
+                "nome": "YOUTUBE #IN STREAM - PMC - TEMAS DIVERSOS 01.2026",
+                "gasto": 249.18,
+                "previsao": 249.18
+              },
+              {
+                "nome": "YOUTUBE #SEQUENCIAL - PMC - TEMAS DIVERSOS 01.2026",
+                "gasto": 153.02,
+                "previsao": 153.02
+              }
+            ]
+          },
+          {
+            "linha": "Temas Diversos · Rede de Display",
+            "campanhas": [
+              {
+                "nome": "Rede de Display - CPM - Diário - Temas Diversos",
+                "gasto": 1011.99,
+                "previsao": 1134.45
+              },
+              {
+                "nome": "REDE DE DISPLAY - PMC - TEMAS DIVERSOS",
+                "gasto": 146.5,
+                "previsao": 146.5
+              },
+              {
+                "nome": "Rede de Display - Chega Junto Ouro Verde - 15 a 17",
+                "gasto": 30.0,
+                "previsao": 30.0
+              }
+            ]
+          },
+          {
+            "linha": "Temas Diversos · TikTok",
+            "campanhas": [
+              {
+                "nome": "CPM - Diário - Temas Diversos - TikTok - 1.100.000 Impressões",
+                "gasto": 1969.44,
+                "previsao": 2047.3
+              },
+              {
+                "nome": "08.09 a 07.10 - PMC - TEMAS DIVERSOS v3",
+                "gasto": 249.38,
+                "previsao": 249.38
+              },
+              {
+                "nome": "08.09 a 07.10 - PMC - TEMAS DIVERSOS",
+                "gasto": 19.26,
+                "previsao": 19.26
+              }
+            ]
+          },
+          {
+            "linha": "Infância em Primeiro Lugar · Meta Ads alcance",
+            "campanhas": [
+              {
+                "nome": "CPM - Outubro 2026 - 05/10 a 24/10 - Infância em Primeiro Lugar - Orçamento Total - 900.000 impressões",
+                "gasto": 1117.28,
+                "previsao": 1117.28
+              }
+            ]
+          },
+          {
+            "linha": "Infância em Primeiro Lugar · YouTube",
+            "campanhas": [
+              {
+                "nome": "CPM - Outubro 2026 - 05/10 a 28/10 - Diário - Infância em Primeiro Lugar - YouTube - 500.000 Impressões",
+                "gasto": 2404.55,
+                "previsao": 2404.55
+              }
+            ]
+          },
+          {
+            "linha": "Infância em Primeiro Lugar · Rede de Display",
+            "campanhas": [
+              {
+                "nome": "CPM - Outubro 2026 - 05/10 a 28/10 - Diário - Infância em Primeiro Lugar - Rede de Display - 150.000 Impressões",
+                "gasto": 238.86,
+                "previsao": 238.86
+              }
+            ]
+          },
+          {
+            "linha": "Infância em Primeiro Lugar · TikTok",
+            "campanhas": [
+              {
+                "nome": "CPM - Outubro - 2026 - 05/10 a 28/10 - Orçamento Total - Infância em Primeiro Lugar - TikTok - 300.000 Impressões",
+                "gasto": 599.95,
+                "previsao": 599.95
+              }
+            ]
+          },
+          {
+            "linha": "Segurança Viária · Meta Ads alcance",
+            "campanhas": [
+              {
+                "nome": "CPM - Setembro 2026 - 25/09 a 13/10 - Segurança Viária - ABO Diário - 1.000.000 impressões",
+                "gasto": 1654.7,
+                "previsao": 1654.7
+              }
+            ]
+          },
+          {
+            "linha": "Segurança Viária · Meta Ads engajamento",
+            "campanhas": [
+              {
+                "nome": "CPE - Setembro 2026 - 25/09 a 13/10 - Segurança Viária - ABO Diário - 32.000 engajamentos",
+                "gasto": 6555.8,
+                "previsao": 6555.8
+              }
+            ]
+          },
+          {
+            "linha": "Segurança Viária · YouTube",
+            "campanhas": [
+              {
+                "nome": "CPV - Setembro - 2026 - 25/09 a 14/10 - Diário - Segurança Viária - YouTube In-Stream - 36.020 Visualizações",
+                "gasto": 2230.09,
+                "previsao": 2230.09
+              }
+            ]
+          },
+          {
+            "linha": "Segurança Viária · Rede de Display",
+            "campanhas": [
+              {
+                "nome": "CPM - Setembro - 2026 - 25/09 a 13/10 - Diário - Segurança Viária - Rede de Display - 275.000 Impressões",
+                "gasto": 786.4,
+                "previsao": 786.4
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "cliente": "Bragança Paulista",
+        "flight": "01 a 28 de outubro",
+        "plano": null,
+        "linhas": [
+          {
+            "linha": "Meta Ads reconhecimento",
+            "campanhas": [
+              {
+                "nome": "[BP] [RECONHECIMENTO]",
+                "gasto": 175.91,
+                "previsao": 345.62
+              },
+              {
+                "nome": "CPM - Setembro 2026 - 08 a 12/10 - Bragança Paulista Dia das Crianças - ABO Diário - 60 mil impressões",
+                "gasto": 164.08,
+                "previsao": 164.08
+              }
+            ]
+          },
+          {
+            "linha": "Meta Ads engajamento",
+            "campanhas": [
+              {
+                "nome": "[BP] [ENGAJAMENTO]",
+                "gasto": 2260.54,
+                "previsao": 4214.72
+              }
+            ]
+          },
+          {
+            "linha": "Meta Ads visitas ao perfil",
+            "campanhas": [
+              {
+                "nome": "[BP] [VISITAS AO PERFIL]",
+                "gasto": 1084.55,
+                "previsao": 1293.86
+              }
+            ]
+          }
+        ]
       }
     ]
-  }
+  },
+  "previsao_regra": "Previsão de outubro: campanha pausada ou encerrada fica igual ao gasto; campanha ativa soma o que falta do dia 28 e os dias seguintes até 31/10 (ou até o fim dela), pelo menor valor entre a verba diária e o gasto de 27/10. TikTok de Campinas usa a média de 26 e 27/10; TikTok de Hortolândia soma R$20 por dia, valor informado pelo Cowork e não conferido."
 }</script>
 <script>
 const D = JSON.parse(document.getElementById('dados').textContent);
@@ -928,8 +1383,8 @@ let tp=preset,tde=de,tate=ate;
 const abertos = new Set();
 
 function intervalo(){
-  if(preset==='mes-atual') return {de:'2026-09',ate:'2026-09',label:'Este mês'};
-  if(preset==='mes-passado') return {de:'2026-08',ate:'2026-08',label:'Mês passado'};
+  if(preset==='mes-atual') return {de:MESES[MESES.length-1],ate:MESES[MESES.length-1],label:'Este mês'};
+  if(preset==='mes-passado') return {de:MESES[MESES.length-2],ate:MESES[MESES.length-2],label:'Mês passado'};
   if(preset==='ytd') return {de:MESES[0],ate:MESES[MESES.length-1],label:'2026 (YTD)'};
   return {de,ate,label: de===ate?nomeMes(de):nomeMes(de)+' a '+nomeMes(ate)};
 }
@@ -950,7 +1405,7 @@ document.getElementById('aplicar').onclick=()=>{preset=tp;if(tde>tate){const x=t
 document.addEventListener('click',e=>{if(!drop.hidden&&!e.target.closest('.perwrap'))drop.hidden=true;});
 
 document.getElementById('rodape').innerHTML = D.nota +
-  '<br>Previsão é o orçamento total de cada campanha e, nas diárias, o gasto mais a diária vezes os dias que faltam.' +
+  '<br>' + (D.previsao_regra||'') + '<br>Em setembro, a previsão é o orçamento total de cada campanha e, nas diárias, o gasto mais a diária vezes os dias que faltam.' +
   '<br>Atualizado em ' + new Date(D.atualizado).toLocaleDateString('pt-BR') + ' às ' +
   new Date(D.atualizado).toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'}) +
   '. Fontes: Meta Marketing API, Google Ads API e painel do TikTok Ads. Esquina.';
@@ -976,9 +1431,9 @@ function detalheHTML(c){
 function render(){
   const iv=intervalo(); document.getElementById('plabel').textContent=iv.label;
   const ms=mesesNo(iv);
-  const soSetembro = ms.length===1 && ms[0]==='2026-09';
-  const det = soSetembro ? D.detalhe['2026-09'] : null;
-  document.getElementById('dica').textContent = det ? 'Clique na prefeitura para abrir as campanhas' : 'Detalhe por campanha disponível no ciclo de setembro';
+  const mesAberto = ms.length===1 && (D.meses.find(x=>x.id===ms[0])||{}).aberto;
+  const det = ms.length===1 ? (D.detalhe[ms[0]]||null) : null;
+  document.getElementById('dica').textContent = det ? 'Clique na prefeitura para abrir as campanhas' : 'Detalhe por campanha disponível para setembro e outubro';
 
   let gasto=0,prev=0,plano=0,nCamp=0;
   if(det){ det.forEach(c=>{const s=somaCli(c);gasto+=s.gasto;prev+=s.prev;plano+=s.plano;c.linhas.forEach(l=>nCamp+=l.campanhas.length);}); }
@@ -986,7 +1441,7 @@ function render(){
 
   document.getElementById('totais').innerHTML=`
     <div class="kpi"><p class="l">Gasto no período</p><p class="v">${brl(gasto)}</p><p class="s">${det?nCamp+' campanhas no ar':'Meta Ads, total por prefeitura'}</p></div>
-    <div class="kpi"><p class="l">Previsão até o fim</p><p class="v">${brl(prev)}</p><p class="s">${soSetembro?'ciclo em curso':'período encerrado'}</p></div>
+    <div class="kpi"><p class="l">Previsão até o fim</p><p class="v">${brl(prev)}</p><p class="s">${mesAberto?'mês em curso':'período encerrado'}</p></div>
     ${plano?`<div class="kpi"><p class="l">Previsto no plano</p><p class="v">${brl(plano)}</p><p class="s">Campinas não tem plano por linha</p></div>`:''}`;
 
   if(!det){
