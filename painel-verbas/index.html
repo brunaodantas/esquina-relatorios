@@ -72,6 +72,33 @@ table.camp{width:100%;border-collapse:collapse;font-size:.8rem}
 table.camp th{text-align:left;font-size:.6rem;letter-spacing:.07em;text-transform:uppercase;color:var(--mute);font-weight:600;padding:5px 8px}
 table.camp td{padding:6px 8px;border-top:1px solid var(--line)}
 .na{color:var(--mute)}
+
+.perwrap[hidden]{display:none}
+.vista{display:inline-flex;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:3px;gap:2px}
+.vista button{font:inherit;font-size:.8rem;font-weight:500;padding:6px 14px;border:none;border-radius:6px;background:none;color:var(--ink2);cursor:pointer}
+.vista button[data-on="1"]{background:var(--accent);color:#fff}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0 4px}
+.chip{font:inherit;font-size:.76rem;padding:5px 11px;border-radius:99px;border:1px solid var(--line);background:var(--card);color:var(--ink2);cursor:pointer}
+.chip[data-on="1"]{border-color:var(--accent);color:var(--accent);background:rgba(26,60,255,.06)}
+.cl{background:var(--card);border:1px solid var(--line);border-radius:16px;margin:16px 0;overflow:hidden}
+.clh{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:16px 18px;border-bottom:1px solid var(--line)}
+.clh .nome{font-size:1.05rem}
+.clh .tot{font-weight:700;font-variant-numeric:tabular-nums}
+.pwrap{overflow-x:auto}
+table.pl{width:100%;min-width:640px;border-collapse:collapse;font-size:.86rem}
+table.pl th{text-align:left;font-size:.6rem;letter-spacing:.07em;text-transform:uppercase;color:var(--ink2);font-weight:600;padding:10px 12px;border-bottom:1px solid var(--line)}
+table.pl th.num,table.pl td.num{text-align:right}
+table.pl tr.pr>td{padding:11px 12px;border-bottom:1px solid var(--line);cursor:pointer;font-variant-numeric:tabular-nums}
+table.pl tr.pr:hover>td{background:#FAFBFC}
+table.pl td.pp{font-weight:600}
+table.pl td.pp small{display:block;font-weight:400;color:var(--mute);font-size:.72rem;margin-top:2px}
+table.pl tr.dt>td{padding:0;background:#FAFBFC;border-bottom:1px solid var(--line)}
+.dtin{padding:8px 12px 14px 28px}
+.dtin .nt{font-size:.74rem;color:var(--ink2);margin:2px 0 8px}
+.dtin .ft{font-size:.68rem;color:var(--mute);margin:8px 0 0}
+table.camp td.plat{color:var(--mute);width:80px}
+tr.pr .car2{display:inline-block;color:var(--mute);font-size:.65rem;margin-right:6px;transition:transform .15s}
+tr.pr[data-open="1"] .car2{transform:rotate(90deg)}
 footer{color:var(--ink2);font-size:.76rem;padding:22px 4px;line-height:1.6}
 @media (max-width:720px){
   .rowbtn{grid-template-columns:1.4fr .9fr .9fr 22px;gap:8px}
@@ -84,9 +111,10 @@ footer{color:var(--ink2);font-size:.76rem;padding:22px 4px;line-height:1.6}
 <div class="wrap">
 <header>
   <h1>Painel de Verbas</h1>
-  <p class="sub">Quanto cada prefeitura gastou no período, quanto ainda deve gastar até o fim do ciclo e o valor previsto no plano. Clique na prefeitura para ver campanha por campanha.</p>
+  <p class="sub">Quanto cada prefeitura gastou em cada programa e período, e quanto cada campanha gastou. Clique numa linha para abrir as campanhas.</p>
 </header>
 <div class="barra">
+  <div class="vista" id="vista"><button data-v="periodo">Por período</button><button data-v="mes">Por mês</button></div>
   <div class="perwrap">
     <button class="pbtn" id="pbtn">📅 <span id="plabel"></span> <span class="car">▼</span></button>
     <div class="drop" id="drop" hidden>
@@ -110,10 +138,10 @@ footer{color:var(--ink2);font-size:.76rem;padding:22px 4px;line-height:1.6}
 </div>
 <div class="totais" id="totais"></div>
 <div class="painel" id="painel"></div>
-<footer id="rodape"></footer>
+<footer><span id="notaPeriodo"></span><div id="rodape"></div></footer>
 </div>
 <script id="dados" type="application/json">{
-  "atualizado": "2026-10-28T16:31:50-03:00",
+  "atualizado": "2026-10-28T16:53:12-03:00",
   "nota": "Gasto real de plataforma, por mês de calendário. Setembro fechado de 01 a 30/09. Outubro de 01 a 28/10, com o dia 28 acumulado até a hora da leitura (16h30). De 20 a 26/10 o Meta não entregou nas contas de Hortolândia, Campinas e Bragança (o log de Hortolândia mostra 41 mudanças de status feitas pelo Meta e 55 pelo Bruno em 20/10): o zero é pausa, não falha de dados. Campinas Temas Diversos no Meta está ativo e sem gasto em 27 e 28/10. Americana, Jundiaí e DAE não veicularam em outubro. Bragança Paulista e Campinas não têm plano por linha.",
   "meses": [
     {
@@ -1368,7 +1396,1992 @@ footer{color:var(--ink2);font-size:.76rem;padding:22px 4px;line-height:1.6}
       }
     ]
   },
-  "previsao_regra": "Previsão de outubro: campanha pausada ou encerrada fica igual ao gasto; campanha ativa soma o que falta do dia 28 e os dias seguintes até 31/10 (ou até o fim dela), pelo menor valor entre a verba diária e o gasto de 27/10. TikTok de Campinas usa a média de 26 e 27/10; TikTok de Hortolândia soma R$20 por dia, valor informado pelo Cowork e não conferido."
+  "previsao_regra": "Previsão de outubro: campanha pausada ou encerrada fica igual ao gasto; campanha ativa soma o que falta do dia 28 e os dias seguintes até 31/10 (ou até o fim dela), pelo menor valor entre a verba diária e o gasto de 27/10. TikTok de Campinas usa a média de 26 e 27/10; TikTok de Hortolândia soma R$20 por dia, valor informado pelo Cowork e não conferido.",
+  "periodos": [
+    {
+      "cliente": "Campinas",
+      "linhas": [
+        {
+          "programa": "Temas Diversos",
+          "periodo": "16/12 a 31/12/2025",
+          "fonte": "Planilha de controle",
+          "campanhas": [
+            {
+              "n": "Google Ads, Rede de Display",
+              "p": "Google",
+              "g": 439.43
+            },
+            {
+              "n": "YouTube, video views",
+              "p": "Google",
+              "g": 328.24
+            },
+            {
+              "n": "Meta Ads, engajamento e impressões",
+              "p": "Meta",
+              "g": 1711.86
+            }
+          ]
+        },
+        {
+          "programa": "Temas Diversos",
+          "periodo": "05/01 a 04/02",
+          "fonte": "Planilha de controle",
+          "campanhas": [
+            {
+              "n": "Google Ads, Rede de Display",
+              "p": "Google",
+              "g": 1213.32
+            },
+            {
+              "n": "YouTube, video views",
+              "p": "Google",
+              "g": 3631.43
+            },
+            {
+              "n": "Meta Ads, engajamento e impressões",
+              "p": "Meta",
+              "g": 3758.52
+            },
+            {
+              "n": "Meta Ads, visitas ao perfil",
+              "p": "Meta",
+              "g": 2001.06
+            },
+            {
+              "n": "TikTok",
+              "p": "TikTok",
+              "g": 7357.12
+            }
+          ]
+        },
+        {
+          "programa": "Temas Diversos",
+          "periodo": "05/02 a 06/03",
+          "fonte": "Planilha de controle",
+          "campanhas": [
+            {
+              "n": "Google Ads, Rede de Display",
+              "p": "Google",
+              "g": 591.56
+            },
+            {
+              "n": "YouTube, video views",
+              "p": "Google",
+              "g": 6552.22
+            },
+            {
+              "n": "Meta Ads, engajamento e impressões",
+              "p": "Meta",
+              "g": 3407.33
+            },
+            {
+              "n": "Meta Ads, visitas ao perfil",
+              "p": "Meta",
+              "g": 2018.36
+            },
+            {
+              "n": "TikTok",
+              "p": "TikTok",
+              "g": 2399.45
+            }
+          ]
+        },
+        {
+          "programa": "Temas Diversos",
+          "periodo": "07/03 a 05/04",
+          "fonte": "Planilha de controle",
+          "campanhas": [
+            {
+              "n": "Temas Diversos, visitas ao perfil",
+              "p": "Meta",
+              "g": 2004.16
+            },
+            {
+              "n": "Temas Diversos, alcance NEW",
+              "p": "Meta",
+              "g": 4555.74
+            },
+            {
+              "n": "Temas Diversos, engajamento NEW",
+              "p": "Meta",
+              "g": 1162.96
+            },
+            {
+              "n": "YouTube #Sequencial, Temas Diversos",
+              "p": "Google",
+              "g": 2401.1
+            },
+            {
+              "n": "YouTube #In Stream, Temas Diversos",
+              "p": "Google",
+              "g": 3615.3
+            },
+            {
+              "n": "Rede de Display, Temas Diversos",
+              "p": "Google",
+              "g": 1088.06
+            },
+            {
+              "n": "TikTok, Temas Diversos NEW",
+              "p": "TikTok",
+              "g": 1761.38
+            },
+            {
+              "n": "TikTok, Temas Diversos V2",
+              "p": "TikTok",
+              "g": 510.85
+            }
+          ]
+        },
+        {
+          "programa": "Primeira Infância",
+          "periodo": "07/03 a 05/04",
+          "fonte": "Planilha de controle",
+          "campanhas": [
+            {
+              "n": "Meta, entregas Primeira Infância, alcance (07 a 20/03)",
+              "p": "Meta",
+              "g": 1649.88
+            },
+            {
+              "n": "Google, Display",
+              "p": "Google",
+              "g": 200.08
+            },
+            {
+              "n": "Google, YouTube",
+              "p": "Google",
+              "g": 1384.55
+            },
+            {
+              "n": "TikTok, Primeira Infância e V2",
+              "p": "TikTok",
+              "g": 806.44
+            }
+          ]
+        },
+        {
+          "programa": "Temas Diversos",
+          "periodo": "06/04 a 05/05",
+          "fonte": "Planilha de controle",
+          "campanhas": [
+            {
+              "n": "Temas Diversos, visitas ao perfil",
+              "p": "Meta",
+              "g": 3077.0
+            },
+            {
+              "n": "Temas Diversos, alcance NEW",
+              "p": "Meta",
+              "g": 2834.4
+            },
+            {
+              "n": "Temas Diversos, engajamento NEW",
+              "p": "Meta",
+              "g": 2099.76
+            },
+            {
+              "n": "YouTube #Sequencial, Temas Diversos",
+              "p": "Google",
+              "g": 2733.76
+            },
+            {
+              "n": "YouTube #In Stream, Temas Diversos",
+              "p": "Google",
+              "g": 1951.19
+            },
+            {
+              "n": "Rede de Display, Temas Diversos",
+              "p": "Google",
+              "g": 1027.4
+            },
+            {
+              "n": "TikTok, Temas Diversos",
+              "p": "TikTok",
+              "g": 786.49
+            }
+          ]
+        },
+        {
+          "programa": "Temas Diversos",
+          "periodo": "06/05 a 05/06",
+          "fonte": "Planilha de controle",
+          "campanhas": [
+            {
+              "n": "Meta, total da conta na janela",
+              "p": "Meta",
+              "g": 9259.3
+            },
+            {
+              "n": "Google, total da conta na janela",
+              "p": "Google",
+              "g": 5332.33
+            },
+            {
+              "n": "TikTok, Temas Diversos",
+              "p": "TikTok",
+              "g": 45.18
+            }
+          ],
+          "nota": "Meta e Google vêm como total da conta na janela, sem separar por campanha."
+        },
+        {
+          "programa": "Temas Diversos",
+          "periodo": "08/06 a 06/07",
+          "fonte": "API das plataformas",
+          "campanhas": [
+            {
+              "n": "CPE Temas",
+              "p": "Meta",
+              "g": 3147.6
+            },
+            {
+              "n": "Visitas ao Perfil",
+              "p": "Meta",
+              "g": 3143.19
+            },
+            {
+              "n": "Alcance Temas Diversos",
+              "p": "Meta",
+              "g": 2956.85
+            },
+            {
+              "n": "Display Temas Diversos",
+              "p": "Google",
+              "g": 1158.19
+            },
+            {
+              "n": "YouTube In-Stream Temas Diversos",
+              "p": "Google",
+              "g": 2381.07
+            },
+            {
+              "n": "YouTube Sequencial Temas Diversos",
+              "p": "Google",
+              "g": 2804.97
+            },
+            {
+              "n": "TikTok 08.06 a 07.07 Temas Diversos",
+              "p": "TikTok",
+              "g": 1848.12
+            }
+          ]
+        },
+        {
+          "programa": "Campinas 252 Anos (a confirmar se entra em Temas Diversos)",
+          "periodo": "08/06 a 06/07",
+          "fonte": "API das plataformas",
+          "campanhas": [
+            {
+              "n": "Campinas 252 Anos, alcance",
+              "p": "Meta",
+              "g": 794.57
+            },
+            {
+              "n": "YouTube 252 Anos de Campinas",
+              "p": "Google",
+              "g": 1322.62
+            },
+            {
+              "n": "Campanha cancelada 11",
+              "p": "Google",
+              "g": 0.39
+            },
+            {
+              "n": "TikTok 29.06 a 14.07 252 Anos",
+              "p": "TikTok",
+              "g": 479.77
+            }
+          ]
+        },
+        {
+          "programa": "Temas Diversos",
+          "periodo": "07/07 a 05/08",
+          "fonte": "API das plataformas",
+          "campanhas": [
+            {
+              "n": "CPE Temas",
+              "p": "Meta",
+              "g": 4343.98
+            },
+            {
+              "n": "Visitas ao Perfil",
+              "p": "Meta",
+              "g": 3008.99
+            },
+            {
+              "n": "Alcance Temas Diversos",
+              "p": "Meta",
+              "g": 2855.5
+            },
+            {
+              "n": "Display Temas Diversos",
+              "p": "Google",
+              "g": 1376.7
+            },
+            {
+              "n": "YouTube In-Stream Temas Diversos",
+              "p": "Google",
+              "g": 2518.84
+            },
+            {
+              "n": "YouTube Sequencial Temas Diversos",
+              "p": "Google",
+              "g": 1839.67
+            },
+            {
+              "n": "TikTok 07.07 a 05.08 Temas Diversos",
+              "p": "TikTok",
+              "g": 1678.02
+            }
+          ]
+        },
+        {
+          "programa": "Campinas 252 Anos (a confirmar se entra em Temas Diversos)",
+          "periodo": "07/07 a 05/08",
+          "fonte": "API das plataformas",
+          "campanhas": [
+            {
+              "n": "Campinas 252 Anos, alcance",
+              "p": "Meta",
+              "g": 751.59
+            },
+            {
+              "n": "YouTube 252 Anos de Campinas",
+              "p": "Google",
+              "g": 2006.75
+            },
+            {
+              "n": "TikTok 252 Anos",
+              "p": "TikTok",
+              "g": 968.18
+            }
+          ]
+        },
+        {
+          "programa": "Temas Diversos",
+          "periodo": "06/08 a 07/09",
+          "fonte": "API das plataformas",
+          "campanhas": [
+            {
+              "n": "CPM Temas",
+              "p": "Meta",
+              "g": 3418.05
+            },
+            {
+              "n": "CPE Temas",
+              "p": "Meta",
+              "g": 2923.01
+            },
+            {
+              "n": "Visitas ao Perfil",
+              "p": "Meta",
+              "g": 3180.21
+            },
+            {
+              "n": "Display Temas Diversos",
+              "p": "Google",
+              "g": 1201.69
+            },
+            {
+              "n": "YouTube In-Stream Temas Diversos",
+              "p": "Google",
+              "g": 4146.88
+            },
+            {
+              "n": "YouTube Sequencial Temas Diversos",
+              "p": "Google",
+              "g": 1337.87
+            },
+            {
+              "n": "TikTok 06.08 a 07.09 Temas Diversos",
+              "p": "TikTok",
+              "g": 1800.0
+            }
+          ]
+        },
+        {
+          "programa": "Temas Diversos",
+          "periodo": "08/09 a 07/10",
+          "fonte": "API das plataformas",
+          "campanhas": [
+            {
+              "n": "CPM Temas",
+              "p": "Meta",
+              "g": 5256.09
+            },
+            {
+              "n": "CPE Temas",
+              "p": "Meta",
+              "g": 3933.94
+            },
+            {
+              "n": "Visitas ao Perfil",
+              "p": "Meta",
+              "g": 3215.89
+            },
+            {
+              "n": "Display Temas Diversos",
+              "p": "Google",
+              "g": 1217.37
+            },
+            {
+              "n": "YouTube In-Stream Temas Diversos",
+              "p": "Google",
+              "g": 4377.4
+            },
+            {
+              "n": "YouTube Sequencial Temas Diversos",
+              "p": "Google",
+              "g": 925.1
+            },
+            {
+              "n": "TikTok 08.09 a 07.10 Temas Diversos",
+              "p": "TikTok",
+              "g": 1399.73
+            },
+            {
+              "n": "TikTok 08.09 a 07.10 Temas Diversos v3",
+              "p": "TikTok",
+              "g": 1299.61
+            },
+            {
+              "n": "TikTok 08.09 a 07.10 Temas Diversos v2",
+              "p": "TikTok",
+              "g": 0.04
+            }
+          ]
+        },
+        {
+          "programa": "Concilia / Refis",
+          "periodo": "14/09 a 30/09",
+          "fonte": "API das plataformas",
+          "campanhas": [
+            {
+              "n": "CPV diário",
+              "p": "Meta",
+              "g": 1339.54
+            },
+            {
+              "n": "CPV RMKT diário",
+              "p": "Meta",
+              "g": 1359.07
+            },
+            {
+              "n": "CPE diário",
+              "p": "Meta",
+              "g": 4216.74
+            },
+            {
+              "n": "CPV RMKT orçamento total",
+              "p": "Meta",
+              "g": 569.0
+            },
+            {
+              "n": "CPV orçamento total",
+              "p": "Meta",
+              "g": 549.92
+            },
+            {
+              "n": "CPM RMKT orçamento total",
+              "p": "Meta",
+              "g": 10.58
+            },
+            {
+              "n": "CPE orçamento total",
+              "p": "Meta",
+              "g": 1006.61
+            },
+            {
+              "n": "CPM orçamento total",
+              "p": "Meta",
+              "g": 6.28
+            },
+            {
+              "n": "YouTube In-Stream Concilia",
+              "p": "Google",
+              "g": 350.0
+            },
+            {
+              "n": "YouTube Bumper Concilia",
+              "p": "Google",
+              "g": 180.56
+            },
+            {
+              "n": "YouTube In-Stream Concilia v3",
+              "p": "Google",
+              "g": 334.74
+            },
+            {
+              "n": "YouTube Bumper Concilia v3",
+              "p": "Google",
+              "g": 39.3
+            },
+            {
+              "n": "Campanhas canceladas (3)",
+              "p": "Google",
+              "g": 5.62
+            }
+          ]
+        },
+        {
+          "programa": "Segurança Viária",
+          "periodo": "25/09 a 14/10",
+          "fonte": "API das plataformas",
+          "campanhas": [
+            {
+              "n": "CPE ABO",
+              "p": "Meta",
+              "g": 6567.53
+            },
+            {
+              "n": "CPM ABO",
+              "p": "Meta",
+              "g": 1673.45
+            },
+            {
+              "n": "CPE orçamento diário",
+              "p": "Meta",
+              "g": 253.07
+            },
+            {
+              "n": "CPM orçamento diário",
+              "p": "Meta",
+              "g": 284.2
+            },
+            {
+              "n": "CPM Rede de Display",
+              "p": "Google",
+              "g": 1560.64
+            },
+            {
+              "n": "Demand Gen",
+              "p": "Google",
+              "g": 912.23
+            },
+            {
+              "n": "CPV YouTube In-Stream",
+              "p": "Google",
+              "g": 2318.13
+            }
+          ]
+        },
+        {
+          "programa": "Infância em Primeiro Lugar",
+          "periodo": "05/10 a 28/10",
+          "fonte": "API das plataformas",
+          "campanhas": [
+            {
+              "n": "CPM orçamento total",
+              "p": "Meta",
+              "g": 1117.28
+            },
+            {
+              "n": "Rede de Display",
+              "p": "Google",
+              "g": 238.86
+            },
+            {
+              "n": "YouTube",
+              "p": "Google",
+              "g": 2404.55
+            },
+            {
+              "n": "TikTok CPM",
+              "p": "TikTok",
+              "g": 599.95
+            }
+          ]
+        },
+        {
+          "programa": "Temas Diversos",
+          "periodo": "08/10 a 08/11 (gasto até 28/10)",
+          "fonte": "API das plataformas",
+          "campanhas": [
+            {
+              "n": "CPM Temas",
+              "p": "Meta",
+              "g": 1351.92
+            },
+            {
+              "n": "CPE Temas",
+              "p": "Meta",
+              "g": 1118.77
+            },
+            {
+              "n": "Visitas ao Perfil",
+              "p": "Meta",
+              "g": 1613.92
+            },
+            {
+              "n": "YouTube In-Stream NEW",
+              "p": "Google",
+              "g": 3622.45
+            },
+            {
+              "n": "YouTube Sequencial NEW",
+              "p": "Google",
+              "g": 963.52
+            },
+            {
+              "n": "Rede de Display NEW",
+              "p": "Google",
+              "g": 1012.59
+            },
+            {
+              "n": "Display Chega Junto Ouro Verde",
+              "p": "Google",
+              "g": 30.0
+            },
+            {
+              "n": "Display antiga",
+              "p": "Google",
+              "g": 48.27
+            },
+            {
+              "n": "YouTube In-Stream antiga",
+              "p": "Google",
+              "g": 15.08
+            },
+            {
+              "n": "YouTube Sequencial antiga",
+              "p": "Google",
+              "g": 0.58
+            },
+            {
+              "n": "TikTok CPM diário",
+              "p": "TikTok",
+              "g": 1969.75
+            }
+          ],
+          "nota": "Meta de Temas Diversos sem gasto em 27 e 28/10."
+        },
+        {
+          "programa": "Temas Diversos",
+          "periodo": "09/11 a 08/12",
+          "fonte": "API das plataformas",
+          "campanhas": [],
+          "nota": "Ainda sem gasto."
+        }
+      ]
+    },
+    {
+      "cliente": "Hortolândia",
+      "linhas": [
+        {
+          "programa": "Campanhas Diversas (PI 016396)",
+          "periodo": "13/02 a 05/04",
+          "fonte": "Planilha de controle",
+          "campanhas": [
+            {
+              "n": "IPTU, CPM 700 mil",
+              "p": "Meta",
+              "g": 2471.38
+            },
+            {
+              "n": "Mês das Mulheres, CPV",
+              "p": "Meta",
+              "g": 302.54
+            },
+            {
+              "n": "Vozes da MPB, CPM",
+              "p": "Meta",
+              "g": 688.38
+            },
+            {
+              "n": "Prorrogação IPTU, CPM",
+              "p": "Meta",
+              "g": 176.92
+            },
+            {
+              "n": "Homens contra a violência à mulher, CPV",
+              "p": "Meta",
+              "g": 1949.71
+            }
+          ]
+        },
+        {
+          "programa": "Volta às Aulas (PI 016782)",
+          "periodo": "05/03 a 04/04",
+          "fonte": "Planilha de controle",
+          "campanhas": [
+            {
+              "n": "Educação Forte, CPM",
+              "p": "Meta",
+              "g": 257.47
+            },
+            {
+              "n": "Educação Forte, CPV",
+              "p": "Meta",
+              "g": 1286.49
+            },
+            {
+              "n": "YouTube Educação Forte",
+              "p": "Google",
+              "g": 394.0
+            }
+          ],
+          "nota": "Período do Google inferido."
+        },
+        {
+          "programa": "Temas Diversos (PI 016783)",
+          "periodo": "06/04 a 15/04",
+          "fonte": "Planilha de controle",
+          "campanhas": [
+            {
+              "n": "Cuidar das pessoas, CPM",
+              "p": "Meta",
+              "g": 172.68
+            },
+            {
+              "n": "Você tem acesso a isso, MEI, CPM",
+              "p": "Meta",
+              "g": 103.91
+            },
+            {
+              "n": "As obras seguem avançando, CPM",
+              "p": "Meta",
+              "g": 107.03
+            }
+          ]
+        },
+        {
+          "programa": "Inauguração Viaduto",
+          "periodo": "10/04 a 03/05",
+          "fonte": "Planilha de controle",
+          "campanhas": [
+            {
+              "n": "Viaduto Vila Real, CPV",
+              "p": "Meta",
+              "g": 604.02
+            },
+            {
+              "n": "Viaduto Vila Real, CPM",
+              "p": "Meta",
+              "g": 574.96
+            },
+            {
+              "n": "Search especial, Viaduto",
+              "p": "Google",
+              "g": 164.42
+            },
+            {
+              "n": "Search, Viaduto alternativo",
+              "p": "Google",
+              "g": 156.67
+            },
+            {
+              "n": "Search, Viaduto alternativo 2 IG",
+              "p": "Google",
+              "g": 162.43
+            },
+            {
+              "n": "YouTube Viaduto (vai até 19/05)",
+              "p": "Google",
+              "g": 2337.12
+            }
+          ],
+          "nota": "Período do Google inferido."
+        },
+        {
+          "programa": "Saúde",
+          "periodo": "30/04 a 19/05",
+          "fonte": "Planilha de controle",
+          "campanhas": [
+            {
+              "n": "Campanha Saúde, CPM",
+              "p": "Meta",
+              "g": 419.2
+            },
+            {
+              "n": "Campanha Saúde, CPV",
+              "p": "Meta",
+              "g": 911.65
+            },
+            {
+              "n": "Campanha Saúde YouTube",
+              "p": "Google",
+              "g": 1001.07
+            },
+            {
+              "n": "Campanha Saúde Display, regiões",
+              "p": "Google",
+              "g": 80.08
+            },
+            {
+              "n": "Campanha Saúde Display",
+              "p": "Google",
+              "g": 250.28
+            }
+          ],
+          "nota": "Período do Google inferido."
+        },
+        {
+          "programa": "Operação GM (PI 017331)",
+          "periodo": "14/05 a 22/05",
+          "fonte": "Planilha de controle",
+          "campanhas": [
+            {
+              "n": "Operação GM, CPM",
+              "p": "Meta",
+              "g": 1000.54
+            }
+          ]
+        },
+        {
+          "programa": "Aniversário da Cidade (PI 017330)",
+          "periodo": "28/04 a 08/06",
+          "fonte": "Planilha de controle",
+          "campanhas": [
+            {
+              "n": "Aniversário, CPV",
+              "p": "Meta",
+              "g": 11750.54
+            },
+            {
+              "n": "Aniversário, CPM",
+              "p": "Meta",
+              "g": 1931.29
+            },
+            {
+              "n": "Aniversário CPV YouTube 2",
+              "p": "Google",
+              "g": 2859.19
+            },
+            {
+              "n": "Aniversário CPM Display",
+              "p": "Google",
+              "g": 109.81
+            },
+            {
+              "n": "Aniversário, resíduos Google",
+              "p": "Google",
+              "g": 0.2
+            },
+            {
+              "n": "Aniversário da Cidade, Spotify",
+              "p": "Outras",
+              "g": 404.53
+            }
+          ]
+        },
+        {
+          "programa": "Campanhas Diversas (PI 017611)",
+          "periodo": "08/06 a 16/06",
+          "fonte": "Planilha de controle",
+          "campanhas": [
+            {
+              "n": "Fun Fest, carrossel, CPM",
+              "p": "Meta",
+              "g": 838.91
+            },
+            {
+              "n": "Festival Pé de Serra, carrossel, CPM",
+              "p": "Meta",
+              "g": 1081.71
+            },
+            {
+              "n": "Festival Pé de Serra, vídeo, CPV",
+              "p": "Meta",
+              "g": 1213.44
+            },
+            {
+              "n": "Display IPTU 2026, 2ª versão",
+              "p": "Google",
+              "g": 832.46
+            },
+            {
+              "n": "Fun Fest, TikTok",
+              "p": "TikTok",
+              "g": 107.02
+            },
+            {
+              "n": "Festival Pé de Serra, TikTok",
+              "p": "TikTok",
+              "g": 120.61
+            }
+          ]
+        },
+        {
+          "programa": "Rede de Atendimento e outros, sem PI",
+          "periodo": "03/03 a 19/05",
+          "fonte": "Planilha de controle",
+          "campanhas": [
+            {
+              "n": "Rede de Atendimento, YouTube",
+              "p": "Google",
+              "g": 814.13
+            },
+            {
+              "n": "Rede de Atendimento, Display",
+              "p": "Google",
+              "g": 309.92
+            },
+            {
+              "n": "Esquina Comunicação Digital, 7 anúncios TikTok",
+              "p": "TikTok",
+              "g": 652.5
+            },
+            {
+              "n": "Reconhecimento TikTok",
+              "p": "TikTok",
+              "g": 1063.18
+            }
+          ]
+        },
+        {
+          "programa": "Eventos de julho",
+          "periodo": "20/07 a 29/07",
+          "fonte": "Planilha de controle",
+          "campanhas": [
+            {
+              "n": "Prolongamento da Avenida Panaíno",
+              "p": "Meta",
+              "g": 292.59
+            },
+            {
+              "n": "Prolongamento da Avenida Panaíno",
+              "p": "TikTok",
+              "g": 309.25
+            },
+            {
+              "n": "Show de Diogo Nogueira",
+              "p": "Meta",
+              "g": 7936.43
+            },
+            {
+              "n": "Planeta Rock",
+              "p": "Meta",
+              "g": 135.06
+            },
+            {
+              "n": "Novo Pátio",
+              "p": "Meta",
+              "g": 583.47
+            },
+            {
+              "n": "Inauguração Campo da Mina",
+              "p": "Meta",
+              "g": 1203.9
+            },
+            {
+              "n": "Inauguração Campo da Mina",
+              "p": "TikTok",
+              "g": 162.0
+            },
+            {
+              "n": "Encontro Mensal de Emprego",
+              "p": "Meta",
+              "g": 2697.66
+            },
+            {
+              "n": "Festival Internacional de Música",
+              "p": "Meta",
+              "g": 348.28
+            },
+            {
+              "n": "Festival Internacional de Música",
+              "p": "TikTok",
+              "g": 302.37
+            }
+          ]
+        },
+        {
+          "programa": "Campanhas de agosto",
+          "periodo": "01/08 a 28/08",
+          "fonte": "Planilha de controle",
+          "campanhas": [
+            {
+              "n": "Planeta Rock",
+              "p": "Meta",
+              "g": 303.94
+            },
+            {
+              "n": "Planeta Rock",
+              "p": "Google",
+              "g": 530.13
+            },
+            {
+              "n": "Planeta Rock",
+              "p": "TikTok",
+              "g": 59.32
+            },
+            {
+              "n": "Semana Cultural",
+              "p": "Meta",
+              "g": 393.4
+            },
+            {
+              "n": "Semana Cultural",
+              "p": "TikTok",
+              "g": 108.2
+            },
+            {
+              "n": "Segurança",
+              "p": "Meta",
+              "g": 2015.35
+            },
+            {
+              "n": "Segurança, bairros",
+              "p": "Meta",
+              "g": 684.26
+            },
+            {
+              "n": "Agosto Lilás",
+              "p": "Meta",
+              "g": 449.47
+            },
+            {
+              "n": "Agosto Lilás",
+              "p": "Google",
+              "g": 252.71
+            },
+            {
+              "n": "Nova data Show Diogo Nogueira",
+              "p": "Meta",
+              "g": 2447.81
+            },
+            {
+              "n": "Asfalto, infraestrutura",
+              "p": "Meta",
+              "g": 291.77
+            }
+          ]
+        },
+        {
+          "programa": "Operação GM",
+          "periodo": "09/09 a 29/09",
+          "fonte": "API das plataformas",
+          "campanhas": [
+            {
+              "n": "CPM Total",
+              "p": "Meta",
+              "g": 220.0
+            },
+            {
+              "n": "CPV Total",
+              "p": "Meta",
+              "g": 119.89
+            },
+            {
+              "n": "CPE Total",
+              "p": "Meta",
+              "g": 264.58
+            },
+            {
+              "n": "CPE Diário",
+              "p": "Meta",
+              "g": 1039.62
+            },
+            {
+              "n": "CPV Diário",
+              "p": "Meta",
+              "g": 1254.75
+            },
+            {
+              "n": "CPM Diário",
+              "p": "Meta",
+              "g": 392.46
+            },
+            {
+              "n": "YouTube CPV",
+              "p": "Google",
+              "g": 2468.91
+            }
+          ]
+        },
+        {
+          "programa": "Sumarezinho",
+          "periodo": "09/09 a 29/09",
+          "fonte": "API das plataformas",
+          "campanhas": [
+            {
+              "n": "CPV Total",
+              "p": "Meta",
+              "g": 79.33
+            },
+            {
+              "n": "CPM Total",
+              "p": "Meta",
+              "g": 116.28
+            },
+            {
+              "n": "CPE Total",
+              "p": "Meta",
+              "g": 115.92
+            },
+            {
+              "n": "CPE Diário",
+              "p": "Meta",
+              "g": 132.69
+            },
+            {
+              "n": "CPV Diário",
+              "p": "Meta",
+              "g": 137.57
+            },
+            {
+              "n": "CPM Diário",
+              "p": "Meta",
+              "g": 125.06
+            },
+            {
+              "n": "YouTube CPV",
+              "p": "Google",
+              "g": 1494.72
+            },
+            {
+              "n": "YouTube CPV v2",
+              "p": "Google",
+              "g": 32.54
+            }
+          ]
+        },
+        {
+          "programa": "SP Por Todas",
+          "periodo": "18/09 a 22/09",
+          "fonte": "API das plataformas",
+          "campanhas": [
+            {
+              "n": "CPM Total",
+              "p": "Meta",
+              "g": 389.92
+            },
+            {
+              "n": "CPE Total",
+              "p": "Meta",
+              "g": 215.96
+            },
+            {
+              "n": "CPE Total v2",
+              "p": "Meta",
+              "g": 163.62
+            },
+            {
+              "n": "CPM Total v2",
+              "p": "Meta",
+              "g": 699.87
+            },
+            {
+              "n": "Trend da Vovó, TikTok",
+              "p": "TikTok",
+              "g": 204.75
+            }
+          ]
+        },
+        {
+          "programa": "Saúde Mental",
+          "periodo": "24/09 a 29/09",
+          "fonte": "API das plataformas",
+          "campanhas": [
+            {
+              "n": "CPV Total",
+              "p": "Meta",
+              "g": 508.61
+            },
+            {
+              "n": "CPV Diário",
+              "p": "Meta",
+              "g": 1639.1
+            },
+            {
+              "n": "CPE Total",
+              "p": "Meta",
+              "g": 370.53
+            },
+            {
+              "n": "CPE Diário",
+              "p": "Meta",
+              "g": 779.42
+            },
+            {
+              "n": "CPM Total",
+              "p": "Meta",
+              "g": 245.99
+            },
+            {
+              "n": "CPM Diário",
+              "p": "Meta",
+              "g": 952.96
+            },
+            {
+              "n": "YouTube Saúde Mental",
+              "p": "Google",
+              "g": 2268.44
+            }
+          ]
+        },
+        {
+          "programa": "Comércio Local Dia das Crianças",
+          "periodo": "06/10 a 22/10",
+          "fonte": "API das plataformas",
+          "campanhas": [
+            {
+              "n": "CPM Total",
+              "p": "Meta",
+              "g": 148.25
+            },
+            {
+              "n": "CPM Diário",
+              "p": "Meta",
+              "g": 324.06
+            },
+            {
+              "n": "CPE Total",
+              "p": "Meta",
+              "g": 149.63
+            },
+            {
+              "n": "CPE Diário",
+              "p": "Meta",
+              "g": 202.3
+            },
+            {
+              "n": "CPV Total",
+              "p": "Meta",
+              "g": 82.44
+            },
+            {
+              "n": "CPV Diário",
+              "p": "Meta",
+              "g": 213.53
+            }
+          ]
+        },
+        {
+          "programa": "Prestação de Contas",
+          "periodo": "06/10 a 29/10",
+          "fonte": "API das plataformas",
+          "campanhas": [
+            {
+              "n": "CPM Total",
+              "p": "Meta",
+              "g": 172.53
+            },
+            {
+              "n": "CPM Diário",
+              "p": "Meta",
+              "g": 320.64
+            },
+            {
+              "n": "CPE Total",
+              "p": "Meta",
+              "g": 18.21
+            },
+            {
+              "n": "CPE Diário",
+              "p": "Meta",
+              "g": 203.63
+            },
+            {
+              "n": "CPV Total",
+              "p": "Meta",
+              "g": 86.43
+            },
+            {
+              "n": "CPV Diário",
+              "p": "Meta",
+              "g": 213.99
+            }
+          ]
+        },
+        {
+          "programa": "Giro Feirão de Emprego",
+          "periodo": "07/10 a 29/10",
+          "fonte": "API das plataformas",
+          "campanhas": [
+            {
+              "n": "CPM Total",
+              "p": "Meta",
+              "g": 432.75
+            },
+            {
+              "n": "CPM Diário",
+              "p": "Meta",
+              "g": 191.58
+            },
+            {
+              "n": "CPE Total",
+              "p": "Meta",
+              "g": 835.93
+            },
+            {
+              "n": "CPE Diário",
+              "p": "Meta",
+              "g": 124.83
+            }
+          ]
+        },
+        {
+          "programa": "Serviços",
+          "periodo": "07/10 a 29/10",
+          "fonte": "API das plataformas",
+          "campanhas": [
+            {
+              "n": "CPM Total",
+              "p": "Meta",
+              "g": 318.07
+            },
+            {
+              "n": "CPM Diário",
+              "p": "Meta",
+              "g": 134.21
+            },
+            {
+              "n": "CPE Total",
+              "p": "Meta",
+              "g": 240.96
+            },
+            {
+              "n": "CPE Diário",
+              "p": "Meta",
+              "g": 98.1
+            },
+            {
+              "n": "CPV Total",
+              "p": "Meta",
+              "g": 263.18
+            },
+            {
+              "n": "CPV Diário",
+              "p": "Meta",
+              "g": 221.13
+            }
+          ]
+        },
+        {
+          "programa": "Negocia",
+          "periodo": "16/10 a 29/10",
+          "fonte": "API das plataformas",
+          "campanhas": [
+            {
+              "n": "CPM Total",
+              "p": "Meta",
+              "g": 304.77
+            },
+            {
+              "n": "CPM Diário",
+              "p": "Meta",
+              "g": 231.64
+            },
+            {
+              "n": "CPE Total",
+              "p": "Meta",
+              "g": 348.66
+            },
+            {
+              "n": "CPE Diário",
+              "p": "Meta",
+              "g": 249.55
+            },
+            {
+              "n": "CPV Total",
+              "p": "Meta",
+              "g": 472.8
+            },
+            {
+              "n": "CPV Diário",
+              "p": "Meta",
+              "g": 365.17
+            }
+          ]
+        },
+        {
+          "programa": "Câncer de Mama",
+          "periodo": "26/10 a 29/10",
+          "fonte": "API das plataformas",
+          "campanhas": [
+            {
+              "n": "CPM Total",
+              "p": "Meta",
+              "g": 103.63
+            },
+            {
+              "n": "CPM Diário",
+              "p": "Meta",
+              "g": 139.84
+            },
+            {
+              "n": "CPV Total",
+              "p": "Meta",
+              "g": 74.87
+            },
+            {
+              "n": "CPV Diário",
+              "p": "Meta",
+              "g": 168.43
+            },
+            {
+              "n": "TikTok CPV Total",
+              "p": "TikTok",
+              "g": 32.67
+            }
+          ],
+          "nota": "Gasto até 28/10."
+        }
+      ]
+    },
+    {
+      "cliente": "Americana",
+      "linhas": [
+        {
+          "programa": "Temas Diversos, sem PP",
+          "periodo": "07/01 a 10/02 (e contínuas)",
+          "fonte": "Planilha de controle",
+          "campanhas": [
+            {
+              "n": "Temas Diversos, reconhecimento, CPM",
+              "p": "Meta",
+              "g": 497.5
+            },
+            {
+              "n": "Visita ao Perfil, tráfego, CPM",
+              "p": "Meta",
+              "g": 1277.6
+            },
+            {
+              "n": "Geolocalizado, CPM",
+              "p": "Meta",
+              "g": 352.17
+            },
+            {
+              "n": "Clusters, CPM",
+              "p": "Meta",
+              "g": 2298.95
+            },
+            {
+              "n": "Remarketing, CPM",
+              "p": "Meta",
+              "g": 232.64
+            }
+          ],
+          "nota": "Valores de janeiro e fevereiro sem PP correspondente."
+        },
+        {
+          "programa": "Temas Diversos (PP 5430)",
+          "periodo": "28/03 a 27/04",
+          "fonte": "Planilha de controle",
+          "campanhas": [
+            {
+              "n": "Geolocalizado, CPM",
+              "p": "Meta",
+              "g": 613.8
+            },
+            {
+              "n": "Clusters, CPM",
+              "p": "Meta",
+              "g": 1124.7
+            },
+            {
+              "n": "Google",
+              "p": "Google",
+              "g": 0.0
+            }
+          ]
+        },
+        {
+          "programa": "Temas Diversos (PP 5481)",
+          "periodo": "28/04 a 27/05",
+          "fonte": "Planilha de controle",
+          "campanhas": [
+            {
+              "n": "Geolocalizado, CPM",
+              "p": "Meta",
+              "g": 266.49
+            },
+            {
+              "n": "Clusters, CPM",
+              "p": "Meta",
+              "g": 1391.72
+            },
+            {
+              "n": "Remarketing, CPM",
+              "p": "Meta",
+              "g": 731.85
+            }
+          ]
+        },
+        {
+          "programa": "Rock Day (PP 5604)",
+          "periodo": "04/06 a 04/07",
+          "fonte": "Planilha de controle",
+          "campanhas": [
+            {
+              "n": "Rock Day, Clusters, CPM",
+              "p": "Meta",
+              "g": 1206.7
+            },
+            {
+              "n": "Rock Day, Bumper",
+              "p": "Google",
+              "g": 247.24
+            },
+            {
+              "n": "Rock Day, YouTube Outras Cidades",
+              "p": "Google",
+              "g": 51.24
+            },
+            {
+              "n": "Rock Day, Display",
+              "p": "Google",
+              "g": 42.74
+            },
+            {
+              "n": "Rock Day, Bumper V2",
+              "p": "Google",
+              "g": 1.57
+            },
+            {
+              "n": "Rock Day, YouTube Americana",
+              "p": "Google",
+              "g": 71.44
+            },
+            {
+              "n": "Rock Day, Spotify",
+              "p": "Outras",
+              "g": 499.69
+            }
+          ]
+        },
+        {
+          "programa": "Temas Diversos (PP 5594)",
+          "periodo": "04/06 a 04/07",
+          "fonte": "Planilha de controle",
+          "campanhas": [
+            {
+              "n": "Temas Diversos, Geolocalizado, CPM",
+              "p": "Meta",
+              "g": 299.71
+            }
+          ]
+        },
+        {
+          "programa": "Temas Diversos",
+          "periodo": "08/07 a 27/07",
+          "fonte": "API das plataformas",
+          "campanhas": [
+            {
+              "n": "Visita ao Perfil, CPM",
+              "p": "Meta",
+              "g": 1245.11
+            },
+            {
+              "n": "Geolocalizado, CPM",
+              "p": "Meta",
+              "g": 673.43
+            },
+            {
+              "n": "Clusters, CPM",
+              "p": "Meta",
+              "g": 526.61
+            },
+            {
+              "n": "Remarketing, CPM",
+              "p": "Meta",
+              "g": 174.53
+            }
+          ]
+        },
+        {
+          "programa": "Temas Diversos",
+          "periodo": "01/08 a 28/08",
+          "fonte": "API das plataformas",
+          "campanhas": [
+            {
+              "n": "Agosto, CPM Clusters",
+              "p": "Meta",
+              "g": 708.07
+            },
+            {
+              "n": "CPV Clusters",
+              "p": "Meta",
+              "g": 407.22
+            },
+            {
+              "n": "CPV RMKT Clusters",
+              "p": "Meta",
+              "g": 344.82
+            },
+            {
+              "n": "CPE Clusters",
+              "p": "Meta",
+              "g": 89.57
+            },
+            {
+              "n": "Aniversário, YouTube Americana",
+              "p": "Google",
+              "g": 5.68
+            }
+          ]
+        },
+        {
+          "programa": "Temas Diversos",
+          "periodo": "01/09 a 29/09",
+          "fonte": "API das plataformas",
+          "campanhas": [
+            {
+              "n": "CPE Orçamento Total",
+              "p": "Meta",
+              "g": 544.38
+            },
+            {
+              "n": "CPE Diário",
+              "p": "Meta",
+              "g": 197.67
+            },
+            {
+              "n": "CPE Clusters",
+              "p": "Meta",
+              "g": 141.27
+            },
+            {
+              "n": "CPM Clusters",
+              "p": "Meta",
+              "g": 143.49
+            },
+            {
+              "n": "CPV Clusters",
+              "p": "Meta",
+              "g": 142.88
+            },
+            {
+              "n": "CPM Orçamento Total",
+              "p": "Meta",
+              "g": 124.87
+            },
+            {
+              "n": "CPM Diário",
+              "p": "Meta",
+              "g": 65.23
+            },
+            {
+              "n": "CPV Orçamento Total",
+              "p": "Meta",
+              "g": 79.5
+            },
+            {
+              "n": "CPV Diário",
+              "p": "Meta",
+              "g": 78.52
+            },
+            {
+              "n": "YouTube Setembro Americana",
+              "p": "Google",
+              "g": 208.84
+            },
+            {
+              "n": "Aniversário, YouTube Americana (a confirmar programa)",
+              "p": "Google",
+              "g": 101.65
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cliente": "Bragança Paulista",
+      "linhas": [
+        {
+          "programa": "Temas Diversos",
+          "periodo": "12/06 a 03/07",
+          "fonte": "API das plataformas",
+          "campanhas": [
+            {
+              "n": "Bragança Paulista, reconhecimento, CPM (conta Esquina Geral)",
+              "p": "Meta",
+              "g": 872.51
+            }
+          ]
+        },
+        {
+          "programa": "Temas Diversos",
+          "periodo": "04/07 a 31/07",
+          "fonte": "API das plataformas",
+          "campanhas": [
+            {
+              "n": "Bragança Paulista, reconhecimento, CPM (conta Esquina Geral)",
+              "p": "Meta",
+              "g": 727.49
+            },
+            {
+              "n": "[BP] Reconhecimento",
+              "p": "Meta",
+              "g": 2.21
+            },
+            {
+              "n": "[BP] Engajamento",
+              "p": "Meta",
+              "g": 0.02
+            }
+          ]
+        },
+        {
+          "programa": "Contínuas [BP]",
+          "periodo": "01/09 a 30/09",
+          "fonte": "API das plataformas",
+          "campanhas": [
+            {
+              "n": "[BP] Reconhecimento",
+              "p": "Meta",
+              "g": 775.24
+            },
+            {
+              "n": "[BP] Engajamento",
+              "p": "Meta",
+              "g": 10253.85
+            },
+            {
+              "n": "[BP] Visitas ao Perfil",
+              "p": "Meta",
+              "g": 5602.87
+            }
+          ]
+        },
+        {
+          "programa": "Contínuas [BP] e Dia das Crianças",
+          "periodo": "01/10 a 28/10",
+          "fonte": "API das plataformas",
+          "campanhas": [
+            {
+              "n": "[BP] Reconhecimento",
+              "p": "Meta",
+              "g": 175.91
+            },
+            {
+              "n": "[BP] Engajamento",
+              "p": "Meta",
+              "g": 2260.54
+            },
+            {
+              "n": "[BP] Visitas ao Perfil",
+              "p": "Meta",
+              "g": 1084.55
+            },
+            {
+              "n": "Dia das Crianças, CPM (08 a 12/10)",
+              "p": "Meta",
+              "g": 164.08
+            }
+          ],
+          "nota": "Bragança não tem plano por linha."
+        }
+      ]
+    },
+    {
+      "cliente": "DAE Jundiaí",
+      "linhas": [
+        {
+          "programa": "Temas Diversos",
+          "periodo": "17/07 a 27/07",
+          "fonte": "API das plataformas",
+          "campanhas": [
+            {
+              "n": "DAE, reconhecimento, CPM",
+              "p": "Meta",
+              "g": 182.37
+            },
+            {
+              "n": "DAE, engajamento, CPE",
+              "p": "Meta",
+              "g": 120.36
+            }
+          ]
+        },
+        {
+          "programa": "Temas Diversos",
+          "periodo": "07/08 a 28/08",
+          "fonte": "API das plataformas",
+          "campanhas": [
+            {
+              "n": "CPM",
+              "p": "Meta",
+              "g": 485.25
+            },
+            {
+              "n": "CPE",
+              "p": "Meta",
+              "g": 395.41
+            },
+            {
+              "n": "CPC engajamento",
+              "p": "Meta",
+              "g": 306.69
+            },
+            {
+              "n": "CPV",
+              "p": "Meta",
+              "g": 167.02
+            }
+          ]
+        },
+        {
+          "programa": "Temas Diversos",
+          "periodo": "02/09 a 29/09",
+          "fonte": "API das plataformas",
+          "campanhas": [
+            {
+              "n": "CPE Diário",
+              "p": "Meta",
+              "g": 347.97
+            },
+            {
+              "n": "CPE Orçamento Total",
+              "p": "Meta",
+              "g": 223.38
+            },
+            {
+              "n": "CPC Diário",
+              "p": "Meta",
+              "g": 223.7
+            },
+            {
+              "n": "CPC Orçamento Total",
+              "p": "Meta",
+              "g": 200.48
+            },
+            {
+              "n": "CPM Orçamento Total",
+              "p": "Meta",
+              "g": 173.51
+            },
+            {
+              "n": "CPM Diário",
+              "p": "Meta",
+              "g": 138.73
+            },
+            {
+              "n": "CPV Orçamento Total",
+              "p": "Meta",
+              "g": 141.06
+            },
+            {
+              "n": "CPV Diário",
+              "p": "Meta",
+              "g": 83.85
+            },
+            {
+              "n": "YouTube DAE Temas Diversos",
+              "p": "Google",
+              "g": 316.05
+            }
+          ],
+          "nota": "As campanhas do Meta começaram em 02/09."
+        }
+      ]
+    },
+    {
+      "cliente": "Prefeitura de Jundiaí",
+      "linhas": [
+        {
+          "programa": "Temas Diversos",
+          "periodo": "04/08 a 31/08",
+          "fonte": "API das plataformas",
+          "campanhas": [
+            {
+              "n": "CPM",
+              "p": "Meta",
+              "g": 429.18
+            },
+            {
+              "n": "CPV",
+              "p": "Meta",
+              "g": 191.88
+            },
+            {
+              "n": "CPE",
+              "p": "Meta",
+              "g": 72.44
+            },
+            {
+              "n": "YouTube Prefeitura de Jundiaí Temas Diversos",
+              "p": "Google",
+              "g": 174.0
+            }
+          ]
+        },
+        {
+          "programa": "Temas Diversos",
+          "periodo": "01/09 a 29/09",
+          "fonte": "API das plataformas",
+          "campanhas": [
+            {
+              "n": "CPM Orçamento Total",
+              "p": "Meta",
+              "g": 207.88
+            },
+            {
+              "n": "CPM Diário",
+              "p": "Meta",
+              "g": 103.07
+            },
+            {
+              "n": "CPM Orçamento de Campanha",
+              "p": "Meta",
+              "g": 114.06
+            },
+            {
+              "n": "CPV Orçamento Total",
+              "p": "Meta",
+              "g": 69.19
+            },
+            {
+              "n": "CPV Diário",
+              "p": "Meta",
+              "g": 53.39
+            },
+            {
+              "n": "CPV Orçamento de Campanha",
+              "p": "Meta",
+              "g": 68.31
+            },
+            {
+              "n": "CPE Orçamento Total",
+              "p": "Meta",
+              "g": 54.16
+            },
+            {
+              "n": "CPE Diário",
+              "p": "Meta",
+              "g": 72.85
+            },
+            {
+              "n": "CPE Orçamento de Campanha",
+              "p": "Meta",
+              "g": 68.45
+            },
+            {
+              "n": "CPC Orçamento Total",
+              "p": "Meta",
+              "g": 45.19
+            },
+            {
+              "n": "CPC Diário",
+              "p": "Meta",
+              "g": 13.03
+            },
+            {
+              "n": "CPC v.1",
+              "p": "Meta",
+              "g": 36.39
+            },
+            {
+              "n": "CPC v3",
+              "p": "Meta",
+              "g": 62.11
+            },
+            {
+              "n": "YouTube Setembro",
+              "p": "Google",
+              "g": 535.53
+            }
+          ],
+          "nota": "A CPC v3 (R$62,11) está somada: é gasto real, mas não conta na apuração de entrega."
+        }
+      ]
+    }
+  ],
+  "nota_periodo": "Cada linha é um programa em um período, e ao abrir aparece o gasto de cada campanha. De dezembro a maio os valores vêm da planilha de controle (Esquina, Gastos, Controle de mídia); de junho a outubro vêm direto das APIs do Meta, Google e TikTok, até 28/10 (dia 28 parcial). As linhas de uma mesma prefeitura não se repetem entre si: cada campanha entra uma vez só. Bragança Paulista e Campinas não têm plano por linha. Em Hortolândia falta o levantamento de 17/06 a 19/07, e a planilha não tem Meta de Campinas antes de dezembro."
 }</script>
 <script>
 const D = JSON.parse(document.getElementById('dados').textContent);
@@ -1404,6 +3417,7 @@ document.getElementById('cancelar').onclick=()=>drop.hidden=true;
 document.getElementById('aplicar').onclick=()=>{preset=tp;if(tde>tate){const x=tde;tde=tate;tate=x;}de=tde;ate=tate;drop.hidden=true;render();};
 document.addEventListener('click',e=>{if(!drop.hidden&&!e.target.closest('.perwrap'))drop.hidden=true;});
 
+document.getElementById('notaPeriodo').textContent = D.nota_periodo;
 document.getElementById('rodape').innerHTML = D.nota +
   '<br>' + (D.previsao_regra||'') + '<br>Em setembro, a previsão é o orçamento total de cada campanha e, nas diárias, o gasto mais a diária vezes os dias que faltam.' +
   '<br>Atualizado em ' + new Date(D.atualizado).toLocaleDateString('pt-BR') + ' às ' +
@@ -1429,6 +3443,8 @@ function detalheHTML(c){
 }
 
 function render(){
+  pintaVista();
+  if(vista==='periodo'){renderPeriodo();return;}
   const iv=intervalo(); document.getElementById('plabel').textContent=iv.label;
   const ms=mesesNo(iv);
   const mesAberto = ms.length===1 && (D.meses.find(x=>x.id===ms[0])||{}).aberto;
@@ -1482,6 +3498,52 @@ function render(){
     b.onclick=()=>{ const i=+b.closest('tr').dataset.i; abertos.has(i)?abertos.delete(i):abertos.add(i); render(); };
   });
 }
+
+let vista='periodo', clienteSel='Todas';
+const abertosP = new Set();
+const PLAT=['Meta','Google','TikTok','Outras'];
+const somaPlat = (cs,p)=>cs.filter(k=>k.p===p).reduce((a,k)=>a+k.g,0);
+const somaL = l=>l.campanhas.reduce((a,k)=>a+k.g,0);
+function renderPeriodo(){
+  const P=D.periodos;
+  const lista = clienteSel==='Todas'?P:P.filter(c=>c.nome===clienteSel||c.cliente===clienteSel);
+  let tot={Meta:0,Google:0,TikTok:0,Outras:0},geral=0,nl=0;
+  lista.forEach(c=>c.linhas.forEach(l=>{nl++;PLAT.forEach(p=>{tot[p]+=somaPlat(l.campanhas,p);});geral+=somaL(l);}));
+  document.getElementById('plabel').textContent='';
+  document.getElementById('dica').textContent='Clique numa linha para ver o gasto de cada campanha';
+  document.getElementById('totais').innerHTML=`
+    <div class="kpi"><p class="l">Gasto nas linhas</p><p class="v">${brl(geral)}</p><p class="s">${nl} programas e períodos</p></div>
+    <div class="kpi"><p class="l">Meta Ads</p><p class="v">${brl(tot.Meta)}</p></div>
+    <div class="kpi"><p class="l">Google Ads</p><p class="v">${brl(tot.Google)}</p></div>
+    <div class="kpi"><p class="l">TikTok</p><p class="v">${brl(tot.TikTok)}</p>${tot.Outras?`<p class="s">mais ${brl(tot.Outras)} em outras mídias</p>`:''}</div>`;
+  const chips='<div class="chips">'+['Todas',...P.map(c=>c.cliente)].map(n=>`<button class="chip" data-c="${n}" data-on="${n===clienteSel?1:0}">${n}</button>`).join('')+'</div>';
+  const secs=lista.map(c=>{
+    const ct=c.linhas.reduce((a,l)=>a+somaL(l),0);
+    const rows=c.linhas.map((l,i)=>{
+      const key=c.cliente+'|'+i, open=abertosP.has(key);
+      const t=somaL(l);
+      const cell=p=>{const v=somaPlat(l.campanhas,p);return `<td class="num">${v?brl(v):'<span class="na"></span>'}</td>`;};
+      const det=open?`<tr class="dt"><td colspan="5"><div class="dtin">${l.nota?`<p class="nt">${l.nota}</p>`:''}
+        ${l.campanhas.length?`<table class="camp"><thead><tr><th>Campanha</th><th>Plataforma</th><th class="num">Gasto</th></tr></thead><tbody>${l.campanhas.map(k=>`<tr><td>${k.n}</td><td class="plat">${k.p}</td><td class="num">${brl(k.g)}</td></tr>`).join('')}</tbody></table>`:'<p class="nt">Sem campanhas com gasto.</p>'}
+        <p class="ft">Fonte: ${l.fonte}</p></div></td></tr>`:'';
+      return `<tr class="pr" data-k="${key}" data-open="${open?1:0}"><td class="pp"><span class="car2">▶</span>${l.programa}<small>${l.periodo}</small></td>${cell('Meta')}${cell('Google')}${cell('TikTok')}<td class="num"><b>${brl(t)}</b></td></tr>${det}`;
+    }).join('');
+    return `<section class="cl"><div class="clh"><span class="nome"><b>${c.cliente}</b></span><span class="tot">${brl(ct)}</span></div>
+      <div class="pwrap"><table class="pl"><thead><tr><th>Programa e período</th><th class="num">Meta Ads</th><th class="num">Google Ads</th><th class="num">TikTok</th><th class="num">Total</th></tr></thead><tbody>${rows}</tbody></table></div></section>`;
+  }).join('');
+  document.getElementById('painel').className='';
+  document.getElementById('painel').innerHTML=chips+secs;
+  document.querySelectorAll('.chip').forEach(b=>b.onclick=()=>{clienteSel=b.dataset.c;render();});
+  document.querySelectorAll('tr.pr').forEach(r=>r.onclick=()=>{const k=r.dataset.k;abertosP.has(k)?abertosP.delete(k):abertosP.add(k);render();});
+}
+function pintaVista(){
+  document.querySelectorAll('#vista button').forEach(b=>b.dataset.on=b.dataset.v===vista?1:0);
+  document.querySelector('.perwrap').hidden = vista==='periodo';
+  document.getElementById('notaPeriodo').hidden = vista!=='periodo';
+  document.getElementById('painel').className = vista==='periodo'?'':'painel';
+}
+document.querySelectorAll('#vista button').forEach(b=>b.onclick=()=>{vista=b.dataset.v;render();});
+
 render();
 </script>
 </body>
