@@ -1,0 +1,992 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Paulínia, Só Melhora</title>
+<meta name="description" content="Proposta de mídia digital para a Prefeitura de Paulínia: campanhas Só Melhora e Temas Diversos. Esquina Comunicação Digital.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<script>document.documentElement.className+=" js"</script>
+<style>
+/* ===== CSS: BASE ===== */
+/* Layout: rolagem cinematográfica em quadros de tela cheia, alternando fundo verde-noite e fundo claro; um HUD fixo (progresso, ato, pontos). Paleta tirada do site e dos perfis oficiais da Prefeitura. */
+:root{
+  --night:#08292C; --night-2:#0D3F42; --night-3:#11575B;
+  --mist:#EEF5F2; --mist-2:#DCEAE5; --paper:#F8FCFA;
+  --ink:#0A2A2D; --ink-soft:#456466; --fog:#8FB3B2; --line-d:rgba(238,245,242,.15); --line-l:rgba(10,42,45,.13);
+  --green:#198233; --leaf:#34D17B; --teal:#28A0A9; --sky:#99BFD4;
+  --sun:#F5B83D; --sun-soft:#FBD98A; --coral:#D7142C;
+  --eyebrow-l:#17692B; --em-l:#157A2E;
+  --f-display:"Instrument Serif","Iowan Old Style",Georgia,serif;
+  --f-body:"Hanken Grotesk","Segoe UI",system-ui,-apple-system,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --gut:max(16px,env(safe-area-inset-left,0px));
+  --gut-r:max(16px,env(safe-area-inset-right,0px));
+  --ease:cubic-bezier(.2,.7,.1,1);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:auto;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--night);color:var(--mist);font-family:var(--f-body);font-size:17px;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--sun);color:var(--ink)}
+svg.i{width:1em;height:1em;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex:none;vertical-align:-.14em}
+a{color:inherit}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--sun);outline-offset:3px;border-radius:6px}
+.grain{position:fixed;inset:0;pointer-events:none;z-index:90;opacity:.06;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.letterbox{position:fixed;left:0;right:0;height:50vh;background:#041719;z-index:95;pointer-events:none;animation:lb 1.4s .2s cubic-bezier(.7,0,.2,1) forwards}
+.letterbox.lb-t{top:0}.letterbox.lb-b{bottom:0}
+@keyframes lb{to{height:0}}
+
+/* HUD */
+.hud-bar{position:fixed;top:0;left:0;right:0;z-index:81;height:3px;pointer-events:none;background:linear-gradient(90deg,var(--sun),var(--leaf));transform-origin:0 50%;transform:scaleX(0)}
+.hud-row{position:fixed;top:0;left:0;right:0;z-index:80;pointer-events:none;display:flex;justify-content:space-between;align-items:center;padding:calc(14px + env(safe-area-inset-top,0px)) var(--gut-r) 0 var(--gut);font-family:var(--f-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#fff;mix-blend-mode:difference}
+.hud-act{display:flex;gap:10px;align-items:center}
+.hud-act b{font-weight:500}
+.hud-act span{opacity:.7}
+.hud-brand{opacity:.85}
+.dots{position:fixed;right:calc(14px + env(safe-area-inset-right,0px));top:50%;transform:translateY(-50%);z-index:80;display:flex;flex-direction:column;gap:9px}
+.dots button{position:relative;width:9px;height:9px;border-radius:50%;border:1px solid rgba(255,255,255,.55);background:transparent;padding:0;mix-blend-mode:difference;transition:transform .3s var(--ease),background .3s}
+.dots button.on{background:#fff;transform:scale(1.35)}
+.dots button span{position:absolute;right:20px;top:50%;transform:translateY(-50%);white-space:nowrap;font-family:var(--f-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;opacity:0;pointer-events:none;transition:opacity .2s;color:#fff}
+.dots button:hover span,.dots button:focus-visible span{opacity:.9}
+.pdfbtn{text-decoration:none;position:fixed;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:85;display:inline-flex;gap:9px;align-items:center;padding:12px 20px;border:0;border-radius:40px;background:var(--sun);color:#0A2A2D;font-family:var(--f-body);font-size:14.5px;font-weight:700;letter-spacing:.01em;box-shadow:0 8px 24px rgba(0,0,0,.28);transition:transform .3s var(--ease),background .3s}
+.pdfbtn:hover{transform:translateY(-2px);background:var(--sun-soft)}
+.pdfbtn svg{font-size:18px}
+.keyhint{position:fixed;left:var(--gut);bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:80;font-family:var(--f-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#fff;mix-blend-mode:difference;opacity:.55;display:flex;gap:8px;align-items:center}
+.keyhint{transition:opacity .6s}.keyhint.gone{opacity:0!important}
+.keyhint kbd{border:1px solid currentColor;border-radius:4px;padding:1px 5px;font-family:inherit}
+
+/* quadros */
+.frame{position:relative;min-height:100svh;padding-block:clamp(84px,12vh,140px);padding-left:var(--gut);padding-right:var(--gut-r);display:flex;flex-direction:column;justify-content:center;overflow:hidden;isolation:isolate}
+.frame.auto{min-height:auto}
+.frame.dense{padding-block:clamp(70px,9vh,96px)}
+.dark{background:var(--night);color:var(--mist)}
+.dark-2{background:var(--night-2);color:var(--mist)}
+.light{background:var(--mist);color:var(--ink)}
+.paper{background:var(--paper);color:var(--ink)}
+.wrap{width:100%;max-width:1240px;margin-inline:auto;position:relative}
+.eyebrow{max-width:none;white-space:nowrap;font-family:var(--f-mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;display:flex;gap:10px;align-items:center;margin:0 0 22px}
+.dark .eyebrow,.dark-2 .eyebrow{color:var(--sun-soft)}
+.light .eyebrow,.paper .eyebrow{color:var(--eyebrow-l)}
+.eyebrow::before{content:"";width:28px;height:1px;background:currentColor;opacity:.7}
+h1,h2,h3,h4{font-family:var(--f-display);font-weight:400;letter-spacing:-.01em;text-wrap:balance;margin:0}
+h1{font-size:clamp(46px,8vw,124px);line-height:.94}
+h2{font-size:clamp(36px,5vw,76px);line-height:1}
+h3{font-size:clamp(26px,2.6vw,36px);line-height:1.08}
+h1 em,h2 em,h3 em{font-style:italic;color:var(--sun)}
+.light h2 em,.paper h2 em,.light h3 em,.paper h3 em{color:var(--em-l)}
+.lead{font-size:clamp(18px,1.55vw,21px);line-height:1.55;max-width:64ch;margin:24px 0 0;opacity:.88;font-weight:300}
+p{max-width:66ch}
+.mono{font-family:var(--f-mono)}
+.src{font-family:var(--f-mono);font-size:11px;letter-spacing:.05em;opacity:.62;margin-top:26px;max-width:none}
+.num{font-variant-numeric:tabular-nums}
+[data-r]{transition:opacity .8s var(--ease),transform .9s var(--ease)}
+.js [data-r]{opacity:0;transform:translateY(22px)}
+.js [data-r].in{opacity:1;transform:none}
+
+/* ===== CSS: HERO ===== */
+#abertura{min-height:100svh;padding:0;justify-content:flex-end}
+.scene{position:absolute;inset:0;z-index:-1;background:
+  radial-gradient(60% 55% at 78% 30%,rgba(40,160,169,.38),transparent 70%),
+  radial-gradient(50% 60% at 12% 85%,rgba(25,130,51,.42),transparent 70%),
+  radial-gradient(40% 40% at 55% 100%,rgba(245,184,61,.16),transparent 70%),
+  linear-gradient(180deg,#061F22,#08292C 60%,#0A3033)}
+.scene svg{width:100%;height:100%;display:block}
+.hero-copy{padding:0 var(--gut-r) clamp(70px,12vh,130px) var(--gut);max-width:1240px;margin-inline:auto;width:100%}
+.hero-copy .lead{max-width:56ch}
+.hero-meta{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:34px;font-family:var(--f-mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;opacity:.8}
+.hero-meta span{display:flex;gap:8px;align-items:center}
+.scroll-cue{position:absolute;right:var(--gut-r);bottom:clamp(70px,12vh,130px);display:flex;flex-direction:column;align-items:center;gap:10px;font-family:var(--f-mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;opacity:.7;writing-mode:vertical-rl}
+.scroll-cue i{display:block;width:1px;height:70px;background:linear-gradient(var(--sun),transparent);animation:cue 2.2s var(--ease) infinite}
+@keyframes cue{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+@keyframes pulse{0%{transform:scale(.3);opacity:.9}100%{transform:scale(2.4);opacity:0}}
+@keyframes twinkle{0%,100%{opacity:.35}50%{opacity:1}}
+.nd{transform-box:fill-box;transform-origin:center}
+.nd.hub{animation:pulse 3.4s var(--ease) infinite}
+
+/* ===== CSS: ROTEIRO ===== */
+.steps{display:grid;grid-template-columns:repeat(6,1fr);gap:0;margin-top:56px;position:relative}
+.steps::before{content:"";position:absolute;left:0;right:0;top:27px;height:1px;background:var(--line-l)}
+.step{position:relative;padding-right:18px;background:none;border:0;text-align:left;color:inherit}
+.step .dot{width:54px;height:54px;border-radius:50%;display:grid;place-items:center;background:var(--paper);border:1px solid var(--line-l);font-size:22px;color:var(--ink);position:relative;z-index:1;transition:background .3s,color .3s,transform .4s var(--ease)}
+.step:hover .dot,.step:focus-visible .dot{background:var(--ink);color:var(--sun);transform:translateY(-4px)}
+.step small{display:block;font-family:var(--f-mono);font-size:11px;letter-spacing:.12em;color:var(--eyebrow-l);margin:18px 0 6px}
+.step strong{display:block;font-family:var(--f-display);font-weight:400;font-size:24px;line-height:1.1}
+.step p{font-size:14.5px;line-height:1.5;color:var(--ink-soft);margin:8px 0 0}
+
+/* ===== CSS: PARTIDA ===== */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line-d);border:1px solid var(--line-d);margin-top:50px}
+.stat{background:var(--night);padding:26px 22px 24px;min-width:0}
+.stat b{display:block;font-family:var(--f-display);font-weight:400;font-size:clamp(40px,4.4vw,64px);line-height:1;color:var(--mist)}
+.stat b small{font-size:.5em;color:var(--sun)}
+.stat > span{display:block;margin-top:10px;font-size:14px;color:var(--fog);line-height:1.4}
+.chart-card{margin-top:40px;display:grid;grid-template-columns:1.5fr 1fr;gap:44px;align-items:center}
+.chart-card>*{min-width:0}
+.rbars{display:flex;flex-direction:column;gap:16px}
+.rbar{display:grid;grid-template-columns:200px 1fr 76px;gap:14px;align-items:center;font-size:14.5px}
+.rbar .t{height:14px;border-radius:20px;background:rgba(238,245,242,.09);overflow:hidden}
+.rbar .t i{display:block;height:100%;border-radius:20px;background:var(--teal);width:0;transition:width 1.4s var(--ease)}
+.rbar.ref .t i{background:repeating-linear-gradient(90deg,var(--fog) 0 6px,transparent 6px 10px);opacity:.7}
+.rbar.hi .t i{background:var(--leaf)}
+.rbar .v{font-family:var(--f-mono);font-size:13px;text-align:right}
+.callout{border-left:2px solid var(--sun);padding:6px 0 6px 22px}
+.callout q{font-family:var(--f-display);font-size:clamp(24px,2.3vw,31px);line-height:1.2;quotes:none;display:block}
+.callout p{font-size:15px;color:var(--fog);margin:12px 0 0}
+
+/* ===== CSS: DESAFIO ===== */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,90px);align-items:center}
+.split>*{min-width:0}
+.venn{width:100%;max-width:520px;margin-inline:auto}
+.venn svg{width:100%;height:auto;display:block;overflow:visible}
+.venn .c1,.venn .c2{transition:transform 1.2s var(--ease),opacity 1s;opacity:0}
+.venn.in .c1{opacity:1;transform:translateX(0)}
+.venn.in .c2{opacity:1;transform:translateX(0)}
+.venn .c1{transform:translateX(70px)}
+.venn .c2{transform:translateX(-70px)}
+.venn text{font-family:var(--f-display)}
+.facts{display:grid;gap:14px;margin-top:34px}
+.fact{display:grid;grid-template-columns:38px 1fr;gap:14px;align-items:start;font-size:15.5px;line-height:1.5}
+.fact .pin{width:38px;height:38px;border-radius:10px;background:var(--ink);color:var(--sun);display:grid;place-items:center;font-size:18px}
+.fact b{display:block}
+.fact span{color:var(--ink-soft)}
+.themechips{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
+.themechips span{display:inline-flex;gap:8px;align-items:center;padding:9px 16px;border-radius:30px;background:var(--ink);color:var(--mist);font-size:14.5px;font-weight:600}
+.themechips span svg{color:var(--sun)}
+
+/* ===== CSS: IDEIA ===== */
+.manifesto{font-family:var(--f-display);font-size:clamp(34px,4.4vw,64px);line-height:1.08;max-width:20ch}
+.manifesto em{color:var(--leaf)}
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:56px}
+.pillar{border-top:1px solid var(--line-d);padding-top:18px}
+.pillar b{display:flex;gap:10px;align-items:center;font-size:18px;margin-bottom:8px}
+.pillar b svg{color:var(--leaf);font-size:22px}
+.pillar p{font-size:15.5px;color:var(--fog);margin:0}
+.pill-note{margin-top:46px;display:inline-flex;gap:14px;align-items:flex-start;padding:16px 22px;border-radius:18px;border:1px solid rgba(52,209,123,.35);background:rgba(52,209,123,.08);max-width:760px}
+.pill-note svg{font-size:24px;color:var(--leaf);margin-top:3px}
+.pill-note p{margin:0;font-size:15.5px;color:#cfe3dd}
+.pill-note b{color:var(--mist)}
+
+/* ===== CSS: CAMPANHAS ===== */
+.tl{margin-top:50px}
+.tl-axis{display:grid;grid-template-columns:repeat(29,1fr);font-family:var(--f-mono);font-size:10.5px;color:var(--ink-soft);letter-spacing:.04em}
+.tl-axis span{white-space:nowrap;border-left:1px solid var(--line-l);padding:0 0 8px 3px;min-width:0;overflow:hidden}
+.tl-axis span.m{color:var(--ink);font-weight:500}
+.tl-row{display:grid;grid-template-columns:repeat(29,1fr);margin-top:10px;gap:0}
+.tl-bar{border-radius:14px;padding:16px 18px;min-width:0;position:relative;overflow:hidden}
+.tl-bar b{font-family:var(--f-display);font-weight:400;font-size:clamp(22px,2.2vw,30px);line-height:1;display:block}
+.tl-bar span{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.06em;display:block;margin-top:8px;opacity:.85}
+.tl-bar.a{grid-column:1 / span 13;background:var(--green);color:#EFFFF3}
+.tl-bar.b{grid-column:15 / span 15;background:var(--ink);color:var(--mist)}
+.tl-gap{grid-column:14;display:grid;place-items:center;font-family:var(--f-mono);font-size:10px;color:var(--ink-soft);writing-mode:vertical-rl;letter-spacing:.1em}
+.cmp-cards{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:34px}
+.ccard{border-radius:22px;padding:26px 26px 22px;border:1px solid var(--line-l);background:var(--paper);min-width:0}
+.ccard .k{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--eyebrow-l)}
+.ccard h3{margin:8px 0 10px;font-size:clamp(28px,2.8vw,38px)}
+.ccard p{font-size:15.5px;color:var(--ink-soft);margin:0 0 16px}
+.beats{display:grid;gap:8px}
+.beat{display:grid;grid-template-columns:104px 1fr;gap:14px;font-size:14.5px;padding-top:10px;border-top:1px solid var(--line-l)}
+.beat time{font-family:var(--f-mono);font-size:12px;color:var(--ink-soft);padding-top:2px}
+.beat b{display:block}
+.beat span{color:var(--ink-soft)}
+
+/* ===== CSS: CANAIS ===== */
+.chcards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:46px}
+.chc{position:relative;text-align:left;border-radius:20px;padding:22px 20px 20px;border:1px solid var(--line-d);background:rgba(255,255,255,.04);min-width:0;display:flex;flex-direction:column;gap:8px;transition:transform .4s var(--ease),background .3s,border-color .3s}
+.chc:hover{transform:translateY(-4px)}
+.chc[aria-pressed="true"]{background:rgba(52,209,123,.1);border-color:rgba(52,209,123,.55)}
+.chc.out[aria-pressed="true"]{background:rgba(245,184,61,.09);border-color:rgba(245,184,61,.5)}
+.chc .tag{align-self:flex-start;font-family:var(--f-mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;padding:4px 10px;border-radius:20px;background:rgba(52,209,123,.16);color:#8EF0B8}
+.chc.out .tag{background:rgba(245,184,61,.16);color:var(--sun-soft)}
+.chc .ic{font-size:26px;color:var(--sun-soft);margin-top:6px}
+.chc b{font-family:var(--f-display);font-weight:400;font-size:30px;line-height:1}
+.chc small{font-size:13.5px;color:var(--fog);line-height:1.35}
+.chc .fit{margin-top:10px;display:flex;align-items:center;gap:10px;font-size:12.5px;color:var(--fog)}
+.meter{display:inline-flex;gap:3px}
+.meter i{width:18px;height:6px;border-radius:4px;background:rgba(238,245,242,.15)}
+.meter i.f{background:var(--leaf)}
+.chc.out .meter i.f{background:var(--sun)}
+.chc .share{font-family:var(--f-mono);font-size:12px;margin-top:2px;color:var(--mist)}
+.chdetail{margin-top:18px;border-radius:20px;padding:26px 28px;background:var(--night);border:1px solid var(--line-d);display:grid;grid-template-columns:1.1fr 1fr;gap:34px}
+.chdetail>*{min-width:0}
+.chdetail h3{font-size:clamp(26px,2.6vw,34px)}
+.chdetail p{font-size:15.5px;color:#cfe3dd;margin:12px 0 0}
+.chdetail ul{list-style:none;margin:0;padding:0;display:grid;gap:10px;align-content:start}
+.chdetail li{display:grid;grid-template-columns:22px 1fr;gap:10px;font-size:14.5px;line-height:1.5;color:#cfe3dd}
+.chdetail li svg{color:var(--leaf);margin-top:4px}
+.chdetail.out li svg{color:var(--sun)}
+
+/* ===== CSS: SATURAÇÃO ===== */
+.freq{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:46px}
+.fbox{border-radius:22px;padding:28px;min-width:0}
+.fbox.bad{background:var(--mist-2)}
+.fbox.good{background:var(--ink);color:var(--mist)}
+.fbox small{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;opacity:.75}
+.fbox b{font-family:var(--f-display);font-weight:400;font-size:clamp(72px,8vw,128px);line-height:.9;display:block;margin:14px 0 6px}
+.fbox.good b{color:var(--leaf)}
+.fbox p{font-size:15.5px;margin:0;opacity:.85}
+.dotsgrid{display:grid;grid-template-columns:repeat(30,1fr);gap:3px;margin-top:20px}
+.dotsgrid i{aspect-ratio:1;border-radius:50%;background:currentColor;opacity:.12;transition:opacity .5s}
+.dotsgrid i.on{opacity:.85}
+.fbox.good .dotsgrid i.on{background:var(--leaf);opacity:1}
+.fbox.bad .dotsgrid i.on{background:var(--coral);opacity:.8}
+.freq-note{font-size:13px;color:var(--ink-soft);margin-top:18px;max-width:none}
+
+/* ===== CSS: VERBA ===== */
+.budget{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(30px,5vw,80px);align-items:center;margin-top:34px}
+.budget>*{min-width:0}
+.donut-wrap{position:relative;max-width:440px;width:100%;margin-inline:auto}
+.donut-wrap svg{width:100%;height:auto;display:block;transform:rotate(-90deg)}
+.donut-wrap circle.seg{fill:none;stroke-width:34;transition:stroke-width .3s var(--ease),opacity .3s;cursor:pointer}
+.donut-wrap circle.seg.dim{opacity:.25}
+.donut-wrap circle.seg.on{stroke-width:44}
+.donut-center{position:absolute;inset:0;display:grid;place-items:center;text-align:center;pointer-events:none}
+.donut-center b{font-family:var(--f-display);font-weight:400;font-size:clamp(38px,4.4vw,60px);line-height:1;display:block}
+.donut-center span{font-family:var(--f-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--fog)}
+.alloc{display:flex;flex-direction:column;gap:8px}
+.arow{display:grid;grid-template-columns:14px 1fr auto auto;gap:14px;align-items:center;padding:13px 16px;border-radius:14px;border:1px solid var(--line-d);background:rgba(255,255,255,.04);text-align:left;transition:translate .35s var(--ease),border-color .3s,background .3s;width:100%}
+.arow:hover,.arow.on{translate:6px 0;border-color:var(--sun);background:rgba(255,255,255,.08)}
+.arow i{width:14px;height:14px;border-radius:4px}
+.arow b{font-size:16px;display:block}
+.arow small{display:block;font-size:13px;color:var(--fog);line-height:1.35}
+.arow .val{font-family:var(--f-mono);font-size:14.5px;font-weight:500}
+.arow .pct{font-family:var(--f-mono);font-size:12px;color:var(--fog);width:50px;text-align:right}
+.totals{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px;font-size:14px}
+.totals span{padding:8px 14px;border-radius:30px;background:rgba(255,255,255,.08)}
+.totals span b{font-family:var(--f-mono);font-weight:500}
+.totals span.g{background:var(--sun);color:var(--ink)}
+
+/* ===== CSS: PLANO ===== */
+.tabs{display:inline-flex;padding:5px;border-radius:40px;background:var(--mist-2);margin-top:30px;gap:4px;flex-wrap:wrap}
+.tabs button{border:0;background:transparent;padding:10px 20px;border-radius:30px;font-size:14.5px;font-weight:600;transition:background .3s,color .3s}
+.tabs button[aria-pressed="true"]{background:var(--ink);color:var(--mist)}
+.plan-head{display:grid;grid-template-columns:repeat(4,auto);gap:10px 34px;justify-content:start;margin-top:26px;font-size:13.5px}
+.plan-head[hidden]{display:none}
+.plan-head div{display:flex;flex-direction:column}
+.plan-head span{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}
+.plan-head b{font-size:15px}
+.tbl-wrap{overflow-x:auto;margin-top:22px;border-radius:16px;border:1px solid var(--line-l);background:#fff;-webkit-overflow-scrolling:touch}
+.tbl-wrap[hidden]{display:none}
+table.plan{border-collapse:collapse;width:100%;min-width:1080px;font-size:12.5px;color:var(--ink)}
+table.plan th{background:var(--ink);color:var(--mist);font-family:var(--f-mono);font-weight:500;font-size:10px;letter-spacing:.06em;text-transform:uppercase;text-align:left;padding:12px 8px;white-space:nowrap}
+table.plan td{padding:10px 8px;border-bottom:1px solid var(--line-l);vertical-align:middle;line-height:1.35}
+table.plan td.n{font-family:var(--f-mono);text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+table.plan td.c{text-align:center}
+table.plan td.pr{font-weight:700;background:var(--mist);text-align:center}
+table.plan td:nth-child(5){min-width:150px}
+table.plan td:nth-child(6){min-width:200px}
+table.plan tr.tot td{background:var(--ink);color:var(--mist);font-weight:700;border-bottom:1px solid rgba(255,255,255,.1)}
+table.plan tr.tot.g td{background:var(--sun);color:var(--ink)}
+table.plan tr.tot.s td{background:var(--mist-2);color:var(--ink)}
+table.plan tbody tr:not(.tot):hover td:not(.pr){background:#F1FAF4}
+.obs{font-size:12.5px;color:var(--ink-soft);margin-top:16px;max-width:none}
+.deliv{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:22px}
+.deliv div{border-radius:14px;background:var(--ink);color:var(--mist);padding:16px;min-width:0}
+.deliv b{font-family:var(--f-display);font-weight:400;font-size:clamp(26px,2.4vw,34px);display:block;line-height:1}
+.deliv span{font-size:12.5px;color:var(--fog)}
+
+/* ===== CSS: RESUMO ===== */
+.sumgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px}
+.scard{border-radius:20px;padding:20px 24px 14px;background:var(--paper);border:1px solid var(--line-l);min-width:0}
+.scard.tot{background:var(--ink);color:var(--mist);border-color:var(--ink)}
+.scard .k{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--eyebrow-l)}
+.scard.tot .k{color:var(--sun-soft)}
+.scard h4{font-family:var(--f-display);font-size:30px;margin:8px 0 2px;line-height:1.05}
+.scard .per{font-family:var(--f-mono);font-size:12px;opacity:.7}
+.scard dl{margin:12px 0 0;display:grid;gap:0}
+.scard dl div{display:flex;justify-content:space-between;gap:12px;padding:7px 0;border-top:1px solid var(--line-l);font-size:14px}
+.scard.tot dl div{border-top-color:var(--line-d)}
+.scard dt{color:var(--ink-soft)}
+.scard.tot dt{color:var(--fog)}
+.scard dd{margin:0;font-family:var(--f-mono);font-weight:500;text-align:right}
+
+/* ===== CSS: MENSURAÇÃO ===== */
+.mgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:46px}
+.mitem{border-top:1px solid var(--line-d);padding-top:18px;min-width:0}
+.mitem svg{font-size:24px;color:var(--leaf)}
+.mitem b{display:block;font-size:17px;margin:12px 0 6px;line-height:1.3}
+.mitem p{font-size:14.5px;color:var(--fog);margin:0}
+.legal{margin-top:46px;padding:22px 26px;border-radius:20px;border:1px solid var(--line-d);background:rgba(255,255,255,.04);display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:start;max-width:980px}
+.legal svg{font-size:28px;color:var(--sun-soft);margin-top:2px}
+.legal b{display:block;font-size:17px;margin-bottom:4px}
+.legal p{margin:0;font-size:15px;color:#cfe3dd}
+
+/* ===== CSS: CRONOGRAMA ===== */
+.cron{display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(30px,5vw,70px);margin-top:28px;align-items:start}
+.cron>*{min-width:0}
+.rail{position:relative;display:grid;gap:0}
+.rail::before{content:"";position:absolute;left:111px;top:8px;bottom:8px;width:2px;background:var(--line-l)}
+.rs{display:grid;grid-template-columns:96px 28px 1fr;gap:12px;padding:8px 0;align-items:start}
+.rs time{font-family:var(--f-mono);font-size:12.5px;color:var(--ink);text-align:right;padding-top:2px}
+.rs time small{display:block;font-size:10.5px;color:var(--ink-soft);letter-spacing:.06em;text-transform:uppercase}
+.rs .pt{width:14px;height:14px;border-radius:50%;background:var(--paper);border:2px solid var(--ink);margin:4px auto 0;position:relative;z-index:1}
+.rs.go .pt{background:var(--green);border-color:var(--green);box-shadow:0 0 0 6px rgba(25,130,51,.18)}
+.rs b{display:block;font-size:16px;line-height:1.3}
+.rs span{font-size:14px;color:var(--ink-soft);display:block;margin-top:2px;line-height:1.45}
+.rs.go b{color:var(--em-l)}
+.aside{border-radius:22px;padding:26px;background:var(--ink);color:var(--mist)}
+.aside h4{font-family:var(--f-display);font-size:28px;margin:0 0 10px;line-height:1.05}
+.aside h4 em{color:var(--sun)}
+.aside p{font-size:15px;color:#cfe3dd;margin:0 0 14px}
+.aside ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.aside li{display:grid;grid-template-columns:20px 1fr;gap:10px;font-size:14.5px;line-height:1.5;color:#cfe3dd}
+.aside li svg{color:var(--leaf);margin-top:4px}
+
+/* ===== CSS: FIM ===== */
+#fim{min-height:100svh}
+.next{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:50px}
+.nx{border-top:1px solid var(--line-d);padding-top:16px;min-width:0}
+.nx small{font-family:var(--f-mono);font-size:11px;letter-spacing:.14em;color:var(--sun-soft)}
+.nx b{display:block;font-size:16px;margin:8px 0 6px;line-height:1.3}
+.nx p{font-size:13.5px;color:var(--fog);margin:0}
+.sign{margin-top:80px;display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;border-top:1px solid var(--line-d);padding-top:26px}
+.sign .logo{font-family:var(--f-display);font-size:40px;line-height:1}
+.sign .logo em{color:var(--sun)}
+.sign small{font-family:var(--f-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--fog);display:block;margin-top:6px}
+.ver{font-family:var(--f-mono);font-size:10.5px;color:var(--fog);opacity:.7;margin-top:4px}
+
+/* ===== CSS: RESPONSIVO ===== */
+@media (max-width:1080px){
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .chcards{grid-template-columns:repeat(2,1fr)}
+  .mgrid{grid-template-columns:repeat(2,1fr)}
+  .next{grid-template-columns:repeat(3,1fr)}
+  .deliv{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:repeat(3,1fr);row-gap:40px}
+  .steps::before{display:none}
+  .sumgrid{grid-template-columns:1fr}
+}
+@media (max-width:860px){
+  body{font-size:16px}
+  .dots,.keyhint,.hud-brand,.scroll-cue{display:none}
+  .pdfbtn{padding:11px 16px;font-size:13.5px}
+  .tabs{border-radius:22px}.tabs button{flex:1 1 100%;text-align:center}
+  .eyebrow{white-space:normal;align-items:flex-start}
+  .eyebrow::before{margin-top:.6em;flex:none}
+  .split,.budget,.chart-card,.cron,.chdetail,.freq,.cmp-cards{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr 1fr}
+  .pillars{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr 1fr}
+  .chcards{grid-template-columns:1fr}
+  .mgrid{grid-template-columns:1fr}
+  .next{grid-template-columns:1fr}
+  .deliv{grid-template-columns:1fr 1fr}
+  .plan-head{grid-template-columns:1fr 1fr}
+  .rbar{grid-template-columns:96px 1fr 62px;font-size:13px}
+  .tl-axis{display:none}
+  .tl-row{grid-template-columns:1fr;gap:10px}
+  .tl-bar.a,.tl-bar.b{grid-column:1}
+  .tl-gap{display:none}
+  .beat{grid-template-columns:1fr;gap:2px}
+  .rail::before{left:7px}
+  .rs{grid-template-columns:20px 1fr;gap:12px}
+  .rs time{grid-column:2;grid-row:1;text-align:left}
+  .rs .pt{grid-column:1;grid-row:1 / span 2;margin:4px 0 0}
+  .rs div{grid-column:2}
+  .legal{grid-template-columns:1fr}
+  .dotsgrid{grid-template-columns:repeat(20,1fr)}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+  .letterbox{display:none}
+}
+@media print{
+  html,body{width:1440px;background:#fff}
+  body{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .hud-bar,.hud-row,.dots,.keyhint,.grain,.letterbox,.scroll-cue,.pdfbtn{display:none!important}
+  .frame{min-height:0!important;padding-block:72px;padding-inline:80px;break-after:page;break-inside:avoid;overflow:hidden}
+  .frame:last-of-type{break-after:auto}
+  .js [data-r]{opacity:1!important;transform:none!important;transition:none!important}
+  .tbl-wrap[hidden],.plan-head[hidden]{display:block!important}
+  .tbl-wrap,.plan-head{margin-top:22px}
+  .tabs{display:none}
+  .tbl-wrap{overflow:visible}
+  table.plan{min-width:0;font-size:11px}
+  .tl-axis span{overflow:visible}
+  .rbar .t i,.venn .c1,.venn .c2{transition:none!important}
+}
+/*PRINTPAGES*/
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.5 2.7-6 6-6s6 2.5 6 6"/><circle cx="17" cy="9" r="2.4"/><path d="M17 14c2.4 0 4 1.8 4 4.5"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M10 9l5 3-5 3z"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l5 5"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7 3v5.5c0 4.3-2.8 7.4-7 9.5-4.2-2.1-7-5.2-7-9.5V6z"/></symbol>
+  <symbol id="i-house" viewBox="0 0 24 24"><path d="M4 20V10l8-6 8 6v10z"/><path d="M9 20v-6h6v6"/></symbol>
+  <symbol id="i-route" viewBox="0 0 24 24"><circle cx="6" cy="18" r="2.4"/><circle cx="18" cy="6" r="2.4"/><path d="M8.4 18H15a3 3 0 000-6H9a3 3 0 010-6h6.6"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 4v11M7.5 11l4.5 4.5 4.5-4.5M5 19.5h14"/></symbol>
+  <symbol id="i-clip" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4h6v3H9zM9 14l2 2 4-4"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V4M4 20h16"/><path d="M8 16v-5M12 16V8M16 16v-8"/></symbol>
+  <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 14a4 4 0 005.7 0l3-3a4 4 0 00-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 00-5.7 0l-3 3A4 4 0 0011 18.7l1-1"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="2.8"/></symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></symbol>
+  <symbol id="i-msg" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0113 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-repeat" viewBox="0 0 24 24"><path d="M4 11V9a3 3 0 013-3h11M15 3l3 3-3 3M20 13v2a3 3 0 01-3 3H6M9 21l-3-3 3-3"/></symbol>
+  <symbol id="i-wallet" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="14" rx="2.5"/><path d="M3 10h18M16 15h2"/></symbol>
+</svg>
+<div class="grain" aria-hidden="true"></div>
+<div class="letterbox lb-t" aria-hidden="true"></div>
+<div class="letterbox lb-b" aria-hidden="true"></div>
+
+<div class="hud-bar" aria-hidden="true"></div>
+<div class="hud-row" aria-hidden="true">
+  <div class="hud-act"><b id="actNum">Abertura</b><span id="actName">Paulínia, Só Melhora</span></div>
+  <div class="hud-brand">Esquina · Proposta de mídia digital</div>
+</div>
+<a class="pdfbtn" id="pdfBtn" href="proposta-paulinia-novembro-2026.pdf" download="proposta-paulinia-novembro-2026.pdf" aria-label="Baixar esta proposta em PDF"><svg class="i"><use href="#i-download"/></svg><span>Baixar PDF</span></a>
+<nav class="dots" id="dots" aria-label="Navegação entre cenas"></nav>
+<div class="keyhint" aria-hidden="true"><kbd>←</kbd><kbd>→</kbd> navegar entre cenas</div>
+
+<main id="top">
+
+<!-- ===== SLIDE 01: ABERTURA ===== -->
+<section class="frame dark" id="abertura" data-act="Abertura" data-name="Paulínia, Só Melhora">
+  <div class="scene" aria-hidden="true"><svg id="net" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice"></svg></div>
+  <div class="hero-copy">
+    <p class="eyebrow" data-r>Prefeitura de Paulínia · Proposta de mídia digital</p>
+    <h1 data-r>O que a gestão entregou, <em>contado onde a cidade está.</em></h1>
+    <p class="lead" data-r>Duas campanhas em sequência, Só Melhora e Temas Diversos, para mostrar as entregas da gestão com mais força a quem hoje as enxerga menos: o morador de 50 anos ou mais. Meta, YouTube e Google, no ritmo certo para uma cidade de pouco mais de 110 mil habitantes.</p>
+    <div class="hero-meta" data-r>
+      <span><svg class="i"><use href="#i-calendar"/></svg> Só Melhora · 17 a 29/11</span>
+      <span><svg class="i"><use href="#i-calendar"/></svg> Temas Diversos · 01 a 15/12</span>
+      <span><svg class="i"><use href="#i-layers"/></svg> Meta · YouTube · Google</span>
+    </div>
+  </div>
+  <div class="scroll-cue" aria-hidden="true">role para começar <i></i></div>
+</section>
+<!-- ===== /SLIDE 01 ===== -->
+
+<!-- ===== SLIDE 02: ROTEIRO ===== -->
+<section class="frame light" id="roteiro" data-act="Roteiro" data-name="Como pensamos">
+  <div class="wrap">
+    <p class="eyebrow" data-r>O roteiro desta proposta</p>
+    <h2 data-r>Antes da verba, <em>o raciocínio.</em></h2>
+    <p class="lead" data-r>A proposta segue um caminho curto: onde a Prefeitura está hoje, quem precisa ouvir, o que dizer, por onde dizer e quanto cada canal pode entregar sem cansar o público.</p>
+    <div class="steps">
+      <button class="step" data-go="partida" data-r><span class="dot"><svg class="i"><use href="#i-chart"/></svg></span><small>01</small><strong>Ponto de partida</strong><p>Os canais da Prefeitura e o tamanho da cidade.</p></button>
+      <button class="step" data-go="desafio" data-r><span class="dot"><svg class="i"><use href="#i-users"/></svg></span><small>02</small><strong>Quem precisa ouvir</strong><p>Público de 50 anos ou mais e público católico.</p></button>
+      <button class="step" data-go="ideia" data-r><span class="dot"><svg class="i"><use href="#i-target"/></svg></span><small>03</small><strong>O que dizer</strong><p>Entregas que o morador consegue conferir.</p></button>
+      <button class="step" data-go="canais" data-r><span class="dot"><svg class="i"><use href="#i-layers"/></svg></span><small>04</small><strong>Por onde dizer</strong><p>Quatro canais avaliados, três no plano.</p></button>
+      <button class="step" data-go="plano" data-r><span class="dot"><svg class="i"><use href="#i-clip"/></svg></span><small>05</small><strong>Plano e verba</strong><p>Duas campanhas, linha a linha.</p></button>
+      <button class="step" data-go="cronograma" data-r><span class="dot"><svg class="i"><use href="#i-route"/></svg></span><small>06</small><strong>Do sim ao ar</strong><p>Calendário para entrar no ar em 17/11.</p></button>
+    </div>
+  </div>
+</section>
+<!-- ===== /SLIDE 02 ===== -->
+
+<!-- ===== SLIDE 03: PARTIDA ===== -->
+<section class="frame dark" id="partida" data-act="Ato I" data-name="Ponto de partida">
+  <div class="wrap">
+    <p class="eyebrow" data-r>Ato I · Ponto de partida</p>
+    <h2 data-r>Uma base grande no Instagram. <em>E muito espaço em vídeo.</em></h2>
+    <p class="lead" data-r>A Prefeitura já tem audiência própria nas redes. O desafio é dar a essa audiência mais conteúdo de entrega e levar a mensagem também a quem não segue os perfis oficiais.</p>
+    <div class="stats">
+      <div class="stat" data-r><b><span data-count="110537">110.537</span></b><span>habitantes no Censo 2022</span></div>
+      <div class="stat" data-r><b><span data-count="105">105</span><small> mil</small></b><span>seguidores no Instagram @prefpauliniasp</span></div>
+      <div class="stat" data-r><b><span data-count="48">48</span><small> mil</small></b><span>seguidores no Facebook</span></div>
+      <div class="stat" data-r><b><span data-count="3.64" data-dec="2">3,64</span><small> mil</small></b><span>inscritos no YouTube, com 238 vídeos</span></div>
+    </div>
+    <div class="chart-card">
+      <div class="rbars" data-r id="rbars">
+        <div class="rbar ref"><span>Habitantes (Censo 2022)</span><span class="t"><i data-w="100.0"></i></span><span class="v">110,5 mil</span></div>
+        <div class="rbar hi"><span>Instagram</span><span class="t"><i data-w="95.0"></i></span><span class="v">105 mil</span></div>
+        <div class="rbar "><span>Facebook</span><span class="t"><i data-w="43.4"></i></span><span class="v">48 mil</span></div>
+        <div class="rbar "><span>YouTube</span><span class="t"><i data-w="3.3"></i></span><span class="v">3,64 mil</span></div>
+      </div>
+      <div class="callout" data-r>
+        <q>O Instagram tem um número de seguidores próximo ao de habitantes. O vídeo é onde há mais espaço para crescer.</q>
+        <p>Seguidores incluem perfis de fora da cidade e não equivalem a moradores. A mídia leva a mensagem a quem ainda não acompanha a Prefeitura.</p>
+      </div>
+    </div>
+    <p class="src">Fontes: IBGE, Censo 2022 (110.537 habitantes); perfis oficiais da Prefeitura de Paulínia no Instagram, Facebook e YouTube, consultados em novembro de 2026.</p>
+  </div>
+</section>
+<!-- ===== /SLIDE 03 ===== -->
+
+<!-- ===== SLIDE 04: DESAFIO ===== -->
+<section class="frame light" id="desafio" data-act="Ato I" data-name="Quem precisa ouvir">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <p class="eyebrow" data-r>Ato I · Quem precisa ouvir</p>
+        <h2 data-r>O maior espaço para crescer <em>está entre quem tem 50 anos ou mais.</em></h2>
+        <p class="lead" data-r>A gestão é avaliada de forma menos favorável nesse grupo. Esta é a leitura trazida pela contratante, e ela organiza toda a segmentação. A mensagem precisa chegar a esse morador com mais frequência, em canais que ele usa e com conteúdo que ele consegue conferir na própria rua.</p>
+        <div class="themechips" data-r>
+          <span><svg class="i"><use href="#i-shield"/></svg>Segurança</span>
+          <span><svg class="i"><use href="#i-house"/></svg>Estrutura</span>
+        </div>
+      </div>
+      <div>
+        <div class="venn" data-r>
+          <svg viewBox="0 0 520 380" role="img" aria-label="Interseção entre o público de 50 anos ou mais e o público católico, ambos os sexos, que forma o núcleo das campanhas">
+            <defs><clipPath id="clipA"><circle cx="205" cy="190" r="150"/></clipPath></defs>
+            <circle class="c1" cx="205" cy="190" r="150" fill="#198233" fill-opacity=".92"/>
+            <circle class="c2" cx="315" cy="190" r="150" fill="#28A0A9" fill-opacity=".92"/>
+            <g clip-path="url(#clipA)"><circle cx="315" cy="190" r="150" fill="#F5B83D"/></g>
+            <text x="112" y="180" text-anchor="middle" font-size="54" fill="#EFFFF3">50+</text>
+            <text x="112" y="208" text-anchor="middle" font-size="16" fill="#EFFFF3" font-style="italic">anos ou mais</text>
+            <text x="402" y="180" text-anchor="middle" font-size="30" fill="#041F22">Público</text>
+            <text x="402" y="214" text-anchor="middle" font-size="30" fill="#041F22">católico</text>
+            <text x="260" y="186" text-anchor="middle" font-size="19" fill="#0A2A2D" font-style="italic">núcleo</text>
+            <text x="260" y="372" text-anchor="middle" font-size="15" fill="#456466" style="font-family:'Hanken Grotesk',sans-serif">Ambos os sexos em todas as linhas</text>
+          </svg>
+        </div>
+        <div class="facts">
+          <div class="fact" data-r><span class="pin"><svg class="i"><use href="#i-target"/></svg></span><div><b>Segmentação de público, não de mensagem</b><span>O interesse católico define quem recebe a peça. O conteúdo segue institucional e laico.</span></div></div>
+          <div class="fact" data-r><span class="pin"><svg class="i"><use href="#i-users"/></svg></span><div><b>Cidade inteira como segunda camada</b><span>Linhas de alcance e engajamento para o morador de 18 anos ou mais, para manter a conversa com toda Paulínia.</span></div></div>
+        </div>
+      </div>
+    </div>
+    <p class="src">Leitura de avaliação e de público informada pela contratante.</p>
+  </div>
+</section>
+<!-- ===== /SLIDE 04 ===== -->
+
+<!-- ===== SLIDE 05: IDEIA ===== -->
+<section class="frame dark" id="ideia" data-act="Ato II" data-name="O que dizer">
+  <div class="wrap">
+    <p class="eyebrow" data-r>Ato II · O que dizer</p>
+    <h2 class="manifesto" data-r>Mostrar, repetir e <em>deixar a cidade conferir.</em></h2>
+    <p class="lead" data-r>Quem vê pouco do que foi feito avalia com menos informação. Por isso a campanha troca adjetivo por evidência: o que foi entregue, onde, e o que muda no dia a dia de quem mora aqui.</p>
+    <div class="pillars">
+      <div class="pillar" data-r><b><svg class="i"><use href="#i-eye"/></svg>Mostrar</b><p>Obras, ações de segurança e melhorias de estrutura com local, número e imagem real. Nenhuma promessa genérica.</p></div>
+      <div class="pillar" data-r><b><svg class="i"><use href="#i-repeat"/></svg>Repetir</b><p>Frequência calculada para o tamanho da cidade: o suficiente para lembrar, sem cansar.</p></div>
+      <div class="pillar" data-r><b><svg class="i"><use href="#i-link"/></svg>Conferir</b><p>Cada peça leva ao site da Prefeitura, com o Portal de Obras e os serviços, onde o morador encontra a informação completa.</p></div>
+    </div>
+    <div class="pill-note" data-r>
+      <svg class="i"><use href="#i-shield"/></svg>
+      <p><b>Publicidade institucional.</b> A campanha fala da cidade e dos serviços, e não de pessoas. Nenhuma peça traz nome, imagem ou voz de agentes públicos.</p>
+    </div>
+  </div>
+</section>
+<!-- ===== /SLIDE 05 ===== -->
+
+<!-- ===== SLIDE 06: CAMPANHAS ===== -->
+<section class="frame light" id="campanhas" data-act="Ato II" data-name="As duas campanhas">
+  <div class="wrap">
+    <p class="eyebrow" data-r>Ato II · As duas campanhas</p>
+    <h2 data-r>Primeiro o balanço. <em>Depois os temas.</em></h2>
+    <p class="lead" data-r>Só Melhora apresenta o conjunto da gestão. Temas Diversos aprofunda, tema a tema, para quem já viu a primeira e agora quer a prova.</p>
+    <div class="tl" data-r aria-label="Calendário das duas campanhas, de 17 de novembro a 15 de dezembro de 2026">
+      <div class="tl-axis" id="tlAxis"></div>
+      <div class="tl-row">
+        <div class="tl-bar a"><b>Só Melhora</b><span>17 a 29/11 · 13 dias</span></div>
+        <div class="tl-gap">30/11</div>
+        <div class="tl-bar b"><b>Temas Diversos</b><span>01 a 15/12 · 15 dias</span></div>
+      </div>
+    </div>
+    <div class="cmp-cards">
+      <article class="ccard" data-r>
+        <span class="k">Campanha 1 · 17 a 29/11</span>
+        <h3>Só Melhora</h3>
+        <p>Campanha guarda-chuva da gestão. Apresenta o conceito e o conjunto das entregas, com foco no público de 50 anos ou mais.</p>
+        <div class="beats">
+          <div class="beat"><time>17 a 20/11</time><div><b>Lançamento</b><span>Vídeo de 30 segundos e cards. Alcance máximo no núcleo 50+.</span></div></div>
+          <div class="beat"><time>21 a 25/11</time><div><b>Sustentação</b><span>Vídeos curtos por entrega e carrossel com locais e números.</span></div></div>
+          <div class="beat"><time>26 a 29/11</time><div><b>Reforço</b><span>Remarketing para quem assistiu ao vídeo e ainda não interagiu.</span></div></div>
+        </div>
+      </article>
+      <article class="ccard" data-r>
+        <span class="k">Campanha 2 · 01 a 15/12</span>
+        <h3>Temas Diversos</h3>
+        <p>Desdobra as entregas por tema, com prioridade para segurança e estrutura. Quem viu a primeira campanha recebe agora o detalhe.</p>
+        <div class="beats">
+          <div class="beat"><time>30/11</time><div><b>Leitura e ajuste</b><span>Resultados da primeira campanha orientam a verba da segunda.</span></div></div>
+          <div class="beat"><time>01 a 07/12</time><div><b>Segurança</b><span>Peças por entrega, com local e dado, para o público 50+ e a cidade inteira.</span></div></div>
+          <div class="beat"><time>08 a 15/12</time><div><b>Estrutura e demais temas</b><span>Obras, serviços e outros temas definidos com a Secretaria de Comunicação.</span></div></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+<!-- ===== /SLIDE 06 ===== -->
+
+<!-- ===== SLIDE 07: CANAIS ===== -->
+<section class="frame dark-2" id="canais" data-act="Ato III" data-name="Por onde dizer">
+  <div class="wrap">
+    <p class="eyebrow" data-r>Ato III · Por onde dizer</p>
+    <h2 data-r>Quatro canais avaliados. <em>Três entram no plano.</em></h2>
+    <p class="lead" data-r>Cada canal passou por três perguntas: o público prioritário está lá? Dá para chegar com frequência sem cansar? Existe conteúdo pronto para ele? Toque em um canal para ver o raciocínio.</p>
+    <div class="chcards" id="chcards" data-r>
+      <button type="button" class="chc" data-ch="meta" aria-pressed="false"><span class="tag">No plano</span><span class="ic"><svg class="i"><use href="#i-phone"/></svg></span><b>Meta</b><small>Instagram e Facebook</small><span class="fit">Aderência ao 50+ <span class="meter" aria-hidden="true"><i class="f"></i><i class="f"></i><i class="f"></i></span> Alta</span><span class="share">56,7% da verba</span></button>
+      <button type="button" class="chc" data-ch="youtube" aria-pressed="false"><span class="tag">No plano</span><span class="ic"><svg class="i"><use href="#i-play"/></svg></span><b>YouTube</b><small>Vídeo no celular e na TV</small><span class="fit">Aderência ao 50+ <span class="meter" aria-hidden="true"><i class="f"></i><i class="f"></i><i class="f"></i></span> Alta</span><span class="share">23,3% da verba</span></button>
+      <button type="button" class="chc" data-ch="google" aria-pressed="false"><span class="tag">No plano</span><span class="ic"><svg class="i"><use href="#i-search"/></svg></span><b>Google</b><small>Display e Demand Gen</small><span class="fit">Aderência ao 50+ <span class="meter" aria-hidden="true"><i class="f"></i><i class="f"></i><i></i></span> Média</span><span class="share">20,0% da verba</span></button>
+      <button type="button" class="chc out" data-ch="tiktok" aria-pressed="false"><span class="tag">Fora do plano</span><span class="ic"><svg class="i"><use href="#i-users"/></svg></span><b>TikTok</b><small>Público mais jovem</small><span class="fit">Aderência ao 50+ <span class="meter" aria-hidden="true"><i class="f"></i><i></i><i></i></span> Baixa</span><span class="share">Reservado para uma próxima fase</span></button>
+    </div>
+    <div class="chdetail" id="chDetail" aria-live="polite"></div>
+  </div>
+</section>
+<!-- ===== /SLIDE 07 ===== -->
+
+<!-- ===== SLIDE 08: SATURAÇÃO ===== -->
+<section class="frame light" id="saturacao" data-act="Ato III" data-name="O tamanho da cidade">
+  <div class="wrap">
+    <p class="eyebrow" data-r>Ato III · O tamanho da cidade define o plano</p>
+    <h2 data-r>Em uma cidade de 110 mil habitantes, <em>o limite é a repetição, e não a verba.</em></h2>
+    <p class="lead" data-r>Concentrar tudo em um único canal entregaria volume, mas repetiria a mesma mensagem ao mesmo morador dezenas de vezes. O plano divide cada campanha entre objetivos e canais para chegar a mais gente, e não à mesma gente de novo.</p>
+    <div class="freq">
+      <div class="fbox bad" data-r>
+        <small>Tudo em impressões, em um canal só</small>
+        <b class="num"><span data-count="27">27</span></b>
+        <p>impressões por habitante em cada campanha, se os R$ 30.000,00 virassem 3 milhões de impressões.</p>
+        <div class="dotsgrid" data-dots="27" data-total="90" aria-hidden="true"></div>
+      </div>
+      <div class="fbox good" data-r>
+        <small>Plano multicanal</small>
+        <b class="num"><span data-count="6.8" data-dec="1">6,8</span></b>
+        <p>impressões por habitante em cada campanha, com 750 mil impressões somadas entre Meta e Google, e mais 54 mil visualizações e 24 mil engajamentos.</p>
+        <div class="dotsgrid" data-dots="6.8" data-total="90" aria-hidden="true"></div>
+      </div>
+    </div>
+    <p class="freq-note" data-r>Médias por habitante (110.537 no Censo 2022), calculadas sobre o total de impressões de cada cenário. A distribuição real varia por faixa etária, canal e uso das plataformas.</p>
+  </div>
+</section>
+<!-- ===== /SLIDE 08 ===== -->
+
+<!-- ===== SLIDE 09: VERBA ===== -->
+<section class="frame dark" id="verba" data-act="Ato IV" data-name="A distribuição da verba">
+  <div class="wrap">
+    <p class="eyebrow" data-r>Ato IV · A distribuição</p>
+    <h2 data-r>R$ 30 mil por campanha. <em>Três canais, seis frentes.</em></h2>
+    <p class="lead" data-r>O valor de cada campanha já inclui a comissão da agência. A mesma distribuição vale para as duas, com segmentação e criativos ajustados a cada tema. O peso de cada canal segue o papel que ele cumpre.</p>
+    <div class="budget">
+      <div class="donut-wrap" data-r>
+        <svg viewBox="0 0 300 300" id="donut" role="img" aria-label="Distribuição da verba de cada campanha por frente de mídia"></svg>
+        <div class="donut-center"><div><b id="dcVal">R$ 30 mil</b><span id="dcLbl">por campanha</span></div></div>
+      </div>
+      <div>
+        <div class="alloc" id="alloc"></div>
+        <div class="totals"><span>Só Melhora <b>R$ 30.000,00</b></span><span>Temas Diversos <b>R$ 30.000,00</b></span><span class="g">Total <b>R$ 60.000,00</b></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ===== /SLIDE 09 ===== -->
+
+<!-- ===== SLIDE 10: PLANO ===== -->
+<section class="frame paper auto" id="plano" data-act="Ato IV" data-name="Plano de mídia">
+  <div class="wrap">
+    <p class="eyebrow" data-r>Ato IV · Plano de mídia digital</p>
+    <h2 data-r>O plano, <em>linha a linha.</em></h2>
+    <div class="tabs" role="group" aria-label="Escolher campanha" data-r>
+      <button type="button" data-tab="t1" aria-pressed="true">Só Melhora · 17 a 29/11</button>
+      <button type="button" data-tab="t2" aria-pressed="false">Temas Diversos · 01 a 15/12</button>
+    </div>
+    <div class="plan-head" data-for="t1" data-r>
+      <div><span>Data da proposta</span><b>05 de novembro de 2026</b></div>
+      <div><span>Agência</span><b>E3 Comunicação Integrada</b></div>
+      <div><span>Campanha</span><b>Só Melhora · Prefeitura de Paulínia</b></div>
+      <div><span>Período de veiculação</span><b>17/11 a 29/11</b></div>
+    </div>
+    <div class="tbl-wrap" id="t1" data-r><table class="plan"><thead><tr><th>Praça</th><th>Público</th><th>Canal</th><th>Formato</th><th>Posicionamento</th><th>Segmentação</th><th>Objetivo</th><th>Custo médio</th><th>Entrega total</th><th>Métrica</th><th>%</th><th>Investimento</th></tr></thead><tbody><tr><td class="pr" rowspan="6">PAULÍNIA, SP</td><td class="c">AS, 50+</td><td><b>META ADS</b></td><td>Card e vídeo 15"</td><td>Feed, Stories e Reels</td><td>Interesses (católico, família) e geolocalização em Paulínia · foco 50+</td><td>IMPRESSÕES</td><td class="n">R$ 10,00</td><td class="n">450.000</td><td class="c">CPM</td><td class="n">15,0%</td><td class="n">R$ 4.500,00</td></tr><tr><td class="c">AS, 18+</td><td><b>META ADS</b></td><td>Card e carrossel</td><td>Feed, Stories e Reels</td><td>Interesses e geolocalização em Paulínia · cidade inteira</td><td>ENGAJAMENTO</td><td class="n">R$ 0,25</td><td class="n">24.000</td><td class="c">CPE</td><td class="n">20,0%</td><td class="n">R$ 6.000,00</td></tr><tr><td class="c">AS, 50+</td><td><b>META ADS</b></td><td>Vídeo 15" e 30"</td><td>Feed, Stories e Reels</td><td>Interesses e geolocalização em Paulínia · foco 50+ · remarketing de quem assistiu ao vídeo (fase de reforço)</td><td>VISUALIZAÇÕES</td><td class="n">R$ 0,25</td><td class="n">26.000</td><td class="c">CPV</td><td class="n">21,7%</td><td class="n">R$ 6.500,00</td></tr><tr><td class="c">AS, 50+</td><td><b>YOUTUBE ADS</b></td><td>Vídeo 30" in-stream pulável</td><td>In-stream · celular e TV conectada</td><td>Afinidade e geolocalização em Paulínia · foco 50+</td><td>VISUALIZAÇÕES</td><td class="n">R$ 0,25</td><td class="n">28.000</td><td class="c">CPV</td><td class="n">23,3%</td><td class="n">R$ 7.000,00</td></tr><tr><td class="c">AS, 18+</td><td><b>GOOGLE ADS</b></td><td>Display (banners responsivos)</td><td>Sites e apps da região</td><td>Interesses e geolocalização em Paulínia</td><td>IMPRESSÕES</td><td class="n">R$ 20,00</td><td class="n">150.000</td><td class="c">CPM</td><td class="n">10,0%</td><td class="n">R$ 3.000,00</td></tr><tr><td class="c">AS, 50+</td><td><b>GOOGLE ADS</b></td><td>Demand Gen (imagem e vídeo)</td><td>Discover, Gmail e YouTube</td><td>Interesses e geolocalização em Paulínia · foco 50+</td><td>IMPRESSÕES</td><td class="n">R$ 20,00</td><td class="n">150.000</td><td class="c">CPM</td><td class="n">10,0%</td><td class="n">R$ 3.000,00</td></tr><tr class="tot g"><td colspan="11" style="text-align:right">INVESTIMENTO TOTAL</td><td class="n">R$ 30.000,00</td></tr><tr class="tot s"><td colspan="11" style="text-align:right">IMPRESSÕES</td><td class="n">750.000</td></tr><tr class="tot s"><td colspan="11" style="text-align:right">VISUALIZAÇÕES</td><td class="n">54.000</td></tr><tr class="tot s"><td colspan="11" style="text-align:right">ENGAJAMENTOS</td><td class="n">24.000</td></tr></tbody></table></div>
+    <div class="plan-head" data-for="t2" data-r hidden>
+      <div><span>Data da proposta</span><b>05 de novembro de 2026</b></div>
+      <div><span>Agência</span><b>E3 Comunicação Integrada</b></div>
+      <div><span>Campanha</span><b>Temas Diversos · Prefeitura de Paulínia</b></div>
+      <div><span>Período de veiculação</span><b>01/12 a 15/12</b></div>
+    </div>
+    <div class="tbl-wrap" id="t2" data-r hidden><table class="plan"><thead><tr><th>Praça</th><th>Público</th><th>Canal</th><th>Formato</th><th>Posicionamento</th><th>Segmentação</th><th>Objetivo</th><th>Custo médio</th><th>Entrega total</th><th>Métrica</th><th>%</th><th>Investimento</th></tr></thead><tbody><tr><td class="pr" rowspan="6">PAULÍNIA, SP</td><td class="c">AS, 50+</td><td><b>META ADS</b></td><td>Card e vídeo 15"</td><td>Feed, Stories e Reels</td><td>Interesses (católico, família) e geolocalização em Paulínia · foco 50+ · temas segurança e estrutura</td><td>IMPRESSÕES</td><td class="n">R$ 10,00</td><td class="n">450.000</td><td class="c">CPM</td><td class="n">15,0%</td><td class="n">R$ 4.500,00</td></tr><tr><td class="c">AS, 18+</td><td><b>META ADS</b></td><td>Card e carrossel</td><td>Feed, Stories e Reels</td><td>Interesses e geolocalização em Paulínia · cidade inteira · temas segurança e estrutura</td><td>ENGAJAMENTO</td><td class="n">R$ 0,25</td><td class="n">24.000</td><td class="c">CPE</td><td class="n">20,0%</td><td class="n">R$ 6.000,00</td></tr><tr><td class="c">AS, 50+</td><td><b>META ADS</b></td><td>Vídeo 15" e 30"</td><td>Feed, Stories e Reels</td><td>Interesses e geolocalização em Paulínia · foco 50+ · remarketing de quem viu Só Melhora</td><td>VISUALIZAÇÕES</td><td class="n">R$ 0,25</td><td class="n">26.000</td><td class="c">CPV</td><td class="n">21,7%</td><td class="n">R$ 6.500,00</td></tr><tr><td class="c">AS, 50+</td><td><b>YOUTUBE ADS</b></td><td>Vídeo 30" in-stream pulável</td><td>In-stream · celular e TV conectada</td><td>Afinidade e geolocalização em Paulínia · foco 50+ · temas segurança e estrutura</td><td>VISUALIZAÇÕES</td><td class="n">R$ 0,25</td><td class="n">28.000</td><td class="c">CPV</td><td class="n">23,3%</td><td class="n">R$ 7.000,00</td></tr><tr><td class="c">AS, 18+</td><td><b>GOOGLE ADS</b></td><td>Display (banners responsivos)</td><td>Sites e apps da região</td><td>Interesses e geolocalização em Paulínia · temas segurança e estrutura</td><td>IMPRESSÕES</td><td class="n">R$ 20,00</td><td class="n">150.000</td><td class="c">CPM</td><td class="n">10,0%</td><td class="n">R$ 3.000,00</td></tr><tr><td class="c">AS, 50+</td><td><b>GOOGLE ADS</b></td><td>Demand Gen (imagem e vídeo)</td><td>Discover, Gmail e YouTube</td><td>Interesses e geolocalização em Paulínia · foco 50+ · temas segurança e estrutura</td><td>IMPRESSÕES</td><td class="n">R$ 20,00</td><td class="n">150.000</td><td class="c">CPM</td><td class="n">10,0%</td><td class="n">R$ 3.000,00</td></tr><tr class="tot g"><td colspan="11" style="text-align:right">INVESTIMENTO TOTAL</td><td class="n">R$ 30.000,00</td></tr><tr class="tot s"><td colspan="11" style="text-align:right">IMPRESSÕES</td><td class="n">750.000</td></tr><tr class="tot s"><td colspan="11" style="text-align:right">VISUALIZAÇÕES</td><td class="n">54.000</td></tr><tr class="tot s"><td colspan="11" style="text-align:right">ENGAJAMENTOS</td><td class="n">24.000</td></tr></tbody></table></div>
+    <div class="deliv" data-r>
+      <div><b>R$ 60.000,00</b><span>investimento total das duas campanhas</span></div>
+      <div><b>1.500.000</b><span>impressões (Meta e Google)</span></div>
+      <div><b>108.000</b><span>visualizações de vídeo (Meta e YouTube)</span></div>
+      <div><b>48.000</b><span>engajamentos (Meta)</span></div>
+    </div>
+    <p class="obs">Observações: plataformas digitais operam por leilão e não têm tabela pública de preços. Os custos médios seguem o modelo de referência das propostas da E3. O valor de cada campanha inclui a comissão da agência. AS significa ambos os sexos. Engajamento reúne as interações com as publicações. Visualização é o vídeo assistido até o ponto em que cada plataforma o contabiliza. Comprovação por relatórios nativos do Gerenciador de Anúncios da Meta e do Google Ads.</p>
+  </div>
+</section>
+<!-- ===== /SLIDE 10 ===== -->
+
+<!-- ===== SLIDE 11: RESUMO ===== -->
+<section class="frame light auto dense" id="resumo" data-act="Ato IV" data-name="Resumo das entregas">
+  <div class="wrap">
+    <p class="eyebrow" data-r>Resumo do investimento e das entregas</p>
+    <h2 data-r>Cada canal com <em>uma função, uma métrica e uma prova.</em></h2>
+    <div class="sumgrid">
+      <article class="scard" data-r><span class="k">Campanha</span><h4>Só Melhora</h4><span class="per">17 a 29/11</span><dl><div><dt>Investimento</dt><dd>R$ 30.000,00</dd></div><div><dt>Meta Ads · impressões</dt><dd>450.000</dd></div><div><dt>Meta Ads · engajamentos</dt><dd>24.000</dd></div><div><dt>Meta Ads · visualizações</dt><dd>26.000</dd></div><div><dt>YouTube Ads · visualizações</dt><dd>28.000</dd></div><div><dt>Google Ads · impressões</dt><dd>300.000</dd></div><div><dt>Total de impressões</dt><dd>750.000</dd></div><div><dt>Total de visualizações</dt><dd>54.000</dd></div><div><dt>Total de engajamentos</dt><dd>24.000</dd></div></dl></article>
+      <article class="scard" data-r><span class="k">Campanha</span><h4>Temas Diversos</h4><span class="per">01 a 15/12</span><dl><div><dt>Investimento</dt><dd>R$ 30.000,00</dd></div><div><dt>Meta Ads · impressões</dt><dd>450.000</dd></div><div><dt>Meta Ads · engajamentos</dt><dd>24.000</dd></div><div><dt>Meta Ads · visualizações</dt><dd>26.000</dd></div><div><dt>YouTube Ads · visualizações</dt><dd>28.000</dd></div><div><dt>Google Ads · impressões</dt><dd>300.000</dd></div><div><dt>Total de impressões</dt><dd>750.000</dd></div><div><dt>Total de visualizações</dt><dd>54.000</dd></div><div><dt>Total de engajamentos</dt><dd>24.000</dd></div></dl></article>
+      <article class="scard tot" data-r><span class="k">Duas campanhas</span><h4>Total</h4><span class="per">17/11 a 15/12</span><dl><div><dt>Investimento</dt><dd>R$ 60.000,00</dd></div><div><dt>Meta Ads · impressões</dt><dd>900.000</dd></div><div><dt>Meta Ads · engajamentos</dt><dd>48.000</dd></div><div><dt>Meta Ads · visualizações</dt><dd>52.000</dd></div><div><dt>YouTube Ads · visualizações</dt><dd>56.000</dd></div><div><dt>Google Ads · impressões</dt><dd>600.000</dd></div><div><dt>Total de impressões</dt><dd>1.500.000</dd></div><div><dt>Total de visualizações</dt><dd>108.000</dd></div><div><dt>Total de engajamentos</dt><dd>48.000</dd></div></dl></article>
+    </div>
+  </div>
+</section>
+<!-- ===== /SLIDE 11 ===== -->
+
+<!-- ===== SLIDE 12: MENSURAÇÃO ===== -->
+<section class="frame dark" id="mensuracao" data-act="Ato V" data-name="Como acompanhar">
+  <div class="wrap">
+    <p class="eyebrow" data-r>Ato V · Como acompanhar</p>
+    <h2 data-r>Resultado à vista <em>durante e depois.</em></h2>
+    <div class="mgrid">
+      <div class="mitem" data-r><svg class="i"><use href="#i-calendar"/></svg><b>Boletim semanal</b><p>Entrega da semana, o que foi ajustado e o que vem a seguir, em formato curto.</p></div>
+      <div class="mitem" data-r><svg class="i"><use href="#i-repeat"/></svg><b>Ajuste entre as linhas</b><p>A verba acompanha o que entrega melhor, dentro do total e das metas de cada campanha.</p></div>
+      <div class="mitem" data-r><svg class="i"><use href="#i-link"/></svg><b>Link rastreado</b><p>Cada peça aponta ao site da Prefeitura com marcação própria, para medir quem foi conferir.</p></div>
+      <div class="mitem" data-r><svg class="i"><use href="#i-clip"/></svg><b>Relatório final</b><p>Consolidado por campanha, em HTML e PDF, com entregas e leitura por canal.</p></div>
+    </div>
+    <div class="legal" data-r>
+      <svg class="i"><use href="#i-shield"/></svg>
+      <div><b>Publicidade institucional, com caráter informativo</b><p>As peças seguem o art. 37, § 1º, da Constituição Federal: caráter educativo, informativo ou de orientação social, sem nomes, símbolos ou imagens que caracterizem promoção pessoal de autoridades ou servidores.</p></div>
+    </div>
+  </div>
+</section>
+<!-- ===== /SLIDE 12 ===== -->
+
+<!-- ===== SLIDE 13: CRONOGRAMA ===== -->
+<section class="frame light dense" id="cronograma" data-act="Ato V" data-name="Do sim ao ar">
+  <div class="wrap">
+    <p class="eyebrow" data-r>Ato V · Do sim ao ar</p>
+    <h2 data-r>Aprovando até 09/11, <em>a primeira campanha entra no ar em 17/11.</em></h2>
+    <p class="lead" data-r>O calendário abaixo trabalha de trás para a frente a partir do dia 17. Cada etapa depende da anterior, e os conteúdos da Prefeitura são o item mais sensível.</p>
+    <div class="cron">
+      <div class="rail" data-r>
+        <div class="rs"><time>05/11<small>qui</small></time><i class="pt"></i><div><b>Envio da proposta</b><span>Plano, verba e calendário das duas campanhas.</span></div></div>
+        <div class="rs"><time>09/11<small>seg</small></time><i class="pt"></i><div><b>Aprovação e conteúdos</b><span>Aprovação do plano e envio dos conteúdos pela Secretaria de Comunicação: entregas, fotos, vídeos e dados.</span></div></div>
+        <div class="rs"><time>10 a 12/11</time><i class="pt"></i><div><b>Produção das peças</b><span>Vídeos de 15 e 30 segundos, cards e carrossel.</span></div></div>
+        <div class="rs"><time>12/11<small>qui</small></time><i class="pt"></i><div><b>Peças para aprovação</b><span>Envio do pacote completo de criativos.</span></div></div>
+        <div class="rs"><time>13/11<small>sex</small></time><i class="pt"></i><div><b>Aprovação das peças</b><span>Último dia para ajustes antes da montagem.</span></div></div>
+        <div class="rs"><time>16/11<small>seg</small></time><i class="pt"></i><div><b>Montagem</b><span>Campanhas, segmentação por idade e interesse, e links rastreados.</span></div></div>
+        <div class="rs go"><time>17/11<small>ter</small></time><i class="pt"></i><div><b>Só Melhora no ar</b><span>Início da veiculação, com boletim na primeira semana.</span></div></div>
+        <div class="rs"><time>24/11<small>ter</small></time><i class="pt"></i><div><b>Conteúdos de Temas Diversos</b><span>Material de segurança e estrutura para a segunda campanha.</span></div></div>
+        <div class="rs"><time>27/11<small>sex</small></time><i class="pt"></i><div><b>Aprovação das peças de Temas Diversos</b><span>Criativos aprovados para a montagem.</span></div></div>
+        <div class="rs"><time>30/11<small>seg</small></time><i class="pt"></i><div><b>Leitura e montagem</b><span>Resultados de Só Melhora orientam a verba da segunda campanha.</span></div></div>
+        <div class="rs go"><time>01/12<small>ter</small></time><i class="pt"></i><div><b>Temas Diversos no ar</b><span>Veiculação até 15/12.</span></div></div>
+      </div>
+      <aside class="aside" data-r>
+        <h4>Se o material <em>chegar depois.</em></h4>
+        <p>A data final de cada campanha se mantém. Qualquer atraso reduz os dias de veiculação, e não desloca o encerramento.</p>
+        <ul>
+          <li><svg class="i"><use href="#i-check"/></svg><span>Pacote enxuto de lançamento: 1 vídeo de 30 segundos, 1 de 15 segundos e 3 cards. As demais peças entram na semana seguinte.</span></li>
+          <li><svg class="i"><use href="#i-check"/></svg><span>Conteúdos que ajudam: lista de entregas de segurança e estrutura, com local, número, foto e vídeo.</span></li>
+          <li><svg class="i"><use href="#i-check"/></svg><span>Temas Diversos precisa de material até 24/11 para entrar em 01/12.</span></li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+</section>
+<!-- ===== /SLIDE 13 ===== -->
+
+<!-- ===== SLIDE 14: FIM ===== -->
+<section class="frame dark" id="fim" data-act="Fim" data-name="Próximos passos">
+  <div class="wrap">
+    <p class="eyebrow" data-r>Próximos passos</p>
+    <h2 data-r>O que foi entregue merece <em>ser visto por quem mora aqui.</em></h2>
+    <div class="next">
+      <div class="nx" data-r><small>01</small><b>Aprovação</b><p>Plano, verba e calendário das duas campanhas.</p></div>
+      <div class="nx" data-r><small>02</small><b>Conteúdos</b><p>Entregas de segurança e estrutura, com local, número, foto e vídeo.</p></div>
+      <div class="nx" data-r><small>03</small><b>Criativos</b><p>Vídeos de 15 e 30 segundos, cards e carrossel, enviados para aprovação.</p></div>
+      <div class="nx" data-r><small>04</small><b>Montagem</b><p>Campanhas, segmentação por idade e interesse, e links rastreados.</p></div>
+      <div class="nx" data-r><small>05</small><b>No ar</b><p>Só Melhora em 17/11 e Temas Diversos em 01/12, com boletim semanal.</p></div>
+    </div>
+    <div class="sign">
+      <div><div class="logo">Só <em>Melhora</em></div><small>Prefeitura de Paulínia · Temas Diversos</small></div>
+      <div style="text-align:right"><div class="logo" style="font-size:30px">Esquina</div><small>Comunicação digital · trading desk</small><div class="ver">Proposta de mídia digital · v1 · novembro de 2026</div></div>
+    </div>
+  </div>
+</section>
+<!-- ===== /SLIDE 14 ===== -->
+
+</main>
+
+<script>
+/* ===== JS: DADOS ===== */
+var CH=[{"k": "Meta · Impressões", "v": 4500, "c": "#5EE39A", "r": "Alcance no núcleo 50+"}, {"k": "Meta · Engajamento", "v": 6000, "c": "#34D17B", "r": "Interações com as publicações"}, {"k": "Meta · Visualizações", "v": 6500, "c": "#1E9F52", "r": "Vídeos curtos por entrega"}, {"k": "YouTube · Visualizações", "v": 7000, "c": "#F5B83D", "r": "Vídeo de 30 segundos na tela grande e no celular"}, {"k": "Google · Display", "v": 3000, "c": "#28A0A9", "r": "Sites e apps da região"}, {"k": "Google · Demand Gen", "v": 3000, "c": "#99BFD4", "r": "Discover, Gmail e YouTube"}];
+var CHD={"meta": {"h": "Meta, Instagram e Facebook", "p": "É o núcleo do plano. A Prefeitura já tem 105 mil seguidores no Instagram e 48 mil no Facebook, e a plataforma permite segmentar por idade, interesse e localização em Paulínia. Concentra alcance, engajamento e vídeos curtos.", "pts": ["Segmentação por 50 anos ou mais e por interesse católico, com a cidade inteira como segunda camada.", "Três frentes, cada uma com sua métrica: impressões, engajamento e visualizações.", "Na segunda campanha, remarketing para quem assistiu aos vídeos da primeira.", "Peso no plano: 56,7% da verba de cada campanha."]}, "youtube": {"h": "YouTube", "p": "É o canal onde a Prefeitura tem mais espaço para crescer, com 3,64 mil inscritos e 238 vídeos. O vídeo de 30 segundos conta a entrega inteira, no celular e na TV conectada, e a visualização é contada quando a pessoa assiste ou interage.", "pts": ["Formato longo, adequado para mostrar a entrega com local, número e contexto.", "Audiência diferente da que já segue o Instagram, o que amplia o alcance sem repetir o mesmo morador.", "Vídeo pulável de 30 segundos, com geolocalização em Paulínia e foco no público 50+.", "Peso no plano: 23,3% da verba de cada campanha."]}, "google": {"h": "Google, Display e Demand Gen", "p": "Chega a quem não está nas redes sociais. O Display coloca a peça em sites e aplicativos da região, e o Demand Gen leva imagem e vídeo ao Discover, ao Gmail e ao YouTube. É a camada de frequência extra para o público de 50 anos ou mais.", "pts": ["Display em sites e apps da região, com geolocalização em Paulínia.", "Demand Gen com foco no público 50+ e interesses compatíveis.", "O inventário local é limitado, por isso a verba é calibrada e acompanhada diariamente.", "Peso no plano: 20,0% da verba de cada campanha."]}, "tiktok": {"out": true, "h": "TikTok, fora deste plano", "p": "A conta @prefpauliniasp já existe, mas o canal tem público mais jovem, e a prioridade das duas campanhas é o morador de 50 anos ou mais. Em campanhas de 13 e 15 dias, o tempo de aprendizado também pesa.", "pts": ["Fica reservado para uma próxima fase, com conteúdo próprio para o público mais jovem.", "Se a Prefeitura quiser incluir agora, uma linha pequena de visualizações cabe sem mudar o total da campanha.", "O morador mais jovem já é alcançado pelo Instagram, nas linhas de alcance e engajamento."]}};
+</script>
+<script>
+(function(){
+"use strict";
+var RM=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+var $=function(s,c){return (c||document).querySelector(s)};
+var $$=function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s))};
+var NS="http://www.w3.org/2000/svg";
+function el(tag,attrs,parent){var e=document.createElementNS(NS,tag);for(var k in attrs)e.setAttribute(k,attrs[k]);if(parent)parent.appendChild(e);return e}
+function fmt(n,d){return n.toLocaleString("pt-BR",{minimumFractionDigits:d||0,maximumFractionDigits:d||0})}
+var seed=11;function rnd(){seed=(seed*16807)%2147483647;return (seed-1)/2147483646}
+
+/* ===== JS: HERO REDE ===== */
+(function(){
+  var s=$("#net"); if(!s) return;
+  var pts=[],i,j;
+  for(i=0;i<54;i++){pts.push({x:80+rnd()*1440,y:60+rnd()*780,hub:i%9===0})}
+  var g=el("g",{},s);
+  for(i=0;i<pts.length;i++){for(j=i+1;j<pts.length;j++){
+    var dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y,d=Math.sqrt(dx*dx+dy*dy);
+    if(d<230){el("line",{x1:pts[i].x.toFixed(1),y1:pts[i].y.toFixed(1),x2:pts[j].x.toFixed(1),y2:pts[j].y.toFixed(1),stroke:"#99BFD4","stroke-opacity":(0.28*(1-d/230)).toFixed(2),"stroke-width":1},g)}
+  }}
+  pts.forEach(function(p,k){
+    if(p.hub){var r=el("circle",{cx:p.x.toFixed(1),cy:p.y.toFixed(1),r:9,fill:"none",stroke:"#F5B83D","stroke-width":1.4,"class":"nd hub"},s);r.style.animationDelay=(rnd()*3).toFixed(2)+"s"}
+    var c=el("circle",{cx:p.x.toFixed(1),cy:p.y.toFixed(1),r:p.hub?4.2:2.2,fill:p.hub?"#F5B83D":"#BFE4EA"},s);
+    c.style.animation="twinkle "+(2.6+rnd()*3).toFixed(2)+"s "+(rnd()*4).toFixed(2)+"s ease-in-out infinite";
+  });
+})();
+
+/* ===== JS: EIXO DO CALENDÁRIO ===== */
+(function(){
+  var a=$("#tlAxis"); if(!a) return;
+  var labels=[];
+  for(var d=17;d<=30;d++)labels.push({t:d,m:d===17});
+  for(var e=1;e<=15;e++)labels.push({t:e,m:e===1});
+  labels.forEach(function(l,i){
+    var sp=document.createElement("span");
+    var pad=function(n){return n<10?"0"+n:""+n};
+    sp.textContent=(i===0)?"17/11":(i===14)?"01/12":pad(l.t);
+    if(l.m)sp.className="m";
+    if(i%2===1&&!l.m)sp.textContent="";
+    a.appendChild(sp);
+  });
+})();
+
+/* ===== JS: DONUT E VERBA ===== */
+(function(){
+  var s=$("#donut"),list=$("#alloc"); if(!s) return;
+  var R=120,C=2*Math.PI*R,tot=30000,acc=0,segs=[],rows=[];
+  el("circle",{cx:150,cy:150,r:R,fill:"none",stroke:"rgba(238,245,242,.09)","stroke-width":34},s);
+  CH.forEach(function(ch,i){
+    var len=ch.v/tot*C,gap=3;
+    var c=el("circle",{cx:150,cy:150,r:R,"class":"seg",stroke:ch.c,"stroke-dasharray":(len-gap)+" "+(C-len+gap),"stroke-dashoffset":-acc,"data-i":i,tabindex:-1},s);
+    acc+=len;segs.push(c);
+    var b=document.createElement("button");b.type="button";b.className="arow";b.setAttribute("data-i",i);
+    b.innerHTML='<i style="background:'+ch.c+'"></i><span><b>'+ch.k+'</b><small>'+ch.r+'</small></span><span class="val">R$ '+fmt(ch.v)+'</span><span class="pct">'+fmt(ch.v/tot*100,1)+'%</span>';
+    list.appendChild(b);rows.push(b);
+  });
+  function on(i){
+    segs.forEach(function(sg,j){sg.classList.toggle("on",j===i);sg.classList.toggle("dim",i!==null&&j!==i)});
+    rows.forEach(function(r,j){r.classList.toggle("on",j===i)});
+    $("#dcVal").textContent=i===null?"R$ 30 mil":"R$ "+fmt(CH[i].v);
+    $("#dcLbl").textContent=i===null?"por campanha":CH[i].k;
+  }
+  segs.concat(rows).forEach(function(n){
+    var i=+n.getAttribute("data-i");
+    n.addEventListener("mouseenter",function(){on(i)});
+    n.addEventListener("focus",function(){on(i)});
+    n.addEventListener("click",function(){on(i)});
+  });
+  s.addEventListener("mouseleave",function(){on(null)});
+  list.addEventListener("mouseleave",function(){on(null)});
+  if(!RM){
+    segs.forEach(function(sg){sg.style.opacity=0});
+    var seen=false;
+    new IntersectionObserver(function(es,o){es.forEach(function(e){if(e.isIntersecting&&!seen){seen=true;segs.forEach(function(sg,i){setTimeout(function(){sg.style.transition="opacity .6s, stroke-width .3s";sg.style.opacity=1},i*140)});o.disconnect()}})},{threshold:.3}).observe(s);
+  }
+})();
+
+/* ===== JS: CANAIS ===== */
+(function(){
+  var cards=$$(".chc"),box=$("#chDetail"); if(!box) return;
+  function show(k){
+    cards.forEach(function(c){c.setAttribute("aria-pressed",c.getAttribute("data-ch")===k?"true":"false")});
+    var d=CHD[k];
+    box.className="chdetail"+(d.out?" out":"");
+    var li=d.pts.map(function(t){return '<li><svg class="i"><use href="#i-'+(d.out?"arrow":"check")+'"/></svg><span>'+t+'</span></li>'}).join("");
+    box.innerHTML='<div><h3>'+d.h+'</h3><p>'+d.p+'</p></div><ul>'+li+'</ul>';
+  }
+  cards.forEach(function(c){c.addEventListener("click",function(){show(c.getAttribute("data-ch"))})});
+  show("meta");
+})();
+
+/* ===== JS: ABAS DO PLANO ===== */
+(function(){
+  var bs=$$(".tabs button"); if(!bs.length) return;
+  bs.forEach(function(b){b.addEventListener("click",function(){
+    var t=b.getAttribute("data-tab");
+    bs.forEach(function(x){x.setAttribute("aria-pressed",x===b?"true":"false")});
+    $$(".tbl-wrap").forEach(function(w){w.hidden=(w.id!==t)});
+    $$(".plan-head").forEach(function(w){w.hidden=(w.getAttribute("data-for")!==t)});
+  })});
+})();
+
+/* ===== JS: PONTOS DE FREQUÊNCIA ===== */
+(function(){
+  $$(".dotsgrid").forEach(function(g){
+    var tot=+g.getAttribute("data-total"),v=parseFloat(g.getAttribute("data-dots")),n=Math.round(v);
+    for(var i=0;i<tot;i++){var d=document.createElement("i");if(i<n)d.setAttribute("data-on","1");g.appendChild(d)}
+    var kids=$$("i",g);
+    function run(){kids.forEach(function(k,i){if(k.getAttribute("data-on"))setTimeout(function(){k.classList.add("on")},RM?0:i*22)})}
+    new IntersectionObserver(function(es,o){es.forEach(function(e){if(e.isIntersecting){run();o.disconnect()}})},{threshold:.35}).observe(g);
+  });
+})();
+
+/* ===== JS: REVELAR, CONTAR, BARRAS ===== */
+(function(){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.12,rootMargin:"0px 0px -5% 0px"});
+  $$("[data-r]").forEach(function(n){
+    var sibs=n.parentNode?Array.prototype.indexOf.call(n.parentNode.children,n):0;
+    n.style.transitionDelay=(Math.min(sibs,6)*70)+"ms";
+    io.observe(n);
+  });
+  var cio=new IntersectionObserver(function(es){es.forEach(function(e){
+    if(!e.isIntersecting)return;cio.unobserve(e.target);
+    var n=e.target,to=parseFloat(n.getAttribute("data-count")),dec=+n.getAttribute("data-dec")||0;
+    if(RM){return}
+    var t0=null,dur=1400;
+    function tick(t){if(!t0)t0=t;var p=Math.min(1,(t-t0)/dur),v=to*(1-Math.pow(1-p,3));n.textContent=fmt(v,dec);if(p<1)requestAnimationFrame(tick)}
+    requestAnimationFrame(tick);
+  })},{threshold:.5});
+  $$("[data-count]").forEach(function(n){
+    var to=parseFloat(n.getAttribute("data-count")),dec=+n.getAttribute("data-dec")||0;
+    n.textContent=fmt(to,dec); cio.observe(n);
+  });
+  var bio=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){$$("[data-w]",e.target).forEach(function(i){i.style.width=i.getAttribute("data-w")+"%"});bio.unobserve(e.target)}})},{threshold:.3});
+  $$("#rbars").forEach(function(b){bio.observe(b)});
+  var vio=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");vio.unobserve(e.target)}})},{threshold:.3});
+  $$(".venn").forEach(function(v){vio.observe(v)});
+  if(RM){$$("[data-w]").forEach(function(i){i.style.width=i.getAttribute("data-w")+"%"});$$(".venn").forEach(function(v){v.classList.add("in")})}
+})();
+
+/* ===== JS: PDF ===== */
+(function(){
+  function finalize(){
+    $$("[data-r]").forEach(function(n){n.classList.add("in")});
+    $$("[data-w]").forEach(function(i){i.style.width=i.getAttribute("data-w")+"%"});
+    $$(".venn").forEach(function(v){v.classList.add("in")});
+    $$(".dotsgrid i[data-on]").forEach(function(k){k.classList.add("on")});
+    $$("[data-count]").forEach(function(n){n.textContent=fmt(parseFloat(n.getAttribute("data-count")),+n.getAttribute("data-dec")||0)});
+  }
+  window.addEventListener("beforeprint",finalize);
+})();
+
+/* ===== JS: HUD, PONTOS E TECLADO ===== */
+(function(){
+  var frames=$$(".frame"),bar=$(".hud-bar"),act=$("#actNum"),nm=$("#actName"),dots=$("#dots"),kh=$(".keyhint");
+  var btns=[];
+  frames.forEach(function(f,i){
+    var b=document.createElement("button");b.type="button";b.setAttribute("aria-label",f.getAttribute("data-name"));
+    b.innerHTML="<span>"+f.getAttribute("data-name")+"</span>";
+    b.addEventListener("click",function(){f.scrollIntoView({behavior:RM?"auto":"smooth"})});
+    dots.appendChild(b);btns.push(b);
+  });
+  $$("[data-go]").forEach(function(b){b.addEventListener("click",function(){var t=document.getElementById(b.getAttribute("data-go"));if(t)t.scrollIntoView({behavior:RM?"auto":"smooth"})})});
+  var cur=-1,tick=false;
+  function upd(){
+    tick=false;
+    var h=document.documentElement,max=h.scrollHeight-window.innerHeight;
+    bar.style.transform="scaleX("+(max>0?Math.min(1,window.scrollY/max):0)+")";
+    var mid=window.innerHeight*.45,idx=0;
+    frames.forEach(function(f,i){var r=f.getBoundingClientRect();if(r.top<=mid&&r.bottom>mid)idx=i});
+    if(idx>0&&kh)kh.classList.add("gone");
+    if(idx!==cur){cur=idx;act.textContent=frames[idx].getAttribute("data-act");nm.textContent=frames[idx].getAttribute("data-name");btns.forEach(function(b,i){b.classList.toggle("on",i===idx)})}
+  }
+  window.addEventListener("scroll",function(){if(!tick){tick=true;requestAnimationFrame(upd)}},{passive:true});
+  window.addEventListener("resize",upd);upd();
+  document.addEventListener("keydown",function(e){
+    if(e.target&&/INPUT|TEXTAREA|SELECT/.test(e.target.tagName))return;
+    var d=0;if(e.key==="ArrowRight")d=1;else if(e.key==="ArrowLeft")d=-1;else return;
+    var n=Math.max(0,Math.min(frames.length-1,cur+d));frames[n].scrollIntoView({behavior:RM?"auto":"smooth"});
+  });
+})();
+})();
+</script>
+</body>
+</html>
