@@ -963,6 +963,7 @@ h1 em.blk,h2 em.blk{display:block;margin-top:6px;font-size:.94em;line-height:1.0
 </style>
 <style id="pdf-btn-css">#pdf-btn{position:fixed;top:14px;right:18px;z-index:9999;display:inline-flex;align-items:center;gap:8px;background:#3700ff;color:#fff;font-family:"DM Sans",system-ui,sans-serif;font-weight:700;font-size:15px;letter-spacing:.5px;padding:9px 16px;border-radius:999px;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,.25)}#pdf-btn:hover{background:#2400b8}@media print{#pdf-btn{display:none}}</style>
 <style>@media(max-width:600px){.slide-grid{grid-template-columns:repeat(10,minmax(0,1fr))}.slide-grid>*{min-width:0}.tag{display:block;white-space:normal;overflow-wrap:anywhere}.tag::before{margin-right:8px}.ee{grid-template-columns:minmax(0,1fr)}.ee-dark,.ee-light{min-width:0;width:100%;box-sizing:border-box}.an-g,.an-c,.an-top,.an-b{min-width:0}.an-top{grid-template-columns:72px minmax(0,1fr)!important}.an-th{width:72px!important}.an-m{grid-template-columns:repeat(2,minmax(0,1fr))!important}.an-m>div{min-width:0}.an-m span{overflow-wrap:anywhere}.mt-xs:has(.thumb9.dst){grid-template-columns:minmax(0,1fr)!important}.dst-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}.dst-grid>div{min-width:0}.dst-grid span,.dst-grid i{overflow-wrap:anywhere}}</style><style id="pdf-btn-css">#pdf-btn{position:fixed;top:14px;right:18px;z-index:9999;display:inline-flex;align-items:center;gap:8px;background:#3700ff;color:#fff;font-family:"DM Sans",system-ui,sans-serif;font-weight:700;font-size:15px;letter-spacing:.5px;padding:9px 16px;border-radius:999px;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,.25)}#pdf-btn:hover{background:#2400b8}@media print{#pdf-btn{display:none}}</style>
+<style id="titulos-padrao">.s-media h2 em.blk{font-size:1em!important}.s-light h2 em,.s-light .serif{color:#3700ff!important}.s-dark h2 em,.s-dark h1 em,.s-dark .serif,.ee-dark .serif{color:#8c9aff!important}</style>
 </head>
 <body>
 <a id="pdf-btn" href="relatorio-campinas-08out-08nov-2026.pdf" target="_blank" rel="noopener" download>Baixar PDF ↓</a>
@@ -1220,22 +1221,10 @@ const DADOS = {
  "analise": {
   "rodape": "Peças do Meta Ads por índice de criativos. Seguidores atribuídos aos anúncios. Interação por mil: comentários, compartilhamentos, salvamentos e seguidores sobre as impressões.",
   "titulos": [
-   [
-    "As peças do ciclo",
-    "na ordem do índice"
-   ],
-   [
-    "As peças do ciclo",
-    "na ordem do índice"
-   ],
-   [
-    "As peças do ciclo",
-    "na ordem do índice"
-   ],
-   [
-    "As peças do ciclo",
-    "na ordem do índice"
-   ]
+   ["“Climatério” e “Refis”", "lideram o índice do mês"],
+   ["“Combate ao racismo” e “Concilia”", "seguem no índice"],
+   ["“Festival” e “Coleta seletiva”", "ficam no meio do índice"],
+   ["“Atleta Carlos Exaltação” e “Chega Junto”", "completam as peças do mês"]
   ],
   "pecas": [
    {
@@ -1927,7 +1916,7 @@ const DADOS = {
     </div>`));
 
   
-  slide("s-dark s-media", "O período", grid(head(tag(["Panorama da ", { t: "mídia", cls: "w-med" }, " no período · " + D.periodo]), D.panoramaTitulo[0], D.panoramaTitulo[1]) + `
+  slide("s-dark s-media", "O período", grid(head(tag(["Panorama da ", { t: "mídia", cls: "w-med" }, " no período · " + D.periodo + "/2026"]), D.panoramaTitulo[0], D.panoramaTitulo[1]) + `
     <div class="modgrid mt-sm" style="grid-column:1/-1;display:grid;grid-template-columns:repeat(4,1fr);gap:var(--gutter)">
       ${D.plataformas.map((p, i) => `<div class="card anim d${i + 2}">
         <div style="display:flex;align-items:center;gap:10px">${p.icones.map(icon).join("")}<p class="bebas" style="font-size:clamp(24px,2.4vw,34px)">${esc(p.nome)}</p></div>
@@ -1939,7 +1928,7 @@ const DADOS = {
   
   slide("s-media", "O período", `<div class="ee">
     <div class="ee-dark" style="background:radial-gradient(120% 90% at 15% 85%,rgba(55,0,255,.35),transparent 60%),var(--black)">
-      <p class="tag anim">Síntese do ciclo · ${esc(D.periodo)}</p>
+      <p class="tag anim">Síntese do ciclo · ${esc(D.periodo)}/2026</p>
       <p class="ghost-num anim d1" style="color:var(--accent-on-dark)">${esc(D.sintese.numero)}<span style="font-size:.42em;letter-spacing:-2px"> ${esc(D.sintese.unidade)}</span></p>
       <p class="serif anim d2" style="color:var(--gray-200);max-width:38ch">${esc(D.sintese.frase)}</p>
     </div>
@@ -1952,7 +1941,7 @@ const DADOS = {
   const CAP = 200;  
   const scale = CAP * 1.02;  
   const fmt = n => n.toLocaleString("pt-BR");
-  slide("s-light s-media", "O período", grid(head(tag(["Meta contratada e entrega · ", { t: "mídia", cls: "w-med" }, " · " + D.periodo]), D.metasTitulo[0], D.metasTitulo[1]) + `
+  slide("s-light s-media", "O período", grid(head(tag(["Meta contratada e entrega · ", { t: "mídia", cls: "w-med" }, " · " + D.periodo + "/2026"]), D.metasTitulo[0], D.metasTitulo[1]) + `
     <p class="lede anim d2 mt-xs" style="max-width:none;grid-column:1/-1">${esc(D.metasLede)}</p>
     <div class="col-span-10 anim d3">
       <div class="legend"><span><b style="background:var(--accent);border:1px solid var(--accent-edge)"></b>entregue até a meta</span><span><b style="background:#e9f958;box-shadow:inset 0 0 0 1px rgba(10,10,10,.18)"></b>acima da meta</span><span>traço vertical marca os 100%</span>${maxPct > CAP ? "<span>escala até 200%: a barra com quebra passa do limite</span>" : ""}</div>
@@ -1960,31 +1949,9 @@ const DADOS = {
     </div>`));
 
   
-  {
-    const UN = D.temasUnidade || "tema";
-    const PAL = ["#d431a1", "#024BD7", "#6612C5", "#EA5B0C", "#F2803A", "#9D6BE8", "#5B8EF0", "#3D3DA0"];  
-    const num = x => { const n = parseInt(String(x).replace(/\./g, ""), 10); return isNaN(n) ? 0 : n; };
-    const f = n => n.toLocaleString("pt-BR");
-    const T = {}, ord = [];
-    D.temas.forEach(r => { const k = String(r[0]).split(" · ")[0]; if (!T[k]) { T[k] = { imp: 0, eng: 0, vis: 0 }; ord.push(k); } T[k].imp += num(r[2]); T[k].eng += num(r[3]); T[k].vis += num(r[4]); });
-    const col = {}; ord.forEach((k, i) => col[k] = PAL[i % PAL.length]);
-    const tot = ord.reduce((a, k) => a + T[k].imp, 0);
-    let acc = 0; const stops = ord.map(k => { const a = acc / tot * 360; acc += T[k].imp; return `${col[k]} ${a.toFixed(2)}deg ${(acc / tot * 360).toFixed(2)}deg`; }).join(",");
-    const barras = (lab, key) => { const L = ord.filter(k => T[k][key] > 0); if (!L.length) return ""; const mx = Math.max(...L.map(k => T[k][key]));
-      return `<div class="tm-bl"><p class="tm-h">${lab}</p>${L.map(k => `<div class="tm-r"><span class="tm-n">${k}</span><span class="tm-t"><span style="width:${Math.max(T[k][key] / mx * 100, 1.5).toFixed(1)}%;background:${col[k]}"></span></span><b>${f(T[k][key])}</b></div>`).join("")}</div>`; };
-    slide("s-dark s-media tmslide", "As campanhas do mês", grid(head(tag(["Entrega por " + UN + " · ", MED, " · " + D.periodo]), D.temasTitulo[0], D.temasTitulo[1]) + `
-      <div class="col-span-10 tm-g${ord.length > 6 ? " tm-many" : ""} anim d2">
-        <div class="tm-l"><p class="tm-h">Impressões</p><p class="tm-big">${f(tot)}</p><p class="tm-pill">em ${ord.length} ${UN}s · ${esc(D.plataformasTexto)}</p>
-          <div class="tm-dl"><div class="tm-donut" style="background:conic-gradient(${stops})"></div><div class="tm-leg">${ord.filter(k => T[k].imp > 0).map(k => `<p><i style="background:${col[k]}"></i><b>${f(T[k].imp)}</b> ${k}</p>`).join("")}</div></div>${D.temasBonus ? `<p class="tm-bonus">${esc(D.temasBonus)}</p>` : ""}</div>
-        <div class="tm-rg">${barras("Impressões por " + UN, "imp")}${barras("Engajamentos por " + UN, "eng")}${barras("Visualizações por " + UN, "vis")}</div>
-      </div>` + foot(D.temasRodape)));
-  }
-
-
-  
   if (D.destaque && D.destaque.ativo) {
     const d = D.destaque;
-    slide("s-dark s-media", "As campanhas do mês", grid(head(tag(["Destaque do mês · ", MED, " · conteúdo que concentrou a conversa"]), d.titulo[0], d.titulo[1], true) + `
+    slide("s-dark s-media", "As campanhas do mês", grid(head(tag(["Destaque do mês · ", {t:"Meta Ads",cls:"w-med"}, " · conteúdo que concentrou a conversa"]), d.titulo[0], d.titulo[1]) + `
       <div class="mt-xs" style="grid-column:1/-1;display:grid;grid-template-columns:200px 1fr;gap:calc(var(--gutter)*1.6);align-items:start">
         <div class="anim d2"><div class="thumb9 dst"><img class="cover" src="${d.capa}" alt="Capa do criativo"><a class="go" href="${esc(d.link)}" target="_blank" rel="noopener">Abrir post ↗</a></div></div>
         <div class="anim d3" style="min-width:0">
@@ -2001,7 +1968,7 @@ const DADOS = {
     for (let k = 0; k < n; k += 2) {
       const ch = A.pecas.slice(k, k + 2), t = A.titulos[k / 2];
       const pos = (k + 1) + "º" + (ch.length > 1 ? " e " + (k + 2) + "º" : "");
-      slide("s-light s-media anslide", "As campanhas do mês", grid(head(tag(["Análise de conteúdo · ", MED, " · Meta Ads · " + pos + " de " + n]), t[0], t[1]) + `
+      slide("s-light s-media anslide", "As campanhas do mês", grid(head(tag(["Análise de conteúdo · ", {t:"Meta Ads",cls:"w-med"}, " · " + pos + " de " + n]), t[0], t[1]) + `
         <div class="col-span-10 an-g${ch.length === 1 ? " an-one" : ""} anim d2">${ch.map((p, i) => `<div class="an-c">
           <div class="an-top"><div class="an-th">${p.capa ? `${p.capa ? `<img src="${p.capa}" alt="Capa: ${esc(p.nome)}">` : ""}` : ""}${p.link ? `<a class="an-go" href="${esc(p.link)}" target="_blank" rel="noopener">Abrir post ↗</a>` : ""}</div>
             <div class="an-b"><div class="an-bd"><span class="an-rk">${k + i + 1}º</span><span class="an-ch">${esc(p.plataforma)}</span>${p.formato ? `<span class="an-ch">${esc(p.formato)}</span>` : ""}${p.indice ? `<span class="an-ix">Índice ${esc(p.indice)}</span>` : ""}</div>
@@ -2014,7 +1981,7 @@ const DADOS = {
   
   (D.midias || []).forEach(md => {
     const one = md.itens.length === 1;
-    slide("s-dark s-media mdslide", "As campanhas do mês", grid(head(tag(["Conteúdos veiculados · ", MED, " · " + md.plataforma + " · " + D.periodo]), md.titulo[0], md.titulo[1]) + `
+    slide("s-dark s-media mdslide", "As campanhas do mês", grid(head(tag(["Conteúdos veiculados · ", {t:md.plataforma,cls:"w-med"}, " · " + D.periodo + "/2026"]), md.titulo[0], md.titulo[1]) + `
       <div class="col-span-10 md-g md-${md.plataforma.toLowerCase()}${one ? " md-one" : ""}${md.itens.length > 3 ? " md-many" : ""} anim d2">${md.itens.map(p => `<div class="md-r">
         ${p.capa ? `<div class="md-th">${p.capa ? `${p.capa ? `<img src="${p.capa}" alt="Capa: ${esc(p.nome)}">` : ""}` : ""}</div>` : "<div></div>"}
         <div class="md-b"><p class="md-tg">${esc(p.tag || md.plataforma)}</p><p class="md-n">${esc(p.nome)}</p><p class="md-d">${esc(p.texto)}</p>${p.link ? `<a class="seepost" href="${esc(p.link)}" target="_blank" rel="noopener">ver o vídeo ↗</a>` : ""}</div>
@@ -2028,7 +1995,7 @@ const DADOS = {
     const k = n => (n / 1000).toFixed(1).replace(".", ",");
     const bar = (n, c) => `<div class="pg-b"><b>${k(n)}</b><span style="height:${Math.max(n / mx * 82, 1).toFixed(1)}%;background:${c}"></span></div>`;
     const pc = x => x > 0 && x < 1 ? "<1%" : Math.round(x) + "%";
-    slide("s-light s-media", "Público", grid(head(tag(["Público · ", MED, " · " + D.periodo]), D.publicoTitulo[0], D.publicoTitulo[1], true) + `
+    slide("s-light s-media", "Público", grid(head(tag(["Público · ", MED, " · " + D.periodo + "/2026"]), D.publicoTitulo[0], D.publicoTitulo[1]) + `
     <div class="pg-g">
       <div class="pg-c anim d2"><div class="pg-hd"><p class="pg-h">${esc(IG.titulo)}</p><div class="pg-lg"><span><i style="background:${CM}"></i>Mulheres</span><span><i style="background:${CH}"></i>Homens</span></div></div>
         <div class="pg-ch">${IG.faixas.map((f, i) => `<div class="pg-gr">${bar(IG.mulheres[i], CM)}${bar(IG.homens[i], CH)}</div>`).join("")}</div>
@@ -2042,7 +2009,7 @@ const DADOS = {
   } else {
   
   const bars = (arr, cls) => arr.map(a => `<div class="aud-r"><span class="aud-n">${esc(a[0])}</span><span class="aud-t"><span class="aud-b" style="width:${a[1]}%"></span></span><b class="aud-v">${a[1]}%</b></div>`).join("");
-  slide("s-light s-media", "Público", grid(head(tag(["Público · ", MED, " · " + D.periodo]), D.publicoTitulo[0], D.publicoTitulo[1], true) + `
+  slide("s-light s-media", "Público", grid(head(tag(["Público · ", MED, " · " + D.periodo + "/2026"]), D.publicoTitulo[0], D.publicoTitulo[1]) + `
     <div class="mt-sm" style="grid-column:1/-1;display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gutter)">
       <div class="card anim d2"><p class="num">GÊNERO</p><div class="aud">${bars(D.publico.genero)}</div></div>
       <div class="card anim d3"><p class="num">FAIXA ETÁRIA</p><div class="aud">${bars(D.publico.idade)}</div></div>
@@ -2062,12 +2029,6 @@ const DADOS = {
     <div class="rc-g2 mt-xs anim d2" style="grid-column:1/-1">
       <div class="card rc-p"><p class="num">Prioridade</p><p class="rc-pt">${esc(D.prioridade.titulo[0])} ${esc(D.prioridade.titulo[1])}</p><p class="rc-tx">${esc(D.prioridade.texto)}</p></div>
       <div class="rc-l">${D.recomendacoes.map(c => `<div class="card"><p class="num">${esc(c.titulo)}</p><p class="rc-tx">${esc(c.texto)}</p></div>`).join("")}</div>
-    </div>`));
-
-  
-  slide("s-light", "Notas", grid(head("Notas de leitura", "Critérios e limites", "dos dados") + `
-    <div class="modgrid mt-sm" style="grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:var(--gutter)">
-      ${D.notas.map((c, i) => `<div class="card anim d${i + 2}"${i === D.notas.length - 1 ? ' style="grid-column:1/-1"' : ""}><p class="num">${esc(c.titulo)}</p><p style="font-size:15px">${esc(c.texto)}</p></div>`).join("")}
     </div>`));
 
   
