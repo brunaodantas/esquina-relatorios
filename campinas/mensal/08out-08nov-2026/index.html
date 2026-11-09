@@ -955,6 +955,10 @@ h1 em.blk,h2 em.blk{display:block;margin-top:6px;font-size:.94em;line-height:1.0
 @media (min-width:901px){.goal:not(.goal-bn){padding:20px 0}}
 @media (min-width:901px) and (max-height:780px){.goal:not(.goal-bn){padding:12px 0}}
 </style>
+<style id="diag-6">
+.diag-g .card p[style]{font-size:15px!important;line-height:1.5}
+@media (max-width:900px){.diag-g{grid-template-columns:1fr!important}}
+</style>
 <style id="tiktok-capas">
 @media (min-width:901px){.md-youtube .md-r{grid-template-columns:64px 1fr auto!important}.md-youtube .md-th{width:64px!important}}
 .md-youtube .md-th img{height:96px!important}
@@ -1779,28 +1783,33 @@ const DADOS = {
  "diagnostico": [
   {
    "titulo": "01 · A CAMPANHA",
-   "lead": "A comunicação chegou por quatro plataformas.",
-   "texto": "As quatro linhas ficaram acima do contratado, e Visitas ao Perfil acrescentou uma entrega como bônus. A mídia ampliou a circulação dos conteúdos de serviços, saúde e cultura."
+   "lead": "As otimizações do ciclo fizeram a diferença.",
+   "texto": "As quatro linhas fecharam acima do contratado, e Visitas ao Perfil acrescentou uma entrega em bônus. Foram as otimizações realizadas ao longo do ciclo que levaram a esses resultados e ampliaram a circulação dos conteúdos de serviços, saúde e cultura."
   },
   {
-   "titulo": "02 · CLIMATÉRIO",
-   "lead": "A programação encontrou espaço no Meta.",
-   "texto": "O carrossel organizou as atividades para consulta do público."
+   "titulo": "02 · PERFIL",
+   "lead": "O perfil cresceu muito no ciclo.",
+   "texto": "Foram 7.233 novos seguidores no Instagram, 77,3% a mais que no ciclo anterior. A visibilidade dos conteúdos ajudou o perfil a ganhar quem passou a acompanhar a Prefeitura."
   },
   {
-   "titulo": "03 · RACISMO",
-   "lead": "A história da cidade ganhou presença.",
-   "texto": "O projeto Rotas Afro mostrou pessoas e espaços de Campinas."
+   "titulo": "03 · CONTEÚDOS NO META ADS",
+   "lead": "Saúde, cidadania e serviços tiveram boa resposta.",
+   "texto": "Climatério, Combate ao racismo, Refis e Concilia foram os conteúdos de maior destaque: a programação em cards, a história da cidade e as orientações de serviço em formato direto aproximaram o público e geraram boa resposta."
   },
   {
-   "titulo": "04 · SERVIÇOS",
-   "lead": "Refis e Concilia levaram informações de serviço.",
-   "texto": "As peças reuniram orientações sobre os programas para os moradores."
+   "titulo": "04 · GOOGLE DISPLAY",
+   "lead": "O Display levou os serviços a quem está na rede.",
+   "texto": "A linha entregou acima do contratado e chegou principalmente a pessoas de 18 a 34 anos, além de levar o Chega Junto ao público do Ouro Verde."
   },
   {
-   "titulo": "05 · VÍDEO",
-   "lead": "Conteúdos circularam em YouTube e TikTok.",
-   "texto": "As peças mostraram trabalhos, histórias e cuidados com a cidade."
+   "titulo": "05 · YOUTUBE",
+   "lead": "Vídeos da cidade ganharam espaço.",
+   "texto": "Coleta seletiva, Combate ao racismo e A Prefs tá on lideraram a entrega do YouTube, que ficou acima do contratado e chegou mais a pessoas de 25 a 44 anos."
+  },
+  {
+   "titulo": "06 · TIKTOK",
+   "lead": "O vídeo curto funcionou no TikTok.",
+   "texto": "A linha entregou acima do contratado, com quase todas as impressões virando visualização. Atleta Carlos Exaltação, PREFs tá on e Coleta seletiva concentraram a entrega."
   }
  ],
  "recsTag": "Direcionamentos",
@@ -1998,9 +2007,9 @@ const DADOS = {
   }
 
   
-  slide("s-dark", "Leituras e próximo ciclo", grid(head("Diagnóstico do ciclo", "Cinco achados", "resumem o mês") + `
-    <div class="modgrid mt-sm" style="grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:var(--gutter)">
-      ${D.diagnostico.map((c, i) => `<div class="card anim d${i + 2}"${i === 0 ? ' style="grid-column:1/-1"' : ""}><p class="num">${esc(c.titulo)}</p><p style="font-size:16px"><b>${esc(c.lead)}</b> ${esc(c.texto)}</p></div>`).join("")}
+  slide("s-dark", "Leituras e próximo ciclo", grid(head("Diagnóstico do ciclo", "Seis achados", "resumem o mês") + `
+    <div class="modgrid diag-g mt-sm" style="grid-column:1/-1;display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gutter)">
+      ${D.diagnostico.map((c, i) => `<div class="card anim d${i + 2}"><p class="num">${esc(c.titulo)}</p><p style="font-size:16px"><b>${esc(c.lead)}</b> ${esc(c.texto)}</p></div>`).join("")}
     </div>`));
 
   
