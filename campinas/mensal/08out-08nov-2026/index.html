@@ -2106,5 +2106,6 @@ const DADOS = {
   if(!('IntersectionObserver' in window)){document.querySelectorAll('.anim').forEach(a=>a.classList.add('visible'));}
 })();
 </script>
+<script>try{history.scrollRestoration="manual"}catch(e){}setTimeout(function(){document.querySelectorAll(".anim:not(.visible)").forEach(function(e){var r=e.getBoundingClientRect();if(r.bottom>0&&r.top<innerHeight)e.classList.add("visible")})},1500);</script>
 </body>
 </html>
