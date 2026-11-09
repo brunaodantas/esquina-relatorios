@@ -951,6 +951,10 @@ h1 em.blk,h2 em.blk{display:block;margin-top:6px;font-size:.94em;line-height:1.0
 .an-go{white-space:nowrap}.an-top{grid-template-columns:minmax(120px,auto) 1fr!important}.an-th{min-width:120px}
 .thumb9 .go{left:0!important;right:0!important;margin:0 auto!important;width:max-content!important;transform:none!important}
 </style>
+<style id="metas-folga">
+@media (min-width:901px){.goal:not(.goal-bn){padding:20px 0}.goal .track{height:22px}.goal .fill{height:100%}}
+@media (min-width:901px) and (max-height:780px){.goal:not(.goal-bn){padding:12px 0}}
+</style>
 <style id="tiktok-capas">
 @media (min-width:901px){.md-youtube .md-r{grid-template-columns:64px 1fr auto!important}.md-youtube .md-th{width:64px!important}}
 .md-youtube .md-th img{height:96px!important}
@@ -1913,7 +1917,7 @@ const DADOS = {
 
   
   const maxPct = Math.max(...D.metas.map(m => m.entregue / m.meta * 100), 100);
-  const CAP = 200;  
+  const CAP = 135;  
   const scale = CAP * 1.02;  
   const fmt = n => n.toLocaleString("pt-BR");
   slide("s-light s-media", "O período", grid(head(tag(["Meta contratada e entrega · ", { t: "mídia", cls: "w-med" }, " · " + D.periodo + "/2026"]), D.metasTitulo[0], D.metasTitulo[1]) + `
@@ -1943,7 +1947,7 @@ const DADOS = {
     for (let k = 0; k < n; k += 2) {
       const ch = A.pecas.slice(k, k + 2), t = A.titulos[k / 2];
       const pos = (k + 1) + "º" + (ch.length > 1 ? " e " + (k + 2) + "º" : "");
-      slide(((k / 2) % 2 === 0 ? "s-dark" : "s-light") + " s-media anslide", "As campanhas do mês", grid(head(tag(["Análise de conteúdo · ", {t:"Meta Ads",cls:"w-med"}, " · " + pos + " de " + n]), t[0], t[1]) + `
+      slide("s-light s-media anslide", "As campanhas do mês", grid(head(tag(["Análise de conteúdo · ", {t:"Meta Ads",cls:"w-med"}, " · " + pos + " de " + n]), t[0], t[1]) + `
         <div class="col-span-10 an-g${ch.length === 1 ? " an-one" : ""} anim d2">${ch.map((p, i) => `<div class="an-c">
           <div class="an-top"><div class="an-th">${p.capa ? `${p.capa ? `<img src="${p.capa}" alt="Capa: ${esc(p.nome)}">` : ""}` : ""}${p.link ? `<a class="an-go" href="${esc(p.link)}" target="_blank" rel="noopener">Abrir post ↗</a>` : ""}</div>
             <div class="an-b"><div class="an-bd"><span class="an-rk">${k + i + 1}º</span><span class="an-ch">${esc(p.plataforma)}</span>${p.formato ? `<span class="an-ch">${esc(p.formato)}</span>` : ""}${p.indice ? `<span class="an-ix">Índice ${esc(p.indice)}</span>` : ""}</div>
