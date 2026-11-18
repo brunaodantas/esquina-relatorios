@@ -355,7 +355,7 @@ const DATA = {
   },
   "outubro": {
     "label": "Outubro",
-    "novo": true,
+    "novo": false,
     "periodos": [
       {
         "id": "outubro-unificado-2026",
@@ -421,14 +421,33 @@ const DATA = {
         "pdf": "../semanal/05out-11out-2026/boletim-hortolandia-05a11out2026.pdf"
       }
     ]
+  },
+  "novembro": {
+    "label": "Novembro",
+    "novo": true,
+    "periodos": [
+      {
+        "id": "novembro-11nov-17nov-2026",
+        "tag": "Boletim semanal",
+        "tipo": "r",
+        "range": "11 a 17/11",
+        "ano": "2026",
+        "titulo": "Boletim Semanal, Temas Diversos",
+        "desc": "Encontro Mensal de Emprego e Natal de Hortolândia. Resultados da semana em Meta Ads.",
+        "chips": [
+          "meta"
+        ],
+        "href": "../semanal/11nov-17nov-2026/"
+      }
+    ]
   }
 };
 
 const CHIP_LABEL = {redes:"Redes institucionais",meta:"Meta Ads",google:"Display",gads:"Google Ads",yt:"YouTube",tiktok:"TikTok",spotify:"Spotify",pdf:"PDF disponível"};
 const CHIP_CLASS = {redes:"chip-redes",meta:"chip-meta",google:"chip-google",gads:"chip-google",yt:"chip-yt",tiktok:"chip-tiktok",spotify:"chip-spotify",pdf:"chip-pdf"};
-const MONTH_ORDER = ["junho", "julho", "agosto", "setembro", "outubro"];
+const MONTH_ORDER = ["junho", "julho", "agosto", "setembro", "outubro", "novembro"];
 
-let activeMonth = "outubro";
+let activeMonth = "novembro";
 let activePeriodo = {};
 MONTH_ORDER.forEach(m => activePeriodo[m] = DATA[m].periodos[DATA[m].periodos.length-1].id);
 
